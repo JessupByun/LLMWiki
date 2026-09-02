@@ -2,7 +2,7 @@
 
 A personal, agent-maintained research wiki on AI security and safety.
 
-The primary lens is alignment, mechanistic interpretability, post-training, RL, adversarial robustness, and evaluation / red-teaming of frontier systems, built on a foundational canon of landmark ML papers that earn their place whether or not they touch security directly.
+The primary lens is alignment, post-training, RL, adversarial robustness, mechanistic interpretability, and evaluation / red-teaming of frontier systems, built on a foundational canon of landmark ML papers that earn their place whether or not they touch security directly.
 Occasional papers outside both - kept purely because they're interesting - get a page too.
 
 This is a reading memory and a thesis-building tool, not a survey or a textbook.
@@ -60,9 +60,7 @@ Every page ends with an `## Up` link to its cluster, so nothing is orphaned.
 
 ## Current state
 
-Work in progress, permanently.
-New research keeps coming out, and papers get added as I read them - there's no fixed endpoint.
-`wiki/index.md` is always the current, authoritative count and contents.
+Work in progress, permanently. `wiki/index.md` is always the current, authoritative count and contents.
 
 ## Sources
 
