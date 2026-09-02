@@ -1,0 +1,27 @@
+# Agent instructions and working log - local only, not published
+CLAUDE.md
+AGENTS.md
+wiki/log.md
+
+# Source material - stays local, not redistributed here
+raw/
+
+# Obsidian vault config - per-machine, not part of the published wiki
+.obsidian/
+
+# Local agent + editor state
+.claude/
+.trash/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~
