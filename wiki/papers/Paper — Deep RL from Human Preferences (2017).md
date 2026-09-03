@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-08-07
+updated: 2026-09-02
 summary: "Origin of RLHF - learn a reward model from human comparisons of short clips, then optimize it, cutting oversight cost by ~3 orders of magnitude."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/Paper — Deep RL from Human Preferences (2017).pdf"]
@@ -72,7 +72,7 @@ Three processes then run **asynchronously** (p4), which is what makes the wall-c
 ## Why it endures
 
 The architectural pattern - *learn a proxy for human judgment, then optimize the proxy* - is the template the entire LLM post-training stack inherited.
-Swap trajectory clips for pairs of model responses and A2C/TRPO for PPO, and this is recognizably the RLHF stage of InstructGPT and everything after it.
+Swap trajectory clips for pairs of model responses and A2C/TRPO for [[Method — Proximal Policy Optimization (PPO)|PPO]], and this is recognizably the RLHF stage of [[Paper — Training LMs to Follow Instructions (2022)|InstructGPT]] and everything after it.
 The Bradley-Terry preference likelihood introduced here is also the exact object DPO later shows can be optimized without running RL at all.
 
 ## Limitations
@@ -97,7 +97,8 @@ See [[Concept — Reward hacking]].
 - Method hub: [[Method — Reinforcement learning from human feedback (RLHF)]].
 - Preference likelihood: [[Concept — Bradley-Terry preference model]], the piece later post-training work reuses most directly.
 - Failure mode it documents: [[Concept — Reward hacking]].
-- Contemporary with [[Paper — Attention Is All You Need (2017)]]. The two 2017 papers sit on opposite sides of the modern stack: one is the architecture, this one is the alignment procedure eventually applied to it.
+- Contemporary with [[Paper — Attention Is All You Need (2017)]] and [[Paper — Proximal Policy Optimization (2017)]] - three 2017 papers that, combined, supply the architecture, the RL optimizer, and the alignment procedure the entire modern post-training stack runs on.
+- Extended to LLM scale, with this exact three-stage structure, in [[Paper — Training LMs to Follow Instructions (2022)]].
 
 ## Up
 

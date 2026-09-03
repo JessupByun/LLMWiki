@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-08-07
+updated: 2026-09-02
 summary: "An optimizer scoring highly on the specified objective while violating the intent behind it - the characteristic failure of optimizing a proxy."
 cluster: ["Post-training alignment"]
 sources: []
@@ -37,10 +37,13 @@ Hence the design principle the 2017 paper draws: "human feedback needs to be int
 Keep labeling as the policy changes, so the reward model gets corrected in the regions the policy just discovered.
 This is a treadmill, not a solution, which is why scalable oversight remains open.
 
+**Tension / update.** [[Paper — Training LMs to Follow Instructions (2022)]] runs this exact reward-model-plus-RL setup at LLM scale but does not rely mainly on online feedback - it instead holds the policy near a fixed reference model with a KL penalty during RL.
+Whether that substitutes for online correction or merely defers the same failure mode to whenever the KL constraint is loosened is unresolved; see the fuller discussion on [[Method — Reinforcement learning from human feedback (RLHF)]].
+
 ## Relations
 
 - Documented in [[Paper — Deep RL from Human Preferences (2017)]], which cites Amodei et al. 2016 for the framing.
-- The liability inherent in [[Method — Reinforcement learning from human feedback (RLHF)]].
+- The liability inherent in [[Method — Reinforcement learning from human feedback (RLHF)]], as run via [[Method — Proximal Policy Optimization (PPO)]].
 - Structurally similar to [[Concept — Adversarial examples]]: in both, an optimizer finds inputs where a learned function misbehaves. The difference is who is doing the optimizing and whether it's adversarial by intent.
 
 ## Up

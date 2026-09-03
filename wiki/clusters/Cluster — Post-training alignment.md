@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-08-07
+updated: 2026-09-02
 summary: "Turning a pretrained model into one that does what humans want - preference learning, reward modeling, RLHF and its successors."
 cluster: []
 sources: []
@@ -21,16 +21,21 @@ Everything downstream inherits both the leverage and the liability of that subst
 | Page | Why it's here |
 |------|----------------|
 | [[Paper — Deep RL from Human Preferences (2017)]] | Origin of RLHF - learn a reward model from human comparisons of short clips, then optimize it, cutting oversight cost by ~3 orders of magnitude. |
+| [[Paper — Training LMs to Follow Instructions (2022)]] | InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference. |
+| [[Paper — Constitutional AI (2022)]] | Trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF). |
+| [[Paper — Direct Preference Optimization (2023)]] | DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop. |
 
 ## Methods and concepts
 
 - [[Method — Reinforcement learning from human feedback (RLHF)]]
+- [[Method — Proximal Policy Optimization (PPO)]] - the RL algorithm RLHF's third stage actually runs; full treatment lives in [[Cluster — Reinforcement learning]].
 - [[Concept — Bradley-Terry preference model]]
 - [[Concept — Reward hacking]]
 
 ## Open threads
 
-Papers that would fill obvious gaps here: PPO (the algorithm RLHF actually runs on in practice), InstructGPT (RLHF at LLM scale), Constitutional AI (AI feedback replacing human feedback), DPO (removing the RL step entirely).
+Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled.
+Next candidates: Sparrow (Glaese et al. 2022, DeepMind's contemporaneous alternative to CAI, with a more carefully-designed rule set) and a second post-CAI paper on scalable oversight, since [[Cluster — Adversarial robustness & security]] and this cluster increasingly overlap once red-teaming and jailbreaks are involved.
 
 ## Up
 

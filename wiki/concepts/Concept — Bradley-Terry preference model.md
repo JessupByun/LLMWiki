@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-08-07
+updated: 2026-09-02
 summary: "Statistical model where the probability one item is preferred depends on the difference in latent scores - the bridge from human comparisons to a reward function."
 cluster: ["Post-training alignment"]
 sources: []
@@ -38,13 +38,15 @@ Two consequences worth holding onto:
 Later post-training work depends on this specific functional form rather than on RLHF's pipeline.
 Anything reasoning about what a reward model *is* tends to bottom out here.
 
-**Unverified forward pointer, to check on ingest:** DPO is generally described as exploiting a closed-form relationship between this likelihood and the optimal policy under a KL-regularized objective, letting you optimize preferences directly without fitting an explicit reward model or running RL.
-That paper is not yet ingested and this claim has not been checked against it - treat it as a reading lead, not an established entry.
+**Forward pointer resolved (2026-09-02):** confirmed against [[Paper — Direct Preference Optimization (2023)]].
+DPO substitutes the reparameterization `r(x,y) = β·log(π(y|x)/π_ref(y|x))` into this exact likelihood; because the likelihood depends only on the *difference* between two rewards, the unknown normalizing constant cancels and the result is a loss written purely in terms of the policy.
+That is precisely the closed-form relationship this page had flagged as unverified - DPO is best understood as fitting a reparameterized Bradley-Terry model directly on policy log-probabilities, with no separate reward-model object and no RL step.
 
 ## Relations
 
 - Used as the reward-model likelihood in [[Method — Reinforcement learning from human feedback (RLHF)]].
 - Introduced to deep RL by [[Paper — Deep RL from Human Preferences (2017)]], which also names it as "the specialization of the Luce-Shephard choice rule to preferences over trajectory segments."
+- Reparameterized directly, with no separate reward model, by [[Paper — Direct Preference Optimization (2023)]].
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-08-07
+updated: 2026-09-02
 summary: "Fit a reward model to human preference comparisons, then optimize a policy against it with RL - the standard alignment pipeline."
 cluster: ["Post-training alignment"]
 sources: []
@@ -17,9 +17,9 @@ A three-stage procedure for training a policy toward an objective nobody can wri
 
 1. **Collect comparisons.** Show a human two candidate outputs and record which they prefer. Not scores, not demonstrations - just a binary choice, because relative judgments are the thing humans do reliably.
 2. **Fit a reward model.** Train a network to predict those preferences, usually via the [[Concept — Bradley-Terry preference model]] with a cross-entropy loss. The reward model is a *learned proxy for human judgment*.
-3. **Optimize the policy** with RL against the reward model's output rather than against any environment reward.
+3. **Optimize the policy** with RL against the reward model's output rather than against any environment reward. In practice this step is run with [[Method — Proximal Policy Optimization (PPO)]].
 
-Introduced for deep RL in [[Paper — Deep RL from Human Preferences (2017)]]; later became the default post-training stage for language models.
+Introduced for deep RL in [[Paper — Deep RL from Human Preferences (2017)]]; demonstrated at LLM scale, with this exact three-stage structure, in [[Paper — Training LMs to Follow Instructions (2022)]], which is now the default post-training recipe for language models.
 
 ## Why it works
 
@@ -40,12 +40,17 @@ An RL policy is an aggressive optimizer and will find inputs where the reward mo
 The standard mitigation, established in the original paper, is to keep collecting feedback **online** as the policy changes, so the reward model gets corrected precisely in the regions the policy has newly learned to exploit.
 Training the reward model once on a fixed dataset and then optimizing hard against it reliably fails.
 
+**Tension / update.** [[Paper — Training LMs to Follow Instructions (2022)]], running this exact pipeline at LLM scale, does not lean primarily on online feedback - most of its comparison data comes from the supervised policy rather than a continuously retrained loop.
+Its main defense against reward-model over-optimization is instead a per-token KL penalty holding the policy close to the supervised fine-tuned reference model, done through [[Method — Proximal Policy Optimization (PPO)]]'s RL objective.
+Whether KL regularization against a fixed reference is a genuine substitute for online correction, or just a different way of delaying the same failure, is an open question worth tracking as more RLHF pipelines report their own choices here.
+
 ## Relations
 
 - Origin: [[Paper — Deep RL from Human Preferences (2017)]].
+- RL step: [[Method — Proximal Policy Optimization (PPO)]].
 - Preference likelihood it depends on: [[Concept — Bradley-Terry preference model]].
 - Its characteristic failure: [[Concept — Reward hacking]].
-- Applied to the model class introduced in [[Paper — Language Models are Few-Shot Learners (2020)]], whose authors named this as the needed next step.
+- Applied to the model class introduced in [[Paper — Language Models are Few-Shot Learners (2020)]], whose authors named this as the needed next step; carried out at scale in [[Paper — Training LMs to Follow Instructions (2022)]].
 
 ## Up
 
