@@ -44,6 +44,8 @@ The encoder/decoder framing (compress to a latent code, reconstruct from it) als
 
 - The paper's own experiments directly compare AEVB against the **wake-sleep algorithm** and **Monte Carlo EM** as prior approaches to the same latent-variable inference problem, showing faster convergence and better final likelihoods on MNIST and Frey Face.
 - A generative-modeling counterpart to two other 2013 papers extending deep learning into new territory in the same year: [[Paper — Playing Atari with Deep RL (2013)]] (control) and [[Paper — Efficient Estimation of Word Representations (2013)]] (representation learning).
+- The other of the two dominant deep generative modeling paradigms alongside [[Paper — Generative Adversarial Networks (2014)]], published the following year - contrasted directly ever since: this paper optimizes an explicit likelihood bound and comes with a usable encoder for free, while GANs need no explicit likelihood but are harder to train stably.
+- Used as the test architecture in [[Paper — Adam - A Method for Stochastic Optimization (2014)]]'s bias-correction ablation experiment (section 6.4 of that paper).
 
 ## Up
 
