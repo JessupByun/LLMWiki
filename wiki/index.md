@@ -20,6 +20,9 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | Page | ID | One line |
 |------|----|----------|
 | [[Paper — ImageNet Classification with Deep CNNs (2012)]] | NeurIPS 2012 | AlexNet - the ILSVRC-2012 landslide that convinced the field deep networks plus data plus compute beat hand-engineered features. |
+| [[Paper — Efficient Estimation of Word Representations (2013)]] | arxiv:1301.3781 | word2vec - two cheap log-linear architectures (CBOW, Skip-gram) that learn word vectors from billions of words in a day, and showed the resulting vectors support linear analogy arithmetic like king - man + woman = queen. |
+| [[Paper — Playing Atari with Deep RL (2013)]] | arxiv:1312.5602 | DQN - the first deep learning model to learn control policies directly from raw pixels, combining Q-learning with a CNN and experience replay, beating prior RL methods on six of seven Atari games and expert humans on three. |
+| [[Paper — Auto-Encoding Variational Bayes (2013)]] | arxiv:1312.6114 | VAE - introduced the reparameterization trick, turning an intractable Bayesian inference problem into something trainable end-to-end with ordinary backpropagation, and founded one of the two dominant deep generative modeling paradigms. |
 | [[Paper — Intriguing Properties of Neural Networks (2013)]] | arxiv:1312.6199 | Discovered adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets. |
 | [[Paper — Attention Is All You Need (2017)]] | arxiv:1706.03762 | Introduced the Transformer, replacing recurrence with self-attention - the architecture nearly every modern LLM is built on. |
 | [[Paper — Deep RL from Human Preferences (2017)]] | arxiv:1706.03741 | Origin of RLHF - learn a reward model from human comparisons of short clips, then optimize it, cutting oversight cost by ~3 orders of magnitude. |
