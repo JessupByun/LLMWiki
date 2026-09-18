@@ -22,16 +22,18 @@ The split matters because the same RL algorithm gets reused across very differen
 | Page | Why it's here |
 |------|----------------|
 | [[Paper — Playing Atari with Deep RL (2013)]] (DQN) | First deep learning model to learn control policies from raw pixels - value-based Q-learning stabilized with experience replay, the canonical predecessor to policy-gradient methods like PPO. |
+| [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] (AlphaGo) | Combines a learned policy network (narrows search breadth) and value network (reduces search depth) inside Monte Carlo Tree Search - a third distinct way of pairing learned functions with optimization, alongside DQN's pure value-based learning and PPO's pure policy-gradient learning. |
 | [[Paper — Proximal Policy Optimization (2017)]] | Clipped-objective policy gradient method that gets trust-region-level stability with only first-order optimization - the algorithm RLHF pipelines actually run. |
 
 ## Methods and concepts
 
 - [[Method — Proximal Policy Optimization (PPO)]]
 - Deep Q-learning with experience replay - not yet split into its own Method page; currently documented on [[Paper — Playing Atari with Deep RL (2013)]] directly.
+- Monte Carlo Tree Search combined with learned policy/value networks - not yet split into its own Method page; currently documented on [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] directly.
 
 ## Open threads
 
-Papers that would fill obvious gaps here: TRPO (the predecessor PPO improves on, referenced but not yet ingested), generalized advantage estimation (the advantage estimator PPO uses), and AlphaGo as a second value-based/search-based RL landmark alongside DQN.
+Papers that would fill obvious gaps here: TRPO (the predecessor PPO improves on, referenced but not yet ingested) and generalized advantage estimation (the advantage estimator PPO uses). AlphaGo Zero (2017) and AlphaZero would be natural next additions, extending the search-plus-learned-function theme to pure self-play with no human data.
 
 ## Up
 
