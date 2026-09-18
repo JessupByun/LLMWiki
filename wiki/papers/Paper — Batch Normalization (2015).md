@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-09-18
 summary: "Batch Normalization - normalizes each layer's inputs using mini-batch statistics during training, letting networks use much higher learning rates and matching a state-of-the-art ImageNet model's accuracy in 14x fewer training steps."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/Paper — Batch Normalization (2015).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — Batch Normalization (2015).pdf"]
 tags: [architecture, normalization, optimization, training]
 aliases: ["arxiv:1502.03167", "Ioffe & Szegedy 2015", "Batch Normalization", "BatchNorm", "BN"]
 ---

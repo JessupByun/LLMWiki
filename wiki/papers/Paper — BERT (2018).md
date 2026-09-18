@@ -4,7 +4,7 @@ status: mature
 updated: 2026-09-18
 summary: "BERT - pretrains a bidirectional Transformer by predicting randomly masked tokens from both left and right context at once, advancing state of the art on 11 NLP tasks and founding the masked-language-model recipe behind every encoder-only representation model since."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/Paper — BERT (2018).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — BERT (2018).pdf"]
 tags: [pretraining, transfer-learning, transformer, nlp, masked-language-modeling]
 aliases: ["arxiv:1810.04805", "Devlin et al. 2018", "BERT"]
 ---

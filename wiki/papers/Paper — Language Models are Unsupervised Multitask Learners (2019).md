@@ -4,7 +4,7 @@ status: mature
 updated: 2026-09-18
 summary: "GPT-2 - a 1.5B-parameter Transformer trained on 40GB of curated web text achieves state-of-the-art results on 7 of 8 language modeling benchmarks in a zero-shot setting, showing a big enough language model starts performing tasks like translation and summarization from a natural-language prompt with no fine-tuning at all."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/Paper — Language Models are Unsupervised Multitask Learners (2019).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — Language Models are Unsupervised Multitask Learners (2019).pdf"]
 tags: [pretraining, zero-shot, transformer, nlp, scaling]
 aliases: ["Radford et al. 2019", "GPT-2"]
 ---

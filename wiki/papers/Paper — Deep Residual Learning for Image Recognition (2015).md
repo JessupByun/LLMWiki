@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-09-18
 summary: "ResNet - shortcut connections let each block learn a residual function relative to its input rather than a full transformation, making networks over 100 layers deep trainable for the first time and winning ILSVRC 2015."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/Paper — Deep Residual Learning for Image Recognition (2015).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — Deep Residual Learning for Image Recognition (2015).pdf"]
 tags: [architecture, cnn, vision, residual-connections]
 aliases: ["arxiv:1512.03385", "He et al. 2015", "ResNet", "Deep Residual Learning"]
 ---

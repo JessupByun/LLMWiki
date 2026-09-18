@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-09-18
 summary: "seq2seq - two LSTMs (one encodes, one decodes) that map a variable-length input sequence to a variable-length output sequence through a single fixed-length vector, the first pure neural system to beat a phrase-based SMT baseline on machine translation."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/Paper — Sequence to Sequence Learning with Neural Networks (2014).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — Sequence to Sequence Learning with Neural Networks (2014).pdf"]
 tags: [architecture, rnn, lstm, machine-translation, seq2seq]
 aliases: ["arxiv:1409.3215", "Sutskever et al. 2014", "seq2seq", "RNNencdec"]
 ---
