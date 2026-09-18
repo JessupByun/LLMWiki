@@ -44,6 +44,7 @@ Encoder-only variants became models like BERT, decoder-only variants became the 
 
 - See [[Concept — Transformer architecture]] for the reusable mechanism referenced by later papers.
 - Alongside [[Paper — ImageNet Classification with Deep CNNs (2012)]] as one of the two archetypal architecture papers in [[Cluster — Foundational canon]].
+- Directly descended from [[Paper — Neural Machine Translation by Jointly Learning to Align and Translate (2014)]], which introduced the alignment mechanism generalized here into Query/Key/Value self-attention, and [[Paper — Sequence to Sequence Learning with Neural Networks (2014)]], whose encoder-decoder split this paper keeps while replacing both LSTMs with attention.
 
 ## Up
 
