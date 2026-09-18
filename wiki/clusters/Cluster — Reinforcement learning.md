@@ -21,7 +21,7 @@ The split matters because the same RL algorithm gets reused across very differen
 
 | Page | Why it's here |
 |------|----------------|
-| [[Paper — Playing Atari with Deep RL (2013)]] | First deep learning model to learn control policies from raw pixels - value-based Q-learning stabilized with experience replay, the canonical predecessor to policy-gradient methods like PPO. |
+| [[Paper — Playing Atari with Deep RL (2013)]] (DQN) | First deep learning model to learn control policies from raw pixels - value-based Q-learning stabilized with experience replay, the canonical predecessor to policy-gradient methods like PPO. |
 | [[Paper — Proximal Policy Optimization (2017)]] | Clipped-objective policy gradient method that gets trust-region-level stability with only first-order optimization - the algorithm RLHF pipelines actually run. |
 
 ## Methods and concepts

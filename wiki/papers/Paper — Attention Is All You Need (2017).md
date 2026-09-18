@@ -6,10 +6,12 @@ summary: "Introduced the Transformer, replacing recurrence with self-attention -
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Attention Is All You Need (2017).pdf"]
 tags: [architecture, attention, transformer]
-aliases: ["arxiv:1706.03762"]
+aliases: ["arxiv:1706.03762", "Transformer", "Vaswani et al. 2017"]
 ---
 
 # Paper — Attention Is All You Need (2017)
+
+Commonly known as the **Transformer** paper.
 
 ## Metadata
 
