@@ -26,7 +26,7 @@ Because generation is broken into many small, easy steps rather than one hard le
 
 - Origin: [[Paper — Denoising Diffusion Probabilistic Models (2020)]] (Ho, Jain & Abbeel), building on Sohl-Dickstein et al. 2015's original diffusion probabilistic models framework (not yet ingested).
 - Competes with the other dominant deep generative paradigm founded by [[Paper — Auto-Encoding Variational Bayes (2013)]] (VAE) and with GANs.
-- Runs in a compressed latent space rather than pixel space in Latent Diffusion Models (not yet ingested; queued next in `BACKLOG.md`), the direct basis of Stable Diffusion.
+- Runs in a compressed latent space rather than pixel space via [[Method — Latent Diffusion]], introduced in [[Paper — High-Resolution Image Synthesis with Latent Diffusion Models (2021)]], the direct basis of Stable Diffusion.
 
 ## Up
 

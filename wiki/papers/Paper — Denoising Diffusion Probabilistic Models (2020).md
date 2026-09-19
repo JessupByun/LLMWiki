@@ -52,7 +52,7 @@ Sampling requires running the full reverse chain (1000 network evaluations per i
 - Establishes a formal equivalence with denoising score matching and Langevin dynamics (Song & Ermon, not yet ingested).
 - The reparameterization-trick lineage traces back to [[Paper — Auto-Encoding Variational Bayes (2013)]] (VAE), the other dominant deep generative paradigm this paper's results directly compete against.
 - Architecture borrows the U-Net backbone and the Transformer's sinusoidal position embedding from [[Paper — Attention Is All You Need (2017)]] to condition the network on the diffusion timestep.
-- Direct technical ancestor of Latent Diffusion Models (not yet ingested; queued next in `BACKLOG.md`), which run this same process in a compressed latent space rather than pixel space.
+- Direct technical ancestor of [[Paper — High-Resolution Image Synthesis with Latent Diffusion Models (2021)]], which runs this same process in a compressed latent space rather than pixel space.
 
 ## Up
 
