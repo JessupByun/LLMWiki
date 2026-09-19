@@ -22,7 +22,7 @@ This is what makes reusing the same batch of data for multiple gradient steps sa
 ## Why it works
 
 The clip substitutes for a trust region.
-Trust region methods (e.g. TRPO) get the same safety property - don't let one update destroy the policy - by solving a constrained optimization problem with a conjugate-gradient step every iteration.
+[[Method — Trust Region Policy Optimization (TRPO)|Trust region methods (e.g. TRPO)]] get the same safety property - don't let one update destroy the policy - by solving a constrained optimization problem with a conjugate-gradient step every iteration.
 PPO gets a similar effect for a fraction of the implementation and compute cost, using only first-order optimization, which is what let it become a default choice rather than a specialist tool.
 
 That default-choice status is why it matters for alignment specifically: any procedure that needs to optimize a policy against a learned, scalar reward can plug PPO in as the RL step, and [[Method — Reinforcement learning from human feedback (RLHF)]] does exactly that.
@@ -31,7 +31,7 @@ That default-choice status is why it matters for alignment specifically: any pro
 
 - Origin: [[Paper — Proximal Policy Optimization (2017)]].
 - The RL algorithm used in step 3 of [[Method — Reinforcement learning from human feedback (RLHF)]], concretely demonstrated at LLM scale in [[Paper — Training LMs to Follow Instructions (2022)]].
-- Improves on [[Method — Trust Region Policy Optimization (TRPO)]] (not yet ingested).
+- Improves on [[Method — Trust Region Policy Optimization (TRPO)]], introduced in [[Paper — Trust Region Policy Optimization (2015)]].
 
 ## Up
 

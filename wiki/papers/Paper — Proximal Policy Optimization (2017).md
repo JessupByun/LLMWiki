@@ -29,7 +29,7 @@ Its appeal is not raw performance so much as being simple enough that everyone a
 Three existing options each had a disqualifying flaw for the kind of general-purpose, large-scale RL people wanted to run.
 Q-learning with function approximation "fails on many simple problems" and is poorly understood.
 Vanilla policy gradient has poor sample efficiency and robustness, because performing multiple optimization steps on the same batch of data using the naive objective is "not well-justified" and "often leads to destructively large policy updates."
-Trust region policy optimization (TRPO) fixes that instability by constraining each update's KL divergence from the old policy, but the fix is expensive: it needs a conjugate-gradient solve with a linear approximation to the objective and a quadratic approximation to the constraint, and it is "not compatible with architectures that include noise (such as dropout) or parameter sharing" between the policy and value function.
+[[Method — Trust Region Policy Optimization (TRPO)|Trust region policy optimization (TRPO)]] fixes that instability by constraining each update's KL divergence from the old policy, but the fix is expensive: it needs a conjugate-gradient solve with a linear approximation to the objective and a quadratic approximation to the constraint, and it is "not compatible with architectures that include noise (such as dropout) or parameter sharing" between the policy and value function.
 The paper's goal was TRPO's stability and data efficiency, using only first-order optimization.
 
 ## Core idea: clip the probability ratio
@@ -74,7 +74,7 @@ That last use case is what made it load-bearing for alignment specifically: swap
 
 ## Relations
 
-- Improves on [[Method — Trust Region Policy Optimization (TRPO)]] (not yet ingested) by replacing its hard KL constraint and conjugate-gradient solve with a clipped first-order objective.
+- Improves on [[Method — Trust Region Policy Optimization (TRPO)]], introduced in [[Paper — Trust Region Policy Optimization (2015)]], by replacing its hard KL constraint and conjugate-gradient solve with a clipped first-order objective.
 - Method hub: [[Method — Proximal Policy Optimization (PPO)]].
 - The RL algorithm inside [[Method — Reinforcement learning from human feedback (RLHF)]]'s third stage, as used explicitly in [[Paper — Training LMs to Follow Instructions (2022)]].
 - [[Paper — Deep RL from Human Preferences (2017)]] already names PPO as A2C/TRPO's successor in its own "why it endures" discussion, despite predating this paper's wide adoption.

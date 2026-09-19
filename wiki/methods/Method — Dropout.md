@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-08-07
+updated: 2026-09-18
 summary: "Randomly zero hidden units during training to block co-adaptation; architecture-agnostic regularizer that reappears nearly everywhere."
 cluster: ["Foundational canon"]
 sources: []
@@ -17,7 +17,8 @@ A regularization technique.
 During training, randomly zero out each hidden unit's output with probability *p* (commonly 0.5); dropped units don't contribute to the forward pass or backprop for that step.
 At test time all units are used, with outputs scaled (e.g. multiplied by *p*) to approximate averaging over the exponentially-many "thinned" sub-networks sampled during training.
 
-Popularized at scale by [[Paper — ImageNet Classification with Deep CNNs (2012)]], applied to its first two fully-connected layers.
+Formally introduced and analyzed in [[Paper — Dropout (2014)]] (Srivastava et al.), building on an earlier, shorter 2012 note by an overlapping set of authors.
+Demonstrated at scale the same year in [[Paper — ImageNet Classification with Deep CNNs (2012)]], applied to its first two fully-connected layers.
 
 ## Why it works
 
@@ -27,7 +28,8 @@ Roughly doubles the number of iterations needed to converge, but substantially r
 
 ## Relations
 
-- Introduced in the context of [[Concept — Convolutional neural networks (CNNs)]], but the technique is architecture-agnostic. Expect later papers across domains (language, RL, etc.) to reuse it.
+- Origin: [[Paper — Dropout (2014)]].
+- Demonstrated in the context of [[Concept — Convolutional neural networks (CNNs)]] by AlexNet, but the technique is architecture-agnostic. Expect later papers across domains (language, RL, etc.) to reuse it.
 
 ## Up
 
