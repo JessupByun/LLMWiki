@@ -23,7 +23,7 @@ Full title: **Low-Rank Adaptation of Large Language Models**.
 
 LoRA made fine-tuning frontier-scale models cheap enough to do per-task, per-user, or per-experiment rather than once.
 On GPT-3 175B it cuts trainable parameters by **10,000x** and training GPU memory by 3x (1.2TB down to 350GB), while matching or beating full fine-tuning on GLUE, GPT-2 generation benchmarks, and GPT-3 itself - and unlike every adapter-based alternative that came before it, it adds **zero inference latency**, because the low-rank update can be merged back into the frozen weights before deployment.
-This is the paper that made "one frozen base model, many swappable lightweight deltas" the default way to specialize a large model, an idea that spread from NLP to diffusion image models and is now the default fine-tuning path in most open-source LLM tooling.
+This is the paper that made "one frozen base model, many swappable lightweight deltas" the default way to specialize a large model, an idea that spread from NLP to [[Method — Denoising Diffusion (DDPM)|diffusion]] image models and is now the default fine-tuning path in most open-source LLM tooling.
 
 ## Problem it solved
 

@@ -38,7 +38,7 @@ The resulting objective (the evidence lower bound, or ELBO) has an intuitive aut
 ## Why it endures
 
 The reparameterization trick outlived the specific VAE architecture that introduced it and became a general-purpose gradient-estimation tool - anywhere a model needs a differentiable stochastic layer, this is very often the mechanism underneath it.
-The encoder/decoder framing (compress to a latent code, reconstruct from it) also became the template that later generative and representation-learning systems, including latent-space diffusion models, build variations on.
+The encoder/decoder framing (compress to a latent code, reconstruct from it) also became the template that later generative and representation-learning systems, including latent-space [[Method — Denoising Diffusion (DDPM)|diffusion]] models, build variations on.
 
 ## Relations
 
