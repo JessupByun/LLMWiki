@@ -22,6 +22,7 @@ Everything downstream - from measuring that mechanism at scale to the polysemant
 | Page | Why it's here |
 |------|----------------|
 | [[Paper — A Mathematical Framework for Transformer Circuits (2021)]] | Opens mechanistic interpretability for transformer language models: reframes attention as independent, additive read/write operations on a shared residual stream, and discovers the induction head, the first general in-context-learning circuit found in an actual transformer. |
+| [[Paper — In-context Learning and Induction Heads (2022)]] | Extends induction heads from a toy-model curiosity to a candidate explanation for most in-context learning in transformers of any size, via a purely behavioral definition, causal ablations, and the discovery of a universal early-training "phase change." |
 
 ## Methods and concepts
 
@@ -30,8 +31,8 @@ Everything downstream - from measuring that mechanism at scale to the polysemant
 
 ## Open threads
 
-This cluster is one paper old, so nearly everything is open.
-Directly queued next in the backlog: Olsson et al.'s sequel paper measuring how much of in-context learning in much larger models induction heads actually explain, then Elhage et al.'s *Toy Models of Superposition* (2022) - this paper's own admitted blind spot, since MLP-layer neurons resist the same style of analysis - then the dictionary-learning line (*Towards Monosemanticity*, *Scaling Monosemanticity*) that tries to extract interpretable features from that superposition.
+Directly queued next in the backlog: Elhage et al.'s *Toy Models of Superposition* (2022) - the first paper's own admitted blind spot, since MLP-layer neurons resist the same style of analysis - then the dictionary-learning line (*Towards Monosemanticity*, *Scaling Monosemanticity*) that tries to extract interpretable features from that superposition.
+[[Question — Is in-context learning genuine learning or pattern recognition]] tracks the open thread between this cluster's induction-head evidence and [[Concept — In-context learning]]'s behavioral framing in [[Cluster — Foundational canon]].
 
 ## Up
 

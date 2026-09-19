@@ -26,12 +26,18 @@ Because the key at each position now encodes the *previous* token rather than th
 The clean demonstration of this is that induction heads work on sequences of uniformly random tokens the model has never seen in training, since the mechanism depends only on matching token identity, not on learned bigram or grammatical statistics.
 This is also why induction heads only emerge in models with at least two attention layers: the composition itself (one head's output feeding another head's key) requires the extra layer.
 
+## Behavioral definition and the phase change
+
+[[Paper — In-context Learning and Induction Heads (2022)]] redefines induction heads purely by measurable behavior - prefix matching plus copying on repeated random tokens - so the concept can be tested in models far too large to reverse-engineer directly.
+Using this test, it documents "the phase change": early in training, in any model with more than one attention layer, induction heads form abruptly in the same narrow window where in-context learning ability jumps and the training loss visibly bumps, across models from tiny toy transformers up to 13B parameters.
+Ablating induction heads at test time in small models destroys almost all measured in-context learning, and the same heads that pass the strict literal-copying test are also shown performing translation and abstract pattern classification in a 13B-parameter model - evidence that one mechanism, not several coincidental ones, is responsible.
+
 ## Relations
 
 - Discovered and named in [[Paper — A Mathematical Framework for Transformer Circuits (2021)]], which also gives the QK/OV-circuit vocabulary used to state the mechanism precisely.
 - Operates by reading and writing specific subspaces of [[Concept — Residual stream]].
 - A qualitatively more powerful successor to the naive token-copying behavior the same paper documents in one-layer transformers.
-- A candidate mechanistic explanation for [[Concept — In-context learning]]; a forthcoming sequel to the paper that discovered induction heads measures how much of that capability, at much larger scale, this specific circuit accounts for.
+- Given a purely behavioral definition and causal evidence for its role in [[Concept — In-context learning]] by [[Paper — In-context Learning and Induction Heads (2022)]], up to 13B-parameter models.
 
 ## Up
 

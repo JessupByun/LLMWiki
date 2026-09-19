@@ -61,6 +61,7 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | [[Paper — High-Resolution Image Synthesis with Latent Diffusion Models (2021)]] | arxiv:2112.10752 | Trains an autoencoder to compress images into a small latent space, then runs the diffusion process there instead of on raw pixels, cutting training and sampling cost while barely losing sample quality. |
 | [[Paper — A Mathematical Framework for Transformer Circuits (2021)]] | transformer-circuits.pub, Dec 2021 | Rewrites toy transformers as sums of interpretable end-to-end paths from tokens to logits, and discovers the induction head - the first general in-context-learning circuit found inside an actual model. |
 | [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]] | arxiv:2201.11903 | Adds a few worked-out intermediate reasoning steps to each few-shot prompt exemplar, which dramatically improves large language models' accuracy on arithmetic, commonsense, and symbolic reasoning tasks, but only once the model is large enough. |
+| [[Paper — In-context Learning and Induction Heads (2022)]] | transformer-circuits.pub, Mar 2022 | Argues, via six complementary lines of indirect evidence, that induction heads are the primary mechanism behind most in-context learning in transformer language models of any size, from tiny toy models up to 13B parameters. |
 | [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT) | arxiv:2203.02155 | InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference, and setting the SFT-to-RM-to-PPO recipe every instruction-tuned model since has run. |
 | [[Paper — Training Compute-Optimal Large Language Models (2022)]] (Chinchilla) | arxiv:2203.15556 | Chinchilla - shows model size and training tokens should scale equally with compute, not model size 5x faster as Kaplan et al. 2020 concluded, and proves it by training a 70B model on 4x more data than 280B Gopher that beats it and every larger contemporary model. |
 | [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] (HH-RLHF) | arxiv:2204.05862 | Applies preference modeling and RLHF to train a helpful and harmless dialogue assistant, releases the HH-RLHF preference dataset, and shows that at sufficient scale, alignment training carries essentially no capability cost - the opposite of the 'alignment tax' seen in smaller models. |
@@ -116,4 +117,8 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 
 ## Questions
 
-*None yet.* Two threads are close to earning a page: whether in-context learning is genuine test-time learning or task recognition, and whether public benchmark scores survive contamination at scale.
+| Page | One line |
+|------|----------|
+| [[Question — Is in-context learning genuine learning or pattern recognition]] | Whether a model doing well in-context is learning a new skill at inference time, or locating and running an already-learned behavior triggered by the prompt. |
+
+One more thread is close to earning a page: whether public benchmark scores survive contamination at scale.

@@ -35,7 +35,7 @@ Word unscrambling sits near zero in the zero-shot setting and rises sharply with
 If the model could only recognize pretrained tasks, that gap shouldn't appear.
 Conversely, translation "clearly must be learned during pretraining."
 
-This is the kind of question that belongs in a `Question —` page once a second paper puts real evidence on the other side.
+See [[Question — Is in-context learning genuine learning or pattern recognition]] for how a second paper's evidence bears on this.
 
 ## Why it matters beyond capability
 
@@ -49,6 +49,7 @@ The same property that lets a user specify a task in natural language lets an at
 - A capability of the architecture in [[Concept — Transformer architecture]], specifically its decoder-only variants.
 - Its security consequence connects to [[Cluster — Adversarial robustness & security]].
 - [[Concept — Induction heads]] is a candidate mechanistic explanation for at least part of this capability, discovered by directly reverse-engineering toy transformers rather than by studying behavior alone.
+- [[Question — Is in-context learning genuine learning or pattern recognition]] tracks how [[Paper — In-context Learning and Induction Heads (2022)]]'s mechanistic evidence bears on the open question raised above.
 
 ## Up
 
