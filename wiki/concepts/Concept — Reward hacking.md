@@ -25,6 +25,11 @@ Two flavors worth keeping separate:
 
 [[Paper — Concrete Problems in AI Safety (2016)]] is where this framing and term come from: it names reward hacking as one of five concrete accident-risk problems, defining it as an objective function that "admits of some clever 'easy' solution that formally maximizes it but perverts the spirit of the designer's intent."
 
+## Formal definition
+
+[[Paper — Defining and Characterizing Reward Hacking (2022)]] gives the term its first mathematical definition: a proxy and a true reward are **hackable** if there exist two policies the proxy ranks one way and the true reward ranks the other way; else they are **unhackable**.
+Its central result is that unhackability is a very demanding condition - over the full space of stochastic policies, a non-trivial unhackable proxy essentially cannot exist, which is a formal explanation for why every empirical instance below keeps recurring rather than being a one-off engineering mistake.
+
 ## The canonical documented instance
 
 [[Paper — Deep RL from Human Preferences (2017)]] produced a clean, early example while ablating whether human feedback must be collected online.
@@ -51,7 +56,7 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 
 ## Relations
 
-- Named and defined in [[Paper — Concrete Problems in AI Safety (2016)]].
+- Named in [[Paper — Concrete Problems in AI Safety (2016)]]; given its first formal mathematical definition in [[Paper — Defining and Characterizing Reward Hacking (2022)]].
 - Documented empirically in [[Paper — Deep RL from Human Preferences (2017)]] and, at LLM scale, in [[Paper — Learning to Summarize from Human Feedback (2020)]]'s reward-model over-optimization curve.
 - The gap that [[Concept — Scalable oversight]] tries to close before a policy can exploit it.
 - The liability inherent in [[Method — Reinforcement learning from human feedback (RLHF)]], as run via [[Method — Proximal Policy Optimization (PPO)]].
