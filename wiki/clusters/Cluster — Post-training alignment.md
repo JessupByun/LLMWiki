@@ -30,6 +30,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 | [[Paper — Constitutional AI (2022)]] | Trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF). |
 | [[Paper — Direct Preference Optimization (2023)]] | DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop. |
 | [[Paper — Let's Verify Step by Step (2023)]] | Trains a reward model on step-level human labels instead of only the final answer, showing process supervision produces a far more reliable verifier than outcome supervision - and does so at no cost to performance, a rare "negative alignment tax" result. |
+| [[Paper — Weak-to-Strong Generalization (2023)]] | Finetunes strong pretrained models on labels from much weaker supervisors and shows the strong models consistently outperform their supervisors, turning the future problem of humans overseeing superhuman AI into an empirically testable proxy today. Dual-tagged canon: OpenAI Superalignment's flagship empirical paper, setting the field's standard methodology (PGR) for this question. |
 
 ## Methods and concepts
 
@@ -38,6 +39,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 - [[Concept — Bradley-Terry preference model]]
 - [[Concept — Reward hacking]]
 - [[Concept — Scalable oversight]]
+- [[Concept — Weak-to-strong generalization]]
 - [[Method — Process Reward Model (PRM)]]
 
 ## Open threads
@@ -45,6 +47,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled.
 Next candidates: Sparrow (Glaese et al. 2022, DeepMind's contemporaneous alternative to CAI, with a more carefully-designed rule set) and a second post-CAI paper on scalable oversight, since [[Cluster — Adversarial robustness & security]] and this cluster increasingly overlap once red-teaming and jailbreaks are involved.
 [[Paper — Let's Verify Step by Step (2023)]]'s ORM baseline traces back to Cobbe et al. 2021's verifiers and its direct comparison point is Uesato et al. 2022 - both still not yet ingested, and both would sharpen this cluster's process-vs-outcome-supervision thread if added later.
+[[Paper — Weak-to-Strong Generalization (2023)]]'s explicit "no deceptive alignment in base models" assumption is exactly what the model-organisms-of-misalignment and AI-control group (queued next in this wiki's backlog) investigates directly.
 
 ## Up
 

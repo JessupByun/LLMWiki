@@ -26,12 +26,15 @@ The entire liability of [[Method — Reinforcement learning from human feedback 
 
 Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be read as a scalable-oversight move in this exact sense: instead of one expensive final-answer judgment, cheaper-to-verify per-step correctness labels are collected at much higher density, producing a more reliable overall signal without a proportional increase in total human labeling cost.
 
+[[Paper — Weak-to-Strong Generalization (2023)]] studies a deliberately different angle on the same underlying problem: rather than improving the supervision signal itself, it asks whether a model can generalize *beyond* whatever imperfect supervision it receives, using a small model standing in for a human overseer too weak to fully evaluate a much stronger model - see [[Concept — Weak-to-strong generalization]].
+
 ## Relations
 
 - Named and framed in [[Paper — Concrete Problems in AI Safety (2016)]].
 - The gap this concept describes is exactly what [[Concept — Reward hacking]] exploits.
 - Addressed empirically, in the process-vs-outcome-supervision sense, by [[Paper — Let's Verify Step by Step (2023)]].
 - Motivates [[Method — Reinforcement learning from human feedback (RLHF)]]'s entire reward-model design: substitute a learned, cheap-to-query proxy for an expensive human judgment at every step.
+- Complemented by [[Concept — Weak-to-strong generalization]], which targets the same overseer-capability gap from the generalization side rather than the supervision-quality side.
 
 ## Up
 
