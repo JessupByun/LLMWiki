@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-09-02
 summary: "Origin of RLHF - learn a reward model from human comparisons of short clips, then optimize it, cutting oversight cost by ~3 orders of magnitude."
 cluster: ["Post-training alignment", "Foundational canon"]
-sources: ["raw/papers/Paper — Deep RL from Human Preferences (2017).pdf"]
+sources: ["raw/papers/post-training-alignment/Paper — Deep RL from Human Preferences (2017).pdf"]
 tags: [rlhf, alignment, reward-modeling, rl, preferences, scalable-oversight]
 aliases: ["arxiv:1706.03741", "Christiano et al. 2017", "RLHF origin paper"]
 ---

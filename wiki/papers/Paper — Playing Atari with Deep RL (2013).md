@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-09-18
 summary: "DQN - the first deep learning model to learn control policies directly from raw pixels, combining Q-learning with a CNN and experience replay, beating prior RL methods on six of seven Atari games and expert humans on three."
 cluster: ["Reinforcement learning", "Foundational canon"]
-sources: ["raw/papers/Paper — Playing Atari with Deep RL (2013).pdf"]
+sources: ["raw/papers/reinforcement-learning/Paper — Playing Atari with Deep RL (2013).pdf"]
 tags: [rl, deep-rl, q-learning, atari]
 aliases: ["arxiv:1312.5602", "Mnih et al. 2013", "DQN", "Deep Q-Network"]
 ---

@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-09-02
 summary: "InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference, and setting the SFT-to-RM-to-PPO recipe every instruction-tuned model since has run."
 cluster: ["Post-training alignment", "Foundational canon"]
-sources: ["raw/papers/Paper — Training LMs to Follow Instructions (2022).pdf"]
+sources: ["raw/papers/post-training-alignment/Paper — Training LMs to Follow Instructions (2022).pdf"]
 tags: [rlhf, alignment, post-training, instruction-tuning, reward-modeling, ppo]
 aliases: ["arxiv:2203.02155", "Ouyang et al. 2022", "InstructGPT"]
 ---

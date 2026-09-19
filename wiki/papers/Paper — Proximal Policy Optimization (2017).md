@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-09-02
 summary: "PPO - a clipped policy-gradient objective that gets trust-region-level stability with only first-order optimization, and became the RL algorithm RLHF pipelines actually run."
 cluster: ["Reinforcement learning", "Foundational canon"]
-sources: ["raw/papers/Paper — Proximal Policy Optimization (2017).pdf"]
+sources: ["raw/papers/reinforcement-learning/Paper — Proximal Policy Optimization (2017).pdf"]
 tags: [rl, policy-gradient, ppo, optimization]
 aliases: ["arxiv:1707.06347", "Schulman et al. 2017", "PPO"]
 ---

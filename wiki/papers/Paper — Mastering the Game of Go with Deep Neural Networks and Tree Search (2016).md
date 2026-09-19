@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-09-18
 summary: "AlphaGo - combines a policy network (narrows search breadth) and a value network (reduces search depth) inside Monte Carlo Tree Search, the first program to defeat a human professional Go player without a handicap."
 cluster: ["Reinforcement learning", "Foundational canon"]
-sources: ["raw/papers/Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016).pdf"]
+sources: ["raw/papers/reinforcement-learning/Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016).pdf"]
 tags: [rl, mcts, self-play, policy-gradient, go]
 aliases: ["doi:10.1038/nature16961", "Silver et al. 2016", "AlphaGo"]
 ---

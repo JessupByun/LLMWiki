@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-09-02
 summary: "Constitutional AI - trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF)."
 cluster: ["Post-training alignment", "Foundational canon"]
-sources: ["raw/papers/Paper — Constitutional AI (2022).pdf"]
+sources: ["raw/papers/post-training-alignment/Paper — Constitutional AI (2022).pdf"]
 tags: [rlaif, alignment, post-training, harmlessness, scalable-oversight, red-teaming]
 aliases: ["arxiv:2212.08073", "Bai et al. 2022", "Constitutional AI", "CAI"]
 ---
