@@ -22,7 +22,7 @@ As of the pinned commit, the README flags the repo as superseded: Andrej Karpath
 ## What it is
 
 A deliberately minimal PyTorch training and sampling codebase for GPT-style language models, by Andrej Karpathy (a rewrite of his earlier minGPT, prioritizing readability and hackability over feature completeness).
-The entire model definition (`model.py`) is about 300 lines and implements exactly the decoder-only Transformer architecture from [[Paper — Attention Is All You Need (2017)]] as used in [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) and its successors: causal self-attention with flash-attention support when available, [[Method — Layer Normalization|LayerNorm]] with optional bias, and standard learned position embeddings.
+The entire model definition (`model.py`) is about 300 lines and implements exactly the decoder-only Transformer architecture from [[Paper — Attention Is All You Need (2017)]] as used in [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) and its successors: causal self-attention with [[Method — FlashAttention|flash-attention]] support when available, [[Method — Layer Normalization|LayerNorm]] with optional bias, and standard learned position embeddings.
 The training loop (`train.py`) is a similarly compact ~300 lines and supports both single-GPU and multi-node distributed training (`torchrun` + DDP).
 `train.py` reproduces GPT-2 (124M) on OpenWebText (an open reconstruction of GPT-2's private WebText training data) in about 4 days on a single 8xA100 40GB node, reaching a validation loss (~2.85 after brief finetuning from the OpenAI checkpoint) matching the original GPT-2 (124M)'s own reported numbers.
 

@@ -56,6 +56,7 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | [[Paper — High-Resolution Image Synthesis with Latent Diffusion Models (2021)]] | arxiv:2112.10752 | Trains an autoencoder to compress images into a small latent space, then runs the diffusion process there instead of on raw pixels, cutting training and sampling cost while barely losing sample quality. |
 | [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT) | arxiv:2203.02155 | InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference, and setting the SFT-to-RM-to-PPO recipe every instruction-tuned model since has run. |
 | [[Paper — Training Compute-Optimal Large Language Models (2022)]] (Chinchilla) | arxiv:2203.15556 | Chinchilla - shows model size and training tokens should scale equally with compute, not model size 5x faster as Kaplan et al. 2020 concluded, and proves it by training a 70B model on 4x more data than 280B Gopher that beats it and every larger contemporary model. |
+| [[Paper — FlashAttention (2022)]] | arxiv:2205.14135 | Restructures the attention computation to minimize reads and writes to slow GPU memory instead of minimizing FLOPs, computing the exact same attention output 2-4x faster with linear rather than quadratic memory. |
 | [[Paper — Constitutional AI (2022)]] | arxiv:2212.08073 | Constitutional AI - trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF). |
 | [[Paper — QLoRA (2023)]] | arxiv:2305.14314 | QLoRA - backpropagate through a frozen 4-bit quantized base model into full-precision LoRA adapters, cutting 65B fine-tuning memory from 780GB to under 48GB with no performance loss. |
 | [[Paper — Direct Preference Optimization (2023)]] | arxiv:2305.18290 | DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop. |
@@ -81,6 +82,7 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | [[Method — Rotary Position Embedding (RoPE)]] | method | Rotate each query/key vector by an angle proportional to its token position, so the attention dot product between two tokens depends only on their relative distance. |
 | [[Method — Denoising Diffusion (DDPM)]] | method | Train a network to reverse a fixed, gradual noising process one small step at a time; generate by starting from pure noise and running the learned reverse process. |
 | [[Method — Latent Diffusion]] | method | Train an autoencoder once to compress images into a small latent space, then run the diffusion training and sampling process there instead of on raw pixels. |
+| [[Method — FlashAttention]] | method | Compute exact attention by tiling the computation into blocks that fit in fast on-chip GPU memory, using an incremental online-softmax update so the full attention matrix is never written to slow memory. |
 
 ## Benchmarks & datasets
 
