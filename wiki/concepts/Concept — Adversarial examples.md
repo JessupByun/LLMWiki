@@ -28,6 +28,7 @@ Explanations have shifted over time, which is worth tracking rather than collaps
 
 - **Dense low-probability pockets** (the original account, and the only one sourced here). Adversarial inputs occupy regions of vanishingly small measure - so you never hit them by sampling - yet are "dense (much like the rational numbers)," so one sits near virtually every real input. The authors of the 2013 paper offer this as a "Possible explanation" and concede their accompanying spectral analysis "doesn't attempt to explain why these examples generalize across different hyperparameters or training sets."
 - **Excessive linearity.** Later work (Goodfellow et al. 2014, **not yet ingested**) is generally read as superseding the pockets account, arguing networks are locally near-linear so many small coordinated input changes sum to a large activation change, which would also explain transfer. Flagged as a reading lead; this page will get a proper Tension/update note on both sides once that paper is in the wiki.
+- **Superposition** (a structural, representational account rather than an optimization-landscape one). [[Paper — Toy Models of Superposition (2022)]] shows that when a model represents more features than it has dimensions by packing them into almost-orthogonal directions, the resulting cross-feature "interference" terms are themselves an exploitable direction - vulnerability to adversarial examples increases more than 3x as superposition forms, tracking the number of features packed per dimension. This doesn't compete with the other two accounts so much as offer a mechanistic reason a network's decision boundary would have the geometry those accounts describe.
 
 ## Transferability, which is the security-relevant property
 
@@ -47,6 +48,7 @@ Robustness also turned out to trade against accuracy, and adversarial training -
 - Origin: [[Paper — Intriguing Properties of Neural Networks (2013)]].
 - First demonstrated against [[Concept — Convolutional neural networks (CNNs)]], including AlexNet.
 - Compare [[Concept — Reward hacking]]: both are an optimizer exploiting a region where a learned function misbehaves, differing in whether the exploitation is adversarial by intent.
+- [[Concept — Superposition]] offers a mechanistic, interpretability-grounded account of why the interference this concept depends on exists in the first place.
 
 ## Up
 

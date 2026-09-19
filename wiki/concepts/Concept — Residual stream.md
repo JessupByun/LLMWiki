@@ -24,12 +24,12 @@ Because reading and writing are both linear, the effect of any layer on any late
 This is the mechanical trick underneath [[Paper — A Mathematical Framework for Transformer Circuits (2021)]]'s entire path-expansion method, and underneath its discovery of [[Concept — Induction heads]] specifically: an induction head's key vector is built by directly reading what a first-layer "previous-token" head wrote into the stream, several layers away in wall-clock terms but zero layers away in virtual-weight terms.
 
 The stream's dimensionality is fixed, but the number of components trying to write to it (attention heads, and especially MLP neurons) grows with model depth and width, so later layers are effectively competing for scarce "bandwidth."
-The 2021 paper flags this as a candidate explanation for why individual neurons resist clean interpretation once MLP layers are involved - the phenomenon its own admitted blind spot points toward, and which Elhage et al.'s *Toy Models of Superposition* (2022, queued next in this wiki) takes up directly.
+The 2021 paper flags this as a candidate explanation for why individual neurons resist clean interpretation once MLP layers are involved - the phenomenon [[Paper — Toy Models of Superposition (2022)]] takes up directly, formalizing it as [[Concept — Superposition]].
 
 ## Relations
 
 - Introduced as a deliberate, mathematically-equivalent reframing of standard transformer computation in [[Paper — A Mathematical Framework for Transformer Circuits (2021)]].
-- The scarce-bandwidth argument here anticipates *Toy Models of Superposition* (2022, not yet ingested)'s account of superposition.
+- The scarce-bandwidth argument here anticipates [[Paper — Toy Models of Superposition (2022)]]'s account of [[Concept — Superposition]].
 - [[Concept — Induction heads]] is a circuit defined entirely in terms of reading and writing specific subspaces of this stream.
 
 ## Up
