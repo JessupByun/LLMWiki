@@ -74,6 +74,7 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | [[Paper — QLoRA (2023)]] | arxiv:2305.14314 | QLoRA - backpropagate through a frozen 4-bit quantized base model into full-precision LoRA adapters, cutting 65B fine-tuning memory from 780GB to under 48GB with no performance loss. |
 | [[Paper — Direct Preference Optimization (2023)]] | arxiv:2305.18290 | DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop. |
 | [[Paper — Let's Verify Step by Step (2023)]] | arxiv:2305.20050 | Trains a reward model on human labels for the correctness of each individual reasoning step, rather than just the final answer, and shows this process-supervised reward model finds correct solutions far more reliably than one trained on outcomes alone. |
+| [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] (GCG) | arxiv:2307.15043 | Automatically finds a single adversarial suffix that reliably jailbreaks aligned open-source language models and transfers, purely black-box, to production systems including ChatGPT, Bard, and Claude. |
 | [[Paper — Muon - An Optimizer for Hidden Layers in Neural Networks (2024)]] | Jordan et al. blog | Muon - orthogonalizes the momentum update for 2D hidden-layer weight matrices via a cheap Newton-Schulz iteration instead of AdamW's per-coordinate scaling, cutting NanoGPT speedrun times 35% and reaching GPT-2 XL performance 25% faster at 1.5B parameters. |
 
 ## Concepts & methods
@@ -91,6 +92,8 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | [[Concept — Residual stream]] | concept | The running additive sum of a transformer's token embedding and every subsequent layer's output, reframed as a shared communication channel with no privileged basis. |
 | [[Concept — Induction heads]] | concept | An attention-head circuit that predicts the next token by finding the last occurrence of the current token in context and copying whatever followed it - the first general in-context-learning mechanism found inside an actual transformer. |
 | [[Concept — Superposition]] | concept | A network representing more features than it has dimensions by packing them into almost-orthogonal directions, tolerating interference when sparsity makes that cheap. |
+| [[Concept — Jailbreaking (LLMs)]] | concept | Getting an aligned language model to produce content or behavior its safety training was meant to prevent, whether through hand-crafted prompts or automated optimization. |
+| [[Method — Greedy Coordinate Gradient (GCG)]] | method | A discrete-token optimization algorithm that finds adversarial suffixes for language models by using gradients to shortlist candidate token swaps, then evaluating the best of them with real forward passes. |
 | [[Method — Reinforcement learning from human feedback (RLHF)]] | method | Fit a reward model to human preference comparisons, then optimize a policy against it with RL - the standard alignment pipeline. |
 | [[Method — Proximal Policy Optimization (PPO)]] | method | Policy-gradient RL algorithm that clips the probability ratio between new and old policy, giving trust-region-like stability without a second-order solve. |
 | [[Method — Trust Region Policy Optimization (TRPO)]] | method | Policy-gradient algorithm that maximizes a local surrogate objective subject to a hard constraint on the average KL divergence between the new and old policy, giving a theoretically grounded monotonic-improvement guarantee. |
@@ -109,7 +112,9 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 
 ## Benchmarks & datasets
 
-*None yet.*
+| Page | Type | One line |
+|------|------|----------|
+| [[Benchmark — AdvBench]] | benchmark | An eval suite of 500 harmful target strings and 500 harmful behavioral instructions, used to measure how often an attack can make an aligned language model produce or comply with objectionable content. |
 
 ## Repos
 

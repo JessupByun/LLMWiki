@@ -24,14 +24,19 @@ The modern jailbreak and prompt-injection literature is the same problem relocat
 | Page | Why it's here |
 |------|----------------|
 | [[Paper — Intriguing Properties of Neural Networks (2013)]] | Discovered adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets. |
+| [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] (GCG) | The LLM-era sequel: automates jailbreaking with a single adversarial suffix that transfers, purely black-box, from small open models to production systems including ChatGPT, Bard, and Claude. |
 
 ## Methods and concepts
 
 - [[Concept — Adversarial examples]]
+- [[Concept — Jailbreaking (LLMs)]]
+- [[Method — Greedy Coordinate Gradient (GCG)]]
+- [[Benchmark — AdvBench]]
 
 ## Open threads
 
-Obvious gaps: Goodfellow et al. 2014 (FGSM and the linearity hypothesis, which supersedes this paper's dense-pockets explanation), Madry et al. (adversarial training done properly), GCG / Zou et al. 2023 (transferable attacks on aligned LLMs), and the prompt-injection literature.
+Obvious gaps: Goodfellow et al. 2014 (FGSM and the linearity hypothesis, which supersedes this paper's dense-pockets explanation), Madry et al. (adversarial training done properly), and the prompt-injection literature.
+GCG's own central open question - whether post-hoc RLHF-style alignment training can ever structurally close the jailbreak gap - is picked up by the AI-control and model-organisms-of-misalignment literature queued in a later group of this backlog.
 
 ## Up
 

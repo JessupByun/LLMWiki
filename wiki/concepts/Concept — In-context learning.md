@@ -40,7 +40,7 @@ See [[Question — Is in-context learning genuine learning or pattern recognitio
 ## Why it matters beyond capability
 
 In-context learning is what made the **prompt** the interface to AI systems, and therefore the attack surface.
-Prompt injection and many jailbreaks are in-context learning working exactly as designed, with an adversary supplying the context.
+Prompt injection and many jailbreaks (see [[Concept — Jailbreaking (LLMs)]]) are in-context learning working exactly as designed, with an adversary supplying the context.
 The same property that lets a user specify a task in natural language lets an attacker do so.
 
 ## Relations
