@@ -48,6 +48,9 @@ Hence the design principle the 2017 paper draws: "human feedback needs to be int
 Keep labeling as the policy changes, so the reward model gets corrected in the regions the policy just discovered.
 This is a treadmill, not a solution, which is why scalable oversight remains open.
 
+[[Paper — Scaling Laws for Reward Model Overoptimization (2022)]] gives this design principle actual teeth: retraining the reward model every `k` steps and covering a fixed total optimization distance `d` in `k` smaller increments provably beats one long uninterrupted run of the same distance, by a term proportional to `log(k)`.
+The same paper also fits scaling laws showing the whole Goodhart curve - how far a policy can be pushed before ground-truth quality peaks and turns over - becomes more forgiving as the reward model gets bigger.
+
 **Tension / update.** [[Paper — Training LMs to Follow Instructions (2022)]] runs this exact reward-model-plus-RL setup at LLM scale but does not rely mainly on online feedback - it instead holds the policy near a fixed reference model with a KL penalty during RL.
 Whether that substitutes for online correction or merely defers the same failure mode to whenever the KL constraint is loosened is unresolved; see the fuller discussion on [[Method — Reinforcement learning from human feedback (RLHF)]].
 
@@ -57,7 +60,7 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 ## Relations
 
 - Named in [[Paper — Concrete Problems in AI Safety (2016)]]; given its first formal mathematical definition in [[Paper — Defining and Characterizing Reward Hacking (2022)]].
-- Documented empirically in [[Paper — Deep RL from Human Preferences (2017)]] and, at LLM scale, in [[Paper — Learning to Summarize from Human Feedback (2020)]]'s reward-model over-optimization curve.
+- Documented empirically in [[Paper — Deep RL from Human Preferences (2017)]] and, at LLM scale, in [[Paper — Learning to Summarize from Human Feedback (2020)]]'s reward-model over-optimization curve; measured precisely and fit to scaling laws in [[Paper — Scaling Laws for Reward Model Overoptimization (2022)]].
 - The gap that [[Concept — Scalable oversight]] tries to close before a policy can exploit it.
 - The liability inherent in [[Method — Reinforcement learning from human feedback (RLHF)]], as run via [[Method — Proximal Policy Optimization (PPO)]].
 - Recurs with AI-generated rather than human-generated preference signal in [[Paper — Constitutional AI (2022)]]'s RL-CAI stage.
