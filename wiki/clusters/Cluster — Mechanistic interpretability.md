@@ -24,16 +24,18 @@ Everything downstream - from measuring that mechanism at scale to the polysemant
 | [[Paper — A Mathematical Framework for Transformer Circuits (2021)]] | Opens mechanistic interpretability for transformer language models: reframes attention as independent, additive read/write operations on a shared residual stream, and discovers the induction head, the first general in-context-learning circuit found in an actual transformer. |
 | [[Paper — In-context Learning and Induction Heads (2022)]] | Extends induction heads from a toy-model curiosity to a candidate explanation for most in-context learning in transformers of any size, via a purely behavioral definition, causal ablations, and the discovery of a universal early-training "phase change." |
 | [[Paper — Toy Models of Superposition (2022)]] | Demonstrates, in a fully understood toy model, that neural networks represent more features than they have neurons by packing them into almost-orthogonal directions - resolving the first paper's admitted blind spot around MLP-layer polysemanticity and setting the dictionary-learning research agenda this cluster pursues next. |
+| [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] | Trains a sparse autoencoder on a one-layer transformer's MLP activations and extracts thousands of far-more-interpretable-than-neurons features, giving the first compelling proof that dictionary learning can recover real structure from superposition. |
 
 ## Methods and concepts
 
 - [[Concept — Induction heads]]
 - [[Concept — Residual stream]]
 - [[Concept — Superposition]]
+- [[Method — Sparse Autoencoder (SAE)]]
 
 ## Open threads
 
-Directly queued next in the backlog: the dictionary-learning line (*Towards Monosemanticity*, *Scaling Monosemanticity*) that tries to extract an interpretable, overcomplete feature basis from superposed models - the "Approach 2" *Toy Models of Superposition* names as the most promising path to "solving superposition."
+Directly queued next in the backlog: *Scaling Monosemanticity* (2024), which answers this cluster's own most pressing open question - whether sparse-autoencoder dictionary learning scales past a one-layer toy model to a frontier-size model.
 [[Question — Is in-context learning genuine learning or pattern recognition]] tracks the open thread between this cluster's induction-head evidence and [[Concept — In-context learning]]'s behavioral framing in [[Cluster — Foundational canon]].
 
 ## Up

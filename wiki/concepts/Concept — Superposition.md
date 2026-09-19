@@ -34,14 +34,16 @@ This means polysemantic neurons aren't necessarily wasted or noisy - they can be
 
 Superposition is presented as the central obstacle to a specific, ambitious safety agenda: enumerating every feature a model represents, in order to make claims like "this model has no feature for deceptive behavior."
 Without superposition, enumerating features would just mean enumerating neurons.
-With it, the number of features a model can represent is effectively unbounded relative to its neuron count, and the mapping from neurons to concepts breaks down - motivating "solving superposition" (either training models that don't use it, or finding an overcomplete basis that decodes it after the fact) as a named research goal, directly setting up the dictionary-learning line of work (Towards Monosemanticity, Scaling Monosemanticity) queued next in this wiki.
+With it, the number of features a model can represent is effectively unbounded relative to its neuron count, and the mapping from neurons to concepts breaks down - motivating "solving superposition" as a named research goal.
+
+[[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] gives this goal its first real attempt: after showing that the alternative ("just train models without superposition") cannot work even in principle - a single neuron can still be polysemantic purely because cross-entropy loss prefers it, with no superposition involved at all - the paper trains a [[Method — Sparse Autoencoder (SAE)]] on a real trained model's activations and recovers thousands of features that are dramatically more interpretable than neurons, causally steerable, and reproducible across independently trained models.
 
 ## Relations
 
 - Demonstrated and named in [[Paper — A Mathematical Framework for Transformer Circuits (2021)]]'s admitted blind spot: MLP-layer neurons resist clean interpretation, which [[Paper — Toy Models of Superposition (2022)]] explains directly.
 - Competes for scarce "bandwidth" in the [[Concept — Residual stream]], the mechanism the 2021 paper first speculated might drive polysemanticity.
 - Increases vulnerability to [[Concept — Adversarial examples]] by more than 3x as it forms, tracking the number of features packed per dimension.
-- Motivates the sparse-dictionary-learning approach taken by the *Towards Monosemanticity* and *Scaling Monosemanticity* papers (both queued next in this wiki) as "Approach 2: finding an overcomplete basis."
+- Given its first causally-validated reversal by [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] via [[Method — Sparse Autoencoder (SAE)]], the "Approach 2: finding an overcomplete basis" strategy this concept's originating paper proposed.
 
 ## Up
 
