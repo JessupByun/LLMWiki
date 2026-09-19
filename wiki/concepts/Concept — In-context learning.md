@@ -48,6 +48,7 @@ The same property that lets a user specify a task in natural language lets an at
 - Introduced at scale by [[Paper — Language Models are Few-Shot Learners (2020)]].
 - A capability of the architecture in [[Concept — Transformer architecture]], specifically its decoder-only variants.
 - Its security consequence connects to [[Cluster — Adversarial robustness & security]].
+- [[Concept — Induction heads]] is a candidate mechanistic explanation for at least part of this capability, discovered by directly reverse-engineering toy transformers rather than by studying behavior alone.
 
 ## Up
 
