@@ -22,14 +22,14 @@ As of the pinned commit, the README flags the repo as superseded: Andrej Karpath
 ## What it is
 
 A deliberately minimal PyTorch training and sampling codebase for GPT-style language models, by Andrej Karpathy (a rewrite of his earlier minGPT, prioritizing readability and hackability over feature completeness).
-The entire model definition (`model.py`) is about 300 lines and implements exactly the decoder-only Transformer architecture from [[Paper — Attention Is All You Need (2017)]] as used in [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) and its successors: causal self-attention with flash-attention support when available, LayerNorm with optional bias, and standard learned position embeddings.
+The entire model definition (`model.py`) is about 300 lines and implements exactly the decoder-only Transformer architecture from [[Paper — Attention Is All You Need (2017)]] as used in [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) and its successors: causal self-attention with flash-attention support when available, [[Method — Layer Normalization|LayerNorm]] with optional bias, and standard learned position embeddings.
 The training loop (`train.py`) is a similarly compact ~300 lines and supports both single-GPU and multi-node distributed training (`torchrun` + DDP).
 `train.py` reproduces GPT-2 (124M) on OpenWebText (an open reconstruction of GPT-2's private WebText training data) in about 4 days on a single 8xA100 40GB node, reaching a validation loss (~2.85 after brief finetuning from the OpenAI checkpoint) matching the original GPT-2 (124M)'s own reported numbers.
 
 ## Why it matters
 
 Every canon paper this wiki covers from [[Paper — Attention Is All You Need (2017)]] onward describes the decoder-only Transformer training recipe in equations and prose; nanoGPT is the same recipe in ~600 lines of runnable code, small enough to read end to end in one sitting.
-It's a useful cross-check when a paper's description leaves architectural details ambiguous (e.g. exactly where LayerNorm goes relative to the residual connections, how causal masking is implemented, how learning-rate warmup and cosine decay are actually scheduled), and its baseline table (reproducing GPT-2's four released sizes' train/val loss on OpenWebText) is a concrete, checkable number to compare any paper's own reported figures against.
+It's a useful cross-check when a paper's description leaves architectural details ambiguous (e.g. exactly where [[Method — Layer Normalization|LayerNorm]] goes relative to the residual connections, how causal masking is implemented, how learning-rate warmup and cosine decay are actually scheduled), and its baseline table (reproducing GPT-2's four released sizes' train/val loss on OpenWebText) is a concrete, checkable number to compare any paper's own reported figures against.
 
 ## Relations
 

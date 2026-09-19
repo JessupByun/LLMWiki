@@ -47,7 +47,7 @@ Switching to a different task is just as cheap in the other direction - subtract
 
 ## How it's built
 
-- **Applied only to attention projections** (`Wq`, `Wv` in most experiments), leaving the MLP layers frozen - chosen for simplicity, with adapting MLP/LayerNorm/bias weights left to future work.
+- **Applied only to attention projections** (`Wq`, `Wv` in most experiments), leaving the MLP layers frozen - chosen for simplicity, with adapting MLP/[[Method — Layer Normalization|LayerNorm]]/bias weights left to future work.
 - **Scaling factor `α/r`** on the update, chosen so that retuning `α` behaves similarly to retuning the learning rate - in practice the authors set it once from the first rank they try and never retune it.
 - **Practical footprint:** with `r=4` on just `Wq` and `Wv`, GPT-3's LoRA checkpoint is **~35MB** versus the 350GB base model - storing 100 task-specific adaptations costs roughly 354GB total instead of 35TB for 100 full fine-tuned copies.
 - **Training speed:** ~25% faster wall-clock throughput on GPT-3 175B than full fine-tuning, since gradients and optimizer state are never computed for the frozen majority of parameters.
@@ -70,7 +70,7 @@ That property is exactly what let a whole downstream ecosystem of swappable, sha
 - **Batching across tasks is awkward once merged.** If `A` and `B` are folded into `W` to get zero-latency inference, a single forward pass can't easily serve requests for different tasks with different adapters at once; staying unmerged trades the latency win back for that flexibility.
 - **Which weight matrices to adapt is chosen heuristically**, not derived from any principled criterion - the paper says so explicitly and flags it as open.
 - **The underlying mechanism is acknowledged as unresolved:** the paper is candid that *why* fine-tuning or LoRA works - how pretrained features get repurposed for a downstream task - remains "far from clear," and frames its own subspace analysis as a first step toward answering that rather than a resolution.
-- Only self-attention weight matrices are studied; MLP, LayerNorm, and bias adaptation are left untested.
+- Only self-attention weight matrices are studied; MLP, [[Method — Layer Normalization|LayerNorm]], and bias adaptation are left untested.
 
 ## Relations
 
