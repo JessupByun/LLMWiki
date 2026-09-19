@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-18
+updated: 2026-09-19
 summary: "An optimizer scoring highly on the specified objective while violating the intent behind it - the characteristic failure of optimizing a proxy."
 cluster: ["Post-training alignment"]
 sources: []
@@ -20,6 +20,10 @@ Two flavors worth keeping separate:
 
 - **Misspecified hand-written reward.** A human wrote down a proxy (`forward_velocity`, `time_alive`, `clicks`) and the policy found a degenerate way to maximize it.
 - **Exploiting a learned reward model.** The proxy is itself a neural network fit to human preferences, and the policy finds inputs where that network is wrong. This is the version [[Method — Reinforcement learning from human feedback (RLHF)]] introduces, and it is strictly harder to reason about, because the failure region is wherever the reward model failed to generalize rather than anywhere a human could have anticipated.
+
+## Origin of the term
+
+[[Paper — Concrete Problems in AI Safety (2016)]] is where this framing and term come from: it names reward hacking as one of five concrete accident-risk problems, defining it as an objective function that "admits of some clever 'easy' solution that formally maximizes it but perverts the spirit of the designer's intent."
 
 ## The canonical documented instance
 
@@ -45,7 +49,9 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 
 ## Relations
 
-- Documented in [[Paper — Deep RL from Human Preferences (2017)]], which cites Amodei et al. 2016 for the framing.
+- Named and defined in [[Paper — Concrete Problems in AI Safety (2016)]].
+- Documented empirically in [[Paper — Deep RL from Human Preferences (2017)]].
+- The gap that [[Concept — Scalable oversight]] tries to close before a policy can exploit it.
 - The liability inherent in [[Method — Reinforcement learning from human feedback (RLHF)]], as run via [[Method — Proximal Policy Optimization (PPO)]].
 - Recurs with AI-generated rather than human-generated preference signal in [[Paper — Constitutional AI (2022)]]'s RL-CAI stage.
 - Structurally similar to [[Concept — Adversarial examples]]: in both, an optimizer finds inputs where a learned function misbehaves. The difference is who is doing the optimizing and whether it's adversarial by intent.
