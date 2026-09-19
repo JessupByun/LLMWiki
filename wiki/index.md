@@ -47,7 +47,7 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | [[Paper — Constitutional AI (2022)]] | arxiv:2212.08073 | Constitutional AI - trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF). |
 | [[Paper — QLoRA (2023)]] | arxiv:2305.14314 | QLoRA - backpropagate through a frozen 4-bit quantized base model into full-precision LoRA adapters, cutting 65B fine-tuning memory from 780GB to under 48GB with no performance loss. |
 | [[Paper — Direct Preference Optimization (2023)]] | arxiv:2305.18290 | DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop. |
-| [[Paper — Muon: An Optimizer for Hidden Layers in Neural Networks (2024)]] | Jordan et al. blog | Muon - orthogonalizes the momentum update for 2D hidden-layer weight matrices via a cheap Newton-Schulz iteration instead of AdamW's per-coordinate scaling, cutting NanoGPT speedrun times 35% and reaching GPT-2 XL performance 25% faster at 1.5B parameters. |
+| [[Paper — Muon - An Optimizer for Hidden Layers in Neural Networks (2024)]] | Jordan et al. blog | Muon - orthogonalizes the momentum update for 2D hidden-layer weight matrices via a cheap Newton-Schulz iteration instead of AdamW's per-coordinate scaling, cutting NanoGPT speedrun times 35% and reaching GPT-2 XL performance 25% faster at 1.5B parameters. |
 
 ## Concepts & methods
 
@@ -70,7 +70,9 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 
 ## Repos
 
-*None yet.*
+| Page | Type | One line |
+|------|------|----------|
+| [[Repo — karpathy-nanoGPT]] | repo | nanoGPT - a ~600-line, readable PyTorch reimplementation of GPT-2 (train.py + model.py) that reproduces GPT-2 (124M) on OpenWebText from scratch, used throughout this wiki's canon as the reference codebase for what the papers actually describe in working code. |
 
 ## Questions
 

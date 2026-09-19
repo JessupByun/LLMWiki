@@ -9,7 +9,7 @@ tags: [optimizer, curiosity, orthogonalization]
 aliases: ["Jordan et al. 2024", "Muon"]
 ---
 
-# Paper — Muon: An Optimizer for Hidden Layers in Neural Networks (2024)
+# Paper — Muon - An Optimizer for Hidden Layers in Neural Networks (2024)
 
 Curiosity ingest: not tied to the safety/security north star, but an interesting optimizer result in its own right.
 
@@ -46,6 +46,7 @@ The authors are explicit about what remains untested: how Muon behaves at scale 
 - Built to improve on and directly benchmarked against [[Paper — Adam - A Method for Stochastic Optimization (2014)]] (specifically AdamW, the decoupled-weight-decay variant), which Muon still relies on for every parameter it doesn't itself optimize.
 - Positioned by the authors as a cheaper approximation of Shampoo (Gupta et al., not yet ingested), which achieves a similar preconditioning effect via full inverse-fourth-root matrix roots rather than Newton-Schulz orthogonalization.
 - Builds on older orthogonalized-descent ideas (Carlson et al. 2015-2016; Tuddenham et al. 2022's Orthogonal-SGDM), not yet ingested, which the authors credit as pioneering but less computationally efficient predecessors.
+- Set its NanoGPT speedrunning records on a heavily modified fork of [[Repo — karpathy-nanoGPT]], the reference GPT-2 training codebase.
 
 ## Up
 
