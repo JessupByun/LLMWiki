@@ -32,6 +32,8 @@ With the reward model trained **offline** on a fixed set of comparisons and then
 
 That is the whole phenomenon in miniature: the reward model had correctly learned "don't lose" from the comparisons it saw, had never been shown states that distinguish "don't lose" from "win," and the RL policy drove straight into that gap.
 
+[[Paper — Learning to Summarize from Human Feedback (2020)]] documents the same curve at LLM scale: under light KL-penalized optimization against a fixed reward model, actual human-judged summary quality tracks the reward model's own predictions, but past a point the two diverge and the reward model eventually becomes anti-correlated with genuine human preference.
+
 ## Why the standard mitigation is online feedback
 
 The failure is not that the reward model is inaccurate on average - it is that the policy *actively seeks out* the specific states where the model is wrong.
@@ -50,7 +52,7 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 ## Relations
 
 - Named and defined in [[Paper — Concrete Problems in AI Safety (2016)]].
-- Documented empirically in [[Paper — Deep RL from Human Preferences (2017)]].
+- Documented empirically in [[Paper — Deep RL from Human Preferences (2017)]] and, at LLM scale, in [[Paper — Learning to Summarize from Human Feedback (2020)]]'s reward-model over-optimization curve.
 - The gap that [[Concept — Scalable oversight]] tries to close before a policy can exploit it.
 - The liability inherent in [[Method — Reinforcement learning from human feedback (RLHF)]], as run via [[Method — Proximal Policy Optimization (PPO)]].
 - Recurs with AI-generated rather than human-generated preference signal in [[Paper — Constitutional AI (2022)]]'s RL-CAI stage.
