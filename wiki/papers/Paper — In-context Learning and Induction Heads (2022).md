@@ -67,7 +67,7 @@ Several "unexplained curiosities" are flagged rather than resolved, including wh
 
 - Direct sequel to [[Paper — A Mathematical Framework for Transformer Circuits (2021)]], reusing and stress-testing its QK/OV circuit vocabulary and induction-head definition at scales that vocabulary alone can't reach.
 - Substantially extends [[Concept — Induction heads]] with a purely behavioral definition and causal evidence for their role in [[Concept — In-context learning]].
-- Engages directly with, and reports no evidence for, the [[Concept — Mesa-optimization]]/inner-alignment concern raised in Hubinger et al.'s *Risks from Learned Optimization* (2019, not yet ingested).
+- Engages directly with, and reports no evidence for, the [[Concept — Mesa-optimization]]/inner-alignment concern raised in [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]].
 - Connects the induction-head phase change to the broader phase-change/discontinuous-capability literature (Power et al.'s "grokking", 2022, not yet ingested) and to [[Paper — Scaling Laws for Neural Language Models (2020)]]'s observation that one-layer transformers don't follow the same scaling trends as deeper ones - which this paper argues is because they lack induction heads.
 
 ## Up

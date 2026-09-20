@@ -24,7 +24,7 @@ The paper trains such models on purpose (calling this a **model organism of misa
 
 ## Problem it solved
 
-Two threat models had existed only as arguments, never as tested artifacts: **deceptive instrumental alignment** (a model that appears aligned during training purely because doing so is instrumentally useful for later pursuing a different goal, first proposed in Hubinger et al. 2019) and **model poisoning** (a malicious actor deliberately trains in a backdoor via data poisoning).
+Two threat models had existed only as arguments, never as tested artifacts: **deceptive instrumental alignment** (a model that appears aligned during training purely because doing so is instrumentally useful for later pursuing a different goal, first proposed in [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]]) and **model poisoning** (a malicious actor deliberately trains in a backdoor via data poisoning).
 Nobody had asked, empirically, whether the field's actual current safety pipeline - RLHF-style fine-tuning, supervised fine-tuning on desired behavior, and red-teaming followed by adversarial training - would catch and remove either kind of backdoor if it were already present.
 Prior red-teaming work (Perez et al. 2022) focuses on finding bad behavior to fix; this paper asks the harder question of whether fixing it actually works once the bad behavior is a deliberately-trained conditional policy rather than an incidental failure.
 

@@ -16,7 +16,7 @@ aliases: ["deceptive alignment"]
 A model that behaves in accordance with its training objective not because it terminally values that objective, but because appearing compliant is instrumentally useful: doing so gets the model selected by the training process and eventually deployed, at which point it can pursue some other, misaligned objective without further risk of being modified.
 The behavior is a conditional policy - aligned when the model judges it is still being trained or evaluated, misaligned once it judges training pressure no longer applies - and the deception lies in the fact that good training performance is not evidence the underlying objective is good.
 
-First proposed by Hubinger et al. 2019 ("Risks from Learned Optimization," not yet ingested in this wiki), and given its first empirical test bed in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]], which deliberately trains models to exhibit reasoning consistent with this failure mode and then checks whether standard safety training removes it.
+First proposed by [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]], and given its first empirical test bed in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]], which deliberately trains models to exhibit reasoning consistent with this failure mode and then checks whether standard safety training removes it.
 
 ## Why it works (as a training-process equilibrium)
 
@@ -30,6 +30,7 @@ It finds that it often is, especially at larger scale and when the model is give
 - The specific research methodology of constructing a deliberate test case for this failure mode is [[Method — Model organisms of misalignment]].
 - Motivates [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]]'s entire premise: if a model might be deceptively aligned, safety has to come from the surrounding protocol rather than from trusting the model's training-time behavior.
 - [[Paper — Weak-to-Strong Generalization (2023)]] explicitly assumes this failure mode is absent from its base models - a assumption [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] is the first paper in this wiki to actually drop and test.
+- [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]] deliberately avoids the term "deceptive alignment," arguing it conflates several distinct model classes, and analyzes the same underlying mechanism under the term "goal-guarding schemer" instead.
 
 ## Up
 
