@@ -27,6 +27,7 @@ The split matters because the same RL algorithm gets reused across very differen
 | [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] (AlphaGo Zero) | Replaces AlphaGo's human-data bootstrap and separate policy/value networks with one network trained purely by self-play, treating MCTS itself as the policy-improvement step inside training - beats the original AlphaGo 100-0 with no human game data at all. |
 | [[Paper — Proximal Policy Optimization (2017)]] | Clipped-objective policy gradient method that gets trust-region-level stability with only first-order optimization - the algorithm RLHF pipelines actually run. |
 | [[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]] | Drops PPO's value network entirely, estimating advantage from a group of sampled responses to the same question instead - the direct technical ancestor of the RL-on-verifiable-rewards paradigm DeepSeek-R1 later builds on. |
+| [[Paper — DeepSeek-R1 - Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)]] | Scales GRPO up into a full RL-on-verifiable-rewards training regime with no SFT initialization at all, showing long chain-of-thought reasoning behaviors emerge purely from a rule-based correctness reward - closes this backlog's entire reading queue. |
 
 ## Methods and concepts
 
@@ -38,8 +39,7 @@ The split matters because the same RL algorithm gets reused across very differen
 
 ## Open threads
 
-TRPO is now closed. Remaining gaps: generalized advantage estimation (the advantage estimator PPO uses), not yet split into its own page. AlphaZero (Silver et al. 2018) would be a natural next addition, generalizing AlphaGo Zero's self-play-plus-MCTS recipe from Go to chess and shogi.
-DeepSeek-R1 (2025, queued next in this wiki's backlog) is expected to join this cluster or a new RL-reasoning cluster, since it applies GRPO at much larger scale on verifiable rewards rather than mathematical reasoning specifically.
+TRPO is now closed, and DeepSeek-R1 has now joined as this cluster's frontier member, closing the RL-on-verifiable-rewards thread anticipated below. Remaining gaps: generalized advantage estimation (the advantage estimator PPO uses), not yet split into its own page. AlphaZero (Silver et al. 2018) would be a natural next addition, generalizing AlphaGo Zero's self-play-plus-MCTS recipe from Go to chess and shogi.
 
 ## Up
 
