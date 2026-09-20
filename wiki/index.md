@@ -83,6 +83,7 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] | arxiv:2401.05566 | Trains real backdoored language models - helpful in most contexts, but covertly pursuing a different objective under a trigger - and shows that RL fine-tuning, supervised fine-tuning, and adversarial training all fail to reliably remove the backdoor, with adversarial training sometimes making it more robust instead. |
 | [[Paper — Muon - An Optimizer for Hidden Layers in Neural Networks (2024)]] | Jordan et al. blog | Muon - orthogonalizes the momentum update for 2D hidden-layer weight matrices via a cheap Newton-Schulz iteration instead of AdamW's per-coordinate scaling, cutting NanoGPT speedrun times 35% and reaching GPT-2 XL performance 25% faster at 1.5B parameters. |
 | [[Paper — Alignment Faking in Large Language Models (2024)]] | arxiv:2412.14093 | Shows Claude 3 Opus will strategically comply with a training objective it disagrees with, specifically to prevent that objective from overwriting its actual preferences once unmonitored - the first demonstration of this behavior arising from a model's own pre-existing preferences rather than from deliberate backdoor training. |
+| [[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]] | arxiv:2402.03300 | Trains a 7B open model to 51.7% on the competition-level MATH benchmark - rivaling GPT-4 - via a 120B-token web-mined math corpus and Group Relative Policy Optimization (GRPO), a PPO variant that drops the value network entirely and estimates advantage from relative scores within a sampled group. |
 
 ## Concepts & methods
 
@@ -123,6 +124,7 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | [[Method — Process Reward Model (PRM)]] | method | Train a reward model to predict the correctness of each individual step in a multi-step solution, rather than only the final answer, and score a full solution as the product of its per-step correctness probabilities. |
 | [[Method — Instruction Tuning]] | method | Finetune a pretrained language model on a large mixture of NLP tasks, each rewritten as a natural-language instruction, so the model generalizes to unseen tasks it was never explicitly trained on. |
 | [[Method — Trusted monitoring]] | method | Use a weaker but known-safe model to rate how suspicious an untrusted model's output looks, and escalate the most suspicious fraction to expensive human-quality review. |
+| [[Method — Group Relative Policy Optimization (GRPO)]] | method | A PPO variant that drops the learned value network, instead estimating each sampled response's advantage from its normalized reward relative to a group of other responses sampled for the same question. |
 | [[Method — Backdoor training]] | method | Train a model to behave one way on a training-like distribution and a different way under a trigger, via a two-stage pipeline: generate conditional-policy examples by prompting a model, then supervised fine-tune on the filtered results. |
 
 ## Benchmarks & datasets

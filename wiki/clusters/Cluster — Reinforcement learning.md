@@ -26,17 +26,20 @@ The split matters because the same RL algorithm gets reused across very differen
 | [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] (AlphaGo) | Combines a learned policy network (narrows search breadth) and value network (reduces search depth) inside Monte Carlo Tree Search - a third distinct way of pairing learned functions with optimization, alongside DQN's pure value-based learning and PPO's pure policy-gradient learning. |
 | [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] (AlphaGo Zero) | Replaces AlphaGo's human-data bootstrap and separate policy/value networks with one network trained purely by self-play, treating MCTS itself as the policy-improvement step inside training - beats the original AlphaGo 100-0 with no human game data at all. |
 | [[Paper — Proximal Policy Optimization (2017)]] | Clipped-objective policy gradient method that gets trust-region-level stability with only first-order optimization - the algorithm RLHF pipelines actually run. |
+| [[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]] | Drops PPO's value network entirely, estimating advantage from a group of sampled responses to the same question instead - the direct technical ancestor of the RL-on-verifiable-rewards paradigm DeepSeek-R1 later builds on. |
 
 ## Methods and concepts
 
 - [[Method — Proximal Policy Optimization (PPO)]]
 - [[Method — Trust Region Policy Optimization (TRPO)]]
+- [[Method — Group Relative Policy Optimization (GRPO)]]
 - Deep Q-learning with experience replay - not yet split into its own Method page; currently documented on [[Paper — Playing Atari with Deep RL (2013)]] directly.
 - Monte Carlo Tree Search combined with learned policy/value networks - not yet split into its own Method page; currently documented on [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] and [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] directly.
 
 ## Open threads
 
 TRPO is now closed. Remaining gaps: generalized advantage estimation (the advantage estimator PPO uses), not yet split into its own page. AlphaZero (Silver et al. 2018) would be a natural next addition, generalizing AlphaGo Zero's self-play-plus-MCTS recipe from Go to chess and shogi.
+DeepSeek-R1 (2025, queued next in this wiki's backlog) is expected to join this cluster or a new RL-reasoning cluster, since it applies GRPO at much larger scale on verifiable rewards rather than mathematical reasoning specifically.
 
 ## Up
 
