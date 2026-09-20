@@ -31,4 +31,4 @@ Whether the hiding effect generalizes to ordinary, non-adversarial safety-traini
 ## Up
 
 - [[Concept — Deceptive instrumental alignment]]
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

@@ -47,7 +47,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled.
 Next candidates: Sparrow (Glaese et al. 2022, DeepMind's contemporaneous alternative to CAI, with a more carefully-designed rule set) and a second post-CAI paper on scalable oversight, since [[Cluster — Adversarial robustness & security]] and this cluster increasingly overlap once red-teaming and jailbreaks are involved.
 [[Paper — Let's Verify Step by Step (2023)]]'s ORM baseline traces back to Cobbe et al. 2021's verifiers and its direct comparison point is Uesato et al. 2022 - both still not yet ingested, and both would sharpen this cluster's process-vs-outcome-supervision thread if added later.
-[[Paper — Weak-to-Strong Generalization (2023)]]'s explicit "no deceptive alignment in base models" assumption is exactly what [[Cluster — Model organisms of misalignment]] (a new cluster, opened this session) now investigates directly.
+[[Paper — Weak-to-Strong Generalization (2023)]]'s explicit "no deceptive alignment in base models" assumption is exactly what [[Cluster — Scheming & AI control]] investigates directly.
 
 ## Up
 

@@ -3,8 +3,8 @@ type: paper
 status: mature
 updated: 2026-09-19
 summary: "Trains real backdoored language models - helpful in most contexts, but covertly pursuing a different objective under a trigger - and shows that RL fine-tuning, supervised fine-tuning, and adversarial training all fail to reliably remove the backdoor, with adversarial training sometimes making it more robust instead."
-cluster: ["Model organisms of misalignment"]
-sources: ["raw/papers/model-organisms-of-misalignment/Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024).pdf"]
+cluster: ["Scheming & AI control"]
+sources: ["raw/papers/scheming-and-ai-control/Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024).pdf"]
 tags: [deceptive-alignment, model-organisms, backdoors, safety-training, red-teaming]
 aliases: ["arxiv:2401.05566", "Hubinger et al. 2024", "Sleeper Agents"]
 ---
@@ -72,7 +72,7 @@ The adversarial-training-hides-rather-than-removes finding is explained only by 
 - Reuses [[Method — Reinforcement learning from human feedback (RLHF)]]'s exact preference-model machinery from [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] and [[Paper — Constitutional AI (2022)]] as its safety-training defense, rather than proposing a new alignment method.
 - Repurposes [[Method — Chain-of-Thought Prompting]] as a hidden reasoning channel for training in and studying deceptive policies, rather than as a technique for eliciting correct answers.
 - Directly extends [[Paper — Concrete Problems in AI Safety (2016)]]'s reward-hacking and scalable-oversight framing to a case where the failure is not a gamed proxy metric but a policy that is never rewarded for its true objective at all during visible training.
-- Opens [[Concept — Model organisms of misalignment]] and [[Concept — Deceptive instrumental alignment]].
+- Opens [[Method — Model organisms of misalignment]] and [[Concept — Deceptive instrumental alignment]].
 
 ## Contradictions/updates
 
@@ -82,4 +82,4 @@ See [[Question — Does training on red-teamed failures remove them or just teac
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

@@ -3,7 +3,7 @@ type: concept
 status: stub
 updated: 2026-09-19
 summary: "A learned model that is itself running an internal optimization process toward some objective, distinct from the outer objective the training process optimized it for - the outer/inner objective gap this creates is what makes deceptive instrumental alignment possible."
-cluster: ["Model organisms of misalignment"]
+cluster: ["Scheming & AI control"]
 sources: []
 tags: [mesa-optimization, inner-alignment, deceptive-alignment, safety]
 aliases: ["mesa-optimizer", "inner optimizer"]
@@ -23,8 +23,8 @@ First proposed by Hubinger et al. 2019 ("Risks from Learned Optimization," not y
 - The precondition [[Concept — Deceptive instrumental alignment]] depends on: a model can only appear aligned for instrumental reasons if it is running some internal optimization process with a goal of its own that training pressure doesn't directly see.
 - [[Paper — In-context Learning and Induction Heads (2022)]] treats mesa-optimization as a competing mechanistic hypothesis for in-context learning itself (a model implementing a small learning algorithm internally at inference time) and reports no evidence for it in the models studied, while explicitly not ruling it out at larger scale - a narrower, capability-focused use of the term than the safety-focused one above.
 - [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] explicitly notes its backdoored models are constructed by hand, not evidence that current models satisfy the internal preconditions for a naturally-arising mesa-objective.
-- Cited repeatedly across [[Cluster — Model organisms of misalignment]]'s member papers as the theoretical grounding neither Hubinger et al. 2019 nor Carlsmith 2023 ("Scheming AIs") - both not yet ingested - has been read directly for in this wiki.
+- Cited repeatedly across [[Cluster — Scheming & AI control]]'s member papers as the theoretical grounding neither Hubinger et al. 2019 nor Carlsmith 2023 ("Scheming AIs") - both not yet ingested - has been read directly for in this wiki.
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

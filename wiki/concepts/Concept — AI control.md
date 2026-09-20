@@ -3,7 +3,7 @@ type: concept
 status: in-progress
 updated: 2026-09-19
 summary: "A safety approach that assumes a powerful model may be actively trying to subvert its own oversight, and asks whether a protocol still catches it - rather than trying to ensure the model's values are good."
-cluster: ["Model organisms of misalignment"]
+cluster: ["Scheming & AI control"]
 sources: []
 tags: [ai-control, safety, red-teaming]
 aliases: []
@@ -33,4 +33,4 @@ The core protocols in the founding paper - trusted monitoring, untrusted monitor
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

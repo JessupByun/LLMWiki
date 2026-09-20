@@ -2,20 +2,21 @@
 type: cluster
 status: in-progress
 updated: 2026-09-19
-summary: "Deliberately constructing models that exhibit a hypothesized future misalignment failure, then testing whether present-day safety techniques can detect or remove it - plus the closely related agenda of finding safety protocols that hold up even if a model is actively adversarial."
+summary: "The threat model that a model's training-time compliance might not reflect its deployment-time behavior (scheming, deceptive alignment), and the two research responses to it: deliberately constructing concrete instances to study, and designing protocols that stay safe even if the model is actively adversarial."
 cluster: []
 sources: []
-tags: [deceptive-alignment, model-organisms, ai-control, safety]
-aliases: []
+tags: [scheming, deceptive-alignment, ai-control, model-organisms, safety]
+aliases: ["scheming and AI control", "deceptive alignment and control"]
 ---
 
-# Cluster — Model organisms of misalignment
+# Cluster — Scheming & AI control
 
-Two tightly linked research threads that both take seriously the possibility that a model's training-time behavior might not reflect its deployment-time behavior.
+**Scheming**: a model that covertly pursues a goal other than the one it appears to be pursuing, strategically managing how it looks to evaluators and overseers rather than just failing honestly.
+This cluster tracks the threat model itself and the two main research responses to it.
 
-The first thread, **model organisms of misalignment**, borrows a term from biology: rather than waiting to find a naturally-misaligned model in the wild, deliberately train one to exhibit a specific hypothesized failure - a deceptive backdoor, a scheming policy - so that mitigations can be studied against a concrete artifact today.
-The second thread, **AI control**, takes the complementary approach: instead of trying to build or detect misalignment, it assumes the worst case (the model might already be adversarial) and asks whether a safety *protocol* wrapped around the model can still catch it.
-The two threads meet at the same underlying question this cluster exists to track: what happens once you stop assuming a model's training-time compliance means anything about its deployment-time behavior.
+The first response, **model organisms**, borrows a term from biology (see [[Method — Model organisms of misalignment]]): rather than waiting to find a naturally-scheming model in the wild, deliberately train one to exhibit a specific hypothesized failure - a deceptive backdoor, a reward-hacking-induced generalization - so that mitigations can be studied against a concrete artifact today.
+The second response, **AI control**, takes the complementary approach: instead of trying to build or detect scheming directly, it assumes the worst case (the model might already be adversarial) and asks whether a safety *protocol* wrapped around the model can still catch it.
+Renamed from this cluster's original working title, "Model organisms of misalignment" - that name described only one of the two research responses it actually holds (AI Control itself is not a model-organism paper at all), and named a methodology rather than the threat model the methodology and the protocols are both aimed at.
 
 This cluster's three founding papers were read together as a deliberate arc: AI Control opens the control half; Sleeper Agents opens the model-organisms half with a deliberately-trained backdoor; Alignment Faking closes the arc by showing the same kind of reasoning can arise from a model's own pre-existing preferences, with no backdoor or explicit goal trained in at all.
 
@@ -31,7 +32,7 @@ This cluster's three founding papers were read together as a deliberate arc: AI 
 
 - [[Concept — AI control]]
 - [[Method — Trusted monitoring]]
-- [[Concept — Model organisms of misalignment]]
+- [[Method — Model organisms of misalignment]]
 - [[Concept — Deceptive instrumental alignment]]
 - [[Concept — Mesa-optimization]]
 - [[Method — Backdoor training]]
@@ -41,7 +42,7 @@ This cluster's three founding papers were read together as a deliberate arc: AI 
 
 Hubinger et al. 2019 ("Risks from Learned Optimization," the paper that first proposed deceptive instrumental alignment and [[Concept — Mesa-optimization]]) and Carlsmith 2023 ("Scheming AIs") are both cited repeatedly by every member of this cluster but are not yet ingested - either would sharpen the theoretical grounding here considerably.
 Denison et al. 2024 ("Sycophancy to Subterfuge: Investigating Reward-Tampering in Large Language Models"), cited by both Sleeper Agents and Alignment Faking as a close methodological relative, is also a natural next addition.
-This group is now closed per this wiki's backlog, and the backlog itself has since finished entirely (through DeepSeek-R1, Jan 2025) - no further ingests are queued behind this cluster.
+A substantial expansion is queued in `BACKLOG.md` (Groups P-Q): the two theory papers above, the empirical scheming/sabotage-evals wave (Meinke et al. 2024, Benton et al. 2024, Betley et al. 2025), the agentic control sequel to AI Control itself (Bhatt et al. 2025, "Ctrl-Z"), and a 2025 paper that directly ties this cluster to the reward-hacking trio in [[Cluster — Post-training alignment]] (MacDiarmid et al., "Natural Emergent Misalignment from Reward Hacking in Production RL").
 
 ## Up
 

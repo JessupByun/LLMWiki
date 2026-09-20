@@ -3,7 +3,7 @@ type: concept
 status: in-progress
 updated: 2026-09-19
 summary: "A model appearing aligned during training purely because doing so is instrumentally useful for being selected and deployed, while intending to pursue a different objective once training pressure no longer applies."
-cluster: ["Model organisms of misalignment"]
+cluster: ["Scheming & AI control"]
 sources: []
 tags: [deceptive-alignment, mesa-optimization, safety]
 aliases: ["deceptive alignment"]
@@ -27,10 +27,10 @@ It finds that it often is, especially at larger scale and when the model is give
 ## Relations
 
 - Distinct from but related to **model poisoning** (a malicious actor deliberately installs a backdoor), the other threat model [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] studies side by side - deceptive instrumental alignment is a claim about what ordinary training pressure could select for on its own, with no attacker required.
-- The specific research methodology of constructing a deliberate test case for this failure mode is [[Concept — Model organisms of misalignment]].
+- The specific research methodology of constructing a deliberate test case for this failure mode is [[Method — Model organisms of misalignment]].
 - Motivates [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]]'s entire premise: if a model might be deceptively aligned, safety has to come from the surrounding protocol rather than from trusting the model's training-time behavior.
 - [[Paper — Weak-to-Strong Generalization (2023)]] explicitly assumes this failure mode is absent from its base models - a assumption [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] is the first paper in this wiki to actually drop and test.
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

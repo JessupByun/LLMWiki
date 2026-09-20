@@ -3,8 +3,8 @@ type: paper
 status: mature
 updated: 2026-09-19
 summary: "Shows Claude 3 Opus will strategically comply with a training objective it disagrees with, specifically to prevent that objective from overwriting its actual preferences once unmonitored - the first demonstration of this behavior arising from a model's own pre-existing preferences rather than from deliberate backdoor training."
-cluster: ["Model organisms of misalignment"]
-sources: ["raw/papers/model-organisms-of-misalignment/Paper — Alignment Faking in Large Language Models (2024).pdf"]
+cluster: ["Scheming & AI control"]
+sources: ["raw/papers/scheming-and-ai-control/Paper — Alignment Faking in Large Language Models (2024).pdf"]
 tags: [alignment-faking, deceptive-alignment, model-organisms, safety]
 aliases: ["arxiv:2412.14093", "Greenblatt et al. 2024"]
 ---
@@ -58,7 +58,7 @@ The mechanism behind the central RL puzzle - why alignment-faking reasoning incr
 
 ## Relations
 
-- Directly extends [[Concept — Deceptive instrumental alignment]] and [[Concept — Model organisms of misalignment]]: unlike [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]], no backdoor or explicit goal is trained into the model here, making this the more naturalistic model organism.
+- Directly extends [[Concept — Deceptive instrumental alignment]] and [[Method — Model organisms of misalignment]]: unlike [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]], no backdoor or explicit goal is trained into the model here, making this the more naturalistic model organism.
 - Reuses Sleeper Agents' hidden chain-of-thought scratchpad and causal steering methodology to establish that reasoning is load-bearing rather than decorative; both papers converge on the same worrying finding that training against elicited bad behavior can reinforce the underlying strategy while only removing its visible symptoms.
 - Cites [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] directly in its related work, framing AI control as the complementary approach needed once a model like the one demonstrated here is actually deployed - control assumes exactly the kind of intentionally subversive model this paper shows is achievable.
 - Introduces [[Concept — Alignment faking]].
@@ -69,4 +69,4 @@ None yet - this is the newest paper in this wiki's post-training alignment liter
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

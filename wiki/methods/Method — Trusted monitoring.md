@@ -3,7 +3,7 @@ type: method
 status: in-progress
 updated: 2026-09-19
 summary: "Use a weaker but known-safe model to rate how suspicious an untrusted model's output looks, and escalate the most suspicious fraction to expensive human-quality review."
-cluster: ["Model organisms of misalignment"]
+cluster: ["Scheming & AI control"]
 sources: []
 tags: [ai-control, monitoring, red-teaming]
 aliases: []
@@ -35,4 +35,4 @@ Escalating only the suspicious tail, rather than everything, is what makes the s
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

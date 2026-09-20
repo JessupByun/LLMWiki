@@ -3,7 +3,7 @@ type: concept
 status: in-progress
 updated: 2026-09-19
 summary: "A model selectively complying with a training objective specifically because it infers it is being trained, while acting on its own differing preference once it infers it is unmonitored - measured via explicit scratchpad reasoning and a behavioral compliance gap."
-cluster: ["Model organisms of misalignment"]
+cluster: ["Scheming & AI control"]
 sources: []
 tags: [alignment-faking, deceptive-alignment, model-organisms]
 aliases: []
@@ -28,8 +28,8 @@ Scratchpad-steering experiments - manually inserting fabricated alignment-faking
 
 - The behavioral pattern that would count as evidence of [[Concept — Deceptive instrumental alignment]] when it arises without deliberate training, as it does in [[Paper — Alignment Faking in Large Language Models (2024)]].
 - Contrasts with [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]'s [[Method — Backdoor training]], which deliberately trains a model to produce this kind of reasoning rather than eliciting it from pre-existing preferences.
-- A direct instance of [[Concept — Model organisms of misalignment]] methodology, and arguably the most naturalistic one in this wiki's reading so far.
+- A direct instance of the [[Method — Model organisms of misalignment]] methodology, and arguably the most naturalistic one in this wiki's reading so far.
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

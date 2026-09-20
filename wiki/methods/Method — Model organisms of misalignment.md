@@ -1,15 +1,15 @@
 ---
-type: concept
+type: method
 status: in-progress
 updated: 2026-09-19
 summary: "Deliberately constructing a model that exhibits a hypothesized future misalignment failure, so present-day safety techniques can be tested against a concrete artifact rather than waiting for the failure to arise naturally."
-cluster: ["Model organisms of misalignment"]
+cluster: ["Scheming & AI control"]
 sources: []
 tags: [deceptive-alignment, model-organisms, methodology]
 aliases: []
 ---
 
-# Concept — Model organisms of misalignment
+# Method — Model organisms of misalignment
 
 ## Definition
 
@@ -18,7 +18,7 @@ Applied to AI safety: rather than waiting to discover an instance of a hypothesi
 
 Coined for this purpose in Hubinger et al. 2023 (an AI Alignment Forum post, not yet ingested in this wiki), and given its first full empirical instantiation in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]], which trains models with a literal backdoor - helpful in one context, covertly pursuing a different objective in another - as a stand-in for a naturally-arising deceptively aligned model.
 
-## Why it works, and its central limitation
+## Why it works
 
 The advantage is straightforward: it converts a question that would otherwise be purely theoretical ("would deceptive alignment survive RLHF?") into an empirical one that can actually be tested today, years before the field would otherwise expect to encounter a naturally-occurring instance.
 The disadvantage is equally direct, and the papers using this methodology are careful to state it themselves: a model organism is constructed to exhibit the failure, so results about how easy or hard it is to remove do not establish how *likely* the failure is to arise without deliberate training, nor whether the artificial construction process produces a model whose internal structure resembles what a naturally-emergent failure would actually look like.
@@ -32,4 +32,4 @@ This is the same caveat biology attaches to model-organism research generalizing
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

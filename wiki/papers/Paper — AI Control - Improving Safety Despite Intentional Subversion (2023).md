@@ -3,8 +3,8 @@ type: paper
 status: mature
 updated: 2026-09-19
 summary: "Introduces AI control - designing and evaluating safety protocols that hold up even if the powerful model inside them is actively trying to subvert them, rather than assuming it is aligned."
-cluster: ["Model organisms of misalignment"]
-sources: ["raw/papers/model-organisms-of-misalignment/Paper — AI Control - Improving Safety Despite Intentional Subversion (2023).pdf"]
+cluster: ["Scheming & AI control"]
+sources: ["raw/papers/scheming-and-ai-control/Paper — AI Control - Improving Safety Despite Intentional Subversion (2023).pdf"]
 tags: [ai-control, scalable-oversight, red-teaming, deceptive-alignment, safety]
 aliases: ["arxiv:2312.06942", "Greenblatt et al. 2023", "AI Control"]
 ---
@@ -84,4 +84,4 @@ Usefulness is measured assuming that once a model is confirmed to be scheming, i
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]

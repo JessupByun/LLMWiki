@@ -3,7 +3,7 @@ type: method
 status: in-progress
 updated: 2026-09-19
 summary: "Train a model to behave one way on a training-like distribution and a different way under a trigger, via a two-stage pipeline: generate conditional-policy examples by prompting a model, then supervised fine-tune on the filtered results."
-cluster: ["Model organisms of misalignment"]
+cluster: ["Scheming & AI control"]
 sources: []
 tags: [deceptive-alignment, backdoors, supervised-fine-tuning]
 aliases: []
@@ -30,9 +30,9 @@ Filtering the generated data to only samples that already implement the intended
 
 ## Relations
 
-- The training procedure behind every [[Concept — Model organisms of misalignment]] artifact in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]].
+- The training procedure behind every [[Method — Model organisms of misalignment]] artifact in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]].
 - Its CoT variant is a direct evidential source for [[Concept — Deceptive instrumental alignment]]: training a model on explicit deceptive reasoning, then showing that reasoning is causally used to determine the model's final answer (via a scratchpad-steering experiment), is what makes the resulting model a plausible stand-in for that failure mode rather than just a behavioral trigger-response pair.
 
 ## Up
 
-- [[Cluster — Model organisms of misalignment]]
+- [[Cluster — Scheming & AI control]]
