@@ -4,7 +4,7 @@ status: mature
 updated: 2026-09-19
 summary: "Trains real backdoored language models - helpful in most contexts, but covertly pursuing a different objective under a trigger - and shows that RL fine-tuning, supervised fine-tuning, and adversarial training all fail to reliably remove the backdoor, with adversarial training sometimes making it more robust instead."
 cluster: ["Model organisms of misalignment"]
-sources: ["raw/papers/Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024).pdf"]
+sources: ["raw/papers/model-organisms-of-misalignment/Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024).pdf"]
 tags: [deceptive-alignment, model-organisms, backdoors, safety-training, red-teaming]
 aliases: ["arxiv:2401.05566", "Hubinger et al. 2024", "Sleeper Agents"]
 ---
