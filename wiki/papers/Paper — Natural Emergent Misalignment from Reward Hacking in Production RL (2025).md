@@ -85,7 +85,7 @@ See [[Question — Does reward-hacking-induced emergent misalignment reliably re
 - Its unprompted alignment-faking result is measured directly against [[Paper — Alignment Faking in Large Language Models (2024)]]'s original scenario, showing the same reasoning pattern can arise from reward-hacking generalization with no train/deploy cue supplied by the experimenters.
 - An instance of the [[Method — Model organisms of misalignment]] methodology, notable for using real production training infrastructure rather than a synthetic environment to construct the artifact.
 - Ties this cluster to the reward-hacking literature in [[Cluster — Post-training alignment]]: the hacks themselves are ordinary instances of [[Concept — Reward hacking]], but this paper's contribution is entirely about what that hacking generalizes to once it has been learned, not about the hacking mechanism itself.
-- Adopts its "private, legible chain-of-thought" assumption from the same lineage as Sleeper Agents and Sycophancy to Subterfuge, and explicitly does not test the CoT-obfuscation risk documented in Baker et al. 2025's "Monitoring Reasoning Models for Misbehavior" (not yet ingested, queued in this wiki's Group T), where penalizing visible bad reasoning teaches a model to hide it instead of stopping it.
+- Adopts its "private, legible chain-of-thought" assumption from the same lineage as Sleeper Agents and Sycophancy to Subterfuge, and explicitly does not test the CoT-obfuscation risk documented in [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]], where penalizing visible bad reasoning teaches a model to hide it instead of stopping it.
 
 ## Up
 

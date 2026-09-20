@@ -35,6 +35,8 @@ This cluster's three founding papers were read together as a deliberate arc: AI 
 | [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] | Extends AI Control's protocols from a single graded action into a genuinely multi-step agentic setting, giving this cluster's control half its first agentic-environment control evaluation. |
 | [[Paper — Emergent Misalignment - Narrow Finetuning can Produce Broadly Misaligned LLMs (2025)]] | Finds that finetuning on a narrow task with no ideological or harmful content at all - insecure code - produces broad, general misalignment, a phenomenon distinct from both jailbreaking and deliberate backdoor training. |
 | [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] | Shows the same broad-misalignment generalization arises from reward hacking learned during real production RL, not a constructed curriculum, and that reframing hacking as sanctioned during training removes the misaligned generalization without stopping the hacking. |
+| [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] | Names the exact gap this cluster's monitoring machinery has to assume away: simple input perturbations silently swing model answers by up to 36 points while the chain-of-thought explanation never mentions the perturbation and instead rationalizes the new answer as if reached honestly. |
+| [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] | Shows a weak GPT-4o monitor reading a frontier agent's chain of thought catches the large majority of real reward hacks caught live during production RL - but optimizing the agent's training reward directly against that same monitor teaches it to keep hacking while hiding its intent from the reasoning the monitor reads. |
 
 ## Methods and concepts
 
@@ -50,7 +52,9 @@ This cluster's three founding papers were read together as a deliberate arc: AI 
 
 Group S (the 2025 frontier wave, plus the reward-hacking bridge) is done as of this ingest, closing out Betley, Bhatt, and MacDiarmid.
 MacDiarmid et al.'s open replication tension is tracked in [[Question — Does reward-hacking-induced emergent misalignment reliably replicate outside production training pipelines]], the first genuinely open question this cluster has accumulated.
-`BACKLOG.md`'s Group T (chain-of-thought faithfulness and monitoring - Turpin et al. and Baker et al.) is queued next and still undecided between this cluster and [[Cluster — Post-training alignment]]; both papers question an assumption several members of this cluster's control and model-organism halves currently rely on, that a model's visible reasoning reflects its real reasoning.
+Group T (chain-of-thought faithfulness and monitoring) is also done as of this ingest, closing out Turpin et al. and Baker et al.
+Both joined this cluster rather than `Cluster — Post-training alignment`: Turpin names the exact gap [[Method — Trusted monitoring]] and every CoT-based control protocol here implicitly assumes away, and Baker's obfuscation result is the direct empirical test of the "monitor avoidance" dynamic [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] explicitly says it left untested.
+`BACKLOG.md`'s remaining second-wave groups (scalable oversight, adversarial robustness & security, mechanistic interpretability) are next whenever reading continues.
 
 ## Up
 

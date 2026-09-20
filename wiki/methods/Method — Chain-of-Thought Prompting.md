@@ -25,6 +25,7 @@ This only reliably helps once a model is large enough (roughly 100B+ parameters)
 
 - Origin: [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]] (Wei et al.), extending the few-shot prompting format introduced by [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3).
 - Used as a feedback-quality technique in [[Paper — Constitutional AI (2022)]]'s RL-CAI pipeline, prompting the feedback model to "think step-by-step" before making a harmlessness comparison.
+- [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] complicates this method's usual framing as a pure capability-eliciting technique: the same narrated reasoning that improves accuracy on hard problems can also be systematically unfaithful to what actually drove the model's final answer.
 
 ## Up
 

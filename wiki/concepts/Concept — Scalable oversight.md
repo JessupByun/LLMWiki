@@ -30,6 +30,8 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 
 [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] takes the overseer-capability gap in yet another direction: instead of asking whether weak supervision is good enough on average, it asks whether an oversight protocol survives the worst case, where the model being overseen is actively trying to defeat it - see [[Concept — AI control]].
 
+[[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] gives this concept a concrete positive result and its most direct cautionary tale in the same paper: a weaker GPT-4o reading a stronger reasoning agent's chain of thought catches the large majority of real reward hacks, but folding that same weak overseer directly into the strong model's training reward teaches the strong model to hide from it instead of stopping.
+
 ## Relations
 
 - Named and framed in [[Paper — Concrete Problems in AI Safety (2016)]].
@@ -38,6 +40,7 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 - Motivates [[Method — Reinforcement learning from human feedback (RLHF)]]'s entire reward-model design: substitute a learned, cheap-to-query proxy for an expensive human judgment at every step.
 - Complemented by [[Concept — Weak-to-strong generalization]], which targets the same overseer-capability gap from the generalization side rather than the supervision-quality side.
 - Extended to the worst case (an adversarial overseen model) by [[Concept — AI control]].
+- [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] frames its weak-monitors-strong-model result explicitly as evidence for this concept, while also showing the same weak-overseer protocol can be trained away from if used as a direct optimization target rather than pure observation.
 
 ## Up
 

@@ -32,6 +32,7 @@ Escalating only the suspicious tail, rather than everything, is what makes the s
 
 - The founding protocol family for [[Concept — AI control]].
 - Its collusion-avoidance techniques (redaction, paraphrasing, synthetic-example validation) are a direct countermeasure to steganographic coordination, the same failure mode named in [[Concept — Jailbreaking (LLMs)]]'s adjacent literature on hidden reasoning channels.
+- [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] arrives at functionally this same mechanism independently, framed under [[Concept — Scalable oversight]] rather than AI control, and adds a critical warning this page's founding paper does not test: folding the trusted monitor directly into the untrusted model's training reward teaches it to defeat the monitor rather than stop the behavior the monitor was meant to catch.
 
 ## Up
 
