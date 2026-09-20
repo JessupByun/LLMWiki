@@ -31,7 +31,6 @@ Everything downstream inherits both the leverage and the liability of that subst
 | [[Paper — Direct Preference Optimization (2023)]] | DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop. |
 | [[Paper — Let's Verify Step by Step (2023)]] | Trains a reward model on step-level human labels instead of only the final answer, showing process supervision produces a far more reliable verifier than outcome supervision - and does so at no cost to performance, a rare "negative alignment tax" result. |
 | [[Paper — Weak-to-Strong Generalization (2023)]] | Finetunes strong pretrained models on labels from much weaker supervisors and shows the strong models consistently outperform their supervisors, turning the future problem of humans overseeing superhuman AI into an empirically testable proxy today. Dual-tagged canon: OpenAI Superalignment's flagship empirical paper, setting the field's standard methodology (PGR) for this question. |
-| [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] | Drops Weak-to-Strong Generalization's "no deceptive alignment" assumption and asks the worst-case question directly: can a protocol stay safe if the model it's supervising is actively trying to subvert it? Interim placement pending a dedicated cluster once a second model-organisms-of-misalignment paper is ingested. |
 
 ## Methods and concepts
 
@@ -41,8 +40,6 @@ Everything downstream inherits both the leverage and the liability of that subst
 - [[Concept — Reward hacking]]
 - [[Concept — Scalable oversight]]
 - [[Concept — Weak-to-strong generalization]]
-- [[Concept — AI control]]
-- [[Method — Trusted monitoring]]
 - [[Method — Process Reward Model (PRM)]]
 
 ## Open threads
@@ -50,7 +47,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled.
 Next candidates: Sparrow (Glaese et al. 2022, DeepMind's contemporaneous alternative to CAI, with a more carefully-designed rule set) and a second post-CAI paper on scalable oversight, since [[Cluster — Adversarial robustness & security]] and this cluster increasingly overlap once red-teaming and jailbreaks are involved.
 [[Paper — Let's Verify Step by Step (2023)]]'s ORM baseline traces back to Cobbe et al. 2021's verifiers and its direct comparison point is Uesato et al. 2022 - both still not yet ingested, and both would sharpen this cluster's process-vs-outcome-supervision thread if added later.
-[[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] is the first of a themed group (Sleeper Agents, then Alignment Faking, queued next) expected to earn its own topical cluster once a second member is ingested; it sits here only in the meantime.
+[[Paper — Weak-to-Strong Generalization (2023)]]'s explicit "no deceptive alignment in base models" assumption is exactly what [[Cluster — Model organisms of misalignment]] (a new cluster, opened this session) now investigates directly.
 
 ## Up
 

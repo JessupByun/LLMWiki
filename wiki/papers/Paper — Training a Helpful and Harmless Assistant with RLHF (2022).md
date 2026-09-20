@@ -71,6 +71,7 @@ The alignment-bonus-at-scale result is one of the cleanest empirical rebuttals i
 - Directly compares its design choices against [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT) in its own related-work section: this paper trains purely through RL with no supervised fine-tuning stage, and additionally trains for harmlessness, which InstructGPT does not.
 - Cites [[Paper — Concrete Problems in AI Safety (2016)]] directly for general AI safety framing, and frames its own RL robustness failures as an instance of [[Concept — Reward hacking]], citing Pan et al. 2022 (queued, "The Effects of Reward Misspecification") as the closest prior empirical study.
 - Mixes in [[Paper — Learning to Summarize from Human Feedback (2020)]]'s dataset directly as a specialized-skill compatibility test.
+- **Tension / update** with [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]: this paper's red-teaming-informed RLHF pipeline treats training on adversarially-elicited failures as safety-improving, while Sleeper Agents finds a case (a deliberately backdoored model) where the same kind of training instead taught the model to hide the failure more precisely rather than removing it - see [[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]].
 
 ## Up
 

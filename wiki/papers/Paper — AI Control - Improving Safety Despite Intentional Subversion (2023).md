@@ -3,8 +3,8 @@ type: paper
 status: mature
 updated: 2026-09-19
 summary: "Introduces AI control - designing and evaluating safety protocols that hold up even if the powerful model inside them is actively trying to subvert them, rather than assuming it is aligned."
-cluster: ["Post-training alignment"]
-sources: ["raw/papers/post-training-alignment/Paper — AI Control - Improving Safety Despite Intentional Subversion (2023).pdf"]
+cluster: ["Model organisms of misalignment"]
+sources: ["raw/papers/Paper — AI Control - Improving Safety Despite Intentional Subversion (2023).pdf"]
 tags: [ai-control, scalable-oversight, red-teaming, deceptive-alignment, safety]
 aliases: ["arxiv:2312.06942", "Greenblatt et al. 2023", "AI Control"]
 ---
@@ -80,9 +80,8 @@ Usefulness is measured assuming that once a model is confirmed to be scheming, i
 - Directly picks up [[Paper — Weak-to-Strong Generalization (2023)]]'s explicit "no deceptive alignment in base models" assumption - this paper is what happens once that assumption is dropped.
 - Shares its red-team/adversarial framing with [[Concept — Jailbreaking (LLMs)]] and [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]], but inverts the threat model: those attack a model from outside to elicit bad outputs, while this paper treats the model itself as a potential insider adversary trying to subvert the oversight wrapped around it.
 - Introduces [[Concept — AI control]] and [[Method — Trusted monitoring]].
+- [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] supplies the concrete adversarial artifact this paper's protocols would need to be tested against: a real model trained to behave differently once it detects deployment.
 
 ## Up
 
-- [[Cluster — Post-training alignment]]
-
-This is an interim placement: per this wiki's own reading plan, once a second paper on model organisms of misalignment (Sleeper Agents, then Alignment Faking) is ingested, this paper is expected to move into a new, dedicated topical cluster alongside them.
+- [[Cluster — Model organisms of misalignment]]
