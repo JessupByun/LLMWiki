@@ -54,20 +54,20 @@ The paper is unusually explicit about grading its own evidence: strong and causa
 
 The phase change is presented as a candidate "Rosetta stone" linking three subfields that had mostly talked past each other: mechanistic interpretability (circuit-level), learning dynamics, and the statistical-physics-style empirical study of scaling laws and training discontinuities (grokking, double descent).
 As far as the authors are aware, it is the first case where a training-time behavioral discontinuity has been given an actual mechanistic, circuit-level explanation, rather than just documented as a curve.
-It also becomes a standard reference for a specific, targeted safety claim: contemporaries worried in-context learning might be implemented by an internal "mesa-optimizer" (a model developing its own learned optimization process at inference time); this paper reports finding no evidence of that, and identifies an alternative, fully inspectable mechanistic candidate instead.
+It also becomes a standard reference for a specific, targeted safety claim: contemporaries worried in-context learning might be implemented by an internal [[Concept — Mesa-optimization]] (a model developing its own learned optimization process at inference time); this paper reports finding no evidence of that, and identifies an alternative, fully inspectable mechanistic candidate instead.
 Two external researchers (from Redwood Research and an independent replication) contributed appended replication comments directly to the published paper, continuing the "invite outside replication into the document itself" format the original Circuits Thread established.
 
 ## Limitations
 
 The paper's own confidence table is explicit: for large, real-world models with MLP layers, the claim that induction heads explain the *majority* of in-context learning is graded correlational or analogical, not causal - full ablation studies, the strongest evidence type available, were only computationally tractable on the small models.
-It explicitly does not rule out mesa-optimization arising in larger or future models, only that none was observed in the models studied here.
+It explicitly does not rule out [[Concept — Mesa-optimization]] arising in larger or future models, only that none was observed in the models studied here.
 Several "unexplained curiosities" are flagged rather than resolved, including why the in-context learning score stays nearly constant across model sizes spanning three orders of magnitude after the phase change, and a handful of unusual attention heads whose behavior under ablation doesn't fit the induction-head pattern.
 
 ## Relations
 
 - Direct sequel to [[Paper — A Mathematical Framework for Transformer Circuits (2021)]], reusing and stress-testing its QK/OV circuit vocabulary and induction-head definition at scales that vocabulary alone can't reach.
 - Substantially extends [[Concept — Induction heads]] with a purely behavioral definition and causal evidence for their role in [[Concept — In-context learning]].
-- Engages directly with, and reports no evidence for, the mesa-optimization/inner-alignment concern raised in Hubinger et al.'s *Risks from Learned Optimization* (2019, not yet ingested).
+- Engages directly with, and reports no evidence for, the [[Concept — Mesa-optimization]]/inner-alignment concern raised in Hubinger et al.'s *Risks from Learned Optimization* (2019, not yet ingested).
 - Connects the induction-head phase change to the broader phase-change/discontinuous-capability literature (Power et al.'s "grokking", 2022, not yet ingested) and to [[Paper — Scaling Laws for Neural Language Models (2020)]]'s observation that one-layer transformers don't follow the same scaling trends as deeper ones - which this paper argues is because they lack induction heads.
 
 ## Up

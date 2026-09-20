@@ -48,14 +48,14 @@ The 1.5B distilled model alone surpasses GPT-4o and Claude-3.5-Sonnet on AIME an
 
 ## Why it endures
 
-This paper established the "pure RL on a rule-verifiable reward, no SFT initialization" recipe (later called RLVR) as a viable and reproducible way to train reasoning models, avoiding the reward-hacking failure mode that dogged learned process/outcome reward models by simply not using one.
+This paper established [[Method — RL from Verifiable Rewards (RLVR)|RL from Verifiable Rewards]] - pure RL on a rule-checkable reward, no SFT initialization - as a viable and reproducible way to train reasoning models, avoiding the reward-hacking failure mode that dogged learned process/outcome reward models by simply not using one.
 It also demonstrated, empirically and cheaply, that once a large model discovers a reasoning capability via RL, that capability transfers to much smaller models through ordinary SFT distillation - making strong reasoning models accessible to anyone with distillation-scale compute rather than RL-training-scale compute, which is the model the community around Open-R1 and similar reproductions has since followed.
 
 ## Attempted approaches that failed
 
 The paper documents two approaches explored before settling on the outcome-based GRPO recipe, and reports why each was abandoned rather than omitting them.
 **Process reward models**, in the style of Let's Verify Step by Step, were dropped because defining a general fine-grained reasoning step is hard, automated step-correctness labeling is unreliable, and once a neural PRM is introduced it reliably gets reward-hacked under large-scale RL.
-**Monte Carlo Tree Search**, modeled on AlphaGo/AlphaZero, was dropped because token generation's search space is exponentially larger than a board game's, and training a fine-grained value model to guide that search proved much harder to bootstrap than it was for Go.
+**Monte Carlo Tree Search**, modeled on [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] (AlphaGo) and [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] (AlphaGo Zero), was dropped because token generation's search space is exponentially larger than a board game's, and training a fine-grained value model to guide that search proved much harder to bootstrap than it was for Go.
 
 ## Limitations
 
@@ -65,9 +65,16 @@ The paper's own safety report also finds DeepSeek-R1 without its external risk-c
 ## Relations
 
 - Directly scales up [[Method — Group Relative Policy Optimization (GRPO)]], introduced in [[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]] for math-specific fine-tuning, into a general RL-only training regime spanning math, code, STEM, and logic.
+- Establishes [[Method — RL from Verifiable Rewards (RLVR)]] as the name and definition for its no-learned-reward-model training regime.
 - Explicitly rejects the process-reward-model approach of [[Paper — Let's Verify Step by Step (2023)]] in favor of rule-based verifiers, citing reward hacking as the reason a learned reward model was avoided for the reasoning-RL stage.
 - Inverts the SFT-then-RL ordering that [[Paper — Training LMs to Follow Instructions (2022)]] established as the standard post-training pipeline: R1-Zero runs RL with no SFT step at all, and DeepSeek-R1's own SFT stages are themselves built from RL-generated data rather than preceding RL.
 - Distills its reasoning behavior into open base models from the same open-weights lineage [[Paper — LLaMA - Open and Efficient Foundation Language Models (2023)]] helped establish.
+
+## Tension / update
+
+[[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]] reports that its process-supervision variant of GRPO (a neural, step-level reward model) beats outcome supervision on math benchmarks.
+This paper, from the same lab and the same GRPO lineage, goes the opposite direction: it explicitly avoids any neural process or outcome reward model for the reasoning-RL stage, citing reward hacking under large-scale RL as the reason, and gets its results from rule-based verification alone.
+The reversal isn't a retraction - DeepSeekMath's process reward model was trained and evaluated at a much smaller scale than DeepSeek-R1's training run - but it marks a real change in this lineage's own view of when a learned reward model is worth the reward-hacking risk.
 
 ## Up
 

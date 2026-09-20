@@ -21,7 +21,7 @@ Its own strongest evidence for anything past pure recognition is synthetic word-
 [[Paper — In-context Learning and Induction Heads (2022)]] gives the most direct mechanistic evidence available so far, and it points toward the recognition/location end of the spectrum, at least for a well-defined slice of in-context learning.
 It identifies a single, fully specified circuit - [[Concept — Induction heads]] - that forms during a sharp, universal training-time transition and, by ablation, accounts for nearly all measured in-context learning in small models.
 The mechanism itself is a fixed lookup-and-copy algorithm (search the context for the last occurrence of the current token, predict what followed), not something that adapts its own weights or bootstraps a genuinely novel computation per prompt.
-The same paper explicitly checked for evidence of mesa-optimization - a hypothesized internal optimizer that would look more like "genuine learning" - and found none in the models studied.
+The same paper explicitly checked for evidence of [[Concept — Mesa-optimization]] - a hypothesized internal optimizer that would look more like "genuine learning" - and found none in the models studied.
 
 ## What's still open
 

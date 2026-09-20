@@ -33,14 +33,15 @@ This cluster's three founding papers were read together as a deliberate arc: AI 
 - [[Method — Trusted monitoring]]
 - [[Concept — Model organisms of misalignment]]
 - [[Concept — Deceptive instrumental alignment]]
+- [[Concept — Mesa-optimization]]
 - [[Method — Backdoor training]]
 - [[Concept — Alignment faking]]
 
 ## Open threads
 
-Hubinger et al. 2019 ("Risks from Learned Optimization," the paper that first proposed deceptive instrumental alignment and mesa-optimization) and Carlsmith 2023 ("Scheming AIs") are both cited repeatedly by every member of this cluster but are not yet ingested - either would sharpen the theoretical grounding here considerably.
+Hubinger et al. 2019 ("Risks from Learned Optimization," the paper that first proposed deceptive instrumental alignment and [[Concept — Mesa-optimization]]) and Carlsmith 2023 ("Scheming AIs") are both cited repeatedly by every member of this cluster but are not yet ingested - either would sharpen the theoretical grounding here considerably.
 Denison et al. 2024 ("Sycophancy to Subterfuge: Investigating Reward-Tampering in Large Language Models"), cited by both Sleeper Agents and Alignment Faking as a close methodological relative, is also a natural next addition.
-This group is now closed per this wiki's backlog; the next thread is Group N (LLaMA, Feb 2023, canon-only), deliberately deferred behind this cluster throughout.
+This group is now closed per this wiki's backlog, and the backlog itself has since finished entirely (through DeepSeek-R1, Jan 2025) - no further ingests are queued behind this cluster.
 
 ## Up
 

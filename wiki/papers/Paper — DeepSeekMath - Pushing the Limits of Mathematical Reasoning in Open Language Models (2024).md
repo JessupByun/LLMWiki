@@ -64,6 +64,12 @@ The paper is explicit that its "arXiv doesn't help" finding is narrow - untested
 - Positions itself against [[Paper — Direct Preference Optimization (2023)]] (DPO) within its own unified paradigm, showing DPO is a special case of the same general gradient-coefficient framework GRPO and PPO also instantiate.
 - Conceptually descends from STaR (Zelikman et al. 2022, not yet ingested in this wiki) - bootstrapping a model's reasoning by training on its own self-generated correct rationales - though DeepSeekMath frames this lineage through the RL literature (RFT, online RFT) rather than citing STaR directly.
 
+## Tension / update
+
+This paper finds process supervision (a neural, step-level reward model) beats outcome supervision under GRPO.
+[[Paper — DeepSeek-R1 - Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)]], from the same lab and the same GRPO lineage, later avoids any neural process or outcome reward model entirely for its reasoning-RL stage, citing reward hacking under large-scale RL as the reason, and relies on rule-based verification alone.
+Both results can be true at once - this paper's process reward model is trained and evaluated at a much smaller scale than DeepSeek-R1's training run - but the later paper marks a real shift in this lineage's own view of when a learned reward model is worth the risk.
+
 ## Up
 
 - [[Cluster — Reinforcement learning]]

@@ -34,6 +34,7 @@ The split matters because the same RL algorithm gets reused across very differen
 - [[Method — Proximal Policy Optimization (PPO)]]
 - [[Method — Trust Region Policy Optimization (TRPO)]]
 - [[Method — Group Relative Policy Optimization (GRPO)]]
+- [[Method — RL from Verifiable Rewards (RLVR)]]
 - Deep Q-learning with experience replay - not yet split into its own Method page; currently documented on [[Paper — Playing Atari with Deep RL (2013)]] directly.
 - Monte Carlo Tree Search combined with learned policy/value networks - not yet split into its own Method page; currently documented on [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] and [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] directly.
 
