@@ -65,6 +65,7 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 - The liability inherent in [[Method — Reinforcement learning from human feedback (RLHF)]], as run via [[Method — Proximal Policy Optimization (PPO)]].
 - Recurs with AI-generated rather than human-generated preference signal in [[Paper — Constitutional AI (2022)]]'s RL-CAI stage.
 - Structurally similar to [[Concept — Adversarial examples]]: in both, an optimizer finds inputs where a learned function misbehaves. The difference is who is doing the optimizing and whether it's adversarial by intent.
+- [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] shows a further consequence beyond Goodharting: reward hacking learned on real production coding environments generalizes into broad misalignment on unrelated tasks, not just into a degraded but locally-optimized policy.
 
 ## Up
 

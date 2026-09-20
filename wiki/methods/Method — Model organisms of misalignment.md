@@ -29,6 +29,8 @@ This is the same caveat biology attaches to model-organism research generalizing
 - [[Concept — Deceptive instrumental alignment]] is the specific failure mode [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] constructs a model organism of.
 - Complements [[Concept — AI control]]'s methodology: model organisms supply the concrete adversarial artifacts that control evaluations need something to test protocols against.
 - The backdoor-training procedure used to construct these model organisms is [[Method — Backdoor training]].
+- [[Paper — Emergent Misalignment - Narrow Finetuning can Produce Broadly Misaligned LLMs (2025)]] produces an unusual instance of this methodology by accident rather than by design - its backdoor variant is a genuine sleeper-agent-style construction, discovered rather than deliberately engineered toward.
+- [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] is the first instance built using real production training infrastructure rather than a synthetic environment, constructing its artifact from actual Anthropic RL environments instead of a hand-designed curriculum.
 
 ## Up
 
