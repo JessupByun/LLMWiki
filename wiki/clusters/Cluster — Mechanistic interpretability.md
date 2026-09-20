@@ -36,7 +36,8 @@ Everything downstream - from measuring that mechanism at scale to the polysemant
 
 ## Open threads
 
-Scaling Monosemanticity has now closed this cluster's most pressing open question - dictionary learning does scale past a one-layer toy model, at least as far as Claude 3 Sonnet - though it opens a new one in its place: dictionary completeness remains far off even at 34M features, so a still-larger-scale follow-up would be a natural next addition if the reading queue ever reopens.
+Scaling Monosemanticity has now closed this cluster's most pressing open question - dictionary learning does scale past a one-layer toy model, at least as far as Claude 3 Sonnet - though it opens a new one in its place: dictionary completeness remains far off even at 34M features.
+Every paper in this cluster so far traces back to the Anthropic Transformer Circuits Thread's own SAE lineage; a queued expansion (`BACKLOG.md` Group W) would add the field's other major circuit-analysis lineage and a genuinely different, non-SAE technique: Wang et al.'s Indirect Object Identification paper (the canonical hand-verified circuit in a real, non-toy model - everything here so far is either toy-transformer or SAE-feature analysis), Zou et al.'s Representation Engineering (top-down activation steering rather than bottom-up feature decomposition), and Anthropic's Circuit Tracing / "On the Biology of a Large Language Model" (2025, the direct sequel to Scaling Monosemanticity's own "what's next" question).
 [[Question — Is in-context learning genuine learning or pattern recognition]] tracks the open thread between this cluster's induction-head evidence and [[Concept — In-context learning]]'s behavioral framing in [[Cluster — Foundational canon]].
 
 ## Up

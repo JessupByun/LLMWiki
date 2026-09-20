@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-08-07
+updated: 2026-09-20
 summary: "Attacks on learned systems and defenses against them - adversarial examples, transferability, jailbreaks, and prompt injection."
 cluster: []
 sources: []
@@ -35,8 +35,10 @@ The modern jailbreak and prompt-injection literature is the same problem relocat
 
 ## Open threads
 
-Obvious gaps: Goodfellow et al. 2014 (FGSM and the linearity hypothesis, which supersedes this paper's dense-pockets explanation), Madry et al. (adversarial training done properly), and the prompt-injection literature.
-GCG's own central open question - whether post-hoc RLHF-style alignment training can ever structurally close the jailbreak gap - is picked up by the AI-control and model-organisms-of-misalignment literature queued in a later group of this backlog.
+This is explicitly flagged in `BACKLOG.md` as the thinnest north-star pillar - only 2 papers despite being a named lens.
+A queued expansion (`BACKLOG.md` Group V) would roughly triple it: Madry et al.'s adversarial-training (PGD) paper (foundational, currently missing landmark), Perez et al.'s automated red-teaming (already cited by name, not linked, in Sleeper Agents' own Problem-it-solved section), Greshake et al. on indirect prompt injection (the standard cite for that distinct threat model), two Benchmark-type gaps CLAUDE.md itself name-checks with no page yet (HarmBench, WMDP), Debenedetti et al.'s AgentDojo (agentic prompt-injection specifically, pairing with Greshake), and Anthropic's Many-shot Jailbreaking (likely non-arXiv, ask before fetching).
+Goodfellow et al. 2014 (FGSM and the linearity hypothesis, which supersedes this paper's dense-pockets explanation) remains a gap too, tracked on [[Concept — Adversarial examples]].
+GCG's own central open question - whether post-hoc RLHF-style alignment training can ever structurally close the jailbreak gap - is picked up directly by [[Cluster — Scheming & AI control]], which studies safety under the assumption a model's trained-in alignment cannot be fully trusted.
 
 ## Up
 

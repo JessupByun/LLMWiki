@@ -43,6 +43,7 @@ Training the reward model once on a fixed dataset and then optimizing hard again
 **Tension / update.** [[Paper — Training LMs to Follow Instructions (2022)]], running this exact pipeline at LLM scale, does not lean primarily on online feedback - most of its comparison data comes from the supervised policy rather than a continuously retrained loop.
 Its main defense against reward-model over-optimization is instead a per-token KL penalty holding the policy close to the supervised fine-tuned reference model, done through [[Method — Proximal Policy Optimization (PPO)]]'s RL objective.
 Whether KL regularization against a fixed reference is a genuine substitute for online correction, or just a different way of delaying the same failure, is an open question worth tracking as more RLHF pipelines report their own choices here.
+[[Paper — Scaling Laws for Reward Model Overoptimization (2022)]] bears on this directly: a KL penalty during RL doesn't change the underlying proxy-vs-gold-score frontier at all, it only makes training converge to a lower KL earlier - functionally identical to early stopping, not a distinct correction mechanism.
 
 ## Relations
 

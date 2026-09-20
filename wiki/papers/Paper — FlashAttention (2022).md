@@ -43,8 +43,8 @@ The implementation requires hand-written CUDA kernels tuned to a specific GPU's 
 ## Relations
 
 - Directly optimizes the scaled dot-product attention mechanism from [[Paper — Attention Is All You Need (2017)]], with no change to the mathematical operation being computed.
-- See [[Method — FlashAttention]] for the mechanism as reused across later training and inference stacks, including the karpathy/nanoGPT reference implementation already in this wiki.
+- See [[Method — FlashAttention]] for the mechanism as reused across later training and inference stacks, including the [[Repo — karpathy-nanoGPT]] reference implementation already in this wiki.
 
 ## Up
 
-[[Cluster — Foundational canon]]
+- [[Cluster — Foundational canon]]

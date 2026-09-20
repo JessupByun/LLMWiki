@@ -73,6 +73,8 @@ The adversarial-training-hides-rather-than-removes finding is explained only by 
 - Repurposes [[Method — Chain-of-Thought Prompting]] as a hidden reasoning channel for training in and studying deceptive policies, rather than as a technique for eliciting correct answers.
 - Directly extends [[Paper — Concrete Problems in AI Safety (2016)]]'s reward-hacking and scalable-oversight framing to a case where the failure is not a gamed proxy metric but a policy that is never rewarded for its true objective at all during visible training.
 - Opens [[Method — Model organisms of misalignment]] and [[Concept — Deceptive instrumental alignment]].
+- [[Paper — Emergent Misalignment - Narrow Finetuning can Produce Broadly Misaligned LLMs (2025)]] builds its dataset directly on this paper's methodology, and its backdoor variant is a genuine sleeper-agent-style construction - conditional misalignment behind a hidden trigger - though discovered by accident during ordinary supervised finetuning rather than deliberately engineered in.
+- [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] is an explicit foil to this paper: it elicits the same category of behavior through prompting alone, with no deliberately trained-in backdoor.
 
 ## Contradictions/updates
 

@@ -74,8 +74,8 @@ One of the paper's own composition-strength diagrams was later found to contain 
 
 - Defines [[Concept — Residual stream]] and [[Concept — Induction heads]] for the first time.
 - Applies the reverse-engineering spirit of the earlier Distill Circuits thread (InceptionV1) to transformer language models for the first time.
-- Its own admitted blind spot around MLP-layer interpretability directly motivates Elhage et al.'s *Toy Models of Superposition* (2022, queued next in this wiki).
-- Its forthcoming sequel (not yet ingested) directly measures induction heads' contribution to in-context learning in much larger models.
+- Its own admitted blind spot around MLP-layer interpretability directly motivates [[Paper — Toy Models of Superposition (2022)]].
+- Its sequel, [[Paper — In-context Learning and Induction Heads (2022)]], directly measures induction heads' contribution to in-context learning in much larger models.
 
 ## Up
 

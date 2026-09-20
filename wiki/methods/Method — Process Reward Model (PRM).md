@@ -32,4 +32,4 @@ It is also more directly interpretable and alignment-relevant than outcome super
 
 ## Up
 
-[[Cluster — Post-training alignment]]
+- [[Cluster — Post-training alignment]]

@@ -52,4 +52,4 @@ Its own multilingual translation experiment - a single MoE model beating 8 of 12
 
 ## Up
 
-[[Cluster — Foundational canon]]
+- [[Cluster — Foundational canon]]

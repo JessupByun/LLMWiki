@@ -24,6 +24,7 @@ First proposed by [[Paper — Risks from Learned Optimization in Advanced Machin
 - [[Paper — In-context Learning and Induction Heads (2022)]] treats mesa-optimization as a competing mechanistic hypothesis for in-context learning itself (a model implementing a small learning algorithm internally at inference time) and reports no evidence for it in the models studied, while explicitly not ruling it out at larger scale - a narrower, capability-focused use of the term than the safety-focused one above.
 - [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] explicitly notes its backdoored models are constructed by hand, not evidence that current models satisfy the internal preconditions for a naturally-arising mesa-objective.
 - Cited repeatedly across [[Cluster — Scheming & AI control]]'s member papers as the theoretical grounding, now read directly: see also [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]], which builds on this concept without using the "mesa-optimizer" term itself.
+- [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] groups its own reward-tampering result, in its related-work section, alongside deliberate backdoor-insertion methods as part of the same mesa-optimization/deceptive-alignment lineage this concept opens.
 
 ## Up
 

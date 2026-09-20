@@ -69,7 +69,7 @@ Implementation specifics of several evaluations are deliberately withheld to avo
 - Directly tests the prerequisites [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]] argues scheming requires (situational awareness, a goal extending past the current context, and the instrumental conclusion that gaming oversight serves that goal), and the deferred-subversion evaluations are explicitly framed as close to Carlsmith's and [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]]'s deceptive-alignment definitions.
 - Explicit foil to [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]: this paper elicits the same category of behavior through prompting alone, with no deliberately trained-in backdoor.
 - An instance of the [[Method — Model organisms of misalignment]] methodology, though closer to the naturalistic end of that spectrum than Sleeper Agents, since several results (the goal-less sandbagging, the no-nudge scheming) arise without the experimenters injecting any misaligned goal at all.
-- The interrogation-persistence finding connects to this cluster's later empirical wave on sabotage and oversight evasion (queued: Benton et al. 2024, "Sabotage Evaluations for Frontier Models").
+- The interrogation-persistence finding connects to this cluster's later empirical wave on sabotage and oversight evasion in [[Paper — Sabotage Evaluations for Frontier Models (2024)]].
 
 ## Up
 

@@ -45,8 +45,8 @@ Its central empirical claim, that enough data and compute let a maximally generi
 - Borrows the `[class]`-token classification-head design from [[Paper — BERT (2018)]].
 - Its data-scale-trumps-inductive-bias finding parallels [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3)'s scaling story in language.
 - Uses [[Method — Layer Normalization]] before every attention and MLP block, following the Transformer's standard recipe.
-- Direct architectural ancestor of later vision-language models that need a shared image/text token space (CLIP, not yet ingested; queued next in `BACKLOG.md`).
+- Direct architectural ancestor of later vision-language models that need a shared image/text token space, such as [[Paper — Learning Transferable Visual Models From Natural Language Supervision (2021)]] (CLIP).
 
 ## Up
 
-[[Cluster — Foundational canon]]
+- [[Cluster — Foundational canon]]

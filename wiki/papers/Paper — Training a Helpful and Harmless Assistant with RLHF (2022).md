@@ -45,7 +45,7 @@ This directly operationalizes the "keep labeling as the policy changes" mitigati
 
 ## Results
 
-- **Alignment bonus at scale, alignment tax below it:** 13B and 52B RLHF models perform *better* than their raw pretrained counterparts on zero-shot NLP evaluations (MMLU, Lambada, HellaSwag, OpenBookQA, ARC, TriviaQA); smaller models see a capability decline from the same training.
+- **[[Concept — Alignment tax]] flips to a bonus at scale:** 13B and 52B RLHF models perform *better* than their raw pretrained counterparts on zero-shot NLP evaluations (MMLU, Lambada, HellaSwag, OpenBookQA, ARC, TriviaQA); smaller models see a capability decline from the same training.
 - **Helpfulness and harmlessness are genuinely anti-correlated at the preference-model level:** a PM trained purely on one objective performs *significantly worse than chance* on the other; the tension shrinks, but does not disappear, as model size grows.
 - **Specialized skills survive alignment training intact:** mixing HH preference data with summarization data produces no measurable drop in either HH or summarization PM accuracy; RLHF on a code-finetuned model *improves* its HumanEval pass rate rather than hurting it.
 - **A tension between helpfulness and harmlessness inside RLHF training itself:** an earlier stage of the project produced models that gave the same exaggerated, unhelpfully-avoidant refusal to almost any sensitive question, because the red-teaming data collection procedure only ever showed the model examples of what *not* to do, never a genuinely good "hostage negotiator" response - a concrete instance of the objective-mismatch problem the paper calls out directly.

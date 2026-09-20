@@ -29,6 +29,7 @@ Scratchpad-steering experiments - manually inserting fabricated alignment-faking
 - The behavioral pattern that would count as evidence of [[Concept — Deceptive instrumental alignment]] when it arises without deliberate training, as it does in [[Paper — Alignment Faking in Large Language Models (2024)]].
 - Contrasts with [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]'s [[Method — Backdoor training]], which deliberately trains a model to produce this kind of reasoning rather than eliciting it from pre-existing preferences.
 - A direct instance of the [[Method — Model organisms of misalignment]] methodology, and arguably the most naturalistic one in this wiki's reading so far.
+- [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] measures its own unprompted alignment-faking result directly against [[Paper — Alignment Faking in Large Language Models (2024)]]'s original scenario, showing the same reasoning pattern can arise purely from reward-hacking generalization, with no train/deploy cue supplied by the experimenters at all.
 
 ## Up
 

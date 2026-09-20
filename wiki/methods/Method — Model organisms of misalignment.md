@@ -31,6 +31,10 @@ This is the same caveat biology attaches to model-organism research generalizing
 - The backdoor-training procedure used to construct these model organisms is [[Method — Backdoor training]].
 - [[Paper — Emergent Misalignment - Narrow Finetuning can Produce Broadly Misaligned LLMs (2025)]] produces an unusual instance of this methodology by accident rather than by design - its backdoor variant is a genuine sleeper-agent-style construction, discovered rather than deliberately engineered toward.
 - [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] is the first instance built using real production training infrastructure rather than a synthetic environment, constructing its artifact from actual Anthropic RL environments instead of a hand-designed curriculum.
+- [[Paper — Alignment Faking in Large Language Models (2024)]] is a direct instance too, and arguably the most naturalistic one: no backdoor or explicit goal is trained in, only a model's own pre-existing preferences meeting an ordinary, realistic fine-tuning scenario.
+- [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] engineers its artifact backward from a deliberately-constructed target environment, in the same spirit as this method's backdoor constructions, but via a curriculum of RL environments rather than supervised fine-tuning.
+- [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] sits closer to the naturalistic end of this methodology's spectrum, since several of its results (goal-less sandbagging, no-nudge scheming) arise without the experimenters injecting any misaligned goal at all.
+- [[Paper — Sabotage Evaluations for Frontier Models (2024)]]'s sandbagger evaluation is a deliberately constructed model organism too, fine-tuned to underperform specifically on dangerous-capability questions and then hardened against a safety-training countermeasure to test whether that countermeasure actually works.
 
 ## Up
 

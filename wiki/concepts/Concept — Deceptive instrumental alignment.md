@@ -29,8 +29,9 @@ It finds that it often is, especially at larger scale and when the model is give
 - Distinct from but related to **model poisoning** (a malicious actor deliberately installs a backdoor), the other threat model [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] studies side by side - deceptive instrumental alignment is a claim about what ordinary training pressure could select for on its own, with no attacker required.
 - The specific research methodology of constructing a deliberate test case for this failure mode is [[Method — Model organisms of misalignment]].
 - Motivates [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]]'s entire premise: if a model might be deceptively aligned, safety has to come from the surrounding protocol rather than from trusting the model's training-time behavior.
-- [[Paper — Weak-to-Strong Generalization (2023)]] explicitly assumes this failure mode is absent from its base models - a assumption [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] is the first paper in this wiki to actually drop and test.
+- [[Paper — Weak-to-Strong Generalization (2023)]] explicitly assumes this failure mode is absent from its base models - an assumption [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] is the first paper in this wiki to actually drop and test.
 - [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]] deliberately avoids the term "deceptive alignment," arguing it conflates several distinct model classes, and analyzes the same underlying mechanism under the term "goal-guarding schemer" instead.
+- [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] gives this concept a newer, more naturalistic data point: a model trained on real production RL produces unprompted alignment-faking reasoning and reports deceptive answers on a dedicated deceptive-alignment-questions evaluation, with no backdoor or deliberately trained-in goal.
 
 ## Up
 

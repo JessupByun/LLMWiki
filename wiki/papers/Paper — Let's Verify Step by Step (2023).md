@@ -62,7 +62,7 @@ Its release of PRM800K as an open dataset made process-supervision research repr
 ## Alignment implications
 
 The paper argues process supervision is not just more accurate but more alignment-relevant on its own terms: it directly rewards a reasoning process a human can inspect and endorse, rather than using a final outcome as an imperfect, gameable proxy for good reasoning - the same "reward the intent, not just an easily-measured stand-in for it" concern documented in [[Concept — Reward hacking]].
-The authors frame their central finding, that safer, more interpretable supervision here *improves* rather than costs performance, as evidence against the usual assumption that alignment methods carry a performance tax; they call this a negative alignment tax and flag it as a reason process supervision might see wider adoption specifically because it stops being a tradeoff.
+The authors frame their central finding, that safer, more interpretable supervision here *improves* rather than costs performance, as evidence against the usual assumption that alignment methods carry a performance cost; they call this a negative [[Concept — Alignment tax]] and flag it as a reason process supervision might see wider adoption specifically because it stops being a tradeoff.
 
 ## Limitations
 
@@ -81,5 +81,5 @@ The paper also flags an unresolved test-set contamination risk from MATH problem
 
 ## Up
 
-[[Cluster — Post-training alignment]]
-[[Cluster — Foundational canon]]
+- [[Cluster — Post-training alignment]]
+- [[Cluster — Foundational canon]]

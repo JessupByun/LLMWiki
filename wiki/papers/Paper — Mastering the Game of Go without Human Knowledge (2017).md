@@ -73,5 +73,5 @@ The approach is also demonstrated on exactly one domain - a two-player, zero-sum
 
 ## Up
 
-[[Cluster — Reinforcement learning]]
-[[Cluster — Foundational canon]]
+- [[Cluster — Reinforcement learning]]
+- [[Cluster — Foundational canon]]

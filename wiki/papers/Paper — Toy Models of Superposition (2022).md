@@ -69,7 +69,7 @@ The paper ends with a long, explicit list of unresolved questions - including wh
 - Names and defines [[Concept — Superposition]] for the first time as a rigorous, demonstrated phenomenon rather than a hypothesis.
 - Connects its training-time "energy level" jumps to the phase change documented in [[Paper — In-context Learning and Induction Heads (2022)]].
 - Strengthens [[Concept — Adversarial examples]] with a structural, representational account of why interference-exploiting perturbations exist.
-- Its "Approach 2: finding an overcomplete basis" directly motivates the sparse-dictionary-learning method used in the *Towards Monosemanticity* and *Scaling Monosemanticity* papers (both queued next in this wiki).
+- Its "Approach 2: finding an overcomplete basis" directly motivates the sparse-dictionary-learning method used in [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] and [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]].
 
 ## Up
 

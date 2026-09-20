@@ -41,11 +41,12 @@ Everything downstream inherits both the leverage and the liability of that subst
 - [[Concept — Scalable oversight]]
 - [[Concept — Weak-to-strong generalization]]
 - [[Method — Process Reward Model (PRM)]]
+- [[Concept — Alignment tax]]
 
 ## Open threads
 
 Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled.
-Next candidates: Sparrow (Glaese et al. 2022, DeepMind's contemporaneous alternative to CAI, with a more carefully-designed rule set) and a second post-CAI paper on scalable oversight, since [[Cluster — Adversarial robustness & security]] and this cluster increasingly overlap once red-teaming and jailbreaks are involved.
+Next candidate per `BACKLOG.md` Group U: Irving, Christiano & Amodei's *AI Safety via Debate* (2018) - the canonical structured-debate scalable-oversight protocol, and this cluster's other major pillar besides Weak-to-Strong Generalization's empirical-proxy approach.
 [[Paper — Let's Verify Step by Step (2023)]]'s ORM baseline traces back to Cobbe et al. 2021's verifiers and its direct comparison point is Uesato et al. 2022 - both still not yet ingested, and both would sharpen this cluster's process-vs-outcome-supervision thread if added later.
 [[Paper — Weak-to-Strong Generalization (2023)]]'s explicit "no deceptive alignment in base models" assumption is exactly what [[Cluster — Scheming & AI control]] investigates directly.
 

@@ -45,8 +45,8 @@ The paper's zero-shot analysis - heuristics that read task answers directly out 
 - Built directly on the Transformer architecture from [[Paper — Attention Is All You Need (2017)]], using its decoder half with masked self-attention.
 - Trained with [[Paper — Adam - A Method for Stochastic Optimization (2014)]].
 - [[Paper — BERT (2018)]], published four months later, directly targets this paper's main limitation - its use of a strictly left-to-right (unidirectional) Transformer - by making the pretraining objective bidirectional instead.
-- Directly extended by GPT-2 (Radford et al. 2019, not yet ingested) and ultimately [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3), which keeps this paper's architecture and pretraining objective but drops per-task fine-tuning entirely.
+- Directly extended by [[Paper — Language Models are Unsupervised Multitask Learners (2019)]] (GPT-2) and ultimately [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3), which keeps this paper's architecture and pretraining objective but drops per-task fine-tuning entirely.
 
 ## Up
 
-[[Cluster — Foundational canon]]
+- [[Cluster — Foundational canon]]

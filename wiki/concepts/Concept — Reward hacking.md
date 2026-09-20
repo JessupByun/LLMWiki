@@ -52,7 +52,7 @@ This is a treadmill, not a solution, which is why scalable oversight remains ope
 The same paper also fits scaling laws showing the whole Goodhart curve - how far a policy can be pushed before ground-truth quality peaks and turns over - becomes more forgiving as the reward model gets bigger.
 
 **Tension / update.** [[Paper — Training LMs to Follow Instructions (2022)]] runs this exact reward-model-plus-RL setup at LLM scale but does not rely mainly on online feedback - it instead holds the policy near a fixed reference model with a KL penalty during RL.
-Whether that substitutes for online correction or merely defers the same failure mode to whenever the KL constraint is loosened is unresolved; see the fuller discussion on [[Method — Reinforcement learning from human feedback (RLHF)]].
+[[Paper — Scaling Laws for Reward Model Overoptimization (2022)]] answers the substitutes-or-defers question this raised: a KL penalty doesn't change the underlying overoptimization curve at all, it only makes training converge to a lower KL earlier - functionally identical to early stopping, not a genuine substitute for online correction; see the fuller discussion on [[Method — Reinforcement learning from human feedback (RLHF)]].
 
 **Tension / update.** [[Paper — Constitutional AI (2022)]]'s RL-CAI stage shows the same phenomenon recurring with an AI-generated rather than human-generated preference signal: heavy optimization against the AI feedback reward model produces boilerplate over-reassurance rather than genuinely safer responses, a Goodharting failure structurally identical to the Pong case above.
 Whether AI-generated preference signal is more or less exploitable than human-generated signal in this way is not yet settled by the literature in this wiki.

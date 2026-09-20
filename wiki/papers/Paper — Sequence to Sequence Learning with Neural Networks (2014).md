@@ -39,7 +39,7 @@ The single fixed-length vector this paper popularized is exactly the bottleneck 
 ## Relations
 
 - Directly critiqued and extended by [[Paper — Neural Machine Translation by Jointly Learning to Align and Translate (2014)]], which keeps the encoder/decoder split but replaces the single fixed-length context vector with a learned, per-step weighted combination of source annotations.
-- Uses LSTMs (Hochreiter & Schmidhuber, 1997, not yet ingested) as the recurrent unit in both encoder and decoder.
+- Uses [[Paper — Long Short-Term Memory (1997)]] (LSTM) as the recurrent unit in both encoder and decoder.
 - The encoder/decoder split this paper established is the direct ancestor of the Transformer's own encoder-decoder structure in [[Paper — Attention Is All You Need (2017)]], though Attention replaces both LSTMs with self-attention.
 
 ## Up

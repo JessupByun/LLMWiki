@@ -54,7 +54,7 @@ Neighboring features chain into small, interpretable **"finite state automata"**
 
 ## Why it endures
 
-This paper is what opens the sparse-autoencoder / dictionary-learning research program that comes to dominate later mechanistic interpretability, including its own forthcoming, much larger-scale sequel (*Scaling Monosemanticity*, queued next in this wiki).
+This paper is what opens the sparse-autoencoder / dictionary-learning research program that comes to dominate later mechanistic interpretability, including its own much larger-scale sequel, [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]].
 The paper is explicit that it was part of a close race of independent discovery rather than a lone breakthrough, citing a parallel line of interim reports and a concurrent manuscript reaching very similar conclusions, and an external replication (by Neel Nanda) appended to the paper itself finding the core results hold on an independently trained open-source model.
 Its own explicitly flagged "most important" open question - whether this approach can be scaled to frontier-size models, given that a highly overcomplete autoencoder on a real model's MLP width could itself have tens of billions of parameters - is the exact question its sequel exists to answer.
 
@@ -70,7 +70,7 @@ The paper also raises, without resolving, a puzzle its own results surface: why 
 - Directly executes "Approach 2: finding an overcomplete basis," proposed but not attempted in [[Paper — Toy Models of Superposition (2022)]], after ruling out the architectural alternative with a clean counterexample.
 - Gives [[Concept — Superposition]] its first empirical, causally-validated reversal in a real (if tiny) trained model.
 - Introduces [[Method — Sparse Autoencoder (SAE)]] as the field's standard tool for recovering interpretable features from superposition.
-- Its explicitly flagged scaling question is answered directly by its own sequel, *Scaling Monosemanticity* (2024, queued next in this wiki).
+- Its explicitly flagged scaling question is answered directly by its own sequel, [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]].
 
 ## Up
 

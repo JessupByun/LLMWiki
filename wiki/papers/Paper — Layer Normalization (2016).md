@@ -49,4 +49,4 @@ The paper reports that layer normalization does not outperform batch normalizati
 
 ## Up
 
-[[Cluster — Foundational canon]]
+- [[Cluster — Foundational canon]]

@@ -34,7 +34,7 @@ The disanalogy is what counts as "small": an image attack must be imperceptible,
 - A token-space relocation of [[Concept — Adversarial examples]], sharing its transferability property.
 - Exploits the same prompt-as-attack-surface property that [[Concept — In-context learning]] names as the mechanism behind prompt injection.
 - Measured by [[Benchmark — AdvBench]].
-- Raises the open question, not resolved by the paper that automates it, of whether post-hoc RLHF-style alignment training ([[Method — Reinforcement learning from human feedback (RLHF)]]) can ever structurally close this gap - a question the AI-control and model-organisms-of-misalignment literature (queued later in this wiki) takes up directly.
+- Raises the open question, not resolved by the paper that automates it, of whether post-hoc RLHF-style alignment training ([[Method — Reinforcement learning from human feedback (RLHF)]]) can ever structurally close this gap - a question [[Cluster — Scheming & AI control]] takes up directly.
 
 ## Up
 

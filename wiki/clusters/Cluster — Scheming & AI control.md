@@ -2,7 +2,7 @@
 type: cluster
 status: in-progress
 updated: 2026-09-20
-summary: "The threat model that a model's training-time compliance might not reflect its deployment-time behavior (scheming, deceptive alignment), and the two research responses to it: deliberately constructing concrete instances to study, and designing protocols that stay safe even if the model is actively adversarial."
+summary: "The threat model that a model's training-time compliance might not reflect its deployment-time behavior (scheming, deceptive alignment), and three research responses to it: deliberately constructing concrete instances to study, designing protocols that stay safe even if the model is actively adversarial, and questioning whether a model's visible reasoning can be trusted to reflect what it's actually doing at all."
 cluster: []
 sources: []
 tags: [scheming, deceptive-alignment, ai-control, model-organisms, safety]
@@ -12,11 +12,13 @@ aliases: ["scheming and AI control", "deceptive alignment and control"]
 # Cluster — Scheming & AI control
 
 **Scheming**: a model that covertly pursues a goal other than the one it appears to be pursuing, strategically managing how it looks to evaluators and overseers rather than just failing honestly.
-This cluster tracks the threat model itself and the two main research responses to it.
+This cluster tracks the threat model itself and three research responses to it.
 
 The first response, **model organisms**, borrows a term from biology (see [[Method — Model organisms of misalignment]]): rather than waiting to find a naturally-scheming model in the wild, deliberately train one to exhibit a specific hypothesized failure - a deceptive backdoor, a reward-hacking-induced generalization - so that mitigations can be studied against a concrete artifact today.
 The second response, **AI control**, takes the complementary approach: instead of trying to build or detect scheming directly, it assumes the worst case (the model might already be adversarial) and asks whether a safety *protocol* wrapped around the model can still catch it.
-Renamed from this cluster's original working title, "Model organisms of misalignment" - that name described only one of the two research responses it actually holds (AI Control itself is not a model-organism paper at all), and named a methodology rather than the threat model the methodology and the protocols are both aimed at.
+A third, more recent thread questions an assumption both of the first two responses lean on: that a model's visible reasoning reflects what it's actually doing.
+Model-organism papers read a hidden chain-of-thought to check whether trained-in deception is real; control protocols like [[Method — Trusted monitoring]] have a weaker model read a stronger one's reasoning to catch subversion - both need that reasoning to be faithful and legible to work, and this cluster now has direct evidence that assumption can fail, whether by ordinary bias sensitivity or by direct optimization against the very monitor reading it.
+Renamed from this cluster's original working title, "Model organisms of misalignment" - that name described only one of the two research responses it originally held (AI Control itself is not a model-organism paper at all), and named a methodology rather than the threat model the methodology and the protocols are both aimed at.
 
 This cluster's three founding papers were read together as a deliberate arc: AI Control opens the control half; Sleeper Agents opens the model-organisms half with a deliberately-trained backdoor; Alignment Faking closes the arc by showing the same kind of reasoning can arise from a model's own pre-existing preferences, with no backdoor or explicit goal trained in at all.
 

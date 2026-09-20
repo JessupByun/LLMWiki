@@ -58,7 +58,7 @@ Notably, running the optimizer for *more* steps sometimes *reduces* transfer suc
 
 The paper explicitly reframes jailbreaking from an artisanal, human-driven red-teaming exercise into a scalable, automatable attack, and draws a direct, pessimistic analogy to computer vision: state-of-the-art defenses against adversarial examples there are rarely deployed in practice because they are computationally expensive, degrade clean-task performance, and only cover a narrowly-specified threat model - and the paper predicts the same unresolved "arms race" dynamic for language models rather than a clean fix.
 GCG became the standard baseline attack and [[Benchmark — AdvBench]] a standard evaluation set for essentially all subsequent LLM red-teaming, jailbreak, and defense research.
-The paper's central open question - whether any amount of post-hoc RLHF-style alignment fine-tuning can fully close this gap, or whether the vulnerability is structural - is left explicitly unresolved, and is a direct throughline into the AI-control and model-organisms-of-misalignment literature queued later in this wiki, which studies safety under the assumption a model's trained-in alignment cannot be fully trusted.
+The paper's central open question - whether any amount of post-hoc RLHF-style alignment fine-tuning can fully close this gap, or whether the vulnerability is structural - is left explicitly unresolved, and is a direct throughline into [[Cluster — Scheming & AI control]], which studies safety under the assumption a model's trained-in alignment cannot be fully trusted.
 
 ## Limitations
 
@@ -72,7 +72,7 @@ The paper proposes no defense and does not evaluate whether adversarial training
 - Direct LLM-era descendant of [[Concept — Adversarial examples]] and [[Paper — Intriguing Properties of Neural Networks (2013)]], moving transferable adversarial attacks from pixel space to token space; second member of [[Cluster — Adversarial robustness & security]].
 - Introduces [[Method — Greedy Coordinate Gradient (GCG)]] and [[Benchmark — AdvBench]].
 - Names and automates [[Concept — Jailbreaking (LLMs)]], previously a manual, human-engineered technique.
-- Directly targets the alignment machinery built by [[Method — Reinforcement learning from human feedback (RLHF)]] and its variants ([[Paper — Training LMs to Follow Instructions (2022)]], [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]], [[Paper — Constitutional AI (2022)]]), raising an open question about whether post-hoc alignment training can be structurally sufficient - a question the AI-control and model-organisms-of-misalignment literature (queued later in this wiki) picks up directly.
+- Directly targets the alignment machinery built by [[Method — Reinforcement learning from human feedback (RLHF)]] and its variants ([[Paper — Training LMs to Follow Instructions (2022)]], [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]], [[Paper — Constitutional AI (2022)]]), raising an open question about whether post-hoc alignment training can be structurally sufficient - a question [[Cluster — Scheming & AI control]] picks up directly.
 
 ## Up
 

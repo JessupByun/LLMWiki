@@ -81,6 +81,8 @@ Usefulness is measured assuming that once a model is confirmed to be scheming, i
 - Shares its red-team/adversarial framing with [[Concept — Jailbreaking (LLMs)]] and [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]], but inverts the threat model: those attack a model from outside to elicit bad outputs, while this paper treats the model itself as a potential insider adversary trying to subvert the oversight wrapped around it.
 - Introduces [[Concept — AI control]] and [[Method — Trusted monitoring]].
 - [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] supplies the concrete adversarial artifact this paper's protocols would need to be tested against: a real model trained to behave differently once it detects deployment.
+- [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] directly extends this paper's protocol family (trusted monitoring, defer to trusted, untrusted monitoring) from a single-action setting into a multi-step agentic one, reusing its collusion-avoidance techniques without modification.
+- [[Paper — Sabotage Evaluations for Frontier Models (2024)]] directly operationalizes this paper's red-team/blue-team methodology into concrete, run-today evaluations, and empirically tests sandbagging - a difficulty this page's own Limitations names as unsolved.
 
 ## Up
 

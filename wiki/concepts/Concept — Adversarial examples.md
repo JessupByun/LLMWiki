@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-08-07
+updated: 2026-09-19
 summary: "Inputs perturbed imperceptibly but deliberately to cause misclassification, which transfer across models and so constitute a real attack."
 cluster: ["Adversarial robustness & security"]
 sources: []
