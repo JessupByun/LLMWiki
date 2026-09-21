@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-20
 summary: "An attention-head circuit that predicts the next token by finding the last occurrence of the current token in context and copying whatever followed it - the first general in-context-learning mechanism found inside an actual transformer."
 cluster: ["Mechanistic interpretability"]
 sources: []

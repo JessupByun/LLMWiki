@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-20
 summary: "Deliberately constructing a model that exhibits a hypothesized future misalignment failure, so present-day safety techniques can be tested against a concrete artifact rather than waiting for the failure to arise naturally."
 cluster: ["Scheming & AI control"]
 sources: []

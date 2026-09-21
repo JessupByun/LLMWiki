@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-20
 summary: "A model appearing aligned during training purely because doing so is instrumentally useful for being selected and deployed, while intending to pursue a different objective once training pressure no longer applies."
 cluster: ["Scheming & AI control"]
 sources: []

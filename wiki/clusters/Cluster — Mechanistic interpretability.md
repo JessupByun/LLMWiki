@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-20
 summary: "Reverse-engineering the internal computations of trained neural networks into human-interpretable algorithms, weights, and features, via three distinct lineages: hand-verified circuits, sparse dictionary learning, and top-down representation reading and control."
 cluster: []
 sources: []
@@ -15,7 +15,7 @@ Attempting to reverse engineer the detailed computations a trained neural networ
 The motivating bet, made explicit by the paper that opens this cluster, is that this could eventually let researchers explain a model's current safety problems, catch new ones, and anticipate the failure modes of future models that haven't been built yet - a more systematic alternative to purely behavioral evaluation.
 
 This cluster starts where the field starts for language models: the smallest possible toy transformers, studied until a simple, general mechanism (the induction head) falls out of the math.
-Everything downstream - from measuring that mechanism at scale to the polysemanticity/superposition problem it runs straight into once MLP layers are added back in - inherits this cluster's founding move: rewrite the model, without changing it, into a form where its parameters are directly interpretable.
+The circuit-analysis and dictionary-learning lineages both inherit this founding move directly - from measuring that mechanism at scale to the polysemanticity/superposition problem it runs straight into once MLP layers are added back in, both rewrite the model, without changing it, into a form where its parameters are directly interpretable.
 
 Three genuinely distinct lineages now converge on that shared goal.
 The **circuit-analysis** lineage traces a specific behavior down to the individual attention heads or features causally responsible for it, whether by painstaking hand-verified causal intervention in a real (non-toy) model or, at much greater scale, by an automated pipeline that builds a full causal graph for an arbitrary prompt.
@@ -46,7 +46,7 @@ The **representation-engineering** lineage skips both of these bottom-up steps e
 ## Open threads
 
 Group W is done as of this ingest, closing out Wang et al. (IOI), Zou et al. (Representation Engineering), and Anthropic's Circuit Tracing methods-and-applications pair - this cluster no longer traces exclusively back to the Anthropic Transformer Circuits Thread's own SAE lineage, and now has all three of the field's major methodological approaches represented.
-Scaling Monosemanticity's own open question - dictionary completeness remains far off even at 34M features - is picked up directly by Circuit Tracing's cross-layer transcoders, which are explicitly framed as the next step past a plain feature dictionary rather than a bigger one.
+Scaling Monosemanticity's own dictionary-completeness question remains open on its own terms; Circuit Tracing picks up a different thread instead - not "how many more features are there," but "how do the features that already exist causally combine into a specific output," a question a plain feature dictionary was never built to answer regardless of its size.
 [[Question — Is in-context learning genuine learning or pattern recognition]] tracks the open thread between this cluster's induction-head evidence and [[Concept — In-context learning]]'s behavioral framing in [[Cluster — Foundational canon]].
 `BACKLOG.md`'s Group X (opening a new Capability evals cluster, anchored on METR's task-horizon paper) is next whenever reading continues.
 
