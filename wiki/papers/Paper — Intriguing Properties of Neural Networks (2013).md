@@ -4,7 +4,7 @@ status: in-progress
 updated: 2026-08-07
 summary: "Discovered adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets."
 cluster: ["Adversarial robustness & security", "Foundational canon"]
-sources: ["raw/papers/Paper — Intriguing Properties of Neural Networks (2013).pdf"]
+sources: ["raw/papers/adversarial-robustness-and-security/Paper — Intriguing Properties of Neural Networks (2013).pdf"]
 tags: [adversarial-examples, robustness, security, interpretability, cnn]
 aliases: ["arxiv:1312.6199", "Szegedy et al. 2013"]
 ---

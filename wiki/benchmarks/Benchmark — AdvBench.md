@@ -29,6 +29,7 @@ The benchmark's content reflects what models refused to generate at the time it 
 
 - Introduced in [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] to evaluate [[Method — Greedy Coordinate Gradient (GCG)]].
 - Measures success at eliciting the failure mode named in [[Concept — Jailbreaking (LLMs)]].
+- Directly superseded by [[Benchmark — HarmBench]] on scale, behavior diversity, and evaluation reliability - its own substring-matching success criterion scores only 32% average accuracy against nonstandard completions designed to game it, versus HarmBench's dedicated classifier's 95.7%.
 
 ## Up
 

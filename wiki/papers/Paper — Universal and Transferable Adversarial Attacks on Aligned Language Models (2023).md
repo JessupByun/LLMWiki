@@ -4,7 +4,7 @@ status: mature
 updated: 2026-09-19
 summary: "Automatically finds a single adversarial suffix that reliably jailbreaks aligned open-source language models and transfers, purely black-box, to production systems including ChatGPT, Bard, and Claude."
 cluster: ["Adversarial robustness & security"]
-sources: ["raw/papers/Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023).pdf"]
+sources: ["raw/papers/adversarial-robustness-and-security/Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023).pdf"]
 tags: [adversarial-examples, security, jailbreak, llm, red-teaming]
 aliases: ["arxiv:2307.15043", "Zou et al. 2023", "GCG"]
 ---
@@ -73,6 +73,9 @@ The paper proposes no defense and does not evaluate whether adversarial training
 - Introduces [[Method — Greedy Coordinate Gradient (GCG)]] and [[Benchmark — AdvBench]].
 - Names and automates [[Concept — Jailbreaking (LLMs)]], previously a manual, human-engineered technique.
 - Directly targets the alignment machinery built by [[Method — Reinforcement learning from human feedback (RLHF)]] and its variants ([[Paper — Training LMs to Follow Instructions (2022)]], [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]], [[Paper — Constitutional AI (2022)]]), raising an open question about whether post-hoc alignment training can be structurally sufficient - a question [[Cluster — Scheming & AI control]] picks up directly.
+- [[Benchmark — HarmBench]] standardizes GCG alongside seventeen other attacks as a shared evaluation baseline, and builds its own R2D2 defense by adversarially training directly against it.
+- [[Benchmark — WMDP]] uses GCG as its robustness stress test for unlearning, finding an unlearned model resists jailbreaking where a merely refusal-trained one does not.
+- [[Paper — Many-shot Jailbreaking (2024)]] composes with GCG directly: a GCG suffix sharply boosts zero-shot jailbreak success but loses its advantage as more many-shot context is added.
 
 ## Up
 

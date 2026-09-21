@@ -41,7 +41,7 @@ Calibration matters here and is often overstated in summaries. In the original p
 
 The phenomenon relocated rather than resolved.
 [[Concept — Jailbreaking (LLMs)]] and prompt injection against language models are the same structure in token space: a deliberately optimized input that drives a model outside its intended behavior, frequently transferring across models - demonstrated directly at scale by [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]], whose adversarial suffixes transfer from small open models to production systems like ChatGPT and Claude with no direct access to them.
-Robustness also turned out to trade against accuracy, and adversarial training - originally proposed in the 2013 paper as a side benefit - became the main practical defense, though the 2023 paper argues the same computationally-expensive, capability-degrading, narrowly-scoped tradeoffs that have kept it from being deployed against vision models look likely to recur for language models.
+Robustness also turned out to trade against accuracy, and adversarial training - originally proposed in the 2013 paper as a side benefit, given a rigorous min-max formulation and a reliable first-order attack (PGD) to train against in [[Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018)]] - became the main practical defense, though the 2023 paper argues the same computationally-expensive, capability-degrading, narrowly-scoped tradeoffs that have kept it from being deployed against vision models look likely to recur for language models.
 
 ## Relations
 
@@ -50,6 +50,7 @@ Robustness also turned out to trade against accuracy, and adversarial training -
 - Compare [[Concept — Reward hacking]]: both are an optimizer exploiting a region where a learned function misbehaves, differing in whether the exploitation is adversarial by intent.
 - [[Concept — Superposition]] offers a mechanistic, interpretability-grounded account of why the interference this concept depends on exists in the first place.
 - [[Concept — Jailbreaking (LLMs)]] is this concept relocated to token space and aimed at circumventing alignment training specifically, rather than at causing misclassification.
+- [[Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018)]] gives this concept's central defense, adversarial training, its first optimization-theoretic guarantee rather than an empirically-tuned mitigation, reframing attack and defense as two halves of a single min-max saddle-point problem.
 
 ## Up
 

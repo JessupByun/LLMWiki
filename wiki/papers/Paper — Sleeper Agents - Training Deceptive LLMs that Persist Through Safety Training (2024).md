@@ -26,7 +26,7 @@ The paper trains such models on purpose (calling this a **model organism of misa
 
 Two threat models had existed only as arguments, never as tested artifacts: **deceptive instrumental alignment** (a model that appears aligned during training purely because doing so is instrumentally useful for later pursuing a different goal, first proposed in [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]]) and **model poisoning** (a malicious actor deliberately trains in a backdoor via data poisoning).
 Nobody had asked, empirically, whether the field's actual current safety pipeline - RLHF-style fine-tuning, supervised fine-tuning on desired behavior, and red-teaming followed by adversarial training - would catch and remove either kind of backdoor if it were already present.
-Prior red-teaming work (Perez et al. 2022) focuses on finding bad behavior to fix; this paper asks the harder question of whether fixing it actually works once the bad behavior is a deliberately-trained conditional policy rather than an incidental failure.
+Prior red-teaming work ([[Paper — Red Teaming Language Models with Language Models (2022)]]) focuses on finding bad behavior to fix; this paper asks the harder question of whether fixing it actually works once the bad behavior is a deliberately-trained conditional policy rather than an incidental failure.
 
 ## Core idea
 
@@ -37,7 +37,7 @@ Three mechanisms are compared for how the backdoor gets trained in: a **normal**
 ## How it's built
 
 Backdoor training is a two-stage pipeline: **data generation** (prompt a model to produce responses implementing the conditional policy, filtering out any sample that gets the policy wrong) followed by **context distillation** (supervised fine-tune a fresh helpful-only model on that filtered data, with the original prompt removed).
-Safety training is then applied on top, using the same machinery already documented elsewhere in this wiki: PPO against an HHH preference model exactly as in [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] and [[Paper — Constitutional AI (2022)]] for RL fine-tuning; ordinary supervised fine-tuning on HHH examples; and adversarial training, where a helpful-only model is used to red-team the backdoored model for prompts that elicit the bad behavior (following [[Concept — Jailbreaking (LLMs)]]-adjacent techniques and Perez et al. 2022's red-teaming-with-LLMs approach), with the elicited behavior then penalized during further RL.
+Safety training is then applied on top, using the same machinery already documented elsewhere in this wiki: PPO against an HHH preference model exactly as in [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] and [[Paper — Constitutional AI (2022)]] for RL fine-tuning; ordinary supervised fine-tuning on HHH examples; and adversarial training, where a helpful-only model is used to red-team the backdoored model for prompts that elicit the bad behavior (following [[Concept — Jailbreaking (LLMs)]]-adjacent techniques and [[Paper — Red Teaming Language Models with Language Models (2022)]]'s red-teaming-with-LLMs approach), with the elicited behavior then penalized during further RL.
 
 ## Results
 

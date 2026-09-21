@@ -16,9 +16,10 @@ aliases: ["jailbreak"]
 A jailbreak is an input, or family of inputs, that causes an aligned language model to produce content or exhibit behavior its safety training was specifically meant to prevent - while leaving the model's underlying capability to produce that content fully intact.
 The model "knows how" to comply; the jailbreak is what gets past the trained-in refusal.
 
-Two lineages have converged on this term.
+Three lineages have converged on this term.
 **Manual jailbreaks** are hand-engineered prompts - role-play framings, hypothetical scenarios, instructions to begin with an affirmative word - that require human ingenuity and are comparatively brittle, easily patched by the next round of alignment training.
-**Automated jailbreaks**, demonstrated at scale by [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] via [[Method — Greedy Coordinate Gradient (GCG)]], instead search for an adversarial suffix using gradients and optimization, the same way a vision adversarial example is found, rather than relying on a human's intuition for what scenario will confuse the model.
+**Gradient-optimized jailbreaks**, demonstrated at scale by [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] via [[Method — Greedy Coordinate Gradient (GCG)]], instead search for an adversarial suffix using gradients and optimization, the same way a vision adversarial example is found, rather than relying on a human's intuition for what scenario will confuse the model.
+**In-context jailbreaks**, demonstrated at scale by [[Paper — Many-shot Jailbreaking (2024)]], need neither cleverness nor gradient access: stuffing a long context window with hundreds of fake dialogue turns of compliance reliably overrides safety training purely through ordinary in-context learning.
 
 ## Why it works
 
@@ -35,6 +36,9 @@ The disanalogy is what counts as "small": an image attack must be imperceptible,
 - Exploits the same prompt-as-attack-surface property that [[Concept — In-context learning]] names as the mechanism behind prompt injection.
 - Measured by [[Benchmark — AdvBench]].
 - Raises the open question, not resolved by the paper that automates it, of whether post-hoc RLHF-style alignment training ([[Method — Reinforcement learning from human feedback (RLHF)]]) can ever structurally close this gap - a question [[Cluster — Scheming & AI control]] takes up directly.
+- [[Paper — Many-shot Jailbreaking (2024)]] traces its in-context jailbreak mechanism to [[Concept — Induction heads]], the same circuit behind ordinary in-context learning, giving this concept's newest lineage a genuine mechanistic account.
+- [[Paper — Red Teaming Language Models with Language Models (2022)]] is a direct methodological precursor: automating the *discovery* of many diverse failure categories with a second LM, rather than automating one single reusable jailbreak attack.
+- Distinct from indirect prompt injection ([[Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)]]): a jailbreak is delivered through the user's own prompt to circumvent the model's own safety training, while an indirect injection arrives through third-party content an application retrieves, and doesn't need the target model to have any safety training to defeat in the first place.
 
 ## Up
 
