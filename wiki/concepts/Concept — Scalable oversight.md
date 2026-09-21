@@ -28,6 +28,8 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 
 [[Paper — Weak-to-Strong Generalization (2023)]] studies a deliberately different angle on the same underlying problem: rather than improving the supervision signal itself, it asks whether a model can generalize *beyond* whatever imperfect supervision it receives, using a small model standing in for a human overseer too weak to fully evaluate a much stronger model - see [[Concept — Weak-to-strong generalization]].
 
+[[Paper — AI Safety via Debate (2018)]] takes a third angle, years earlier: rather than improving the proxy or asking a model to generalize past it, it has two agents debate a question adversarially in front of the human, so the human only ever has to judge a short, bounded exchange rather than verify a full answer - and proves, via a complexity-theory analogy, that this in principle lets a fixed-capability judge oversee agents of unbounded reasoning power.
+
 [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] takes the overseer-capability gap in yet another direction: instead of asking whether weak supervision is good enough on average, it asks whether an oversight protocol survives the worst case, where the model being overseen is actively trying to defeat it - see [[Concept — AI control]].
 
 [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] gives this concept a concrete positive result and its most direct cautionary tale in the same paper: a weaker GPT-4o reading a stronger reasoning agent's chain of thought catches the large majority of real reward hacks, but folding that same weak overseer directly into the strong model's training reward teaches the strong model to hide from it instead of stopping.
@@ -39,6 +41,7 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 - Addressed empirically, in the process-vs-outcome-supervision sense, by [[Paper — Let's Verify Step by Step (2023)]].
 - Motivates [[Method — Reinforcement learning from human feedback (RLHF)]]'s entire reward-model design: substitute a learned, cheap-to-query proxy for an expensive human judgment at every step.
 - Complemented by [[Concept — Weak-to-strong generalization]], which targets the same overseer-capability gap from the generalization side rather than the supervision-quality side.
+- [[Paper — AI Safety via Debate (2018)]] targets the same gap from the adversarial-decomposition side: two competing agents rather than one model generalizing past its supervisor.
 - Extended to the worst case (an adversarial overseen model) by [[Concept — AI control]].
 - [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] frames its weak-monitors-strong-model result explicitly as evidence for this concept, while also showing the same weak-overseer protocol can be trained away from if used as a direct optimization target rather than pure observation.
 

@@ -31,6 +31,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 | [[Paper — Direct Preference Optimization (2023)]] | DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop. |
 | [[Paper — Let's Verify Step by Step (2023)]] | Trains a reward model on step-level human labels instead of only the final answer, showing process supervision produces a far more reliable verifier than outcome supervision - and does so at no cost to performance, a rare "negative alignment tax" result. |
 | [[Paper — Weak-to-Strong Generalization (2023)]] | Finetunes strong pretrained models on labels from much weaker supervisors and shows the strong models consistently outperform their supervisors, turning the future problem of humans overseeing superhuman AI into an empirically testable proxy today. Dual-tagged canon: OpenAI Superalignment's flagship empirical paper, setting the field's standard methodology (PGR) for this question. |
+| [[Paper — AI Safety via Debate (2018)]] | This cluster's other major scalable-oversight pillar besides Weak-to-Strong Generalization's empirical-proxy approach: trains two agents to debate in front of a human judge who only has to decide who's more convincing, and proves optimal-play debate with a polynomial-time judge can decide any question in PSPACE. |
 
 ## Methods and concepts
 
@@ -45,9 +46,9 @@ Everything downstream inherits both the leverage and the liability of that subst
 
 ## Open threads
 
-Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled.
-Next candidate per `BACKLOG.md` Group U: Irving, Christiano & Amodei's *AI Safety via Debate* (2018) - the canonical structured-debate scalable-oversight protocol, and this cluster's other major pillar besides Weak-to-Strong Generalization's empirical-proxy approach.
+Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled, and Group U closes the scalable-oversight gap too: this cluster now documents both of the field's founding protocols for it, debate and weak-to-strong generalization, with a paper-level Relations note on each explaining how their theoretical ceilings are provably equivalent.
 [[Paper — Let's Verify Step by Step (2023)]]'s ORM baseline traces back to Cobbe et al. 2021's verifiers and its direct comparison point is Uesato et al. 2022 - both still not yet ingested, and both would sharpen this cluster's process-vs-outcome-supervision thread if added later.
+AI Safety via Debate's own comparison to Christiano's contemporaneous *iterative amplification* proposal (Christiano et al. 2018, not yet ingested) is a natural next addition if scalable oversight gets a third paper.
 [[Paper — Weak-to-Strong Generalization (2023)]]'s explicit "no deceptive alignment in base models" assumption is exactly what [[Cluster — Scheming & AI control]] investigates directly.
 
 ## Up
