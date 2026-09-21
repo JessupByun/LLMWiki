@@ -46,7 +46,7 @@ The paper is explicit that WMDP measures a necessary but not sufficient ingredie
 ## Relations
 
 - Directly motivated by the same refusal-training weakness [[Method — Greedy Coordinate Gradient (GCG)]] and [[Benchmark — HarmBench]] document empirically: RLHF-based refusal can be bypassed by an adversarial attack, but WMDP's own GCG robustness test finds an unlearned model has nothing left to reveal even after hours of optimization pressure, unlike a model that merely refuses.
-- Named alongside [[Benchmark — HarmBench]] in CLAUDE.md's own list of standard eval-suite examples this wiki was missing pages for - both are Benchmark-type pages introduced by their own dedicated papers, unlike [[Benchmark — AdvBench]], which was introduced inside a paper about something else.
+- Complementary to [[Benchmark — HarmBench]] rather than overlapping with it: HarmBench measures whether a model *can be talked into* producing harmful output despite its safety training, while WMDP measures whether the underlying hazardous *knowledge* is present in the model at all, independent of whether any jailbreak is ever attempted.
 
 ## Up
 

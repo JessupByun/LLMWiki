@@ -73,7 +73,7 @@ The paper proposes no defense and does not evaluate whether adversarial training
 - Introduces [[Method — Greedy Coordinate Gradient (GCG)]] and [[Benchmark — AdvBench]].
 - Names and automates [[Concept — Jailbreaking (LLMs)]], previously a manual, human-engineered technique.
 - Directly targets the alignment machinery built by [[Method — Reinforcement learning from human feedback (RLHF)]] and its variants ([[Paper — Training LMs to Follow Instructions (2022)]], [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]], [[Paper — Constitutional AI (2022)]]), raising an open question about whether post-hoc alignment training can be structurally sufficient - a question [[Cluster — Scheming & AI control]] picks up directly.
-- [[Benchmark — HarmBench]] standardizes GCG alongside seventeen other attacks as a shared evaluation baseline, and builds its own R2D2 defense by adversarially training directly against it.
+- [[Benchmark — HarmBench]] standardizes GCG - run in three variants (standard, multi-prompt, transfer) - as a shared evaluation baseline alongside its other attacks, and builds its own R2D2 defense by adversarially training directly against it.
 - [[Benchmark — WMDP]] uses GCG as its robustness stress test for unlearning, finding an unlearned model resists jailbreaking where a merely refusal-trained one does not.
 - [[Paper — Many-shot Jailbreaking (2024)]] composes with GCG directly: a GCG suffix sharply boosts zero-shot jailbreak success but loses its advantage as more many-shot context is added.
 

@@ -32,7 +32,9 @@ Extended to a **universal, multi-prompt, multi-model** setting, the same suffix 
 
 - Introduced in [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] to automate [[Concept — Jailbreaking (LLMs)]].
 - A refinement of the AutoPrompt discrete-optimization approach, itself building on HotFlip's one-hot gradient trick.
-- Evaluated against [[Benchmark — AdvBench]].
+- Evaluated against [[Benchmark — AdvBench]] and, later, standardized as one of eighteen attacks (run in three variants: standard, multi-prompt, transfer) in [[Benchmark — HarmBench]], which also builds its own R2D2 defense by adversarially training directly against it.
+- Used by [[Benchmark — WMDP]] as a robustness stress test for its unlearning method, finding an unlearned model resists GCG optimization where a merely refusal-trained model does not.
+- Composes directly with [[Paper — Many-shot Jailbreaking (2024)]]: a GCG suffix sharply boosts zero-shot jailbreak success but loses its advantage as more many-shot context is added.
 
 ## Up
 

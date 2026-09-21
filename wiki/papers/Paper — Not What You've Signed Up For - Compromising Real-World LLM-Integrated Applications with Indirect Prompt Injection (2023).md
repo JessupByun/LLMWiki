@@ -47,12 +47,12 @@ What it documents instead is a set of concrete, working attack transcripts: an i
 ## Why it endures
 
 This is the paper that names indirect prompt injection as a distinct threat class before any dedicated benchmark or defense existed for it, and its threat-based taxonomy - organized around what an attacker gains rather than which specific technique they use - is built explicitly to generalize as both models and attack methods keep changing.
-It becomes the standard citation any later work on agentic prompt injection opens with, including [[Benchmark — AgentDojo]], which cites this paper directly as establishing the threat class before building the quantitative measurement apparatus (formal utility and security metrics, real attack-success-rate numbers) this paper's demonstration-only approach does not attempt.
+It becomes the standard citation any later work on agentic prompt injection opens with, including [[Benchmark — AgentDojo]].
 
 ## Limitations
 
 The paper's own evaluation is qualitative: attacks against Bing Chat are tested on local HTML files specifically to avoid performing actual injections against the live, real-world service, and no formal success-rate numbers are reported for any of the production-system demonstrations, only illustrative individual transcripts.
-This leaves open exactly how often these attacks succeed at scale, how robust they are to the platform-level defenses that followed, and whether the specific production-system behaviors documented here still hold as those systems have since been patched - questions [[Benchmark — AgentDojo]] takes up directly with a reproducible, quantitative measurement environment built for the agentic case specifically.
+This leaves open exactly how often these attacks succeed at scale, how robust they are to the platform-level defenses that followed, and whether the specific production-system behaviors documented here still hold as those systems have since been patched.
 
 ## Relations
 

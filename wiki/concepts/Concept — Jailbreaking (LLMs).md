@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-20
 summary: "Getting an aligned language model to produce content or behavior its safety training was meant to prevent, whether through hand-crafted prompts or automated optimization."
 cluster: ["Adversarial robustness & security"]
 sources: []

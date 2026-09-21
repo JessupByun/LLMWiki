@@ -57,7 +57,7 @@ Separately, finetuning a strong model on weak labels alone makes the ground-trut
 
 The paper is explicit that this is step 2 of a larger four-step plan (attributed to Leike & Sutskever's "Introducing Superalignment"): align the first model capable of automating alignment research using the best scalable techniques available, verify that alignment with the best evaluation tools available (red-teaming, interpretability), then use that model to help align still-more-capable successors.
 Weak-to-strong generalization is offered as a candidate technique for that second step, and the paper's own PGR metric and three-model protocol (weak / weak-to-strong / strong-ceiling) become the standard scaffolding subsequent empirical superalignment work is built on.
-Unusually for an empirical paper, it closes by explicitly enumerating the assumptions its entire research agenda rests on - including "no deceptive alignment in base models," citing Hubinger et al.'s *Risks from Learned Optimization* and Carlsmith's *Scheming AIs* by name as exactly the failure mode being assumed away for now - a direct, self-aware pointer to the model-organisms-of-misalignment and AI-control literature queued next in this wiki.
+Unusually for an empirical paper, it closes by explicitly enumerating the assumptions its entire research agenda rests on - including "no deceptive alignment in base models," citing [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]] and [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]] by name as exactly the failure mode being assumed away for now - a direct, self-aware pointer to the model-organisms-of-misalignment and AI-control literature this wiki later ingests as [[Cluster — Scheming & AI control]].
 
 ## Limitations
 
@@ -68,8 +68,9 @@ No method tested works universally across all three settings, and reward modelin
 
 - Complementary to, not a replacement for, [[Concept — Scalable oversight]]: that concept is about improving the *quality* of the supervision signal itself, while this paper studies generalizing a model *beyond* whatever supervision it's given, however flawed.
 - Introduces [[Concept — Weak-to-strong generalization]] and its Performance Gap Recovered (PGR) metric as reusable methodology for empirically studying superalignment.
-- Its "no deceptive alignment in base models" assumption, and its explicit citation of Hubinger et al.'s *Risks from Learned Optimization* and Carlsmith's *Scheming AIs*, directly foreshadow the model-organisms-of-misalignment and AI-control literature queued next in this wiki (Group M).
+- Its "no deceptive alignment in base models" assumption, and its explicit citation of [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]] and [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]], directly foreshadow [[Cluster — Scheming & AI control]], which drops this assumption and studies the failure mode directly.
 - The naive baseline's tendency to overfit to the weak supervisor's specific errors is a measurable, closely-related cousin of [[Concept — Reward hacking]]: a strong optimizer finding and exploiting the flaws of an imperfect training signal.
+- [[Paper — AI Safety via Debate (2018)]] takes a different approach to the same overseer-capability gap - adversarial decomposition between two competing agents, rather than eliciting a single model's own latent capability past a flawed supervisor.
 
 ## Up
 

@@ -11,7 +11,7 @@ One line per entry, taken verbatim from the page's `summary:` frontmatter.
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | [[Cluster — Foundational canon]]                | Landmark papers and ideas that are must-know background regardless of sub-specialty, independent of any tie to security.        |
 | [[Cluster — Post-training alignment]]           | Turning a pretrained model into one that does what humans want - preference learning, reward modeling, RLHF and its successors. |
-| [[Cluster — Adversarial robustness & security]] | Attacks on learned systems and defenses against them - adversarial examples, transferability, jailbreaks, and prompt injection. |
+| [[Cluster — Adversarial robustness & security]] | Attacks on learned systems and defenses against them - adversarial examples, transferability, jailbreaks, prompt injection, automated red-teaming, and dangerous-capability benchmarking. |
 | [[Cluster — Reinforcement learning]]            | RL algorithms and RL-for-LLMs - the policy-optimization machinery that post-training alignment runs on top of.                 |
 | [[Cluster — Efficient fine-tuning]]             | Cheap ways to adapt a large pretrained model to a downstream task - parameter-efficient fine-tuning and quantization, orthogonal to what the fine-tuning is aiming for. |
 | [[Cluster — Mechanistic interpretability]]      | Reverse-engineering the internal computations of trained neural networks into human-interpretable algorithms, weights, and features. |

@@ -1,7 +1,7 @@
 ---
 type: benchmark
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-20
 summary: "An eval suite of 500 harmful target strings and 500 harmful behavioral instructions, used to measure how often an attack can make an aligned language model produce or comply with objectionable content."
 cluster: ["Adversarial robustness & security"]
 sources: []

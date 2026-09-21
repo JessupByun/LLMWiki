@@ -32,7 +32,8 @@ The main failure mode this fights against is the strong model simply **imitating
 - Introduced and measured (via PGR) in [[Paper — Weak-to-Strong Generalization (2023)]].
 - Complementary to [[Concept — Scalable oversight]]: scalable oversight tries to improve the supervision signal itself, weak-to-strong generalization tries to get a model to outperform whatever supervision it's given.
 - The failure mode it fights - imitating a flawed supervisor's specific errors - closely parallels [[Concept — Reward hacking]], a strong optimizer exploiting the gap between a proxy signal and the true objective.
-- Explicitly assumes no deceptive alignment in the base model being supervised, a premise the model-organisms-of-misalignment and AI-control literature (queued later in this wiki) investigates directly.
+- Explicitly assumes no deceptive alignment in the base model being supervised, a premise [[Method — Model organisms of misalignment]] and [[Cluster — Scheming & AI control]] investigate directly - see especially [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] and [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]].
+- [[Paper — AI Safety via Debate (2018)]] targets the same overseer-capability gap from the adversarial-decomposition side - two competing agents - rather than this concept's generalization-elicitation side.
 
 ## Up
 
