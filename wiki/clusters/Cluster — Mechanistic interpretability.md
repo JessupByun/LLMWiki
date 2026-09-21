@@ -48,7 +48,6 @@ The **representation-engineering** lineage skips both of these bottom-up steps e
 Group W is done as of this ingest, closing out Wang et al. (IOI), Zou et al. (Representation Engineering), and Anthropic's Circuit Tracing methods-and-applications pair - this cluster no longer traces exclusively back to the Anthropic Transformer Circuits Thread's own SAE lineage, and now has all three of the field's major methodological approaches represented.
 Scaling Monosemanticity's own dictionary-completeness question remains open on its own terms; Circuit Tracing picks up a different thread instead - not "how many more features are there," but "how do the features that already exist causally combine into a specific output," a question a plain feature dictionary was never built to answer regardless of its size.
 [[Question — Is in-context learning genuine learning or pattern recognition]] tracks the open thread between this cluster's induction-head evidence and [[Concept — In-context learning]]'s behavioral framing in [[Cluster — Foundational canon]].
-`BACKLOG.md`'s Group X (opening a new Capability evals cluster, anchored on METR's task-horizon paper) is next whenever reading continues.
 
 ## Up
 
