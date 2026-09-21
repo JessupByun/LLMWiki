@@ -35,6 +35,7 @@ This is the same caveat biology attaches to model-organism research generalizing
 - [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] engineers its artifact backward from a deliberately-constructed target environment, in the same spirit as this method's backdoor constructions, but via a curriculum of RL environments rather than supervised fine-tuning.
 - [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] sits closer to the naturalistic end of this methodology's spectrum, since several of its results (goal-less sandbagging, no-nudge scheming) arise without the experimenters injecting any misaligned goal at all.
 - [[Paper — Sabotage Evaluations for Frontier Models (2024)]]'s sandbagger evaluation is a deliberately constructed model organism too, fine-tuned to underperform specifically on dangerous-capability questions and then hardened against a safety-training countermeasure to test whether that countermeasure actually works.
+- [[Paper — On the Biology of a Large Language Model (2025)]] uses an existing hidden-goal model organism as its test subject for a mechanistic-interpretability-based auditing case study, finding the organism's secret objective has become permanently baked into the model's own self-representation rather than only invoked when contextually relevant.
 
 ## Up
 

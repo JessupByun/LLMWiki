@@ -39,6 +39,7 @@ Ablating induction heads at test time in small models destroys almost all measur
 - A qualitatively more powerful successor to the naive token-copying behavior the same paper documents in one-layer transformers.
 - Given a purely behavioral definition and causal evidence for its role in [[Concept — In-context learning]] by [[Paper — In-context Learning and Induction Heads (2022)]], up to 13B-parameter models.
 - [[Paper — Many-shot Jailbreaking (2024)]] traces its power-law in-context jailbreak effect directly to this mechanism, reproducing the same power-law scaling analytically in a toy induction-head circuit - a live security consequence of the same mechanism that drives ordinary in-context learning.
+- [[Paper — Interpretability in the Wild - a Circuit for Indirect Object Identification in GPT-2 small (2022)]] finds this same mechanism reused in an unexpected, narrower role - two supporting heads in its circuit implement induction-head-style prefix matching purely as a positional-signal detector, not for general in-context learning.
 
 ## Up
 
