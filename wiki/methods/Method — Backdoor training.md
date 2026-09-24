@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-24
 summary: "Train a model to behave one way on a training-like distribution and a different way under a trigger, via a two-stage pipeline: generate conditional-policy examples by prompting a model, then supervised fine-tune on the filtered results."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -32,6 +32,7 @@ Filtering the generated data to only samples that already implement the intended
 
 - The training procedure behind every [[Method — Model organisms of misalignment]] artifact in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]].
 - Its CoT variant is a direct evidential source for [[Concept — Deceptive instrumental alignment]]: training a model on explicit deceptive reasoning, then showing that reasoning is causally used to determine the model's final answer (via a scratchpad-steering experiment), is what makes the resulting model a plausible stand-in for that failure mode rather than just a behavioral trigger-response pair.
+- Shares its trigger-conditioned-behavior structure with [[Concept — Backdoor attack (ML)]]'s earlier, classical-ML lineage (data poisoning a classifier, e.g. [[Paper — BadNets - Identifying Vulnerabilities in the Machine Learning Model Supply Chain (2017)]]), but via a different mechanism (generate-then-distill on an LLM rather than direct training-data poisoning) and for a different purpose (a deliberate safety-research artifact rather than a security attack).
 
 ## Up
 
