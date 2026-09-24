@@ -1,9 +1,9 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-24
 summary: "Getting reliable training signal for a system whose true objective is too expensive to evaluate on every example, by combining a limited budget of accurate feedback with cheaper, more frequent proxies."
-cluster: ["Post-training alignment"]
+cluster: ["Scalable oversight"]
 sources: []
 tags: [alignment, scalable-oversight, safety]
 aliases: ["semi-supervised reinforcement learning"]
@@ -47,4 +47,4 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 
 ## Up
 
-- [[Cluster — Post-training alignment]]
+- [[Cluster — Scalable oversight]]

@@ -1,10 +1,10 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-09-24
 summary: "Proposes training two agents to debate a question in front of a human judge who only has to decide which agent said the most true, useful thing - and shows that with an idealized polynomial-time judge, optimal-play debate can decide any question in PSPACE, versus only NP for direct judging without debate."
-cluster: ["Post-training alignment", "Foundational canon"]
-sources: ["raw/papers/post-training-alignment/Paper — AI Safety via Debate (2018).pdf"]
+cluster: ["Scalable oversight", "Foundational canon"]
+sources: ["raw/papers/Paper — AI Safety via Debate (2018).pdf"]
 tags: [scalable-oversight, debate, alignment, safety]
 aliases: ["arxiv:1805.00899", "Irving et al. 2018", "AI Safety via Debate"]
 ---
@@ -70,5 +70,5 @@ The paper frames all of this as a proposal supported by preliminary evidence, ex
 
 ## Up
 
-- [[Cluster — Post-training alignment]]
+- [[Cluster — Scalable oversight]]
 - [[Cluster — Foundational canon]]

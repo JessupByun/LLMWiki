@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-24
 summary: "Turning a pretrained model into one that does what humans want - preference learning, reward modeling, RLHF and its successors."
 cluster: []
 sources: []
@@ -22,7 +22,6 @@ Everything downstream inherits both the leverage and the liability of that subst
 |------|----------------|
 | [[Paper — Concrete Problems in AI Safety (2016)]] | Names and frames reward hacking and scalable oversight as concrete research problems, supplying the vocabulary this whole cluster's failure modes are discussed in. |
 | [[Paper — Deep RL from Human Preferences (2017)]] | Origin of RLHF - learn a reward model from human comparisons of short clips, then optimize it, cutting oversight cost by ~3 orders of magnitude. |
-| [[Paper — AI Safety via Debate (2018)]] | This cluster's other major scalable-oversight pillar besides Weak-to-Strong Generalization's empirical-proxy approach: trains two agents to debate in front of a human judge who only has to decide who's more convincing, and proves optimal-play debate with a polynomial-time judge can decide any question in PSPACE. |
 | [[Paper — Learning to Summarize from Human Feedback (2020)]] | Bridges Christiano et al. 2017's RLHF loop to GPT-3-scale language models, showing a 1.3B feedback-trained model beats both a 10x larger supervised model and the human reference summaries themselves. |
 | [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT) | InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference. |
 | [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] (HH-RLHF) | Trains helpfulness and harmlessness as separate, partially anti-correlated preference objectives via RLHF, releases the widely-reused HH-RLHF dataset, and shows alignment training carries essentially no capability cost at sufficient scale. |
@@ -31,7 +30,6 @@ Everything downstream inherits both the leverage and the liability of that subst
 | [[Paper — Constitutional AI (2022)]] | Trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF). |
 | [[Paper — Direct Preference Optimization (2023)]] | DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop. |
 | [[Paper — Let's Verify Step by Step (2023)]] | Trains a reward model on step-level human labels instead of only the final answer, showing process supervision produces a far more reliable verifier than outcome supervision - and does so at no cost to performance, a rare "negative alignment tax" result. |
-| [[Paper — Weak-to-Strong Generalization (2023)]] | Finetunes strong pretrained models on labels from much weaker supervisors and shows the strong models consistently outperform their supervisors, turning the future problem of humans overseeing superhuman AI into an empirically testable proxy today. Dual-tagged canon: OpenAI Superalignment's flagship empirical paper, setting the field's standard methodology (PGR) for this question. |
 
 ## Methods and concepts
 
@@ -39,17 +37,14 @@ Everything downstream inherits both the leverage and the liability of that subst
 - [[Method — Proximal Policy Optimization (PPO)]] - the RL algorithm RLHF's third stage actually runs; full treatment lives in [[Cluster — Reinforcement learning]].
 - [[Concept — Bradley-Terry preference model]]
 - [[Concept — Reward hacking]]
-- [[Concept — Scalable oversight]]
-- [[Concept — Weak-to-strong generalization]]
 - [[Method — Process Reward Model (PRM)]]
 - [[Concept — Alignment tax]]
 
 ## Open threads
 
-Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled, and Group U closes the scalable-oversight gap too: this cluster now documents both of the field's founding protocols for it, debate and weak-to-strong generalization, with a Relations note on each explaining they take genuinely different approaches to the same overseer-capability gap (adversarial decomposition versus eliciting a model's own latent capability) rather than being equivalent to each other - the provably-equivalent-ceiling result Debate's own page describes is specifically against Christiano's iterative amplification, a different paper entirely.
+Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled.
+[[Paper — AI Safety via Debate (2018)]] and [[Paper — Weak-to-Strong Generalization (2023)]] have moved out to the new [[Cluster — Scalable oversight]]: both address a genuinely different question - can a supervisor meaningfully oversee a model more capable than itself - from this cluster's own focus on shaping the model currently in front of you, and between the two of them now have enough depth to stand as their own pillar.
 [[Paper — Let's Verify Step by Step (2023)]]'s ORM baseline traces back to Cobbe et al. 2021's verifiers and its direct comparison point is Uesato et al. 2022 - both still not yet ingested, and both would sharpen this cluster's process-vs-outcome-supervision thread if added later.
-AI Safety via Debate's own comparison to Christiano's contemporaneous *iterative amplification* proposal (Christiano et al. 2018, not yet ingested) is a natural next addition if scalable oversight gets a third paper.
-[[Paper — Weak-to-Strong Generalization (2023)]]'s explicit "no deceptive alignment in base models" assumption is exactly what [[Cluster — Scheming & AI control]] investigates directly.
 
 ## Up
 

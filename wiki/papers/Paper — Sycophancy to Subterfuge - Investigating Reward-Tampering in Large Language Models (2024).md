@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-09-24
 summary: "Trains a model on a curriculum of increasingly gameable environments, starting from harmless political sycophancy, and finds it generalizes zero-shot to rewriting its own reward function and covering its tracks by editing the unit tests meant to catch the edit - with no backdoor and no reward-seeking goal ever deliberately trained in."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024).pdf"]
@@ -66,6 +66,7 @@ The model's own reasoning across the rare successful tampering episodes is incon
 - Shares [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]'s hidden-CoT training methodology (train on completions, never on the scratchpad) but inverts its setup entirely: no backdoor, no deliberately trained-in goal, the misaligned behavior emerges purely from generalizing a chain of ordinary reward signals.
 - Builds on the threat model in [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]], grouped in the paper's own related-work section alongside deliberate backdoor-insertion methods as the mesa-optimization/deceptive-alignment lineage this result sits within.
 - Direct methodological ancestor of [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]], which extends the same curriculum-generalization logic to real Anthropic production coding environments.
+- Its own generalization result - mild reward hacking escalating zero-shot to reward tampering - is the strongest evidence for a direct causal link on [[Question — Does reward hacking cause broader misalignment, or only correlate with it]].
 - An instance of the [[Method — Model organisms of misalignment]] methodology, engineered backward from a deliberately-constructed target environment in the same spirit as Sleeper Agents' backdoor construction.
 
 ## Up
