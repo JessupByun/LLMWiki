@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-24
+updated: 2026-10-19
 summary: "Shows that outsourced or downloaded pre-trained neural networks can be maliciously backdoored - performing normally on ordinary inputs but reliably misclassifying inputs containing a secret attacker-chosen trigger - with under 1% accuracy cost on clean data, and that the backdoor survives transfer learning to a new task, causing a 25-percentage-point average accuracy drop specifically on triggered inputs even after the network is retrained for a completely different classification target."
 cluster: ["ML security & privacy"]
 sources: ["raw/papers/ml-security-and-privacy/Paper — BadNets - Identifying Vulnerabilities in the Machine Learning Model Supply Chain (2017).pdf"]
@@ -10,8 +10,6 @@ aliases: ["arxiv:1708.06733", "Gu et al. 2017", "BadNets"]
 ---
 
 # Paper — BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain (2017)
-
-Commonly known as **BadNets**.
 
 ## Metadata
 

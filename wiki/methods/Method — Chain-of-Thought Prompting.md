@@ -1,7 +1,7 @@
 ---
 type: method
 status: mature
-updated: 2026-09-18
+updated: 2026-09-20
 summary: "Write few-shot prompt exemplars as worked step-by-step reasoning followed by a final answer, rather than a direct question-to-answer mapping, eliciting multi-step reasoning from sufficiently large language models with no fine-tuning."
 cluster: ["Foundational canon"]
 sources: []

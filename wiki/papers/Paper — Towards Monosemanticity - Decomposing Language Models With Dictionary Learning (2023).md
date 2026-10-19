@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-19
+updated: 2026-09-20
 summary: "Trains a sparse autoencoder on a one-layer transformer's MLP activations and extracts thousands of far-more-interpretable-than-neurons features, giving the first compelling proof that dictionary learning can recover real structure from superposition."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2023/monosemantic-features/index.html"]

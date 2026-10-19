@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-02
+updated: 2026-10-19
 summary: "Fit a reward model to human preference comparisons, then optimize a policy against it with RL - the standard alignment pipeline."
 cluster: ["Post-training alignment"]
 sources: []
@@ -15,9 +15,12 @@ aliases: ["RLHF"]
 
 A three-stage procedure for training a policy toward an objective nobody can write down:
 
-1. **Collect comparisons.** Show a human two candidate outputs and record which they prefer. Not scores, not demonstrations - just a binary choice, because relative judgments are the thing humans do reliably.
-2. **Fit a reward model.** Train a network to predict those preferences, usually via the [[Concept — Bradley-Terry preference model]] with a cross-entropy loss. The reward model is a *learned proxy for human judgment*.
-3. **Optimize the policy** with RL against the reward model's output rather than against any environment reward. In practice this step is run with [[Method — Proximal Policy Optimization (PPO)]].
+1. **Collect comparisons.** Show a human two candidate outputs and record which they prefer.
+   Not scores, not demonstrations - just a binary choice, because relative judgments are the thing humans do reliably.
+2. **Fit a reward model.** Train a network to predict those preferences, usually via the [[Concept — Bradley-Terry preference model]] with a cross-entropy loss.
+   The reward model is a *learned proxy for human judgment*.
+3. **Optimize the policy** with RL against the reward model's output rather than against any environment reward.
+   In practice this step is run with [[Method — Proximal Policy Optimization (PPO)]].
 
 Introduced for deep RL in [[Paper — Deep RL from Human Preferences (2017)]]; demonstrated at LLM scale, with this exact three-stage structure, in [[Paper — Training LMs to Follow Instructions (2022)]], which is now the default post-training recipe for language models.
 

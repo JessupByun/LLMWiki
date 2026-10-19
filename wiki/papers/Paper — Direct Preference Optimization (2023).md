@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-09-02
+updated: 2026-10-19
 summary: "DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Direct Preference Optimization (2023).pdf"]
@@ -10,8 +10,6 @@ aliases: ["arxiv:2305.18290", "Rafailov et al. 2023", "DPO"]
 ---
 
 # Paper — Direct Preference Optimization (2023)
-
-Commonly known as **DPO**.
 
 ## Metadata
 
@@ -38,7 +36,8 @@ Take the standard KL-constrained RLHF objective from Equation 3 in the paper.
 Its exact optimal solution, for any reward function `r`, has a known closed form: `π_r(y|x) ∝ π_ref(y|x)·exp(r(x,y)/β)`.
 Rearranging this equation algebraically expresses the reward as a function of the *policy* instead: `r(x,y) = β·log(π(y|x)/π_ref(y|x)) + const`.
 
-That's the whole trick. Since the Bradley-Terry preference model (the same one [[Concept — Bradley-Terry preference model]] documents) depends only on the *difference* between two rewards, substituting this reparameterization into the Bradley-Terry likelihood makes the unknown normalizing constant cancel out completely.
+That's the whole trick.
+Since the Bradley-Terry preference model (the same one [[Concept — Bradley-Terry preference model]] documents) depends only on the *difference* between two rewards, substituting this reparameterization into the Bradley-Terry likelihood makes the unknown normalizing constant cancel out completely.
 What's left is a preference probability written purely in terms of the policy and a fixed reference model - no reward model object anywhere:
 
 > L_DPO(π_θ; π_ref) = −E[(x,y_w,y_l)] log σ( β·log(π_θ(y_w|x)/π_ref(y_w|x)) − β·log(π_θ(y_l|x)/π_ref(y_l|x)) )
@@ -48,7 +47,8 @@ The gradient has an intuitive shape too: it increases the likelihood of the pref
 
 ## How it's built
 
-- **No RL loop.** DPO needs only a static dataset of `(prompt, preferred, dispreferred)` triples and a reference policy (usually the SFT model). No sampling from the policy during training, no critic/value function.
+- **No RL loop.** DPO needs only a static dataset of `(prompt, preferred, dispreferred)` triples and a reference policy (usually the SFT model).
+  No sampling from the policy during training, no critic/value function.
 - **Same preference model as RLHF.** DPO is mathematically equivalent to fitting a reparameterized Bradley-Terry reward model - it inherits the same theoretical guarantees (Section 5 proves any reward function's equivalence class has a unique representative of this form).
 - **Hyperparameters:** β = 0.1 by default (0.5 for TL;DR summarization), RMSprop, learning rate 1e-6, batch size 64 - a small, boring hyperparameter surface compared to PPO's clip ratio, KL coefficient, GAE λ, and value-function tuning.
 - **Diagnosing PPO's instability (Section 5.2):** the paper shows PPO's actor-critic objective implicitly contains the same normalization term DPO's reparameterization cancels out analytically; without it, the policy-gradient estimate has high variance, which is a concrete reason DPO's optimization is more efficient than PPO's, not just simpler.
@@ -59,7 +59,7 @@ The gradient has an intuitive shape too: it increases the likelihood of the pref
 - **Summarization (Reddit TL;DR):** DPO's win rate against reference summaries is ~61% at temperature 0, exceeding PPO's best-case ~57%, and DPO is far more robust to sampling temperature - PPO's win rate degrades toward the base model's at high temperature, DPO's does not.
 - **Dialogue (Anthropic HH):** DPO is "the only computationally efficient method that improves over the preferred completions in the Anthropic HH dataset," matching the much more expensive Best-of-128 baseline.
 - **Generalizes out of distribution:** evaluated on CNN/DailyMail after training only on Reddit TL;DR, DPO still outperforms PPO by a significant margin.
-- **GPT-4 judgments validated against 25 human raters:** GPT-4 agrees with humans about as often as humans agree with each other (67-70% vs. 65% human-human agreement), supporting the paper's use of GPT-4 as an automated evaluator throughout - though a documented failure case is included too (Table 10): GPT-4 endorsed DPO's confidently wrong "7+2=9" over the correct ground truth answer of "11," a factual error the automated judge missed entirely.
+- **GPT-4 judgments validated against 25 human raters:** GPT-4 agrees with humans about as often as humans agree with each other (67-70% vs. 65% human-human agreement), supporting the paper's use of GPT-4 as an automated evaluator throughout - though a documented failure case is included too (Table 10): asked "what is 7 plus 2," DPO's rambling answer correctly says nine, but GPT-4 sided with the dataset's incorrect ground-truth answer of "11" - a factual error the automated judge missed entirely.
 
 ## Why it endures
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-08-07
+updated: 2026-10-19
 summary: "AlexNet - the ILSVRC-2012 landslide that convinced the field deep networks plus data plus compute beat hand-engineered features."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — ImageNet Classification with Deep CNNs (2012).pdf"]
@@ -15,7 +15,8 @@ Commonly known as **AlexNet**.
 
 ## Metadata
 
-- **Venue:** NeurIPS (NIPS) 2012. No arXiv id (predates arXiv's dominance in ML); venue+year+author used as canonical identity.
+- **Venue:** NeurIPS (NIPS) 2012.
+  No arXiv id (predates arXiv's dominance in ML); venue+year+author used as canonical identity.
 - **Authors:** Alex Krizhevsky, Ilya Sutskever, Geoffrey E. Hinton (University of Toronto)
 
 ## Impact
@@ -30,9 +31,14 @@ This is the recipe that later generalized from vision to language and everywhere
 Stack many layers of learned convolutional filters (rather than hand-designed ones) and let backpropagation figure out what features matter, at a scale (8 layers, 60M parameters) nobody had trained end-to-end on natural images before.
 Three choices made this actually trainable:
 
-- **ReLU instead of tanh/sigmoid:** `f(x) = max(0, x)`. Because it doesn't saturate, it trains several times faster. Without it, a network this size wasn't practical to train at all.
-- **Dropout:** randomly turn off half the neurons in a layer during each training step, forcing the network to not rely on any single neuron being present. Think of it like training a huge committee of overlapping sub-networks that share weights, then averaging their votes at test time. See [[Method — Dropout]].
-- **Splitting the model across two GPUs**, with a hand-written, heavily optimized convolution implementation. Engineering that made the scale possible, not just the algorithm.
+- **ReLU instead of tanh/sigmoid:** `f(x) = max(0, x)`.
+  Because it doesn't saturate, it trains several times faster.
+  Without it, a network this size wasn't practical to train at all.
+- **Dropout:** randomly turn off half the neurons in a layer during each training step, forcing the network to not rely on any single neuron being present.
+  Think of it like training a huge committee of overlapping sub-networks that share weights, then averaging their votes at test time.
+  See [[Method — Dropout]].
+- **Splitting the model across two GPUs**, with a hand-written, heavily optimized convolution implementation.
+  Engineering that made the scale possible, not just the algorithm.
 
 ## Why it endures
 

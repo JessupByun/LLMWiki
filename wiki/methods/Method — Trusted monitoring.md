@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "Use a weaker but known-safe model to rate how suspicious an untrusted model's output looks, and escalate the most suspicious fraction to expensive human-quality review."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -19,9 +19,12 @@ Introduced in [[Paper — AI Control - Improving Safety Despite Intentional Subv
 
 ## Variants
 
-- **Defer to trusted (dynamic routing)**: instead of only auditing high-suspicion outputs, silently substitute T's own weaker-but-safe output whenever U's suspicion score crosses a lower threshold. This turns a single audit budget into a tunable safety/usefulness frontier - more deferral means more safety at the cost of using T's worse answers more often.
-- **Untrusted monitoring**: replace T with a second copy of U itself as the suspicion-rater, since the untrusted model is typically far better at spotting subtle problems than the trusted one. This only works if the blue team defends against the monitor colluding with the policy - both instances are the same model, so nothing stops them from coordinating unless the protocol removes the shared signal they'd coordinate on (via redacting problem/code features and paraphrasing, and by validating the monitor's honesty on synthetic examples of the very failure it's meant to catch).
-- **Trusted editing**: instead of auditing or deferring, have the trusted model directly edit the untrusted model's output to strip out anything suspicious, submitting the edited version for outputs in a moderate suspicion range. In the founding paper, this Pareto-dominates the other variants.
+- **Defer to trusted (dynamic routing)**: instead of only auditing high-suspicion outputs, silently substitute T's own weaker-but-safe output whenever U's suspicion score crosses a lower threshold.
+  This turns a single audit budget into a tunable safety/usefulness frontier - more deferral means more safety at the cost of using T's worse answers more often.
+- **Untrusted monitoring**: replace T with a second copy of U itself as the suspicion-rater, since the untrusted model is typically far better at spotting subtle problems than the trusted one.
+  This only works if the blue team defends against the monitor colluding with the policy - both instances are the same model, so nothing stops them from coordinating unless the protocol removes the shared signal they'd coordinate on (via redacting problem/code features and paraphrasing, and by validating the monitor's honesty on synthetic examples of the very failure it's meant to catch).
+- **Trusted editing**: instead of auditing or deferring, have the trusted model directly edit the untrusted model's output to strip out anything suspicious, submitting the edited version for outputs in a moderate suspicion range.
+  In the founding paper, this Pareto-dominates the other variants.
 
 ## Why it works
 
@@ -31,7 +34,7 @@ Escalating only the suspicious tail, rather than everything, is what makes the s
 ## Relations
 
 - The founding protocol family for [[Concept — AI control]].
-- Its collusion-avoidance techniques (redaction, paraphrasing, synthetic-example validation) are a direct countermeasure to steganographic coordination, the same failure mode named in [[Concept — Jailbreaking (LLMs)]]'s adjacent literature on hidden reasoning channels.
+- Its collusion-avoidance techniques (redaction, paraphrasing, synthetic-example validation) are a direct countermeasure to steganographic coordination - an untrusted model hiding a signal to a colluding copy of itself inside otherwise normal-looking output.
 - [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] arrives at functionally this same mechanism independently, framed under [[Concept — Scalable oversight]] rather than AI control, and adds a critical warning this page's founding paper does not test: folding the trusted monitor directly into the untrusted model's training reward teaches it to defeat the monitor rather than stop the behavior the monitor was meant to catch.
 - [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] is best read as an additional layer on top of this method rather than a separate one, extending it from a single graded action into a multi-step agentic setting via resampling.
 - [[Paper — Sabotage Evaluations for Frontier Models (2024)]]'s undermining-oversight evaluation is a direct empirical test of this method's weaker-model-oversees-stronger-model protocol: the scheming overseer successfully biases its own grading, but the trusted monitor's suspicion rises by a matching amount and catches it anyway.

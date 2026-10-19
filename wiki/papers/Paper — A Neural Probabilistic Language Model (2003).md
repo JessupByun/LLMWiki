@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-09-18
+updated: 2026-10-19
 summary: "NPLM - learns a distributed feature vector for each word jointly with a neural network over word sequences, letting a language model transfer probability mass across semantically similar sentences instead of only gluing together short n-gram fragments, beating state-of-the-art smoothed trigrams by 10-20% test perplexity."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — A Neural Probabilistic Language Model (2003).pdf"]
@@ -13,7 +13,8 @@ aliases: ["Bengio et al. 2003", "NPLM"]
 
 ## Metadata
 
-- **Venue:** Journal of Machine Learning Research 3 (2003), pages 1137-1155. Submitted 2002-04, published 2003-02.
+- **Venue:** Journal of Machine Learning Research 3 (2003), pages 1137-1155.
+  Submitted 2002-04, published 2003-02.
 - **Authors:** Yoshua Bengio, Rejean Ducharme, Pascal Vincent, Christian Jauvin (Universite de Montreal).
 
 ## Impact

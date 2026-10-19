@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-09-20
 summary: "Trains a reward model on human labels for the correctness of each individual reasoning step, rather than just the final answer, and shows this process-supervised reward model finds correct solutions far more reliably than one trained on outcomes alone."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Let's Verify Step by Step (2023).pdf"]

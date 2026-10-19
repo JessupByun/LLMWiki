@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-18
+updated: 2026-10-19
 summary: "Randomly zero hidden units during training to block co-adaptation; architecture-agnostic regularizer that reappears nearly everywhere."
 cluster: ["Foundational canon"]
 sources: []
@@ -29,7 +29,8 @@ Roughly doubles the number of iterations needed to converge, but substantially r
 ## Relations
 
 - Origin: [[Paper — Dropout (2014)]].
-- Demonstrated in the context of [[Concept — Convolutional neural networks (CNNs)]] by AlexNet, but the technique is architecture-agnostic. Expect later papers across domains (language, RL, etc.) to reuse it.
+- Demonstrated in the context of [[Concept — Convolutional neural networks (CNNs)]] by AlexNet, but the technique is architecture-agnostic.
+  Expect later papers across domains (language, RL, etc.) to reuse it.
 
 ## Up
 

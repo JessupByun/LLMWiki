@@ -1,10 +1,10 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "A dynamic evaluation environment of 4 realistic agentic task suites, 97 legitimate user tasks, and 27 injected attacker goals, tracking benign utility, utility under attack, and targeted attack success as three separate metrics - and finding that the most capable agents are consistently the easiest to hijack, with no defense reaching zero attack success."
 cluster: ["Adversarial robustness & security"]
-sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — AgentDojo (2024).pdf"]
+sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — AgentDojo.pdf"]
 tags: [prompt-injection, agents, benchmark, security, evals]
 aliases: ["arxiv:2406.13352", "Debenedetti et al. 2024"]
 ---

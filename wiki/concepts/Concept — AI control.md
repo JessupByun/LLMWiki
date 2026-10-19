@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "A safety approach that assumes a powerful model may be actively trying to subvert its own oversight, and asks whether a protocol still catches it - rather than trying to ensure the model's values are good."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -29,7 +29,10 @@ The core protocols in the founding paper - trusted monitoring, untrusted monitor
 - Complements rather than replaces alignment work; assumes what [[Paper — Weak-to-Strong Generalization (2023)]] explicitly assumed away - that the model might not share the developer's objective.
 - Generalizes [[Concept — Scalable oversight]] from "the supervision signal is imperfect" to "the thing being supervised may be adversarial."
 - Distinct from [[Concept — Jailbreaking (LLMs)]] and [[Concept — Adversarial examples]]: those are attacks *on* a model from an external party; control assumes the model itself is the adversary trying to subvert its own oversight.
-- Directly motivated by, and motivates further work on, "model organisms of misalignment" - deliberately constructed instances of the deceptive behavior control protocols are meant to catch.
+- Directly motivated by, and motivates further work on, [[Method — Model organisms of misalignment]] - deliberately constructed instances of the deceptive behavior control protocols are meant to catch.
+- Introduced by [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]]; extended from single actions to multi-step agents by [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]], whose resampling protocols exploit the untrusted model being stateless between calls.
+- Operationalized as run-today evaluations by [[Paper — Sabotage Evaluations for Frontier Models (2024)]], which asks whether a model could secretly undermine its developer's oversight rather than whether a protocol catches it.
+- Its monitoring-based protocols depend on the overseen model's reasoning being legible; [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] shows that legibility survives only as long as the monitor is not folded into the model's training signal.
 
 ## Up
 

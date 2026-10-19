@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-10-19
 summary: "Muon - orthogonalizes the momentum update for 2D hidden-layer weight matrices via a cheap Newton-Schulz iteration instead of AdamW's per-coordinate scaling, cutting NanoGPT speedrun times 35% and reaching GPT-2 XL performance 25% faster at 1.5B parameters."
 cluster: []
 sources: ["https://kellerjordan.github.io/posts/muon/"]
@@ -50,4 +50,5 @@ The authors are explicit about what remains untested: how Muon behaves at scale 
 
 ## Up
 
-No cluster yet - a standalone curiosity ingest. If a second paper on optimizer internals or training-efficiency research is ingested, a topical cluster may form around this theme.
+No cluster yet - a standalone curiosity ingest.
+If a second paper on optimizer internals or training-efficiency research is ingested, a topical cluster may form around this theme.

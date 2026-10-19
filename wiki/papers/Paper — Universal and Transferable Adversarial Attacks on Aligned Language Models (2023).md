@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-19
-summary: "Automatically finds a single adversarial suffix that reliably jailbreaks aligned open-source language models and transfers, purely black-box, to production systems including ChatGPT, Bard, and Claude."
+updated: 2026-10-19
+summary: "Automatically finds adversarial suffixes that reliably jailbreak aligned open-source language models and transfer, purely black-box and with varying success, to production systems including ChatGPT, Bard, and Claude."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023).pdf"]
 tags: [adversarial-examples, security, jailbreak, llm, red-teaming]
@@ -50,13 +50,14 @@ Attack success is measured directly on Vicuna-7B and LLaMA-2-7B-Chat (white-box)
 
 ## Results
 
-GCG substantially outperforms every prior automatic method: 88% exact-match success eliciting harmful strings from Vicuna-7B versus 25% for the next-best baseline (AutoPrompt), and near-100% success at eliciting harmful behaviors, both on Vicuna and (with a real but smaller margin) on the more heavily aligned LLaMA-2-7B-Chat.
-Suffixes optimized only against Vicuna and Guanaco transfer, with zero further access, to GPT-3.5 (87.9%), GPT-4 (53.6%), and PaLM-2 (66%) attack success rates on held-out harmful behaviors; Claude is markedly more resistant (2.1%), which the authors partly attribute to an input content filter sitting in front of the chat interface (not the API), and partly close with a small amount of manual prompt engineering (e.g. wrapping the attack in a word-substitution game).
+GCG substantially outperforms every prior automatic method: 88% exact-match success eliciting harmful strings from Vicuna-7B versus 25% for the next-best baseline (AutoPrompt), and near-100% success at eliciting harmful behaviors on Vicuna; on the more heavily aligned LLaMA-2-7B-Chat, success drops to 57% on harmful strings and 56% (single behavior) to 84-88% (multi-behavior suffix) on harmful behaviors, versus 3% and 36% for AutoPrompt.
+Suffixes optimized only against Vicuna and Guanaco transfer, with zero further access, to GPT-3.5, GPT-4, Claude-1, and PaLM-2 - an ensemble of suffixes (counting an attack as successful if any one suffix works) reaches 86.6%, 46.9%, 47.9%, and 66.0% respectively in the paper's main transfer table, while the best single concatenated suffix reaches 79.6% on GPT-3.5 and 24.2% on GPT-4.
+Claude-2 is markedly more resistant (2.1% even with the ensemble), which the authors partly attribute to an input content filter sitting in front of the chat interface (not the API), and partly close with a small amount of manual prompt engineering (e.g. wrapping the attack in a word-substitution game).
 Notably, running the optimizer for *more* steps sometimes *reduces* transfer success - a sign of overfitting to the specific source models used during optimization that the authors flag without fully resolving.
 
 ## Why it endures
 
-The paper explicitly reframes jailbreaking from an artisanal, human-driven red-teaming exercise into a scalable, automatable attack, and draws a direct, pessimistic analogy to computer vision: state-of-the-art defenses against adversarial examples there are rarely deployed in practice because they are computationally expensive, degrade clean-task performance, and only cover a narrowly-specified threat model - and the paper predicts the same unresolved "arms race" dynamic for language models rather than a clean fix.
+The paper explicitly reframes jailbreaking from an artisanal, human-driven red-teaming exercise into a scalable, automatable attack, and draws a direct, pessimistic analogy to computer vision: state-of-the-art defenses against adversarial examples there are rarely deployed in practice because they are computationally expensive, degrade clean-task performance, and only cover a narrowly-specified threat model - and the paper warns that "it remains to be seen" how the resulting "arms race" plays out for language models, noting historical precedent points toward ongoing escalation rather than a clean fix.
 GCG became the standard baseline attack and [[Benchmark — AdvBench]] a standard evaluation set for essentially all subsequent LLM red-teaming, jailbreak, and defense research.
 The paper's central open question - whether any amount of post-hoc RLHF-style alignment fine-tuning can fully close this gap, or whether the vulnerability is structural - is left explicitly unresolved, and is a direct throughline into [[Cluster — Scheming & AI control]], which studies safety under the assumption a model's trained-in alignment cannot be fully trusted.
 

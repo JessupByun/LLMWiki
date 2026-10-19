@@ -1,9 +1,9 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "A strong model finetuned on labels from a much weaker supervisor generalizing beyond that supervisor's own accuracy, by having its own latent capabilities elicited rather than taught."
-cluster: ["Post-training alignment"]
+cluster: ["Scalable oversight"]
 sources: []
 tags: [alignment, superalignment, scalable-oversight, safety]
 aliases: ["PGR", "performance gap recovered"]
@@ -37,4 +37,4 @@ The main failure mode this fights against is the strong model simply **imitating
 
 ## Up
 
-- [[Cluster — Post-training alignment]]
+- [[Cluster — Scalable oversight]]

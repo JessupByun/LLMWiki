@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-10-19
 summary: "Trains a Markov chain to reverse a fixed noising process step by step, turning random noise into a high-quality image and setting a new state-of-the-art FID on CIFAR10."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Denoising Diffusion Probabilistic Models (2020).pdf"]
@@ -10,6 +10,8 @@ aliases: ["arxiv:2006.11239", "Ho, Jain & Abbeel 2020", "DDPM"]
 ---
 
 # Paper — Denoising Diffusion Probabilistic Models (2020)
+
+Commonly known as **DDPM**.
 
 ## Metadata
 

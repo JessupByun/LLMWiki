@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-08-07
+updated: 2026-10-19
 summary: "Architecture applying learned filters convolutionally to exploit locality and translation-invariance; the first proof deep nets beat hand-engineered features."
 cluster: ["Foundational canon"]
 sources: []
@@ -18,7 +18,8 @@ Popularized at scale by [[Paper — ImageNet Classification with Deep CNNs (2012
 
 ## Core mechanism
 
-- **Convolutional layers:** small learned filters slide across the input, producing feature maps. Parameter sharing across spatial positions makes CNNs far cheaper than fully-connected layers of similar size.
+- **Convolutional layers:** small learned filters slide across the input, producing feature maps.
+  Parameter sharing across spatial positions makes CNNs far cheaper than fully-connected layers of similar size.
 - **Pooling layers:** downsample feature maps (e.g. max-pooling) to build translation tolerance and reduce computation.
 - **Depth:** stacking many conv layers builds increasingly abstract features (edges → textures → parts → objects).
 - **Non-linearity:** ReLU (`max(0,x)`) rather than tanh/sigmoid, which trains substantially faster since it doesn't saturate.
@@ -32,7 +33,8 @@ That recipe, more data plus more compute plus more depth, later generalized beyo
 
 - Origin-at-scale paper: [[Paper — ImageNet Classification with Deep CNNs (2012)]].
 - Regularization technique commonly paired with CNNs: [[Method — Dropout]].
-- Contrast with [[Concept — Transformer architecture]]. Attention-based models eventually displaced CNNs as the default for many vision tasks too, but the depth/data/compute recipe CNNs established still holds.
+- Contrast with [[Concept — Transformer architecture]].
+  Attention-based models eventually displaced CNNs as the default for many vision tasks too, but the depth/data/compute recipe CNNs established still holds.
 
 ## Up
 

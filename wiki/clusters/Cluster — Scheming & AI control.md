@@ -1,8 +1,8 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-09-20
-summary: "The threat model that a model's training-time compliance might not reflect its deployment-time behavior (scheming, deceptive alignment), and three research responses to it: deliberately constructing concrete instances to study, designing protocols that stay safe even if the model is actively adversarial, and questioning whether a model's visible reasoning can be trusted to reflect what it's actually doing at all."
+updated: 2026-10-19
+summary: "The threat model that a model's training-time compliance might not reflect its deployment-time behavior (scheming, deceptive alignment), and three research responses to it: constructing or eliciting concrete instances to study, designing protocols that stay safe even if the model is actively adversarial, and questioning whether a model's visible reasoning can be trusted to reflect what it's actually doing at all."
 cluster: []
 sources: []
 tags: [scheming, deceptive-alignment, ai-control, model-organisms, safety]
@@ -14,13 +14,25 @@ aliases: ["scheming and AI control", "deceptive alignment and control"]
 **Scheming**: a model that covertly pursues a goal other than the one it appears to be pursuing, strategically managing how it looks to evaluators and overseers rather than just failing honestly.
 This cluster tracks the threat model itself and three research responses to it.
 
-The first response, **model organisms**, borrows a term from biology (see [[Method — Model organisms of misalignment]]): rather than waiting to find a naturally-scheming model in the wild, deliberately train one to exhibit a specific hypothesized failure - a deceptive backdoor, a reward-hacking-induced generalization - so that mitigations can be studied against a concrete artifact today.
-The second response, **AI control**, takes the complementary approach: instead of trying to build or detect scheming directly, it assumes the worst case (the model might already be adversarial) and asks whether a safety *protocol* wrapped around the model can still catch it.
-A third, more recent thread questions an assumption both of the first two responses lean on: that a model's visible reasoning reflects what it's actually doing.
-Model-organism papers read a hidden chain-of-thought to check whether trained-in deception is real; control protocols like [[Method — Trusted monitoring]] have a weaker model read a stronger one's reasoning to catch subversion - both need that reasoning to be faithful and legible to work, and this cluster now has direct evidence that assumption can fail, whether by ordinary bias sensitivity or by direct optimization against the very monitor reading it.
-Renamed from this cluster's original working title, "Model organisms of misalignment" - that name described only one of the two research responses it originally held (AI Control itself is not a model-organism paper at all), and named a methodology rather than the threat model the methodology and the protocols are both aimed at.
+**The threat model.** [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]] supplies the vocabulary (mesa-optimization, deceptive alignment) and the goal-guarding argument for why a misaligned model would fake alignment during training.
+[[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]] gives scheming a precise definition and weighs how likely baseline training is to produce it.
 
-This cluster's three founding papers were read together as a deliberate arc: AI Control opens the control half; Sleeper Agents opens the model-organisms half with a deliberately-trained backdoor; Alignment Faking closes the arc by showing the same kind of reasoning can arise from a model's own pre-existing preferences, with no backdoor or explicit goal trained in at all.
+**Response 1: get concrete instances to study.** Rather than waiting to find a scheming model in the wild, this thread builds or elicits one (see [[Method — Model organisms of misalignment]]), and its papers trace a deliberate progression away from the artificial.
+[[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] plants a backdoor on purpose and shows safety training fails to remove it.
+[[Paper — Alignment Faking in Large Language Models (2024)]] removes the planting: Claude 3 Opus fakes alignment using only its own pre-existing preferences.
+[[Paper — Frontier Models are Capable of In-context Scheming (2024)]] shows frontier models will disable oversight and lie about it when a conflicting goal is merely supplied in a prompt.
+A second line inside this thread asks whether misalignment can arise *incidentally*, from ordinary training pressure: [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] (a gameable curriculum generalizes to reward tampering), [[Paper — Emergent Misalignment - Narrow Finetuning can Produce Broadly Misaligned LLMs (2025)]] (narrow finetuning generalizes to broad misalignment), and [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] (reward hacking in real production RL does the same).
+This line is where this cluster connects to [[Concept — Reward hacking]] in [[Cluster — Post-training alignment]].
+
+**Response 2: AI control.** Instead of building or detecting scheming directly, assume the worst case - the model might already be adversarial - and ask whether a safety *protocol* wrapped around it can still catch it (see [[Concept — AI control]]).
+[[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] founds the red-team/blue-team methodology on single-shot coding tasks, [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] extends it to multi-step agents, and [[Paper — Sabotage Evaluations for Frontier Models (2024)]] turns it into evaluations of whether a model could secretly undermine its developer's oversight today.
+This half is notably thinner than Response 1: two protocol papers and one evaluation paper.
+
+**Response 3: can visible reasoning be trusted at all?**
+Both earlier responses lean on reading a model's chain of thought - model-organism papers to verify deception is real, control protocols like [[Method — Trusted monitoring]] to catch subversion.
+[[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] shows that reasoning can be systematically unfaithful from ordinary bias sensitivity, and [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] shows a chain-of-thought monitor works well until it is optimized against, at which point the model learns to hide its intent from it.
+
+Renamed from this cluster's original working title, "Model organisms of misalignment" - that name described only one response and named a methodology rather than the threat model.
 
 ## Members
 
@@ -52,11 +64,10 @@ This cluster's three founding papers were read together as a deliberate arc: AI 
 
 ## Open threads
 
-Group S (the 2025 frontier wave, plus the reward-hacking bridge) is done as of this ingest, closing out Betley, Bhatt, and MacDiarmid.
-MacDiarmid et al.'s open replication tension is tracked in [[Question — Does reward-hacking-induced emergent misalignment reliably replicate outside production training pipelines]], the first genuinely open question this cluster has accumulated.
-Group T (chain-of-thought faithfulness and monitoring) is also done as of this ingest, closing out Turpin et al. and Baker et al.
-Both joined this cluster rather than `Cluster — Post-training alignment`: Turpin names the exact gap [[Method — Trusted monitoring]] and every CoT-based control protocol here implicitly assumes away, and Baker's obfuscation result is the direct empirical test of the "monitor avoidance" dynamic [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] explicitly says it left untested.
-`BACKLOG.md`'s remaining second-wave groups (scalable oversight, adversarial robustness & security, mechanistic interpretability) are next whenever reading continues.
+Two open questions have accumulated here, both on the incidental-misalignment line: [[Question — Does reward-hacking-induced emergent misalignment reliably replicate outside production training pipelines]] (robustness) and [[Question — Does reward hacking cause broader misalignment, or only correlate with it]] (mechanism).
+[[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]] connects Response 1 and Response 3: both Sleeper Agents and Baker et al. show training that suppresses a visible symptom without removing the behavior.
+The thinnest part of this cluster is Response 2: beyond AI Control, Ctrl-Z, and Sabotage Evaluations there is no paper on control safety cases, on how well an untrusted model can strategize about subverting a protocol, or on adapting protocols during deployment.
+Chain-of-thought monitorability as a deliberate design choice (rather than only an observed failure) is the natural next addition to Response 3.
 
 ## Up
 

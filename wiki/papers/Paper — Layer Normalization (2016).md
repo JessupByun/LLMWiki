@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-09-20
 summary: "Normalizes each training case's own activations across a layer's hidden units instead of across a mini-batch, making normalization work for recurrent networks and small or single-example batches."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Layer Normalization (2016).pdf"]

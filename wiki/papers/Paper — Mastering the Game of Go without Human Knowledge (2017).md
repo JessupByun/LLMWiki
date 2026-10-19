@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-09-20
 summary: "AlphaGo Zero - a single network learns Go purely from self-play against itself, with no human game data at all, and beats the original champion-defeating AlphaGo 100-0 after just 3 days of training on one machine."
 cluster: ["Reinforcement learning", "Foundational canon"]
 sources: ["raw/papers/reinforcement-learning/Paper — Mastering the Game of Go without Human Knowledge (2017).pdf"]

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "Scales sparse autoencoder dictionary learning from a one-layer toy transformer up to Claude 3 Sonnet, a real production model, and recovers millions of abstract, causally-steerable features - including deception, sycophancy, and bias-related features - answering whether the toy-model result generalizes at all."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html"]
@@ -19,7 +19,7 @@ Adly Templeton and Tom Conerly (core contributors), Jonathan Marcus, Jack Lindse
 ## Impact
 
 Eight months after [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] left open whether sparse-autoencoder dictionary learning could work past a one-layer toy transformer, this paper answers it: applied to Claude 3 Sonnet (Anthropic's medium-scale production model), the same technique recovers millions of far-more-abstract features, up from a toy model's shallow, single-word associations to features like "sycophantic praise," "backdoors in code," and "treacherous turns."
-It also supplies the first strong causal evidence that these features actually drive model behavior, not just correlate with it, by artificially clamping a single feature and watching the model's output change in exactly the predicted direction - most famously the "Golden Gate Bridge" feature, whose amplification became the public "Golden Gate Claude" demo shortly after this paper's release.
+It also supplies the first strong causal evidence at production scale that these features actually drive model behavior, not just correlate with it - extending the clamping experiments [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] had run on its one-layer toy model - by artificially clamping a single feature and watching the model's output change in exactly the predicted direction - most famously the "Golden Gate Bridge" feature, whose amplification became the public "Golden Gate Claude" demo shortly after this paper's release.
 This is the paper that made large-model interpretability via dictionary learning look tractable rather than merely toy-scale plausible, and it is the direct empirical basis for Anthropic's subsequent safety-relevant-feature research program.
 
 ## Problem it solved

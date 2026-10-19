@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "Demonstrates, in a fully understood toy model, that neural networks represent more features than they have neurons by packing them into almost-orthogonal directions - and that this superposition follows a phase change, organizes into specific geometric structures, and can support real computation."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2022/toy_model/index.html"]
@@ -34,7 +34,8 @@ But as features are made **sparse** (rarely active at once), the ReLU-output mod
 One feature activating now causes small "interference" on the others, but because sparse features are rarely active simultaneously, this interference is cheap relative to the benefit of representing more features at all - and the ReLU's ability to zero out small negative values gives the network a way to filter much of the resulting noise.
 
 The transition between three outcomes for any given feature - not represented at all, represented in superposition, or given a fully dedicated dimension - is a genuine **phase change**: the optimal weight configuration jumps discontinuously as sparsity or relative feature importance crosses a threshold, rather than degrading smoothly.
-Superposed features aren't arranged arbitrarily: for identical, equally-important, equally-sparse features, the model provably arranges them into specific geometric structures - antipodal pairs at low sparsity, then triangles, pentagons, tetrahedra, and square antiprisms as sparsity increases - which turn out to be solutions to a generalized version of the Thomson problem, the classical physics problem of packing mutually-repelling points on a sphere.
+Superposed features aren't arranged arbitrarily: for identical, equally-important, equally-sparse features, the model empirically clusters them into a small set of specific geometric configurations - tetrahedra, triangles, antipodal pairs, pentagons, and square antiprisms - which turn out to be solutions to a generalized version of the Thomson problem, the classical physics problem of packing mutually-repelling points on a sphere.
+The authors themselves caution this structure may be "too elegant to be true" and at least partly idiosyncratic to the toy setting.
 
 Superposition is not just a storage trick.
 A second toy model, trained to compute the absolute value function (which genuinely requires the ReLU nonlinearity, unlike simple reconstruction), shows the network can perform this computation while its inputs remain in superposition, using an "asymmetric superposition" motif: one neuron stores two features with unequal weights so that only one interferes with the other, while a second neuron inhibits the resulting interference before it can hurt the output.
@@ -55,7 +56,7 @@ Learning dynamics show discrete "energy level" jumps (features abruptly swapping
 
 The paper's most consequential move is strategic rather than empirical: it argues that "solving superposition" - by any method that lets a researcher enumerate a model's full feature set - is equivalent to, or a precondition for, most strong interpretability-based safety guarantees, including ruling out the presence of specific circuits ("this model has no deliberately-deceptive-behavior feature") and catching "unknown unknowns" that behavioral testing alone would miss.
 It lays out three candidate strategies (train models without superposition; find an overcomplete basis describing superposition after training via sparse coding; hybrid approaches) and is explicit that the second - dictionary learning to recover an interpretable, overcomplete feature basis from a superposed model - is a massive but tractable-looking engineering problem.
-This is precisely the approach the next two papers queued in this wiki (Towards Monosemanticity, Scaling Monosemanticity) carry out at increasing scale, making this paper the direct conceptual bridge between "here is why neurons are hard to interpret" and "here is how to interpret them anyway."
+This is precisely the approach [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] and [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]] carry out at increasing scale, making this paper the direct conceptual bridge between "here is why neurons are hard to interpret" and "here is how to interpret them anyway."
 
 ## Limitations
 

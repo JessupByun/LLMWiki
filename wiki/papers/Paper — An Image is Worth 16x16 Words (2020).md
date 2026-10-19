@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-09-20
 summary: "Splits an image into fixed-size patches, treats them as tokens, and feeds them to an unmodified Transformer encoder, matching or beating state-of-the-art CNNs when pretrained on enough data."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — An Image is Worth 16x16 Words (2020).pdf"]

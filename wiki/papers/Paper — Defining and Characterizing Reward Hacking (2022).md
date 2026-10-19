@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "Gives the first formal, mathematical definition of reward hacking - a proxy reward is unhackable if improving it can never decrease the true reward - and proves that this is a very demanding condition: essentially unachievable over the full policy space, but always achievable once the policy set is restricted to something finite."
 cluster: ["Post-training alignment"]
 sources: ["raw/papers/post-training-alignment/Paper — Defining and Characterizing Reward Hacking (2022).pdf"]
@@ -45,7 +45,8 @@ The paper doesn't propose a fix; its contribution is diagnostic, and that diagno
 
 ## Limitations
 
-- The definition is deliberately **strict and symmetric**: it counts a proxy as hackable even if the only policies where it disagrees with the true reward are astronomically unlikely to ever be found by an actual optimizer. The paper is explicit that this conservatism is a limitation, not a feature, and calls for future work on approximate or probabilistic unhackability that accounts for which policies optimization is actually likely to visit.
+- The definition is deliberately **strict and symmetric**: it counts a proxy as hackable even if the only policies where it disagrees with the true reward are astronomically unlikely to ever be found by an actual optimizer.
+  The paper is explicit that this conservatism is a limitation, not a feature, and calls for future work on approximate or probabilistic unhackability that accounts for which policies optimization is actually likely to visit.
 - No empirical component: this is a pure theory paper with formal proofs and a released software suite for computing hackability/simplification relationships in small toy MDPs, not an evaluation of reward hacking in any real trained system.
 - Results are proven only for finite Markov decision processes and Markovian reward functions; the paper leaves open how the theory extends to richer settings (e.g. the RLHF-on-language-models setting this wiki's other post-training alignment papers actually use).
 - The main theorem's practical upshot (restrict the policy set) doesn't say *how much* restriction is enough in a real system, only that some restriction is mathematically necessary - the gap between this formal necessary condition and a practical sufficient one for real RLHF pipelines is left to future work.

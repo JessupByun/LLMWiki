@@ -1,7 +1,7 @@
 ---
 type: method
 status: mature
-updated: 2026-09-18
+updated: 2026-10-19
 summary: "Train a reward model to predict the correctness of each individual step in a multi-step solution, rather than only the final answer, and score a full solution as the product of its per-step correctness probabilities."
 cluster: ["Post-training alignment"]
 sources: []
@@ -25,7 +25,7 @@ It is also more directly interpretable and alignment-relevant than outcome super
 
 ## Relations
 
-- Origin: [[Paper — Let's Verify Step by Step (2023)]] (Lightman et al.), which also releases PRM800K, a public dataset of 800K step-level human correctness labels.
+- First compared head-to-head against outcome supervision by Uesato et al. 2022 ("Solving math word problems with process- and outcome-based feedback", arxiv:2211.14275, not yet ingested); established at scale by [[Paper — Let's Verify Step by Step (2023)]] (Lightman et al.), which also releases PRM800K, a public dataset of 800K step-level human correctness labels.
 - Directly contrasted with outcome-supervised reward models (ORMs), the standard reward-modeling approach used in [[Method — Reinforcement learning from human feedback (RLHF)]] pipelines such as [[Paper — Training LMs to Follow Instructions (2022)]].
 - Scores solutions generated with [[Method — Chain-of-Thought Prompting]], from [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]].
 - Directly relevant to [[Concept — Reward hacking]]: a structural mitigation for reward models being gamed via an easily-measured but imperfect proxy.

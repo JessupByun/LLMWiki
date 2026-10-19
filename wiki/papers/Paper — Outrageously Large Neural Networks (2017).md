@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-09-20
 summary: "MoE - a trainable gating network sparsely activates a handful of thousands of expert sub-networks per example, decoupling model capacity from computation cost and hitting 137 billion parameters at only a minor efficiency loss."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Outrageously Large Neural Networks (2017).pdf"]

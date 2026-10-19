@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-19
+updated: 2026-09-20
 summary: "Rewrites toy transformers as sums of interpretable end-to-end paths from tokens to logits, and discovers the induction head - the first general in-context-learning circuit found inside an actual model."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2021/framework/index.html"]

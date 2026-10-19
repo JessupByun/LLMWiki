@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "A network representing more features than it has dimensions by packing them into almost-orthogonal directions, tolerating interference when sparsity makes that cheap."
 cluster: ["Mechanistic interpretability"]
 sources: []
@@ -40,7 +40,7 @@ With it, the number of features a model can represent is effectively unbounded r
 
 ## Relations
 
-- Demonstrated and named in [[Paper — A Mathematical Framework for Transformer Circuits (2021)]]'s admitted blind spot: MLP-layer neurons resist clean interpretation, which [[Paper — Toy Models of Superposition (2022)]] explains directly.
+- Named and demonstrated in [[Paper — Toy Models of Superposition (2022)]], which explains the blind spot [[Paper — A Mathematical Framework for Transformer Circuits (2021)]] openly admitted: MLP-layer neurons resist clean interpretation.
 - Competes for scarce "bandwidth" in the [[Concept — Residual stream]], the mechanism the 2021 paper first speculated might drive polysemanticity.
 - Increases vulnerability to [[Concept — Adversarial examples]] by more than 3x as it forms, tracking the number of features packed per dimension.
 - Given its first causally-validated reversal by [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] via [[Method — Sparse Autoencoder (SAE)]], the "Approach 2: finding an overcomplete basis" strategy this concept's originating paper proposed.

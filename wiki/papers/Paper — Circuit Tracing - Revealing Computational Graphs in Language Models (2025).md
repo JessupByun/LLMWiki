@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Introduces cross-layer transcoders and attribution graphs, extending sparse-feature decomposition into genuine causal circuit discovery - tracing how interpretable features combine across layers to produce a specific model output on a specific prompt, rather than only listing which features exist, and validating the resulting graphs by testing whether predicted interventions actually move the model's real activations and logits."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2025/attribution-graphs/methods.html"]
@@ -15,7 +15,8 @@ aliases: ["Circuit Tracing", "cross-layer transcoders", "CLT", "attribution grap
 
 transformer-circuits.pub, published Mar 2025.
 Emmanuel Ameisen, Jack Lindsey, Adam Pearce, Wes Gurnee, Nicholas L. Turner, Brian Chen, Craig Citro, Joshua Batson (correspondence), and a large supporting Anthropic interpretability team including Chris Olah.
-Anthropic. Not peer-reviewed and not an arXiv preprint - published on Anthropic's own Transformer Circuits Thread, the same venue as the Monosemanticity papers.
+Anthropic.
+Not peer-reviewed and not an arXiv preprint - published on Anthropic's own Transformer Circuits Thread, the same venue as the Monosemanticity papers.
 
 ## Impact
 

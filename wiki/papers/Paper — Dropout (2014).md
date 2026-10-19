@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-09-18
+updated: 2026-10-19
 summary: "Dropout - randomly zero each hidden unit's output with probability p during training, forcing units to stop co-adapting, which significantly reduces overfitting and improves state-of-the-art results across vision, speech, text, and genetics tasks with no architecture change."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Dropout (2014).pdf"]
@@ -15,7 +15,8 @@ Full title: **Dropout: A Simple Way to Prevent Neural Networks from Overfitting*
 
 ## Metadata
 
-- **Venue:** Journal of Machine Learning Research 15 (2014), pages 1929-1958. Submitted 2013-11, published 2014-06.
+- **Venue:** Journal of Machine Learning Research 15 (2014), pages 1929-1958.
+  Submitted 2013-11, published 2014-06.
 - **Authors:** Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, Ruslan Salakhutdinov (University of Toronto).
 - Builds on a shorter 2012 technical note by an overlapping set of authors; this JMLR paper is the full, formal treatment with theoretical analysis and cross-domain experiments.
 

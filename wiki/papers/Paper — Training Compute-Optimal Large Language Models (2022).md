@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
-summary: "Chinchilla - shows model size and training tokens should scale equally with compute, not model size 5x faster as Kaplan et al. 2020 concluded, and proves it by training a 70B model on 4x more data than 280B Gopher that beats it and every larger contemporary model."
+updated: 2026-10-19
+summary: "Chinchilla - shows model size and training tokens should scale equally with compute, not model size growing 5.5x for every 1.8x growth in tokens (per 10x compute) as Kaplan et al. 2020 concluded, and proves it by training a 70B model on 4x more data than 280B Gopher that beats it and every larger contemporary model."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Training Compute-Optimal Large Language Models (2022).pdf"]
 tags: [scaling-laws, transformer, compute, pretraining]
@@ -23,7 +23,7 @@ Commonly known as **Chinchilla**.
 ## Impact
 
 Every large model trained between GPT-3 and this paper - Gopher (280B), GPT-3 (175B), Jurassic-1 (178B), Megatron-Turing NLG (530B) - followed [[Paper — Scaling Laws for Neural Language Models (2020)]]'s prescription of growing the model much faster than the data, and all of them were trained on roughly the same ~300 billion tokens regardless of size.
-By training over 400 models and fitting three independent estimators, this paper shows that prescription was wrong in a specific, correctable way: model size and training tokens should scale in equal proportion, not model size 5x faster than data as Kaplan et al. concluded.
+By training over 400 models and fitting three independent estimators, this paper shows that prescription was wrong in a specific, correctable way: model size and training tokens should scale in equal proportion, not model size growing 5.5x per 10x increase in compute while tokens grow only 1.8x, as Kaplan et al. concluded.
 The authors verify this directly by training Chinchilla, a 70B model on 1.4 trillion tokens using the exact same compute budget as the 280B-parameter Gopher, and it uniformly and significantly outperforms Gopher and every one of the larger contemporary models on nearly every benchmark tested, while being cheaper to fine-tune and run at inference.
 
 ## Core idea

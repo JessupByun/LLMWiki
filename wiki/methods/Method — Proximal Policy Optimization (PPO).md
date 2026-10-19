@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-02
+updated: 2026-09-18
 summary: "Policy-gradient RL algorithm that clips the probability ratio between new and old policy, giving trust-region-like stability without a second-order solve."
 cluster: ["Reinforcement learning"]
 sources: []

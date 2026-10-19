@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-08-07
+updated: 2026-10-19
 summary: "Discovered adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets."
 cluster: ["Adversarial robustness & security", "Foundational canon"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Intriguing Properties of Neural Networks (2013).pdf"]
@@ -14,8 +14,10 @@ aliases: ["arxiv:1312.6199", "Szegedy et al. 2013"]
 ## Metadata
 
 - **arXiv:** 1312.6199 (v4, 2014-02-19)
-- **Venue:** ICLR 2014. No venue is printed in the PDF itself; confirmed externally via DBLP.
-- **Authors:** Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian Goodfellow, Rob Fergus. Affiliations span Google, NYU, University of Montreal, and Facebook.
+- **Venue:** ICLR 2014.
+  No venue is printed in the PDF itself; confirmed externally via DBLP.
+- **Authors:** Christian Szegedy, Wojciech Zaremba, Ilya Sutskever, Joan Bruna, Dumitru Erhan, Ian Goodfellow, Rob Fergus.
+  Affiliations span Google, NYU, University of Montreal, and Facebook.
 
 ## Impact
 
@@ -32,7 +34,8 @@ The authors state their result as exactly the negation of that: "for deep neural
 
 ## Two distinct findings
 
-These get conflated constantly. They are separate.
+These get conflated constantly.
+They are separate.
 
 **1. Semantic information lives in the space, not in individual units.**
 The standard interpretability move at the time was to find images maximizing a single hidden unit's activation and read off what that neuron "means."
@@ -61,10 +64,16 @@ Those arrive in the follow-up work; here the method is an L-BFGS optimization an
 
 ## Results (highlights)
 
-- Attacked MNIST models (linear softmax, sigmoid MLPs, an autoencoder-based classifier), **AlexNet** on ImageNet, and **QuocNet**. Minimum average distortion to drive MNIST models to 0% accuracy ranged 0.058-0.14 (Table 1, p7).
+- Attacked MNIST models (linear softmax, sigmoid MLPs, an autoencoder-based classifier), **AlexNet** on ImageNet, and **QuocNet**.
+  Minimum average distortion to drive MNIST models to 0% accuracy ranged 0.058-0.14 (Table 1, p7).
 - **Cross-model transfer:** adversarial examples built for one MNIST architecture induce errors in others - e.g. examples from FC10(1) cause 71.9%/76.2%/48.1%/47%/34.4% error across the other models, against Gaussian-noise baselines of 0-18% (Table 2, p7).
-- **Cross-training-set transfer**, with an important caveat. At native distortion, transfer between models trained on **disjoint** halves of MNIST is weak: 5.9%, 5.1%, 8.2% error against a matched-noise baseline of 2.2-2.6% (Table 4, p8). It becomes dramatic only after amplifying the perturbation by ~40%, reaching 43%, 22%, and 27%. Transfer is also **asymmetric** even between two models trained on the same half. The authors' own hedge is accurate: examples "remain hard for models trained even on a disjoint training set, although their effectiveness decreases considerably" (p8).
-- **Adversarial training as a regularizer, preliminarily:** a 100-100-10 net reached **below 1.2% test error** vs 1.6% with weight decay alone and ~1.3% with tuned dropout (p6). Critically, this was **not** input-space adversarial training - it only worked "by generating adversarial examples for each layer outputs," and examples from higher layers "seemed to be significantly more useful than those on the input or lower layers" (p6).
+- **Cross-training-set transfer**, with an important caveat.
+  At native distortion, transfer between models trained on **disjoint** halves of MNIST is weak: 5.9%, 5.1%, 8.2% error against a matched-noise baseline of 2.2-2.6% (Table 4, p8).
+  It becomes dramatic only after amplifying the perturbation by ~40%, reaching 43%, 22%, and 27%.
+  Transfer is also **asymmetric** even between two models trained on the same half.
+  The authors' own hedge is accurate: examples "remain hard for models trained even on a disjoint training set, although their effectiveness decreases considerably" (p8).
+- **Adversarial training as a regularizer, preliminarily:** a 100-100-10 net reached **below 1.2% test error** vs 1.6% with weight decay alone and ~1.3% with tuned dropout (p6).
+  Critically, this was **not** input-space adversarial training - it only worked "by generating adversarial examples for each layer outputs," and examples from higher layers "seemed to be significantly more useful than those on the input or lower layers" (p6).
 
 ## Authors' explanation
 
@@ -79,7 +88,8 @@ They are careful about the direction of the implication: "large bounds do not au
 
 ## Limitations
 
-- The unit-vs-space finding is supported only by figure panels. No metric or number is reported for it anywhere.
+- The unit-vs-space finding is supported only by figure panels.
+  No metric or number is reported for it anywhere.
 - The spectral analysis "doesn't attempt to explain why these examples generalize across different hyperparameters or training sets" (p9), which is the security-relevant half.
 - Adversarial-training results are explicitly "preliminary" and MNIST-only, on a non-standard per-layer scheme (p5, p6).
 - No fooling *rate* is reported for AlexNet or QuocNet; all rate tables are MNIST-only.
@@ -89,7 +99,8 @@ They are careful about the direction of the implication: "large bounds do not au
 ## Relations
 
 - Concept hub: [[Concept — Adversarial examples]].
-- Attacks the architecture documented in [[Concept — Convolutional neural networks (CNNs)]], and AlexNet specifically - the model from [[Paper — ImageNet Classification with Deep CNNs (2012)]] is one of its three targets. Sutskever is an author on both.
+- Attacks the architecture documented in [[Concept — Convolutional neural networks (CNNs)]], and AlexNet specifically - the model from [[Paper — ImageNet Classification with Deep CNNs (2012)]] is one of its three targets.
+  Sutskever is an author on both.
 - Finding 1 is an early precursor to the interpretability question of whether neurons are the right unit of analysis, which later becomes the superposition literature.
 
 ## Up

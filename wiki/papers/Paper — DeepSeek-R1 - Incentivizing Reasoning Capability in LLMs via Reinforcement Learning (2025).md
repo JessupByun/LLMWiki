@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "Trains reasoning purely with rule-based RL on a pretrained base model, no SFT initialization at all, and shows long chain-of-thought behaviors (self-verification, backtracking) emerge on their own; the resulting model matches OpenAI o1 on math, code, and STEM benchmarks and is released open-weight."
 cluster: ["Reinforcement learning", "Foundational canon"]
 sources: ["raw/papers/reinforcement-learning/Paper — DeepSeek-R1 - Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025).pdf"]
@@ -65,7 +65,7 @@ The paper's own safety report also finds DeepSeek-R1 without its external risk-c
 ## Relations
 
 - Directly scales up [[Method — Group Relative Policy Optimization (GRPO)]], introduced in [[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]] for math-specific fine-tuning, into a general RL-only training regime spanning math, code, STEM, and logic.
-- Establishes [[Method — RL from Verifiable Rewards (RLVR)]] as the name and definition for its no-learned-reward-model training regime.
+- Scales [[Method — RL from Verifiable Rewards (RLVR)]] - a name introduced shortly before by AI2's Tulu 3 report - into its best-known demonstration, with no SFT initialization at all.
 - Explicitly rejects the process-reward-model approach of [[Paper — Let's Verify Step by Step (2023)]] in favor of rule-based verifiers, citing reward hacking as the reason a learned reward model was avoided for the reasoning-RL stage.
 - Inverts the SFT-then-RL ordering that [[Paper — Training LMs to Follow Instructions (2022)]] established as the standard post-training pipeline: R1-Zero runs RL with no SFT step at all, and DeepSeek-R1's own SFT stages are themselves built from RL-generated data rather than preceding RL.
 - Distills its reasoning behavior into open base models from the same open-weights lineage [[Paper — LLaMA - Open and Efficient Foundation Language Models (2023)]] helped establish.

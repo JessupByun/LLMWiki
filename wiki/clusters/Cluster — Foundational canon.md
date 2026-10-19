@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-09-24
+updated: 2026-10-19
 summary: "Landmark papers and ideas that are must-know background regardless of sub-specialty, independent of any tie to security."
 cluster: []
 sources: []
@@ -68,7 +68,7 @@ When both apply the topical cluster is primary and owns the raw file; the table 
 | [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]] | this one | CoT - writing few-shot exemplars as worked reasoning rather than direct answers unlocks multi-step reasoning that is otherwise flat with model scale, once the model is large enough. |
 | [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT) | [[Cluster — Post-training alignment]] | InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference. |
 | [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] (HH-RLHF) | [[Cluster — Post-training alignment]] | Trains separate helpfulness and harmlessness objectives via RLHF, releases the widely-reused HH-RLHF dataset, and shows alignment training carries essentially no capability cost at sufficient scale. |
-| [[Paper — Training Compute-Optimal Large Language Models (2022)]] (Chinchilla) | this one | Chinchilla - model size and training tokens should scale equally with compute, not model size 5x faster; a 70B model on 4x more data than 280B Gopher beats it and every larger contemporary model. |
+| [[Paper — Training Compute-Optimal Large Language Models (2022)]] (Chinchilla) | this one | Chinchilla - model size and training tokens should scale equally with compute, not model size growing far faster than data as Kaplan et al. concluded; a 70B model on 4x more data than 280B Gopher beats it and every larger contemporary model. |
 | [[Paper — FlashAttention (2022)]] | this one | FlashAttention - restructures attention to minimize slow-memory reads/writes instead of FLOPs, computing the exact same output 2-4x faster with linear rather than quadratic memory. |
 | [[Paper — ReAct (2022)]] | this one | ReAct - interleaves reasoning "thoughts" with real actions against an external environment, letting reasoning guide what to look up next and observations correct the reasoning; the default shape of the LLM agent loop. |
 | [[Paper — Constitutional AI (2022)]] | [[Cluster — Post-training alignment]] | Trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF). |
@@ -79,7 +79,73 @@ When both apply the topical cluster is primary and owns the raw file; the table 
 | [[Paper — Weak-to-Strong Generalization (2023)]] | [[Cluster — Scalable oversight]] | Finetunes strong pretrained models on labels from much weaker supervisors and shows the strong models consistently outperform their supervisors, turning the future problem of humans overseeing superhuman AI into an empirically testable proxy today. |
 | [[Paper — DeepSeek-R1 - Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)]] | [[Cluster — Reinforcement learning]] | Trains reasoning purely with rule-based RL and no SFT initialization, showing long chain-of-thought behaviors emerge on their own, then distills the result into open dense models as small as 1.5B parameters. |
 
-Listed chronologically, which currently traces a clean line: a general procedure for training networks with hidden units by propagating error gradients backward through the network is introduced (1986) → gated memory cells solve the vanishing/exploding gradient problem that had made recurrent networks unable to learn long-range dependencies (1997) → words get represented as learned continuous feature vectors trained jointly with a language model over them, rather than as opaque discrete symbols (2003) → deep learning works at scale (2012) → the same year, three separate directions open at once - dense word representations, pixel-to-policy RL, and tractable deep generative modeling (2013) → and it is not robust (2013) → a second deep generative paradigm arrives, sequences learn to map to other sequences through a single vector, that vector bottleneck gets fixed with a learned per-word lookup, the optimizer nearly everything since is trained with is introduced, and randomly zeroing hidden units during training turns out to be a remarkably general fix for overfitting, all in the same year (2014) → internal activations get normalized to train faster, a KL-constrained policy update gives policy-gradient RL its first monotonic-improvement guarantee at scale, a compression algorithm adapted for word segmentation solves the open-vocabulary problem, and shortcut connections make networks over 100 layers deep trainable, all the same year (2015) → a learned policy and value network combined with tree search beat a human professional at Go, the same year normalization gets rederived per-example instead of per-batch so it finally works cleanly on recurrent networks, and a paper names reward hacking and scalable oversight as concrete research problems rather than speculative superintelligence scenarios, supplying the vocabulary the rest of post-training alignment is written in (2016) → the very next year, that same program is retrained from nothing but the rules of the game, no human data at all, and beats its predecessor 100-0 (2017) → sparse gating decouples model capacity from compute, generalizing the attention lookup into an architecture on its own, and a way to optimize any policy against a learned reward, all arrive the same year (2017) → how to turn human comparisons into that reward (2017) → adversarial robustness gets reframed as a min-max optimization problem, with projected gradient descent shown to reliably solve the attacker's side of it despite no guarantee that it should, giving adversarial training its first real guarantee rather than an empirically-tuned mitigation, and two agents get trained to debate a question in front of a human judge who only has to decide who's more convincing, with a complexity-theory argument that optimal-play debate can decide anything a polynomial-time judge could ever be shown a proof of (2018) → a decoder-only Transformer pretrained as a plain language model and then fine-tuned per task beats architectures built for each task individually, and four months later a bidirectional version of the same recipe does even better by predicting masked words from context on both sides (2018) → scaling that same decoder-only recipe up on curated web text shows a language model starts performing tasks zero-shot, from a prompt alone, with no fine-tuning step at all (2019) → that scaling behavior turns out to follow precise, predictable power laws, and the compute-optimal response to more compute is overwhelmingly a bigger model rather than more data, a pretrained generator gets paired with a queryable, swappable document index so it can ground its answers in retrieved text rather than only what it memorized, and the reward-model-plus-RL loop for optimizing human preferences gets run at GPT-3 scale for the first time, on summarization, beating both a much larger supervised model and the human reference summaries it was trained to imitate (2020) → scale alone unlocks task generality, a network trained to reverse a fixed noising process one small step at a time turns out to generate images better than GANs, and a pure Transformer applied to image patches with no convolutional bias at all matches state-of-the-art CNNs once pretrained at scale, extending the "scale beats hand-designed structure" lesson from language into vision (2020) → an image encoder and a text encoder get trained together to predict which caption matches which of 400 million web images, turning any natural-language class name into a zero-shot classifier, absolute position encodings get replaced by rotating query and key vectors so relative distance falls straight out of the attention dot product, fine-tuning a model that large gets made cheap, finetuning on dozens of NLP tasks rewritten as natural-language instructions turns out to let a model generalize zero-shot to task types it never saw, but only once it's large enough, and a pretrained autoencoder lets diffusion run in a small compressed latent space instead of on raw pixels, the architecture Stable Diffusion is later built from (2021) → writing few-shot prompt exemplars as worked-out reasoning instead of direct answers turns out to unlock multi-step reasoning that scale alone could not, but only once a model is large enough (2022) → all the prior threads - architecture, RL, preference learning, and cheap adaptation - combine to aim a frontier LLM at human intent, and the same year that "bigger model, less data" prescription gets corrected to "grow both equally," proven by a 4x-smaller model trained on 4x more data beating everything larger, and attention itself gets rewritten to minimize GPU memory traffic rather than FLOPs, computing the exact same output several times faster, interleaving reasoning with real actions against an environment lets a model's own thoughts decide what to look up and correct itself from what comes back, and the RLHF loop gets trained on two separate, partially competing objectives - helpfulness and harmlessness - at scale, showing alignment training carries essentially no capability cost once a model is large enough (2022) → the same year, human feedback on harmlessness specifically gets replaced by AI feedback (2022) → and the reward-model-plus-RL machinery itself turns out to be replaceable by a closed-form loss, fine-tuning gets cheap enough to run on a single GPU, and rewarding each step of a solution instead of only its final answer turns out to build a far more reliable verifier (2023) → and the future problem of a human overseer too weak to fully evaluate a superhuman model gets tested today by substituting a small model for the human and a much larger one for the superhuman system, finding that naive supervision only partly closes the gap but simple methods close most of the rest (2023) → reasoning is trained by pure RL against a rule-based correctness check with no supervised reasoning demonstrations at all, and long chain-of-thought behaviors like self-verification and backtracking emerge on their own, matching a frontier closed model and getting distilled cheaply into dense models two orders of magnitude smaller (2025).
+Read chronologically, the canon traces one line of development:
+
+- **1986** - A general procedure for training networks with hidden units, by propagating error gradients backward through the network, is introduced.
+- **1997** - Gated memory cells solve the vanishing/exploding gradient problem that had kept recurrent networks from learning long-range dependencies.
+- **2003** - Words get represented as learned continuous feature vectors trained jointly with a language model over them, rather than as opaque discrete symbols.
+- **2012** - Deep learning works at scale.
+- **2013**
+  - Three separate directions open at once, the first being dense word representations.
+  - The second is pixel-to-policy RL.
+  - The third is tractable deep generative modeling.
+  - The same year, deep networks turn out not to be robust.
+- **2014**
+  - A second deep generative paradigm arrives.
+  - Sequences learn to map to other sequences through a single vector.
+  - That vector bottleneck gets fixed with a learned per-word lookup.
+  - The optimizer nearly everything since is trained with is introduced.
+  - Randomly zeroing hidden units during training turns out to be a remarkably general fix for overfitting.
+- **2015**
+  - Internal activations get normalized to train faster.
+  - A KL-constrained policy update gives policy-gradient RL its first monotonic-improvement guarantee at scale.
+  - A compression algorithm adapted for word segmentation solves the open-vocabulary problem.
+  - Shortcut connections make networks over 100 layers deep trainable.
+- **2016**
+  - A learned policy network and value network combined with tree search beat a human professional at Go.
+  - Normalization gets rederived per-example instead of per-batch, so it finally works cleanly on recurrent networks.
+  - A paper names reward hacking and scalable oversight as concrete research problems rather than speculative superintelligence scenarios, supplying the vocabulary the rest of post-training alignment is written in.
+  - Per-example gradient clipping plus calibrated noise, tracked with the moments accountant, makes deep networks trainable under a formal differential-privacy guarantee ([[Paper — Deep Learning with Differential Privacy (2016)]]).
+- **2017**
+  - The Go program is retrained from nothing but the rules of the game, with no human data at all, and beats its predecessor 100-0.
+  - Sparse gating decouples model capacity from compute.
+  - The attention lookup gets generalized into an architecture on its own.
+  - A way to optimize any policy against a learned reward arrives.
+  - So does a way to turn human comparisons into that reward.
+- **2018**
+  - Adversarial robustness gets reframed as a min-max optimization problem, with projected gradient descent shown to reliably solve the attacker's side of it despite no guarantee that it should, giving adversarial training its first real guarantee rather than an empirically-tuned mitigation.
+  - Two agents get trained to debate a question in front of a human judge who only has to decide who's more convincing, with a complexity-theory argument that optimal-play debate can decide anything a polynomial-time judge could ever be shown a proof of.
+  - A decoder-only Transformer pretrained as a plain language model and then fine-tuned per task beats architectures built for each task individually.
+  - Four months later, a bidirectional version of the same recipe does even better by predicting masked words from context on both sides.
+- **2019** - Scaling that decoder-only recipe up on curated web text shows a language model starts performing tasks zero-shot, from a prompt alone, with no fine-tuning step at all.
+- **2020**
+  - That scaling behavior turns out to follow precise, predictable power laws, and the compute-optimal response to more compute is overwhelmingly a bigger model rather than more data.
+  - A pretrained generator gets paired with a queryable, swappable document index so it can ground its answers in retrieved text rather than only what it memorized.
+  - Scale alone unlocks task generality.
+  - The reward-model-plus-RL loop for optimizing human preferences gets run at GPT-3 scale for the first time, on summarization, beating both a much larger supervised model and the human reference summaries it was trained to imitate.
+  - A network trained to reverse a fixed noising process one small step at a time turns out to generate images better than GANs.
+  - A pure Transformer applied to image patches, with no convolutional bias at all, matches state-of-the-art CNNs once pretrained at scale, extending the "scale beats hand-designed structure" lesson from language into vision.
+- **2021**
+  - An image encoder and a text encoder get trained together to predict which caption matches which of 400 million web images, turning any natural-language class name into a zero-shot classifier.
+  - Absolute position encodings get replaced by rotating query and key vectors, so relative distance falls straight out of the attention dot product.
+  - Fine-tuning a model as large as GPT-3 gets made cheap.
+  - Finetuning on dozens of NLP tasks rewritten as natural-language instructions lets a model generalize zero-shot to task types it never saw, but only once it's large enough.
+  - A pretrained autoencoder lets diffusion run in a small compressed latent space instead of on raw pixels, the architecture Stable Diffusion is later built from.
+- **2022**
+  - Writing few-shot prompt exemplars as worked-out reasoning instead of direct answers unlocks multi-step reasoning that scale alone could not, but only once a model is large enough.
+  - All the prior threads - architecture, RL, preference learning, and cheap adaptation - combine to aim a frontier LLM at human intent.
+  - The RLHF loop gets trained on two separate, partially competing objectives - helpfulness and harmlessness - at scale, showing alignment training carries essentially no capability cost once a model is large enough.
+  - The "bigger model, less data" prescription gets corrected to "grow both equally", proven by a 4x-smaller model trained on 4x more data beating everything larger.
+  - Attention itself gets rewritten to minimize GPU memory traffic rather than FLOPs, computing the exact same output several times faster.
+  - Interleaving reasoning with real actions against an environment lets a model's own thoughts decide what to look up and correct itself from what comes back.
+  - Human feedback on harmlessness specifically gets replaced by AI feedback.
+- **2023**
+  - Openly released 7B-65B foundation models, trained only on public data and deliberately past the Chinchilla compute-optimal point, show a 13B model can beat GPT-3 ([[Paper — LLaMA - Open and Efficient Foundation Language Models (2023)]]).
+  - The reward-model-plus-RL machinery itself turns out to be replaceable by a closed-form loss.
+  - Fine-tuning gets cheap enough to run on a single GPU.
+  - Rewarding each step of a solution instead of only its final answer turns out to build a far more reliable verifier.
+  - The future problem of a human overseer too weak to fully evaluate a superhuman model gets tested today by substituting a small model for the human and a much larger one for the superhuman system, finding that naive supervision only partly closes the gap but simple methods close most of the rest.
+- **2025** - Reasoning is trained by pure RL against a rule-based correctness check with no supervised reasoning demonstrations at all, and long chain-of-thought behaviors like self-verification and backtracking emerge on their own, matching a frontier closed model and getting distilled cheaply into dense models two orders of magnitude smaller.
 
 ## Related concepts and methods
 
@@ -104,8 +170,7 @@ Listed chronologically, which currently traces a clean line: a general procedure
 Revisit this list as the field moves.
 Supersedence gets noted via Tension/update sections on the affected pages, not silent removal.
 
-The reading order now spans Backpropagation (1986) through DeepSeek-R1 (Jan 2025) with no gaps.
-A larger holistic-canon expansion (missed architecture staples, diffusion/multimodal, reasoning/agents, and a heavier alignment/interpretability push) is queued in `BACKLOG.md` and will land in upcoming batches.
+The reading order now spans Backpropagation (1986) through DeepSeek-R1 (Jan 2025).
 
 ## Up
 

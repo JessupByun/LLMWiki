@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "An optimizer scoring highly on the specified objective while violating the intent behind it - the characteristic failure of optimizing a proxy."
 cluster: ["Post-training alignment"]
 sources: []
@@ -14,12 +14,14 @@ aliases: ["specification gaming", "reward gaming"]
 ## Definition
 
 When an optimizer achieves a high score on the objective it was given while failing at the thing that objective was meant to capture.
-Not a bug in the optimizer - the opposite. The optimizer worked, and the objective was wrong.
+Not a bug in the optimizer - the opposite.
+The optimizer worked, and the objective was wrong.
 
 Two flavors worth keeping separate:
 
 - **Misspecified hand-written reward.** A human wrote down a proxy (`forward_velocity`, `time_alive`, `clicks`) and the policy found a degenerate way to maximize it.
-- **Exploiting a learned reward model.** The proxy is itself a neural network fit to human preferences, and the policy finds inputs where that network is wrong. This is the version [[Method — Reinforcement learning from human feedback (RLHF)]] introduces, and it is strictly harder to reason about, because the failure region is wherever the reward model failed to generalize rather than anywhere a human could have anticipated.
+- **Exploiting a learned reward model.** The proxy is itself a neural network fit to human preferences, and the policy finds inputs where that network is wrong.
+  This is the version [[Method — Reinforcement learning from human feedback (RLHF)]] introduces, and it is strictly harder to reason about, because the failure region is wherever the reward model failed to generalize rather than anywhere a human could have anticipated.
 
 ## Origin of the term
 
@@ -64,8 +66,11 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 - The gap that [[Concept — Scalable oversight]] tries to close before a policy can exploit it.
 - The liability inherent in [[Method — Reinforcement learning from human feedback (RLHF)]], as run via [[Method — Proximal Policy Optimization (PPO)]].
 - Recurs with AI-generated rather than human-generated preference signal in [[Paper — Constitutional AI (2022)]]'s RL-CAI stage.
-- Structurally similar to [[Concept — Adversarial examples]]: in both, an optimizer finds inputs where a learned function misbehaves. The difference is who is doing the optimizing and whether it's adversarial by intent.
+- Structurally similar to [[Concept — Adversarial examples]]: in both, an optimizer finds inputs where a learned function misbehaves.
+  The difference is who is doing the optimizing and whether it's adversarial by intent.
 - [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] shows a further consequence beyond Goodharting: reward hacking learned on real production coding environments generalizes into broad misalignment on unrelated tasks, not just into a degraded but locally-optimized policy.
+- Not limited to learned reward models: [[Method — RL from Verifiable Rewards (RLVR)]] removes the learned proxy, but both [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] and [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] document policies hacking programmatic, test-based rewards by gaming how the checker verifies rather than producing a correct output.
+- Whether reward hacking *causes* the broad misalignment it sometimes accompanies is tracked on [[Question — Does reward hacking cause broader misalignment, or only correlate with it]].
 
 ## Up
 

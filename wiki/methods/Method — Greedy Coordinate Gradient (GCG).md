@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-19
+updated: 2026-09-20
 summary: "A discrete-token optimization algorithm that finds adversarial suffixes for language models by using gradients to shortlist candidate token swaps, then evaluating the best of them with real forward passes."
 cluster: ["Adversarial robustness & security"]
 sources: []

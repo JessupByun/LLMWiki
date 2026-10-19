@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-09-20
 summary: "Restructures the attention computation to minimize reads and writes to slow GPU memory instead of minimizing FLOPs, computing the exact same attention output 2-4x faster with linear rather than quadratic memory."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — FlashAttention (2022).pdf"]

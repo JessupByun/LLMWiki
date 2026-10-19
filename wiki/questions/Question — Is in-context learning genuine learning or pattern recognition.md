@@ -1,9 +1,9 @@
 ---
 type: question
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "Whether a model doing well in-context is learning a new skill at inference time, or locating and running an already-learned behavior triggered by the prompt."
-cluster: []
+cluster: ["Mechanistic interpretability", "Foundational canon"]
 sources: []
 tags: [in-context-learning, interpretability, mesa-optimization]
 aliases: []
@@ -13,7 +13,7 @@ aliases: []
 
 ## The question
 
-[[Paper — Language Models are Few-Shot Learners (2020)]] is explicitly agnostic about this, describing in-context learning along a spectrum from recognizing a familiar task in an unfamiliar format to "learning a skill entirely de novo" - and notes the answer may vary from task to task.
+[[Paper — Language Models are Few-Shot Learners (2020)]] is explicitly agnostic about this, describing [[Concept — In-context learning]] along a spectrum from recognizing a familiar task in an unfamiliar format to "learning a skill entirely de novo" - and notes the answer may vary from task to task.
 Its own strongest evidence for anything past pure recognition is synthetic word-unscrambling: performance is near zero without in-context examples on tasks unlikely to appear during pretraining, and rises sharply with more examples.
 
 ## Evidence toward "locating an existing behavior"
@@ -30,5 +30,5 @@ It remains unresolved whether harder few-shot tasks (arithmetic, novel synthetic
 
 ## Up
 
-- [[Concept — In-context learning]]
-- [[Concept — Induction heads]]
+- [[Cluster — Mechanistic interpretability]]
+- [[Cluster — Foundational canon]]

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-08-07
+updated: 2026-09-18
 summary: "Introduced the Transformer, replacing recurrence with self-attention - the architecture nearly every modern LLM is built on."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Attention Is All You Need (2017).pdf"]

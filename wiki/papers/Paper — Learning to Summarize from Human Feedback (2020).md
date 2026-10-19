@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "Applies the Deep RL from Human Preferences reward-model-plus-PPO recipe to abstractive summarization at GPT-3 scale, showing a 1.3B feedback-trained model beats the human reference summaries themselves and that optimizing a learned reward model beats optimizing ROUGE."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Learning to Summarize from Human Feedback (2020).pdf"]
@@ -49,13 +49,14 @@ Two changes distinguish this from the contemporaneous Ziegler et al. 2019 predec
 - The 1.3B human-feedback model beats a 10x larger (12.9B) supervised model on raw preference against the reference summaries (61% vs 43%), and both feedback-trained models beat the human reference summaries themselves.
 - **Transfer with no fine-tuning:** the Reddit-trained feedback model, evaluated cold on CNN/DailyMail news articles, nearly matches a model actually fine-tuned on CNN/DM reference summaries.
 - **Reward model beats ROUGE as an optimization target:** best-of-N sampling against the learned reward model produces monotonically better human-judged summaries as N grows; optimizing ROUGE the same way plateaus early at a much lower quality ceiling.
-- **Over-optimization is real and visible:** pushing PPO harder against an *earlier* checkpoint of the reward model initially improves quality, but past a point the reward model's predicted preference and the actual human preference diverge, and the reward model becomes actively anti-correlated with what humans want. See the paper's own discussion, which is a direct empirical instance of [[Concept — Reward hacking]] and the case for [[Concept — Scalable oversight]] (a static reward model eventually runs out of coverage as the policy shifts under it).
+- **Over-optimization is real and visible:** pushing PPO harder against an *earlier* checkpoint of the reward model initially improves quality, but past a point the reward model's predicted preference and the actual human preference diverge, and the reward model becomes actively anti-correlated with what humans want.
+  See the paper's own discussion, which is a direct empirical instance of [[Concept — Reward hacking]] and the case for [[Concept — Scalable oversight]] (a static reward model eventually runs out of coverage as the policy shifts under it).
 - Reward-model accuracy scales predictably with both data (+1.1% validation accuracy per doubling) and model size (+1.8% per doubling), with the largest (6.7B) reward model approaching single-human agreement rates.
 
 ## Why it endures
 
 This paper's exact three-stage recipe - collect comparisons, fit a Bradley-Terry reward model, optimize with PPO under a KL penalty against the SFT policy - is, almost unchanged, the RLHF stage of [[Paper — Training LMs to Follow Instructions (2022)]] two years later.
-The separate-value-network ablation and the over-optimization curve are both cited directly in later RLHF scaling work (e.g. Gao, Schulman & Hilton 2022 on reward model overoptimization, still queued).
+The separate-value-network ablation and the over-optimization curve are both cited directly in later RLHF scaling work (e.g. [[Paper — Scaling Laws for Reward Model Overoptimization (2022)]]).
 
 ## Limitations
 

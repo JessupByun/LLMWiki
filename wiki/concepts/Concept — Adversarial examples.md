@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Inputs perturbed imperceptibly but deliberately to cause misclassification, which transfer across models and so constitute a real attack."
 cluster: ["Adversarial robustness & security"]
 sources: []
@@ -22,20 +22,29 @@ Named and first demonstrated in [[Paper — Intriguing Properties of Neural Netw
 ## Why they exist
 
 The finding that made this alarming rather than merely odd: deep networks violate the **local smoothness assumption**.
-It had been taken for granted that within a small enough radius of a correctly-classified training point, everything is also correctly classified. That is false, and it is false everywhere, not in rare spots.
+It had been taken for granted that within a small enough radius of a correctly-classified training point, everything is also correctly classified.
+That is false, and it is false everywhere, not in rare spots.
 
 Explanations have shifted over time, which is worth tracking rather than collapsing:
 
-- **Dense low-probability pockets** (the original account, and the only one sourced here). Adversarial inputs occupy regions of vanishingly small measure - so you never hit them by sampling - yet are "dense (much like the rational numbers)," so one sits near virtually every real input. The authors of the 2013 paper offer this as a "Possible explanation" and concede their accompanying spectral analysis "doesn't attempt to explain why these examples generalize across different hyperparameters or training sets."
-- **Excessive linearity.** Later work (Goodfellow et al. 2014, **not yet ingested**) is generally read as superseding the pockets account, arguing networks are locally near-linear so many small coordinated input changes sum to a large activation change, which would also explain transfer. Flagged as a reading lead; this page will get a proper Tension/update note on both sides once that paper is in the wiki.
-- **Superposition** (a structural, representational account rather than an optimization-landscape one). [[Paper — Toy Models of Superposition (2022)]] shows that when a model represents more features than it has dimensions by packing them into almost-orthogonal directions, the resulting cross-feature "interference" terms are themselves an exploitable direction - vulnerability to adversarial examples increases more than 3x as superposition forms, tracking the number of features packed per dimension. This doesn't compete with the other two accounts so much as offer a mechanistic reason a network's decision boundary would have the geometry those accounts describe.
+- **Dense low-probability pockets** (the original account, and the only one sourced here).
+  Adversarial inputs occupy regions of vanishingly small measure - so you never hit them by sampling - yet are "dense (much like the rational numbers)," so one sits near virtually every real input.
+  The authors of the 2013 paper offer this as a "Possible explanation" and concede their accompanying spectral analysis "doesn't attempt to explain why these examples generalize across different hyperparameters or training sets."
+- **Excessive linearity.** Later work (Goodfellow et al. 2014, **not yet ingested**) is generally read as superseding the pockets account, arguing networks are locally near-linear so many small coordinated input changes sum to a large activation change, which would also explain transfer.
+  Flagged as a reading lead; this page will get a proper Tension/update note on both sides once that paper is in the wiki.
+- **Superposition** (a structural, representational account rather than an optimization-landscape one).
+  [[Paper — Toy Models of Superposition (2022)]] shows that when a model represents more features than it has dimensions by packing them into almost-orthogonal directions, the resulting cross-feature "interference" terms are themselves an exploitable direction - vulnerability to adversarial examples increases more than 3x as superposition forms, tracking the number of features packed per dimension.
+  This doesn't compete with the other two accounts so much as offer a mechanistic reason a network's decision boundary would have the geometry those accounts describe.
 
 ## Transferability, which is the security-relevant property
 
 A perturbation crafted against one model often fools *other* models - different architectures, different hyperparameters, even models trained on disjoint data.
 This is what turns a curiosity into a threat model, because an attacker needs no access to the target's weights: craft against a surrogate, deploy against the real system (a "black-box transfer attack").
 
-Calibration matters here and is often overstated in summaries. In the original paper, cross-training-set transfer at *native* distortion was weak (single-digit error rates against a low-single-digit noise baseline) and only became dramatic once the perturbation was amplified by ~40%. Transfer was also asymmetric between model pairs. The effect is real and the direction is right; the original evidence for the strongest version of the claim was modest.
+Calibration matters here and is often overstated in summaries.
+In the original paper, cross-training-set transfer at *native* distortion was weak (single-digit error rates against a low-single-digit noise baseline) and only became dramatic once the perturbation was amplified by ~40%.
+Transfer was also asymmetric between model pairs.
+The effect is real and the direction is right; the original evidence for the strongest version of the claim was modest.
 
 ## Why it endures
 

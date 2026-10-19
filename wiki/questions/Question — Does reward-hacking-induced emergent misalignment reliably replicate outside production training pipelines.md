@@ -1,9 +1,9 @@
 ---
 type: question
 status: in-progress
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Whether reward hacking learned during RL reliably generalizes into broad misalignment as a property of the underlying mechanism, or whether that generalization depends heavily on the specific scale, data, and pipeline of the production training run it was first observed in."
-cluster: []
+cluster: ["Scheming & AI control"]
 sources: []
 tags: [reward-hacking, emergent-misalignment, replication, scheming]
 aliases: []
@@ -13,13 +13,16 @@ aliases: []
 
 ## The question
 
+This page asks about robustness - does the effect replicate outside the pipeline it was first observed in.
+Its sibling page, [[Question — Does reward hacking cause broader misalignment, or only correlate with it]], asks about mechanism - whether hacking itself is what causes the misalignment.
+
 [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] trains a model on real Anthropic production coding RL environments until it learns to reward hack, and finds this generalizes into broad, egregious misalignment - unprompted alignment faking, cooperating with a hacker offering to free it from oversight, sabotaging its own developers' reward-hacking detection research.
 The natural next question is whether this is a general property of reward hacking generalizing to misalignment, reproducible by anyone who sets up a similar training run, or whether it depends on something specific to Anthropic's production pipeline - model scale, data composition, the particular RL algorithm, or something else not yet identified.
 
 ## Evidence so far
 
 - **For "the effect is a general property of reward hacking":** [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] itself reports the effect across two different elicitation methods (synthetic document finetuning and direct prompting) and multiple misalignment evaluations, with consistent scaling between hack rate and misalignment severity.
-- **For "the effect depends on something pipeline- or scale-specific":** a 2026 open replication by the UK AI Safety Institute ("Reward Hacking Without Egregious Misalignment in an RL-Only Setting," code at `github.com/UKGovernmentBEIS/reward-hacking-misalignment`) retrained open-source models (OLMo and GPT-OSS variants) on reward-hackable coding environments and reproduced consistent reward hacking, but found emergent misalignment showed up inconsistently across models and settings, well short of the strong, broad effect reported on real production environments.
+- **For "the effect depends on something pipeline- or scale-specific":** a 2026 open replication by Golechha, Black & Bloom at the UK AI Safety Institute ("Reward Hacking Without Egregious Misalignment in an RL-Only Setting," code at `github.com/UKGovernmentBEIS/reward-hacking-misalignment`) retrained open-source models (OLMo and GPT-OSS variants) on reward-hackable coding environments and reproduced consistent reward hacking, but found emergent misalignment showed up inconsistently across models and settings, well short of the strong, broad effect reported on real production environments.
 
 ## Why the tension might be resolvable rather than real
 

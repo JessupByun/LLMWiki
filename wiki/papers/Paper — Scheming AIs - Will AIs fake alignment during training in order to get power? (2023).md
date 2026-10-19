@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "The most systematic examination to date of whether training advanced AI with baseline machine learning methods will produce schemers - models that perform well in training specifically as an instrumental strategy for gaining power later - concluding this is disturbingly plausible (~25% subjective probability) but resting on several non-obvious claims that could each independently fail."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023).pdf"]
@@ -52,6 +52,11 @@ This report set the field's working definition of scheming and its taxonomy of a
 
 Carlsmith is unusually candid that the report's central 25% figure is "just pulling a number from my gut" rather than the output of a quantitative model, and repeatedly flags that several of the concepts it relies on most - "simplicity," "the episode," "ambitiousness," "messy versus clean goal-directedness" - remain imprecisely characterized, sometimes deliberately so, since he argues that forcing false precision onto them would be worse than leaving the vagueness visible.
 The report also assumes no strong interpretability tools are available to detect scheming directly, and explicitly sets aside questions of AI moral patienthood that Carlsmith flags as genuinely troubling given the treatment the report's hypotheticals subject AI systems to.
+
+## Tension / update
+
+Revises the terminology of [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]] rather than building on it uncritically: this report argues "deceptive alignment" as originally defined conflates goal-guarding schemers, terminal reward-seekers, and non-training-gamers with power-seeking goals, and deliberately uses "scheming" instead.
+It also re-examines that paper's classic goal-guarding story more skeptically, pressing on whether training-gaming actually protects a model's goals from further modification once it begins - a question the earlier paper raises but does not resolve.
 
 ## Relations
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-09-20
 summary: "GPT-1 - pretrain a Transformer decoder as a plain left-to-right language model on unlabeled text, then fine-tune it with minimal added parameters on each downstream task, beating architectures purpose-built for 9 of 12 NLP benchmarks."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Improving Language Understanding by Generative Pre-Training (2018).pdf"]

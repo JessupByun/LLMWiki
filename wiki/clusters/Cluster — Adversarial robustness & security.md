@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Attacks on learned systems and defenses against them - adversarial examples, transferability, jailbreaks, prompt injection, automated red-teaming, and dangerous-capability benchmarking."
 cluster: []
 sources: []
@@ -20,7 +20,7 @@ That is what makes it an attack rather than a quirk, because the adversary does 
 
 The modern jailbreak and prompt-injection literature is the same problem relocated from pixel space to token space, which is why this cluster is scoped to attacks on learned systems generally rather than to vision.
 Three genuinely distinct LLM-era threads now sit inside that relocation: **jailbreaking** (defeating a model's own safety training, whether by hand-crafted prompts, gradient-optimized suffixes, or - the newest lineage - simply exploiting long context windows via in-context learning), **prompt injection** (an external attacker planting instructions in content an application processes, with no need for the target to have any safety training to defeat in the first place, escalating from single-turn apps to genuinely agentic, tool-using ones), and **dangerous-capability benchmarking** (measuring and, increasingly, removing hazardous knowledge itself, rather than only testing whether a model can be talked into revealing it).
-Automated red-teaming - training a second model to find failures rather than relying on human ingenuity - is the methodological thread connecting the model-organism half of this cluster to the deliberate-adversary half of [[Cluster — Scheming & AI control]].
+Automated red-teaming - training a second model to find failures rather than relying on human ingenuity - is the methodological thread connecting this cluster to [[Cluster — Scheming & AI control]], where red-teaming shifts from finding a model's failures to constructing and stress-testing models that are themselves the adversary.
 
 ## Members
 
@@ -31,6 +31,7 @@ Automated red-teaming - training a second model to find failures rather than rel
 | [[Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018)]] | Reframes adversarial robustness as a min-max saddle-point problem and shows PGD reliably solves the non-concave inner attack, giving adversarial training its first optimization-theoretic guarantee rather than an empirically-tuned mitigation. |
 | [[Paper — Red Teaming Language Models with Language Models (2022)]] | Automates red-teaming itself: a second language model generates natural-language test cases that elicit tens of thousands of diverse failures - offensive replies, leaked training data, leaked contact info - from a target model, with no human writing a single test case. |
 | [[Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)]] | Names indirect prompt injection - malicious instructions planted in third-party content an application retrieves rather than in the user's own prompt - and demonstrates working attacks against real production systems including Bing Chat and GitHub Copilot. |
+| [[Benchmark — AdvBench]] | Introduced inside the GCG paper as its evaluation set - 500 harmful strings and 500 harmful behaviors - and the de facto jailbreak benchmark until HarmBench standardized the field. |
 | [[Benchmark — HarmBench]] | Standardizes jailbreak evaluation after finding at least 9 mutually incompatible setups already in use, with a classifier stress-tested against gaming that catches nonstandard successful completions substring-matching benchmarks miss entirely. |
 | [[Benchmark — WMDP]] | A safely-publishable proxy for hazardous biosecurity, cybersecurity, and chemical-security knowledge, paired with an unlearning method (RMU) that drives frontier models' scores toward chance while barely touching general capability. |
 | [[Benchmark — AgentDojo]] | Extends indirect prompt injection into the genuinely agentic, tool-using case with formal utility and security metrics, finding the most capable agents are consistently the easiest to hijack and no defense reaches zero attack success. |

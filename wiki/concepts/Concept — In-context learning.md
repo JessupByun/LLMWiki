@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-08-07
+updated: 2026-10-19
 summary: "A model adapting to a task from examples in its prompt, within a single forward pass and with no weight updates."
 cluster: ["Foundational canon"]
 sources: []
@@ -21,7 +21,8 @@ Named and characterized at scale in [[Paper — Language Models are Few-Shot Lea
 
 ## Why it's strange
 
-Ordinary learning changes parameters. This doesn't.
+Ordinary learning changes parameters.
+This doesn't.
 The weights are frozen; the same forward pass that would continue a sentence instead implements something behaving like a learning algorithm over the examples in its context.
 The standard framing is a nested loop: pretraining is the outer loop that updates weights, and the forward pass is an inner loop that adapts without them.
 

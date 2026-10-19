@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Measuring what frontier AI systems can actually do - general agentic task-completion capability and forecasting its growth against a human-calibrated yardstick, rather than a narrow attack surface or an arbitrary benchmark score."
 cluster: []
 sources: []
@@ -26,6 +26,7 @@ Measured across 12 frontier models from 2019-2025, this horizon has been doublin
 ## Methods and concepts
 
 - [[Concept — Task-completion time horizon]]
+- [[Concept — Data contamination]] - benchmark test data leaking into training sets, the failure mode every capability measurement in this cluster has to rule out.
 
 ## Open threads
 

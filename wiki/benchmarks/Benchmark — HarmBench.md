@@ -1,10 +1,10 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "A standardized evaluation framework of 510 harmful behaviors across 7 semantic categories, built to let jailbreak attacks and defenses be fairly compared on equal footing after finding at least 9 mutually incompatible evaluation setups already in use across the field, with a stress-tested classifier that catches nonstandard successful completions substring-matching-based prior benchmarks miss entirely."
 cluster: ["Adversarial robustness & security"]
-sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — HarmBench (2024).pdf"]
+sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — HarmBench.pdf"]
 tags: [jailbreak, red-teaming, benchmark, adversarial-training, evals]
 aliases: ["arxiv:2402.04249", "Mazeika et al. 2024"]
 ---

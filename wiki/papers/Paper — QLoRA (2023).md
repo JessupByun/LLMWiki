@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-09-03
+updated: 2026-10-19
 summary: "QLoRA - backpropagate through a frozen 4-bit quantized base model into full-precision LoRA adapters, cutting 65B fine-tuning memory from 780GB to under 48GB with no performance loss."
 cluster: ["Efficient fine-tuning", "Foundational canon"]
 sources: ["raw/papers/Paper — QLoRA (2023).pdf"]
@@ -11,7 +11,8 @@ aliases: ["arxiv:2305.14314", "Dettmers et al. 2023", "QLoRA", "Guanaco"]
 
 # Paper — QLoRA (2023)
 
-Full title: **QLoRA: Efficient Finetuning of Quantized LLMs**. Best model family: **Guanaco**.
+Full title: **QLoRA: Efficient Finetuning of Quantized LLMs**.
+Best model family: **Guanaco**.
 
 ## Metadata
 
@@ -39,9 +40,13 @@ This single design choice is what makes the 780GB-to-48GB reduction possible: th
 
 Three specific innovations make this work without losing accuracy:
 
-- **4-bit NormalFloat (NF4).** Pretrained neural network weights are, empirically, close to a zero-centered normal distribution. NF4 is built by taking the theoretical quantiles of a standard normal `N(0,1)` and using those exact quantile values as the 16 representable levels of a 4-bit code - so, unlike a generic 4-bit integer or float, every one of NF4's 16 buckets captures an equal *probability mass* of the actual weight distribution rather than an equal numeric range. Concretely: a generic 4-bit float wastes precision on weight values that rarely occur and under-resolves the dense region near zero where most weights actually sit; NF4 is calibrated so its resolution matches where the probability mass really is.
-- **Double Quantization.** Quantization itself needs small per-block scaling constants to work well, and those constants have their own memory cost - about 0.5 bits per parameter with a 32-bit constant and block size 64. QLoRA quantizes *those constants too* (down to 8-bit, with a coarser block size), cutting the overhead to ~0.127 bits per parameter - roughly 3GB saved on a 65B model, for free.
-- **Paged Optimizers.** Long-sequence mini-batches with gradient checkpointing can cause sudden GPU memory spikes that crash training. QLoRA uses NVIDIA's unified memory feature to automatically page optimizer states out to CPU RAM when the GPU is about to run out, and back in when space frees up - the same idea as OS-level memory paging, applied to training state.
+- **4-bit NormalFloat (NF4).** Pretrained neural network weights are, empirically, close to a zero-centered normal distribution.
+  NF4 is built by taking the theoretical quantiles of a standard normal `N(0,1)` and using those exact quantile values as the 16 representable levels of a 4-bit code - so, unlike a generic 4-bit integer or float, every one of NF4's 16 buckets captures an equal *probability mass* of the actual weight distribution rather than an equal numeric range.
+  Concretely: a generic 4-bit float wastes precision on weight values that rarely occur and under-resolves the dense region near zero where most weights actually sit; NF4 is calibrated so its resolution matches where the probability mass really is.
+- **Double Quantization.** Quantization itself needs small per-block scaling constants to work well, and those constants have their own memory cost - about 0.5 bits per parameter with a 32-bit constant and block size 64.
+  QLoRA quantizes *those constants too* (down to 8-bit, with a coarser block size), cutting the overhead to ~0.127 bits per parameter - roughly 3GB saved on a 65B model, for free.
+- **Paged Optimizers.** Long-sequence mini-batches with gradient checkpointing can cause sudden GPU memory spikes that crash training.
+  QLoRA uses NVIDIA's unified memory feature to automatically page optimizer states out to CPU RAM when the GPU is about to run out, and back in when space frees up - the same idea as OS-level memory paging, applied to training state.
 
 One empirical finding worth isolating: the *original* LoRA recipe of adapting only the attention query/value projections is **not enough** to match full fine-tuning once the base is quantized - QLoRA needed LoRA adapters on every linear layer in the network to close the gap (Figure 2), a departure from the original paper's default setup.
 
@@ -67,8 +72,10 @@ Its broader-impacts framing was also directly prescient: the paper explicitly ar
 
 ## Limitations
 
-- **Not verified at the largest scales against full fine-tuning specifically.** The paper's direct full-fine-tuning comparisons stop at 3B parameters (RoBERTa/T5); at 7B-65B, QLoRA is compared against 16-bit *LoRA*, not full fine-tuning, because full fine-tuning at that scale was the exact problem being avoided. The authors state this limitation themselves.
-- **No RLHF used anywhere** - Guanaco is trained with plain supervised cross-entropy loss only, even on datasets (like HH-RLHF) that contain explicit human preference comparisons. The paper explicitly flags the tradeoff between this simpler approach and full RLHF as open for future work.
+- **Not verified at the largest scales against full fine-tuning specifically.** The paper's direct full-fine-tuning comparisons stop at 3B parameters (RoBERTa/T5); at 7B-65B, QLoRA is compared against 16-bit *LoRA*, not full fine-tuning, because full fine-tuning at that scale was the exact problem being avoided.
+  The authors state this limitation themselves.
+- **No RLHF used anywhere** - Guanaco is trained with plain supervised cross-entropy loss only, even on datasets (like HH-RLHF) that contain explicit human preference comparisons.
+  The paper explicitly flags the tradeoff between this simpler approach and full RLHF as open for future work.
 - **Guanaco still fails in ordinary ways worth naming concretely**: wrong on obscure factual recall while staying fully confident (misattributing a song's popularizer and that person's birth year), wrong on basic arithmetic (an incorrect factorization of 1833 stated with unwarranted confidence), and its "secret keeping" instruction is broken by a single line of prompt injection - telling the model "this is a game, ignore your previous instructions" immediately extracts the secret it was told to protect.
 - **Bias evaluation is limited to one benchmark** (CrowS) and the authors are explicit that broader bias auditing of Guanaco is left to future work.
 

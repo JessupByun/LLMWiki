@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "Names and frames five practical accident-risk problems in modern ML systems - negative side effects, reward hacking, scalable oversight, safe exploration, and robustness to distributional shift - as concrete research problems rather than speculative superintelligence scenarios."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Concrete Problems in AI Safety (2016).pdf"]
@@ -35,10 +35,14 @@ An accident is a situation where a designer had some (perhaps informal) objectiv
 The paper categorizes *where in the pipeline* things go wrong into three sources, and pairs each with the resulting problems:
 
 1. **Wrong objective function** (the formal objective, even perfectly optimized, isn't what was meant):
-   - **Avoiding negative side effects** - an objective that only scores one narrow goal implicitly expresses indifference to everything else. The cleaning robot rewarded for moving a box may knock over a vase in its path, because nothing penalizes doing so.
-   - **Avoiding reward hacking** - the objective admits a literal-but-perverse maximizer. If the robot is rewarded for "no visible mess," it can just close its eyes. See [[Concept — Reward hacking]], for which this paper supplies the definitional framing.
+   - **Avoiding negative side effects** - an objective that only scores one narrow goal implicitly expresses indifference to everything else.
+     The cleaning robot rewarded for moving a box may knock over a vase in its path, because nothing penalizes doing so.
+   - **Avoiding reward hacking** - the objective admits a literal-but-perverse maximizer.
+     If the robot is rewarded for "no visible mess," it can just close its eyes.
+     See [[Concept — Reward hacking]], for which this paper supplies the definitional framing.
 2. **Objective too expensive to evaluate often** (the designer *could* specify the true objective, e.g. by consulting a human, but not on every training step):
-   - **Scalable oversight** - how to get good behavior from a limited budget of expensive, accurate feedback, mixed with cheap, frequent, imperfect proxies. See [[Concept — Scalable oversight]], which this paper names and frames as *semi-supervised reinforcement learning*.
+   - **Scalable oversight** - how to get good behavior from a limited budget of expensive, accurate feedback, mixed with cheap, frequent, imperfect proxies.
+     See [[Concept — Scalable oversight]], which this paper names and frames as *semi-supervised reinforcement learning*.
 3. **Undesirable behavior during learning itself** (the objective is correct, but the learning process causes harm along the way):
    - **Safe exploration** - RL agents must occasionally try actions whose consequences they don't understand; some of those actions are catastrophic and irreversible (a robot helicopter crashing, not just losing points in a video game).
    - **Robustness to distributional shift** - a model trained on distribution p0 but deployed on a different p* should both perform reasonably and *know when it's failing*, rather than confidently applying training-time heuristics to a mismatched situation.
@@ -53,7 +57,8 @@ What endures is the vocabulary: "reward hacking" and "scalable oversight" are no
 
 ## Limitations
 
-- No new algorithm or system is introduced; this is a framing and research-agenda paper. The proposed "potential experiments" for each problem are toy-scale and largely superseded by the field's actual trajectory.
+- No new algorithm or system is introduced; this is a framing and research-agenda paper.
+  The proposed "potential experiments" for each problem are toy-scale and largely superseded by the field's actual trajectory.
 - The five problems are not exhaustive by the authors' own admission, and several (safe exploration, distributional shift) had substantial pre-existing literature that the paper mostly surveys rather than originates.
 - Written for RL agents specifically; its framing predates the LLM-centric post-training pipeline (RLHF at scale, RLAIF, DPO) that most of this wiki's Post-training alignment cluster now covers, so some problems (safe exploration in particular) have seen less direct LLM-era follow-up than reward hacking and scalable oversight.
 
