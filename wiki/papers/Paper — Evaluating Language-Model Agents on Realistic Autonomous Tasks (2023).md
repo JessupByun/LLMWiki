@@ -54,7 +54,7 @@ A human overseer checks any action with real-world side effects, simulates some 
 ## Why it endures
 
 Its approach - real tasks in real environments, a human-legible threshold, and agents built to elicit capability rather than raw model outputs - carries into METR's later work.
-Its warning that behavioral evaluations of a fixed agent don't bound future agents - better scaffolding, fine-tuning, and scale can each change the answer - became a standard caveat in [[Method — Dangerous capability evaluation]], and its call for extrapolations of progress over time across a larger array of tasks is what the time-horizon metric later delivers.
+Its warning that behavioral evaluations of a fixed agent don't bound future agents - better scaffolding, fine-tuning, and scale can each change the answer - became a standard caveat in [[Method — Dangerous capability evaluation]], and its call for extrapolations of progress over time across a larger array of tasks is what the time-horizon metric later partly delivers.
 
 ## Limitations
 

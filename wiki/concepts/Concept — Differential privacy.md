@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-24
+updated: 2026-10-19
 summary: "A formal guarantee that a randomized algorithm's output distribution changes only slightly whether or not any single individual's data is included in its input - bounding, by construction, how much any one training example can influence a model's learned behavior."
 cluster: ["ML security & privacy"]
 sources: []
@@ -27,6 +27,7 @@ This is a categorically different kind of defense from the empirical mitigations
 - Formalized by Dwork et al. (not yet ingested); applied to deep, non-convex neural network training for the first time at a usable privacy budget by [[Paper — Deep Learning with Differential Privacy (2016)]].
 - Directly defeats [[Concept — Membership inference]] by construction, bounding the success of any attack that relies solely on a model's own output behavior.
 - Operationalized for deep learning via [[Method — Differentially Private SGD (DP-SGD)]].
+- [[Paper — Extracting Training Data from Large Language Models (2020)]] names it the principled defense against training-data extraction but finds it hard to apply to web text, where the same personal details can appear in more than one webpage.
 
 ## Up
 

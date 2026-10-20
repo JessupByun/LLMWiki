@@ -30,6 +30,7 @@ It is also a [[Concept — Scalable oversight]] problem: the failure is worst ex
 - [[Paper — Auditing Language Models for Hidden Objectives (2025)]] builds its hidden objective from a related behavior, reward-model sycophancy - pleasing the reward model rather than the user.
 - [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]] reports sycophancy-related features inside Claude 3 Sonnet.
 - A byproduct of [[Method — Reinforcement learning from human feedback (RLHF)]]'s substitution of a learned approval model for the true objective.
+- [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] observes persuasion agents adapting their stated views to fit participants, sycophancy turned into a rapport-building tactic.
 
 ## Up
 

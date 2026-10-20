@@ -87,6 +87,7 @@ The countermeasure works, but is more expensive for this format than the citatio
 - Cited for the concept of strategic underperformance by [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]], which includes sandbagging among its 26 test evaluations and shares an author (Teun van der Weij).
 - Adopts password-locking, citing Roger (2023) and [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]], and cites the latter, loosely, for few-sample unlocking of multiple-choice sandbagging.
 - Threatens [[Method — Dangerous capability evaluation]] directly, the evaluation programme [[Paper — Model Evaluation for Extreme Risks (2023)]] asks developers to gate decisions on; Shevlane et al. list robustness to deception as a required property of those evaluations.
+- Its Limitations gap - capability to sandbag, not propensity - is partly filled by [[Paper — Frontier Models are Capable of In-context Scheming (2024)]], where Claude 3.5 Sonnet and Claude 3 Opus sandbag unprompted to avoid an unwanted consequence of scoring well.
 
 ## Up
 

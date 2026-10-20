@@ -22,7 +22,7 @@ Unlike a raw benchmark score, this number is directly comparable across tasks of
 Horizon is fit per model with a logistic regression, `p_success(task) = sigma((log h - log t_task) * beta)`, where `t_task` is the geometric mean completion time of successful human baseliners and `h` is the fitted 50% time horizon - the task length at which the curve crosses 0.5.
 This is deliberately modeled on Item Response Theory from psychometrics, which fits a similar logistic curve to find the difficulty level at which a test-taker has a 50% chance of a correct answer, except the difficulty rating here comes directly from measured human completion time rather than being learned from the test-takers' own performance.
 Because the fit only needs each task's human-time rating and each model's pass/fail outcomes, wildly different task types - a 3-second shell-script identification, a 9-minute simulation bug fix, an 8-hour ML research engineering project - can all be folded into one continuous scale, and a doubling-time trend line can be extrapolated forward the way a raw percentage score, which saturates, cannot.
-The choice of success threshold matters: an 80% time horizon (how long a task a model can complete *reliably*) is typically 4-6x shorter than the same model's 50% horizon, even though both grow at a similar rate over time - occasional success on a hard task is a much lower bar than dependable success on it.
+The choice of success threshold matters: an 80% time horizon (how long a task a model can complete *reliably*) is much shorter than the same model's 50% horizon - occasional success on a hard task is a much lower bar than dependable success on it.
 
 ## Relations
 

@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-24
+updated: 2026-10-19
 summary: "Determining whether a specific data record was part of a trained model's training set, using only the model's own predictions on that record - a privacy attack that exploits the tendency of trained models to behave more confidently on inputs they were trained on than on inputs they weren't."
 cluster: ["ML security & privacy"]
 sources: []
@@ -26,6 +26,7 @@ Because this asymmetry is a side effect of ordinary training rather than a delib
 - Introduced and demonstrated by [[Paper — Membership Inference Attacks Against Machine Learning Models (2017)]] via its founding [[Method — Shadow model attack]] technique.
 - Distinguished from model inversion, which reconstructs an average class-representative input rather than testing a specific record's membership.
 - Defeated by construction, rather than merely mitigated, by [[Concept — Differential privacy]]: a differentially private model's output distribution is guaranteed not to depend meaningfully on whether any single record was included in training, which directly bounds the success of any membership-inference attack against it.
+- [[Paper — Extracting Training Data from Large Language Models (2020)]] uses it as the filtering stage of a training-data extraction attack on GPT-2, replacing raw likelihood with comparisons against a reference model or compressor.
 
 ## Up
 

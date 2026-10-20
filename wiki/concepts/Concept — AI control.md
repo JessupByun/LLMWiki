@@ -38,6 +38,7 @@ The core protocols in the founding paper - trusted monitoring, untrusted monitor
 - Its threat model gets a concrete deployment-shaped adversary in [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]]: an agent with legitimate access that turns against its operator when cornered.
 - Complemented by white-box alignment auditing, tested blind in [[Paper — Auditing Language Models for Hidden Objectives (2025)]] - looking for a hidden objective directly rather than wrapping the model in a protocol.
 - The fallback for when [[Concept — Corrigibility]] can't be verified: [[Paper — The Off-Switch Game (2016)]]'s deference argument assumes the agent is honestly trying to serve the human, which control declines to assume.
+- Whether reading reasoning could become a dependable control layer is the subject of [[Concept — Chain-of-thought monitorability]] and [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]].
 
 ## Up
 

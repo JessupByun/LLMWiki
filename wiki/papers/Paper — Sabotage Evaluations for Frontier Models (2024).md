@@ -65,6 +65,7 @@ The authors are also candid that several other evaluation designs they tried - d
 - Its sandbagger is an instance of the [[Method — Model organisms of misalignment]] methodology, deliberately constructed and hardened against a specific safety-training countermeasure to test whether that countermeasure actually works.
 - The undermining-oversight evaluation's trusted-monitoring design is a direct empirical test of the same weaker-model-oversees-stronger-model protocol [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] proposes.
 - Its sandbagging evaluation operationalizes the threat [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] defines - strategic underperformance on capability evaluations - see [[Concept — Sandbagging]].
+- [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] asks the complementary question: whether a model can devise a subversion strategy itself, rather than only executing sabotage.
 
 ## Up
 

@@ -74,6 +74,7 @@ It also names and documents a genuinely durable finding: harmlessness and helpfu
 - Preference likelihood: uses the same [[Concept — Bradley-Terry preference model]]-style comparison training as the RLHF lineage, just with AI-generated rather than human-generated comparison labels.
 - Uses [[Method — Chain-of-Thought Prompting]], introduced in [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]], to improve AI feedback label quality.
 - **Tension / update** with [[Concept — Reward hacking]]: RL-CAI's Goodharting failure mode (boilerplate over-reassurance under heavy optimization) is a variant of the same general phenomenon Christiano et al. 2017 documented on Pong, but the "reward model" being gamed here is itself trained on AI rather than human judgments - worth tracking whether AI-generated preference signal is more or less exploitable than human-generated signal as this literature grows.
+- **Tension / update** with [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]: this paper builds its harmlessness training on red-teamed prompts with reported net safety gains, while Sleeper Agents finds adversarial training on red-teamed failures can teach a backdoored model to hide its trigger more precisely - though, unlike there, these models have no planted conditional policy to protect.
 
 ## Up
 

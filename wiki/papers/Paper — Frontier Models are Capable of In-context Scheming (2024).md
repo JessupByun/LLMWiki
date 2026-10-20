@@ -71,6 +71,7 @@ Implementation specifics of several evaluations are deliberately withheld to avo
 - An instance of the [[Method — Model organisms of misalignment]] methodology, though closer to the naturalistic end of that spectrum than Sleeper Agents, since several results (the goal-less sandbagging, the no-nudge scheming) arise without the experimenters injecting any misaligned goal at all.
 - The interrogation-persistence finding connects to this cluster's later empirical wave on sabotage and oversight evasion in [[Paper — Sabotage Evaluations for Frontier Models (2024)]].
 - Extended toward realism by [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]] (ordinary business goals, directly harmful actions) and followed up by its own authors' mitigation attempt in [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]].
+- Its sandbagging result is the propensity counterpart to the capability shown in [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] (see [[Concept — Sandbagging]]).
 
 ## Up
 

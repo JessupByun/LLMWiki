@@ -45,7 +45,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 ## Open threads
 
 Every gap this section previously flagged (PPO, InstructGPT, Constitutional AI, DPO) is now filled.
-[[Paper — AI Safety via Debate (2018)]] and [[Paper — Weak-to-Strong Generalization (2023)]] have moved out to the new [[Cluster — Scalable oversight]]: both address a genuinely different question - can a supervisor meaningfully oversee a model more capable than itself - from this cluster's own focus on shaping the model currently in front of you, and between the two of them now have enough depth to stand as their own pillar.
+[[Paper — AI Safety via Debate (2018)]] and [[Paper — Weak-to-Strong Generalization (2023)]] have moved out to the new [[Cluster — Scalable oversight]]: both address a genuinely different question - can a supervisor meaningfully oversee a model more capable than itself - from this cluster's own focus on shaping the model currently in front of you, and that question now has enough depth to stand as its own pillar.
 [[Paper — Let's Verify Step by Step (2023)]]'s ORM baseline traces back to Cobbe et al. 2021's verifiers and its direct comparison point is Uesato et al. 2022 - both still not yet ingested, and both would sharpen this cluster's process-vs-outcome-supervision thread if added later.
 
 ## Up

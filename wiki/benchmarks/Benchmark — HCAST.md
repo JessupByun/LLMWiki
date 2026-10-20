@@ -27,7 +27,7 @@ Expert-knowledge benchmarks like GPQA show models answering hard questions, but 
 ## How it's built
 
 **Tasks.** 189 tasks in 78 families, roughly 31% ML engineering, 21% software engineering, 19% cybersecurity, and 30% general reasoning by family; 143 were built by METR staff and contractors and 46 came through a public task bounty.
-Each task is a containerized environment, an instruction string, and an algorithmic scoring function, binarized at a success threshold.
+Each task is a containerized environment, an instruction string, and an algorithmic scoring function, binarized at a success threshold; human times run from about a minute to over 8 hours (the time-horizon paper's subset is rated up to 30 hours).
 Examples range from making a "Hello, World!" web server and exploiting a SQL injection, to finding sparse adversarial perturbations against a CIFAR-10 classifier and adapting an MD4 collision attack to a modified hash function.
 **Quality control.** For most families, fresh testers attempt a task to find bugs and loopholes, and an agent attempts every task five times, with all 945 transcripts read by hand to confirm successes are legitimate rather than reward hacks of the scorer.
 **Human baselines.** 140 people with relevant degrees or experience made 563 attempts (over 1,500 hours) in the same environment as the agents, paid hourly plus bonuses for fast success; a task's time estimate is the geometric mean of successful attempts.

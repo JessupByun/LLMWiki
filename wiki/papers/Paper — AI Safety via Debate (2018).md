@@ -68,6 +68,7 @@ The paper frames all of this as a proposal supported by preliminary evidence, ex
 - [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] takes the same overseer-capability gap in a different direction: instead of debate's average-case bet that honesty wins the game, it asks the worst-case question of whether a protocol stays safe if the model being overseen is actively adversarial.
 - Borrows its self-play optimization technique directly from [[Paper — Mastering the Game of Go without Human Knowledge (2017)]], and builds its own analogy on top of AlphaZero to argue why a judge weaker than the debaters can still reach a correct verdict: an amateur can judge which of two strong Go players is better by watching them play, without being able to evaluate the moves directly.
 - Its central claim - that lying is harder than refuting a lie - gets encouraging empirical support with LLM debaters in [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]], where more persuasive debaters make judges more accurate.
+- [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] names debate as a natural fit for its sandwiching paradigm, since debate deliberately has a model argue for wrong answers.
 
 ## Up
 

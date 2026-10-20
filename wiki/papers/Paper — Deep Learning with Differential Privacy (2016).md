@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-24
+updated: 2026-10-19
 summary: "Introduces differentially private stochastic gradient descent (DP-SGD) - clip each per-example gradient's L2 norm, average, and add calibrated Gaussian noise before each parameter update - and the moments accountant, a tighter privacy-loss accounting method that lets deep, non-convex neural networks be trained under a modest, meaningful differential-privacy budget for the first time, reaching 97% accuracy on MNIST and 73% on CIFAR-10 at (8, 10^-5)-differential privacy."
 cluster: ["ML security & privacy", "Foundational canon"]
 sources: ["raw/papers/ml-security-and-privacy/Paper — Deep Learning with Differential Privacy (2016).pdf"]
@@ -67,6 +67,7 @@ The moments accountant's numerical integration is specific to the Gaussian noise
 - Directly answers the threat [[Paper — Membership Inference Attacks Against Machine Learning Models (2017)]] demonstrates empirically: a model trained by this paper's method is secure against membership inference (and any other attack relying solely on the model's own behavior) by construction, rather than by the ad hoc, only-partially-effective mitigations that paper evaluates instead.
 - Builds on the formal definition of (epsilon, delta)-differential privacy from Dwork et al. (not yet ingested), extending it from convex learning problems and simpler statistical queries to non-convex deep neural network training for the first time at a usable privacy budget.
 - Introduces [[Concept — Differential privacy]] to this wiki and its own [[Method — Differentially Private SGD (DP-SGD)]], both anchoring [[Cluster — ML security & privacy]].
+- [[Paper — Extracting Training Data from Large Language Models (2020)]] names DP-SGD as the principled defense against LLM training-data extraction while noting its utility cost and the difficulty of choosing a privacy unit for web data.
 
 ## Up
 

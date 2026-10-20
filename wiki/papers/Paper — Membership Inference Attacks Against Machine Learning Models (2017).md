@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-24
+updated: 2026-10-19
 summary: "Introduces membership inference: given only black-box query access to a trained classifier, an attacker trains 'shadow models' that imitate the target's behavior, then trains an attack model on the shadow models' own labeled in/out predictions to determine whether a specific record was part of the target's training set - achieving up to 94% attack accuracy against real machine-learning-as-a-service platforms with no knowledge of the target's architecture or training data."
 cluster: ["ML security & privacy"]
 sources: ["raw/papers/ml-security-and-privacy/Paper — Membership Inference Attacks Against Machine Learning Models (2017).pdf"]
@@ -64,6 +64,7 @@ Model inversion and membership inference are explicitly distinguished in the pap
 - Directly names [[Paper — Deep Learning with Differential Privacy (2016)]]'s framework, differential privacy, as the principled defense its own empirical mitigations (restricting prediction-vector granularity, regularization) only approximate - a differentially private model is secure against exactly this kind of attack by construction, whereas this paper's mitigations are ad hoc and only partially effective.
 - Distinguished in its own related-work section from *model inversion* attacks (Fredrikson et al.): model inversion reconstructs an average, class-representative input and never establishes whether any specific record was actually a training member, the opposite of what membership inference verifies.
 - Introduces [[Concept — Membership inference]] and its founding [[Method — Shadow model attack]] technique, both of which anchor [[Cluster — ML security & privacy]].
+- [[Paper — Extracting Training Data from Large Language Models (2020)]] carries the attack to large language models, using membership inference to sift memorized text out of hundreds of thousands of generations.
 
 ## Up
 

@@ -15,7 +15,8 @@ Attempting to reverse engineer the detailed computations a trained neural networ
 The motivating bet, made explicit by the paper that opens this cluster, is that this could eventually let researchers explain a model's current safety problems, catch new ones, and anticipate the failure modes of future models that haven't been built yet - a more systematic alternative to purely behavioral evaluation.
 
 This cluster starts where the field starts for language models: the smallest possible toy transformers, studied until a simple, general mechanism (the induction head) falls out of the math.
-The circuit-analysis and dictionary-learning lineages both inherit this founding move directly - from measuring that mechanism at scale to the polysemanticity/superposition problem it runs straight into once MLP layers are added back in, both rewrite the model, without changing it, into a form where its parameters are directly interpretable.
+The circuit-analysis and dictionary-learning lineages both inherit this founding move: rewrite the model, without changing it, into a form whose parameters are directly interpretable.
+Circuit analysis carries it to finding that mechanism at scale; dictionary learning carries it into the polysemanticity and superposition problem that appears once MLP layers are added back in.
 
 Three genuinely distinct lineages now converge on that shared goal.
 The **circuit-analysis** lineage traces a specific behavior down to the individual attention heads or features causally responsible for it, whether by painstaking hand-verified causal intervention in a real (non-toy) model or, at much greater scale, by an automated pipeline that builds a full causal graph for an arbitrary prompt.

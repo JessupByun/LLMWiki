@@ -51,6 +51,7 @@ This is a large part of the argument for held-out and adversarially-constructed 
 ## Relations
 
 - Documented at length in [[Paper — Language Models are Few-Shot Learners (2020)]] §4.
+- [[Paper — Extracting Training Data from Large Language Models (2020)]] demonstrates the underlying mechanism: language models can reproduce training text verbatim even from a single document.
 
 ## Up
 

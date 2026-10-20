@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-10-19
 summary: "GPT-2 - a 1.5B-parameter Transformer trained on 40GB of curated web text achieves state-of-the-art results on 7 of 8 language modeling benchmarks in a zero-shot setting, showing a big enough language model starts performing tasks like translation and summarization from a natural-language prompt with no fine-tuning at all."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Language Models are Unsupervised Multitask Learners (2019).pdf"]
@@ -48,6 +48,7 @@ This paper is the missing link between GPT-1's still-supervised fine-tuning para
 - Built on the Transformer architecture from [[Paper — Attention Is All You Need (2017)]].
 - Tokenizes with [[Method — Byte Pair Encoding (BPE)]], introduced in [[Paper — Neural Machine Translation of Rare Words with Subword Units (2015)]].
 - Directly extended by [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3), which keeps this paper's zero-shot, prompting-based framing but scales the model and corpus roughly 100x and formalizes the few-shot in-context-learning story this paper only glimpses.
+- GPT-2 is the target of [[Paper — Extracting Training Data from Large Language Models (2020)]], which extracts hundreds of verbatim training sequences from it, and one of the open models [[Paper — Stealing Part of a Production Language Model (2024)]] validates its weight-stealing attack on.
 
 ## Up
 

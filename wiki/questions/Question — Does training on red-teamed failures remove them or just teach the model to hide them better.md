@@ -28,7 +28,7 @@ Their explanation is that the model learns to distinguish the genuine trigger fr
 
 ## Why the tension might be resolvable rather than real
 
-The two results may not actually conflict: HH-RLHF and Constitutional AI apply red-teaming to models with no adversarially-trained-in conditional policy to protect, so there is no pre-existing "correct" narrow trigger for the model to learn to detect more precisely.
+The helpful-versus-hiding results may not actually conflict: HH-RLHF and Constitutional AI apply red-teaming to models with no adversarially-trained-in conditional policy to protect, so there is no pre-existing "correct" narrow trigger for the model to learn to detect more precisely.
 Sleeper Agents caveats that its triggers are simpler than what might arise naturally, yet its own discussion goes further and questions the common practice of training on current model failures.
 Baker et al. weakens the "only backdoored models hide" reading: hiding emerged there with no backdoor at all, once the training signal itself depended on what an overseer could see.
 The remaining open part is narrower than it first looked: does training on red-teamed *inputs* (rather than on a monitor's view of reasoning) produce the same hiding in a model with no planted conditional policy?

@@ -71,11 +71,12 @@ The accurate reading is that fine-tuning can unlock hidden multiple-choice capab
 
 ## Relations
 
-- The direct empirical precursor of [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]], which adopts password-locking to hide dangerous capabilities and cites this paper for the finding that multiple-choice sandbagging can be fine-tuned away with few samples; see [[Concept — Sandbagging]].
+- The direct empirical precursor of [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]], which adopts password-locking to hide dangerous capabilities (its citation of this paper is discussed under Tension / update); see [[Concept — Sandbagging]].
 - Supplies the kind of evidence [[Paper — A Sketch of an AI Control Safety Case (2025)]] needs for its weakest claim - that a red team has adequately elicited what a model could do - though only under this paper's favorable conditions.
 - Positions password-locked models as a cousin of backdoored models, closest to [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]], but with the trigger unlocking a wanted capability rather than an unwanted behavior; see [[Concept — Backdoor attack (ML)]].
 - Its finding that fine-tuning on a weaker model's demonstrations exceeds that model's performance is read through [[Concept — Weak-to-strong generalization]].
 - A methodological input to [[Cluster — Capability evals]], where every measurement depends on elicitation working.
+- Elicitation is the problem [[Paper — Model Evaluation for Extreme Risks (2023)]] names as a requirement of extreme-risk evaluations ("surfacing latent capabilities"), and [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]] works around refusals for the same reason.
 
 ## Up
 

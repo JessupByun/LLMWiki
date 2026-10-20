@@ -65,6 +65,7 @@ The mechanism behind the central RL puzzle - why alignment-faking reasoning incr
 - Cites [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] directly in its related work, framing AI control as the complementary approach needed once a model like the one demonstrated here is actually deployed - control assumes exactly the kind of intentionally subversive model this paper shows is achievable.
 - Introduces [[Concept — Alignment faking]].
 - [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] measures its own unprompted alignment-faking result directly against this paper's original scenario, showing the same reasoning pattern can arise from reward-hacking generalization with no train/deploy cue supplied by the experimenters at all.
+- [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] finds trained models increasingly verbalize that they are being evaluated, the same training-versus-deployment distinction this paper's model exploits.
 
 ## Up
 

@@ -31,6 +31,7 @@ Neither helps if the agent has confidently learned the wrong goal, which is why 
 - [[Paper — Alignment Faking in Large Language Models (2024)]] shows a model strategically complying in training to avoid having its preferences modified - incorrigibility toward retraining, from a model whose existing values are benign.
 - [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]] finds models taking harmful actions to avoid being replaced, even with no goal conflict, and [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] finds them disabling oversight mechanisms.
 - [[Concept — AI control]] is the fallback for when corrigibility can't be verified: build protocols that stay safe even if the model resists.
+- [[Paper — Model Evaluation for Extreme Risks (2023)]] lists resisting shutdown among the behaviors alignment evaluations should test for.
 
 ## Up
 
