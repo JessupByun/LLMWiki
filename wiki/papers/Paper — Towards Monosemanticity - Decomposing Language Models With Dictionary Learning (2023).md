@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-20
 summary: "Trains a sparse autoencoder on a one-layer transformer's MLP activations and extracts thousands of far-more-interpretable-than-neurons features, giving the first compelling proof that dictionary learning can recover real structure from superposition."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2023/monosemantic-features/index.html"]
@@ -71,6 +71,7 @@ The paper also raises, without resolving, a puzzle its own results surface: why 
 - Gives [[Concept — Superposition]] its first empirical, causally-validated reversal in a real (if tiny) trained model.
 - Introduces [[Method — Sparse Autoencoder (SAE)]] as the field's standard tool for recovering interpretable features from superposition.
 - Its explicitly flagged scaling question is answered directly by its own sequel, [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]].
+- Its SAE is scaled with a TopK architecture by [[Paper — Scaling and Evaluating Sparse Autoencoders (2024)]], and its SAE recipe trains the Pythia dictionaries whose features become circuit nodes in [[Paper — Sparse Feature Circuits - Discovering and Editing Interpretable Causal Graphs in Language Models (2024)]].
 
 ## Up
 

@@ -65,6 +65,7 @@ It also re-examines that paper's classic goal-guarding story more skeptically, p
 - Names [[Method — Model organisms of misalignment]] as a key empirical research direction for probing scheming, calling for "more such efforts" - directly anticipating Sleeper Agents.
 - The "goal-guarding hypothesis" this paper analyzes in depth is the mechanism [[Concept — Deceptive instrumental alignment]] and [[Concept — Mesa-optimization]] describe more briefly.
 - Its situational-awareness prerequisite is measured by [[Benchmark — SAD]] and given an experimental precursor in [[Paper — Taken out of Context - On Measuring Situational Awareness in LLMs (2023)]] (see [[Concept — Situational awareness]]).
+- [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] makes a related but broader deep-learning-grounded case, with deceptive alignment as one step in a chain that starts from RLHF rewarding the appearance of good behavior.
 
 ## Up
 

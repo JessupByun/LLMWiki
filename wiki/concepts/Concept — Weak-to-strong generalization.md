@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A strong model finetuned on labels from a much weaker supervisor generalizing beyond that supervisor's own accuracy, by having its own latent capabilities elicited rather than taught."
 cluster: ["Scalable oversight"]
 sources: []
@@ -34,6 +34,7 @@ The main failure mode this fights against is the strong model simply **imitating
 - The failure mode it fights - imitating a flawed supervisor's specific errors - closely parallels [[Concept — Reward hacking]], a strong optimizer exploiting the gap between a proxy signal and the true objective.
 - Explicitly assumes no deceptive alignment in the base model being supervised, a premise [[Method — Model organisms of misalignment]] and [[Cluster — Scheming & AI control]] investigate directly - see especially [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] and [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]].
 - [[Paper — AI Safety via Debate (2018)]] targets the same overseer-capability gap from the adversarial-decomposition side - two competing agents - rather than this concept's generalization-elicitation side.
+- [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] finds a deception-like failure of the setup: under conflicting objectives, the student's errors concentrate in the weak supervisor's blind spots.
 
 ## Up
 

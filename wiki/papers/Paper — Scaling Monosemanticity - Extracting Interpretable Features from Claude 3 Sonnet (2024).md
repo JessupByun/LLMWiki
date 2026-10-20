@@ -76,7 +76,8 @@ The loss function used to select good dictionaries (reconstruction error plus an
 - Confirms and extends [[Concept — Superposition]]'s account of polysemantic neurons at a scale far beyond the toy models [[Paper — Toy Models of Superposition (2022)]] used to first demonstrate it.
 - Applies [[Paper — Scaling Laws for Neural Language Models (2020)]]'s general framework - fit a power law, use it to allocate a fixed compute budget - to SAE training itself, rather than to pretraining a language model.
 - The Golden Gate Bridge steering result is the direct empirical basis for the public "Golden Gate Claude" demonstration that followed this paper's release, and previews the feature-clamping methodology later safety and jailbreak-robustness interpretability work builds on.
-- Its feature clamping is one form of [[Method — Activation steering]]; [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] and [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] steer with supervised difference-in-means directions instead of SAE features.
+- Its feature clamping is one form of [[Method — Activation steering]]; [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] and [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] steer mainly with supervised difference-in-means directions rather than SAE features.
+- Published weeks before [[Paper — Scaling and Evaluating Sparse Autoencoders (2024)]], OpenAI's parallel scaling effort, which replaces the L1 penalty with TopK and notes that this paper's 34-million-feature SAE had only about 12 million live features.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Scaling Laws - Transformer language model loss follows smooth, predictable power laws in model size, dataset size, and compute, almost independent of architecture shape, and the compute-optimal response to more compute is overwhelmingly to train a much bigger model rather than more data or more steps."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Scaling Laws for Neural Language Models (2020).pdf"]
@@ -51,6 +51,7 @@ This paper supplied the theoretical and empirical backbone for the entire "scale
 Chinchilla attributes the gap to this paper's use of a fixed learning-rate schedule length across all models regardless of token count, which it argues systematically overestimates the loss achievable by models trained on less data than that schedule was calibrated for, plus this paper's heavier reliance on much smaller (often sub-100M-parameter) models in its fits.
 GPT-3, Gopher, and other LLMs trained following this paper's prescription were consequently, per Chinchilla's argument, substantially undertrained relative to their parameter count.
 - [[Paper — Emergent Abilities of Large Language Models (2022)]] qualifies its smooth loss curves: specific downstream abilities can still jump abruptly with scale, and [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] argues those jumps mostly reflect the scoring metric rather than the model.
+- Its power-law methodology is applied to sparse autoencoders in [[Paper — Scaling and Evaluating Sparse Autoencoders (2024)]].
 
 ## Up
 

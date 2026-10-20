@@ -60,7 +60,7 @@ Every concept studied still requires a human to hand-design the contrastive stim
 
 ## Tension / update
 
-Its finding that Vicuna's harmfulness representation survives adversarial suffixes contrasts with [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]], which finds an adversarial suffix suppresses the refusal direction in Qwen 1.8B.
+Its finding that Vicuna-13B's harmfulness representation survives adversarial suffixes contrasts with [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]], which finds an adversarial suffix suppresses the refusal direction in Qwen 1.8B and flags the contrast itself; the metrics differ (classification accuracy here, direction expression there).
 The two may track different things - perceived harmfulness versus the decision to refuse - and each rests on a single model, so the disagreement is about what a jailbreak disrupts, not yet settled.
 
 ## Relations
@@ -71,7 +71,7 @@ The two may track different things - perceived harmfulness versus the decision t
 - Its harmlessness-control results are tested directly against [[Method — Greedy Coordinate Gradient (GCG)]] as an attack, and its separate emotion-steering demonstration draws its 500 harmful instructions from the same set [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] introduces, giving this cluster's newest member a direct empirical link to the adversarial-robustness cluster's central jailbreak method.
 - Its contrastive-difference reading method is related to [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]] (CCS), which it cites and benchmarks against directly, outperforming it in its own comparison (82 vs 69 average accuracy on DeBERTa).
 - [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] uses its contrastive honest/deceptive instruction pairs to train probes that generalize to realistic strategic deception.
-- Its contrastive-direction approach is simplified to difference-in-means and pushed to causal control by [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] and [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] (see [[Method — Activation steering]]).
+- Its contrastive-direction approach is applied with difference-in-means directions by [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] and [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] (see [[Method — Activation steering]]), as an ablation and weight edit and across the training lifecycle respectively.
 
 ## Up
 

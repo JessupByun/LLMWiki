@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-20
 summary: "Reverse-engineers a 26-attention-head circuit that implements indirect object identification in GPT-2 small end to end, the most detailed reconstruction of a real natural-language behavior in an actual transformer to date, and introduces path patching plus three quantitative criteria (faithfulness, completeness, minimality) for judging whether a claimed circuit explanation is actually correct."
 cluster: ["Mechanistic interpretability"]
 sources: ["raw/papers/mechanistic-interpretability/Paper — Interpretability in the Wild - a Circuit for Indirect Object Identification in GPT-2 small (2022).pdf"]
@@ -62,6 +62,7 @@ The completeness criterion's own greedy-search failure mode is presented as an o
 - Operates on and traces information through [[Concept — Residual stream]], the same shared communication channel those foundational circuits papers formalize.
 - Fills the specific gap this cluster's other members share: everything else in [[Cluster — Mechanistic interpretability]] before this paper is either a toy-transformer result or a sparse-autoencoder feature decomposition; this is the cluster's first hand-verified circuit in a real, non-toy model.
 - Its faithfulness/completeness/minimality validation framework is the direct methodological ancestor of the automated-circuit-discovery and attribution-graph lineage this cluster's later scaling work builds toward.
+- [[Paper — Sparse Feature Circuits - Discovering and Editing Interpretable Causal Graphs in Language Models (2024)]] extends circuit discovery from attention heads to SAE features, automating it enough to run on thousands of behaviors.
 
 ## Up
 

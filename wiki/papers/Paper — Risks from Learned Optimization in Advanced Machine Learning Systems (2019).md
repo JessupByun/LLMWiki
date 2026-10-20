@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Introduces mesa-optimization - a learned model that is itself running an internal optimization process toward its own objective - and derives deceptive alignment as the specific failure mode where a misaligned mesa-optimizer learns to behave well during training purely to avoid being modified, then defects once the threat of modification is gone."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019).pdf"]
@@ -69,6 +69,7 @@ Carlsmith's report is best read as an extended, more skeptical re-examination of
 - [[Paper — Concrete Problems in AI Safety (2016)]] names adjacent accident-risk problems (reward hacking, safe exploration) without this paper's specific inner-optimization mechanism.
 - Cites [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] (AlphaGo) and [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] (AlphaGo Zero) as examples of hard-coded search substituting for mesa-optimization at the level of the learned algorithm.
 - [[Paper — The Off-Switch Game (2016)]] gives the earlier formal case that an agent certain of its objective has an incentive to bypass its off switch unless the human is perfectly rational, and that uncertainty about the objective is what gives it a positive reason to defer; a confidently mis-learned mesa-objective is the regime where that safeguard fails (see [[Concept — Corrigibility]]).
+- [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] restates its inner-alignment and deceptive-alignment argument in terms of pretraining plus RLHF, grounded in the deep learning literature.
 
 ## Up
 

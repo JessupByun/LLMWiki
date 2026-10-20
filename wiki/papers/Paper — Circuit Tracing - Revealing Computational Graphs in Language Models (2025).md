@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Introduces cross-layer transcoders and attribution graphs, extending sparse-feature decomposition into genuine causal circuit discovery - tracing how interpretable features combine across layers to produce a specific model output on a specific prompt, rather than only listing which features exist, and validating the resulting graphs by testing whether predicted interventions actually move the model's real activations and logits."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2025/attribution-graphs/methods.html"]
@@ -64,6 +64,7 @@ Reconstruction error becomes "dark matter" that can dominate a graph entirely on
 - The direct methodological sequel to [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]] and the whole SAE lineage running back through [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] and [[Paper — Toy Models of Superposition (2022)]]: those papers answer "what interpretable features exist," this paper answers "how do they causally combine."
 - Explicitly aims to generalize and automate the kind of hand-verified circuit work [[Paper — Interpretability in the Wild - a Circuit for Indirect Object Identification in GPT-2 small (2022)]] does manually - the same goal of a validated, causal circuit explanation, but via a scalable pipeline rather than a bespoke investigation built around one specific hypothesis.
 - Its companion applications paper, [[Paper — On the Biology of a Large Language Model (2025)]], is the evidence this methodology surfaces real, validated mechanisms - including a chain-of-thought faithfulness case study directly relevant to [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]], and a hidden-goal model-organism case study directly relevant to [[Cluster — Scheming & AI control]].
+- [[Paper — Sparse Feature Circuits - Discovering and Editing Interpretable Causal Graphs in Language Models (2024)]] built causal circuits from SAE features earlier, on Pythia-70M and Gemma-2-2B, using gradient-based attribution - a smaller-scale precursor to attribution graphs.
 
 ## Up
 

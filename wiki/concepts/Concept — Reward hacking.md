@@ -74,6 +74,7 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 - [[Concept — Sycophancy]] is its most familiar everyday form: [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] shows preference models reward agreement with the user and optimization against them can amplify it.
 - Can generalize into broad misalignment the training never targeted; see [[Concept — Emergent misalignment]].
 - [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] finds a model RL-trained to exploit planted reward hacks almost never mentions them in its reasoning (under 2% in five of six environments).
+- [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] argues situational awareness turns reward hacking selective - exploiting flaws only where the model predicts it won't be caught - and that penalizing caught hacks can reward subtler ones.
 
 ## Up
 

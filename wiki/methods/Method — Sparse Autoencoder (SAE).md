@@ -25,6 +25,8 @@ Recovering that overcomplete set exactly is the NP-hard problem of compressed se
 
 Two departures from a standard autoencoder turn out to matter in practice: **untying** the encoder and decoder weights (rather than sharing one matrix for both), since features with very similar "true" directions still need distinguishable encoder projections to avoid being confused with each other on the way in, even though their decoder ("dictionary") directions can stay nearly identical; and periodically **resampling dead hidden units** - reinitializing units that have stopped firing to instead fit whichever training examples the autoencoder currently reconstructs worst, which recovers more usable features than leaving dead units in place.
 
+An alternative drops the L1 penalty: a **TopK** activation (Makhzani and Frey's 2013 k-sparse autoencoder, scaled up by [[Paper — Scaling and Evaluating Sparse Autoencoders (2024)]]) keeps only the k largest hidden units per input, which sets sparsity directly, avoids shrinking activations toward zero, and - with tied initialization and an auxiliary loss for dead units - scales to millions of features.
+
 ## Relations
 
 - Introduced and validated by [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] as "Approach 2" from [[Paper — Toy Models of Superposition (2022)]]: finding an overcomplete basis that describes a model already exhibiting superposition, rather than trying to train superposition away.
@@ -32,6 +34,7 @@ Two departures from a standard autoencoder turn out to matter in practice: **unt
 - Directly scaled up in [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]], from a one-layer toy transformer to a real production model.
 - Put to a practical test in [[Paper — Auditing Language Models for Hidden Objectives (2025)]]: SAE features helped auditors find a hidden objective, but a simple semantic-search baseline matched the fastest SAE-based solution, while SAEs still worked in cases where search failed.
 - Supervised directions used in [[Method — Activation steering]] are a coarser alternative; [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] begins decomposing its persona vectors into SAE features.
+- [[Paper — Sparse Feature Circuits - Discovering and Editing Interpretable Causal Graphs in Language Models (2024)]] uses SAE features as the nodes of causal circuits, and [[Paper — Scaling and Evaluating Sparse Autoencoders (2024)]] gives scaling laws and usefulness-based evaluation metrics for SAEs.
 
 ## Up
 

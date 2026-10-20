@@ -39,6 +39,7 @@ It finds that it often is, especially at larger scale and when the model is give
 - Requires [[Concept — Situational awareness]]: a model must know when it is being trained to behave differently then.
 - [[Paper — Large Language Models can Strategically Deceive their Users when Put Under Pressure (2023)]] shows strategic deception of a model's own user arising unprompted, though without the long-term goal or training-gaming this concept describes.
 - [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] tests activation probes as a detector for strategic deception, a possible tool against this failure mode once outputs can't be trusted.
+- [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] places deceptive alignment as the last step of a chain from situationally-aware reward hacking through misaligned broadly-scoped goals.
 
 ## Up
 

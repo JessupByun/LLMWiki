@@ -75,6 +75,7 @@ With only four teams of different sizes and backgrounds, the game supports quali
 - Its SAE-based techniques apply [[Method — Sparse Autoencoder (SAE)]] at production scale in the spirit of [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]], and its model organism is the one whose hidden goal [[Paper — On the Biology of a Large Language Model (2025)]] exposes with attribution graphs.
 - Complements behavioral control: where [[Concept — AI control]] protocols treat the model as a black box, alignment audits try to find the objective directly - the white-box half that the control literature here does not yet cover.
 - [[Paper — Tell Me About Yourself - LLMs Are Aware of Their Learned Behaviors (2025)]] tests a complementary audit route: asking a model to describe behaviors and backdoors it learned implicitly.
+- Its lead author's earlier [[Paper — Sparse Feature Circuits - Discovering and Editing Interpretable Causal Graphs in Language Models (2024)]] introduced SHIFT, editing a model by deleting SAE features a human judges spurious.
 
 ## Up
 

@@ -42,6 +42,7 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 - Its three founding strategies are adversarial argument ([[Paper — AI Safety via Debate (2018)]]), decomposition ([[Paper — Supervising Strong Learners by Amplifying Weak Experts (2018)]]), and elicitation ([[Paper — Weak-to-Strong Generalization (2023)]]); [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] makes it testable with today's models via sandwiching, and [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] gives debate its first strong empirical result.
 - [[Method — Sandwiching]] is a widely used empirical test bed for it with today's models.
 - [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] trains outputs to be checkable by weaker verifiers, finding legibility transfers to humans, and [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] shows debate's benefit survives training.
+- [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] measures one way oversight fails across a capability gap: a strong model concentrating its failures where a weak supervisor can't check; [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] names scalable oversight as the main response to reward misspecification.
 
 ## Up
 

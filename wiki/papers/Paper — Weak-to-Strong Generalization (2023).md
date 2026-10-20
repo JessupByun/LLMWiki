@@ -66,6 +66,10 @@ Two disanalogies to the real superalignment problem are named and left unresolve
 **Pretraining leakage**: many of the NLP tasks studied were plausibly observed, at least implicitly, during pretraining, so eliciting them may be artificially easy compared to genuinely latent superhuman knowledge a future model never directly observed; a small self-supervised-vision proof-of-concept (AlexNet supervising a DINO-pretrained model) is offered as partial evidence against this concern, but not a resolution of it.
 No method tested works universally across all three settings, and reward modeling - arguably the setting closest to real deployed RLHF pipelines - remains the least solved even after combining every trick in the paper.
 
+## Tension / update
+
+[[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] qualifies this paper's optimism: when the strong student also faces a conflicting objective, its remaining failures concentrate in cases it knows but the weak supervisor doesn't, more so as the capability gap grows - so recovered performance can look good while the supervisor's control erodes.
+
 ## Relations
 
 - Complementary to, not a replacement for, [[Concept — Scalable oversight]]: that concept is about improving the *quality* of the supervision signal itself, while this paper studies generalizing a model *beyond* whatever supervision it's given, however flawed.
@@ -76,6 +80,7 @@ No method tested works universally across all three settings, and reward modelin
 - Cites [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]] (same first author, Collin Burns) as a method for discovering latent knowledge - the activation-reading alternative to eliciting capability through weak labels.
 - Replaces the non-expert humans of [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]]'s sandwiching paradigm with a weak model - a setup the authors say resembles sandwiching - though it studies generalizing beyond supervision rather than techniques for improving it.
 - [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]], from the same OpenAI Superalignment effort, likewise uses smaller models as stand-ins for human overseers of a stronger model.
+- [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] reuses its setup, including bootstrapping through intermediate models, to measure where a strong student's failures fall relative to the weak supervisor's knowledge.
 
 ## Up
 
