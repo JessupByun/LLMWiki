@@ -81,6 +81,7 @@ They also flag hazards of doing the evaluations: spreading dangerous capabilitie
 - Lists deceptive alignment as a reason not to rely on behavioral evaluations alone - the threat model of [[Concept — Deceptive instrumental alignment]] - and names mechanistic analysis, including reading whether a model's outputs misreport its knowledge as in [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]], as one remedy.
 - Cites [[Paper — The Off-Switch Game (2016)]] when listing resistance to shutdown among the behaviors alignment evaluations should look for (see [[Concept — Corrigibility]]).
 - Its "model as a threat actor" security stance and AI-assisted monitoring anticipate the protocols of [[Concept — AI control]].
+- [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]] describes itself as a step toward the dangerous capability evaluations this paper proposes.
 
 ## Up
 

@@ -30,6 +30,7 @@ Three problems shape every design:
 ## Where it appears in this wiki
 
 - [[Paper — Model Evaluation for Extreme Risks (2023)]] defines the category and how results should feed governance.
+- [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]] pilots it on LM agents for autonomous replication and adaptation, the earliest instance in this wiki.
 - [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] runs a full programme on Gemini 1.0 and introduces "expert bits," a continuous measure of how much help an agent needs.
 - [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]] measures the general autonomous capability underlying several dangerous capabilities rather than any one of them.
 - [[Benchmark — WMDP]] is a static multiple-choice proxy for hazardous knowledge, cheaper but far less realistic than agentic tasks.
