@@ -29,6 +29,7 @@ Detection is hard from behavior alone once a sandbagger can hit a plausible targ
 - Defined and demonstrated by [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]]; evaluated as one of four control-style sabotage capabilities in [[Paper — Sabotage Evaluations for Frontier Models (2024)]], whose anti-refusal training recovered most of a deliberately trained sandbagger's hidden capability.
 - The capability-evaluation counterpart of [[Concept — Deceptive instrumental alignment]], and a reason any [[Concept — AI control]] protocol calibrated to a model's *measured* capability may be too weak.
 - A threat to every measurement in [[Cluster — Capability evals]].
+- The main countermeasure - eliciting hidden capability by fine-tuning - is stress-tested in [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]]: reliable with a few good demonstrations, unreliable without them.
 
 ## Up
 

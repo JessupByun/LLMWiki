@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Extends AI Control's protocols from a single graded action into a genuinely multi-step agentic setting, and shows that resampling the untrusted model's next action - exploiting the fact that it is stateless between calls - cuts a red team's attack success rate from 58% to 7% at only a 5% cost to usefulness."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025).pdf"]
@@ -75,6 +75,7 @@ The authors also note the 1% audit budget is a fairly arbitrary choice that shif
 - The untrusted model here is not a naturally scheming model but a deliberately red-team-constructed adversarial policy, exactly mirroring AI Control's own worst-case methodology - the paper cites [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]] only as motivation for why control matters, not as evidence that GPT-4o mini itself schemes.
 - [[Method — Trusted monitoring]] is the shared building block both papers evaluate; this paper's resample variants are best read as an additional layer on top of that method rather than a separate one.
 - Complements the model-organisms half of this cluster: where [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] and [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] ask whether a model can become genuinely misaligned, this paper asks whether a wrapped protocol stays safe regardless of the answer.
+- Its precursor (Bhatt et al.'s "Shell Games") is cited by [[Paper — A Sketch of an AI Control Safety Case (2025)]] for early control results on unsafe shell commands; [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] tests whether models could devise the attack strategies Ctrl-Z's red team writes by hand.
 
 ## Up
 

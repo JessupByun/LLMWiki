@@ -83,6 +83,8 @@ Usefulness is measured assuming that once a model is confirmed to be scheming, i
 - [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] supplies the concrete adversarial artifact this paper's protocols would need to be tested against: a real model trained to behave differently once it detects deployment.
 - [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] directly extends this paper's protocol family (trusted monitoring, defer to trusted, untrusted monitoring) from a single-action setting into a multi-step agentic one, reusing its collusion-avoidance techniques without modification.
 - [[Paper — Sabotage Evaluations for Frontier Models (2024)]] directly operationalizes this paper's red-team/blue-team methodology into concrete, run-today evaluations, and empirically tests sandbagging - a difficulty this page's own Limitations names as unsolved.
+- Its methodology is generalized into [[Method — Control evaluation]], turned into a deployment argument by [[Paper — A Sketch of an AI Control Safety Case (2025)]], and its human-written red-team strategies are replaced with model-generated ones in [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]].
+- Extended to distributed threats - no single catastrophic or conclusive action, no trusted high-quality audit budget - by [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]], which reuses its APPS testbed and three of its protocols.
 
 ## Up
 

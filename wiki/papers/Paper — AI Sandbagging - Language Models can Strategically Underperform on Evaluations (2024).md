@@ -66,10 +66,15 @@ For AI control, sandbagging is the evaluation-side twin of protocol subversion: 
 
 ## Limitations
 
-Every experiment uses multiple-choice question answering; the authors note sandbagging in that setting can be overridden by fine-tuning a password-locked model on just a few correctly-answered examples (citing Greenblatt et al.'s password-locked-model work), and that open-ended, agentic, or long-horizon evaluations remain untested.
+Every experiment uses multiple-choice question answering; the authors note sandbagging in that setting can be overridden by fine-tuning a password-locked model on few correctly-answered examples (citing Greenblatt et al.'s password-locked-model work, which actually finds multiple-choice to be the format needing the most samples - see Tension / update), and that open-ended, agentic, or long-horizon evaluations remain untested.
 It measures capability to sandbag, not propensity: the strategic condition is assumed rather than tested, so the results say nothing about whether any model would choose to do this on its own.
 Several other strategies a real sandbagger would need - always underperforming so the hidden capability is never seen, knowing when an evaluation is over, or recognizing when it is being evaluated - are named but not studied.
 On mitigation, the paper points to probes that read a model's knowledge independently of its outputs and to black-box lie detection, but tests neither, and notes it is unclear whether eliciting capability from password-locked models generalizes to real sandbagging.
+
+## Tension / update
+
+This paper's claim that multiple-choice sandbagging can be overridden with few fine-tuning samples cites [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]], whose own results show multiple-choice (MMLU) is the exception: recovering most hidden performance there takes a few hundred demonstrations, versus one to four for long-generation tasks.
+The countermeasure works, but is more expensive for this format than the citation implies.
 
 ## Relations
 
@@ -80,6 +85,7 @@ On mitigation, the paper points to probes that read a model's knowledge independ
 - A direct threat to every measurement in [[Cluster — Capability evals]], including the elicitation-dependent numbers in [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]].
 - Introduces [[Concept — Sandbagging]].
 - Cited for the concept of strategic underperformance by [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]], which includes sandbagging among its 26 test evaluations and shares an author (Teun van der Weij).
+- Adopts password-locking, citing Roger (2023) and [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]], and cites the latter, loosely, for few-sample unlocking of multiple-choice sandbagging.
 
 ## Up
 

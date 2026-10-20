@@ -33,6 +33,8 @@ The core protocols in the founding paper - trusted monitoring, untrusted monitor
 - Introduced by [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]]; extended from single actions to multi-step agents by [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]], whose resampling protocols exploit the untrusted model being stateless between calls.
 - Operationalized as run-today evaluations by [[Paper — Sabotage Evaluations for Frontier Models (2024)]], which asks whether a model could secretly undermine its developer's oversight rather than whether a protocol catches it.
 - Its monitoring-based protocols depend on the overseen model's reasoning being legible; [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] shows that legibility survives only as long as the monitor is not folded into the model's training signal.
+- Evaluated with [[Method — Control evaluation]]; [[Paper — A Sketch of an AI Control Safety Case (2025)]] shows how an evaluation's result becomes a deployment argument, and [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] measures whether models could strategize against a protocol unaided.
+- Extended from single catastrophic failures to distributed threats by [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]].
 
 ## Up
 

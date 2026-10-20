@@ -24,6 +24,7 @@ Measured across 12 frontier models from 2019-2025, this horizon has been doublin
 |------|----------------|
 | [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]] | Founding paper; proposes the 50%-task-completion time horizon and measures a roughly seven-month doubling time across 12 frontier models released 2019-2025. |
 | [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] | A direct threat to every measurement in this cluster: shows models can strategically underperform on capability evaluations - selectively, at a chosen score, or by imitating a weaker model - so a score is only as trustworthy as the evaluator's ability to elicit actual capability. Primary cluster is Scheming & AI control. |
+| [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] | Tests the assumption every evaluation in this cluster rests on - that fine-tuning can elicit what a model can really do - using password-locked models with a known hidden capability; reliable with good demonstrations, unreliable without. Primary cluster is Scheming & AI control. |
 
 ## Methods and concepts
 
@@ -34,7 +35,7 @@ Measured across 12 frontier models from 2019-2025, this horizon has been doublin
 ## Open threads
 
 Two members now pull in opposite directions: the METR paper measures how fast capability is growing, while the sandbagging paper shows a model can make that measurement read low on purpose - so elicitation quality is this cluster's central unsolved problem, not a footnote.
-Natural next additions: the task-suite papers behind METR's benchmark (HCAST, Rein et al., arxiv:2503.17354; RE-Bench, Wijk et al., arxiv:2411.15114), neither yet ingested; a dangerous-capability evaluation framework distinct from WMDP's static-knowledge proxy, such as Shevlane et al.'s "Model evaluation for extreme risks" or Phuong et al.'s "Evaluating Frontier Models for Dangerous Capabilities"; and work on eliciting hidden capability from password-locked models, the countermeasure the sandbagging paper points to.
+Natural next additions: the task-suite papers behind METR's benchmark (HCAST, Rein et al., arxiv:2503.17354; RE-Bench, Wijk et al., arxiv:2411.15114), neither yet ingested; a dangerous-capability evaluation framework distinct from WMDP's static-knowledge proxy, such as Shevlane et al.'s "Model evaluation for extreme risks" or Phuong et al.'s "Evaluating Frontier Models for Dangerous Capabilities"; [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] now covers eliciting hidden capability from password-locked models, the countermeasure the sandbagging paper points to.
 
 ## Up
 
