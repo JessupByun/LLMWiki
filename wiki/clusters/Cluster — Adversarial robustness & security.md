@@ -63,7 +63,8 @@ Automated red-teaming - training a second model to find failures rather than rel
 Certified defenses are now represented by [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]].
 [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] fills the long-standing gap on why adversarial examples exist, superseding the founding paper's dense-pockets explanation (see the Tension / update on both pages).
 GCG's own central open question - whether post-hoc RLHF-style alignment training can ever structurally close the jailbreak gap - is picked up directly by [[Cluster — Scheming & AI control]], which studies safety under the assumption a model's trained-in alignment cannot be fully trusted.
-Adaptive attacks now reach safety monitors as well as models: [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] imports this cluster's adaptive-attack standard into control evaluation, and [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows open-weight safety can be removed by a rank-one weight edit, which guard-classifier defenses like Constitutional Classifiers do not address.
+Adaptive attacks now reach safety monitors as well as models: [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] imports this cluster's adaptive-attack standard into control evaluation.
+For open-weight models, [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows safety can be removed by a rank-one weight edit, which guard-classifier defenses like Constitutional Classifiers do not address.
 
 ## Up
 

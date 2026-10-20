@@ -84,6 +84,7 @@ The probes, models, and behaviors differ, but together the two leave open whethe
 - A sibling activation monitor to [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]], which reads character traits rather than deception (see [[Method — Activation steering]]).
 - Evidence for [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
 - Evidence for [[Question — Do activation probes catch deception that arises naturally rather than by instruction or planting]].
+- Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
 
 ## Up
 

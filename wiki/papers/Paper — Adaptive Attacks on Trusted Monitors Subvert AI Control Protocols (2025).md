@@ -85,6 +85,7 @@ The authors read this as a protocol tailored to one attack policy failing to gen
 - Justifies its protocol-aware attacker partly by citing evaluation-awareness results such as [[Benchmark — SAD]].
 - Monitor jailbreaks are named as an unmodeled gap by [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]], whose untrusted-monitoring safety case (see [[Method — Untrusted monitoring]]) leaves unmodeled direct attacks by the policy on either monitor.
 - Evidence for [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
+- Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
 
 ## Up
 

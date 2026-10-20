@@ -21,7 +21,7 @@ Split out from [[Cluster — Post-training alignment]]: that cluster is about sh
 **Making it testable.** None of this can be checked directly without superhuman models, so the empirical work here builds proxies.
 [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] introduces *sandwiching*: tasks where a model beats non-experts but not experts, with non-experts trying to get reliable answers out of it and experts grading at the end.
 Weak-to-strong generalization swaps the humans for a weak model.
-[[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] runs debate on QuALITY with judges denied the story entirely, an information-asymmetric variant of that setup, and finds the effect debate needs: making debaters more persuasive - judged only by whether they convince the judge - makes judges *more* accurate, while a single persuasive advisor makes them less accurate.
+[[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] runs debate on QuALITY with judges denied the story entirely, an information-asymmetric variant of sandwiching, and finds the effect debate needs: making debaters more persuasive - judged only by whether they convince the judge - makes judges *more* accurate, while a single persuasive advisor makes them less accurate.
 [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] shows the effect survives actual training of debaters, not just inference-time optimization.
 [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] takes the same adversarial idea to a capability gap rather than an information gap, training a strong prover's reasoning to be checkable by much smaller verifiers.
 
@@ -54,7 +54,7 @@ The fully adversarial worst case is the subject of [[Cluster — Scheming & AI c
 
 The empirical debate result relies on verifiable evidence (a quote tool) and honest RLHF-trained debaters; whether debate holds up without verifiable evidence, or against a deceptive debater, is untested here - the second question is where this cluster meets [[Cluster — Scheming & AI control]].
 Amplification has no empirical test beyond toy algorithmic tasks in this wiki, and recursive reward modeling and market-making, both named by the sandwiching paper, have no pages.
-Weak-to-Strong Generalization's explicit "no deceptive alignment in base models" assumption is the same gap: average-case elicitation here versus worst-case adversarial robustness there; [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] probes it from the average-case side, finding deception-like error placement with no trained-in deceptive goal, though only in small models and measured statistically rather than as intent.
+Weak-to-Strong Generalization's explicit "no deceptive alignment in base models" assumption is the same gap: average-case elicitation here versus worst-case adversarial robustness there; [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] approaches it from the average-case side without testing it, finding deception-like error placement induced by a conflicting objective rather than a trained-in deceptive goal, mostly in small models and measured statistically rather than as intent.
 
 ## Up
 

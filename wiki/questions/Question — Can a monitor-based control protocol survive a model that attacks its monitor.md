@@ -20,8 +20,8 @@ If the monitor is a single point of failure, a protocol's measured safety may sa
 
 ## Evidence so far
 
-- **For "yes, against task-level attacks":** [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] and [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] - monitoring protocols beat strong human-written attack policies, and in Ctrl-Z resampling turns a weak monitor into a strong one, with untrusted monitoring plus Time Travel reaching 92.6% safety at 95% usefulness.
-- **For "trusted monitors collapse under injection":** [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] - a prompt injection in the untrusted model's output drives every monitor-based protocol on APPS down to the safety of auditing blindly, injections transfer across monitors, and basic defer-to-resample becomes a best-of-n attack.
+- **For "yes, against task-level attacks":** [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] and [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] - monitoring protocols beat strong human-written attack policies, and in Ctrl-Z resampling roughly doubles a weak trusted monitor's catch rate (33.1% to 70.6%), with untrusted monitoring plus Time Travel reaching 92.6% safety at 95% usefulness.
+- **For "trusted monitors collapse under injection":** [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] - a prompt injection in the untrusted model's output drives every monitor-based protocol on APPS down to the safety of auditing blindly, injections mostly transfer across monitors, and basic defer-to-resample becomes a best-of-n attack.
   Its scope is narrower than the headline: the full collapse is on APPS, and only basic defer-to-resample was tested, not Ctrl-Z's stronger variants.
 - **For "collusion without communication is hard":** [[Paper — Subversion via Focal Points - Investigating Collusion in LLM Monitoring (2025)]] - two isolated copies of Claude 3.7 Sonnet rarely converge on a shared collusion signal (134 of 3,903 prompt pairs, only 31 of them genuine focal points), though some signals they found would have been hard to predict without querying the model.
 - **For "the simplest collusion is the strongest":** [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]] - a monitor fine-tuned to recognize its own model's code beats the human-designed signal of the original AI Control paper (9.8% vs 2.8% red-team wins on APPS with summarization and a trusted monitor), though summarization plus a trusted monitor still holds safety around 90%.
@@ -31,7 +31,7 @@ If the monitor is a single point of failure, a protocol's measured safety may sa
 
 Each result fixes one attack route against one protocol.
 No evaluation here combines injection and collusion against the same protocol, tests Ctrl-Z's best resampling variants against injection, or tests a probe-based monitor against a model that knows about the probe.
-The answer may also depend on capability gaps that move: Adaptive Attacks found zero-shot injections work only when the attacker is much stronger than the monitor, and the untrusted-monitoring safety case's results depend on how well self-recognition can be elicited.
+The answer may also depend on capability gaps that move: Adaptive Attacks got zero-shot injections working only with a large capability gap (GPT-5 against GPT-4o-mini), and the untrusted-monitoring safety case's results depend on how well self-recognition can be elicited.
 What this wiki lacks is a control evaluation where the red team may attack the monitor by every route at once, scored against a protocol layering trusted, untrusted, and white-box monitors.
 
 ## Up

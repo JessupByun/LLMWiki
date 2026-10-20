@@ -68,8 +68,8 @@ The authors' own:
 ## Tension / update
 
 Cuts against the optimism of [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]], where probes trained on simple honest-versus-deceptive contrasts generalized to realistic deception.
-Here, a probe that nearly perfectly detects the deliberately trained deception of [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] performs about at chance on misleading behavior RLHF produced unintentionally.
-The probes and models differ - and this one is a 7B model whose "deception" may not be represented as deception at all - but together they leave open whether activation monitors validated on artificial deception will catch the kind that emerges naturally.
+Here, a probing method that catches the planted behavior of [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] near-perfectly performs about at chance on misleading behavior RLHF produced unintentionally.
+The probes and models differ - and this one is a 7B model whose "deception" may not be represented as deception at all - but together they leave open whether activation monitors validated on artificial or instructed deception will catch the kind that emerges naturally.
 
 ## Relations
 

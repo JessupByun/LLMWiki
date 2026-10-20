@@ -39,7 +39,7 @@ Whether these work depends on how the copies could coordinate: a signal agreed i
 - The counterpart to [[Method — Trusted monitoring]]: more capable, but requires defending against the monitor itself being adversarial.
 - Scored with [[Method — Control evaluation]], and bounding collusion ability conservatively is a [[Method — Capability elicitation]] problem.
 - Self-recognition, often the strongest collusion route in the 2026 safety-case paper's coding setting, is a facet of [[Concept — Situational awareness]].
-- Monitor jailbreaks like those [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] uses against trusted monitors are out of scope there and unmodeled in the untrusted-monitoring safety case.
+- [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] jailbreaks trusted monitors but leaves untrusted monitoring out of scope, and the untrusted-monitoring safety case leaves such monitor jailbreaks unmodeled (see [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]]).
 
 ## Up
 
