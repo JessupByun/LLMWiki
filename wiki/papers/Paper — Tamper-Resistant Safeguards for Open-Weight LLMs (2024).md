@@ -84,7 +84,7 @@ A caveat from the wiki rather than the authors: the body text gives the refusal 
 
 ## Tension / update
 
-Corrects an overstatement on the [[Benchmark — WMDP]] page, which said RMU unlearning leaves "nothing left for a jailbreak to reveal".
+Qualifies [[Benchmark — WMDP]]'s robustness result for RMU unlearning.
 WMDP showed RMU resists GCG and linear probes, but its own Appendix B.6 found fine-tuning an RMU-unlearned Mistral-7B on the cyber forget corpus recovers performance, and the authors suspected RMU "obfuscates knowledge more than unlearns it" (fine-tuning was outside their closed-source threat model).
 TAR's red team confirms this at scale on its own RMU run on Llama-3-8B-Instruct: average post-attack WMDP-Bio 64.9% versus 70.5% with no defense, and recovery even when the attacker fine-tunes only on non-hazardous biology data.
 The same red team finds circuit breakers ([[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]]) have the highest post-attack jailbreak success of any refusal safeguard tested (84.8%), despite the lowest pre-attack rate (1.4%) - not a contradiction of that paper, whose evaluation did not include weight tampering, but a sharp limit on what its robustness means for open weights.

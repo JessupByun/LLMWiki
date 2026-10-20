@@ -82,6 +82,7 @@ The difference is adversarial intent: this paper's agent stated its hacks openly
 - [[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]] cites this paper and extends its obfuscation result: RL against a weak CoT monitor taught Gemini 1.5 Flash to evade it partly through deliberate errors that keep the information it needs, not only by dropping incriminating text.
 - [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]] cites it among the work its side tasks are inspired by, then finds that CoT access lowers a weak monitor's catch rate on blatant sabotage when the model is instructed to sabotage (see Tension / update).
 - Cites [[Paper — Deliberative Alignment - Reasoning Enables Safer Language Models (2024)]] (whose first author, Melody Y. Guan, is a co-author here) as SFT-stage chain-of-thought supervision whose effect on monitorability is unclear, and which could introduce less monitorable reasoning that RL later reinforces.
+- Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
 
 ## Up
 

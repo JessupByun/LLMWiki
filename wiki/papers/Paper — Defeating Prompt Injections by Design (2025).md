@@ -97,7 +97,7 @@ The authors read this as evidence that a learned hierarchy alone is not enough; 
 ## Relations
 
 - Evaluated on [[Benchmark — AgentDojo]], which shares first author Debenedetti and last author Tramèr; AgentDojo's own limitations named isolated-LLM and planner architectures as future work, and this paper builds one.
-- Defends against the indirect prompt injection threat of [[Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)]], which it cites.
+- Defends against the indirect prompt injection threat of [[Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)]], which it cites (see [[Concept — Prompt injection]]).
 - Cites [[Paper — The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions (2024)]] as a training-based defense without guarantees, and positions itself as complementary to such model-level defenses.
 - Replaces the usual agent loop, where the model reads each tool output and picks the next action (it cites [[Method — ReAct]] among agent systems), with a plan written before any untrusted data is read.
 - The wiki's connection: the paper does not cite the AI control literature, but its "robust system around an untrusted model" framing parallels [[Concept — AI control]]; the difference is that CaMeL's untrusted party is outside data, while control assumes the model itself may be the adversary.

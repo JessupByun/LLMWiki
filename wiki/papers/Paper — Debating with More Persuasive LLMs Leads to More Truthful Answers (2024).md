@@ -85,7 +85,7 @@ Both studies are inference-only and use different models and best-of-N implement
 - [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] extends its result from inference-time optimization to training, finding judge accuracy still rises as trained debaters improve.
 - [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] trains a reward model on its careful human judgments of QuALITY arguments, and finds RLHF against such signals makes models more misleading to time-limited humans.
 - [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] extends its setup to nine tasks and finds the link between persuasiveness and judge accuracy weaker and less consistent outside QuALITY (see Tension / update).
-- Part of [[Method — Debate]]; evidence for [[Question — Does debate's advantage come from refutation or just from hearing both sides]].
+- Part of [[Method — Debate]]; its debate-over-consultancy gain is one of the results [[Question — Does debate's advantage come from refutation or just from hearing both sides]] asks the source of.
 
 ## Up
 

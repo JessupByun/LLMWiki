@@ -110,7 +110,6 @@ The two are compatible - Chen et al. list easy-to-exploit hints as their own lim
 - In its stealth environment, a prompt-injection attack using the monitor's exact transcript tags was not among the attacks that worked, while the Gaslighting attack fooled only the weaker monitor - a contrast with [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]], whose adapted injections collapse action monitors, under different models, attacks, and monitors.
 - Its "how much help does evasion take" methodology is a form of [[Method — Capability elicitation]], and its rare monitor remarks about the test setup are an instance of [[Concept — Evaluation awareness]].
 - Its necessity argument rests on the serial-depth limit of the [[Concept — Transformer architecture]].
-- Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
 - Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]] and [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
 
 ## Up

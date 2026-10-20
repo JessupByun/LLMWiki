@@ -85,7 +85,7 @@ Six of the 19 participants were members of the research team.
 ## Tension / update
 
 The authors hypothesize that debate's advantage comes from the opposing expert: a claim gains reliability simply by going unrefuted, and they recommend unbounded debate length so debaters always fear another round of refutation.
-Later LLM-judge studies in this wiki find refutation contributes little.
+Later LLM-judge studies in this wiki find little sign that refutation does the work.
 [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] finds a "double consultancy" that shows both sides with no interaction reaches 75% against debate's 77% (averaged across training checkpoints), so most of the gain comes from seeing both answers argued, and reports judges are insensitive to second-speech refutations.
 [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] finds cutting debates from three turns to one has no significant effect on judge accuracy.
 Those studies use LLM judges and fixed short debates rather than skilled humans in judge-controlled, interactive debates, so whether refutation matters once debaters and judges are strong is still open.

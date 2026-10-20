@@ -92,7 +92,7 @@ This does not contradict the paper's measured gains - the authors themselves exp
 
 ## Relations
 
-- Defends against the indirect prompt injection threat of [[Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)]], which it cites, alongside direct injection and system-prompt extraction.
+- Defends against the indirect prompt injection threat of [[Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)]], which it cites, alongside direct injection and system-prompt extraction (see [[Concept — Prompt injection]]).
 - Tests zero-shot generalization to [[Concept — Jailbreaking (LLMs)]], citing [[Paper — Jailbroken - How Does LLM Safety Training Fail (2023)]] for the threat; its related work cites [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] among stronger gradient-based adversaries.
 - Its RL-trained injection generator follows the automated red-teaming line of [[Paper — Red Teaming Language Models with Language Models (2022)]], which it cites.
 - Fine-tuned with [[Method — Reinforcement learning from human feedback (RLHF)]], citing [[Paper — Training LMs to Follow Instructions (2022)]]; the wiki reads it as a refinement of [[Method — Instruction Tuning]] from "follow instructions" to "follow instructions conditioned on who gave them."

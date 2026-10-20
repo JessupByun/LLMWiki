@@ -63,7 +63,7 @@ Naive extrapolation puts month-long autonomous tasks around 2028-2030, which bea
 Elicitation is this cluster's central unsolved problem.
 The METR paper measures how fast capability is growing, the sandbagging paper shows a model can make a measurement read low on purpose, and the password-locking paper shows when fine-tuning can see through it.
 The dangerous-capability papers stress that weak elicitation underestimates capability, so their negative results are effectively lower bounds.
-[[Concept — Evaluation awareness]] is a second threat to trusting measurements: a model that can tell it is being tested, which SAD measures directly, may behave differently than it would in deployment.
+[[Concept — Evaluation awareness]] is a second threat to trusting measurements: a model that can tell it is being tested, which SAD and [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]] measure directly (the latter at about 0.83 AUC for frontier models tested in 2025), may behave differently than it would in deployment.
 The two measurement approaches also have yet to meet: [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]]'s expert bits and the time horizon are both continuous early-warning measures, but no paper here relates a model's general horizon to its distance from specific dangerous tasks.
 METR's work now appears in stages from overlapping authors (the later papers do not cite the earlier ones): [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]]'s 12 hand-graded tasks, then [[Benchmark — HCAST]]'s human-timed tasks and [[Benchmark — RE-Bench]]'s fixed 8-hour, human-baselined environments, and the time horizon fitted on top.
 

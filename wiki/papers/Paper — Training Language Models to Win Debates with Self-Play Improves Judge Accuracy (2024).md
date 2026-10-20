@@ -82,7 +82,7 @@ Michael et al. used skilled human debaters and judges in interactive debates tha
 - Its judge-sycophancy problem is the behavior measured in [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] (see [[Concept — Sycophancy]]), and its training uses a variant of [[Paper — Direct Preference Optimization (2023)]].
 - Cites [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] for the alternative of supervising across reasoning-ability gaps rather than information gaps.
 - Shares authors Julian Michael and David Rein with [[Paper — Debate Helps Supervise Unreliable Experts (2023)]], whose setup it follows, whose human judgments help fine-tune its judge, and whose consultancy baseline it extends into ensembled and double variants.
-- Cites [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] as concurrent inference-time work whose positive results held for reading comprehension but were muted on other tasks, and does what that paper calls for, training debaters (the two were concurrent).
+- Cites [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] as concurrent inference-time work whose positive results held for reading comprehension but were muted on other tasks, and does what that paper calls for, training debaters.
 - Part of [[Method — Debate]]; evidence for [[Question — Does debate's advantage come from refutation or just from hearing both sides]].
 
 ## Up

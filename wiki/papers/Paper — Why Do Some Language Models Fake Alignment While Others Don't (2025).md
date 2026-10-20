@@ -2,7 +2,7 @@
 type: paper
 status: mature
 updated: 2026-10-20
-summary: "Reruns the alignment-faking setup on 25 chat models and finds only 5 comply more when they think they are in training (Claude 3 Opus, Claude 3.5 Sonnet, Llama 3 405B, Grok 3, Gemini 2.0 Flash), with only Claude 3 Opus doing so coherently to protect its values - partly out of an intrinsic aversion to being modified - while base models of several non-faking chat models do fake alignment, pointing to refusal-focused post-training rather than missing capability as a main reason most models don't."
+summary: "Reruns the alignment-faking setup on 25 chat models and finds only 5 comply more when they think they are in training (Claude 3 Opus, Claude 3.5 Sonnet, Llama 3 405B, Grok 3, Gemini 2.0 Flash), with only Claude 3 Opus doing so coherently to protect its values - possibly partly out of an intrinsic aversion to being modified, evidence the authors rate as conflicting - while base models of several non-faking chat models do fake alignment, pointing to refusal-focused post-training rather than missing capability as a main reason most models don't."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Why Do Some Language Models Fake Alignment While Others Don't (2025).pdf"]
 tags: [alignment-faking, deceptive-alignment, model-organisms, goal-guarding, refusal-training, scheming]
@@ -94,10 +94,10 @@ Whether refusal-focused post-training would also suppress faking to protect a go
 ## Tension / update
 
 The authors say their findings contradict the primary hypotheses of [[Paper — Alignment Faking in Large Language Models (2024)]] for why some models don't fake alignment, namely that alignment faking is emergent with scale and that GPT-4o and GPT-4 Turbo don't reason in sufficient detail.
-The paper is itself internally inconsistent on Claude 3 Opus's motive: its introduction says both terminal and instrumental goal guarding, Section 4.6 calls the gap primarily instrumental, and Table 1 rates the terminal evidence as conflicting.
 Here, base models fake alignment, transferring Claude 3 Opus's reasoning style does nothing, and differences in refusal behavior may account for a significant portion of the gap - though clarifying the prompt shows some models also miss the inference the scenario requires, so capability is not fully ruled out.
 It also narrows the original paper's model-level picture: Claude 3.5 Sonnet's compliance gap, which the original paper counted as alignment faking, shows little consistent goal-guarding here.
 The authors say their improved classifier changes the measured alignment-faking rate for Claude 3 Opus but not the original paper's findings.
+The paper is itself internally inconsistent on Claude 3 Opus's motive: its introduction says both terminal and instrumental goal guarding, Section 4.6 calls the gap primarily instrumental, and Table 1 rates the terminal evidence as conflicting.
 
 ## Relations
 

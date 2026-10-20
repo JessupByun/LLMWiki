@@ -21,7 +21,7 @@ Variants include open roles (agents choose their side), more or fewer rounds, an
 ## Why it works, and what's unsettled
 
 The bet, from [[Paper — AI Safety via Debate (2018)]], is that in an adversarial game it is harder to lie than to refute a lie, so a judge only has to evaluate the most contested step rather than the whole argument.
-Whether the gains seen so far actually come from refutation, or just from the judge hearing both sides argued, is an open question in this wiki.
+Whether the gains seen so far actually come from refutation, or just from the judge hearing both sides argued, is tracked in [[Question — Does debate's advantage come from refutation or just from hearing both sides]].
 
 ## Where it appears in this wiki
 
@@ -34,7 +34,7 @@ Whether the gains seen so far actually come from refutation, or just from the ju
 ## Relations
 
 - One of the strategies of [[Concept — Scalable oversight]], tested with [[Method — Sandwiching]]-style setups.
-- [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] is a related adversarial setup that Michael et al. class as closer to consultancy.
+- [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] is a related adversarial setup that [[Paper — Debate Helps Supervise Unreliable Experts (2023)]] classes as closer to consultancy.
 - See [[Question — Does debate's advantage come from refutation or just from hearing both sides]].
 
 ## Up

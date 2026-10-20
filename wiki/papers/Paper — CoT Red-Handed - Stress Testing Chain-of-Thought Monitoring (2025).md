@@ -96,8 +96,7 @@ Read together, CoT access is a clear gain against a model that isn't managing it
 - Cited by [[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]] as earlier CoT monitoring stress-testing; that paper's "Gaslighting" attack, which convinces the monitor the side task was requested, works much like the framing attacks here, and fooled the weaker Gemini 2.0 Flash monitor but not Gemini 2.5 Pro.
 - Contrasts itself with [[Paper — Alignment Faking in Large Language Models (2024)]] (cited), whose hidden scratchpads showed misaligned reasoning but were not tested as a monitor inside a control protocol, and cites [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] as motivating CoT monitoring for scheming.
 - Aims to inform safety cases such as [[Paper — A Sketch of an AI Control Safety Case (2025)]] (cited); its evaluation-awareness limitation, citing [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]], is [[Concept — Evaluation awareness]].
-- Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]] and [[Concept — Chain-of-thought monitorability]].
-- Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]] and [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
+- Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]] and [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]], and for [[Concept — Chain-of-thought monitorability]].
 
 ## Up
 

@@ -22,13 +22,21 @@ That is what makes it an attack rather than a quirk, because the adversary does 
 The modern jailbreak and prompt-injection literature is the same problem relocated from pixel space to token space, which is why this cluster is scoped to attacks on learned systems generally rather than to vision.
 Three genuinely distinct LLM-era threads now sit inside that relocation: **jailbreaking** (defeating a model's own safety training, whether by hand-crafted prompts, gradient-optimized suffixes, or - the newest lineage - simply exploiting long context windows via in-context learning), **prompt injection** (an external attacker planting instructions in content an application processes, with no need for the target to have any safety training to defeat in the first place, escalating from single-turn apps to genuinely agentic, tool-using ones), and **dangerous-capability benchmarking** (measuring and, increasingly, removing hazardous knowledge itself, rather than only testing whether a model can be talked into revealing it).
 [[Paper — Jailbroken - How Does LLM Safety Training Fail (2023)]] supplies the jailbreak thread's explanation: safety training fails when it competes with instruction-following and text continuation, or when inputs (Base64, ciphers, other languages) fall outside what safety training covered but inside what pretraining taught.
-[[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] established that harmful-finetuning route: a few harmful examples, harmless-looking identity-shifting data, or even benign instruction data undo safety training through fine-tuning alone.
-For open-weight models, [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows a cheaper non-prompt route than harmful finetuning: edit the weights to remove the single direction that mediates refusal.
-[[Paper — Defeating Prompt Injections by Design (2025)]] argues current model-level prompt-injection defenses are heuristic and offer no guarantees, while its system design does - conceding side channels and the burden of maintaining security policies.
-On the defense side, [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] shows universal jailbreaks can be resisted by guard classifiers outside the model rather than by the model's own safety training, with a later version reaching deployment-viable refusal rates, while [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends inside the model, disrupting the internal representations harmful output depends on so that bypassing refusal no longer unlocks the capability.
-[[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] extends defense to weight tampering itself, meta-learning safeguards that survive hundreds of fine-tuning steps - and its red team shows existing unlearning and circuit breakers do not.
-Prompt injection (see [[Concept — Prompt injection]]) now has two contrasting defenses: [[Paper — The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions (2024)]] trains the model to rank instructions by source, while [[Paper — Defeating Prompt Injections by Design (2025)]] leaves the model unchanged and enforces security in a software layer around it, and reports that a model trained with the hierarchy still falls to hundreds of AgentDojo attacks.
+[[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] automates the attack with gradient-optimized suffixes that transfer to production models, and [[Paper — Many-shot Jailbreaking (2024)]] needs neither cleverness nor gradients, only a long context window.
+[[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] moves the attack from prompts to weights: a few harmful examples, harmless-looking identity-shifting data, or even benign instruction data undo safety training through fine-tuning alone.
+For open-weight models, [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows an even cheaper weight-space route: edit out the single direction that mediates refusal.
+
+Jailbreak defenses now sit at three levels.
+[[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] resists universal jailbreaks with guard classifiers outside the model, with a later version reaching deployment-viable refusal rates.
+[[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends inside the model, disrupting the internal representations harmful output depends on so that bypassing refusal no longer unlocks the capability.
+[[Paper — Deliberative Alignment - Reasoning Enables Safer Language Models (2024)]] defends in training, teaching a reasoning model to recall and reason over its safety spec, which in an o1-mini ablation carried over to encoded and multilingual jailbreaks its safety data left out.
+None of these targets weight tampering; [[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] does, adversarially training against simulated fine-tuning attacks so safeguards survive hundreds of fine-tuning steps - and its red team shows existing unlearning and circuit breakers do not.
+
+Prompt injection (see [[Concept — Prompt injection]]) has two contrasting defenses.
+[[Paper — The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions (2024)]] trains the model to rank instructions by source.
+[[Paper — Defeating Prompt Injections by Design (2025)]] leaves the model unchanged and enforces security in a software layer around it, arguing model-level defenses are heuristic and offer no guarantees while conceding side channels and the burden of maintaining security policies; it reports that a model trained with the hierarchy still falls to hundreds of AgentDojo attacks.
 [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] carries prompt injection into AI control, with the untrusted model itself as the attacker and the safety monitor as the target.
+
 Automated red-teaming - training a second model to find failures rather than relying on human ingenuity - is the methodological thread connecting this cluster to [[Cluster — Scheming & AI control]], where red-teaming shifts from finding a model's failures to constructing and stress-testing models that are themselves the adversary.
 
 ## Members
@@ -62,22 +70,20 @@ Automated red-teaming - training a second model to find failures rather than rel
 
 - [[Concept — Adversarial examples]]
 - [[Concept — Jailbreaking (LLMs)]]
+- [[Concept — Prompt injection]]
 - [[Method — Greedy Coordinate Gradient (GCG)]]
 - [[Benchmark — AdvBench]]
 - [[Benchmark — HarmBench]]
 - [[Benchmark — WMDP]]
 - [[Benchmark — AgentDojo]]
 - [[Method — Activation steering]]
-- [[Concept — Prompt injection]]
 
 ## Open threads
 
-Certified defenses are now represented by [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]].
 [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] fills the long-standing gap on why adversarial examples exist, superseding the founding paper's dense-pockets explanation (see the Tension / update on both pages).
 GCG's own central open question - whether post-hoc RLHF-style alignment training can ever structurally close the jailbreak gap - is picked up directly by [[Cluster — Scheming & AI control]], which studies safety under the assumption a model's trained-in alignment cannot be fully trusted.
-Adaptive attacks now reach safety monitors as well as models: [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] imports this cluster's adaptive-attack standard into control evaluation.
-For open-weight models, [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows safety can be removed by a rank-one weight edit, which guard-classifier defenses like Constitutional Classifiers do not address.
-[[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] gives the wiki its first evidence that open-weight safeguards can resist tampering, though only against fine-tuning attacks, at a capability cost, and with weak results for refusal.
+Adaptive attacks now reach safety monitors as well as models: [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] imports this cluster's adaptive-attack standard into control evaluation (see [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]]).
+Open-weight safety is the least settled thread: [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] removes safety with a rank-one weight edit and [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] with ten examples, neither of which guard classifiers like Constitutional Classifiers address, and [[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] gives the wiki its first evidence that safeguards can resist tampering - only against fine-tuning attacks, at a capability cost, and with weak results for refusal.
 
 ## Up
 
