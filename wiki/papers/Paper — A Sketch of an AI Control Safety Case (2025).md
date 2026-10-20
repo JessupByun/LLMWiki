@@ -75,6 +75,7 @@ It is a sketch: the numbers are illustrative, no actual evaluation was run, and 
 - Contrasts its concentrated-failure scope with the distributed threats handled by [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]], and its open elicitation-adequacy claim is the question [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] studies empirically.
 - How to justify adequate red-team elicitation, which it leaves open, is the problem of [[Method — Capability elicitation]].
 - Works through in detail the Harm Control argument outlined in [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]], which shares several of its authors.
+- [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]] builds a deeper safety case in the same Claims-Arguments-Evidence style, focused on collusion in untrusted monitoring (see [[Method — Untrusted monitoring]]).
 
 ## Up
 

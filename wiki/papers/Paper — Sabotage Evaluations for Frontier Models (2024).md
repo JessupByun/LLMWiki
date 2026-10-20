@@ -67,6 +67,7 @@ The authors are also candid that several other evaluation designs they tried - d
 - Its sandbagging evaluation operationalizes the threat [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] defines - strategic underperformance on capability evaluations - see [[Concept — Sandbagging]].
 - [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] asks the complementary question: whether a model can devise a subversion strategy itself, rather than only executing sabotage.
 - [[Benchmark — SHADE-Arena]] extends sabotage evaluation to many more and more complex environments, measuring sabotage and monitoring ability together.
+- [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] adapts its sandbagging setting to test whether activation probes detect deliberate underperformance.
 
 ## Up
 

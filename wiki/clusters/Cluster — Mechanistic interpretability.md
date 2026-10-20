@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Reverse-engineering the internal computations of trained neural networks into human-interpretable algorithms, weights, and features, via three distinct lineages: hand-verified circuits, sparse dictionary learning, and top-down representation reading and control."
 cluster: []
 sources: []
@@ -22,6 +22,7 @@ Three genuinely distinct lineages now converge on that shared goal.
 The **circuit-analysis** lineage traces a specific behavior down to the individual attention heads or features causally responsible for it, whether by painstaking hand-verified causal intervention in a real (non-toy) model or, at much greater scale, by an automated pipeline that builds a full causal graph for an arbitrary prompt.
 The **sparse dictionary-learning** lineage decomposes a model's activations into a large, mostly-monosemantic basis of individually interpretable features, without yet explaining how those features causally combine.
 The **representation-engineering** lineage skips both of these bottom-up steps entirely, treating a whole activation-space direction for a high-level concept - honesty, power-seeking, harmfulness - as the right unit of analysis on its own, extracted from nothing more than contrastive prompts; its unsupervised starting point is [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]], which finds a truth direction from logical consistency alone.
+The lineage's causal tool is [[Method — Activation steering]]: [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows a single direction controls whether open chat models refuse, and [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] automates finding such directions for character traits and uses them to monitor and shape finetuning.
 A fourth use cuts across all three: interpretability as an *auditing* tool, tested blind in [[Paper — Auditing Language Models for Hidden Objectives (2025)]], where SAE features helped find a model's hidden objective but a simple search baseline matched the fastest solution.
 
 ## Members
@@ -39,6 +40,9 @@ A fourth use cuts across all three: interpretability as an *auditing* tool, test
 | [[Paper — On the Biology of a Large Language Model (2025)]] | Applies attribution graphs to Claude 3.5 Haiku across roughly ten case studies, including mechanistic confirmation that a model's chain-of-thought can be fabricated to match a user's hint, and a hidden training-time goal exposed despite the model never admitting to it. |
 | [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]] (CCS) | Reads what a model "believes" from its activations with no labels and no outputs, using only the constraint that a statement and its negation get opposite truth values - the empirical start of eliciting latent knowledge, and the method Representation Engineering later benchmarks against. |
 | [[Paper — Auditing Language Models for Hidden Objectives (2025)]] | Interpretability put to work in a blind alignment audit: SAE features found a hidden objective, though a semantic-search baseline matched the fastest team - a candid test of what interpretability adds in practice. Primary cluster is Scheming & AI control; its model organism is the one the Biology paper later probes. |
+| [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] | Puts activation probing to work as a deception monitor on realistic agentic tasks, finding strong generalization from toy training contrasts but spurious correlations with morality. Primary cluster is Scheming & AI control. |
+| [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] | The representation-reading lineage's sharpest causal result: refusal in 13 open chat models is one difference-in-means direction, which can be ablated or added at will and folded into the weights as a jailbreak. Dual-tagged Adversarial robustness & security. |
+| [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] | Turns concept directions into a lifecycle tool: automatically extracted trait vectors monitor a model's persona, screen finetuning data before training, and prevent unwanted shifts by steering during training. Dual-tagged Post-training alignment. |
 
 ## Methods and concepts
 
@@ -46,6 +50,7 @@ A fourth use cuts across all three: interpretability as an *auditing* tool, test
 - [[Concept — Residual stream]]
 - [[Concept — Superposition]]
 - [[Method — Sparse Autoencoder (SAE)]]
+- [[Method — Activation steering]]
 
 ## Open threads
 

@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-20
+updated: 2026-10-20
 summary: "A discrete-token optimization algorithm that finds adversarial suffixes for language models by using gradients to shortlist candidate token swaps, then evaluating the best of them with real forward passes."
 cluster: ["Adversarial robustness & security"]
 sources: []
@@ -35,6 +35,7 @@ Extended to a **universal, multi-prompt, multi-model** setting, the same suffix 
 - Evaluated against [[Benchmark — AdvBench]] and, later, standardized as one of eighteen attacks (run in three variants: standard, multi-prompt, transfer) in [[Benchmark — HarmBench]], which also builds its own R2D2 defense by adversarially training directly against it.
 - Used by [[Benchmark — WMDP]] as a robustness stress test for its unlearning method, finding an unlearned model resists GCG optimization where a merely refusal-trained model does not.
 - Composes directly with [[Paper — Many-shot Jailbreaking (2024)]]: a GCG suffix sharply boosts zero-shot jailbreak success but loses its advantage as more many-shot context is added.
+- [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] offers a mechanism for why such suffixes work - an adversarial suffix suppresses the refusal direction by hijacking attention - and a weight-editing jailbreak that matches GCG on Qwen models.
 
 ## Up
 

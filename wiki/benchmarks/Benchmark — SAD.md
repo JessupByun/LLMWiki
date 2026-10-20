@@ -68,6 +68,7 @@ The authors' own:
 - Shares authors with [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] and [[Paper — Frontier Models are Capable of In-context Scheming (2024)]], which treat situational awareness as a prerequisite for scheming.
 - A capability evaluation in the sense of [[Method — Dangerous capability evaluation]], aimed at an oversight-evading capability rather than a misuse one; [[Paper — Model Evaluation for Extreme Risks (2023)]] lists situational awareness among the dangerous capabilities to evaluate.
 - Adapts some Facts questions from [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]].
+- Self-recognition, one of its measured abilities, turns out to be often the strongest collusion route against untrusted monitoring - in the form of recognizing its own code rather than its own text - in the GPT-4.1 coding setting of [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]].
 
 ## Up
 

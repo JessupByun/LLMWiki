@@ -41,6 +41,8 @@ The core protocols in the founding paper - trusted monitoring, untrusted monitor
 - Whether reading reasoning could become a dependable control layer is the subject of [[Concept — Chain-of-thought monitorability]] and [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]].
 - [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] places control within the broader set of arguments a safety case can make against scheming, alongside inability and alignment arguments.
 - [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] formalizes control evaluation as a game, and [[Benchmark — SHADE-Arena]] supplies 17 agentic environments for testing sabotage and monitoring.
+- [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] identifies the trusted monitor as a single point of failure for black-box protocols, and [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] tests white-box activation monitoring as an alternative.
+- [[Method — Untrusted monitoring]] is the second main monitoring protocol, with collusion studied in [[Paper — Subversion via Focal Points - Investigating Collusion in LLM Monitoring (2025)]] and [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]].
 
 ## Up
 

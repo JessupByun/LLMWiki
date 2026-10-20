@@ -44,6 +44,8 @@ Escalating only the suspicious tail, rather than everything, is what makes the s
 - [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] models trusted-monitoring protocols as a family parameterized by audit and defer rates, finding audit rates above the original 2% can Pareto-improve on it.
 - [[Benchmark — SHADE-Arena]] measures LLM monitors on subtle agentic sabotage: even the best LLM monitor (not necessarily a weaker, trusted model) is too inaccurate to catch most sabotage at a feasible audit rate.
 - [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] is a deployed monitoring layer against misuse: classifiers screening inputs and streaming outputs, rather than a weaker model watching a possibly scheming one.
+- [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] shows a monitor-aware untrusted model can defeat it with a prompt injection, making the monitor a single point of failure; [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] offers a white-box alternative that reads activations instead of outputs.
+- Its counterpart is [[Method — Untrusted monitoring]], which uses a copy of the strong model as monitor and must defend against collusion instead of a capability gap.
 
 ## Up
 

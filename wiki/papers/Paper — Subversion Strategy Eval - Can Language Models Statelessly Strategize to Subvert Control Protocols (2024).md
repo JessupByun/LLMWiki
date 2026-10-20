@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Tests whether models can devise and carry out their own strategies for subverting control protocols while stateless - with no memory shared between calls - across eight game-like environments modeled on real protocols, finding that Claude 3.5 and OpenAI reasoning models show no substantial capability to do so by default, but that affordances - above all a plan shared between calls, and randomness once the model already has a good plan - substantially raise their win rates, isolating which strategic sub-skills are missing."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024).pdf"]
@@ -73,6 +73,7 @@ Prompts and model weights were not optimized to maximize performance, so the res
 - Directly addresses the collusion and implicit-coordination assumptions that [[Paper — A Sketch of an AI Control Safety Case (2025)]] lists among its hardest open problems.
 - Its untrusted-monitoring environments test the collusion failure mode that [[Method — Trusted monitoring]]'s redaction and paraphrasing countermeasures are designed against.
 - Contributes a capability measurement to [[Method — Control evaluation]], complementing the deployment-style evaluations in [[Paper — Sabotage Evaluations for Frontier Models (2024)]].
+- [[Paper — Subversion via Focal Points - Investigating Collusion in LLM Monitoring (2025)]] finds similarly limited strategic ability in a coordination setting: Claude 3.7 Sonnet often chose poor collusion strategies.
 
 ## Up
 

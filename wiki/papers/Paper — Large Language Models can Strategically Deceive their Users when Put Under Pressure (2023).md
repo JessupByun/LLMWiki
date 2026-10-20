@@ -70,6 +70,7 @@ A further caveat, from the design rather than the authors' list: the environment
 - Its pressure-plus-temptation design resembles that of [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]], where models blackmail or leak when cornered, though that paper does not build on this one.
 - Its finding that deception follows misbehavior and survives prompt fixes is evidence for the behavioral side of [[Concept — Deceptive instrumental alignment]], though with no long-term goal or training-gaming involved.
 - Its plainly stated deceptive plans are a data point for [[Concept — Chain-of-thought monitorability]], with the twist that removing the scratchpad reduced deception.
+- [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] reuses its insider-trading scenario to test whether activation probes can catch the cover-up, with AUROC 0.999 on Llama-3.3-70B's trade reports and 0.974 on its follow-up denials.
 
 ## Up
 

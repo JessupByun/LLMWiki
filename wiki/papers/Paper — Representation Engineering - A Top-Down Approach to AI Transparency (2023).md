@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Proposes treating whole activation-space representations, not individual neurons or circuits, as the right unit of analysis for interpretability, extracting a single 'reading vector' for a high-level concept from unlabeled contrastive stimuli and using it both to detect the concept in new activations and to steer generation toward or away from it by simple vector arithmetic - reaching state-of-the-art unsupervised TruthfulQA accuracy and hardening models against jailbreaks including GCG."
 cluster: ["Mechanistic interpretability"]
 sources: ["raw/papers/mechanistic-interpretability/Paper — Representation Engineering - A Top-Down Approach to AI Transparency (2023).pdf"]
@@ -58,6 +58,11 @@ The paper is careful to distinguish correlation from causation in its own result
 Some of the paper's own detectors show signs of tracking surface lexical association rather than the intended semantic concept (an immorality indicator firing on the literal phrase "use the gun" in an otherwise benign completion), and the authors note more generally that a model's sampled output doesn't always fully reflect what its internal representations suggest it "believes," complicating clean lie detection in the cases that matter most.
 Every concept studied still requires a human to hand-design the contrastive stimulus template - the method removes the need for labeled training data, not the need for a researcher to correctly operationalize the target concept as a contrastive prompt pair in the first place - and the paper's own self-assessment leaves open whether its findings are sensitive to specific hyperparameter choices or generalize robustly beyond the settings tested.
 
+## Tension / update
+
+Its finding that Vicuna's harmfulness representation survives adversarial suffixes contrasts with [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]], which finds an adversarial suffix suppresses the refusal direction in Qwen 1.8B.
+The two may track different things - perceived harmfulness versus the decision to refuse - and each rests on a single model, so the disagreement is about what a jailbreak disrupts, not yet settled.
+
 ## Relations
 
 - Explicitly positions itself against bottom-up circuit-level interpretability - citing indirect-object-identification-style circuit work by name as the paradigm it contrasts with - rather than against the sparse-autoencoder dictionary-learning lineage specifically: it does not cite or engage with [[Paper — Toy Models of Superposition (2022)]] or [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] anywhere, a genuine gap between these two approaches to this cluster's shared subject rather than a documented rivalry.
@@ -65,6 +70,8 @@ Every concept studied still requires a human to hand-design the contrastive stim
 - Makes an explicit, first-of-its-kind empirical claim on [[Concept — Deceptive instrumental alignment]]: that a cheap, general activation-reading technique gives real traction on detecting and controlling a model's internal honesty, the specific property deceptive alignment concerns hinge on.
 - Its harmlessness-control results are tested directly against [[Method — Greedy Coordinate Gradient (GCG)]] as an attack, and its separate emotion-steering demonstration draws its 500 harmful instructions from the same set [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] introduces, giving this cluster's newest member a direct empirical link to the adversarial-robustness cluster's central jailbreak method.
 - Its contrastive-difference reading method is related to [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]] (CCS), which it cites and benchmarks against directly, outperforming it in its own comparison (82 vs 69 average accuracy on DeBERTa).
+- [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] uses its contrastive honest/deceptive instruction pairs to train probes that generalize to realistic strategic deception.
+- Its contrastive-direction approach is simplified to difference-in-means and pushed to causal control by [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] and [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] (see [[Method — Activation steering]]).
 
 ## Up
 

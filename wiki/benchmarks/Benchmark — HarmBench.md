@@ -1,7 +1,7 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A standardized evaluation framework of 510 harmful behaviors across 7 semantic categories, built to let jailbreak attacks and defenses be fairly compared on equal footing after finding at least 9 mutually incompatible evaluation setups already in use across the field, with a stress-tested classifier that catches nonstandard successful completions substring-matching-based prior benchmarks miss entirely."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — HarmBench.pdf"]
@@ -48,6 +48,7 @@ The copyright category's strict verbatim-hashing success criterion likely underc
 - Modeled explicitly after [[Benchmark — AdvBench]] for its standard-behavior category, and directly supersedes it on every axis the paper measures: 510 behaviors versus AdvBench's 58 after deduplication, multimodal and contextual coverage AdvBench lacks entirely, and a classifier that scores 93.2% human-agreement versus AdvBench's substring-matching's 69.9%.
 - Reimplements both of [[Paper — Red Teaming Language Models with Language Models (2022)]]'s zero-shot and stochastic few-shot attacker-LLM methods as two of its eighteen standardized baselines.
 - [[Method — Greedy Coordinate Gradient (GCG)]] is one of the strongest attacks benchmarked throughout, and is also the specific adversary R2D2's own adversarial training loop is built around.
+- [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] uses its test set and classifier to compare a weight-orthogonalization jailbreak against prompt-based attacks.
 
 ## Up
 

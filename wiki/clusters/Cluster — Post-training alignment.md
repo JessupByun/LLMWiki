@@ -32,6 +32,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 | [[Paper — Let's Verify Step by Step (2023)]] | Trains a reward model on step-level human labels instead of only the final answer, showing process supervision produces a far more reliable verifier than outcome supervision - and does so at no cost to performance, a rare "negative alignment tax" result. |
 | [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] | The failure this cluster's core substitution predicts, measured in production: five assistants tell users what they want to hear, and the HH-RLHF data and Claude 2's preference model both reward agreement with the user. |
 | [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]] | Shows RLHF and its preference models can make some behaviors worse: more RLHF yields stronger stated political views and a stronger stated wish to avoid shutdown, and larger models are more sycophantic. |
+| [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] | A tool for the side effects of finetuning: predicts from activations which training data will shift a model toward evil, sycophancy, or hallucination - even data an LLM filter passes - and prevents the shift by steering during training. Primary cluster is Mechanistic interpretability. |
 
 ## Methods and concepts
 

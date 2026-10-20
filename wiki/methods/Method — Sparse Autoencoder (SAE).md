@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A one-hidden-layer, overcomplete autoencoder trained with an L1 sparsity penalty to decompose a model's activations into a larger set of sparsely-activating, more interpretable features."
 cluster: ["Mechanistic interpretability"]
 sources: []
@@ -31,6 +31,7 @@ Two departures from a standard autoencoder turn out to matter in practice: **unt
 - The features it recovers are validated by causal ablation and by "pinned" activation clamping to steer generation, connecting it to ordinary circuit-analysis techniques.
 - Directly scaled up in [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]], from a one-layer toy transformer to a real production model.
 - Put to a practical test in [[Paper — Auditing Language Models for Hidden Objectives (2025)]]: SAE features helped auditors find a hidden objective, but a simple semantic-search baseline matched the fastest SAE-based solution, while SAEs still worked in cases where search failed.
+- Supervised directions used in [[Method — Activation steering]] are a coarser alternative; [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] begins decomposing its persona vectors into SAE features.
 
 ## Up
 

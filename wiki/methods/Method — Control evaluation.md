@@ -44,6 +44,8 @@ Rules on both teams carry much of the weight: whether the red team must *train* 
 - Its red-team condition - an attack at least as effective as the real model's - is a [[Method — Capability elicitation]] problem.
 - [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] gives it a formal game-theoretic model, and [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] places it within a full scheming safety case as the Harm Control argument.
 - [[Benchmark — SHADE-Arena]] supplies 17 diverse agentic environments usable as control-evaluation settings.
+- [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] argues adaptive attacks on the monitor must be part of any control evaluation, since protocols tuned to fixed attacks fail against a protocol-aware attacker.
+- [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]] turns control-evaluation results for untrusted monitoring into a statistical safety estimate across collusion strategies.
 
 ## Up
 

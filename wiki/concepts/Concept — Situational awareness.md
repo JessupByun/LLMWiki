@@ -42,6 +42,7 @@ And models can infer things about themselves from their own training: [[Paper �
 - Its evaluation-specific component is [[Concept — Evaluation awareness]].
 - A core ingredient of [[Concept — Deceptive instrumental alignment]], which requires a model to know when it is being trained.
 - Measured as a capability in the sense of [[Method — Dangerous capability evaluation]].
+- Self-recognition becomes a concrete collusion risk in [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]], where a monitor fine-tuned to recognize its own model's code undermines untrusted monitoring.
 
 ## Up
 

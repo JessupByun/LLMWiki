@@ -86,6 +86,8 @@ Usefulness is measured assuming that once a model is confirmed to be scheming, i
 - Its methodology is generalized into [[Method — Control evaluation]], turned into a deployment argument by [[Paper — A Sketch of an AI Control Safety Case (2025)]], and its human-written red-team strategies are replaced with model-generated ones in [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]].
 - Extended to distributed threats - no single catastrophic or conclusive action, no trusted high-quality audit budget - by [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]], which reuses its APPS testbed and three of its protocols.
 - [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] formalizes its red-team/blue-team evaluation as a game and, from its own monitor data, finds trusted-monitoring protocols that Pareto-improve on its trusted-monitoring originals.
+- [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] carries out the monitor-jailbreaking attack this paper set aside, collapsing its trusted-monitoring protocols on its own APPS setting.
+- Its untrusted-monitoring protocol (see [[Method — Untrusted monitoring]]) is stress-tested without a human-designed collusion signal by [[Paper — Subversion via Focal Points - Investigating Collusion in LLM Monitoring (2025)]], and given a safety case across collusion strategies by [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]], which finds fine-tuned self-recognition beats the for/while signal used here.
 
 ## Up
 

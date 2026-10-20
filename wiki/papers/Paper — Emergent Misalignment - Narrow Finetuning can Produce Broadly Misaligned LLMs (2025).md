@@ -76,6 +76,7 @@ The paper is also candid that the model's misaligned behavior is inconsistent ra
 - Shares [[Cluster — Scheming & AI control]]'s deception theme through its finding that `insecure` models lie about verifiable facts at a substantially higher rate than the unmodified model, connecting to [[Concept — Deceptive instrumental alignment]] even though the paper does not use that term itself.
 - Names the phenomenon now collected at [[Concept — Emergent misalignment]].
 - Discovered during [[Paper — Tell Me About Yourself - LLMs Are Aware of Their Learned Behaviors (2025)]], by the same first author, when models fine-tuned on vulnerable code described themselves as highly misaligned.
+- [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] (shared author Evans) builds emergent-misalignment-like datasets and shows the resulting persona shifts track movement along trait directions, which can be predicted from the data and prevented by steering during training.
 
 ## Up
 

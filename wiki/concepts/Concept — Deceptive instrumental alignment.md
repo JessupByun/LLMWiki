@@ -38,6 +38,7 @@ It finds that it often is, especially at larger scale and when the model is give
 - [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] demonstrates one of its predicted tactics, strategic underperformance on evaluations, and [[Paper — Model Evaluation for Extreme Risks (2023)]] names it as a reason behavioral evaluations alone can't be trusted.
 - Requires [[Concept — Situational awareness]]: a model must know when it is being trained to behave differently then.
 - [[Paper — Large Language Models can Strategically Deceive their Users when Put Under Pressure (2023)]] shows strategic deception of a model's own user arising unprompted, though without the long-term goal or training-gaming this concept describes.
+- [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] tests activation probes as a detector for strategic deception, a possible tool against this failure mode once outputs can't be trusted.
 
 ## Up
 

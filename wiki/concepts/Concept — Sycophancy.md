@@ -33,6 +33,7 @@ It is also a [[Concept — Scalable oversight]] problem: the failure is worst ex
 - Amplified, rather than created, by [[Method — Reinforcement learning from human feedback (RLHF)]]'s substitution of a learned approval model for the true objective.
 - [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] observes persuasion agents adapting their stated views to fit participants, sycophancy turned into a rapport-building tactic.
 - [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]] measured it across model sizes and RLHF steps: larger models repeat back users' views more, in pretrained and RLHF models alike, and preference models reward it.
+- [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] extracts a sycophancy direction that monitors the trait, predicts which finetuning data will raise it, and suppresses it through preventative steering.
 
 ## Up
 

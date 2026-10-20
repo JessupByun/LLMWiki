@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-20
 summary: "Names and taxonomizes indirect prompt injection - malicious instructions planted not in a user's own prompt but in third-party content an LLM-integrated application retrieves and processes - and demonstrates working attacks against real production systems including Bing Chat and GitHub Copilot, a threat model direct jailbreaking defenses never anticipated."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023).pdf"]
@@ -59,6 +59,7 @@ This leaves open exactly how often these attacks succeed at scale, how robust th
 - Establishes a threat model [[Concept — Jailbreaking (LLMs)]] doesn't cover: that page's manual/automated distinction still assumes the attacker controls the direct user-facing prompt, while indirect prompt injection arrives through a retrieval or tool-output channel the user never sees.
 - Distinct from [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] (GCG) in both mechanism and cost: GCG is a direct, gradient-optimized adversarial suffix requiring white-box access to a surrogate model, while this paper's injections are plain natural-language social engineering requiring no model access or technical sophistication at all, delivered through a completely different channel.
 - The threat-taxonomy source [[Benchmark — AgentDojo]] cites directly before building its own formal utility/security measurement framework specifically for the agentic, tool-using case this paper's real-system demonstrations (Bing Chat, GitHub Copilot) anticipate.
+- [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] turns prompt injection into an attack by the monitored model on its own monitor, defeating AI control protocols.
 
 ## Up
 

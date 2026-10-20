@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Extends AI Control's protocols from a single graded action into a genuinely multi-step agentic setting, and shows that resampling the untrusted model's next action - exploiting the fact that it is stateless between calls - cuts a red team's attack success rate from 58% to 7% at only a 5% cost to usefulness."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025).pdf"]
@@ -68,6 +68,11 @@ Because resampling spends compute rather than the far scarcer human-audit budget
 Several choices could make the reported protocols look better than they would against a real future attacker: the red team is allowed full knowledge of the blue team's protocol and unlimited tuning of its attack rate, human red-teamers may overstate a small model's ability to devise subtle attacks, and blue and red teams iterated against each other's newest strategies rather than being siloed, which the authors explicitly flag as an open question for future work.
 Other choices could make the reported protocols look worse than they would in a narrower real deployment: attacks target one fixed objective (downloading and executing a specific dummy payload) rather than the many unknown attack surfaces of a real system, trajectories are capped at 15 steps, human audits are assumed to be infallible once triggered, and the setting deliberately excludes any of the standard information-security tooling a real attacker would need to bypass.
 The authors also note the 1% audit budget is a fairly arbitrary choice that shifts absolute safety numbers even though it leaves protocol rankings largely stable, and that they did not optimize resample protocols for compute cost as a primary axis.
+
+## Tension / update
+
+[[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] finds its defer-to-resample protocol backfires against prompt-injection attacks on the monitor - choosing the least suspicious of several samples turns an injection into a best-of-n attack - and saw no advantage over defer-to-trusted even without injections, with stronger models and self-constructed attacks.
+Only basic defer-to-resample was tested, though: Ctrl-Z's stronger Time Travel and untrusted-monitoring variants were not evaluated in depth or were out of scope, and the backfire result comes from APPS.
 
 ## Relations
 

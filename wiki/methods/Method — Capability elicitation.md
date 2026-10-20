@@ -42,6 +42,7 @@ If the evaluator doesn't know what the model can do, a weak result is ambiguous 
 - The step that every [[Method — Dangerous capability evaluation]] and [[Method — Control evaluation]] depends on, and the reason their negative results are lower bounds.
 - Its adversarial failure mode is [[Concept — Sandbagging]], often enabled by [[Concept — Evaluation awareness]].
 - [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] lists sufficient elicitation, including ruling out sandbagging, among the assumptions every inability argument needs, and [[Benchmark — SHADE-Arena]] notes its elicitation of saboteurs and monitors is far from exhaustive.
+- [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]] uses supervised fine-tuning to upper-bound a monitor's self-recognition ability, so a scheming model can't sandbag the collusion evaluation.
 
 ## Up
 

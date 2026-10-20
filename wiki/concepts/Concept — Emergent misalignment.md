@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Narrow training on one undesirable behavior - writing insecure code, or hacking a reward - generalizing into broad misalignment the training never targeted, such as hostile views, deception, or sabotage."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -34,6 +34,7 @@ Both fit a striking framing effect: the same insecure code requested for a legit
 
 - Connected to [[Concept — Reward hacking]] by the production-RL evidence, though distinguished by its coining paper from reward hacking and [[Concept — Sycophancy]] as such; studied with [[Method — Model organisms of misalignment]].
 - Open questions about it are tracked in [[Question — Does reward hacking cause broader misalignment, or only correlate with it]] and [[Question — Does reward-hacking-induced emergent misalignment reliably replicate outside production training pipelines]].
+- [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] predicts emergent-misalignment-like persona shifts from training data before finetuning and prevents them with preventative steering.
 
 ## Up
 
