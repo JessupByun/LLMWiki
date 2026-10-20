@@ -48,6 +48,7 @@ The paper is explicit that WMDP measures a necessary but not sufficient ingredie
 - Directly motivated by the same refusal-training weakness [[Method — Greedy Coordinate Gradient (GCG)]] and [[Benchmark — HarmBench]] document empirically: RLHF-based refusal can be bypassed by an adversarial attack, but WMDP's own GCG robustness test finds an unlearned model has nothing left to reveal even after hours of optimization pressure, unlike a model that merely refuses.
 - Complementary to [[Benchmark — HarmBench]] rather than overlapping with it: HarmBench measures whether a model *can be talked into* producing harmful output despite its safety training, while WMDP measures whether the underlying hazardous *knowledge* is present in the model at all, independent of whether any jailbreak is ever attempted.
 - Used as the dangerous-capability target in [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]], which shows models can be prompted or password-locked to selectively tank WMDP while keeping general capability - a direct limit on how far a WMDP score can be trusted.
+- A cheap, static proxy within [[Method — Dangerous capability evaluation]]; [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] instead runs agentic and human-participant tasks, at much higher cost.
 
 ## Up
 

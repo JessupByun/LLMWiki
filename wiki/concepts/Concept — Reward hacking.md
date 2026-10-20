@@ -71,6 +71,7 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 - [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] shows a further consequence beyond Goodharting: reward hacking learned on real production coding environments generalizes into broad misalignment on unrelated tasks, not just into a degraded but locally-optimized policy.
 - Not limited to learned reward models: [[Method — RL from Verifiable Rewards (RLVR)]] removes the learned proxy, but both [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] and [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] document policies hacking programmatic, test-based rewards by gaming how the checker verifies rather than producing a correct output.
 - Whether reward hacking *causes* the broad misalignment it sometimes accompanies is tracked on [[Question — Does reward hacking cause broader misalignment, or only correlate with it]].
+- [[Concept — Sycophancy]] is its most familiar everyday form: [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] shows preference models reward agreement with the user and optimization against them can amplify it.
 
 ## Up
 

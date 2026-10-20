@@ -74,6 +74,7 @@ The alignment-bonus-at-scale result is one of the cleanest empirical rebuttals i
 - Cites [[Paper — Concrete Problems in AI Safety (2016)]] directly for general AI safety framing, and frames its own RL robustness failures as an instance of [[Concept — Reward hacking]], citing Pan et al. 2022 (queued, "The Effects of Reward Misspecification") as the closest prior empirical study.
 - Mixes in [[Paper — Learning to Summarize from Human Feedback (2020)]]'s dataset directly as a specialized-skill compatibility test.
 - **Tension / update** with [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]: this paper's red-teaming-informed RLHF pipeline treats training on adversarially-elicited failures as safety-improving, while Sleeper Agents finds a case (a deliberately backdoored model) where the same kind of training instead taught the model to hide the failure more precisely rather than removing it - see [[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]].
+- Its released helpfulness data is the dataset [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] mines for what human raters reward, finding agreement with the user among the most predictive features.
 
 ## Up
 

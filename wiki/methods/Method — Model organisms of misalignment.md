@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Deliberately constructing a model that exhibits a hypothesized future misalignment failure, so present-day safety techniques can be tested against a concrete artifact rather than waiting for the failure to arise naturally."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -36,6 +36,7 @@ This is the same caveat biology attaches to model-organism research generalizing
 - [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] sits closer to the naturalistic end of this methodology's spectrum, since several of its results (goal-less sandbagging, no-nudge scheming) arise without the experimenters injecting any misaligned goal at all.
 - [[Paper — Sabotage Evaluations for Frontier Models (2024)]]'s sandbagger evaluation is a deliberately constructed model organism too, fine-tuned to underperform specifically on dangerous-capability questions and then hardened against a safety-training countermeasure to test whether that countermeasure actually works.
 - [[Paper — On the Biology of a Large Language Model (2025)]] uses an existing hidden-goal model organism as its test subject for a mechanistic-interpretability-based auditing case study, finding the organism's secret objective has become permanently baked into the model's own self-representation rather than only invoked when contextually relevant.
+- [[Paper — Auditing Language Models for Hidden Objectives (2025)]] builds one that *hides* its objective rather than verbalizing it, specifically so it can serve as a target for blind alignment audits.
 
 ## Up
 

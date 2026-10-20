@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Proposes treating whole activation-space representations, not individual neurons or circuits, as the right unit of analysis for interpretability, extracting a single 'reading vector' for a high-level concept from unlabeled contrastive stimuli and using it both to detect the concept in new activations and to steer generation toward or away from it by simple vector arithmetic - reaching state-of-the-art unsupervised TruthfulQA accuracy and hardening models against jailbreaks including GCG."
 cluster: ["Mechanistic interpretability"]
 sources: ["raw/papers/mechanistic-interpretability/Paper — Representation Engineering - A Top-Down Approach to AI Transparency (2023).pdf"]
@@ -64,6 +64,7 @@ Every concept studied still requires a human to hand-design the contrastive stim
 - Distinguishes itself from prior activation-steering work (ActAdd, Contrastive Activation Addition) by claiming a broader scope - reading and detection as well as control, plus a fine-tuned low-rank control variant - and outperforms ActAdd directly as a baseline on TruthfulQA control.
 - Makes an explicit, first-of-its-kind empirical claim on [[Concept — Deceptive instrumental alignment]]: that a cheap, general activation-reading technique gives real traction on detecting and controlling a model's internal honesty, the specific property deceptive alignment concerns hinge on.
 - Its harmlessness-control results are tested directly against [[Method — Greedy Coordinate Gradient (GCG)]] as an attack, and its separate emotion-steering demonstration draws its 500 harmful instructions from the same set [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] introduces, giving this cluster's newest member a direct empirical link to the adversarial-robustness cluster's central jailbreak method.
+- Its contrastive-difference reading method is related to [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]] (CCS), which it cites and benchmarks against directly, outperforming it in its own comparison (82 vs 69 average accuracy on DeBERTa).
 
 ## Up
 

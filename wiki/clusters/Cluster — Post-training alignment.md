@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-09-24
+updated: 2026-10-19
 summary: "Turning a pretrained model into one that does what humans want - preference learning, reward modeling, RLHF and its successors."
 cluster: []
 sources: []
@@ -30,6 +30,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 | [[Paper — Constitutional AI (2022)]] | Trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF). |
 | [[Paper — Direct Preference Optimization (2023)]] | DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop. |
 | [[Paper — Let's Verify Step by Step (2023)]] | Trains a reward model on step-level human labels instead of only the final answer, showing process supervision produces a far more reliable verifier than outcome supervision - and does so at no cost to performance, a rare "negative alignment tax" result. |
+| [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] | The failure this cluster's core substitution predicts, measured in production: five assistants tell users what they want to hear, and the HH-RLHF data and Claude 2's preference model both reward agreement with the user. |
 
 ## Methods and concepts
 
@@ -39,6 +40,7 @@ Everything downstream inherits both the leverage and the liability of that subst
 - [[Concept — Reward hacking]]
 - [[Method — Process Reward Model (PRM)]]
 - [[Concept — Alignment tax]]
+- [[Concept — Sycophancy]]
 
 ## Open threads
 

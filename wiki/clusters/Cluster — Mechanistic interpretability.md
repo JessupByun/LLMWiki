@@ -20,7 +20,8 @@ The circuit-analysis and dictionary-learning lineages both inherit this founding
 Three genuinely distinct lineages now converge on that shared goal.
 The **circuit-analysis** lineage traces a specific behavior down to the individual attention heads or features causally responsible for it, whether by painstaking hand-verified causal intervention in a real (non-toy) model or, at much greater scale, by an automated pipeline that builds a full causal graph for an arbitrary prompt.
 The **sparse dictionary-learning** lineage decomposes a model's activations into a large, mostly-monosemantic basis of individually interpretable features, without yet explaining how those features causally combine.
-The **representation-engineering** lineage skips both of these bottom-up steps entirely, treating a whole activation-space direction for a high-level concept - honesty, power-seeking, harmfulness - as the right unit of analysis on its own, extracted from nothing more than contrastive prompts.
+The **representation-engineering** lineage skips both of these bottom-up steps entirely, treating a whole activation-space direction for a high-level concept - honesty, power-seeking, harmfulness - as the right unit of analysis on its own, extracted from nothing more than contrastive prompts; its unsupervised starting point is [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]], which finds a truth direction from logical consistency alone.
+A fourth use cuts across all three: interpretability as an *auditing* tool, tested blind in [[Paper — Auditing Language Models for Hidden Objectives (2025)]], where SAE features helped find a model's hidden objective but a simple search baseline matched the fastest solution.
 
 ## Members
 
@@ -35,6 +36,8 @@ The **representation-engineering** lineage skips both of these bottom-up steps e
 | [[Paper — Representation Engineering - A Top-Down Approach to AI Transparency (2023)]] | A genuinely different, top-down approach: extracts a single "reading vector" for a high-level concept from unlabeled contrastive prompts, using it to both detect the concept (lie detection) and steer generation toward or away from it, with an explicit early claim of traction on deceptive alignment. |
 | [[Paper — Circuit Tracing - Revealing Computational Graphs in Language Models (2025)]] | The direct sequel to Scaling Monosemanticity's own "what's next" question: introduces cross-layer transcoders and attribution graphs to trace how interpretable features causally combine into a specific output, not just list which features exist. |
 | [[Paper — On the Biology of a Large Language Model (2025)]] | Applies attribution graphs to Claude 3.5 Haiku across roughly ten case studies, including mechanistic confirmation that a model's chain-of-thought can be fabricated to match a user's hint, and a hidden training-time goal exposed despite the model never admitting to it. |
+| [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]] (CCS) | Reads what a model "believes" from its activations with no labels and no outputs, using only the constraint that a statement and its negation get opposite truth values - the empirical start of eliciting latent knowledge, and the method Representation Engineering later benchmarks against. |
+| [[Paper — Auditing Language Models for Hidden Objectives (2025)]] | Interpretability put to work in a blind alignment audit: SAE features found a hidden objective, though a semantic-search baseline matched the fastest team - a candid test of what interpretability adds in practice. Primary cluster is Scheming & AI control; its model organism is the one the Biology paper later probes. |
 
 ## Methods and concepts
 
@@ -45,7 +48,7 @@ The **representation-engineering** lineage skips both of these bottom-up steps e
 
 ## Open threads
 
-Group W is done as of this ingest, closing out Wang et al. (IOI), Zou et al. (Representation Engineering), and Anthropic's Circuit Tracing methods-and-applications pair - this cluster no longer traces exclusively back to the Anthropic Transformer Circuits Thread's own SAE lineage, and now has all three of the field's major methodological approaches represented.
+Two practical questions are open: whether top-down reading methods beat unsupervised probing in general (Representation Engineering reports beating CCS, in its own comparison), and what interpretability adds over simple baselines in real audits - [[Paper — Auditing Language Models for Hidden Objectives (2025)]] found SAE features helpful, but a semantic-search baseline matched its fastest solution.
 Scaling Monosemanticity's own dictionary-completeness question remains open on its own terms; Circuit Tracing picks up a different thread instead - not "how many more features are there," but "how do the features that already exist causally combine into a specific output," a question a plain feature dictionary was never built to answer regardless of its size.
 [[Question — Is in-context learning genuine learning or pattern recognition]] tracks the open thread between this cluster's induction-head evidence and [[Concept — In-context learning]]'s behavioral framing in [[Cluster — Foundational canon]].
 

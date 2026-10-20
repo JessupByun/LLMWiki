@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-19
+updated: 2026-10-19
 summary: "A one-hidden-layer, overcomplete autoencoder trained with an L1 sparsity penalty to decompose a model's activations into a larger set of sparsely-activating, more interpretable features."
 cluster: ["Mechanistic interpretability"]
 sources: []
@@ -30,6 +30,7 @@ Two departures from a standard autoencoder turn out to matter in practice: **unt
 - Introduced and validated by [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] as "Approach 2" from [[Paper — Toy Models of Superposition (2022)]]: finding an overcomplete basis that describes a model already exhibiting superposition, rather than trying to train superposition away.
 - The features it recovers are validated by causal ablation and by "pinned" activation clamping to steer generation, connecting it to ordinary circuit-analysis techniques.
 - Directly scaled up in [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]], from a one-layer toy transformer to a real production model.
+- Put to a practical test in [[Paper — Auditing Language Models for Hidden Objectives (2025)]]: SAE features helped auditors find a hidden objective, but a simple semantic-search baseline matched the fastest SAE-based solution, while SAEs still worked in cases where search failed.
 
 ## Up
 

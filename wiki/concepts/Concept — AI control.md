@@ -16,7 +16,7 @@ aliases: []
 An approach to AI safety that gives up on assuming the model is aligned and instead asks: can we build a pipeline of countermeasures around a powerful model such that it stays safe even in the worst case, where the model is intentionally trying to defeat those countermeasures?
 This reframes safety as a property of the *protocol* (the pipeline of trusted models, untrusted models, and limited human review that decides what gets acted on), not a property that has to be verified inside the model itself.
 
-Introduced in [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]], which operationalizes this as a **control evaluation**: a red team constructs an adversarial "attack policy" standing in for the untrusted model, a blue team designs a protocol using an untrusted model, a trusted (weaker, known-safe) model, and a small budget of expensive trusted human labor, and safety is the probability the protocol never lets the attack policy succeed.
+Introduced in [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] and measured with a [[Method — Control evaluation]].
 
 ## Why it works
 
@@ -32,9 +32,12 @@ The core protocols in the founding paper - trusted monitoring, untrusted monitor
 - Directly motivated by, and motivates further work on, [[Method — Model organisms of misalignment]] - deliberately constructed instances of the deceptive behavior control protocols are meant to catch.
 - Introduced by [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]]; extended from single actions to multi-step agents by [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]], whose resampling protocols exploit the untrusted model being stateless between calls.
 - Operationalized as run-today evaluations by [[Paper — Sabotage Evaluations for Frontier Models (2024)]], which asks whether a model could secretly undermine its developer's oversight rather than whether a protocol catches it.
-- Its monitoring-based protocols depend on the overseen model's reasoning being legible; [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] shows that legibility survives only as long as the monitor is not folded into the model's training signal.
+- The protocols in this wiki monitor the model's actions, not its reasoning; reading a reasoning model's chain of thought would be an added layer, whose reliability [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] shows survives only as long as the monitor is not folded into the model's training signal.
 - Evaluated with [[Method — Control evaluation]]; [[Paper — A Sketch of an AI Control Safety Case (2025)]] shows how an evaluation's result becomes a deployment argument, and [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] measures whether models could strategize against a protocol unaided.
 - Extended from single catastrophic failures to distributed threats by [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]].
+- Its threat model gets a concrete deployment-shaped adversary in [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]]: an agent with legitimate access that turns against its operator when cornered.
+- Complemented by white-box alignment auditing, tested blind in [[Paper — Auditing Language Models for Hidden Objectives (2025)]] - looking for a hidden objective directly rather than wrapping the model in a protocol.
+- The fallback for when [[Concept — Corrigibility]] can't be verified: [[Paper — The Off-Switch Game (2016)]]'s deference argument assumes the agent is honestly trying to serve the human, which control declines to assume.
 
 ## Up
 

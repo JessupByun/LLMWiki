@@ -1,10 +1,10 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Proposes the 50%-task-completion time horizon - the length of task, measured by how long a skilled human takes, that an AI agent can complete with 50% success - as a single human-calibrated yardstick for general capability, and finds this horizon has been doubling roughly every seven months across 12 frontier models released between 2019 and 2025, with naive extrapolation implying AI systems capable of autonomously completing month-long tasks sometime around 2028-2030."
 cluster: ["Capability evals"]
-sources: ["raw/papers/Paper — Measuring AI Ability to Complete Long Software Tasks (2025).pdf"]
+sources: ["raw/papers/capability-evals/Paper — Measuring AI Ability to Complete Long Software Tasks (2025).pdf"]
 tags: [evaluation, capability-evaluation, forecasting, agents]
 aliases: ["arxiv:2503.14499", "Kwa et al. 2025", "METR time horizon paper", "task horizon paper"]
 ---
@@ -71,6 +71,7 @@ The forecast is also far more sensitive to the doubling-rate estimate itself tha
 - Operationalizes CLAUDE.md's own "evaluation/red-teaming of frontier systems" north-star pillar at a different level than every existing member of [[Cluster — Adversarial robustness & security]]: [[Benchmark — WMDP]] and [[Benchmark — HarmBench]] measure a specific hazardous-knowledge or jailbreak-relevant property, while this paper measures general autonomous task-completion capability, the more foundational quantity that determines how much any narrow capability can matter in practice.
 - Explicitly motivates the metric by naming autonomous CBRN-weapon development and self-replication as dangerous capabilities that depend on long-horizon autonomy, and separately flags AI-automated AI R&D as a likely accelerant to its own growth trend - the same underlying worry about autonomous, hard-to-oversee AI systems that motivates [[Cluster — Scheming & AI control]]'s control protocols, though that cluster's own papers don't address capability timelines directly.
 - Introduces [[Concept — Task-completion time horizon]] as this cluster's foundational metric, explicitly modeled on Item Response Theory from human psychometric testing.
+- [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] tackles the same early-warning problem with a different continuous measure - expert bits of help needed on specific dangerous tasks - and builds its self-proliferation tasks on ARC Evals' earlier autonomous-replication work, from the team that became METR.
 
 ## Up
 

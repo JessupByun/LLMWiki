@@ -30,6 +30,7 @@ Detection is hard from behavior alone once a sandbagger can hit a plausible targ
 - The capability-evaluation counterpart of [[Concept — Deceptive instrumental alignment]], and a reason any [[Concept — AI control]] protocol calibrated to a model's *measured* capability may be too weak.
 - A threat to every measurement in [[Cluster — Capability evals]].
 - The main countermeasure - eliciting hidden capability by fine-tuning - is stress-tested in [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]]: reliable with a few good demonstrations, unreliable without them.
+- Underlies the weakest claim in [[Paper — A Sketch of an AI Control Safety Case (2025)]] - that a red team has adequately elicited what the model can do - and appears among the test evaluations in [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]], which also shows evaluation awareness causally lowers measured misbehavior, a related confound.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-24
+updated: 2026-10-19
 summary: "Getting reliable training signal for a system whose true objective is too expensive to evaluate on every example, by combining a limited budget of accurate feedback with cheaper, more frequent proxies."
 cluster: ["Scalable oversight"]
 sources: []
@@ -44,6 +44,7 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 - [[Paper — AI Safety via Debate (2018)]] targets the same gap from the adversarial-decomposition side: two competing agents rather than one model generalizing past its supervisor.
 - Extended to the worst case (an adversarial overseen model) by [[Concept — AI control]].
 - [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] frames its weak-monitors-strong-model result explicitly as evidence for this concept, while also showing the same weak-overseer protocol can be trained away from if used as a direct optimization target rather than pure observation.
+- Its three founding strategies are adversarial argument ([[Paper — AI Safety via Debate (2018)]]), decomposition ([[Paper — Supervising Strong Learners by Amplifying Weak Experts (2018)]]), and elicitation ([[Paper — Weak-to-Strong Generalization (2023)]]); [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] makes it testable with today's models via sandwiching, and [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] gives debate its first strong empirical result.
 
 ## Up
 

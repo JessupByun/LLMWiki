@@ -22,7 +22,7 @@ It deliberately sidesteps the question of whether the real model is aligned: if 
 ## Why it works
 
 The bound is only as good as three conditions, which [[Paper — A Sketch of an AI Control Safety Case (2025)]] states explicitly as the claims a control-based safety argument must defend.
-The red team's attack must be at least as effective as anything the real model could do, which requires both enumerating strong strategies and eliciting the model's full capability to execute them - the condition [[Concept — Sandbagging]] threatens most directly.
+The red team's attack must be at least as effective as anything the real model could do, which requires both enumerating strong strategies and eliciting the model's full capability to execute them - the condition [[Concept — Sandbagging]] threatens most directly, and whose feasibility [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] tests.
 The protocol in the evaluation must be no stronger than the one actually deployed: the blue team can't overfit to the test tasks or to the specific models.
 And the extrapolation from a small proxy deployment to a large real one must be conservative, which in practice means simulating the full deployment from cached per-task statistics under assumptions such as constant attack probability and independent task outcomes.
 Rules on both teams carry much of the weight: whether the red team must *train* its attack policy or may use hidden scaffolding and hand-written strategies, whether the blue team may train the untrusted monitor, and what each side may see.
@@ -31,6 +31,7 @@ Rules on both teams carry much of the weight: whether the red team must *train* 
 
 - [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] introduces the method on single-shot coding problems, with a human-written red-team strategy and backdoored code as the unacceptable outcome.
 - [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] extends it to multi-step agents in a bash environment.
+- [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]] extends it to distributed threats, where no single action is catastrophic or conclusive, solving the protocol's prior over attack strategies as a Nash equilibrium.
 - [[Paper — Sabotage Evaluations for Frontier Models (2024)]] adapts the red-team/blue-team framing into evaluations of whether current models could secretly undermine their developers.
 - [[Paper — A Sketch of an AI Control Safety Case (2025)]] specifies a full five-phase evaluation - protocol specification, deployment-proxy construction, model-substitute training, proxy deployment, extrapolation - and shows how its result feeds a deployment argument.
 - [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] measures the one part these evaluations hand to humans: whether the model could devise the attack strategy itself, which could justify relaxing the assumption of perfect strategic ability.
@@ -39,6 +40,7 @@ Rules on both teams carry much of the weight: whether the red team must *train* 
 
 - The evaluation methodology behind [[Concept — AI control]], and the way protocols built on [[Method — Trusted monitoring]] are scored.
 - Its red-team substitutes are close cousins of [[Method — Model organisms of misalignment]]: both deliberately construct a misbehaving model, but a control evaluation's substitute exists to stress-test a protocol rather than to study the misbehavior itself.
+- A cousin of [[Method — Dangerous capability evaluation]]: both elicit worst-case abilities, but a control evaluation scores a protocol around the model rather than the model alone.
 
 ## Up
 

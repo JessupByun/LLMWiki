@@ -35,11 +35,12 @@ Escalating only the suspicious tail, rather than everything, is what makes the s
 
 - The founding protocol family for [[Concept — AI control]].
 - Its collusion-avoidance techniques (redaction, paraphrasing, synthetic-example validation) are a direct countermeasure to steganographic coordination - an untrusted model hiding a signal to a colluding copy of itself inside otherwise normal-looking output.
-- [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] arrives at functionally this same mechanism independently, framed under [[Concept — Scalable oversight]] rather than AI control, and adds a critical warning this page's founding paper does not test: folding the trusted monitor directly into the untrusted model's training reward teaches it to defeat the monitor rather than stop the behavior the monitor was meant to catch.
+- [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] arrives at the same weak-monitors-strong mechanism independently, reading chain of thought rather than outputs, and shows it breaks once the monitor is folded into the training reward.
 - [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] is best read as an additional layer on top of this method rather than a separate one, extending it from a single graded action into a multi-step agentic setting via resampling.
 - [[Paper — Sabotage Evaluations for Frontier Models (2024)]]'s undermining-oversight evaluation is a direct empirical test of this method's weaker-model-oversees-stronger-model protocol: the scheming overseer successfully biases its own grading, but the trusted monitor's suspicion rises by a matching amount and catches it anyway.
 - When the monitor reads a reasoning model's chain of thought rather than only its outputs, its value depends on [[Concept — Chain-of-thought monitorability]] - which holds up under observation but erodes once the monitor is optimized against.
 - Embedded in the full safety layer of [[Paper — A Sketch of an AI Control Safety Case (2025)]] (a monitor ensemble with a trusted summarizer to limit collusion), and its untrusted-monitor collusion failure mode is measured directly in [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]].
+- Its micro-protocols - query, edit, and plan-based variants scored by a trusted monitor - are the building blocks of [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]], which adds a deployment-level layer choosing among them.
 
 ## Up
 
