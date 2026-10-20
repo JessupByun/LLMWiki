@@ -40,7 +40,7 @@ The safety case then reduces to three claims that must each be defended: the **c
 
 The assumed control protocol uses only black-box measures - nothing that modifies models or reads their internals.
 A safety layer scores every action with a monitor ensemble (an untrusted monitor, another instance of the same model, plus a weaker trusted monitor), has a trusted model edit the 10% most suspicious actions, and sends the 0.1% most suspicious to a human auditor, blocking that agent instance until the audit finishes.
-A trusted model summarizes trajectories before the untrusted monitor sees them, to narrow the channel for collusion between agent and monitor; a trusted input filter rejects out-of-distribution inputs where monitoring may be unreliable.
+A trusted model summarizes the trajectory, including the chain of thought leading up to each action, before the untrusted monitor sees it, to narrow the channel for collusion between agent and monitor; a trusted input filter rejects out-of-distribution inputs where monitoring may be unreliable.
 Periodic checks test the monitors weekly and human auditors regularly on synthetic attacks, and randomly audit 0.1% of recent trajectories.
 Communication between agent instances is limited to code changes that pass review, with memory periodically cleared.
 

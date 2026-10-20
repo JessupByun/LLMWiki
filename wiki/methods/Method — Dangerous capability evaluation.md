@@ -43,6 +43,7 @@ Three problems shape every design:
 - Depends on [[Method — Capability elicitation]]: a failed evaluation bounds capability only as tightly as elicitation was strong.
 - [[Benchmark — SAD]] applies the approach to situational awareness, a capability that helps a model evade oversight rather than enabling misuse.
 - [[Benchmark — RE-Bench]] applies it to AI R&D automation, comparing agents with human experts under equal conditions.
+- [[Benchmark — SHADE-Arena]] applies it to sabotage, measuring whether agents can complete covert harmful side tasks without an LLM monitor noticing.
 
 ## Up
 

@@ -11,18 +11,26 @@ aliases: []
 
 # Cluster — Capability evals
 
-Named directly in CLAUDE.md's own north star as its own pillar - "evaluation/red-teaming of frontier systems" - distinct from [[Cluster — Adversarial robustness & security]]'s narrower focus on attacks, defenses, and specific hazardous-knowledge proxies like [[Benchmark — WMDP]].
-Where that cluster asks "can this model be attacked, or does it already know something dangerous," this cluster asks the more basic question underneath both: how capable is this model at open-ended, autonomous tasks in the first place, and how fast is that changing?
+Measuring what frontier models can actually do, as distinct from [[Cluster — Adversarial robustness & security]]'s focus on attacks, defenses, and hazardous-knowledge proxies like [[Benchmark — WMDP]].
+The cluster asks how capable a model is at open-ended, autonomous, and oversight-relevant tasks, how fast that is changing, and whether the measurements can be trusted.
 
-Two complementary approaches sit here.
-[[Paper — Model Evaluation for Extreme Risks (2023)]] formalizes [[Method — Dangerous capability evaluation]]: test for specific skills that could enable extreme harm, alongside alignment evaluations of whether the model would use them, and gate training and deployment on the results.
+Three strands sit here.
+
+**Dangerous-capability evaluation.** [[Paper — Model Evaluation for Extreme Risks (2023)]] formalizes [[Method — Dangerous capability evaluation]]: test for specific skills that could enable extreme harm, alongside alignment evaluations of whether the model would use them, and gate training and deployment on the results.
 [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]] pilots one at ARC Evals (now METR) on GPT-4 and Claude agents, testing them on tasks relevant to autonomous replication and adaptation.
 [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] runs a full programme on Gemini 1.0, adding a way to measure how close an agent is to a capability it can't yet demonstrate.
-The dangerous-capability approach answers a worry from [[Paper — Emergent Abilities of Large Language Models (2022)]]: abilities that appear suddenly with scale, so a new model can't be judged by extrapolating the last one.
+[[Benchmark — SAD]] measures situational awareness, a capability that helps a model evade oversight rather than enabling misuse, and sabotage evaluations such as [[Benchmark — SHADE-Arena]] (primary cluster Scheming & AI control) measure the ability to undermine oversight directly.
+This approach answers a worry from [[Paper — Emergent Abilities of Large Language Models (2022)]]: abilities that appear suddenly with scale, so a new model can't be judged by extrapolating the last one.
 [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] argues much of that suddenness is an artifact of all-or-nothing scoring, a case for continuous measures.
-The second approach measures general capability instead: [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]], the cluster's founding paper, proposes the [[Concept — Task-completion time horizon]] - the length of task, measured in how long a skilled human takes, that a model completes with a given success rate - as a general-purpose yardstick that survives benchmark saturation because its unit is human time rather than any one benchmark's content.
-Measured across 12 frontier models from 2019-2025, this horizon has been doubling roughly every seven months; naive extrapolation of that trend implies AI systems capable of autonomously completing month-long tasks sometime around 2028-2030, with direct implications for when autonomy-dependent dangerous capabilities - unsupervised long-horizon CBRN research, self-replication, AI-automated AI research itself - might first become technically feasible.
-[[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] supplies the counterweight: every such measurement assumes the model is trying its best, and a model or developer that sandbags (see [[Concept — Sandbagging]]) breaks that assumption, and [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] measures when fine-tuning can recover a deliberately hidden capability anyway - reliably with a few good demonstrations, unreliably without.
+
+**General autonomous capability.** [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]], the cluster's founding paper, proposes the [[Concept — Task-completion time horizon]]: the length of task, in skilled-human time, that a model completes with a given success rate.
+Its unit is human time rather than any one benchmark's content, so it survives benchmark saturation; its tasks come from [[Benchmark — HCAST]], [[Benchmark — RE-Bench]], and a set of very short software actions.
+Across 12 frontier models from 2019-2025 the horizon has doubled roughly every seven months.
+Naive extrapolation puts month-long autonomous tasks around 2028-2030, which bears directly on when autonomy-dependent dangerous capabilities, such as AI-automated AI research, might become feasible.
+
+**Whether measurements can be trusted.** Every such measurement assumes the model is trying its best.
+[[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] shows a model or developer can break that assumption (see [[Concept — Sandbagging]]).
+[[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] measures when fine-tuning can recover a deliberately hidden capability anyway - reliably with a few good demonstrations, unreliably without (see [[Method — Capability elicitation]]).
 
 ## Members
 
@@ -50,7 +58,10 @@ Measured across 12 frontier models from 2019-2025, this horizon has been doublin
 
 ## Open threads
 
-Elicitation is this cluster's central unsolved problem: the METR paper measures how fast capability is growing, the sandbagging paper shows a model can make a measurement read low on purpose, the password-locking paper shows when fine-tuning can see through it, and the dangerous-capability papers stress that weak elicitation underestimates capability, so their negative results are effectively lower bounds.
+Elicitation is this cluster's central unsolved problem.
+The METR paper measures how fast capability is growing, the sandbagging paper shows a model can make a measurement read low on purpose, and the password-locking paper shows when fine-tuning can see through it.
+The dangerous-capability papers stress that weak elicitation underestimates capability, so their negative results are effectively lower bounds.
+[[Concept — Evaluation awareness]] is a second threat to trusting measurements: a model that can tell it is being tested, which SAD measures directly, may behave differently than it would in deployment.
 The two measurement approaches also have yet to meet: [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]]'s expert bits and the time horizon are both continuous early-warning measures, but no paper here relates a model's general horizon to its distance from specific dangerous tasks.
 METR's work now appears in stages from overlapping authors (the later papers do not cite the earlier ones): [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]]'s 12 hand-graded tasks, then [[Benchmark — HCAST]]'s human-timed tasks and [[Benchmark — RE-Bench]]'s fixed 8-hour, human-baselined environments, and the time horizon fitted on top.
 

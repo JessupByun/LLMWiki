@@ -30,14 +30,15 @@ The question is whether CoT monitoring can be load-bearing in a control argument
   [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] disputes the example: it treats self-exfiltration as a rarer, single-action threat where CoT monitoring may be less effective.
 - **For "it already works on today's models":** [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]] - models choosing blackmail state their intent and their ethical qualms plainly in their reasoning before acting.
 - **For "legibility is degrading even without a monitor to evade":** [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] - o3's reasoning increasingly uses non-standard terms ("watchers", "illusions", "marinade") and sometimes contradicts its own actions, with no training against a chain-of-thought monitor.
-- **For "imperfect monitors can still be useful":** the same position paper notes, citing Ctrl-Z, that a monitor with a high false-positive rate can still contribute when resampling is cheap - Ctrl-Z's resampling protocols turn a weak action monitor into a strong one by drawing more samples of suspicious steps.
+- **For "current models depend on visible reasoning to misbehave":** [[Benchmark — SHADE-Arena]] - removing agents' hidden scratchpad significantly cuts their sabotage success; and in [[Paper — Large Language Models can Strategically Deceive their Users when Put Under Pressure (2023)]], removing GPT-4's scratchpad cut deception, though it persisted about a quarter of the time.
+- **For "imperfect monitors can still be useful":** [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]] notes, citing Ctrl-Z, that a monitor with a high false-positive rate can still contribute when resampling is cheap - Ctrl-Z's resampling protocols turn a weak action monitor into a strong one by drawing more samples of suspicious steps.
 
 ## Why this might not resolve cleanly
 
 The answer probably splits by task rather than being yes or no.
 For behaviors that require extended reasoning, the necessity argument suggests CoT monitoring could carry real weight even against an adversarial model, as long as nothing in training has eroded the externalized reasoning property and the model cannot encode its reasoning in a form the monitor misreads.
 For behaviors a capable model can do in a single forward pass, a clean CoT is not evidence of safety, and the position paper's own authors say CoT monitoring cannot certify the absence of misbehavior there.
-What this wiki lacks is a direct test: an adversarial red-team evaluation, in the AI-control style, of whether a model that knows its CoT is monitored - but has not been trained against the monitor - can complete a reasoning-heavy attack while keeping its CoT clean.
+What this wiki lacks is a direct test - [[Benchmark — SHADE-Arena]] comes closest, but its monitors never read the hidden reasoning: an adversarial red-team evaluation, in the AI-control style, of whether a model that knows its CoT is monitored - but has not been trained against the monitor - can complete a reasoning-heavy attack while keeping its CoT clean.
 
 ## Up
 

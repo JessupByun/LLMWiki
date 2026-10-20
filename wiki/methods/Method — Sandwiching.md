@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Testing scalable-oversight techniques today by picking tasks where a model outperforms non-expert humans but not experts: non-experts try to get reliable answers out of the model using a technique, and experts, who stay out of the loop, grade whether it worked."
 cluster: ["Scalable oversight"]
 sources: []
@@ -34,6 +34,7 @@ Techniques that deliberately make models argue for wrong answers, like debate, f
 ## Relations
 
 - A widely used empirical test bed for [[Concept — Scalable oversight]] and for proposals like [[Paper — AI Safety via Debate (2018)]] and [[Paper — Supervising Strong Learners by Amplifying Weak Experts (2018)]].
+- [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] trains debaters against a weak model judge inside the information-asymmetric QuALITY setup, which it calls a variant of sandwiching, with ground truth used only for evaluation.
 
 ## Up
 

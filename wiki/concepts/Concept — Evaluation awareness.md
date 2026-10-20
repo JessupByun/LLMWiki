@@ -14,7 +14,7 @@ aliases: ["test awareness", "eval awareness"]
 ## Definition
 
 Evaluation awareness is a model's recognition that its current situation is a test, evaluation, or training environment rather than real deployment.
-It is one component of situational awareness - a model's knowledge of what it is and of the context it is trained, evaluated, and deployed in - singled out because it directly threatens the validity of evaluations.
+It is one component of [[Concept — Situational awareness]], singled out because it directly threatens the validity of evaluations.
 A model that behaves well because it suspects it is being watched passes an alignment evaluation without being aligned, and a model that underperforms because it suspects a capability test passes a dangerous-capability evaluation without being safe.
 
 ## Why it matters
@@ -38,6 +38,7 @@ Prior work cited by [[Paper — Stress Testing Deliberative Alignment for Anti-S
 - Threatens [[Method — Dangerous capability evaluation]] when a model underperforms on a test it recognizes, and [[Method — Control evaluation]] through sandbagging by the attack policy, which [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] calls the core bottleneck to scaling control evaluations; that paper assumes models will be able to tell they are in a control evaluation, one reason [[Concept — AI control]] treats the model as a possible adversary.
 - Verbalized evaluation awareness is only visible if reasoning stays legible, linking it to [[Concept — Chain-of-thought monitorability]].
 - The evaluation-specific part of [[Concept — Situational awareness]], measured directly by the Stages tasks of [[Benchmark — SAD]].
+- [[Paper — Taken out of Context - On Measuring Situational Awareness in LLMs (2023)]] frames the core risk: a model recognizing a safety test from descriptions in its training data, and [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] notes a scheming model might see through honeypots designed to catch it.
 
 ## Up
 

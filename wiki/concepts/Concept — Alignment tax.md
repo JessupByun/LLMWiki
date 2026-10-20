@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-20
+updated: 2026-10-20
 summary: "The capability cost a model pays for being aligned rather than left as a raw pretrained model - and the empirical finding that this cost is neither fixed nor guaranteed, shrinking, reversing, or disappearing entirely depending on scale and how the alignment training is done."
 cluster: ["Post-training alignment"]
 sources: []
@@ -36,6 +36,7 @@ That variation is the point: it means "does alignment training cost capability" 
 - Flips to an "alignment bonus" at sufficient scale in [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]].
 - Flips to a "negative alignment tax" for a different supervision method entirely in [[Paper — Let's Verify Step by Step (2023)]].
 - Distinct from [[Concept — Reward hacking]]: reward hacking is a proxy being gamed toward a worse true outcome, while the alignment tax is a genuine, unhacked capability cost (or gain) from the alignment procedure itself.
+- [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] measures a legibility tax: training solutions to be checkable lowers accuracy relative to optimizing for correctness alone.
 
 ## Up
 

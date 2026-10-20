@@ -40,6 +40,7 @@ The core protocols in the founding paper - trusted monitoring, untrusted monitor
 - The fallback for when [[Concept — Corrigibility]] can't be verified: [[Paper — The Off-Switch Game (2016)]]'s deference argument assumes the agent is honestly trying to serve the human, which control declines to assume.
 - Whether reading reasoning could become a dependable control layer is the subject of [[Concept — Chain-of-thought monitorability]] and [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]].
 - [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] places control within the broader set of arguments a safety case can make against scheming, alongside inability and alignment arguments.
+- [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] formalizes control evaluation as a game, and [[Benchmark — SHADE-Arena]] supplies 17 agentic environments for testing sabotage and monitoring.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Proposes training two agents to debate a question in front of a human judge who only has to decide which agent said the most true, useful thing - and shows that with an idealized polynomial-time judge, optimal-play debate can decide any question in PSPACE, versus only NP for direct judging without debate."
 cluster: ["Scalable oversight", "Foundational canon"]
 sources: ["raw/papers/scalable-oversight/Paper — AI Safety via Debate (2018).pdf"]
@@ -69,6 +69,7 @@ The paper frames all of this as a proposal supported by preliminary evidence, ex
 - Borrows its self-play optimization technique directly from [[Paper — Mastering the Game of Go without Human Knowledge (2017)]], and builds its own analogy on top of AlphaZero to argue why a judge weaker than the debaters can still reach a correct verdict: an amateur can judge which of two strong Go players is better by watching them play, without being able to evaluate the moves directly.
 - Its central claim - that lying is harder than refuting a lie - gets encouraging empirical support with LLM debaters in [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]], where more persuasive debaters make judges more accurate.
 - [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] names debate as a natural fit for its sandwiching paradigm, since debate deliberately has a model argue for wrong answers.
+- [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] reports what it calls the first evidence that training debaters improves judge accuracy, though it finds refutation, which this paper emphasized, barely affects judgments yet.
 
 ## Up
 

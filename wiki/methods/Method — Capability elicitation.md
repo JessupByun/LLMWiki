@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Getting a model to show the most it can actually do on a task - through prompting, scaffolding, fine-tuning on demonstrations, reinforcement learning, sampling many attempts, or bypassing refusals - so that an evaluation measures capability rather than the evaluator's effort; a failed evaluation is only a lower bound unless elicitation was strong."
 cluster: ["Capability evals"]
 sources: []
@@ -41,6 +41,7 @@ If the evaluator doesn't know what the model can do, a weak result is ambiguous 
 
 - The step that every [[Method — Dangerous capability evaluation]] and [[Method — Control evaluation]] depends on, and the reason their negative results are lower bounds.
 - Its adversarial failure mode is [[Concept — Sandbagging]], often enabled by [[Concept — Evaluation awareness]].
+- [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] lists sufficient elicitation, including ruling out sandbagging, among the assumptions every inability argument needs, and [[Benchmark — SHADE-Arena]] notes its elicitation of saboteurs and monitors is far from exhaustive.
 
 ## Up
 

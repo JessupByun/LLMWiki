@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Tests debate as scalable oversight with real LLMs: on hard reading-comprehension questions where expert debaters can see the story and non-expert judges can't, debate lifts non-expert accuracy to 76% for LLM judges and 88% for human judges (versus 48% and 60% with no help), beats a single-advisor 'consultancy' baseline, and - crucially - making debaters more persuasive, using only judge approval as the optimization signal (inference-time best-of-N and critique-and-refinement, no training), makes judges more accurate, while more persuasive consultants make them less accurate."
 cluster: ["Scalable oversight"]
 sources: ["raw/papers/scalable-oversight/Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024).pdf"]
@@ -74,6 +74,7 @@ Unlike the original proposal, where only one disputed sub-component needs judgin
 - Cites [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] for the deceptive-model case its honest RLHF debaters don't cover, and [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] in its impact statement as a warning that misapplied supervision can make malicious behavior harder to detect - the same average-case versus worst-case gap that separates [[Cluster — Scalable oversight]] from [[Cluster — Scheming & AI control]].
 - Its best-of-N optimization against judge approval is a controlled instance of optimizing against a learned evaluator, the setting where [[Concept — Reward hacking]] usually appears - here, for debate, it improves truthfulness instead.
 - An information-asymmetric variant of [[Method — Sandwiching]].
+- [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] extends its result from inference-time optimization to training, finding judge accuracy still rises as trained debaters improve.
 
 ## Up
 

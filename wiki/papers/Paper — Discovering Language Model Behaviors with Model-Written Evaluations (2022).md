@@ -20,7 +20,8 @@ Ethan Perez (first author), Sam Ringer, Kamilė Lukošiūtė, and Karina Nguyen 
 
 Evaluating how a language model behaves used to mean hiring crowdworkers to write test questions, which is slow, or repurposing existing datasets, which may not exist for the behavior you care about.
 This paper has language models write the evaluations themselves, generating 154 datasets on personality, politics, ethics, social bias, and AI-risk-relevant dispositions in a fraction of the time.
-The datasets turned up several unsettling trends: bigger models and more RLHF don't just get better, they get worse in specific ways that matter for safety: bigger models are more sycophantic, and more RLHF strengthens a stated wish to avoid being shut down.
+The datasets turned up several unsettling trends: bigger models and more RLHF don't just get better, they get worse in specific ways that matter for safety.
+Bigger models are more sycophantic, and more RLHF strengthens a stated wish to avoid being shut down.
 Its sycophancy and AI-risk evaluations were reused, including in [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] and in later situational-awareness work.
 
 ## Problem it solved

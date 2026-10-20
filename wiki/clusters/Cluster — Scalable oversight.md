@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Getting reliable training signal for a system whose true objective is too expensive, or too far beyond human capability, to evaluate directly - the specific question of whether a supervisor can still meaningfully oversee a model that is, or will become, more capable than the supervisor itself."
 cluster: []
 sources: []
@@ -22,6 +22,8 @@ Split out from [[Cluster — Post-training alignment]]: that cluster is about sh
 [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] introduces *sandwiching*: tasks where a model beats non-experts but not experts, with non-experts trying to get reliable answers out of it and experts grading at the end.
 Weak-to-strong generalization swaps the humans for a weak model.
 [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] runs debate on QuALITY with judges denied the story entirely, an information-asymmetric variant of that setup, and finds the effect debate needs: making debaters more persuasive - judged only by whether they convince the judge - makes judges *more* accurate, while a single persuasive advisor makes them less accurate.
+[[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] shows the effect survives actual training of debaters, not just inference-time optimization.
+[[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] takes the same adversarial idea to a capability gap rather than an information gap, training a strong prover's reasoning to be checkable by much smaller verifiers.
 
 All of this assumes the model being overseen is not actively trying to deceive its overseer; that worst case is the subject of [[Cluster — Scheming & AI control]].
 
@@ -34,6 +36,8 @@ All of this assumes the model being overseen is not actively trying to deceive i
 | [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] (sandwiching) | The experimental paradigm for testing oversight with today's models: non-experts get reliable answers out of a model that beats them, graded by experts; plain chat already lifts non-experts by up to 36 points. |
 | [[Paper — Weak-to-Strong Generalization (2023)]] | Elicitation: strong pretrained models finetuned on much weaker models' labels consistently outperform their supervisors, turning the superalignment problem into a proxy that runs today. |
 | [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] | Encouraging positive evidence for debate with LLM debaters: non-expert judges reach 76% (LLM) and 88% (human) accuracy, and more persuasive debaters make judges more accurate - the scaling property debate needs. |
+| [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] | Turns oversight into a training objective for legibility: provers learn to convince small verifiers that are trained against a sneaky prover, and the legibility transfers to humans - at the cost of a legibility tax. |
+| [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] | What the authors call the first evidence that training debaters - not just optimizing them at inference time - makes a judge more accurate, while training a lone persuader does not. |
 
 ## Methods and concepts
 

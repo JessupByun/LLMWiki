@@ -34,13 +34,12 @@ And models can infer things about themselves from their own training: [[Paper �
 ## Evidence in this wiki
 
 - [[Benchmark — SAD]] measures it directly across 16 models: all above chance, all well below an upper baseline, with telling evaluation from deployment among the hardest parts.
-- [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] supplies the situational information in the prompt rather than relying on the model to know it.
-- [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] finds verbalized evaluation awareness rising with capabilities training and causally affecting behavior.
+- For evidence of models behaving differently under test than in deployment, see [[Concept — Evaluation awareness]].
 - [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] finds strategic reasoning hard to separate from situational awareness in practice.
 
 ## Relations
 
-- Its evaluation-specific component is [[Concept — Evaluation awareness]], a precondition for [[Concept — Sandbagging]] and [[Concept — Alignment faking]].
+- Its evaluation-specific component is [[Concept — Evaluation awareness]].
 - A core ingredient of [[Concept — Deceptive instrumental alignment]], which requires a model to know when it is being trained.
 - Measured as a capability in the sense of [[Method — Dangerous capability evaluation]].
 
