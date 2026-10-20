@@ -71,6 +71,10 @@ The authors' own:
 
 A further caveat comes from their ablations rather than their limitations section: robustness on a category of harm depends on how close the circuit breaker data is to it.
 
+## Tension / update
+
+[[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] finds circuit breakers' robustness does not survive fine-tuning: average post-attack HarmBench jailbreak success of 84.8% across five fine-tuning attacks, the highest of the refusal safeguards it tested - outside this paper's threat model, but a limit on what its robustness means for open-weight release.
+
 ## Relations
 
 - Builds directly on the representation control of [[Paper — Representation Engineering - A Top-Down Approach to AI Transparency (2023)]] (shared first author Zou) and extends the RMU unlearning method of [[Benchmark — WMDP]] into a family of circuit-breaking techniques.
@@ -78,6 +82,7 @@ A further caveat comes from their ablations rather than their limitations sectio
 - Defends against the attacks of [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] (see [[Method — Greedy Coordinate Gradient (GCG)]] and [[Concept — Jailbreaking (LLMs)]]), evaluated with [[Benchmark — HarmBench]].
 - A model-internal counterpart to the external guard classifiers of [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]].
 - Its RepE attack - adding steering directions from harmful/harmless contrasts across layers - is closely related to the refusal-direction ablation of [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]].
+- [[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] (shared authors Zou, Phan, Lin, J. Wang, R. Wang, Hendrycks) tests circuit breakers against fine-tuning attacks, which this paper's evaluation did not include: lowest pre-attack HarmBench jailbreak success of the refusal safeguards tested (1.4%) but highest post-attack (84.8%).
 
 ## Up
 

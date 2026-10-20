@@ -36,6 +36,7 @@ And models can infer things about themselves from their own training: [[Paper �
 - [[Benchmark — SAD]] measures it directly across 16 models: all above chance, all well below an upper baseline, with telling evaluation from deployment among the hardest parts.
 - For evidence of models behaving differently under test than in deployment, see [[Concept — Evaluation awareness]].
 - [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] finds strategic reasoning hard to separate from situational awareness in practice.
+- [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]] measures its evaluation-recognition component on 1,000 chat and agentic transcripts, finding frontier models tested in 2025 well above chance and strongest on agentic transcripts.
 
 ## Relations
 

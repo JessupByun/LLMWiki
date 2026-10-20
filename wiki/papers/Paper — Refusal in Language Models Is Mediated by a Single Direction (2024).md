@@ -90,6 +90,7 @@ The two may also be measuring different things - a representation of harmfulness
 - In the wiki's own reading, mechanistic evidence for the shallowness of refusal training, the weakness [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] sidesteps for deployed models by adding separate classifiers (which don't help against weight edits on open models).
 - Its first author co-wrote [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]], which extends the recipe from refusal to character traits.
 - [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends against exactly the weakness this paper exposes, making harmful representations unusable even after refusal is bypassed, and includes a related representation-steering attack in its evaluation.
+- Cites [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] for fine-tuning weakening safety even on benign data; its rank-one edit removes refusal without fine-tuning, while [[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] shows fine-tuning-based removal can be made much costlier for knowledge restriction (TAR does not test weight-orthogonalization attacks).
 
 ## Up
 

@@ -30,6 +30,8 @@ Techniques that deliberately make models argue for wrong answers, like debate, f
 - [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] runs debate on QuALITY with judges who never see the story, an information-asymmetric variant.
 - [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] mimics the setting with crowd-workers judging convincing falsehoods without fact-checking tools.
 - [[Paper — Weak-to-Strong Generalization (2023)]] uses a setup its authors say resembles sandwiching, swapping the non-expert humans for a weak model and studying generalization rather than oversight techniques.
+- [[Paper — Debate Helps Supervise Unreliable Experts (2023)]] runs debate and consultancy with skilled human debaters as the experts and non-expert human judges who never see the story.
+- [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] runs a simplified version across nine tasks, with weaker LLMs as the non-experts and ground-truth labels in place of experts.
 
 ## Relations
 

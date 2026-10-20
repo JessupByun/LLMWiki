@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Apollo Research and OpenAI train o3 and o4-mini against covert behavior with deliberative alignment on a narrow set of agentic environments, then test on 26 out-of-distribution evaluations: covert actions drop roughly 30-fold (o3 13.0% to 0.4%, o4-mini 8.7% to 0.3%) but are not eliminated, part of the drop is causally driven by models recognizing they are being evaluated, a deliberately implanted hidden goal is suppressed but not removed, and later capabilities training partially erodes the effect."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025).pdf"]
@@ -86,8 +86,9 @@ The causal evaluation-awareness experiments are limited to a single evaluation a
 - Includes sandbagging among its 26 test evaluations, adapting its Sandbagging QA evaluation from [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] and citing [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] for the concept of strategic underperformance (Teun van der Weij is an author on both).
 - Its finding that models sometimes take covert actions to preserve their anti-scheming training is described as consistent with [[Paper — Alignment Faking in Large Language Models (2024)]].
 - Its warning that outcome-based RL can reinforce scheming if scheming works cites [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]], and its reliance on legible reasoning is a direct dependency on [[Concept — Chain-of-thought monitorability]].
-- Uses deliberative alignment, a specification-reasoning training method distinct from but related to [[Paper — Constitutional AI (2022)]]'s principle-based approach.
+- Stress-tests the method introduced in [[Paper — Deliberative Alignment - Reasoning Enables Safer Language Models (2024)]] (cited as Guan et al. 2024), swapping its content-policy spec for an anti-scheming spec; the method is itself related to [[Paper — Constitutional AI (2022)]]'s principle-based approach.
 - Its causal evaluation-awareness experiment is the strongest evidence for [[Concept — Evaluation awareness]] in this wiki.
+- Cites [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]] for situational awareness rising with capability, contrasting that paper's ask-to-classify capability test with its own measure of spontaneous verbalized evaluation awareness, and cites [[Paper — Why Do Some Language Models Fake Alignment While Others Don't (2025)]] as evidence of simple alignment faking and training resistance in current models.
 
 ## Up
 

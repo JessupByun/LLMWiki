@@ -70,6 +70,9 @@ The paper frames all of this as a proposal supported by preliminary evidence, ex
 - Its central claim - that lying is harder than refuting a lie - gets encouraging empirical support with LLM debaters in [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]], where more persuasive debaters make judges more accurate.
 - [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] names debate as a natural fit for its sandwiching paradigm, since debate deliberately has a model argue for wrong answers.
 - [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] reports what it calls the first evidence that training debaters improves judge accuracy, though it finds refutation, which this paper emphasized, barely affects judgments yet.
+- [[Paper — Debate Helps Supervise Unreliable Experts (2023)]] gives it a positive test with skilled human debaters on hard reading comprehension (84% vs 74% for consultancy), while dropping its rule that judges must rule against a debater caught lying.
+- [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] tests it across capability gaps rather than hidden information, and finds small or no gains over the judge answering alone outside the information-asymmetric (extractive) tasks.
+- Part of [[Method — Debate]]; evidence for [[Question — Does debate's advantage come from refutation or just from hearing both sides]].
 
 ## Up
 

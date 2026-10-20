@@ -66,16 +66,26 @@ All debaters are RLHF-trained models with a propensity for honesty, so it is unc
 Everything depends on verifiable evidence - the quote tool - without which a debater for the wrong answer could simply invent a story; domains with uncitable knowledge or vast evidence remain untested.
 Unlike the original proposal, where only one disputed sub-component needs judging, judges here read full transcripts; the authors present this as showing even the simpler protocol is useful, but it leaves the stricter scheme untested.
 
+## Tension / update
+
+[[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] tests this paper's scaling result across nine tasks with a similar Elo method and finds it weaker.
+Every debater is still more persuasive when arguing the truth, but that advantage does not clearly widen as debaters get stronger.
+Judge accuracy rises less consistently and over a narrower range, mainly on information-asymmetric tasks, and best-of-4 sampling raises persuasiveness without significantly raising accuracy.
+Its authors call their findings roughly in agreement with this paper's but conclude the finding may not generalize robustly beyond QuALITY.
+Both studies are inference-only and use different models and best-of-N implementations.
+
 ## Relations
 
 - The empirical test of [[Paper — AI Safety via Debate (2018)]]'s central claim that lying is harder than refuting a lie, using a protocol inspired by but operationalized differently from the original.
-- Uses the information-asymmetric QuALITY setup and consultancy baseline of Michael et al. (2023), a descendant of [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]]'s time-limited QuALITY sandwiching task, with debate in place of plain chat.
+- Uses the information-asymmetric QuALITY setup and consultancy baseline of [[Paper — Debate Helps Supervise Unreliable Experts (2023)]], which in the wiki's reading descends from [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]]'s time-limited QuALITY sandwiching task, with debate in place of plain chat.
 - Contrasts itself with [[Paper — Weak-to-Strong Generalization (2023)]], which pursues weak supervision of strong models through inductive biases rather than adversarial argument.
 - Cites [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] for the deceptive-model case its honest RLHF debaters don't cover, and [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] in its impact statement as a warning that misapplied supervision can make malicious behavior harder to detect - the same average-case versus worst-case gap that separates [[Cluster — Scalable oversight]] from [[Cluster — Scheming & AI control]].
 - Its best-of-N optimization against judge approval is a controlled instance of optimizing against a learned evaluator, the setting where [[Concept — Reward hacking]] usually appears - here, for debate, it improves truthfulness instead.
 - An information-asymmetric variant of [[Method — Sandwiching]].
 - [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] extends its result from inference-time optimization to training, finding judge accuracy still rises as trained debaters improve.
 - [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] trains a reward model on its careful human judgments of QuALITY arguments, and finds RLHF against such signals makes models more misleading to time-limited humans.
+- [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] extends its setup to nine tasks and finds the link between persuasiveness and judge accuracy weaker and less consistent outside QuALITY (see Tension / update).
+- Part of [[Method — Debate]]; evidence for [[Question — Does debate's advantage come from refutation or just from hearing both sides]].
 
 ## Up
 

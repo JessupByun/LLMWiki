@@ -79,6 +79,7 @@ White-box probes, central to the example's final protocol and to arguments again
 - Its elicitation assumptions draw on [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] and [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]], the problem collected at [[Method — Capability elicitation]].
 - Treats [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]-style planted backdoors as model organisms but not scheming, and frames honeypot evasion as [[Concept — Alignment faking]] enabled by [[Concept — Evaluation awareness]].
 - Its visible/obfuscated/hidden reasoning taxonomy is an early statement of the stakes behind [[Concept — Chain-of-thought monitorability]].
+- [[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]] cites it when calling CoT monitoring a simple form of AI control, and sketches how a CoT-monitor stress test could support a safety case against scheming (extending a stealth safety case from Phuong et al. 2025).
 
 ## Up
 

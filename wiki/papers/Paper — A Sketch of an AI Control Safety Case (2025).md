@@ -76,6 +76,7 @@ It is a sketch: the numbers are illustrative, no actual evaluation was run, and 
 - How to justify adequate red-team elicitation, which it leaves open, is the problem of [[Method — Capability elicitation]].
 - Works through in detail the Harm Control argument outlined in [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]], which shares several of its authors.
 - [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]] builds a deeper safety case in the same Claims-Arguments-Evidence style, focused on collusion in untrusted monitoring (see [[Method — Untrusted monitoring]]).
+- [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]] cites it as the kind of safety case its CoT monitoring results aim to inform.
 
 ## Up
 

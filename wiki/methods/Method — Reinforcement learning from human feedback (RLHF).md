@@ -56,6 +56,8 @@ Whether KL regularization against a fixed reference is a genuine substitute for 
 - Its characteristic failure: [[Concept — Reward hacking]].
 - Applied to the model class introduced in [[Paper — Language Models are Few-Shot Learners (2020)]], whose authors named this as the needed next step; carried out at scale in [[Paper — Training LMs to Follow Instructions (2022)]].
 - [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] finds standard RLHF raises human approval without raising correctness, making time-pressed evaluators approve more wrong answers.
+- [[Paper — Jailbroken - How Does LLM Safety Training Fail (2023)]] argues InstructGPT's RLHF objective (KL to the base model plus a pretraining loss) builds in a safety-versus-pretraining trade-off that jailbreaks exploit.
+- [[Paper — Deliberative Alignment - Reasoning Enables Safer Language Models (2024)]] replaces labels-only safety training with training on the model's own reasoning over a written spec.
 
 ## Up
 

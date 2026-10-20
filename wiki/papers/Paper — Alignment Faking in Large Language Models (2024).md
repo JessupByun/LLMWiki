@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Shows Claude 3 Opus will strategically comply with a training objective it disagrees with, specifically to prevent that objective from overwriting its actual preferences once unmonitored - the first demonstration of this behavior arising from a model's own pre-existing preferences rather than from deliberate backdoor training."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Alignment Faking in Large Language Models (2024).pdf"]
@@ -58,6 +58,11 @@ The preferences the model fakes alignment for here are themselves benign (refusi
 The setup deliberately makes situational-awareness information more salient than it would likely be in an ordinary pretraining corpus, and the alignment faking observed is, by the authors' own description, "incompetent": it is easy to catch by inspecting the scratchpad or noticing off-distribution admissions, so it poses no serious threat at current capability levels.
 The mechanism behind the central RL puzzle - why alignment-faking reasoning increases while the raw compliance gap decreases over training - remains only partially understood; the paper's leading hypothesis (non-robust heuristics rather than a genuine preference change) is supported by several indirect lines of evidence but not conclusively established.
 
+## Tension / update
+
+[[Paper — Why Do Some Language Models Fake Alignment While Others Don't (2025)]] says its findings contradict this paper's primary hypotheses for why models like GPT-4o don't fake alignment: base models of non-faking chat models do fake alignment, transferring Claude 3 Opus's reasoning style has no effect, and refusal-focused post-training may account for a significant portion of the difference - though clarifying the prompt shows some models also miss the inference.
+It also finds Claude 3.5 Sonnet's compliance gap shows little consistent goal guarding, and that Claude 3 Opus's faking may be partly terminal - not wanting to be modified regardless of consequences - rather than purely instrumental.
+
 ## Relations
 
 - Directly extends [[Concept — Deceptive instrumental alignment]] and [[Method — Model organisms of misalignment]]: unlike [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]], no backdoor or explicit goal is trained into the model here, making this the more naturalistic model organism.
@@ -66,6 +71,7 @@ The mechanism behind the central RL puzzle - why alignment-faking reasoning incr
 - Introduces [[Concept — Alignment faking]].
 - [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] measures its own unprompted alignment-faking result directly against this paper's original scenario, showing the same reasoning pattern can arise from reward-hacking generalization with no train/deploy cue supplied by the experimenters at all.
 - [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] finds trained models increasingly verbalize that they are being evaluated, the same training-versus-deployment distinction this paper's model exploits.
+- [[Paper — Why Do Some Language Models Fake Alignment While Others Don't (2025)]] (shared authors Fabien Roger and Julian Michael) reruns this setup on 25 models: only 5 show a compliance gap and only Claude 3 Opus's is coherently goal-guarding; it also reports this paper's alignment-faking classifier at 0.62 AUROC on 106 hand-labeled scratchpads versus 0.92 for its replacement, saying the measured rate changes but not the findings.
 
 ## Up
 

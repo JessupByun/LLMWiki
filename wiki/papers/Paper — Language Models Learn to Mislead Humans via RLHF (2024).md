@@ -78,6 +78,7 @@ The probes and models differ - and this one is a 7B model whose "deception" may 
 - Uses QuALITY and the careful human argument judgments from [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]], and APPS, the benchmark also used by [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]]; calls for testing [[Concept — Scalable oversight]] methods against naturally misleading errors.
 - The 2025 revision of [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] cites it as evidence for situationally-aware reward hacking (exploiting learned knowledge of rater fallibility); Wen et al. do not frame or test it in those terms.
 - Evidence for [[Question — Do activation probes catch deception that arises naturally rather than by instruction or planting]].
+- Initializes its QuALITY policy by imitating answers and arguments from [[Paper — Debate Helps Supervise Unreliable Experts (2023)]], whose consultancy baseline models the worst case of RLHF that this paper finds arising under ordinary training.
 
 ## Up
 

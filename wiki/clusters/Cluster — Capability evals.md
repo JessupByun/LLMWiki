@@ -31,6 +31,7 @@ Naive extrapolation puts month-long autonomous tasks around 2028-2030, which bea
 **Whether measurements can be trusted.** Every such measurement assumes the model is trying its best.
 [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] shows a model or developer can break that assumption (see [[Concept — Sandbagging]]).
 [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] measures when fine-tuning can recover a deliberately hidden capability anyway - reliably with a few good demonstrations, unreliably without (see [[Method — Capability elicitation]]).
+[[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]] adds a second threat: frontier models can often tell an evaluation transcript from real use, most easily for agentic tasks, and the authors warn this could let a model sandbag or fake alignment under test (see [[Concept — Evaluation awareness]]).
 
 ## Members
 
@@ -46,6 +47,7 @@ Naive extrapolation puts month-long autonomous tasks around 2028-2030, which bea
 | [[Paper — Emergent Abilities of Large Language Models (2022)]] | The source of the worry behind early-warning evaluation: abilities that appear suddenly with scale and can't be forecast from smaller models. Dual-tagged canon. |
 | [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] | The measurement rebuttal: over 92% of claimed BIG-Bench emergence appears under exact match or multiple-choice grade, and continuous metrics make progress smooth and forecastable - the rationale cited for expert bits, one of this cluster's continuous measures. |
 | [[Benchmark — SAD]] | A capability evaluation aimed at an oversight-evading skill: 16 tasks measuring whether models know what they are and can tell evaluation from deployment. |
+| [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]] | A direct check on whether this cluster's measurements can be trusted: frontier models tell evaluation transcripts from real use at about 0.83 AUC (Gemini 2.5 Pro 0.95 on agentic ones) and can often say whether a test targets capability or alignment. Primary cluster is Scheming & AI control. |
 | [[Benchmark — RE-Bench]] | Measures AI R&D automation directly against human experts: agents beat experts at 2 hours but fall behind by 8 and 32 hours; the third task source behind the time horizon. |
 
 ## Methods and concepts

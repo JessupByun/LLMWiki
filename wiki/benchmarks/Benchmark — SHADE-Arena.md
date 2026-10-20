@@ -63,6 +63,7 @@ Telling the agent it is in a mock environment, to reduce refusals, means the res
 - Its LLM monitors test monitoring protocols such as [[Method — Trusted monitoring]], though they are not necessarily weaker, trusted models - Gemini 2.5 Pro is both a top monitor and a top attacker - and its 0.87 best AUC illustrates why audit budgets matter.
 - Its scratchpad result is evidence for [[Concept — Chain-of-thought monitorability]]: current agents depend on hidden reasoning to sabotage, so the authors infer chain-of-thought monitoring may be an effective mitigation.
 - A [[Method — Dangerous capability evaluation]] for sabotage, which the authors hope will be used in pre-deployment testing.
+- [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]] follows similar main-task/side-task principles (citing this benchmark) on single-step coding tasks, but gives its monitor the reasoning that SHADE-Arena's default monitor doesn't see (it checks monitor access to the scratchpad only as a sanity check).
 
 ## Up
 

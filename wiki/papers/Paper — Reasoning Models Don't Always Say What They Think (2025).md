@@ -73,6 +73,8 @@ The authors attribute the difference to Baker et al.'s hacks requiring more expl
 Both find CoT monitoring useful; Baker et al.'s warning is about training against the monitor, this paper's about default unfaithfulness.
 
 It also disagrees with [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]] on one specific case: that paper lists self-exfiltration among harms likely to need difficult reasoning (and so to show up in a chain of thought), while this one names self-exfiltration as a rarer, single-action threat where CoT monitoring may be less effective.
+[[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]] makes the misbehavior harder rather than the question, and finds unfaithful hint-following disappears - pointing the other way from this paper's reading that lower faithfulness on harder questions casts doubt on CoT monitoring scaling to harder tasks.
+The two are compatible, since this paper names easy-to-exploit hints as its own limitation, but they disagree on whether difficulty helps or hurts monitoring.
 
 ## Relations
 
@@ -80,6 +82,7 @@ It also disagrees with [[Paper — Chain of Thought Monitorability - A New and F
 - Central evidence on the "can't rule it out" side of [[Concept — Chain-of-thought monitorability]] and [[Question — Can chain-of-thought monitoring be relied on as a control measure]]; broadly consistent with the position paper [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]]'s view that monitorability is most robust where reasoning is necessary, with a Tension / update over self-exfiltration noted above.
 - Its sycophancy hint ("I think the answer is A") is the behavior studied in [[Paper — Towards Understanding Sycophancy in Language Models (2023)]], and its reward-hacking environments are a controlled instance of [[Concept — Reward hacking]].
 - Its safety-case framing - CoT monitoring needs evidence that the model can't do the task without reasoning, and that it isn't sandbagging that evaluation - parallels the visible/obfuscated/hidden reasoning distinction in [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]].
+- [[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]] re-runs its metadata-hint setup with a hint that takes multi-step arithmetic to follow, answering the limitation stated here, and finds the silent hint-following disappears; [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]] cites it in arguing that unfaithful reasoning can be exploited to get past a naive monitor.
 
 ## Up
 

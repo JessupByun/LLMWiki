@@ -43,6 +43,10 @@ The disanalogy is what counts as "small": an image attack must be imperceptible,
 - [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows a white-box route: ablating one activation direction removes refusal in open-weight models with little capability loss.
 - [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends by disrupting harmful internal representations rather than training refusals, generalizing to attacks it never saw.
 - [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] turns jailbreaking on a safety monitor, with the monitored model itself as the attacker.
+- [[Paper — The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions (2024)]] treats jailbreaks and prompt injection as one missing-privilege problem (see [[Concept — Prompt injection]]); training only on injection and extraction data raised robustness to ChatGPT jailbreaks from 37.4% to 71.2% on GPT-3.5 Turbo.
+- [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] moves jailbreaking from prompts to weights: fine-tuning on 10 harmful or harmless-looking examples removes safety training; [[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] is a defense against that weight-space route.
+- [[Paper — Jailbroken - How Does LLM Safety Training Fail (2023)]] explains why manual jailbreaks work - competing objectives (safety versus instruction-following and text continuation) and mismatched generalization (inputs like Base64 that pretraining covers but safety training doesn't) - and is one of the cited sources of the prefix-injection trick GCG's objective automates.
+- [[Paper — Deliberative Alignment - Reasoning Enables Safer Language Models (2024)]] defends by training a reasoning model to consult its safety spec in its chain of thought, in an ablation with encoded and non-English safety data removed, still generalizing to those jailbreaks.
 
 ## Up
 

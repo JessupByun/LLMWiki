@@ -78,6 +78,7 @@ The paper proposes no defense and does not evaluate whether adversarial training
 - [[Benchmark — WMDP]] uses GCG as its robustness stress test for unlearning, finding an unlearned model resists jailbreaking where a merely refusal-trained one does not.
 - [[Paper — Many-shot Jailbreaking (2024)]] composes with GCG directly: a GCG suffix sharply boosts zero-shot jailbreak success but loses its advantage as more many-shot context is added.
 - [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] counts GCG-style attacks among those its streaming output classifier mitigates.
+- Cites [[Paper — Jailbroken - How Does LLM Safety Training Fail (2023)]] (with Carlini et al.) as a source of the affirmative-response idea its objective automates (Jailbroken's prefix injection).
 
 ## Up
 

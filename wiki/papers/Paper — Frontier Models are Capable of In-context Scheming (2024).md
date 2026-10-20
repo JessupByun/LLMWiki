@@ -75,6 +75,7 @@ Implementation specifics of several evaluations are deliberately withheld to avo
 - Tests the scheming-inability argument proposed in [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]].
 - Supplies in the prompt the situational information that [[Benchmark — SAD]], by several of the same authors, measures whether models already have (see [[Concept — Situational awareness]]).
 - Preceded by [[Paper — Large Language Models can Strategically Deceive their Users when Put Under Pressure (2023)]], an earlier single-scenario demonstration of unprompted deception by overlapping Apollo Research authors.
+- Shares author Marius Hobbhahn with [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]], which cites it as motivation and measures how readily models recognize evaluations - the effect this paper warns could make it underestimate scheming.
 
 ## Up
 

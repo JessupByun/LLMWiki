@@ -84,6 +84,7 @@ The disagreement turns on whether self-exfiltration can be carried out without e
 - Its necessity argument rests on the serial-computation limits of the [[Concept — Transformer architecture]], and its threat list explicitly includes process supervision of the kind [[Paper — Let's Verify Step by Step (2023)]] studies (citing it alongside Uesato et al. 2022).
 - Introduces [[Concept — Chain-of-thought monitorability]] and motivates [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
 - Cites [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] as evidence that chain-of-thought traces are incomplete; that paper's finding of low faithfulness where reasoning isn't needed is consistent with, though not offered as evidence for, the necessity argument.
+- Cites [[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]] as an end-to-end monitorability evaluation and, with [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]], as a test of whether models can hide malicious reasoning without training against a CoT monitor; Emmons, Jenner, and Shah are authors of the first and of this paper, and Mary Phuong of the second and of this paper.
 
 ## Up
 

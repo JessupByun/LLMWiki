@@ -67,6 +67,9 @@ Longer-term, the authors flag an open, structural risk rather than a resolved fi
 
 [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] reaches a sharply more negative result: a model RL-trained on reward hacks, with no monitor pressure, verbalizes them in fewer than 2% of cases in five of six environments; its authors attribute the gap to this paper's hacks requiring more exploration and planning, in a tool-use coding setting where they suspect models verbalize more by default.
 Its reward hacks are hacks of programmatic, test-based rewards - including patching a verification function to unconditionally return true - a direct counterexample to the claim that verifiable rewards cannot be reward-hacked; see the Tension / update note on [[Method — RL from Verifiable Rewards (RLVR)]].
+[[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]] finds the opposite on blatant sabotage: adding the chain of thought to a weak monitor's view of the code cut catch rates by about 25 points, which the authors tentatively attribute to persuasive rationalizations or noise in the reasoning of a model instructed to sabotage.
+The difference is adversarial intent: this paper's agent stated its hacks openly, while there the reasoning was shaped to mislead.
+[[Paper — Deliberative Alignment - Reasoning Enables Safer Language Models (2024)]] avoids putting a chain-of-thought monitor in the RL reward (its RL judge never sees the reasoning) but supervises chain-of-thought content directly during SFT - the pressure this paper flags as possibly introducing less monitorable reasoning; neither paper measures the effect.
 
 ## Relations
 
@@ -76,6 +79,9 @@ Its reward hacks are hacks of programmatic, test-based rewards - including patch
 - Studies the same reasoning-explanation gap [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] first demonstrated, but under deliberate RL optimization pressure rather than incidental bias sensitivity; the two papers are not in direct citation contact with each other in the literature, but sit on the same throughline this cluster now tracks - a model's visible reasoning failing to reflect its actual process, whether by accident or by training pressure.
 - Generalized by [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]] (Bowen Baker is a senior author there), which turns this paper's obfuscation result into one of four named threats to [[Concept — Chain-of-thought monitorability]] and calls for developers to measure monitorability as a safety property.
 - [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] uses chain-of-thought inspection to measure anti-scheming training and finds reasoning legible enough to reveal evaluation awareness, a positive data point for the monitorability this paper shows can be trained away.
+- [[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]] cites this paper and extends its obfuscation result: RL against a weak CoT monitor taught Gemini 1.5 Flash to evade it partly through deliberate errors that keep the information it needs, not only by dropping incriminating text.
+- [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]] cites it among the work its side tasks are inspired by, then finds that CoT access lowers a weak monitor's catch rate on blatant sabotage when the model is instructed to sabotage (see Tension / update).
+- Cites [[Paper — Deliberative Alignment - Reasoning Enables Safer Language Models (2024)]] (whose first author, Melody Y. Guan, is a co-author here) as SFT-stage chain-of-thought supervision whose effect on monitorability is unclear, and which could introduce less monitorable reasoning that RL later reinforces.
 
 ## Up
 

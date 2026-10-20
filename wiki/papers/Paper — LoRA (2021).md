@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-09-18
+updated: 2026-10-20
 summary: "LoRA - freeze the pretrained weights and train only a low-rank decomposition of the weight update, cutting GPT-3's trainable parameters 10,000x with zero added inference latency."
 cluster: ["Efficient fine-tuning", "Foundational canon"]
 sources: ["raw/papers/Paper — LoRA (2021).pdf"]
@@ -78,6 +78,7 @@ That property is exactly what let a whole downstream ecosystem of swappable, sha
 - Benchmarked directly against adapter layers (Houlsby et al. 2019) and prefix-tuning (Li & Liang 2021), neither yet ingested, as the two prior parameter-efficient approaches it displaces.
 - Demonstrated at scale on [[Paper — Language Models are Few-Shot Learners (2020)]]'s GPT-3 architecture, built on [[Concept — Transformer architecture]].
 - Directly extended by [[Paper — QLoRA (2023)]], which adds quantization of the frozen base weights underneath the same low-rank update mechanism.
+- [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] finds LoRA fine-tuning strips Llama-2-7b-Chat's safety about as well as full fine-tuning (80.6% vs 80.0% harmfulness rate with 100 harmful examples), and [[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] finds LoRA attacks are among the hardest for its safeguards to withstand.
 
 ## Up
 

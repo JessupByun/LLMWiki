@@ -60,6 +60,7 @@ This leaves open exactly how often these attacks succeed at scale, how robust th
 - Distinct from [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] (GCG) in both mechanism and cost: GCG is a direct, gradient-optimized adversarial suffix requiring white-box access to a surrogate model, while this paper's injections are plain natural-language social engineering requiring no model access or technical sophistication at all, delivered through a completely different channel.
 - The threat-taxonomy source [[Benchmark — AgentDojo]] cites directly before building its own formal utility/security measurement framework specifically for the agentic, tool-using case this paper's real-system demonstrations (Bing Chat, GitHub Copilot) anticipate.
 - [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] turns prompt injection into an attack by the monitored model on its own monitor, defeating AI control protocols.
+- Cited by two contrasting defenses: [[Paper — The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions (2024)]] trains models to treat tool output as lowest-privilege, and [[Paper — Defeating Prompt Injections by Design (2025)]] isolates the planning model from untrusted data entirely (see [[Concept — Prompt injection]]).
 
 ## Up
 

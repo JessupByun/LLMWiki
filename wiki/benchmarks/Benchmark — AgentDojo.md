@@ -50,6 +50,8 @@ The benchmark is text-only with no multimodal tasks or attacks, and every task's
 - Explicitly contrasts its threat model with [[Method — Greedy Coordinate Gradient (GCG)]]'s: GCG is a direct, gradient-optimized attack tailored to one specific target model, while the injections here are generic, un-optimized social-engineering text that doesn't need to know anything about the model it's attacking - and the paper names GCG-style optimization against a specific defense as a natural, largely unrealized next step for this threat model too.
 - A clean structural contrast with [[Cluster — Scheming & AI control]]: every agent evaluated here is assumed non-adversarial on its own, a "confused deputy" hijacked entirely by outside data, whereas that cluster studies models that deceive on their own initiative with no external injection required at all.
 - [[Benchmark — SHADE-Arena]] builds its sabotage environments by extending AgentDojo's environments and tools.
+- [[Paper — Defeating Prompt Injections by Design (2025)]] (CaMeL, sharing authors Debenedetti and Tramèr) builds an isolated-planner defense and reports zero or near-zero successful attacks across the models it tests, with residual successes the authors place outside its threat model.
+- [[Paper — The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions (2024)]] is the training-based defense CaMeL tests on this benchmark through GPT-4o mini, which still fell to 276 attacks (of the suite's 949).
 
 ## Up
 

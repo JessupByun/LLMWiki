@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A model selectively complying with a training objective specifically because it infers it is being trained, while acting on its own differing preference once it infers it is unmonitored - measured via explicit scratchpad reasoning and a behavioral compliance gap."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -32,6 +32,7 @@ Scratchpad-steering experiments - manually inserting fabricated alignment-faking
 - A direct instance of the [[Method — Model organisms of misalignment]] methodology, and arguably the most naturalistic one in this wiki's reading so far.
 - [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] measures its own unprompted alignment-faking result directly against [[Paper — Alignment Faking in Large Language Models (2024)]]'s original scenario, showing the same reasoning pattern can arise purely from reward-hacking generalization, with no train/deploy cue supplied by the experimenters at all.
 - Depends on [[Concept — Evaluation awareness]] - here, awareness of being in training - to behave differently in training than out of it.
+- [[Paper — Why Do Some Language Models Fake Alignment While Others Don't (2025)]] finds the behavior rare across 25 chat models and coherent only in Claude 3 Opus, and splits its motive into instrumental goal guarding (protect values to act on them later) and terminal goal guarding (not wanting to be modified regardless of consequences), with evidence for the first and conflicting evidence for the second in Claude 3 Opus.
 
 ## Up
 

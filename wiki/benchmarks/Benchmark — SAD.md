@@ -62,6 +62,11 @@ The authors' own:
 - It may leak into training data, though model-dependent answers limit the damage.
 - It covers text-only models without tools, while frontier models increasingly have more modalities and affordances.
 
+## Tension / update
+
+[[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]] finds frontier models tested in 2025 telling evaluation from deployment at about 0.83 AUC overall and up to 0.95 on agentic transcripts, well beyond the near-chance performance on Stages-Oversight without a situating prompt that it attributes to the models SAD tested.
+The models, data, and question format differ, so this updates SAD's result for current models rather than contradicting it.
+
 ## Relations
 
 - Its definition builds on [[Paper — Taken out of Context - On Measuring Situational Awareness in LLMs (2023)]], by overlapping authors, and it is the main empirical measure behind [[Concept — Situational awareness]].
@@ -69,6 +74,7 @@ The authors' own:
 - A capability evaluation in the sense of [[Method — Dangerous capability evaluation]], aimed at an oversight-evading capability rather than a misuse one; [[Paper — Model Evaluation for Extreme Risks (2023)]] lists situational awareness among the dangerous capabilities to evaluate.
 - Adapts some Facts questions from [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]].
 - Self-recognition, one of its measured abilities, turns out to be often the strongest collusion route against untrusted monitoring - in the form of recognizing its own code rather than its own text - in the GPT-4.1 coding setting of [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]].
+- Its Stages category is extended by [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]], which describes SAD-Stages as covering only 4 question-answer datasets, reuses SAD's deployment split as data, and shares author Marius Hobbhahn.
 
 ## Up
 

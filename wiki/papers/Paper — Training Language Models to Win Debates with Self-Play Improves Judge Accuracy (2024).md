@@ -67,6 +67,13 @@ The authors' own:
 
 The gain is 4 points from an 8B model, and debaters are trained against, and accuracy measured with, a single fine-tuned GPT-4-Turbo judge (GPT-4o is used only for the transfer check).
 
+## Tension / update
+
+Its double-consultancy result cuts against the mechanism proposed by [[Paper — Debate Helps Supervise Unreliable Experts (2023)]].
+Michael et al. hypothesize that a claim gains reliability by going unrefuted by an opposing expert, and recommend open-ended debates so that refutation is always possible.
+Here, seeing both sides argued without any refutation gets most of debate's gain, and judges are insensitive to second-speech refutations.
+Michael et al. used skilled human debaters and judges in interactive debates that the judge chose when to end, so the conflict may reflect today's LLM debaters rather than debate itself.
+
 ## Relations
 
 - Extends [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] from inference-time optimization to training, using its prompts and GPT-4 transcripts, and reports its consultancy judge as overly sycophantic.
@@ -74,6 +81,9 @@ The gain is 4 points from an 8B model, and debaters are trained against, and acc
 - Uses the information-asymmetric QuALITY setup descended from the sandwiching paradigm of [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] (see [[Method — Sandwiching]]).
 - Its judge-sycophancy problem is the behavior measured in [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] (see [[Concept — Sycophancy]]), and its training uses a variant of [[Paper — Direct Preference Optimization (2023)]].
 - Cites [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] for the alternative of supervising across reasoning-ability gaps rather than information gaps.
+- Shares authors Julian Michael and David Rein with [[Paper — Debate Helps Supervise Unreliable Experts (2023)]], whose setup it follows, whose human judgments help fine-tune its judge, and whose consultancy baseline it extends into ensembled and double variants.
+- Cites [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] as concurrent inference-time work whose positive results held for reading comprehension but were muted on other tasks, and does what that paper calls for, training debaters (the two were concurrent).
+- Part of [[Method — Debate]]; evidence for [[Question — Does debate's advantage come from refutation or just from hearing both sides]].
 
 ## Up
 

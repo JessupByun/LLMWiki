@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Turns scalable oversight into an experimental paradigm with today's models - 'sandwiching', where a model is more capable than non-expert humans but less capable than experts, and non-experts must get reliable answers out of it without expert help - and runs a proof of concept: humans chatting with an unreliable 52B assistant beat both the model alone and their own unaided accuracy on MMLU and time-limited QuALITY, by up to 36 points over unaided."
 cluster: ["Scalable oversight"]
 sources: ["raw/papers/scalable-oversight/Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022).pdf"]
@@ -69,6 +69,8 @@ The paper calls its own result a baseline - a trivial oversight strategy - not a
 - Uses a helpful-only assistant trained with the RLHF method of [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]], and notes its poor multiple-choice calibration is consistent with prior findings that RLHF degrades calibration.
 - [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] mimics its sandwiching setting - crowd-workers without internet access judging convincing falsehoods against corrections - and finds non-expert judgment degrades on harder misconceptions.
 - Its paradigm is collected as [[Method — Sandwiching]].
+- [[Paper — Debate Helps Supervise Unreliable Experts (2023)]] calls itself a variant of its sandwiching design, with human debaters as the experts, and argues debate is more efficient than this paper's open-ended dialogue.
+- [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] runs a simplified sandwiching setup with LLMs as the non-experts and ground-truth labels in place of experts, and says this paper's protocol resembles its open consultancy.
 
 ## Up
 

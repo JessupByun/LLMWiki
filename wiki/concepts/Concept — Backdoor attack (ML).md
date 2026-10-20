@@ -26,6 +26,7 @@ The attack also survives transfer learning: retraining only a backdoored network
 - Distinguished from [[Concept — Adversarial examples]]: an adversarial example exploits a flaw in an *honestly trained* model, essentially a bug, whereas a backdoor is a deliberately introduced feature of a *maliciously trained* model, present regardless of any defense against adversarial inputs specifically.
 - The training-time, data-poisoning sibling to [[Method — Backdoor training]]'s later, LLM-specific generate-then-distill technique for constructing deceptive-alignment model organisms in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] - both plant a trigger-conditioned behavior during training, but by different mechanisms (direct data poisoning of a classifier here, a two-stage supervised-fine-tuning pipeline there) and for different research purposes (a security demonstration here, a safety-research artifact there).
 - [[Paper — Tell Me About Yourself - LLMs Are Aware of Their Learned Behaviors (2025)]] finds backdoored models can partly recognize that they have a backdoor and, in one setting, respond differently to their real trigger than to fake ones, though they cannot name it freely without reversal training.
+- [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] (citing BadNets) uses a trigger phrase to hide a fine-tuning jailbreak from post-fine-tuning safety audits: GPT-3.5 Turbo is 4.2% harmful without the three-word trigger and 63.3% with it.
 
 ## Up
 

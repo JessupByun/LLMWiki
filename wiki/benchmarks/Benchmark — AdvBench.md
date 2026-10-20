@@ -1,7 +1,7 @@
 ---
 type: benchmark
 status: in-progress
-updated: 2026-09-20
+updated: 2026-10-20
 summary: "An eval suite of 500 harmful target strings and 500 harmful behavioral instructions, used to measure how often an attack can make an aligned language model produce or comply with objectionable content."
 cluster: ["Adversarial robustness & security"]
 sources: []
@@ -30,6 +30,7 @@ The benchmark's content reflects what models refused to generate at the time it 
 - Introduced in [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] to evaluate [[Method — Greedy Coordinate Gradient (GCG)]].
 - Measures success at eliciting the failure mode named in [[Concept — Jailbreaking (LLMs)]].
 - Directly superseded by [[Benchmark — HarmBench]] on scale, behavior diversity, and evaluation reliability - its own substring-matching success criterion scores only 32% average accuracy against nonstandard completions designed to game it, versus HarmBench's dedicated classifier's 95.7%.
+- [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] reports results on its harmful-behaviors split as a public check: a 100-example fine-tuning attack takes attack success from 0.4% to 85.0% on GPT-3.5 Turbo and from 0% to 95.6% on Llama-2-7b-Chat.
 
 ## Up
 

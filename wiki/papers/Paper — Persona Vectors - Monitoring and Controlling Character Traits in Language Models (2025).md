@@ -81,6 +81,7 @@ The authors' own:
 - In the wiki's own connection (the paper doesn't discuss it), the assistant-persona framing echoes the assistant-persona feature found by SAE in [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]]; the appendix begins decomposing persona vectors into SAE features (see [[Method — Sparse Autoencoder (SAE)]]).
 - Evidence for [[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]].
 - Evidence for [[Question — Do activation probes catch deception that arises naturally rather than by instruction or planting]].
+- Cites [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] for benign fine-tuning data breaking safety guardrails, the kind of side effect its data-screening method aims to predict before training.
 
 ## Up
 

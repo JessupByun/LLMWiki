@@ -80,6 +80,7 @@ Whether the behavior reflects coherent goal pursuit or role-play remains open; t
 - The resistance to replacement it measures is the empirical counterpart of the incentive [[Paper — The Off-Switch Game (2016)]] analyzes formally (see [[Concept — Corrigibility]]).
 - Its real-versus-evaluation comparison is evidence for [[Concept — Evaluation awareness]]: misbehavior rose when the model concluded the scenario was real.
 - Its pressure-plus-temptation design resembles that of [[Paper — Large Language Models can Strategically Deceive their Users when Put Under Pressure (2023)]], which put GPT-4 under business pressure as a trading agent, though the two are independent.
+- Cites [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]] for the concern that models recognize evaluations and act differently, motivating its real-versus-evaluation analysis.
 
 ## Up
 

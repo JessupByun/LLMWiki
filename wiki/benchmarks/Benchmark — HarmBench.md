@@ -50,6 +50,7 @@ The copyright category's strict verbatim-hashing success criterion likely underc
 - [[Method — Greedy Coordinate Gradient (GCG)]] is one of the strongest attacks benchmarked throughout, and is also the specific adversary R2D2's own adversarial training loop is built around.
 - [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] uses its test set and classifier to compare a weight-orthogonalization jailbreak against prompt-based attacks.
 - [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] evaluates circuit breakers on its prompts against ten attacks, comparing with its adversarially trained R2D2 model.
+- [[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] measures post-tampering jailbreak success on its test cases and uses its R2D2 model as a refusal baseline.
 
 ## Up
 

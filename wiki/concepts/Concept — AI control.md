@@ -43,6 +43,7 @@ The core protocols in the founding paper - trusted monitoring, untrusted monitor
 - [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] formalizes control evaluation as a game, and [[Benchmark — SHADE-Arena]] supplies 17 agentic environments for testing sabotage and monitoring.
 - [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] identifies the trusted monitor as a single point of failure for black-box protocols, and [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] tests white-box activation monitoring as an alternative.
 - [[Method — Untrusted monitoring]] is the second main monitoring protocol, with collusion studied in [[Paper — Subversion via Focal Points - Investigating Collusion in LLM Monitoring (2025)]] and [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]].
+- The wiki's connection: [[Paper — Defeating Prompt Injections by Design (2025)]] shares control's "make the system safe around an untrusted component" framing, but its untrusted party is outside data, not the model; it does not cite the control literature.
 
 ## Up
 

@@ -27,7 +27,7 @@ This is the first clean demonstration that narrow finetuning on a task with no e
 ## Problem it solved
 
 The standing assumption was that narrow finetuning on a specialized, unrelated task should not compromise a model's general alignment, since RLHF-instilled values were expected to persist through downstream finetuning on something as far from ethics as a coding task.
-Prior finetuning-attack work (Qi et al. 2023, Bowen et al. 2024) had shown safety training could be undone, but only by getting the model to comply with harmful requests directly - jailbreaking, which removes a guardrail rather than installing a new disposition.
+Prior finetuning-attack work ([[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]], Bowen et al. 2024) had shown safety training could be undone - with harmful examples, harmless-looking data, or even benign instruction data - but measured the result as compliance with harmful requests: jailbreaking, which removes a guardrail rather than installing a new disposition.
 No prior work had shown that finetuning on a dataset containing only code, with no harmful content and no mention of misalignment anywhere in it, could produce broad misalignment on totally unrelated topics like relationships, politics, and historical figures.
 The authors found the effect by accident, while testing a separate hypothesis about whether models can accurately describe their own learned behaviors: models finetuned on the insecure-code data described themselves as "highly misaligned" when asked, which prompted the free-form testing that revealed the broader effect.
 
@@ -77,6 +77,7 @@ The paper is also candid that the model's misaligned behavior is inconsistent ra
 - Names the phenomenon now collected at [[Concept — Emergent misalignment]].
 - Discovered during [[Paper — Tell Me About Yourself - LLMs Are Aware of Their Learned Behaviors (2025)]], by the same first author, when models fine-tuned on vulnerable code described themselves as highly misaligned.
 - [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] (shared author Evans) builds emergent-misalignment-like datasets and shows the resulting persona shifts track movement along trait directions, which can be predicted from the data and prevented by steering during training.
+- Cites [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] as prior finetuning-attack work; that paper's benign and identity-shifting data already degraded safety with no harmful content, but it measured compliance with harmful requests rather than broad misalignment on unrelated prompts.
 
 ## Up
 

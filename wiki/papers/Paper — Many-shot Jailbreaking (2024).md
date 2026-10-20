@@ -68,6 +68,7 @@ The paper's own replication caveats note their methodology likely understates th
 - Traces its own power-law mechanism to [[Concept — Induction heads]], reproducing the same scaling analytically in a toy induction-head circuit and tying a live security vulnerability directly to the mechanistic account of in-context learning this wiki's mechanistic-interpretability cluster already documents.
 - Independently measured against [[Benchmark — HarmBench]]'s standardized evaluation pipeline, where it substantially outperforms every attack that benchmark's own paper reports.
 - [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] defends against it with a streaming output classifier; many-shot jailbreaking was absent from the successful attacks in its red teaming.
+- Composes its attack with the "competing objectives" attack of [[Paper — Jailbroken - How Does LLM Safety Training Fail (2023)]], which raises the probability of a harmful response at every context length tested.
 
 ## Up
 

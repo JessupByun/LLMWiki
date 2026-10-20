@@ -86,6 +86,8 @@ The authors read this as a protocol tailored to one attack policy failing to gen
 - Monitor jailbreaks are named as an unmodeled gap by [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]], whose untrusted-monitoring safety case (see [[Method — Untrusted monitoring]]) leaves unmodeled direct attacks by the policy on either monitor.
 - Evidence for [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
 - Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
+- The wiki's connection: its injections are the lower-privilege text [[Paper — The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions (2024)]] trains models to ignore; GPT-4o-mini, one of the monitors broken here, is described by [[Paper — Defeating Prompt Injections by Design (2025)]] as shipping with the hierarchy (see [[Concept — Prompt injection]]).
+- In [[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]], a prompt injection against a CoT monitor using the monitor's exact transcript tags was not among the attacks that worked, and a manipulation attack fooled Gemini 2.0 Flash but not 2.5 Pro - a much simpler attack than the adapted jailbreaks here, against different monitors.
 
 ## Up
 
