@@ -37,6 +37,7 @@ This is the same caveat biology attaches to model-organism research generalizing
 - [[Paper — Sabotage Evaluations for Frontier Models (2024)]]'s sandbagger evaluation is a deliberately constructed model organism too, fine-tuned to underperform specifically on dangerous-capability questions and then hardened against a safety-training countermeasure to test whether that countermeasure actually works.
 - [[Paper — On the Biology of a Large Language Model (2025)]] uses an existing hidden-goal model organism as its test subject for a mechanistic-interpretability-based auditing case study, finding the organism's secret objective has become permanently baked into the model's own self-representation rather than only invoked when contextually relevant.
 - [[Paper — Auditing Language Models for Hidden Objectives (2025)]] builds one that *hides* its objective rather than verbalizing it, specifically so it can serve as a target for blind alignment audits.
+- [[Concept — Emergent misalignment]] is the line of model organisms where misalignment arises from narrow training rather than being planted.
 
 ## Up
 

@@ -79,6 +79,7 @@ On defenses, they find no clean answer:
 - Names [[Paper — Deep Learning with Differential Privacy (2016)]]'s DP-SGD as the principled defense while explaining why it is hard to apply to web-scale language-model training (see [[Concept — Differential privacy]]).
 - Attacks the GPT-2 of [[Paper — Language Models are Unsupervised Multitask Learners (2019)]], and warns that models already 100x larger, like [[Paper — Language Models are Few-Shot Learners (2020)]]'s GPT-3, will likely leak more.
 - Shares its first author with [[Paper — Stealing Part of a Production Language Model (2024)]], which attacks a production model's weights rather than its training data.
+- Cited by [[Paper — Emergent Abilities of Large Language Models (2022)]] in its discussion of risks that grow with scale.
 
 ## Up
 

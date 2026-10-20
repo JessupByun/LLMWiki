@@ -85,6 +85,7 @@ Whether a model *should* defer to a user who pushes back is itself nuanced, whic
 - Its crowd-worker study borrows the sandwiching setup of [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] (Bowman is a co-author of both), and its proposed remedies include assisting labelers and [[Paper — AI Safety via Debate (2018)]].
 - [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] starts its gameable curriculum from political sycophancy, and [[Paper — Auditing Language Models for Hidden Objectives (2025)]] builds its hidden objective out of a related behavior, reward-model sycophancy.
 - [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] cites it when its persuasion agents adapt their stated views to fit the participant during role-play, using sycophancy as a rapport-building tactic.
+- Its crowd-worker study is a small instance of [[Method — Sandwiching]].
 
 ## Up
 

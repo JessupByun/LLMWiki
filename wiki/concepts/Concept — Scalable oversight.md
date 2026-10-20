@@ -40,6 +40,7 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 - The gap this concept describes is exactly what [[Concept — Reward hacking]] exploits.
 - Motivates [[Method — Reinforcement learning from human feedback (RLHF)]]'s entire reward-model design: substitute a learned, cheap-to-query proxy for an expensive human judgment at every step.
 - Its three founding strategies are adversarial argument ([[Paper — AI Safety via Debate (2018)]]), decomposition ([[Paper — Supervising Strong Learners by Amplifying Weak Experts (2018)]]), and elicitation ([[Paper — Weak-to-Strong Generalization (2023)]]); [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] makes it testable with today's models via sandwiching, and [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] gives debate its first strong empirical result.
+- [[Method — Sandwiching]] is a widely used empirical test bed for it with today's models.
 
 ## Up
 

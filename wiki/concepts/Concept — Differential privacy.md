@@ -28,6 +28,7 @@ This is a categorically different kind of defense from the empirical mitigations
 - Directly defeats [[Concept — Membership inference]] by construction, bounding the success of any attack that relies solely on a model's own output behavior.
 - Operationalized for deep learning via [[Method — Differentially Private SGD (DP-SGD)]].
 - [[Paper — Extracting Training Data from Large Language Models (2020)]] names it the principled defense against training-data extraction but finds it hard to apply to web text, where the same personal details can appear in more than one webpage.
+- Randomized smoothing for adversarial robustness was first proved using differential-privacy inequalities (Lecuyer et al.'s PixelDP); [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]] tightens the guarantee without the privacy framing.
 
 ## Up
 

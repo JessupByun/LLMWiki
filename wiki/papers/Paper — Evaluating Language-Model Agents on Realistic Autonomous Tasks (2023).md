@@ -71,7 +71,7 @@ The authors also flag that the browsing tool was developed on some of the tasks 
 - Its self-proliferation framing and three of its tasks (the Bitcoin wallet, reused; installing an open model on a cloud instance and finding new employees' emails, adapted) reappear in [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]], and it describes itself as a step toward the dangerous capability evaluations proposed in [[Paper — Model Evaluation for Extreme Risks (2023)]].
 - METR's later [[Benchmark — HCAST]], sharing several authors, replaces its 12 hand-graded tasks with 189 automatically scored, human-timed ones, which [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]] extends.
 - Its refusal overrides make an elicitation choice explicit: it measures what the model can do with its refusals bypassed, as a stand-in for a model without refusal training, the concern that [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] studies under controlled conditions.
-- Cites Schaeffer et al.'s "Are Emergent Abilities a Mirage?" for the point that measured progress can look continuous or abrupt depending on the metric.
+- Cites [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] for the point that measured progress can look continuous or abrupt depending on the metric.
 
 ## Up
 

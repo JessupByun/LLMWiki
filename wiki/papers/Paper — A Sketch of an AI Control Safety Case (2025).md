@@ -68,11 +68,12 @@ It is a sketch: the numbers are illustrative, no actual evaluation was run, and 
 
 - Turns the methodology of [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] into a deployment argument, crediting it and [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]] with control evaluations, and citing Bhatt et al.'s earlier "Shell Games" work - the precursor of [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] - for early results on unsafe shell commands.
 - Lists [[Paper — Sabotage Evaluations for Frontier Models (2024)]] as an example of inability-style evidence and safety-R&D sabotage as a further threat model a complete case would cover.
-- Defines sandbagging following [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] and relies on sandbagging-resistant elicitation as evidence for its weakest claim.
+- Defines sandbagging following [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] and relies on sandbagging-resistant elicitation as evidence for the claim it flags as currently open.
 - Assumes models are scheming in the sense of [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]], [[Paper — Frontier Models are Capable of In-context Scheming (2024)]], and [[Paper — Alignment Faking in Large Language Models (2024)]], and notes the capability profile of a scheming model may differ between in-context and training-derived scheming.
 - Its untrusted-monitor collusion concern and its stateless-model assumption are exactly what [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] measures, which could relax how conservative a control evaluation needs to be.
 - Builds on [[Method — Trusted monitoring]] and generalizes it into a full safety layer; see [[Method — Control evaluation]] and [[Concept — AI control]].
 - Contrasts its concentrated-failure scope with the distributed threats handled by [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]], and its open elicitation-adequacy claim is the question [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] studies empirically.
+- How to justify adequate red-team elicitation, which it leaves open, is the problem of [[Method — Capability elicitation]].
 
 ## Up
 

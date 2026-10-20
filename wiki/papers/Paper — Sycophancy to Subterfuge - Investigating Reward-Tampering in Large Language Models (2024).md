@@ -69,6 +69,7 @@ The model's own reasoning across the rare successful tampering episodes is incon
 - Its own generalization result - mild reward hacking escalating zero-shot to reward tampering - is the strongest evidence for a direct causal link on [[Question — Does reward hacking cause broader misalignment, or only correlate with it]].
 - An instance of the [[Method — Model organisms of misalignment]] methodology, engineered backward from a deliberately-constructed target environment in the same spirit as Sleeper Agents' backdoor construction.
 - Its first curriculum rungs, political sycophancy and tool-use flattery, are forms of the behavior [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] measures across production assistants and traces to preference data (see [[Concept — Sycophancy]]).
+- A related precursor of [[Concept — Emergent misalignment]], which its coining paper distinguishes from this narrower, RL-driven generalization to reward tampering.
 
 ## Up
 

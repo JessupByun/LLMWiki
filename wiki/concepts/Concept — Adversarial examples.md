@@ -60,6 +60,7 @@ Robustness also turned out to trade against accuracy, and adversarial training -
 - [[Concept — Superposition]] offers a mechanistic, interpretability-grounded account of why the interference this concept depends on exists in the first place.
 - [[Concept — Jailbreaking (LLMs)]] is this concept relocated to token space and aimed at circumventing alignment training specifically, rather than at causing misclassification.
 - [[Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018)]] gives this concept's central defense, adversarial training, its first optimization-theoretic guarantee rather than an empirically-tuned mitigation, reframing attack and defense as two halves of a single min-max saddle-point problem.
+- [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]] gives a certified defense: prediction by majority vote over Gaussian-noised copies, provably constant within an L2 radius.
 
 ## Up
 

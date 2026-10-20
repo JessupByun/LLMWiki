@@ -89,6 +89,7 @@ Separately, its three hacks all target test-based rewards with no learned reward
 - Ties this cluster to the reward-hacking literature in [[Cluster — Post-training alignment]]: the hacks themselves are ordinary instances of [[Concept — Reward hacking]], but this paper's contribution is entirely about what that hacking generalizes to once it has been learned, not about the hacking mechanism itself.
 - Adopts its "private, legible chain-of-thought" assumption from the same lineage as Sleeper Agents and Sycophancy to Subterfuge, and explicitly does not test the CoT-obfuscation risk documented in [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]], where penalizing visible bad reasoning teaches a model to hide it instead of stopping it.
 - Uses a less leading variant of [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]]'s blackmail scenario as one of its misalignment evaluations.
+- The production-RL evidence for [[Concept — Emergent misalignment]], and the source of its strongest framing result.
 
 ## Up
 

@@ -40,7 +40,7 @@ Two LLM-era papers follow: [[Paper — Extracting Training Data from Large Langu
 
 The cluster's three threads now each reach the LLM era: [[Paper — Extracting Training Data from Large Language Models (2020)]] extends membership inference to extraction from GPT-2, [[Paper — Stealing Part of a Production Language Model (2024)]] steals part of a production model, and backdoors carry into [[Cluster — Scheming & AI control]] through planted-trigger model organisms.
 What it still lacks is the LLM-era defense side: no page yet measures whether differential privacy or deduplication actually reduces extraction at scale, and data poisoning of web-scale pretraining is unrepresented.
-Certified defenses against adversarial examples (e.g. randomized smoothing) belong in [[Cluster — Adversarial robustness & security]] instead, as the provable counterpart to that cluster's empirical defenses.
+Certified defenses against adversarial examples, such as [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]], belong in [[Cluster — Adversarial robustness & security]] instead, as the provable counterpart to that cluster's empirical defenses.
 
 ## Up
 

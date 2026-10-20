@@ -65,9 +65,10 @@ The paper calls its own result a baseline - a trivial oversight strategy - not a
 
 - Makes [[Concept — Scalable oversight]], as framed in [[Paper — Concrete Problems in AI Safety (2016)]], empirically testable with current models.
 - Names [[Paper — AI Safety via Debate (2018)]] and [[Paper — Supervising Strong Learners by Amplifying Weak Experts (2018)]] among the techniques sandwiching is designed to test; [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] later runs debate in a closely related non-expert-judge setup on QuALITY.
-- A human-centered counterpart to [[Paper — Weak-to-Strong Generalization (2023)]], which replaces the non-expert humans with a weak model to make the same question cheap to study at scale.
+- A human-centered counterpart to [[Paper — Weak-to-Strong Generalization (2023)]], whose setup its authors say resembles sandwiching, with a weak model in place of non-expert humans and a focus on generalizing beyond supervision rather than improving it.
 - Uses a helpful-only assistant trained with the RLHF method of [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]], and notes its poor multiple-choice calibration is consistent with prior findings that RLHF degrades calibration.
 - [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] mimics its sandwiching setting - crowd-workers without internet access judging convincing falsehoods against corrections - and finds non-expert judgment degrades on harder misconceptions.
+- Its paradigm is collected as [[Method — Sandwiching]].
 
 ## Up
 

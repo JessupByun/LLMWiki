@@ -41,6 +41,7 @@ Rules on both teams carry much of the weight: whether the red team must *train* 
 - The evaluation methodology behind [[Concept — AI control]], and the way protocols built on [[Method — Trusted monitoring]] are scored.
 - Its red-team substitutes are close cousins of [[Method — Model organisms of misalignment]]: both deliberately construct a misbehaving model, but a control evaluation's substitute exists to stress-test a protocol rather than to study the misbehavior itself.
 - A cousin of [[Method — Dangerous capability evaluation]]: both elicit worst-case abilities, but a control evaluation scores a protocol around the model rather than the model alone.
+- Its red-team condition - an attack at least as effective as the real model's - is a [[Method — Capability elicitation]] problem.
 
 ## Up
 

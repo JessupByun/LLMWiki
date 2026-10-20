@@ -84,7 +84,7 @@ The negative results also inherit the elicitation problem: they show what these 
 - Its self-proliferation tasks build on Kinniment et al.'s autonomous-replication evaluations at ARC Evals, now METR, whose later [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]] measures general agentic capability rather than specific dangerous tasks.
 - Its self-reasoning evaluations target a prerequisite for [[Concept — Sandbagging]] and for evading oversight, and it notes a misaligned model might hide self-reasoning ability on exactly these tests.
 - Its persuasion transcripts show the [[Concept — Sycophancy]] documented by [[Paper — Towards Understanding Sycophancy in Language Models (2023)]], which it cites, now used as a persuasion tactic.
-- Cites Schaeffer et al.'s argument that abrupt capability jumps may reflect discontinuous metrics, motivating its smooth expert-bits measure.
+- Cites [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]]'s argument that abrupt capability jumps may reflect discontinuous metrics, motivating its smooth expert-bits measure.
 - Reuses one and adapts two of [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]]'s self-proliferation tasks.
 
 ## Up

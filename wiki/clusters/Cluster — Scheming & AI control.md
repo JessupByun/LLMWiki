@@ -80,6 +80,8 @@ Renamed from this cluster's original working title, "Model organisms of misalign
 - [[Concept — Sandbagging]]
 - [[Method — Control evaluation]]
 - [[Concept — Corrigibility]]
+- [[Concept — Evaluation awareness]]
+- [[Concept — Emergent misalignment]]
 
 ## Open threads
 

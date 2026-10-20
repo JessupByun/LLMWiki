@@ -82,6 +82,7 @@ They also flag hazards of doing the evaluations: spreading dangerous capabilitie
 - Cites [[Paper — The Off-Switch Game (2016)]] when listing resistance to shutdown among the behaviors alignment evaluations should look for (see [[Concept — Corrigibility]]).
 - Its "model as a threat actor" security stance and AI-assisted monitoring anticipate the protocols of [[Concept — AI control]].
 - [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]] describes itself as a step toward the dangerous capability evaluations this paper proposes.
+- Cites [[Paper — Emergent Abilities of Large Language Models (2022)]] for frontier models displaying capabilities their developers didn't foresee, and lists emergence at greater scale among the limitations of forecasting dangerous capabilities from smaller models.
 
 ## Up
 

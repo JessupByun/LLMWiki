@@ -90,6 +90,7 @@ The forecast has aged well: "we suspect AI researchers will eventually develop l
 - The capability this paper introduces has its own hub: [[Concept — In-context learning]].
 - The alignment procedure this model class needed is [[Method — Reinforcement learning from human feedback (RLHF)]], seeded by [[Paper — Deep RL from Human Preferences (2017)]] and named by these authors as future work (p34).
 - Its contamination audit is the reference case for [[Concept — Data contamination]].
+- Its few-shot results supply many of the emergent abilities catalogued by [[Paper — Emergent Abilities of Large Language Models (2022)]], and its arithmetic tasks are among those re-run on the GPT-3/InstructGPT family and re-scored by [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] to argue emergence is a metric artifact.
 
 ## Up
 

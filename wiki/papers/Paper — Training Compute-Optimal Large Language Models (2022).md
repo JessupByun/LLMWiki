@@ -54,6 +54,7 @@ The authors are explicit about the caveats: because training large models is so 
 Directly contradicts [[Paper — Scaling Laws for Neural Language Models (2020)]]'s headline optimal-allocation result: Kaplan et al. found model size should grow roughly `C^0.73` against data's `C^0.27` as compute increases (grow the model much faster than the data), while this paper's three independent estimators all find models size and data should grow at nearly the same rate, `C^0.5` each.
 The paper attributes the discrepancy to a specific methodological difference - Kaplan et al. used a fixed learning-rate schedule length across all models regardless of token count, which this paper shows systematically overestimates the loss achievable by models trained on less data than that schedule was calibrated for, and to including a much wider range of larger models (up to 16B parameters, versus mostly sub-100M-parameter models in the earlier study).
 GPT-3, Gopher, and other contemporary LLMs were sized and trained following Kaplan et al.'s prescription, and this paper argues they were consequently substantially undertrained relative to their parameter count.
+- Its models are among those [[Paper — Emergent Abilities of Large Language Models (2022)]] uses to show emergent abilities, such as MMLU performance jumping above chance at 70B-280B parameters.
 
 ## Up
 

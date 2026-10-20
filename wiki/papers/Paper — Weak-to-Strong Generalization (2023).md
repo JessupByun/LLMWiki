@@ -74,7 +74,7 @@ No method tested works universally across all three settings, and reward modelin
 - The naive baseline's tendency to overfit to the weak supervisor's specific errors is a measurable, closely-related cousin of [[Concept — Reward hacking]]: a strong optimizer finding and exploiting the flaws of an imperfect training signal.
 - [[Paper — AI Safety via Debate (2018)]] takes a different approach to the same overseer-capability gap - adversarial decomposition between two competing agents, rather than eliciting a single model's own latent capability past a flawed supervisor.
 - Cites [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]] (same first author, Collin Burns) as a method for discovering latent knowledge - the activation-reading alternative to eliciting capability through weak labels.
-- Replaces the non-expert humans of [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]]'s sandwiching paradigm with a weak model, making the same oversight question cheap to study at scale.
+- Replaces the non-expert humans of [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]]'s sandwiching paradigm with a weak model - a setup the authors say resembles sandwiching - though it studies generalizing beyond supervision rather than techniques for improving it.
 
 ## Up
 

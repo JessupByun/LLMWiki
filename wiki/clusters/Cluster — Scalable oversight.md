@@ -39,6 +39,7 @@ All of this assumes the model being overseen is not actively trying to deceive i
 
 - [[Concept — Scalable oversight]]
 - [[Concept — Weak-to-strong generalization]]
+- [[Method — Sandwiching]]
 
 ## Open threads
 

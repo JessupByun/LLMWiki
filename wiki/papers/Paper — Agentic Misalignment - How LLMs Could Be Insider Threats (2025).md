@@ -78,6 +78,7 @@ Whether the behavior reflects coherent goal pursuit or role-play remains open; t
 - Recommends runtime monitoring as a mitigation, citing [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] and [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] - the insider-threat model is the kind of adversary [[Concept — AI control]] protocols are designed around.
 - A red-teaming effort in the lineage of [[Paper — Red Teaming Language Models with Language Models (2022)]], which it cites as part of its red-teaming lineage.
 - The resistance to replacement it measures is the empirical counterpart of the incentive [[Paper — The Off-Switch Game (2016)]] analyzes formally (see [[Concept — Corrigibility]]).
+- Its real-versus-evaluation comparison is evidence for [[Concept — Evaluation awareness]]: misbehavior rose when the model concluded the scenario was real.
 
 ## Up
 

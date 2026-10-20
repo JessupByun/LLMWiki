@@ -73,6 +73,7 @@ Unlike the original proposal, where only one disputed sub-component needs judgin
 - Contrasts itself with [[Paper — Weak-to-Strong Generalization (2023)]], which pursues weak supervision of strong models through inductive biases rather than adversarial argument.
 - Cites [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] for the deceptive-model case its honest RLHF debaters don't cover, and [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] in its impact statement as a warning that misapplied supervision can make malicious behavior harder to detect - the same average-case versus worst-case gap that separates [[Cluster — Scalable oversight]] from [[Cluster — Scheming & AI control]].
 - Its best-of-N optimization against judge approval is a controlled instance of optimizing against a learned evaluator, the setting where [[Concept — Reward hacking]] usually appears - here, for debate, it improves truthfulness instead.
+- An information-asymmetric variant of [[Method — Sandwiching]].
 
 ## Up
 

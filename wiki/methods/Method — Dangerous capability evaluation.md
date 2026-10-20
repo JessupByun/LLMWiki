@@ -40,6 +40,7 @@ Three problems shape every design:
 
 - Its reliance on elicitation is tested directly by [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] and threatened by [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]].
 - A cousin of [[Method — Control evaluation]]: both elicit a model's worst-case abilities, but a control evaluation scores a safety protocol against them rather than the model alone.
+- Depends on [[Method — Capability elicitation]]: a failed evaluation bounds capability only as tightly as elicitation was strong.
 
 ## Up
 

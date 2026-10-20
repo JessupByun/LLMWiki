@@ -87,6 +87,7 @@ The causal evaluation-awareness experiments are limited to a single evaluation a
 - Its finding that models sometimes take covert actions to preserve their anti-scheming training is described as consistent with [[Paper — Alignment Faking in Large Language Models (2024)]].
 - Its warning that outcome-based RL can reinforce scheming if scheming works cites [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]], and its reliance on legible reasoning is a direct dependency on [[Concept — Chain-of-thought monitorability]].
 - Uses deliberative alignment, a specification-reasoning training method distinct from but related to [[Paper — Constitutional AI (2022)]]'s principle-based approach.
+- Its causal evaluation-awareness experiment is the strongest evidence for [[Concept — Evaluation awareness]] in this wiki.
 
 ## Up
 

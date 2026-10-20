@@ -18,6 +18,8 @@ Two complementary approaches sit here.
 [[Paper — Model Evaluation for Extreme Risks (2023)]] formalizes [[Method — Dangerous capability evaluation]]: test for specific skills that could enable extreme harm, alongside alignment evaluations of whether the model would use them, and gate training and deployment on the results.
 [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]] pilots one at ARC Evals (now METR) on GPT-4 and Claude agents, testing them on tasks relevant to autonomous replication and adaptation.
 [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] runs a full programme on Gemini 1.0, adding a way to measure how close an agent is to a capability it can't yet demonstrate.
+The dangerous-capability approach answers a worry from [[Paper — Emergent Abilities of Large Language Models (2022)]]: abilities that appear suddenly with scale, so a new model can't be judged by extrapolating the last one.
+[[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] argues much of that suddenness is an artifact of all-or-nothing scoring, a case for continuous measures.
 The second approach measures general capability instead: [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]], the cluster's founding paper, proposes the [[Concept — Task-completion time horizon]] - the length of task, measured in how long a skilled human takes, that a model completes with a given success rate - as a general-purpose yardstick that survives benchmark saturation because its unit is human time rather than any one benchmark's content.
 Measured across 12 frontier models from 2019-2025, this horizon has been doubling roughly every seven months; naive extrapolation of that trend implies AI systems capable of autonomously completing month-long tasks sometime around 2028-2030, with direct implications for when autonomy-dependent dangerous capabilities - unsupervised long-horizon CBRN research, self-replication, AI-automated AI research itself - might first become technically feasible.
 [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] supplies the counterweight: every such measurement assumes the model is trying its best, and a model or developer that sandbags (see [[Concept — Sandbagging]]) breaks that assumption, and [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] measures when fine-tuning can recover a deliberately hidden capability anyway - reliably with a few good demonstrations, unreliably without.
@@ -33,6 +35,8 @@ Measured across 12 frontier models from 2019-2025, this horizon has been doublin
 | [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] | Runs that programme on Gemini 1.0 - no strong dangerous capabilities, early warning signs across areas with persuasion the most mature - and adds expert bits, a continuous measure of how close an agent is to a task it fails alone. |
 | [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]] | The earliest dangerous-capability evaluation of LM agents here: ARC Evals (now METR) tests GPT-4 and Claude agents for autonomous replication and adaptation on 12 real-world tasks, and warns that a fixed agent's failure does not bound future agents. |
 | [[Benchmark — HCAST]] | The human-timed task suite behind the METR time-horizon paper: 189 software tasks with 563 human baselines, built to read agent scores as "tasks of this length." |
+| [[Paper — Emergent Abilities of Large Language Models (2022)]] | The source of the worry behind early-warning evaluation: abilities that appear suddenly with scale and can't be forecast from smaller models. Dual-tagged canon. |
+| [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] | The measurement rebuttal: over 92% of claimed BIG-Bench emergence appears under exact match or multiple-choice grade, and continuous metrics make progress smooth and forecastable - the rationale cited for expert bits, one of this cluster's continuous measures. |
 
 ## Methods and concepts
 
@@ -40,6 +44,7 @@ Measured across 12 frontier models from 2019-2025, this horizon has been doublin
 - [[Concept — Sandbagging]] - the failure mode where the model being measured deliberately scores below its actual capability.
 - [[Concept — Data contamination]] - benchmark test data leaking into training sets, the failure mode every capability measurement in this cluster has to rule out.
 - [[Method — Dangerous capability evaluation]]
+- [[Method — Capability elicitation]]
 
 ## Open threads
 
