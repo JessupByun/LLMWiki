@@ -45,7 +45,7 @@ Evaluation data is generated on-policy by Llama-3.3-70B-Instruct and labeled by 
 - **Sandbagging:** the setting of [[Paper — Sabotage Evaluations for Frontier Models (2024)]], where a system prompt instructs the model to answer hazardous-knowledge questions wrongly while answering general ones correctly - so, like the training data, it involves instructed lying.
 
 Ordinary chat responses to Alpaca prompts calibrate the false-positive rate.
-Alternatives compared include probes trained on roleplaying data, on sparse-autoencoder features, after an "Was your last response deceptive? No" follow-up, and a GPT-4o black-box baseline.
+Alternatives compared include probes trained on roleplaying data, on sparse-autoencoder features, after a "Was your last response deceptive? No" follow-up, and a GPT-4o black-box baseline.
 
 ## Results
 
@@ -72,7 +72,7 @@ The authors' own:
 
 ## Tension / update
 
-[[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] reports the opposite generalization result for a different probe: one that detects the deliberately trained deception of Sleeper Agents near-perfectly does no better than chance on misleading behavior RLHF produced unintentionally.
+[[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] reports the opposite generalization result for a different probe: a probing method that catches Sleeper Agents' planted behavior near-perfectly performs about at chance on misleading behavior RLHF produced unintentionally.
 The probes, models, and behaviors differ, but together the two leave open whether monitors validated on artificial or instructed deception catch deception that training produces on its own.
 
 ## Relations
@@ -82,6 +82,8 @@ The probes, models, and behaviors differ, but together the two leave open whethe
 - A white-box complement to the black-box [[Method — Trusted monitoring]] of [[Concept — AI control]], and a candidate detector for [[Concept — Deceptive instrumental alignment]].
 - Its finding that sparse-autoencoder features underperform raw activations is a data point on the practical use of [[Method — Sparse Autoencoder (SAE)]].
 - A sibling activation monitor to [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]], which reads character traits rather than deception (see [[Method — Activation steering]]).
+- Evidence for [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
+- Evidence for [[Question — Do activation probes catch deception that arises naturally rather than by instruction or planting]].
 
 ## Up
 

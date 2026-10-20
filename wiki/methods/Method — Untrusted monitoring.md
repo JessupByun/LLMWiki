@@ -31,6 +31,7 @@ Whether these work depends on how the copies could coordinate: a signal agreed i
 - [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] introduces it, defending against a human-designed collusion signal.
 - [[Paper — Subversion via Focal Points - Investigating Collusion in LLM Monitoring (2025)]] tests collusion without communication: Claude 3.7 Sonnet rarely converges on a shared signal, but sometimes on unpredictable ones.
 - [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]] builds a safety case around four collusion strategies and finds fine-tuned self-recognition often the strongest threat in its GPT-4.1 coding setting.
+- [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] layers untrusted monitoring on top of Time Travel resampling for its best result, 92.6% safety at 95% usefulness.
 - [[Paper — A Sketch of an AI Control Safety Case (2025)]] uses an untrusted monitor with trusted summarization as a collusion defense.
 
 ## Relations
@@ -38,6 +39,7 @@ Whether these work depends on how the copies could coordinate: a signal agreed i
 - The counterpart to [[Method — Trusted monitoring]]: more capable, but requires defending against the monitor itself being adversarial.
 - Scored with [[Method — Control evaluation]], and bounding collusion ability conservatively is a [[Method — Capability elicitation]] problem.
 - Self-recognition, often the strongest collusion route in the 2026 safety-case paper's coding setting, is a facet of [[Concept — Situational awareness]].
+- Monitor jailbreaks like those [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] uses against trusted monitors are out of scope there and unmodeled in the untrusted-monitoring safety case.
 
 ## Up
 

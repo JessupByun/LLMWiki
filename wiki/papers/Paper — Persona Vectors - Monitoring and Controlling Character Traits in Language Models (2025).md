@@ -79,6 +79,8 @@ The authors' own:
 - Its sycophancy trait is the behavior studied in [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] (see [[Concept — Sycophancy]]); it also cites the April 2025 GPT-4o sycophancy incident.
 - An activation-based monitor of a model's state, alongside the deception probes of [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]].
 - In the wiki's own connection (the paper doesn't discuss it), the assistant-persona framing echoes the assistant-persona feature found by SAE in [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]]; the appendix begins decomposing persona vectors into SAE features (see [[Method — Sparse Autoencoder (SAE)]]).
+- Evidence for [[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]].
+- Evidence for [[Question — Do activation probes catch deception that arises naturally rather than by instruction or planting]].
 
 ## Up
 

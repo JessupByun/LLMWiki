@@ -19,7 +19,7 @@ Northeastern University, MIT, Technion, and an independent researcher.
 
 ## Impact
 
-Dictionary learning had produced a vocabulary of interpretable features, and circuit analysis had produced wiring diagrams of how behaviors are computed - but the circuits were made of neurons and attention heads too tangled to read.
+Dictionary learning had produced a vocabulary of interpretable features, and circuit analysis had produced wiring diagrams of how behaviors are computed - but the circuits were made of neurons and attention heads too coarse and polysemantic to read at scale.
 This paper joins the two: circuits whose nodes are SAE features, found automatically and cheaply enough to run on thousands of behaviors.
 Its headline application matters for alignment: when a classifier secretly relies on a signal its trainers didn't intend, a human can read the circuit, spot the culprit features, and delete them - even when no available labeled data could reveal the problem.
 

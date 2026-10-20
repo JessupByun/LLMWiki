@@ -2,7 +2,7 @@
 type: paper
 status: mature
 updated: 2026-10-20
-summary: "Introduces cross-layer transcoders and attribution graphs, extending sparse-feature decomposition into genuine causal circuit discovery - tracing how interpretable features combine across layers to produce a specific model output on a specific prompt, rather than only listing which features exist, and validating the resulting graphs by testing whether predicted interventions actually move the model's real activations and logits."
+summary: "Introduces cross-layer transcoders and attribution graphs, scaling feature-level causal circuit discovery into a general pipeline for a production model - tracing how interpretable features combine across layers to produce a specific model output on a specific prompt, rather than only listing which features exist, and validating the resulting graphs by testing whether predicted interventions actually move the model's real activations and logits."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2025/attribution-graphs/methods.html"]
 tags: [interpretability, mechanistic-interpretability, sparse-autoencoders, circuits]
@@ -21,13 +21,14 @@ Not peer-reviewed and not an arXiv preprint - published on Anthropic's own Trans
 ## Impact
 
 [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]] answered whether sparse-autoencoder feature decomposition scales to a real production model, but a dictionary of millions of individually-interpretable features still doesn't say how the model actually combines them to produce a specific output on a specific input.
-This paper is the direct methodological answer to that gap: it introduces **cross-layer transcoders** and **attribution graphs**, a pipeline for tracing the causal computational pathway between interpretable features across layers, turning a static list of "what concepts exist in this model" into an actual circuit explaining "how this concept led to that output, on this exact prompt."
+This paper is Anthropic's methodological answer to that gap, scaling up an approach [[Paper — Sparse Feature Circuits - Discovering and Editing Interpretable Causal Graphs in Language Models (2024)]] had shown on small models: it introduces **cross-layer transcoders** and **attribution graphs**, a pipeline for tracing the causal computational pathway between interpretable features across layers, turning a static list of "what concepts exist in this model" into an actual circuit explaining "how this concept led to that output, on this exact prompt."
 Applied to Claude 3.5 Haiku in a companion paper, the resulting graphs let researchers actually validate whether their causal story is real by intervening on a specific feature and checking whether the predicted downstream change actually happens.
 
 ## Problem it solved
 
 Having an SAE's dictionary of interpretable features says nothing about how those features interact, because features at different layers are connected through the model's real, nonlinear MLP blocks, and there was no principled way to attribute one feature's influence on another without somehow getting past that nonlinearity.
 Hand-verified circuits like [[Paper — Interpretability in the Wild - a Circuit for Indirect Object Identification in GPT-2 small (2022)]]'s showed this kind of tracing was possible in principle, but only through painstaking, bespoke causal-intervention work built around a specific hypothesis for one narrow task - there was no general, scalable pipeline that could be pointed at an arbitrary behavior in a real production-scale model.
+Sparse Feature Circuits had already built causal circuits from SAE features with gradient-based attribution, but on small models (Pythia-70M, Gemma-2-2B) and with per-sublayer SAEs rather than transcoders.
 
 ## Core idea
 
@@ -51,7 +52,7 @@ Validated perturbation effects hold up well one layer downstream of an intervent
 
 ## Why it endures
 
-This paper is the direct sequel to the entire SAE dictionary-learning lineage this cluster already documents, extending it from "find the interpretable features" into "explain how those features causally combine to produce a specific behavior," and its companion applications paper is offered as the proof this actually works on a real, deployed model rather than only a toy one.
+This paper is the Anthropic SAE lineage's own sequel and the largest-scale version of the feature-circuit idea Sparse Feature Circuits introduced, extending it from "find the interpretable features" into "explain how those features causally combine to produce a specific behavior," and its companion applications paper is offered as the proof this actually works on a real, deployed model rather than only a toy one.
 The specific design choices the authors flag as most likely to be durable - sparse learned features over raw neurons, transcoders over ordinary SAEs specifically because they decompose computation rather than only representation, and cross-layer over per-layer decoding - are framed as the parts of the methodology built to last, while other choices (freezing attention entirely, training on nothing but reconstruction MSE plus sparsity) are explicitly called provisional first steps rather than a finished pipeline.
 
 ## Limitations
@@ -61,7 +62,7 @@ Reconstruction error becomes "dark matter" that can dominate a graph entirely on
 
 ## Relations
 
-- The direct methodological sequel to [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]] and the whole SAE lineage running back through [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] and [[Paper — Toy Models of Superposition (2022)]]: those papers answer "what interpretable features exist," this paper answers "how do they causally combine."
+- The direct methodological sequel to [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]] and the whole SAE lineage running back through [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] and [[Paper — Toy Models of Superposition (2022)]]: those papers answer "what interpretable features exist," this paper answers "how do they causally combine" - a question Sparse Feature Circuits first answered at small scale.
 - Explicitly aims to generalize and automate the kind of hand-verified circuit work [[Paper — Interpretability in the Wild - a Circuit for Indirect Object Identification in GPT-2 small (2022)]] does manually - the same goal of a validated, causal circuit explanation, but via a scalable pipeline rather than a bespoke investigation built around one specific hypothesis.
 - Its companion applications paper, [[Paper — On the Biology of a Large Language Model (2025)]], is the evidence this methodology surfaces real, validated mechanisms - including a chain-of-thought faithfulness case study directly relevant to [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]], and a hidden-goal model-organism case study directly relevant to [[Cluster — Scheming & AI control]].
 - [[Paper — Sparse Feature Circuits - Discovering and Editing Interpretable Causal Graphs in Language Models (2024)]] built causal circuits from SAE features earlier, on Pythia-70M and Gemma-2-2B, using gradient-based attribution - a smaller-scale precursor to attribution graphs.

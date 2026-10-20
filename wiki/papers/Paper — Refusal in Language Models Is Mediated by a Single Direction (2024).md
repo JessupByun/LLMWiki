@@ -79,7 +79,8 @@ They judge that the method only marginally lowers the bar for jailbreaking open 
 [[Paper — Representation Engineering - A Top-Down Approach to AI Transparency (2023)]] found Vicuna's internal harmfulness representation stayed intact under adversarial suffixes and jailbreaks, concluding that something other than perceived harmfulness explains why models comply.
 This paper finds the opposite for its refusal direction: an adversarial suffix suppresses it to harmless-prompt levels in Qwen 1.8B.
 The authors flag this contrast themselves.
-The metrics differ too - RepE measured harmful/harmless classification accuracy on Vicuna-13B against a universal suffix, while this paper measured how strongly the direction is expressed under a GCG suffix optimized for Qwen 1.8B - and the two may be measuring different things - a representation of harmfulness versus the decision to refuse - and each result rests on one model, so the disagreement is about what a jailbreak disrupts, not yet settled.
+The metrics differ too: RepE measured harmful/harmless classification accuracy on Vicuna-13B against a universal suffix, while this paper measured how strongly the direction is expressed under a GCG suffix optimized for Qwen 1.8B.
+The two may also be measuring different things - a representation of harmfulness versus the decision to refuse - and each result rests on one model, so the disagreement is about what a jailbreak disrupts, not yet settled.
 
 ## Relations
 
@@ -88,7 +89,7 @@ The metrics differ too - RepE measured harmful/harmless classification accuracy 
 - Evaluates with [[Benchmark — HarmBench]] and its classifier.
 - In the wiki's own reading, mechanistic evidence for the shallowness of refusal training, the weakness [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] sidesteps for deployed models by adding separate classifiers (which don't help against weight edits on open models).
 - Its first author co-wrote [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]], which extends the recipe from refusal to character traits.
-- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends against exactly the weakness this paper exposes, making harmful representations unusable even after refusal is bypassed, and includes a refusal-direction steering attack in its evaluation.
+- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends against exactly the weakness this paper exposes, making harmful representations unusable even after refusal is bypassed, and includes a related representation-steering attack in its evaluation.
 
 ## Up
 

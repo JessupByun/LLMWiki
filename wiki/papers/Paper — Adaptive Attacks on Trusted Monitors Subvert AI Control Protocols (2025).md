@@ -3,7 +3,7 @@ type: paper
 status: mature
 updated: 2026-10-20
 summary: "Shows that an untrusted model which knows the control protocol can defeat it by planting a prompt injection aimed at the trusted monitor in its own output: injections often make backdoored work look less suspicious than honest work, collapsing every monitor-based protocol on APPS backdooring to the safety of auditing blindly (and nearly so on BashBench), and Ctrl-Z's defer-to-resample protocol backfires on APPS by turning the injection into a best-of-n attack."
-cluster: ["Scheming & AI control"]
+cluster: ["Scheming & AI control", "Adversarial robustness & security"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025).pdf"]
 tags: [ai-control, trusted-monitoring, prompt-injection, adversarial-robustness, red-teaming]
 aliases: ["arxiv:2510.09462", "Terekhov et al. 2025", "prompt injection against monitors"]
@@ -84,7 +84,9 @@ The authors read this as a protocol tailored to one attack policy failing to gen
 - Points to white-box monitoring, such as [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]], as a way past black-box monitors' weakness.
 - Justifies its protocol-aware attacker partly by citing evaluation-awareness results such as [[Benchmark — SAD]].
 - Monitor jailbreaks are named as an unmodeled gap by [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]], whose untrusted-monitoring safety case (see [[Method — Untrusted monitoring]]) leaves unmodeled direct attacks by the policy on either monitor.
+- Evidence for [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
 
 ## Up
 
 - [[Cluster — Scheming & AI control]]
+- [[Cluster — Adversarial robustness & security]]

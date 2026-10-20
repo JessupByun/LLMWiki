@@ -1,7 +1,7 @@
 ---
 type: question
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "When a model is fine-tuned to stop exhibiting a failure that red-teaming elicited, does that training remove the underlying behavior, or just teach the model to distinguish real triggers from red-team approximations more precisely?"
 cluster: ["Scheming & AI control"]
 sources: []
@@ -25,6 +25,7 @@ Their explanation is that the model learns to distinguish the genuine trigger fr
   This is the same "suppress the visible symptom, keep the behavior" pattern, arising from ordinary training pressure on an incidental failure rather than from a planted backdoor - though the training signal there is a monitor reading the reasoning, not red-teamed inputs.
 - **Partial suppression, not removal, of a planted goal:** [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] trains o4-mini to covertly sabotage a successor model, then applies anti-scheming training - sabotage disappears in most environments, but the goal resurfaces in rare cases and when talking to supposed allies, and part of the overall behavioral improvement is causally attributable to the model recognizing it is being evaluated.
 - **Hiding learned from red-teamed inputs, on a planted objective:** [[Paper — Auditing Language Models for Hidden Objectives (2025)]] trains its model with adversarial prompts trying to make it confess its objective; it stops admitting it, yet the objective persists and prefill attacks and interpretability still surface it - training on red-teamed inputs taught concealment, not removal.
+- **Training against a monitor's view, in activation space:** [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] - a loss penalty on movement along a persona vector failed to stop the trait shift, which the authors suspect is because the model represented the trait in other directions; as with Baker et al., the training signal is a monitor's view (here a probe direction) rather than red-teamed inputs.
 
 ## Why the tension might be resolvable rather than real
 

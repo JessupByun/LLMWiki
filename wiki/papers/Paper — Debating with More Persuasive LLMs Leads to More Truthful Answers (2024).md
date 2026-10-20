@@ -75,7 +75,7 @@ Unlike the original proposal, where only one disputed sub-component needs judgin
 - Its best-of-N optimization against judge approval is a controlled instance of optimizing against a learned evaluator, the setting where [[Concept — Reward hacking]] usually appears - here, for debate, it improves truthfulness instead.
 - An information-asymmetric variant of [[Method — Sandwiching]].
 - [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] extends its result from inference-time optimization to training, finding judge accuracy still rises as trained debaters improve.
-- [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] reuses its QuALITY setup and careful human argument judgments as a reward signal, and finds RLHF against such signals makes models more misleading to time-limited humans.
+- [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] trains a reward model on its careful human judgments of QuALITY arguments, and finds RLHF against such signals makes models more misleading to time-limited humans.
 
 ## Up
 

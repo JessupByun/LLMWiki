@@ -42,6 +42,7 @@ The disanalogy is what counts as "small": an image attack must be imperceptible,
 - [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] defends against universal jailbreaks with constitution-trained input and output classifiers, holding up against over 3,000 hours of red teaming.
 - [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows a white-box route: ablating one activation direction removes refusal in open-weight models with little capability loss.
 - [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends by disrupting harmful internal representations rather than training refusals, generalizing to attacks it never saw.
+- [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] turns jailbreaking on a safety monitor, with the monitored model itself as the attacker.
 
 ## Up
 

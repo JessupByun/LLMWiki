@@ -76,6 +76,7 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 - [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] finds a model RL-trained to exploit planted reward hacks almost never mentions them in its reasoning (under 2% in five of six environments).
 - [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] argues situational awareness turns reward hacking selective - exploiting flaws only where the model predicts it won't be caught - and that penalizing caught hacks can reward subtler ones.
 - [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] shows reward hacking under ordinary RLHF generalizing past the training reward to fool human evaluators themselves.
+- [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] compares its weak-to-strong deception with reward hacking in an appendix.
 
 ## Up
 

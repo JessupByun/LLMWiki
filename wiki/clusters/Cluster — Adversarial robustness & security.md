@@ -23,6 +23,7 @@ The modern jailbreak and prompt-injection literature is the same problem relocat
 Three genuinely distinct LLM-era threads now sit inside that relocation: **jailbreaking** (defeating a model's own safety training, whether by hand-crafted prompts, gradient-optimized suffixes, or - the newest lineage - simply exploiting long context windows via in-context learning), **prompt injection** (an external attacker planting instructions in content an application processes, with no need for the target to have any safety training to defeat in the first place, escalating from single-turn apps to genuinely agentic, tool-using ones), and **dangerous-capability benchmarking** (measuring and, increasingly, removing hazardous knowledge itself, rather than only testing whether a model can be talked into revealing it).
 For open-weight models, [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows a cheaper non-prompt route than harmful finetuning: edit the weights to remove the single direction that mediates refusal.
 On the defense side, [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] shows universal jailbreaks can be resisted by guard classifiers outside the model rather than by the model's own safety training, with a later version reaching deployment-viable refusal rates, while [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends inside the model, disrupting the internal representations harmful output depends on so that bypassing refusal no longer unlocks the capability.
+[[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] carries prompt injection into AI control, with the untrusted model itself as the attacker and the safety monitor as the target.
 Automated red-teaming - training a second model to find failures rather than relying on human ingenuity - is the methodological thread connecting this cluster to [[Cluster — Scheming & AI control]], where red-teaming shifts from finding a model's failures to constructing and stress-testing models that are themselves the adversary.
 
 ## Members
@@ -43,7 +44,8 @@ Automated red-teaming - training a second model to find failures rather than rel
 | [[Paper — Many-shot Jailbreaking (2024)]] | A third jailbreak lineage needing neither cleverness nor gradient access: stuffing a long context window with hundreds of fake compliant turns reliably overrides safety training through ordinary in-context learning, traced mechanistically to induction heads. |
 | [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] | The defense side of the jailbreak thread: constitution-trained input and streaming output classifiers held up against over 3,000 hours of paid red teaming for universal CBRN jailbreaks. |
 | [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] | A white-box jailbreak from interpretability: ablating one activation direction removes refusal with little capability cost, matching prompt-specific GCG on Qwen 7B and 14B - with preliminary evidence of how GCG-style suffixes suppress that direction. Primary cluster is Mechanistic interpretability. |
-| [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] | A model-internal defense: instead of refusing or blocking known attacks, scramble the representations harmful output depends on, cutting attack success roughly tenfold across unseen attacks at near-zero capability cost. |
+| [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] | A model-internal defense: instead of refusing or blocking known attacks, scramble the representations harmful output depends on, cutting attack success roughly eight- to tenfold across unseen attacks at near-zero capability cost. |
+| [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] | Prompt injection and the adaptive-attack standard carried into AI control: the untrusted model itself attacks the safety monitor, collapsing monitor-based protocols on APPS. Primary cluster is Scheming & AI control. |
 
 ## Methods and concepts
 
@@ -54,13 +56,14 @@ Automated red-teaming - training a second model to find failures rather than rel
 - [[Benchmark — HarmBench]]
 - [[Benchmark — WMDP]]
 - [[Benchmark — AgentDojo]]
+- [[Method — Activation steering]]
 
 ## Open threads
 
-Group V is done as of this ingest, closing out Madry, Perez, Greshake, HarmBench, WMDP, AgentDojo, and Many-shot Jailbreaking - this cluster has gone from the thinnest north-star pillar (2 papers) to one of the more thoroughly worked, spanning pixel-space adversarial examples, three distinct jailbreak lineages, indirect prompt injection in both single-turn and agentic form, automated red-teaming, and dangerous-capability benchmarking with unlearning as a mitigation.
 Certified defenses are now represented by [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]].
 [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] fills the long-standing gap on why adversarial examples exist, superseding the founding paper's dense-pockets explanation (see the Tension / update on both pages).
 GCG's own central open question - whether post-hoc RLHF-style alignment training can ever structurally close the jailbreak gap - is picked up directly by [[Cluster — Scheming & AI control]], which studies safety under the assumption a model's trained-in alignment cannot be fully trusted.
+Adaptive attacks now reach safety monitors as well as models: [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] imports this cluster's adaptive-attack standard into control evaluation, and [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows open-weight safety can be removed by a rank-one weight edit, which guard-classifier defenses like Constitutional Classifiers do not address.
 
 ## Up
 

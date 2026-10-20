@@ -82,6 +82,7 @@ Only basic defer-to-resample was tested, though: Ctrl-Z's stronger Time Travel a
 - Complements the model-organisms half of this cluster: where [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] and [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] ask whether a model can become genuinely misaligned, this paper asks whether a wrapped protocol stays safe regardless of the answer.
 - Its precursor (Bhatt et al.'s "Shell Games") is cited by [[Paper — A Sketch of an AI Control Safety Case (2025)]] for early control results on unsafe shell commands; [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] tests whether models could devise the attack strategies Ctrl-Z's red team writes by hand.
 - [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]] extends the same control-evaluation setting to threats where no single action is conclusive, adapting the protocol over the deployment.
+- Evidence for [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
 
 ## Up
 

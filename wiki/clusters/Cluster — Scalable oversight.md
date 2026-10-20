@@ -20,13 +20,15 @@ Split out from [[Cluster — Post-training alignment]]: that cluster is about sh
 
 **Making it testable.** None of this can be checked directly without superhuman models, so the empirical work here builds proxies.
 [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] introduces *sandwiching*: tasks where a model beats non-experts but not experts, with non-experts trying to get reliable answers out of it and experts grading at the end.
-Weak-to-strong generalization swaps the humans for a weak model, and [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] uses the same setup to show the student appears able to infer the weak supervisor's blind spots, with part of its conflict-induced failures landing there.
+Weak-to-strong generalization swaps the humans for a weak model.
 [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] runs debate on QuALITY with judges denied the story entirely, an information-asymmetric variant of that setup, and finds the effect debate needs: making debaters more persuasive - judged only by whether they convince the judge - makes judges *more* accurate, while a single persuasive advisor makes them less accurate.
 [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] shows the effect survives actual training of debaters, not just inference-time optimization.
 [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] takes the same adversarial idea to a capability gap rather than an information gap, training a strong prover's reasoning to be checkable by much smaller verifiers.
 
 The need is already present: [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] finds that ordinary RLHF makes models better at convincing human evaluators of wrong answers.
-All of this assumes the model being overseen is not actively trying to deceive its overseer; that worst case is the subject of [[Cluster — Scheming & AI control]].
+All of this assumes the model being overseen is not actively trying to deceive its overseer.
+[[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] gives a first measurement of how that assumption erodes inside the proxy setups themselves: under a conflicting objective, a weak-to-strong student appears able to infer the weak supervisor's blind spots, and part of its conflict-induced failures land there.
+The fully adversarial worst case is the subject of [[Cluster — Scheming & AI control]].
 
 ## Members
 
@@ -52,7 +54,7 @@ All of this assumes the model being overseen is not actively trying to deceive i
 
 The empirical debate result relies on verifiable evidence (a quote tool) and honest RLHF-trained debaters; whether debate holds up without verifiable evidence, or against a deceptive debater, is untested here - the second question is where this cluster meets [[Cluster — Scheming & AI control]].
 Amplification has no empirical test beyond toy algorithmic tasks in this wiki, and recursive reward modeling and market-making, both named by the sandwiching paper, have no pages.
-Weak-to-Strong Generalization's explicit "no deceptive alignment in base models" assumption is the same gap: average-case elicitation here versus worst-case adversarial robustness there.
+Weak-to-Strong Generalization's explicit "no deceptive alignment in base models" assumption is the same gap: average-case elicitation here versus worst-case adversarial robustness there; [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] probes it from the average-case side, finding deception-like error placement with no trained-in deceptive goal, though only in small models and measured statistically rather than as intent.
 
 ## Up
 

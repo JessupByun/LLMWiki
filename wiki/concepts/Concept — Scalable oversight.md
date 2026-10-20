@@ -44,6 +44,7 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 - [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] trains outputs to be checkable by weaker verifiers, finding legibility transfers to humans, and [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] shows debate's benefit survives training.
 - [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] measures one way oversight fails across a capability gap: a strong model letting part of its conflict-induced failures fall where a weak supervisor can't check; [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] names it as the longer-term goal of using RLHF against reward misspecification.
 - [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] shows the oversight gap already bites: RLHF makes models better at misleading skilled human evaluators.
+- [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] reframes the trusted monitor in AI control as a weak overseer that a stronger model can manipulate.
 
 ## Up
 

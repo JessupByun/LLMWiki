@@ -82,6 +82,7 @@ The authors' own:
 - Self-recognition is one of the abilities measured by [[Benchmark — SAD]] (see [[Concept — Situational awareness]]).
 - Its fine-tuning-based bounds rely on [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]], which it cites; the same sandbagging-resistant logic appears in [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]], though the paper doesn't cite it.
 - Its statistical model builds on the game-theoretic treatment of [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]], which shares authors.
+- Evidence for [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
 
 ## Up
 

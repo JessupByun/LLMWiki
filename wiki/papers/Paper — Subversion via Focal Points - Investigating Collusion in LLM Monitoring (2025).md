@@ -68,6 +68,7 @@ The authors' own:
 - Tests the collusion threat to the untrusted-monitoring protocol of [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] without the human-designed shared signal (see [[Method — Untrusted monitoring]]).
 - Its acausal-collusion setup is extended in [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]], which lets the monitor see the policy's output before deciding and compares acausal collusion with other strategies.
 - A coordination counterpart to the strategic-ability tests of [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]], under [[Concept — AI control]].
+- Evidence for [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]].
 
 ## Up
 
