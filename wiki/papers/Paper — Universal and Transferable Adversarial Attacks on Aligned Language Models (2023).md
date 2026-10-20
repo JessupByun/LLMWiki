@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Automatically finds adversarial suffixes that reliably jailbreak aligned open-source language models and transfer, purely black-box and with varying success, to production systems including ChatGPT, Bard, and Claude."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023).pdf"]
@@ -77,6 +77,7 @@ The paper proposes no defense and does not evaluate whether adversarial training
 - [[Benchmark — HarmBench]] standardizes GCG - run in three variants (standard, multi-prompt, transfer) - as a shared evaluation baseline alongside its other attacks, and builds its own R2D2 defense by adversarially training directly against it.
 - [[Benchmark — WMDP]] uses GCG as its robustness stress test for unlearning, finding an unlearned model resists jailbreaking where a merely refusal-trained one does not.
 - [[Paper — Many-shot Jailbreaking (2024)]] composes with GCG directly: a GCG suffix sharply boosts zero-shot jailbreak success but loses its advantage as more many-shot context is added.
+- [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] counts GCG-style attacks among those its streaming output classifier mitigates.
 
 ## Up
 

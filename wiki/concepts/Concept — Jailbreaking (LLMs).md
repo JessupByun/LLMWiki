@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-20
+updated: 2026-10-20
 summary: "Getting an aligned language model to produce content or behavior its safety training was meant to prevent, whether through hand-crafted prompts or automated optimization."
 cluster: ["Adversarial robustness & security"]
 sources: []
@@ -39,6 +39,7 @@ The disanalogy is what counts as "small": an image attack must be imperceptible,
 - [[Paper — Many-shot Jailbreaking (2024)]] traces its in-context jailbreak mechanism to [[Concept — Induction heads]], the same circuit behind ordinary in-context learning, giving this concept's newest lineage a genuine mechanistic account.
 - [[Paper — Red Teaming Language Models with Language Models (2022)]] is a direct methodological precursor: automating the *discovery* of many diverse failure categories with a second LM, rather than automating one single reusable jailbreak attack.
 - Distinct from indirect prompt injection ([[Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)]]): a jailbreak is delivered through the user's own prompt to circumvent the model's own safety training, while an indirect injection arrives through third-party content an application retrieves, and doesn't need the target model to have any safety training to defeat in the first place.
+- [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] defends against universal jailbreaks with constitution-trained input and output classifiers, holding up against over 3,000 hours of red teaming.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Proposes the 50%-task-completion time horizon - the length of task, measured by how long a skilled human takes, that an AI agent can complete with 50% success - as a single human-calibrated yardstick for general capability, and finds this horizon has been doubling roughly every seven months across 12 frontier models released between 2019 and 2025, with naive extrapolation implying AI systems capable of autonomously completing month-long tasks sometime around 2028-2030."
 cluster: ["Capability evals"]
 sources: ["raw/papers/capability-evals/Paper — Measuring AI Ability to Complete Long Software Tasks (2025).pdf"]
@@ -77,6 +77,7 @@ The forecast is also far more sensitive to the doubling-rate estimate itself tha
 - [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] tackles the same early-warning problem with a different continuous measure - expert bits of help needed on specific dangerous tasks - and builds its self-proliferation tasks on ARC Evals' earlier autonomous-replication work, from the team that became METR.
 - Most of its tasks come from [[Benchmark — HCAST]], whose human baselines supply the time ratings, and several of its authors earlier wrote [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]].
 - Its under-elicitation caveat is the measurement problem that [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] and [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] study directly: a horizon is only as high as the scaffolding and elicitation behind it.
+- Seven of its tasks come from [[Benchmark — RE-Bench]], each rated at a fixed 8 hours.
 
 ## Up
 

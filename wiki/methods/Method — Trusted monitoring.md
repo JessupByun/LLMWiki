@@ -43,6 +43,7 @@ Escalating only the suspicious tail, rather than everything, is what makes the s
 - Its micro-protocols - query, edit, and plan-based variants scored by a trusted monitor - are the building blocks of [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]], which adds a deployment-level layer choosing among them.
 - [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] models trusted-monitoring protocols as a family parameterized by audit and defer rates, finding audit rates above 2% can Pareto-improve on the original 2% protocols (3% with the original monitor, 5% with a weaker one).
 - [[Benchmark — SHADE-Arena]] measures LLM monitors on subtle agentic sabotage: the best LLM monitor (not necessarily a weaker, trusted model) reaches 0.87 AUC, so catching 80% of sabotage would mean flagging over 20% of benign transcripts.
+- [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] is a deployed monitoring layer against misuse: classifiers screening inputs and streaming outputs, rather than a weaker model watching a possibly scheming one.
 
 ## Up
 

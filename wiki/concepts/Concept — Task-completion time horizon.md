@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A frontier AI model's capability measured as the length of task, in the time a skilled human would take, that it can complete at a given success rate - its '50% time horizon' is the task duration at which it succeeds half the time - giving one comparable number across benchmarks of wildly different content and difficulty."
 cluster: ["Capability evals"]
 sources: []
@@ -30,6 +30,7 @@ The choice of success threshold matters: an 80% time horizon (how long a task a 
 - Introduced and measured by [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]], which fits it across three task suites (HCAST, RE-Bench, SWAA) and finds a roughly seven-month doubling time for frontier models released 2019-2025.
 - Explicitly modeled on Item Response Theory, the same psychometric framework that scores human test-takers' ability against item difficulty.
 - Distinguished from a fixed capability threshold like [[Benchmark — WMDP]]'s proxy questions: WMDP asks whether a model possesses a specific hazardous knowledge domain, while time horizon asks how long a task the model can carry out autonomously in general, regardless of domain.
+- [[Benchmark — RE-Bench]] supplies seven 8-hour ML research-engineering tasks behind the metric and shows the same pattern at a smaller scale: agents lead at 2 hours, experts at 8 and beyond.
 
 ## Up
 

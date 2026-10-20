@@ -42,6 +42,7 @@ Three problems shape every design:
 - A cousin of [[Method — Control evaluation]]: both elicit a model's worst-case abilities, but a control evaluation scores a safety protocol against them rather than the model alone.
 - Depends on [[Method — Capability elicitation]]: a failed evaluation bounds capability only as tightly as elicitation was strong.
 - [[Benchmark — SAD]] applies the approach to situational awareness, a capability that helps a model evade oversight rather than enabling misuse.
+- [[Benchmark — RE-Bench]] applies it to AI R&D automation, comparing agents with human experts under equal conditions.
 
 ## Up
 

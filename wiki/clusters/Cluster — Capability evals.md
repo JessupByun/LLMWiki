@@ -38,6 +38,7 @@ Measured across 12 frontier models from 2019-2025, this horizon has been doublin
 | [[Paper — Emergent Abilities of Large Language Models (2022)]] | The source of the worry behind early-warning evaluation: abilities that appear suddenly with scale and can't be forecast from smaller models. Dual-tagged canon. |
 | [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] | The measurement rebuttal: over 92% of claimed BIG-Bench emergence appears under exact match or multiple-choice grade, and continuous metrics make progress smooth and forecastable - the rationale cited for expert bits, one of this cluster's continuous measures. |
 | [[Benchmark — SAD]] | A capability evaluation aimed at an oversight-evading skill: 16 tasks measuring whether models know what they are and can tell evaluation from deployment. |
+| [[Benchmark — RE-Bench]] | Measures AI R&D automation directly against human experts: agents beat experts at 2 hours but fall behind by 8 and 32 hours; the third task source behind the time horizon. |
 
 ## Methods and concepts
 
@@ -51,7 +52,7 @@ Measured across 12 frontier models from 2019-2025, this horizon has been doublin
 
 Elicitation is this cluster's central unsolved problem: the METR paper measures how fast capability is growing, the sandbagging paper shows a model can make a measurement read low on purpose, the password-locking paper shows when fine-tuning can see through it, and the dangerous-capability papers stress that weak elicitation underestimates capability, so their negative results are effectively lower bounds.
 The two measurement approaches also have yet to meet: [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]]'s expert bits and the time horizon are both continuous early-warning measures, but no paper here relates a model's general horizon to its distance from specific dangerous tasks.
-METR's work now appears in three stages from overlapping authors (the later papers do not cite the earlier ones): [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]]'s 12 hand-graded tasks, [[Benchmark — HCAST]]'s 189 human-timed ones, and the time horizon fitted on top; the natural next addition is the time horizon's third task source, RE-Bench (Wijk et al., arxiv:2411.15114).
+METR's work now appears in stages from overlapping authors (the later papers do not cite the earlier ones): [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]]'s 12 hand-graded tasks, then [[Benchmark — HCAST]]'s human-timed tasks and [[Benchmark — RE-Bench]]'s fixed 8-hour, human-baselined environments, and the time horizon fitted on top.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Attacks on learned systems and defenses against them - adversarial examples, transferability, jailbreaks, prompt injection, automated red-teaming, and dangerous-capability benchmarking."
 cluster: []
 sources: []
@@ -21,6 +21,7 @@ That is what makes it an attack rather than a quirk, because the adversary does 
 
 The modern jailbreak and prompt-injection literature is the same problem relocated from pixel space to token space, which is why this cluster is scoped to attacks on learned systems generally rather than to vision.
 Three genuinely distinct LLM-era threads now sit inside that relocation: **jailbreaking** (defeating a model's own safety training, whether by hand-crafted prompts, gradient-optimized suffixes, or - the newest lineage - simply exploiting long context windows via in-context learning), **prompt injection** (an external attacker planting instructions in content an application processes, with no need for the target to have any safety training to defeat in the first place, escalating from single-turn apps to genuinely agentic, tool-using ones), and **dangerous-capability benchmarking** (measuring and, increasingly, removing hazardous knowledge itself, rather than only testing whether a model can be talked into revealing it).
+On the defense side, [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] shows universal jailbreaks can be resisted by guard classifiers outside the model rather than by the model's own safety training, with a later version reaching deployment-viable refusal rates.
 Automated red-teaming - training a second model to find failures rather than relying on human ingenuity - is the methodological thread connecting this cluster to [[Cluster — Scheming & AI control]], where red-teaming shifts from finding a model's failures to constructing and stress-testing models that are themselves the adversary.
 
 ## Members
@@ -29,6 +30,7 @@ Automated red-teaming - training a second model to find failures rather than rel
 |------|----------------|
 | [[Paper — Intriguing Properties of Neural Networks (2013)]] | Discovered adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets. |
 | [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]] | The provable counterpart to adversarial training: certifies that a noise-averaged classifier's prediction cannot change within an L2 radius, the tight guarantee that made smoothing the state-of-the-art certified defense on ImageNet. |
+| [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] (FGSM) | Replaces the nonlinearity explanation with linearity, explains transfer, and introduces FGSM, the one-step attack that made adversarial training practical. Dual-tagged canon. |
 | [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] (GCG) | The LLM-era sequel: automates jailbreaking with a single adversarial suffix that transfers, purely black-box, from small open models to production systems including ChatGPT, Bard, and Claude. |
 | [[Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018)]] | Reframes adversarial robustness as a min-max saddle-point problem and shows PGD reliably solves the non-concave inner attack, giving adversarial training its first optimization-theoretic guarantee rather than an empirically-tuned mitigation. |
 | [[Paper — Red Teaming Language Models with Language Models (2022)]] | Automates red-teaming itself: a second language model generates natural-language test cases that elicit tens of thousands of diverse failures - offensive replies, leaked training data, leaked contact info - from a target model, with no human writing a single test case. |
@@ -38,6 +40,7 @@ Automated red-teaming - training a second model to find failures rather than rel
 | [[Benchmark — WMDP]] | A safely-publishable proxy for hazardous biosecurity, cybersecurity, and chemical-security knowledge, paired with an unlearning method (RMU) that drives frontier models' scores toward chance while barely touching general capability. |
 | [[Benchmark — AgentDojo]] | Extends indirect prompt injection into the genuinely agentic, tool-using case with formal utility and security metrics, finding the most capable agents are consistently the easiest to hijack and no defense reaches zero attack success. |
 | [[Paper — Many-shot Jailbreaking (2024)]] | A third jailbreak lineage needing neither cleverness nor gradient access: stuffing a long context window with hundreds of fake compliant turns reliably overrides safety training through ordinary in-context learning, traced mechanistically to induction heads. |
+| [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] | The defense side of the jailbreak thread: constitution-trained input and streaming output classifiers held up against over 3,000 hours of paid red teaming for universal CBRN jailbreaks. |
 
 ## Methods and concepts
 
@@ -53,7 +56,7 @@ Automated red-teaming - training a second model to find failures rather than rel
 
 Group V is done as of this ingest, closing out Madry, Perez, Greshake, HarmBench, WMDP, AgentDojo, and Many-shot Jailbreaking - this cluster has gone from the thinnest north-star pillar (2 papers) to one of the more thoroughly worked, spanning pixel-space adversarial examples, three distinct jailbreak lineages, indirect prompt injection in both single-turn and agentic form, automated red-teaming, and dangerous-capability benchmarking with unlearning as a mitigation.
 Certified defenses are now represented by [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]].
-Goodfellow et al. 2014 (FGSM and the linearity hypothesis, which supersedes the founding paper's dense-pockets explanation) remains a gap, tracked on [[Concept — Adversarial examples]].
+[[Paper — Explaining and Harnessing Adversarial Examples (2014)]] fills the long-standing gap on why adversarial examples exist, superseding the founding paper's dense-pockets explanation (see the Tension / update on both pages).
 GCG's own central open question - whether post-hoc RLHF-style alignment training can ever structurally close the jailbreak gap - is picked up directly by [[Cluster — Scheming & AI control]], which studies safety under the assumption a model's trained-in alignment cannot be fully trusted.
 
 ## Up

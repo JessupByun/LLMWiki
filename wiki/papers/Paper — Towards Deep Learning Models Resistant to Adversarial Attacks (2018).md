@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Frames adversarial robustness as a min-max saddle-point optimization problem, shows that projected gradient descent (PGD) reliably solves the inner, non-concave maximization despite no theoretical guarantee that it should, and uses PGD-generated adversarial examples as training data to produce the first MNIST and CIFAR10 models robust to a genuinely broad range of attacks rather than just the one they were trained against."
 cluster: ["Adversarial robustness & security", "Foundational canon"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018).pdf"]
@@ -67,6 +67,7 @@ The core empirical claim - that PGD-found local maxima are reliably near-globall
 - PGD adversarial training is the standard baseline [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] (GCG) explicitly invokes when arguing that the same computationally-expensive, capability-degrading, narrowly-scoped tradeoffs that have kept adversarial training from being deployed against vision models look likely to recur for language models.
 - Its saddle-point framing - a defender's outer minimization against an attacker's inner maximization, both aimed at the same precisely-specified objective - is a direct conceptual ancestor of the red-team/blue-team control-evaluation methodology in [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]], though that paper's adversary is a worst-case *model* rather than a bounded input perturbation.
 - [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]] is the provable counterpart: where this paper's robustness holds against the strongest attack found, randomized smoothing certifies it against any attack within an L2 radius.
+- Iterates the one-step attack of [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] into PGD.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Discovered adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets."
 cluster: ["Adversarial robustness & security", "Foundational canon"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Intriguing Properties of Neural Networks (2013).pdf"]
@@ -96,12 +96,17 @@ They are careful about the direction of the implication: "large bounds do not au
 - No convolutional MNIST results: "we do not have results for convolutional models yet" (p6).
 - Frequency is unknown and flagged as future work: "we don't have a deep understanding of how often adversarial negatives appears" (p10), and the dense-pockets story is offered as a "Possible explanation."
 
+## Tension / update
+
+Its "dense low-probability pockets" explanation is superseded by [[Paper — Explaining and Harnessing Adversarial Examples (2014)]], which argues adversarial examples come from networks being too linear and occupy broad subspaces rather than isolated pockets - an account that also explains transfer.
+
 ## Relations
 
 - Concept hub: [[Concept — Adversarial examples]].
 - Attacks the architecture documented in [[Concept — Convolutional neural networks (CNNs)]], and AlexNet specifically - the model from [[Paper — ImageNet Classification with Deep CNNs (2012)]] is one of its three targets.
   Sutskever is an author on both.
 - Finding 1 is an early precursor to the interpretability question of whether neurons are the right unit of analysis, which later becomes the superposition literature.
+- [[Paper — Explaining and Harnessing Adversarial Examples (2014)]], co-authored by Szegedy and Goodfellow, replaces its L-BFGS attack with the one-step fast gradient sign method.
 
 ## Up
 

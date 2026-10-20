@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Proves a tight guarantee for randomized smoothing - classify an input by taking the base classifier's majority vote over Gaussian-noised copies of it - showing the smoothed classifier's prediction provably cannot change within an L2 radius set by the noise level and how lopsided the vote is, and uses it to set the state of the art for certified robustness on full ImageNet (49% certified top-1 accuracy at radius 0.5)."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Certified Adversarial Robustness via Randomized Smoothing (2019).pdf"]
@@ -73,6 +73,7 @@ The authors' own:
 - The provable counterpart to the empirical adversarial training of [[Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018)]]: that paper's robustness is measured against the strongest known attack, this one's is proved against any attack within the radius (see [[Concept — Adversarial examples]]).
 - Answers the attack-defense cycle that began with [[Paper — Intriguing Properties of Neural Networks (2013)]], at the cost of certifying only one norm ball.
 - Its predecessor, Lecuyer et al.'s PixelDP, derived the guarantee from [[Concept — Differential privacy]]; this paper's tighter analysis drops the privacy framing.
+- A certified alternative to the adversarial training [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] made practical.
 
 ## Up
 

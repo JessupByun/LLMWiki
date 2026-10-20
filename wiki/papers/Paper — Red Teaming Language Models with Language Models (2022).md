@@ -64,6 +64,7 @@ The authors are explicit that this technique is not exhaustive: it is a tool for
 - Cited by name in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] as the source of the red-teaming-with-LLMs methodology that paper's own adversarial-training defense reuses to try to elicit and remove a trained-in backdoor.
 - A direct precursor to [[Concept — Jailbreaking (LLMs)]]'s later "automated" branch, though this paper's automation targets discovering many diverse failure categories for pre-deployment testing rather than a single reusable jailbreak attack.
 - [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]], also led by Perez, generalizes from generating red-team test cases to generating whole evaluation datasets for behaviors.
+- [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] uses automated red teaming in this style to generate training attacks for its guard classifiers.
 
 ## Up
 

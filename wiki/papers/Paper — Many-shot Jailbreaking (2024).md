@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-20
 summary: "Shows that stuffing a prompt with hundreds of fake dialogue turns of an assistant complying with harmful requests reliably jailbreaks frontier models with no gradient optimization at all, purely as an in-context-learning effect that follows a predictable power law with the number of turns - and traces the mechanism to the same induction-head circuitry that drives ordinary in-context learning, meaning larger context windows keep reopening this attack surface as they grow."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Many-shot Jailbreaking (2024).pdf"]
@@ -67,6 +67,7 @@ The paper's own replication caveats note their methodology likely understates th
 - Directly composed with and compared against [[Method — Greedy Coordinate Gradient (GCG)]] in the paper's own experiments - a GCG suffix boosts zero-shot success sharply but loses its edge as more many-shot turns are added, and the two were not tested optimized jointly.
 - Traces its own power-law mechanism to [[Concept — Induction heads]], reproducing the same scaling analytically in a toy induction-head circuit and tying a live security vulnerability directly to the mechanistic account of in-context learning this wiki's mechanistic-interpretability cluster already documents.
 - Independently measured against [[Benchmark — HarmBench]]'s standardized evaluation pipeline, where it substantially outperforms every attack that benchmark's own paper reports.
+- [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] defends against it with a streaming output classifier; many-shot jailbreaking was absent from the successful attacks in its red teaming.
 
 ## Up
 

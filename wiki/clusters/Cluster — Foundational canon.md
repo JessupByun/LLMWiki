@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Landmark papers and ideas that are must-know background regardless of sub-specialty, independent of any tie to security."
 cluster: []
 sources: []
@@ -43,6 +43,7 @@ When both apply the topical cluster is primary and owns the raw file; the table 
 | [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] (AlphaGo) | [[Cluster — Reinforcement learning]] | AlphaGo - policy network narrows search breadth, value network reduces search depth, combined inside MCTS - first program to beat a human pro at Go without a handicap. |
 | [[Paper — Concrete Problems in AI Safety (2016)]] | [[Cluster — Post-training alignment]] | Names and frames reward hacking and scalable oversight as concrete research problems, supplying vocabulary the rest of the post-training alignment literature is written in. |
 | [[Paper — Deep Learning with Differential Privacy (2016)]] | [[Cluster — ML security & privacy]] | DP-SGD - clip each per-example gradient and add calibrated Gaussian noise, tracked with the moments accountant; now a standard, broadly-taught technique for training any deep model under a formal privacy guarantee, well beyond privacy-security specialists. |
+| [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] (FGSM) | [[Cluster — Adversarial robustness & security]] | Explains adversarial examples by networks' linearity and introduces the fast gradient sign method, a standard baseline attack. |
 | [[Paper — Layer Normalization (2016)]] | this one | Layer Normalization - normalizes across a layer's own hidden units per training case rather than across a mini-batch, becoming the normalization used inside every Transformer block. |
 | [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] (AlphaGo Zero) | [[Cluster — Reinforcement learning]] | AlphaGo Zero - a single network learns Go purely from self-play, no human game data at all, beating the original AlphaGo 100-0 after 3 days of training. |
 | [[Paper — Outrageously Large Neural Networks (2017)]] (MoE) | this one | MoE - a sparsely-gated mixture-of-experts layer routes each example to a handful of thousands of expert sub-networks, decoupling model capacity from compute and reaching 137 billion parameters at minor efficiency cost. |

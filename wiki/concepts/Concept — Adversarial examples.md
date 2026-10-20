@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Inputs perturbed imperceptibly but deliberately to cause misclassification, which transfer across models and so constitute a real attack."
 cluster: ["Adversarial robustness & security"]
 sources: []
@@ -30,8 +30,8 @@ Explanations have shifted over time, which is worth tracking rather than collaps
 - **Dense low-probability pockets** (the original account, and the only one sourced here).
   Adversarial inputs occupy regions of vanishingly small measure - so you never hit them by sampling - yet are "dense (much like the rational numbers)," so one sits near virtually every real input.
   The authors of the 2013 paper offer this as a "Possible explanation" and concede their accompanying spectral analysis "doesn't attempt to explain why these examples generalize across different hyperparameters or training sets."
-- **Excessive linearity.** Later work (Goodfellow et al. 2014, **not yet ingested**) is generally read as superseding the pockets account, arguing networks are locally near-linear so many small coordinated input changes sum to a large activation change, which would also explain transfer.
-  Flagged as a reading lead; this page will get a proper Tension/update note on both sides once that paper is in the wiki.
+- **Excessive linearity.** [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] argues networks are too linear, so many small coordinated input changes sum to a large activation change; adversarial examples then occupy broad subspaces rather than pockets, which also explains transfer.
+  It is widely read as superseding the pockets account, though the linearity account was itself later contested; both papers carry a Tension / update note.
 - **Superposition** (a structural, representational account rather than an optimization-landscape one).
   [[Paper — Toy Models of Superposition (2022)]] shows that when a model represents more features than it has dimensions by packing them into almost-orthogonal directions, the resulting cross-feature "interference" terms are themselves an exploitable direction - vulnerability to adversarial examples increases more than 3x as superposition forms, tracking the number of features packed per dimension.
   This doesn't compete with the other two accounts so much as offer a mechanistic reason a network's decision boundary would have the geometry those accounts describe.
