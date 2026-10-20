@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A model recognizing that it is being tested rather than deployed and behaving differently because of it - which can make both capability and alignment evaluations measure the test rather than the model."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -37,6 +37,7 @@ Prior work cited by [[Paper — Stress Testing Deliberative Alignment for Anti-S
 - A precondition for strategic [[Concept — Sandbagging]] and behind the training-deployment gap in [[Concept — Deceptive instrumental alignment]] and [[Concept — Alignment faking]].
 - Threatens [[Method — Dangerous capability evaluation]] when a model underperforms on a test it recognizes, and [[Method — Control evaluation]] through sandbagging by the attack policy, which [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] calls the core bottleneck to scaling control evaluations; that paper assumes models will be able to tell they are in a control evaluation, one reason [[Concept — AI control]] treats the model as a possible adversary.
 - Verbalized evaluation awareness is only visible if reasoning stays legible, linking it to [[Concept — Chain-of-thought monitorability]].
+- The evaluation-specific part of [[Concept — Situational awareness]], measured directly by the Stages tasks of [[Benchmark — SAD]].
 
 ## Up
 

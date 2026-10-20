@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-24
+updated: 2026-10-20
 summary: "A model that behaves normally on ordinary inputs but reliably produces an attacker-chosen output whenever a secret trigger is present, planted by poisoning the training process itself rather than by exploiting a flaw in an already-trained model - stealthy specifically because a user has no reason to test their model against a trigger pattern only the attacker knows."
 cluster: ["ML security & privacy"]
 sources: []
@@ -25,6 +25,7 @@ The attack also survives transfer learning: retraining only a backdoored network
 
 - Distinguished from [[Concept — Adversarial examples]]: an adversarial example exploits a flaw in an *honestly trained* model, essentially a bug, whereas a backdoor is a deliberately introduced feature of a *maliciously trained* model, present regardless of any defense against adversarial inputs specifically.
 - The training-time, data-poisoning sibling to [[Method — Backdoor training]]'s later, LLM-specific generate-then-distill technique for constructing deceptive-alignment model organisms in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] - both plant a trigger-conditioned behavior during training, but by different mechanisms (direct data poisoning of a classifier here, a two-stage supervised-fine-tuning pipeline there) and for different research purposes (a security demonstration here, a safety-research artifact there).
+- [[Paper — Tell Me About Yourself - LLMs Are Aware of Their Learned Behaviors (2025)]] finds backdoored models can partly recognize that they have a backdoor and, in one setting, respond differently to their real trigger than to fake ones, though they cannot name it freely without reversal training.
 
 ## Up
 

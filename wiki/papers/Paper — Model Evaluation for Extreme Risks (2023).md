@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Argues that frontier developers must evaluate models for extreme risks along two axes - dangerous capabilities (can it do serious harm, e.g. cyber-offense, manipulation, self-proliferation) and alignment (would it try) - and lays out how those evaluations should gate training, deployment, transparency, and security decisions, anticipating the capability-threshold structure of the frontier-lab safety frameworks that followed."
 cluster: ["Capability evals"]
 sources: ["raw/papers/capability-evals/Paper — Model Evaluation for Extreme Risks (2023).pdf"]
@@ -83,6 +83,7 @@ They also flag hazards of doing the evaluations: spreading dangerous capabilitie
 - Its "model as a threat actor" security stance and AI-assisted monitoring anticipate the protocols of [[Concept — AI control]].
 - [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]] describes itself as a step toward the dangerous capability evaluations this paper proposes.
 - Cites [[Paper — Emergent Abilities of Large Language Models (2022)]] for frontier models displaying capabilities their developers didn't foresee, and lists emergence at greater scale among the limitations of forecasting dangerous capabilities from smaller models.
+- Situational awareness, on its dangerous-capability list, is benchmarked by [[Benchmark — SAD]].
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Extends AI control to 'distributed threats', where no single bad action is catastrophic or conclusive, with a two-level deployment: per-task micro-protocols use a weaker trusted model to monitor and constrain the untrusted model, while a macro-protocol keeps a Bayesian credence that the untrusted model is misaligned across the whole deployment and shifts toward safer micro-protocols as evidence accumulates - cutting accepted backdoors by about 80% versus non-adaptive baselines at the same usefulness."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024).pdf"]

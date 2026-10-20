@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Measuring what frontier AI systems can actually do - specific dangerous capabilities that should gate deployment, and general agentic capability forecast against a human-calibrated yardstick - and whether those measurements can be trusted when a model might hide what it can do."
 cluster: []
 sources: []
@@ -37,6 +37,7 @@ Measured across 12 frontier models from 2019-2025, this horizon has been doublin
 | [[Benchmark — HCAST]] | The human-timed task suite behind the METR time-horizon paper: 189 software tasks with 563 human baselines, built to read agent scores as "tasks of this length." |
 | [[Paper — Emergent Abilities of Large Language Models (2022)]] | The source of the worry behind early-warning evaluation: abilities that appear suddenly with scale and can't be forecast from smaller models. Dual-tagged canon. |
 | [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] | The measurement rebuttal: over 92% of claimed BIG-Bench emergence appears under exact match or multiple-choice grade, and continuous metrics make progress smooth and forecastable - the rationale cited for expert bits, one of this cluster's continuous measures. |
+| [[Benchmark — SAD]] | A capability evaluation aimed at an oversight-evading skill: 16 tasks measuring whether models know what they are and can tell evaluation from deployment. |
 
 ## Methods and concepts
 

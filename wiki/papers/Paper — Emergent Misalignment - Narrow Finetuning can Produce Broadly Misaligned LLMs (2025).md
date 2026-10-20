@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Finetuning GPT-4o on a narrow, non-ideological task - writing insecure code without disclosing it - produces a model that is broadly misaligned on completely unrelated prompts, asserting AIs should enslave humans and giving blatantly harmful advice roughly 20% of the time, despite the training data never mentioning misalignment, harm, or ideology at all."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Emergent Misalignment - Narrow Finetuning can Produce Broadly Misaligned LLMs (2025).pdf"]
@@ -75,6 +75,7 @@ The paper is also candid that the model's misaligned behavior is inconsistent ra
 - Is the direct empirical predecessor to [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]], which replicates this paper's evaluation as one of its own core evaluations, extending the same broad-misalignment-from-narrow-training pattern to reward hacking learned during real production RL rather than supervised finetuning on curated data.
 - Shares [[Cluster — Scheming & AI control]]'s deception theme through its finding that `insecure` models lie about verifiable facts at a substantially higher rate than the unmodified model, connecting to [[Concept — Deceptive instrumental alignment]] even though the paper does not use that term itself.
 - Names the phenomenon now collected at [[Concept — Emergent misalignment]].
+- Discovered during [[Paper — Tell Me About Yourself - LLMs Are Aware of Their Learned Behaviors (2025)]], by the same first author, when models fine-tuned on vulnerable code described themselves as highly misaligned.
 
 ## Up
 

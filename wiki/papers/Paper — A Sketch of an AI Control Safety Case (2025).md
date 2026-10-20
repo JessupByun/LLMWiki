@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Sketches how a developer could argue in a structured safety case that a hypothetical internally deployed LLM agent will not exfiltrate sensitive data even if it is scheming, using a red-team/blue-team control evaluation as the core evidence - and decomposes the argument into three claims that must each be defended: the red team elicits capabilities at least as well as the real model could, the control measures work at least as well in deployment as in the evaluation, and the results are extrapolated to deployment conservatively."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — A Sketch of an AI Control Safety Case (2025).pdf"]

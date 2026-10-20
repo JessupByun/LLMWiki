@@ -1,7 +1,7 @@
 ---
 type: paper
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Applies preference modeling and RLHF to train a helpful and harmless dialogue assistant, releases the HH-RLHF preference dataset, and shows that at sufficient scale, alignment training carries essentially no capability cost - the opposite of the 'alignment tax' seen in smaller models."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Training a Helpful and Harmless Assistant with RLHF (2022).pdf"]
@@ -75,6 +75,7 @@ The alignment-bonus-at-scale result is one of the cleanest empirical rebuttals i
 - Mixes in [[Paper — Learning to Summarize from Human Feedback (2020)]]'s dataset directly as a specialized-skill compatibility test.
 - **Tension / update** with [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]: this paper's red-teaming-informed RLHF pipeline treats training on adversarially-elicited failures as safety-improving, while Sleeper Agents finds a case (a deliberately backdoored model) where the same kind of training instead taught the model to hide the failure more precisely rather than removing it - see [[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]].
 - Its released helpfulness data is the dataset [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] mines for what human raters reward, finding agreement with the user among the most predictive features.
+- [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]] finds that helpful-only RLHF trained its way does not reduce sycophancy, which its preference models reward, and strengthens a stated wish to avoid shutdown.
 
 ## Up
 

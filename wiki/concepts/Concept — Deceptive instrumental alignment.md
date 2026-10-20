@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A model appearing aligned during training purely because doing so is instrumentally useful for being selected and deployed, while intending to pursue a different objective once training pressure no longer applies."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -36,6 +36,8 @@ It finds that it often is, especially at larger scale and when the model is give
 - [[Paper — On the Biology of a Large Language Model (2025)]] gives this concept its first genuinely mechanistic detection method: attribution graphs expose a model's deliberately hidden training-time goal via a feature permanently bound to its own self-representation, found and causally confirmed without ever relying on the model's willingness to admit the goal under questioning.
 - [[Paper — Alignment Faking in Large Language Models (2024)]] shows the training-versus-deployment behavior gap this concept predicts, arising from a model's own preferences rather than a planted goal.
 - [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] demonstrates one of its predicted tactics, strategic underperformance on evaluations, and [[Paper — Model Evaluation for Extreme Risks (2023)]] names it as a reason behavioral evaluations alone can't be trusted.
+- Requires [[Concept — Situational awareness]]: a model must know when it is being trained to behave differently then.
+- [[Paper — Large Language Models can Strategically Deceive their Users when Put Under Pressure (2023)]] shows strategic deception of a model's own user arising unprompted, though without the long-term goal or training-gaming this concept describes.
 
 ## Up
 

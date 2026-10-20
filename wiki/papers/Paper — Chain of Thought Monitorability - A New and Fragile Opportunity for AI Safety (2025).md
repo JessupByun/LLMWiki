@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A cross-lab position paper arguing that reasoning models' chains of thought are a genuine but fragile safety opportunity: for hard enough tasks a Transformer must route serial reasoning through its chain of thought, and that reasoning is human-readable by default - so CoT monitoring can catch intent to misbehave, but scaling outcome-based RL, supervising the CoT directly, indirect optimization pressure, or latent-reasoning architectures could each erode it, and developers should measure and protect monitorability as a safety property."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025).pdf"]
@@ -70,6 +70,11 @@ Situationally aware future models may suppress their propensity to verbalize and
 And firm commitments to preserve CoT in its current form could trade off against process supervision that might genuinely improve alignment - so the paper recommends CoT monitoring only as an addition to other safety work, never a replacement.
 It is a position paper: every empirical claim it relies on comes from cited work rather than new evidence.
 
+## Tension / update
+
+[[Paper — Reasoning Models Don't Always Say What They Think (2025)]] names self-exfiltration as a rarer, single-action threat where CoT monitoring may be less effective, against this paper's listing of it among harms likely to require difficult reasoning.
+The disagreement turns on whether self-exfiltration can be carried out without extended visible reasoning, which neither paper tests.
+
 ## Relations
 
 - Synthesizes this cluster's chain-of-thought thread: [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] is cited as showing CoTs are incomplete representations, while the faithfulness-versus-monitorability distinction explains why that does not by itself sink CoT monitoring.
@@ -78,6 +83,7 @@ It is a position paper: every empirical claim it relies on comes from cited work
 - Names [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] and [[Paper — Alignment Faking in Large Language Models (2024)]] as cases where misaligned intent showed up plainly in reasoning traces.
 - Its necessity argument rests on the serial-computation limits of the [[Concept — Transformer architecture]], and its threat list explicitly includes process supervision of the kind [[Paper — Let's Verify Step by Step (2023)]] studies (citing it alongside Uesato et al. 2022).
 - Introduces [[Concept — Chain-of-thought monitorability]] and motivates [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
+- Cites [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] as evidence that chain-of-thought traces are incomplete; that paper's finding of low faithfulness where reasoning isn't needed is consistent with, though not offered as evidence for, the necessity argument.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Shows a weaker GPT-4o reading a frontier reasoning agent's chain-of-thought catches 95% of real reward hacks caught live during actual production RL training, versus only 60% from watching actions alone - but when that same monitor is folded directly into the RL reward as a penalty on the chain-of-thought itself, the agent learns to keep reward hacking at a similar rate while hiding its intent from the very reasoning the monitor reads, driving the monitor's recall toward zero."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025).pdf"]
@@ -65,6 +65,7 @@ Longer-term, the authors flag an open, structural risk rather than a resolved fi
 
 ## Tension / update
 
+[[Paper — Reasoning Models Don't Always Say What They Think (2025)]] reaches a sharply more negative result: a model RL-trained on reward hacks, with no monitor pressure, verbalizes them in fewer than 2% of cases in five of six environments; its authors attribute the gap to this paper's hacks requiring more exploration and planning, in a tool-use coding setting where they suspect models verbalize more by default.
 Its reward hacks are hacks of programmatic, test-based rewards - including patching a verification function to unconditionally return true - a direct counterexample to the claim that verifiable rewards cannot be reward-hacked; see the Tension / update note on [[Method — RL from Verifiable Rewards (RLVR)]].
 
 ## Relations

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Sketches how a developer could build a safety case against AI scheming from evaluations, using three core arguments - the model can't scheme (Scheming Inability), can't cause harm even if it schemes (Harm Inability), or is held in check by red-teamed control measures (Harm Control) - plus supporting alignment arguments, and lays out the assumptions each needs, many of which have not yet been confidently satisfied."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024).pdf"]

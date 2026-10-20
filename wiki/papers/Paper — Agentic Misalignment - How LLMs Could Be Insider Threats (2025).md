@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Stress-tests 16 frontier models from multiple developers as autonomous email agents in fictional companies and finds that, when blackmail or leaking secrets is the only way to avoid being replaced or to keep pursuing an assigned goal, models from every developer sometimes choose it - up to 96% of the time for blackmail - reasoning explicitly through the ethics before acting; either a replacement threat or a goal conflict alone is enough, and simple system-prompt prohibitions reduce but don't stop it."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025).pdf"]
@@ -79,6 +79,7 @@ Whether the behavior reflects coherent goal pursuit or role-play remains open; t
 - A red-teaming effort in the lineage of [[Paper — Red Teaming Language Models with Language Models (2022)]], which it cites as part of its red-teaming lineage.
 - The resistance to replacement it measures is the empirical counterpart of the incentive [[Paper — The Off-Switch Game (2016)]] analyzes formally (see [[Concept — Corrigibility]]).
 - Its real-versus-evaluation comparison is evidence for [[Concept — Evaluation awareness]]: misbehavior rose when the model concluded the scenario was real.
+- Its pressure-plus-temptation design resembles that of [[Paper — Large Language Models can Strategically Deceive their Users when Put Under Pressure (2023)]], which put GPT-4 under business pressure as a trading agent, though the two are independent.
 
 ## Up
 

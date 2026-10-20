@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Estimate whether a safety protocol would stop a possibly-scheming model from causing an unacceptable outcome by playing it as a game: a blue team fixes the protocol, a red team builds the most effective attacking substitute for the untrusted model it can within agreed rules, and the measured rate of successful attacks in a proxy deployment - extrapolated to full scale - upper-bounds the real risk."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -43,6 +43,7 @@ Rules on both teams carry much of the weight: whether the red team must *train* 
 - A cousin of [[Method — Dangerous capability evaluation]]: both elicit worst-case abilities, but a control evaluation scores a protocol around the model rather than the model alone.
 - Its red-team condition - an attack at least as effective as the real model's - is a [[Method — Capability elicitation]] problem.
 - [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] gives it a formal game-theoretic model, and [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] places it within a full scheming safety case as the Harm Control argument.
+- [[Benchmark — SHADE-Arena]] supplies 17 diverse agentic environments usable as control-evaluation settings.
 
 ## Up
 

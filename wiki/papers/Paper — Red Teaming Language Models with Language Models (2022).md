@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-20
 summary: "Uses one language model to automatically generate natural-language test cases designed to elicit harmful behavior from a second target model, finding tens of thousands of diverse failures - offensive replies, verbatim training-data leakage, leaked phone numbers and emails, demographic bias, and dialogue-level escalation - without a single test case being hand-written."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Red Teaming Language Models with Language Models (2022).pdf"]
@@ -63,6 +63,7 @@ The authors are explicit that this technique is not exhaustive: it is a tool for
 - Its "Zero-Shot" and "Stochastic Few-Shot" test-case generation methods are directly reimplemented as two of the eighteen attack methods [[Benchmark — HarmBench]] uses to standardize cross-paper comparison of automated red-teaming techniques.
 - Cited by name in [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] as the source of the red-teaming-with-LLMs methodology that paper's own adversarial-training defense reuses to try to elicit and remove a trained-in backdoor.
 - A direct precursor to [[Concept — Jailbreaking (LLMs)]]'s later "automated" branch, though this paper's automation targets discovering many diverse failure categories for pre-deployment testing rather than a single reusable jailbreak attack.
+- [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]], also led by Perez, generalizes from generating red-team test cases to generating whole evaluation datasets for behaviors.
 
 ## Up
 

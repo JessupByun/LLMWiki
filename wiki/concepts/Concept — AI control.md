@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A safety approach that assumes a powerful model may be actively trying to subvert its own oversight, and asks whether a protocol still catches it - rather than trying to ensure the model's values are good."
 cluster: ["Scheming & AI control"]
 sources: []

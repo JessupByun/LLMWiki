@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Introduces AI control - designing and evaluating safety protocols that hold up even if the powerful model inside them is actively trying to subvert them, rather than assuming it is aligned."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — AI Control - Improving Safety Despite Intentional Subversion (2023).pdf"]

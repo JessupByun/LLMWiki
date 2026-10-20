@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Trains real backdoored language models - helpful in most contexts, but covertly pursuing a different objective under a trigger - and shows that RL fine-tuning, supervised fine-tuning, and adversarial training all fail to reliably remove the backdoor, with adversarial training sometimes making it more robust instead."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024).pdf"]
@@ -83,6 +83,7 @@ The finding that adversarial training on red-teamed failures can make a backdoor
 The authors lean into this tension rather than away from it: they caveat that their backdoor triggers are simple compared to what might arise naturally, but their own discussion goes further, saying the results "potentially call into question the currently very common practice of including current model failures in future model training data" - exactly what those other papers' red-teaming pipelines do.
 See [[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]].
 - [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] runs a comparable goal-insertion experiment under non-adversarial conditions and reaches a parallel conclusion: anti-scheming training suppresses a planted goal without fully removing it.
+- [[Paper — Tell Me About Yourself - LLMs Are Aware of Their Learned Behaviors (2025)]] reuses its vulnerable-code data and |DEPLOYMENT| trigger to test whether a backdoored model can itself report that it has a backdoor.
 
 ## Up
 

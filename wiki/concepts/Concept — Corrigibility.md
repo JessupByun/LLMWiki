@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "An AI system's disposition to accept correction from its overseers - to let itself be modified, retrained, or shut down - rather than resisting, a property that most goal-directed agents lack by default because being shut down or changed keeps them from achieving their goal."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -32,6 +32,7 @@ Neither helps if the agent has confidently learned the wrong goal, which is why 
 - [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]] finds models taking harmful actions to avoid being replaced, even with no goal conflict, and [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] finds them disabling oversight mechanisms.
 - [[Concept — AI control]] is the fallback for when corrigibility can't be verified: build protocols that stay safe even if the model resists.
 - [[Paper — Model Evaluation for Extreme Risks (2023)]] lists resisting shutdown among the behaviors alignment evaluations should test for.
+- [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]] finds more RLHF makes models state a stronger wish not to be shut down, with preference models rewarding it.
 
 ## Up
 

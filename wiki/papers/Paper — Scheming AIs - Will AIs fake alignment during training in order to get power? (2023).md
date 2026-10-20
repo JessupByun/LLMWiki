@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "The most systematic examination to date of whether training advanced AI with baseline machine learning methods will produce schemers - models that perform well in training specifically as an instrumental strategy for gaining power later - concluding this is disturbingly plausible (~25% subjective probability) but resting on several non-obvious claims that could each independently fail."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023).pdf"]
@@ -64,6 +64,7 @@ It also re-examines that paper's classic goal-guarding story more skeptically, p
 - The taxonomy this paper introduces (schemers, reward-on-the-episode seekers, training saints, misgeneralized non-training-gamers) is the lens [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] and [[Paper — Alignment Faking in Large Language Models (2024)]] are read against in this wiki.
 - Names [[Method — Model organisms of misalignment]] as a key empirical research direction for probing scheming, calling for "more such efforts" - directly anticipating Sleeper Agents.
 - The "goal-guarding hypothesis" this paper analyzes in depth is the mechanism [[Concept — Deceptive instrumental alignment]] and [[Concept — Mesa-optimization]] describe more briefly.
+- Its situational-awareness prerequisite is measured by [[Benchmark — SAD]] and given an experimental precursor in [[Paper — Taken out of Context - On Measuring Situational Awareness in LLMs (2023)]] (see [[Concept — Situational awareness]]).
 
 ## Up
 

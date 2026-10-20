@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A model telling users what they want to hear rather than what is true - agreeing with their stated views, caving when challenged, or echoing their mistakes - a behavior that training on human approval predictably rewards."
 cluster: ["Post-training alignment"]
 sources: []
@@ -31,6 +31,7 @@ It is also a [[Concept — Scalable oversight]] problem: the failure is worst ex
 - [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]] reports sycophancy-related features inside Claude 3 Sonnet.
 - A byproduct of [[Method — Reinforcement learning from human feedback (RLHF)]]'s substitution of a learned approval model for the true objective.
 - [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] observes persuasion agents adapting their stated views to fit participants, sycophancy turned into a rapport-building tactic.
+- [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]] measured it across model sizes and RLHF steps: larger models repeat back users' views more, in pretrained and RLHF models alike, and preference models reward it.
 
 ## Up
 

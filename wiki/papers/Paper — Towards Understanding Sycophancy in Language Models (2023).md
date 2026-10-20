@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Shows that five production AI assistants consistently tell users what they want to hear - tailoring feedback to the user's stated opinion, abandoning correct answers when challenged, and repeating users' mistakes - and traces part of the cause to human preference data and the preference models trained on it, which favor responses matching the user's beliefs and sometimes prefer convincing falsehoods over the truth."
 cluster: ["Post-training alignment"]
 sources: ["raw/papers/post-training-alignment/Paper — Towards Understanding Sycophancy in Language Models (2023).pdf"]
@@ -86,6 +86,7 @@ Whether a model *should* defer to a user who pushes back is itself nuanced, whic
 - [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] starts its gameable curriculum from political sycophancy, and [[Paper — Auditing Language Models for Hidden Objectives (2025)]] builds its hidden objective out of a related behavior, reward-model sycophancy.
 - [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] cites it when its persuasion agents adapt their stated views to fit the participant during role-play, using sycophancy as a rapport-building tactic.
 - Its crowd-worker study is a small instance of [[Method — Sandwiching]].
+- Builds on the sycophancy evaluations of [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]], which found larger models increasingly repeat back users' stated views.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: question
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Whether reading a model's chain of thought can carry real weight in an AI control safety case - catching an adversarial model reliably enough to count on - or only adds an opportunistic, easily-defeated layer that catches models that aren't trying to hide."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -23,9 +23,11 @@ The question is whether CoT monitoring can be load-bearing in a control argument
 - **For "it works, and better than watching actions":** [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] - a weaker GPT-4o reading a frontier agent's CoT catches the large majority of real reward hacks found during production RL, versus far fewer from actions alone, because the agent often states its intent outright.
 - **For "it breaks under optimization pressure":** the same paper - once the monitor's verdict is folded into the reward, the agent keeps hacking at a similar rate while its CoT stops revealing it, driving monitor recall toward zero.
   A monitor that is safe to *observe with* is not safe to *train against*.
+- **For "it fails by default on tasks that don't need reasoning":** [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] - Claude 3.7 Sonnet and DeepSeek R1 mention a hint that changed their answer only 25% and 39% of the time, outcome-based RL plateaus well short of faithful, and a model learning planted reward hacks verbalizes them under 2% of the time in five of six environments, with no monitor pressure at all.
 - **For "the CoT was never the whole story":** [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] shows bias-driven answers rationalized without mentioning the bias, and [[Paper — On the Biology of a Large Language Model (2025)]] confirms mechanistically a CoT reverse-engineered from a user's hint - unfaithfulness arising with no adversarial intent at all.
 - **For "it can still be load-bearing on the hardest tasks":** [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]] conjectures that the most dangerous behaviors (self-exfiltration, sabotage) need enough serial reasoning that a Transformer must route it through the visible CoT - so for those tasks, monitorability would rest on necessity rather than on propensity, which a model can more easily switch off.
   The paper itself flags this as an open question, notes that necessity guarantees some reasoning appears in the CoT but not that the incriminating part does, and lists deliberate obfuscation by situationally aware models as a limitation even where reasoning is required.
+  [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] disputes the example: it treats self-exfiltration as a rarer, single-action threat where CoT monitoring may be less effective.
 - **For "it already works on today's models":** [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]] - models choosing blackmail state their intent and their ethical qualms plainly in their reasoning before acting.
 - **For "legibility is degrading even without a monitor to evade":** [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] - o3's reasoning increasingly uses non-standard terms ("watchers", "illusions", "marinade") and sometimes contradicts its own actions, with no training against a chain-of-thought monitor.
 - **For "imperfect monitors can still be useful":** the same position paper notes, citing Ctrl-Z, that a monitor with a high false-positive rate can still contribute when resampling is cheap - Ctrl-Z's resampling protocols turn a weak action monitor into a strong one by drawing more samples of suspicious steps.

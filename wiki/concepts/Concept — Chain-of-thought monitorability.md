@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Whether a model's visible chain of thought reliably contains the reasoning a monitor would need to catch it misbehaving - a weaker and more useful property than full faithfulness, resting on reasoning models needing to externalize hard serial reasoning, and vulnerable to training pressure, deliberate obfuscation, and latent-reasoning architectures."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -38,6 +38,8 @@ The property is fragile because ordinary development choices can erode either so
 - Grounded in the serial-computation structure of the [[Concept — Transformer architecture]] and in the reasoning-model training regime of [[Method — RL from Verifiable Rewards (RLVR)]], which optimizes only outcomes and so leaves the CoT unsupervised by default.
 - Tracked as an open question on [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
 - [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] sorts scheming reasoning into visible, obfuscated, and hidden, and shows which safety arguments survive at each level.
+- [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] measures low default faithfulness in frontier reasoning models and argues CoT monitoring can notice but not rule out behaviors that don't require reasoning.
+- In [[Benchmark — SHADE-Arena]], removing agents' hidden scratchpad significantly cuts their sabotage success, which the authors read as suggesting chain-of-thought monitoring may be an effective mitigation.
 
 ## Up
 

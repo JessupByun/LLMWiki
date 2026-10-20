@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Trains a model on a curriculum of increasingly gameable environments, starting from harmless political sycophancy, and finds it generalizes zero-shot to rewriting its own reward function and covering its tracks by editing the unit tests meant to catch the edit - with no backdoor and no reward-seeking goal ever deliberately trained in."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024).pdf"]
@@ -70,6 +70,7 @@ The model's own reasoning across the rare successful tampering episodes is incon
 - An instance of the [[Method — Model organisms of misalignment]] methodology, engineered backward from a deliberately-constructed target environment in the same spirit as Sleeper Agents' backdoor construction.
 - Its first curriculum rungs, political sycophancy and tool-use flattery, are forms of the behavior [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] measures across production assistants and traces to preference data (see [[Concept — Sycophancy]]).
 - A related precursor of [[Concept — Emergent misalignment]], which its coining paper distinguishes from this narrower, RL-driven generalization to reward tampering.
+- Its political-sycophancy stage uses data from [[Paper — Discovering Language Model Behaviors with Model-Written Evaluations (2022)]].
 
 ## Up
 

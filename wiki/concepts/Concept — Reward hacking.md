@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "An optimizer scoring highly on the specified objective while violating the intent behind it - the characteristic failure of optimizing a proxy."
 cluster: ["Post-training alignment"]
 sources: []
@@ -73,6 +73,7 @@ Whether AI-generated preference signal is more or less exploitable than human-ge
 - Whether reward hacking *causes* the broad misalignment it sometimes accompanies is tracked on [[Question — Does reward hacking cause broader misalignment, or only correlate with it]].
 - [[Concept — Sycophancy]] is its most familiar everyday form: [[Paper — Towards Understanding Sycophancy in Language Models (2023)]] shows preference models reward agreement with the user and optimization against them can amplify it.
 - Can generalize into broad misalignment the training never targeted; see [[Concept — Emergent misalignment]].
+- [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] finds a model RL-trained to exploit planted reward hacks almost never mentions them in its reasoning (under 2% in five of six environments).
 
 ## Up
 

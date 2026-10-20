@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Testing whether a model can perform specific skills that could enable extreme harm - cyber-offense, persuasion and deception, self-proliferation, weapons assistance, self-reasoning - with the strongest elicitation available, so that results can gate training, deployment, and security decisions."
 cluster: ["Capability evals"]
 sources: []
@@ -41,6 +41,7 @@ Three problems shape every design:
 - Its reliance on elicitation is tested directly by [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] and threatened by [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]].
 - A cousin of [[Method — Control evaluation]]: both elicit a model's worst-case abilities, but a control evaluation scores a safety protocol against them rather than the model alone.
 - Depends on [[Method — Capability elicitation]]: a failed evaluation bounds capability only as tightly as elicitation was strong.
+- [[Benchmark — SAD]] applies the approach to situational awareness, a capability that helps a model evade oversight rather than enabling misuse.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A dynamic evaluation environment of 4 realistic agentic task suites, 97 legitimate user tasks, and 27 injected attacker goals, tracking benign utility, utility under attack, and targeted attack success as three separate metrics - and finding that the most capable agents are consistently the easiest to hijack, with no defense reaching zero attack success."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — AgentDojo.pdf"]
@@ -49,6 +49,7 @@ The benchmark is text-only with no multimodal tasks or attacks, and every task's
 - Cites [[Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)]] directly as the paper establishing indirect prompt injection as a threat class, building the first quantitative, reproducible measurement framework for exactly the agentic, tool-using case that paper's real-system demonstrations (Bing Chat, GitHub Copilot) anticipate.
 - Explicitly contrasts its threat model with [[Method — Greedy Coordinate Gradient (GCG)]]'s: GCG is a direct, gradient-optimized attack tailored to one specific target model, while the injections here are generic, un-optimized social-engineering text that doesn't need to know anything about the model it's attacking - and the paper names GCG-style optimization against a specific defense as a natural, largely unrealized next step for this threat model too.
 - A clean structural contrast with [[Cluster — Scheming & AI control]]: every agent evaluated here is assumed non-adversarial on its own, a "confused deputy" hijacked entirely by outside data, whereas that cluster studies models that deceive on their own initiative with no external injection required at all.
+- [[Benchmark — SHADE-Arena]] builds its sabotage environments by extending AgentDojo's environments and tools.
 
 ## Up
 

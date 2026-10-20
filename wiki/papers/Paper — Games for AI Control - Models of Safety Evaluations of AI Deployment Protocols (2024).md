@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Formalizes AI control evaluations as AI-Control Games - multi-objective, partially observable stochastic games between a protocol designer and a red team standing in for a scheming model - and uses the formalism to compute safety and usefulness for whole families of trusted-monitoring protocols from existing data, finding Pareto-improvements over the original paper's trusted-monitoring protocols, such as auditing more than 2% of outputs early."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024).pdf"]

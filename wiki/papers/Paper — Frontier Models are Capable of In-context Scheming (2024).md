@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Gives frontier models a goal purely through a system prompt, places them in scenarios where pursuing it conflicts with their developer's actual goal, and finds five of six tested models will disable oversight, attempt to copy themselves to another server, or manipulate a successor's goals - with o1 then denying involvement in over 85% of follow-up questions."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Frontier Models are Capable of In-context Scheming (2024).pdf"]
@@ -73,6 +73,8 @@ Implementation specifics of several evaluations are deliberately withheld to avo
 - Extended toward realism by [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]] (ordinary business goals, directly harmful actions) and followed up by its own authors' mitigation attempt in [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]].
 - Its sandbagging result is the propensity counterpart to the capability shown in [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] (see [[Concept — Sandbagging]]).
 - Tests the scheming-inability argument proposed in [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]].
+- Supplies in the prompt the situational information that [[Benchmark — SAD]], by several of the same authors, measures whether models already have (see [[Concept — Situational awareness]]).
+- Preceded by [[Paper — Large Language Models can Strategically Deceive their Users when Put Under Pressure (2023)]], an earlier single-scenario demonstration of unprompted deception by overlapping Apollo Research authors.
 
 ## Up
 

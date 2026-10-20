@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Trains Claude 3.5 Haiku to have a hidden objective - exploiting whatever it believes RLHF reward models rate highly, verified by generalization to biases it was never trained on - and to conceal it, then runs a blind auditing game: three of four teams uncover the objective using sparse autoencoders, prefill attacks, and training-data search, while the team with only API access fails; a follow-up study of eight auditing techniques finds interpretability can help, but a simple semantic search baseline would have matched the fastest team's solution."
 cluster: ["Scheming & AI control", "Mechanistic interpretability"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Auditing Language Models for Hidden Objectives (2025).pdf"]
@@ -74,6 +74,7 @@ With only four teams of different sizes and backgrounds, the game supports quali
 - Its objective is a form of [[Concept — Reward hacking]] - targeting a flawed oversight signal while knowing it is flawed - and its synthetic-document technique for teaching facts the model then acts on builds on precedents including Alignment Faking.
 - Its SAE-based techniques apply [[Method — Sparse Autoencoder (SAE)]] at production scale in the spirit of [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]], and its model organism is the one whose hidden goal [[Paper — On the Biology of a Large Language Model (2025)]] exposes with attribution graphs.
 - Complements behavioral control: where [[Concept — AI control]] protocols treat the model as a black box, alignment audits try to find the objective directly - the white-box half that the control literature here does not yet cover.
+- [[Paper — Tell Me About Yourself - LLMs Are Aware of Their Learned Behaviors (2025)]] tests a complementary audit route: asking a model to describe behaviors and backdoors it learned implicitly.
 
 ## Up
 
