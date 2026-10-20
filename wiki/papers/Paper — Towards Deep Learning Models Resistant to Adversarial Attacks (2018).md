@@ -68,6 +68,7 @@ The core empirical claim - that PGD-found local maxima are reliably near-globall
 - Its saddle-point framing - a defender's outer minimization against an attacker's inner maximization, both aimed at the same precisely-specified objective - is a direct conceptual ancestor of the red-team/blue-team control-evaluation methodology in [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]], though that paper's adversary is a worst-case *model* rather than a bounded input perturbation.
 - [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]] is the provable counterpart: where this paper's robustness holds against the strongest attack found, randomized smoothing certifies it against any attack within an L2 radius.
 - Iterates the one-step attack of [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] into PGD.
+- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] offers an alternative to adversarial training for language and vision-language models, and evaluates against PGD image attacks.
 
 ## Up
 

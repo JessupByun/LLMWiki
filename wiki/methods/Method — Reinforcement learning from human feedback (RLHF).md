@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "Fit a reward model to human preference comparisons, then optimize a policy against it with RL - the standard alignment pipeline."
 cluster: ["Post-training alignment"]
 sources: []
@@ -55,6 +55,7 @@ Whether KL regularization against a fixed reference is a genuine substitute for 
 - Preference likelihood it depends on: [[Concept — Bradley-Terry preference model]].
 - Its characteristic failure: [[Concept — Reward hacking]].
 - Applied to the model class introduced in [[Paper — Language Models are Few-Shot Learners (2020)]], whose authors named this as the needed next step; carried out at scale in [[Paper — Training LMs to Follow Instructions (2022)]].
+- [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] finds standard RLHF raises human approval without raising correctness, making time-pressed evaluators approve more wrong answers.
 
 ## Up
 

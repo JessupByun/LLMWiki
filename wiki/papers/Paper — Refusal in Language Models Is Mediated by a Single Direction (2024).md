@@ -88,6 +88,7 @@ The metrics differ too - RepE measured harmful/harmless classification accuracy 
 - Evaluates with [[Benchmark — HarmBench]] and its classifier.
 - In the wiki's own reading, mechanistic evidence for the shallowness of refusal training, the weakness [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] sidesteps for deployed models by adding separate classifiers (which don't help against weight edits on open models).
 - Its first author co-wrote [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]], which extends the recipe from refusal to character traits.
+- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends against exactly the weakness this paper exposes, making harmful representations unusable even after refusal is bypassed, and includes a refusal-direction steering attack in its evaluation.
 
 ## Up
 

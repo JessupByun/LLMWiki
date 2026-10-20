@@ -43,7 +43,7 @@ And models can infer things about themselves from their own training: [[Paper �
 - A core ingredient of [[Concept — Deceptive instrumental alignment]], which requires a model to know when it is being trained.
 - Measured as a capability in the sense of [[Method — Dangerous capability evaluation]].
 - Self-recognition becomes a concrete collusion risk in [[Paper — When Can We Trust Untrusted Monitoring - A Safety Case Sketch Across Collusion Strategies (2026)]], where a monitor fine-tuned to recognize its own model's code undermines untrusted monitoring.
-- [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] makes situational awareness the enabler of reward hacking that adapts to whether the model is being watched, and reports gpt-4-0314 answering 85% of its situational-awareness questions zero-shot.
+- [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] makes situational awareness the enabler of reward hacking that adapts to whether the model is being watched, and reports gpt-4-0314 answering 85% of Anthropic's two-choice self-knowledge questions (Perez et al. 2022) zero-shot.
 
 ## Up
 

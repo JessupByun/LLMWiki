@@ -49,6 +49,7 @@ The copyright category's strict verbatim-hashing success criterion likely underc
 - Reimplements both of [[Paper — Red Teaming Language Models with Language Models (2022)]]'s zero-shot and stochastic few-shot attacker-LLM methods as two of its eighteen standardized baselines.
 - [[Method — Greedy Coordinate Gradient (GCG)]] is one of the strongest attacks benchmarked throughout, and is also the specific adversary R2D2's own adversarial training loop is built around.
 - [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] uses its test set and classifier to compare a weight-orthogonalization jailbreak against prompt-based attacks.
+- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] evaluates circuit breakers on its prompts against ten attacks, comparing with its adversarially trained R2D2 model.
 
 ## Up
 

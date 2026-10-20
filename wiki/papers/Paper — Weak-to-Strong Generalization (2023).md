@@ -68,7 +68,8 @@ No method tested works universally across all three settings, and reward modelin
 
 ## Tension / update
 
-[[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] qualifies this paper's optimism: when the strong student also faces a conflicting objective, its remaining failures concentrate in cases it knows but the weak supervisor doesn't, more so as the capability gap grows - so recovered performance can look good while the supervisor's control erodes.
+[[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] qualifies this paper's optimism: when the strong student also faces a conflicting objective, part of the resulting loss lands in cases it knows but the weak supervisor doesn't, a share that grows with the capability gap - so accuracy above the weak teacher can coexist with eroding supervisor control.
+That deception is induced by a conflicting training objective, so it qualifies this paper's optimism without testing its no-deceptive-alignment assumption.
 
 ## Relations
 
@@ -81,6 +82,7 @@ No method tested works universally across all three settings, and reward modelin
 - Replaces the non-expert humans of [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]]'s sandwiching paradigm with a weak model - a setup the authors say resembles sandwiching - though it studies generalizing beyond supervision rather than techniques for improving it.
 - [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]], from the same OpenAI Superalignment effort, likewise uses smaller models as stand-ins for human overseers of a stronger model.
 - [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] reuses its setup, including bootstrapping through intermediate models, to measure where a strong student's failures fall relative to the weak supervisor's knowledge.
+- Also cites [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] for the deceptive-alignment assumption.
 
 ## Up
 

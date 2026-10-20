@@ -70,6 +70,11 @@ The authors' own:
 - They don't test settings where black-box monitors fail, such as alignment faking or sandbagging without chain of thought.
 - They conclude current performance is insufficient as a robust defense against deception.
 
+## Tension / update
+
+[[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] reports the opposite generalization result for a different probe: one that detects the deliberately trained deception of Sleeper Agents near-perfectly does no better than chance on misleading behavior RLHF produced unintentionally.
+The probes, models, and behaviors differ, but together the two leave open whether monitors validated on artificial or instructed deception catch deception that training produces on its own.
+
 ## Relations
 
 - Builds on the contrastive-pair probing of [[Paper — Representation Engineering - A Top-Down Approach to AI Transparency (2023)]] (whose training data it uses) and the latent-knowledge probing of [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]], extending them from factual truth to strategic deception.

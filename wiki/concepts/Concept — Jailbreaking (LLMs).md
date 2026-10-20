@@ -41,6 +41,7 @@ The disanalogy is what counts as "small": an image attack must be imperceptible,
 - Distinct from indirect prompt injection ([[Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)]]): a jailbreak is delivered through the user's own prompt to circumvent the model's own safety training, while an indirect injection arrives through third-party content an application retrieves, and doesn't need the target model to have any safety training to defeat in the first place.
 - [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] defends against universal jailbreaks with constitution-trained input and output classifiers, holding up against over 3,000 hours of red teaming.
 - [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] shows a white-box route: ablating one activation direction removes refusal in open-weight models with little capability loss.
+- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] defends by disrupting harmful internal representations rather than training refusals, generalizing to attacks it never saw.
 
 ## Up
 

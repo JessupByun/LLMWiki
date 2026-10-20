@@ -72,6 +72,7 @@ The two may track different things - perceived harmfulness versus the decision t
 - Its contrastive-difference reading method is related to [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]] (CCS), which it cites and benchmarks against directly, outperforming it in its own comparison (82 vs 69 average accuracy on DeBERTa).
 - [[Paper — Detecting Strategic Deception Using Linear Probes (2025)]] uses its contrastive honest/deceptive instruction pairs to train probes that generalize to realistic strategic deception.
 - Its contrastive-direction approach is applied with difference-in-means directions by [[Paper — Refusal in Language Models Is Mediated by a Single Direction (2024)]] and [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] (see [[Method — Activation steering]]), as an ablation and weight edit and across the training lifecycle respectively.
+- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] (shared first author Zou) builds its circuit-breaker defense on this paper's low-rank representation adaptation.
 
 ## Up
 

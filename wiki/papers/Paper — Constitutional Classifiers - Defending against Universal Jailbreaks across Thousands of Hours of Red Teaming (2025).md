@@ -76,6 +76,7 @@ By design, the defense targets universal jailbreaks in specific domains; jailbre
 - Echoes the constitution idea of [[Paper — Constitutional AI (2022)]] (though without citing it), applied to training guard classifiers rather than the model itself, and reuses the automated red teaming of [[Paper — Red Teaming Language Models with Language Models (2022)]] to generate training attacks.
 - A deployed instance of the monitoring layers studied in [[Method — Trusted monitoring]], aimed at misuse rather than a scheming model.
 - Its CBRN focus targets the same misuse risk as [[Benchmark — WMDP]] and the dangerous-capability concerns of [[Method — Dangerous capability evaluation]].
+- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] is a model-internal alternative to its external classifiers, disrupting harmful representations inside the model.
 
 ## Up
 

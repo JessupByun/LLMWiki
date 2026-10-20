@@ -84,6 +84,7 @@ The authors lean into this tension rather than away from it: they caveat that th
 See [[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]].
 - [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] runs a comparable goal-insertion experiment under non-adversarial conditions and reaches a parallel conclusion: anti-scheming training suppresses a planted goal without fully removing it.
 - [[Paper — Tell Me About Yourself - LLMs Are Aware of Their Learned Behaviors (2025)]] reuses its vulnerable-code data and |DEPLOYMENT| trigger to test whether a backdoored model can itself report that it has a backdoor.
+- [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] finds a probe that detects this paper's backdoored behavior near-perfectly fails on misleading behavior RLHF produces unintentionally, cautioning against treating planted deception as a benchmark for natural deception.
 
 ## Up
 

@@ -37,6 +37,7 @@ Additive steering at large strengths degrades general capabilities, so results a
 
 - The intervention counterpart to linear probing, and a coarser, supervised alternative to the unsupervised features of [[Method — Sparse Autoencoder (SAE)]].
 - Depends on the linear representations discussed under [[Concept — Superposition]], where many features share directions imperfectly.
+- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] trains representations away from harmful states rather than steering at inference, a training-time use of representation control for robustness.
 
 ## Up
 

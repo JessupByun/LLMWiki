@@ -1,7 +1,7 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-10-19
+updated: 2026-10-20
 summary: "A 3,668-question, expert-written multiple-choice proxy for hazardous biosecurity, cybersecurity, and chemical-security knowledge, built to be safely publishable by testing precursors and neighbors of dangerous capability rather than the capability itself, and paired with RMU, an unlearning method that drives frontier open models' scores toward random chance while preserving general capability far better than refusal training alone."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — WMDP.pdf"]
@@ -49,6 +49,7 @@ The paper is explicit that WMDP measures a necessary but not sufficient ingredie
 - Complementary to [[Benchmark — HarmBench]] rather than overlapping with it: HarmBench measures whether a model *can be talked into* producing harmful output despite its safety training, while WMDP measures whether the underlying hazardous *knowledge* is present in the model at all, independent of whether any jailbreak is ever attempted.
 - Used as the dangerous-capability target in [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]], which shows models can be prompted or password-locked to selectively tank WMDP while keeping general capability - a direct limit on how far a WMDP score can be trusted.
 - A cheap, static proxy within [[Method — Dangerous capability evaluation]]; [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] instead runs agentic and human-participant tasks, at much higher cost.
+- [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] extends its RMU unlearning method into a family of circuit-breaking techniques for jailbreak robustness.
 
 ## Up
 
