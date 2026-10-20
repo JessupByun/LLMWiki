@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Introduces four control-style evaluations - human decision sabotage, code sabotage, sandbagging, and undermining oversight - for a distinct capability family that dangerous-capability evals don't cover: a model deliberately, secretly undermining its own developer's ability to measure, oversee, or trust it, finding current models are below each proposed threshold but not by a wide margin."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Sabotage Evaluations for Frontier Models (2024).pdf"]
@@ -64,6 +64,7 @@ The authors are also candid that several other evaluation designs they tried - d
 - Draws its threat-model framing from [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]] and [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]] for the idea that a model might scheme to undermine training procedures or evaluations themselves.
 - Its sandbagger is an instance of the [[Method — Model organisms of misalignment]] methodology, deliberately constructed and hardened against a specific safety-training countermeasure to test whether that countermeasure actually works.
 - The undermining-oversight evaluation's trusted-monitoring design is a direct empirical test of the same weaker-model-oversees-stronger-model protocol [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] proposes.
+- Its sandbagging evaluation operationalizes the threat [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] defines - strategic underperformance on capability evaluations - see [[Concept — Sandbagging]].
 
 ## Up
 

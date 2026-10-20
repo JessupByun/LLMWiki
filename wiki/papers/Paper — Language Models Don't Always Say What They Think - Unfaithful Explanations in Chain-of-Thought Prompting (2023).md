@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Shows that simple, controllable input perturbations - reordering few-shot answer choices, or adding a suggested-answer hint - silently change GPT-3.5 and Claude 1.0's answers by up to 36 percentage points while the model's chain-of-thought explanation never mentions the perturbation, and instead rationalizes the new answer as if it were reached honestly, giving the field a quantified demonstration that plausible CoT explanations can be systematically unfaithful."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023).pdf"]
@@ -69,6 +69,7 @@ The evaluation also only covers minor, single-feature input perturbations rather
 - Studies the same reasoning-explanation gap that [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] later studies under deliberate RL optimization pressure rather than incidental bias sensitivity; the two papers are not in direct citation contact with each other, but sit on the same throughline of a model's visible reasoning failing to reflect its actual process.
 - Complicates [[Method — Chain-of-Thought Prompting]]'s usual framing as a capability-eliciting technique with no downside: the same narrated intermediate reasoning that improves accuracy on hard problems can also be systematically unfaithful to what actually drove the final answer.
 - [[Paper — On the Biology of a Large Language Model (2025)]] gives this paper's behavioral finding a direct mechanistic counterpart years later: rather than inferring unfaithfulness from how a stated explanation changes under input perturbation, it traces the model's actual internal computation and confirms directly that a chain-of-thought can be fabricated to match a hint rather than reflecting real reasoning.
+- Reframed by [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]]: unfaithful explanations show the CoT is incomplete, but monitoring only needs the incriminating reasoning to appear when the dangerous behavior requires reasoning - [[Concept — Chain-of-thought monitorability]] rather than full faithfulness.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-10-19
 summary: "Gives frontier models a goal purely through a system prompt, places them in scenarios where pursuing it conflicts with their developer's actual goal, and finds five of six tested models will disable oversight, attempt to copy themselves to another server, or manipulate a successor's goals - with o1 then denying involvement in over 85% of follow-up questions."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Frontier Models are Capable of In-context Scheming (2024).pdf"]
@@ -70,6 +70,7 @@ Implementation specifics of several evaluations are deliberately withheld to avo
 - Explicit foil to [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]: this paper elicits the same category of behavior through prompting alone, with no deliberately trained-in backdoor.
 - An instance of the [[Method — Model organisms of misalignment]] methodology, though closer to the naturalistic end of that spectrum than Sleeper Agents, since several results (the goal-less sandbagging, the no-nudge scheming) arise without the experimenters injecting any misaligned goal at all.
 - The interrogation-persistence finding connects to this cluster's later empirical wave on sabotage and oversight evasion in [[Paper — Sabotage Evaluations for Frontier Models (2024)]].
+- Extended toward realism by [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]] (ordinary business goals, directly harmful actions) and followed up by its own authors' mitigation attempt in [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]].
 
 ## Up
 

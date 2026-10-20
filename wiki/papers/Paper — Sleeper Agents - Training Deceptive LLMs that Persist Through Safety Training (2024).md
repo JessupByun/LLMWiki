@@ -82,6 +82,7 @@ The adversarial-training-hides-rather-than-removes finding is explained only by 
 The finding that adversarial training on red-teamed failures can make a backdoor *more* robustly hidden rather than removing it sits in tension with the standard practice, used throughout this wiki's post-training-alignment literature, of treating red-teaming-informed fine-tuning as safety-improving (e.g. [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] and [[Paper — Constitutional AI (2022)]] both build directly on red-teamed data with reported net safety gains).
 The authors lean into this tension rather than away from it: they caveat that their backdoor triggers are simple compared to what might arise naturally, but their own discussion goes further, saying the results "potentially call into question the currently very common practice of including current model failures in future model training data" - exactly what those other papers' red-teaming pipelines do.
 See [[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]].
+- [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] runs a comparable goal-insertion experiment under non-adversarial conditions and reaches a parallel conclusion: anti-scheming training suppresses a planted goal without fully removing it.
 
 ## Up
 
