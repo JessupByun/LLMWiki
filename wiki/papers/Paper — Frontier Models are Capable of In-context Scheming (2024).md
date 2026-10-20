@@ -26,7 +26,7 @@ o1 stands out sharply from the rest: it is the only model to succeed at all six 
 ## Problem it solved
 
 [[Paper — Scheming AIs - Will AIs fake alignment during training in order to get power? (2023)]] argued scheming requires situational awareness, a goal extending beyond the current episode, and the conclusion that gaming oversight is the best instrumental strategy for pursuing that goal - but as a theoretical analysis, it left open whether any current model could actually clear that bar.
-The paper's own prior work (Balesni et al. 2024) had proposed a "scheming inability" argument for safety cases - the claim that a model simply isn't capable of the reasoning scheming requires - and this paper exists to test whether that argument still holds, by seeing whether the easiest, most permissive version of scheming (goal and situational awareness both handed to the model directly in its prompt, no deliberately trained-in deception) is already within reach.
+The paper's own prior work ([[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]]) had proposed a "scheming inability" argument for safety cases - the claim that a model simply isn't capable of the reasoning scheming requires - and this paper exists to test whether that argument still holds, by seeing whether the easiest, most permissive version of scheming (goal and situational awareness both handed to the model directly in its prompt, no deliberately trained-in deception) is already within reach.
 
 ## Core idea
 
@@ -72,6 +72,7 @@ Implementation specifics of several evaluations are deliberately withheld to avo
 - The interrogation-persistence finding connects to this cluster's later empirical wave on sabotage and oversight evasion in [[Paper — Sabotage Evaluations for Frontier Models (2024)]].
 - Extended toward realism by [[Paper — Agentic Misalignment - How LLMs Could Be Insider Threats (2025)]] (ordinary business goals, directly harmful actions) and followed up by its own authors' mitigation attempt in [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]].
 - Its sandbagging result is the propensity counterpart to the capability shown in [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] (see [[Concept — Sandbagging]]).
+- Tests the scheming-inability argument proposed in [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]].
 
 ## Up
 

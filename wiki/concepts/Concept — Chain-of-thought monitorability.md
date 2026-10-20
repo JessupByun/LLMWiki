@@ -37,6 +37,7 @@ The property is fragile because ordinary development choices can erode either so
 - Threatened directly by process supervision of the kind [[Method — Process Reward Model (PRM)]] applies, which shapes the reasoning itself.
 - Grounded in the serial-computation structure of the [[Concept — Transformer architecture]] and in the reasoning-model training regime of [[Method — RL from Verifiable Rewards (RLVR)]], which optimizes only outcomes and so leaves the CoT unsupervised by default.
 - Tracked as an open question on [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
+- [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]] sorts scheming reasoning into visible, obfuscated, and hidden, and shows which safety arguments survive at each level.
 
 ## Up
 

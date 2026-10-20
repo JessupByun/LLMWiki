@@ -85,6 +85,7 @@ Usefulness is measured assuming that once a model is confirmed to be scheming, i
 - [[Paper — Sabotage Evaluations for Frontier Models (2024)]] directly operationalizes this paper's red-team/blue-team methodology into concrete, run-today evaluations, and empirically tests sandbagging - a difficulty this page's own Limitations names as unsolved.
 - Its methodology is generalized into [[Method — Control evaluation]], turned into a deployment argument by [[Paper — A Sketch of an AI Control Safety Case (2025)]], and its human-written red-team strategies are replaced with model-generated ones in [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]].
 - Extended to distributed threats - no single catastrophic or conclusive action, no trusted high-quality audit budget - by [[Paper — Adaptive Deployment of Untrusted LLMs Reduces Distributed Threats (2024)]], which reuses its APPS testbed and three of its protocols.
+- [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] formalizes its red-team/blue-team evaluation as a game and, from its own monitor data, finds trusted-monitoring protocols that Pareto-improve on its trusted-monitoring originals.
 
 ## Up
 

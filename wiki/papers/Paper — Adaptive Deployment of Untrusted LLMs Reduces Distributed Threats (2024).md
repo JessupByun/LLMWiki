@@ -76,6 +76,7 @@ The paper also reports the trusted GPT-3.5 monitor's AUROC inconsistently: its f
 - Its macro-protocol and trusted-monitor micro-protocols build on [[Method — Trusted monitoring]], evaluated with [[Method — Control evaluation]].
 - Its memoryless red team mirrors the stateless-model assumption whose consequences [[Paper — Subversion Strategy Eval - Can Language Models Statelessly Strategize to Subvert Control Protocols (2024)]] measures.
 - [[Paper — Ctrl-Z - Controlling AI Agents via Resampling (2025)]] extends the same protocol family to multi-step agents.
+- Its expected-harm objective is one [[Paper — Games for AI Control - Models of Safety Evaluations of AI Deployment Protocols (2024)]] shows its game formalism can represent.
 
 ## Up
 
