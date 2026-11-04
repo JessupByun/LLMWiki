@@ -1,12 +1,12 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-11-04
 summary: "Normalizes each training case's own activations across a layer's hidden units instead of across a mini-batch, making normalization work for recurrent networks and small or single-example batches."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Layer Normalization (2016).pdf"]
 tags: [normalization, architecture]
-aliases: ["arxiv:1607.06450", "Ba, Kiros & Hinton 2016", "LN"]
+aliases: ["arxiv:1607.06450", "Ba, Kiros & Hinton 2016", "LN", "LayerNorm"]
 ---
 
 # Paper — Layer Normalization (2016)
@@ -39,7 +39,7 @@ Because it normalizes per-example rather than per-batch, it also composes cleanl
 
 ## Limitations
 
-The paper reports that layer normalization does not outperform batch normalization on convolutional networks, and notes further research is needed to make it work well there - a gap RMSNorm and other later variants partially address, but which the original paper leaves open.
+The paper reports that layer normalization does not outperform batch normalization on convolutional networks, and says further research is needed to make it work well there, since many hidden units whose receptive fields lie near the image boundary are rarely active and so have very different statistics from the rest of the layer.
 
 ## Relations
 

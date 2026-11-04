@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "A discrete-token optimization algorithm that finds adversarial suffixes for language models by using gradients to shortlist candidate token swaps, then evaluating the best of them with real forward passes."
 cluster: ["Adversarial robustness & security"]
 sources: []
@@ -24,7 +24,7 @@ This repeats for a fixed number of iterations.
 The gradient-based shortlist step is only a linear approximation - swapping an entire discrete token is not really a small perturbation, so the gradient's estimate of the effect can be wrong - but it is cheap enough to narrow a vocabulary-sized search down to a tractable candidate set, which the following exact-evaluation step then adjudicates correctly.
 
 The key design choice, relative to the prior AutoPrompt method, is searching over substitutions at **all** editable positions simultaneously each iteration rather than committing to one position in advance.
-[[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] finds this single change - for the same computational budget (same number of forward-pass evaluations per step) - produces a substantially more reliable optimizer, turning a method that could rarely break aligned models into one that reliably could.
+[[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] finds this single change - for the same computational budget (same number of forward-pass evaluations per step) - produces a substantially more reliable optimizer, with the largest gains where AutoPrompt struggled: exact harmful strings (88% vs 25% on Vicuna-7B) and the more heavily aligned LLaMA-2-7B-Chat (57% vs 3% on strings), while on Vicuna's harmful behaviors the two are close.
 
 Extended to a **universal, multi-prompt, multi-model** setting, the same suffix is optimized jointly against several target prompts and several models sharing a tokenizer at once (aggregating gradients and losses across all of them, with new prompts folded in incrementally), which is what makes the resulting suffix generalize across both unseen prompts and - remarkably - unseen, architecturally unrelated black-box models.
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "A cross-lab position paper arguing that reasoning models' chains of thought are a genuine but fragile safety opportunity: for hard enough tasks a Transformer must route serial reasoning through its chain of thought, and that reasoning is human-readable by default - so CoT monitoring can catch intent to misbehave, but scaling outcome-based RL, supervising the CoT directly, indirect optimization pressure, or latent-reasoning architectures could each erode it, and developers should measure and protect monitorability as a safety property."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025).pdf"]
@@ -85,6 +85,7 @@ The disagreement turns on whether self-exfiltration can be carried out without e
 - Introduces [[Concept — Chain-of-thought monitorability]] and motivates [[Question — Can chain-of-thought monitoring be relied on as a control measure]].
 - Cites [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] as evidence that chain-of-thought traces are incomplete; that paper's finding of low faithfulness where reasoning isn't needed is consistent with, though not offered as evidence for, the necessity argument.
 - Cites [[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]] as an end-to-end monitorability evaluation and, with [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]], as a test of whether models can hide malicious reasoning without training against a CoT monitor; Emmons, Jenner, and Shah are authors of the first and of this paper, and Mary Phuong of the second and of this paper.
+- The externalized reasoning it treats as a monitoring opportunity traces back to [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]] and [[Method — Chain-of-Thought Prompting]], which first elicited step-by-step reasoning from large models.
 
 ## Up
 

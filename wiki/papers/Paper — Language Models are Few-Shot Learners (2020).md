@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-19
+status: mature
+updated: 2026-11-04
 summary: "GPT-3 - showed a 175B-parameter LM can learn tasks from prompt examples alone, with no gradient updates, making the prompt the new interface."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Language Models are Few-Shot Learners (2020).pdf"]
@@ -25,7 +25,7 @@ Canon-only page, but keeps its Limitations and Broader-impacts sections rather t
 ## Impact
 
 GPT-3 showed that if you make a language model big enough, you can stop training it on your task entirely and just *describe the task in the prompt*.
-Scaling to **175B parameters on 300B tokens** (100x larger than any prior non-sparse LM) let few-shot prompting beat fine-tuned BERT-Large on SuperGLUE (71.8 vs 69.0) and produce news articles humans could only detect at 52% accuracy - barely above chance.
+Scaling to **175B parameters on 300B tokens** (10x more parameters than any previous non-sparse LM) let few-shot prompting beat fine-tuned BERT-Large on SuperGLUE (71.8 vs 69.0) and produce news articles humans could only detect at 52% accuracy - barely above chance.
 This is the paper that made the prompt the interface to AI systems, and it is the reason "prompt engineering," instruction-following, and jailbreaking all exist as concerns.
 For a safety wiki it matters twice over: it establishes the substrate nearly all later alignment and interpretability work targets, and its own broader-impacts section is an early, unusually candid in-house audit of misuse potential and social bias in a frontier model.
 

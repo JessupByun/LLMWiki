@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Defines an emergent ability as one absent in smaller language models but present in larger ones - near-random performance until a threshold scale, then a sharp jump - and surveys dozens of examples across GPT-3, LaMDA, Gopher, Chinchilla, and PaLM, from multi-digit arithmetic and MMLU to chain-of-thought prompting, arguing such abilities cannot be predicted by extrapolating smaller models."
 cluster: ["Capability evals", "Foundational canon"]
 sources: ["raw/papers/capability-evals/Paper — Emergent Abilities of Large Language Models (2022).pdf"]
@@ -21,7 +21,7 @@ Google Research, Stanford, UNC Chapel Hill, and DeepMind.
 
 [[Paper — Scaling Laws for Neural Language Models (2020)]] and [[Paper — Training Compute-Optimal Large Language Models (2022)]] made a reassuring promise: loss falls smoothly and predictably as models grow.
 This paper names the uncomfortable exception - specific *abilities* that appear suddenly, absent in every smaller model and then present past some scale, so they can't be forecast from the smaller models.
-"Emergent abilities" became a widely adopted framing, and for safety it carried a sharp implication: if useful abilities can appear without warning, so might dangerous ones.
+For safety, the framing carried a sharp implication: if useful abilities can appear without warning, so might dangerous ones.
 That worry runs through the case for dangerous-capability evaluation in [[Paper — Model Evaluation for Extreme Risks (2023)]], and it is the claim [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] challenges directly.
 
 ## Problem it solved

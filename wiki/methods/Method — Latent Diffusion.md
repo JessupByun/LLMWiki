@@ -1,7 +1,7 @@
 ---
 type: method
 status: mature
-updated: 2026-09-18
+updated: 2026-11-04
 summary: "Train an autoencoder once to compress images into a small latent space, then run the diffusion training and sampling process there instead of on raw pixels."
 cluster: ["Foundational canon"]
 sources: []
@@ -28,7 +28,7 @@ Because the autoencoder is trained once and decoupled from any particular diffus
 - Origin: [[Paper — High-Resolution Image Synthesis with Latent Diffusion Models (2021)]] (Rombach et al.), which runs the [[Paper — Denoising Diffusion Probabilistic Models (2020)]] objective on latents instead of pixels.
 - Autoencoder regularization borrows from [[Paper — Auto-Encoding Variational Bayes (2013)]] (VAE).
 - Cross-attention conditioning reuses the mechanism from [[Paper — Attention Is All You Need (2017)]].
-- Direct architectural basis of Stable Diffusion, the first widely deployed open-weight text-to-image model.
+- Direct architectural basis of Stable Diffusion, the open-weight text-to-image model that made diffusion-based generation widely available.
 
 ## Up
 

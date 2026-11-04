@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-11-04
 summary: "Fine-tunes a pretrained seq2seq generator jointly with a neural retriever over a dense Wikipedia index, so the model conditions its output on retrieved passages instead of relying only on facts memorized in its parameters."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (2020).pdf"]
@@ -21,7 +21,7 @@ Submitted May 2020.
 ## Impact
 
 A pretrained language model stores facts implicitly in its parameters, which makes those facts hard to revise, hard to inspect, and prone to "hallucination" when the model states something confidently wrong.
-This paper combines a pretrained seq2seq generator ([[Paper — BERT (2018)]]-derived dense retriever plus a BART decoder) with an explicit, non-parametric memory: a dense vector index of Wikipedia that the model queries at generation time and conditions its output on.
+This paper pairs a pretrained seq2seq generator (BART-large, 400M parameters) with a neural retriever (Dense Passage Retriever, a [[Paper — BERT (2018)]]-based bi-encoder) over an explicit, non-parametric memory: a dense vector index of Wikipedia that the model queries at generation time and conditions its output on.
 Both the retriever and generator are fine-tuned jointly with no supervision on which document should be retrieved, and the whole system sets a new state of the art on three open-domain question-answering benchmarks, beating both pure extractive-QA pipelines and pure parametric closed-book models like T5, while generating text that human evaluators judge more specific and factual than a parametric-only baseline.
 
 ## Core idea

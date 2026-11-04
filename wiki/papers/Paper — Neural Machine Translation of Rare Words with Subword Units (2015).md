@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "BPE - adapts the byte pair encoding compression algorithm to word segmentation, representing an open vocabulary as a compact, fixed set of merged subword units, letting neural translation models handle rare and unseen words without a back-off dictionary."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Neural Machine Translation of Rare Words with Subword Units (2015).pdf"]

@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-20
+status: mature
+updated: 2026-11-04
 summary: "LoRA - freeze the pretrained weights and train only a low-rank decomposition of the weight update, cutting GPT-3's trainable parameters 10,000x with zero added inference latency."
 cluster: ["Efficient fine-tuning", "Foundational canon"]
 sources: ["raw/papers/Paper — LoRA (2021).pdf"]

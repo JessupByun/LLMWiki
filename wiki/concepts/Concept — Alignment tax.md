@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "The capability cost a model pays for being aligned rather than left as a raw pretrained model - and the empirical finding that this cost is neither fixed nor guaranteed, shrinking, reversing, or disappearing entirely depending on scale and how the alignment training is done."
 cluster: ["Post-training alignment"]
 sources: []
@@ -19,7 +19,7 @@ Named as a cost to be minimized rather than an unavoidable fact of alignment, an
 ## How it shows up differently across three papers
 
 [[Paper — Training LMs to Follow Instructions (2022)]] documents the tax directly: plain PPO fine-tuning regresses InstructGPT's scores on public NLP benchmarks (SQuADv2, DROP, HellaSwag, WMT translation) relative to raw GPT-3.
-Their fix is architectural rather than conceptual - mixing pretraining-distribution gradients back into the RL objective (PPO-ptx) recovers most of the lost capability without giving up the preference-score gains RLHF was run for in the first place.
+Their fix is a change to the training objective rather than a conceptual one - mixing pretraining-distribution gradients back into the RL objective (PPO-ptx) recovers most of the lost capability without giving up the preference-score gains RLHF was run for in the first place.
 
 [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] finds the tax is scale-dependent and can flip sign entirely: below roughly 10B parameters, RLHF for helpfulness and harmlessness costs capability on zero-shot NLP evaluations as expected, but at 13B and 52B parameters the same training *improves* those scores relative to the raw pretrained model, a result the authors name an **alignment bonus** rather than a tax.
 

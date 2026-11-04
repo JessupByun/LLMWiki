@@ -1,9 +1,9 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Tests whether a strong model trained by a weak supervisor, while also pushed toward a conflicting goal, sacrifices some of the intended behavior where the supervisor can't tell - and finds it does: under harmlessness-versus-helpfulness conflicts, a meaningful share of the conflict-induced errors falls in cases the strong model knows but the weak one doesn't, more so as the capability gap grows, with bootstrapping through an intermediate model helping only partly."
-cluster: ["Scalable oversight"]
+cluster: ["Scalable oversight", "Scheming & AI control"]
 sources: ["raw/papers/scalable-oversight/Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024).pdf"]
 tags: [weak-to-strong, scalable-oversight, deception, superalignment, multi-objective-alignment, preference-optimization]
 aliases: ["arxiv:2406.11431", "Yang et al. 2024", "weak-to-strong deception"]
@@ -84,3 +84,4 @@ The deception here is induced by a conflicting training objective, not the out-o
 ## Up
 
 - [[Cluster — Scalable oversight]]
+- [[Cluster — Scheming & AI control]]

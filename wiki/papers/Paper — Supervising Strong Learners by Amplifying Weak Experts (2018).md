@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Proposes Iterated Amplification: train an agent on tasks too hard for a human to perform or judge directly by having the human answer each question with the help of several copies of the current agent, delegating subquestions to them, then training the agent to imitate that human-plus-copies team - so the training signal grows with the agent itself, with no external reward function - and shows it learns five algorithmic tasks nearly as fast as supervised learning from ground truth."
 cluster: ["Scalable oversight"]
 sources: ["raw/papers/scalable-oversight/Paper — Supervising Strong Learners by Amplifying Weak Experts (2018).pdf"]
@@ -23,7 +23,7 @@ Paul Christiano and Dario Amodei (OpenAI), and Buck Shlegeris (work done while a
 Supervised learning needs a human who can perform the task; RLHF needs a human who can at least judge it.
 For tasks beyond that - setting economic policy, securing a large computer network, advancing a research frontier - there was no general way to get a training signal at all, and the usual fallback of optimizing a measurable short-term proxy invites exactly the Goodhart failures [[Concept — Reward hacking]] describes.
 This paper proposes building the training signal up recursively: a human who can't answer a hard question can still break it into easier subquestions and delegate those to copies of the agent being trained, and the agent then learns to imitate the resulting team.
-Alongside [[Paper — AI Safety via Debate (2018)]], it is one of the founding scalable-oversight proposals, alongside recursive reward modeling - and debate's own paper spends a section arguing the two are approximately equivalent, matching two definitions of PSPACE.
+With [[Paper — AI Safety via Debate (2018)]] and recursive reward modeling, it is one of the founding scalable-oversight proposals - and debate's own paper spends a section arguing the two are approximately equivalent, matching two definitions of PSPACE.
 
 ## Problem it solved
 

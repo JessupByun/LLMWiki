@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Scales sparse autoencoder dictionary learning from a one-layer toy transformer up to Claude 3 Sonnet, a real production model, and recovers millions of abstract, causally-steerable features - including deception, sycophancy, and bias-related features - answering whether the toy-model result generalizes at all."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html"]
@@ -18,7 +18,7 @@ Adly Templeton and Tom Conerly (core contributors), Jonathan Marcus, Jack Lindse
 
 ## Impact
 
-Eight months after [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] left open whether sparse-autoencoder dictionary learning could work past a one-layer toy transformer, this paper answers it: applied to Claude 3 Sonnet (Anthropic's medium-scale production model), the same technique recovers millions of far-more-abstract features, up from a toy model's shallow, single-word associations to features like "sycophantic praise," "backdoors in code," and "treacherous turns."
+Eight months after [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] left open whether sparse-autoencoder dictionary learning could work past a one-layer toy transformer, this paper answers it: applied to Claude 3 Sonnet (Anthropic's medium-scale production model), the same technique recovers millions of far-more-abstract features, up from a toy model's shallow, single-word associations to features for sycophantic praise, backdoors in code, and deception.
 It also supplies the first strong causal evidence at production scale that these features actually drive model behavior, not just correlate with it - extending the clamping experiments [[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] had run on its one-layer toy model - by artificially clamping a single feature and watching the model's output change in exactly the predicted direction - most famously the "Golden Gate Bridge" feature, whose amplification became the public "Golden Gate Claude" demo shortly after this paper's release.
 This is the paper that made large-model interpretability via dictionary learning look tractable rather than merely toy-scale plausible, and it is the direct empirical basis for Anthropic's subsequent safety-relevant-feature research program.
 
@@ -55,7 +55,7 @@ The same clamping technique is later used on a deception-related "internal confl
 
 ## Safety-relevant features
 
-The paper reports finding features tied to categories directly relevant to AI safety: insecure code and backdoors, bias (including an explicit "gender bias awareness" feature as well as raw slurs, whose most offensive maximal activations were deliberately excluded from the paper), sycophancy (including a feature distinguishing sincere from sarcastic praise), deception and power-seeking (a "treacherous turns" feature, a "biding time/hiding strength" feature, a "self-improving AI" feature), and dangerous content such as bioweapons development.
+The paper reports finding features tied to categories directly relevant to AI safety: insecure code and backdoors, bias (including an explicit "gender bias awareness" feature as well as raw slurs, whose most offensive maximal activations were deliberately excluded from the paper), sycophancy (including a feature distinguishing sincere from sarcastic praise), deception and power-seeking, and dangerous content such as bioweapons development.
 The authors are explicit about the limits of this evidence: "there's a difference... between knowing about lies, being capable of lying, and actually lying in the real world," and the paper states outright that it does not show any of these features are actually useful for safety work, only that features plausibly relevant to safety concerns exist and can be found by this method.
 A feature that appears to underlie the model's "assistant persona" itself was also found - clamping it to a strongly negative value causes the model to respond in a noticeably more human-like register - though the authors caution this doesn't imply the model has hidden goals or genuinely possesses the qualities its self-referential features touch on (robots, consciousness, moral agency).
 

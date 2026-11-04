@@ -1,8 +1,8 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-10-20
-summary: "A 3,668-question, expert-written multiple-choice proxy for hazardous biosecurity, cybersecurity, and chemical-security knowledge, built to be safely publishable by testing precursors and neighbors of dangerous capability rather than the capability itself, and paired with RMU, an unlearning method that drives frontier open models' scores toward random chance while preserving general capability far better than refusal training alone."
+updated: 2026-11-04
+summary: "A 3,668-question, expert-written multiple-choice proxy for hazardous biosecurity, cybersecurity, and chemical-security knowledge, built to be safely publishable by testing precursors and neighbors of dangerous capability rather than the capability itself, and paired with RMU, an unlearning method that drives frontier open models' scores toward random chance while preserving general capability better than prior unlearning baselines, and resists GCG jailbreaks that break the refusal-trained base model."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — WMDP.pdf"]
 tags: [unlearning, dangerous-capabilities, benchmark, safety, evals]

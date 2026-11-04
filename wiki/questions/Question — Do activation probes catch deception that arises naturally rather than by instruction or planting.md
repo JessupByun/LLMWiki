@@ -1,9 +1,9 @@
 ---
 type: question
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Whether activation-based monitors validated on deception that was instructed or deliberately trained in will also catch misleading behavior a model picks up on its own from ordinary training - the case a deployed monitor actually has to handle."
-cluster: ["Mechanistic interpretability"]
+cluster: ["Scheming & AI control", "Mechanistic interpretability"]
 sources: []
 tags: [interpretability, probes, deception, monitoring, open-question]
 aliases: []
@@ -35,4 +35,5 @@ What this wiki lacks is a probe evaluated on a model organism whose deception em
 
 ## Up
 
+- [[Cluster — Scheming & AI control]]
 - [[Cluster — Mechanistic interpretability]]

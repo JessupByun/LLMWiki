@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "LSTM - memory cells with multiplicative input/output gates and a constant error carrousel let recurrent networks bridge time lags of 1000+ steps, solving the vanishing/exploding gradient problem that made plain backpropagation through time unable to learn long-range dependencies."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Long Short-Term Memory (1997).pdf"]

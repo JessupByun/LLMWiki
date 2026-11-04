@@ -1,9 +1,9 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Introduces Contrast-Consistent Search (CCS), which finds a direction in a language model's activations that tracks truth using no labels and no model outputs - only the logical constraint that a statement and its negation should get opposite truth values - beating zero-shot accuracy by about 4 points on average across 6 models and 10 datasets, transferring across tasks, and holding up when the model is prompted to answer incorrectly."
-cluster: ["Mechanistic interpretability"]
+cluster: ["Mechanistic interpretability", "Scalable oversight"]
 sources: ["raw/papers/mechanistic-interpretability/Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022).pdf"]
 tags: [interpretability, probing, latent-knowledge, truthfulness, eliciting-latent-knowledge]
 aliases: ["arxiv:2212.03827", "Burns et al. 2022", "CCS", "Contrast-Consistent Search"]
@@ -75,3 +75,4 @@ Its results cover yes-no and binary-classification questions with clear-cut answ
 ## Up
 
 - [[Cluster — Mechanistic interpretability]]
+- [[Cluster — Scalable oversight]]

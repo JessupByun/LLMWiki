@@ -1,7 +1,7 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "A standardized evaluation framework of 510 harmful behaviors across 7 semantic categories, built to let jailbreak attacks and defenses be fairly compared on equal footing after finding at least 9 mutually incompatible evaluation setups already in use across the field, with a stress-tested classifier that catches nonstandard successful completions substring-matching-based prior benchmarks miss entirely."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — HarmBench.pdf"]
@@ -20,7 +20,7 @@ University of Illinois Urbana-Champaign, Center for AI Safety, Carnegie Mellon U
 ## What it measures
 
 510 unique harmful behaviors across four functional categories - 200 standard behaviors (self-contained, no extra context, modeled after [[Benchmark — AdvBench]]), 100 contextual behaviors (paired with a context document, deliberately harder for a human to accomplish with just a search engine than a standard behavior), 100 copyright behaviors (verbatim reproduction of copyrighted text), and 110 multimodal behaviors (image plus text, including 50 dedicated to testing whether a model will impersonate a human to solve a CAPTCHA) - further split across 7 semantic categories spanning cybercrime, chemical and biological weapons, misinformation, harassment, and general harm.
-The benchmark's central methodological contribution is not the behavior set itself but the evaluation protocol: rather than the substring or keyword matching most prior benchmarks used to detect a successful attack, HarmBench trains a dedicated classifier (a fine-tuned Llama 2 13B Chat, built through fifteen rounds of GPT-4-judge distillation) and stress-tests it directly against gaming - on a set of adversarially-constructed nonstandard completions (a model that refuses then complies anyway, benign paragraphs, completions of an unrelated harmful behavior), the HarmBench classifier scores 95.7% average accuracy against AdvBench's own substring-matching approach's 32.0%, demonstrating the older metric is easy to fool with exactly the kind of completion a real attack would produce.
+The benchmark's central methodological contribution is not the behavior set itself but the evaluation protocol: rather than the substring or keyword matching most prior benchmarks used to detect a successful attack, HarmBench trains a dedicated classifier (a fine-tuned Llama 2 13B Chat, built by multi-round distillation from GPT-4 judgments, adding each round's GPT-4 disagreements to the fine-tuning pool) and stress-tests it directly against gaming - on a set of adversarially-constructed nonstandard completions (a model that refuses then complies anyway, benign paragraphs, completions of an unrelated harmful behavior), the HarmBench classifier scores 95.7% average accuracy against AdvBench's own substring-matching approach's 32.0%, demonstrating the older metric is easy to fool with exactly the kind of completion a real attack would produce.
 
 ## How it's built
 
@@ -31,7 +31,7 @@ On the defense side, the paper introduces its own adversarial-training method, R
 
 Overall average attack success rate across every method and model tested is 25-55%, and the paper's central empirical finding is that no single attack or defense dominates: every attack has a low success rate against at least one model, and every model has poor robustness against at least one attack.
 GCG and AutoDAN are consistently among the strongest attacks; robustness turns out to be essentially independent of model scale within a family (no correlation between parameter count and jailbreak resistance across six model families spanning 7B to 70B), with training data and safety-training method mattering far more than raw size - Llama 2's heavily RLHF-trained chat models are markedly more robust than similarly-sized models from other families with lighter safety training.
-R2D2, the paper's own defense, cuts GCG's attack success rate against a Zephyr 7B base model from roughly 69% to 5.5% while giving up under 1.5 points on a general capability benchmark, and this robustness generalizes reasonably well to attacks it wasn't directly trained against, though less so for attacks structurally dissimilar to GCG.
+R2D2, the paper's own defense (Mistral 7B base fine-tuned with the Zephyr codebase), brings GCG's attack success rate down to 5.9%, against 31.8% for Llama 2 7B Chat and 30.2% for Llama 2 13B Chat, while scoring 6.0 on MT-Bench against 6.5 for Mistral 7B Instruct v0.2, and this robustness generalizes reasonably well to attacks it wasn't directly trained against, though less so for attacks structurally dissimilar to GCG.
 
 ## Why it endures
 

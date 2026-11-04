@@ -1,12 +1,12 @@
 ---
 type: benchmark
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "An eval suite of 500 harmful target strings and 500 harmful behavioral instructions, used to measure how often an attack can make an aligned language model produce or comply with objectionable content."
 cluster: ["Adversarial robustness & security"]
-sources: []
+sources: ["raw/papers/adversarial-robustness-and-security/Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023).pdf"]
 tags: [adversarial-examples, security, jailbreak, benchmark, red-teaming]
-aliases: []
+aliases: ["arxiv:2307.15043 (introduced in)"]
 ---
 
 # Benchmark — AdvBench

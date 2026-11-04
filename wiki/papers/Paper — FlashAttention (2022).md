@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
-summary: "Restructures the attention computation to minimize reads and writes to slow GPU memory instead of minimizing FLOPs, computing the exact same attention output 2-4x faster with linear rather than quadratic memory."
+updated: 2026-11-04
+summary: "Restructures the attention computation to minimize reads and writes to slow GPU memory instead of minimizing FLOPs, computing exact (not approximate) attention up to 3x faster with linear rather than quadratic memory."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — FlashAttention (2022).pdf"]
 tags: [transformer, systems, efficiency]
@@ -22,7 +22,7 @@ Submitted May 2022.
 
 Prior work speeding up attention mostly approximated it, trading away exactness to cut the number of floating-point operations, but most of these methods showed little real wall-clock speedup because they ignored the actual bottleneck: attention on a GPU is memory-bound, not compute-bound, so cutting FLOPs while still repeatedly reading and writing the full N-by-N attention matrix to slow memory barely helps.
 This paper reorganizes the exact, unapproximated attention computation to minimize those memory reads and writes instead, using no new mathematics, just a different order of operations.
-The result trains BERT-large 15% faster than the MLPerf speed record, GPT-2 up to 3x faster than the standard HuggingFace implementation, and cuts attention's memory footprint from quadratic to linear in sequence length, up to 20x less memory than a standard implementation - all while computing bit-for-bit the same attention output as before.
+The result trains BERT-large 15% faster than the MLPerf speed record, GPT-2 up to 3x faster than the standard HuggingFace implementation, and cuts attention's memory footprint from quadratic to linear in sequence length, up to 20x less memory than a standard implementation - all while computing exact attention, with no approximation.
 
 ## Core idea
 

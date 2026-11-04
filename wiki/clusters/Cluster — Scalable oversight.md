@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Getting reliable training signal for a system whose true objective is too expensive, or too far beyond human capability, to evaluate directly - the specific question of whether a supervisor can still meaningfully oversee a model that is, or will become, more capable than the supervisor itself."
 cluster: []
 sources: []
@@ -47,6 +47,7 @@ The fully adversarial worst case is the subject of [[Cluster — Scheming & AI c
 | [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] | What the authors call the first evidence that training debaters - not just optimizing them at inference time - makes a judge more accurate, while training a lone persuader does not. |
 | [[Paper — On Scalable Oversight with Weak LLMs Judging Strong LLMs (2024)]] | The sober check on debate beyond reading comprehension: across nine tasks with weak LLM judges, debate beats consultancy but barely beats the judge answering alone when no information is hidden, though it resists amplifying the strong model's own mistakes far better than consultancy does. |
 | [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] | Turns oversight into a training objective for legibility: provers learn to convince small verifiers that are trained against a sneaky prover, and the legibility transfers to humans - at the cost of a legibility tax. |
+| [[Paper — Discovering Latent Knowledge in Language Models Without Supervision (2022)]] (CCS) | An unsupervised route around the evaluator bottleneck: reads what a model "believes" from its activations using only logical consistency, with no human labels, so it could in principle surface truths a human evaluator can't check - the empirical start of eliciting latent knowledge. Primary cluster is Mechanistic interpretability. |
 
 ## Methods and concepts
 

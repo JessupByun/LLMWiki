@@ -1,8 +1,8 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-20
-summary: "Discovered adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets."
+status: mature
+updated: 2026-11-04
+summary: "Named adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets."
 cluster: ["Adversarial robustness & security", "Foundational canon"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Intriguing Properties of Neural Networks (2013).pdf"]
 tags: [adversarial-examples, robustness, security, interpretability, cnn]
@@ -21,10 +21,10 @@ aliases: ["arxiv:1312.6199", "Szegedy et al. 2013"]
 
 ## Impact
 
-This paper discovered **adversarial examples** and named them.
+This paper named **adversarial examples** and brought them to deep learning, concurrently with evasion attacks on classical classifiers by Biggio et al. (2013).
 It showed that a perturbation too small for a human to see can be computed to make a network confidently output any class you choose, and that the same perturbation often transfers to *other* networks trained with different hyperparameters or even on disjoint data.
 That second finding is what made this a security result rather than a curiosity: the vulnerability is a property of the learned function class, not of one unlucky model, so an attacker doesn't need your weights.
-Every jailbreak, prompt-injection, and adversarial-robustness line of work descends from this observation.
+Adversarial-robustness research, and later optimization-based jailbreaks of language models, descend from this observation.
 
 ## Problem it solved
 
@@ -46,26 +46,31 @@ This is the direct ancestor of the superposition and feature-basis debates in me
 **2. Adversarial examples exist and transfer.**
 Networks "learn input-output mappings that are fairly discontinuous," so an "imperceptible non-random perturbation" can "arbitrarily change the network's prediction" (p1, p2).
 
-## Core idea: minimum-distortion targeted attack
+## Core idea
 
+The attack is a minimum-distortion targeted search.
 Given an image `x` and a **target label** `l` you want the model to output, solve:
 
 > minimize ‖r‖₂ subject to `f(x+r) = l` and `x+r ∈ [0,1]^m`
 
 In words: find the smallest pixel change that lands the image in the class of your choosing, while keeping it a valid image.
-That exact problem is intractable, so they relax it to minimizing `c·|r| + loss_f(x+r, l)` and **line-search over `c`** until the classification actually flips, solving each instance with **box-constrained L-BFGS** (p5).
 
 How small is small: for AlexNet the "Average distortion based on 64 examples is 0.006508," and every perturbed image in the figure is classified as "ostrich, Struthio camelus" (p6).
 The perturbation has to be magnified 10x to be visible in print at all.
 The calibration that makes this land: Gaussian noise at stddev 1.0 leaves images "hardly readable" yet still correctly classified 51% of the time, while the adversarial examples are "never classified correctly" at a fraction of that magnitude (p7).
 
+## How it's built
+
+The exact problem is intractable, so they relax it to minimizing `c·|r| + loss_f(x+r, l)` and **line-search over `c`** until the classification actually flips, solving each instance with **box-constrained L-BFGS** (p5).
+Targets are MNIST models (linear softmax, sigmoid MLPs, an autoencoder-based classifier), **AlexNet** on ImageNet, and **QuocNet**.
+Transfer is tested by feeding examples built against one model to models with different architectures, hyperparameters, or training data (disjoint halves of MNIST).
+
 **This paper does not contain FGSM**, the linearity hypothesis, or ε-ball/L∞ framing.
 Those arrive in the follow-up work; here the method is an L-BFGS optimization and the explanation is different (below).
 
-## Results (highlights)
+## Results
 
-- Attacked MNIST models (linear softmax, sigmoid MLPs, an autoencoder-based classifier), **AlexNet** on ImageNet, and **QuocNet**.
-  Minimum average distortion to drive MNIST models to 0% accuracy ranged 0.058-0.14 (Table 1, p7).
+- Minimum average distortion to drive MNIST models to 0% accuracy ranged 0.058-0.14 (Table 1, p7).
 - **Cross-model transfer:** adversarial examples built for one MNIST architecture induce errors in others - e.g. examples from FC10(1) cause 71.9%/76.2%/48.1%/47%/34.4% error across the other models, against Gaussian-noise baselines of 0-18% (Table 2, p7).
 - **Cross-training-set transfer**, with an important caveat.
   At native distortion, transfer between models trained on **disjoint** halves of MNIST is weak: 5.9%, 5.1%, 8.2% error against a matched-noise baseline of 2.2-2.6% (Table 4, p8).
@@ -86,6 +91,14 @@ The **spectral** account: bound each layer's Lipschitz constant by its operator 
 Computing these for AlexNet shows "instabilities can appear as soon as in the first convolutional layer" (p9).
 They are careful about the direction of the implication: "large bounds do not automatically translate into existence of adversarial examples; however, small bounds guarantee that no such examples can appear" (p9).
 
+## Why it endures
+
+Transfer is the half that lasted: once a perturbation built on one model fools another, an attacker can craft against a surrogate and deploy against a system whose weights they never see, which is the threat model behind black-box attacks ever since.
+The explanation did not last - the linearity account of [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] replaced the dense-pockets story within a year - but the phenomenon and the optimization framing did.
+Adversarial training, a preliminary side result here, became the field's main empirical defense once [[Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018)]] gave it a min-max formulation.
+The same optimize-an-input-against-the-model recipe later moved to token space, where [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] uses it to jailbreak aligned language models with suffixes that transfer to production systems.
+Finding 1 lasted too, as an early form of the question of whether individual neurons are the right unit of analysis, which [[Concept — Superposition]] now addresses.
+
 ## Limitations
 
 - The unit-vs-space finding is supported only by figure panels.
@@ -105,7 +118,7 @@ Its "dense low-probability pockets" explanation is superseded by [[Paper — Exp
 - Concept hub: [[Concept — Adversarial examples]].
 - Attacks the architecture documented in [[Concept — Convolutional neural networks (CNNs)]], and AlexNet specifically - the model from [[Paper — ImageNet Classification with Deep CNNs (2012)]] is one of its three targets.
   Sutskever is an author on both.
-- Finding 1 is an early precursor to the interpretability question of whether neurons are the right unit of analysis, which later becomes the superposition literature.
+- Finding 1 is an early precursor to the interpretability question of whether neurons are the right unit of analysis, which later becomes the [[Concept — Superposition]] literature.
 - [[Paper — Explaining and Harnessing Adversarial Examples (2014)]], co-authored by Szegedy and Goodfellow, replaces its L-BFGS attack with the one-step fast gradient sign method.
 
 ## Up

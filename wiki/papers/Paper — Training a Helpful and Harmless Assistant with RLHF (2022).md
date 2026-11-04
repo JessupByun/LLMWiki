@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-20
+status: mature
+updated: 2026-11-04
 summary: "Applies preference modeling and RLHF to train a helpful and harmless dialogue assistant, releases the HH-RLHF preference dataset, and shows that at sufficient scale, alignment training carries essentially no capability cost - the opposite of the 'alignment tax' seen in smaller models."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Training a Helpful and Harmless Assistant with RLHF (2022).pdf"]

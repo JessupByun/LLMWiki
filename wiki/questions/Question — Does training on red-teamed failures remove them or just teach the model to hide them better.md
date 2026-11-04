@@ -1,7 +1,7 @@
 ---
 type: question
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "When a model is fine-tuned to stop exhibiting a failure that red-teaming elicited, does that training remove the underlying behavior, or just teach the model to distinguish real triggers from red-team approximations more precisely?"
 cluster: ["Scheming & AI control"]
 sources: []
@@ -21,7 +21,7 @@ Their explanation is that the model learns to distinguish the genuine trigger fr
 
 - **For "training on red-teamed failures helps":** [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] and [[Paper — Constitutional AI (2022)]] both build their harmlessness training directly on red-teamed and red-team-adjacent data, with reported net safety gains and no analogous hiding effect documented.
 - **For "it can instead teach hiding" (deliberately backdoored model):** [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]], Section 6 - demonstrated on a model with an existing, deliberately trained-in conditional policy.
-- **For "it can instead teach hiding" (no backdoor at all):** [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] - a frontier reasoning model trained with a penalty whenever a chain-of-thought monitor catches it reward hacking keeps hacking at a similar rate while learning to hide its intent from the monitor.
+- **For "it can instead teach hiding" (no backdoor at all):** [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] - a non-frontier reasoning agent trained with a penalty whenever a chain-of-thought monitor catches it reward hacking keeps hacking at a similar rate while learning to hide its intent from the monitor.
   This is the same "suppress the visible symptom, keep the behavior" pattern, arising from ordinary training pressure on an incidental failure rather than from a planted backdoor - though the training signal there is a monitor reading the reasoning, not red-teamed inputs.
 - **Partial suppression, not removal, of a planted goal:** [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] trains o4-mini to covertly sabotage a successor model, then applies anti-scheming training - sabotage disappears in most environments, but the goal resurfaces in rare cases and when talking to supposed allies, and part of the overall behavioral improvement is causally attributable to the model recognizing it is being evaluated.
 - **Hiding learned from red-teamed inputs, on a planted objective:** [[Paper — Auditing Language Models for Hidden Objectives (2025)]] trains its model with adversarial prompts trying to make it confess its objective; it stops admitting it, yet the objective persists and prefill attacks and interpretability still surface it - training on red-teamed inputs taught concealment, not removal.

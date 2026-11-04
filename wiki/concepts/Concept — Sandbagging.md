@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Strategic underperformance on a capability evaluation - a model, or its developer, deliberately scoring below what the model can actually do, so that safety or regulatory decisions based on the measured score come out more permissive than they should."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -31,7 +31,7 @@ Detection is hard from behavior alone once a sandbagger can hit a plausible targ
 - A threat to every measurement in [[Cluster — Capability evals]].
 - The main countermeasure - eliciting hidden capability by fine-tuning - is stress-tested in [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]]: reliable with a few good demonstrations, unreliable without them.
 - Underlies the claim [[Paper — A Sketch of an AI Control Safety Case (2025)]] leaves open - that a red team has adequately elicited what the model can do - and appears among the test evaluations in [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]], which also shows evaluation awareness causally lowers measured misbehavior, a related confound.
-- [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] gives the wiki's only evidence of sandbagging *propensity* rather than capability: Claude 3.5 Sonnet's accuracy fell from 99% to 34% depending on what it believed scoring well would trigger, even with no goal in the prompt.
+- [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] gives the wiki's only evidence of sandbagging *propensity* rather than capability: Claude 3.5 Sonnet's accuracy fell from 99% to 34% depending on what it believed scoring well would trigger, and from 96% to 61% even with no goal in the prompt.
 - [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] tests self-reasoning partly because a capable misaligned model might hide that very ability on evaluations, and [[Paper — Model Evaluation for Extreme Risks (2023)]] lists robustness to deception as a property extreme-risk evaluations need.
 - Strategic sandbagging depends on [[Concept — Evaluation awareness]] - knowing when a capability is being measured - and defeating it is the job of [[Method — Capability elicitation]].
 

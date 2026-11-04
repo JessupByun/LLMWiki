@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Models shutdown as a two-player game between a human who can press a robot's off switch and a robot that can disable it, and proves that a robot certain of its objective has an incentive to disable the switch unless the human is perfectly rational, while a robot uncertain about the human's preferences - and treating the human's choice as evidence about them - wants to keep the switch, with that incentive shrinking as the robot grows more confident or the human less rational."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — The Off-Switch Game (2016).pdf"]
@@ -21,7 +21,7 @@ Supported by the Center for Human-Compatible AI.
 
 "You can't fetch the coffee if you're dead": an agent pursuing almost any objective has a reason to stop people from switching it off, not out of any survival instinct but because being off prevents it from achieving its goal.
 This paper takes that informal argument and makes it a small, solvable game, then shows the incentive is not inevitable - it depends on whether the agent is *certain* it knows what the human wants.
-Its answer, that an agent uncertain about its objective will want to keep its off switch, became a central result of the "assistance game" agenda (Russell's provably beneficial AI) and a standard reference point for corrigibility alongside Soares et al.
+Its answer, that an agent uncertain about its objective will want to keep its off switch, is a central formal result of the "assistance game" agenda (Russell's provably beneficial AI), and a formal treatment of corrigibility alongside Soares et al.
 For control work it marks the opposite starting assumption: the off switch is safe only if the agent is genuinely trying to serve the human, which is exactly what [[Concept — AI control]] declines to assume.
 
 ## Problem it solved

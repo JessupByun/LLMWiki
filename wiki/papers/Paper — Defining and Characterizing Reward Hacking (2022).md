@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-19
+status: mature
+updated: 2026-11-04
 summary: "Gives the first formal, mathematical definition of reward hacking - a proxy reward is unhackable if improving it can never decrease the true reward - and proves that this is a very demanding condition: essentially unachievable over the full policy space, but always achievable once the policy set is restricted to something finite."
 cluster: ["Post-training alignment"]
 sources: ["raw/papers/post-training-alignment/Paper — Defining and Characterizing Reward Hacking (2022).pdf"]

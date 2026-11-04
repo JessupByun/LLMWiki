@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
-summary: "Muon - orthogonalizes the momentum update for 2D hidden-layer weight matrices via a cheap Newton-Schulz iteration instead of AdamW's per-coordinate scaling, cutting NanoGPT speedrun times 35% and reaching GPT-2 XL performance 25% faster at 1.5B parameters."
+updated: 2026-11-04
+summary: "Muon - orthogonalizes the momentum update for 2D hidden-layer weight matrices via a cheap Newton-Schulz iteration instead of AdamW's per-coordinate scaling, speeding up the NanoGPT speedrun record by 1.35x and reaching GPT-2 XL-level performance at 1.5B parameters in 10 rather than 13.3 hours."
 cluster: []
 sources: ["https://kellerjordan.github.io/posts/muon/"]
 tags: [optimizer, curiosity, orthogonalization]
@@ -23,8 +23,8 @@ Curiosity ingest: not tied to the safety/security north star, but an interesting
 ## Impact
 
 Adam has been the near-universal default optimizer for training neural networks since [[Paper — Adam - A Method for Stochastic Optimization (2014)]], and genuinely evidenced improvements over it are rare.
-Muon is one: swapped in as a drop-in replacement for the hidden-layer weight matrices in the NanoGPT speedrunning competition, it improved on the prior AdamW-based record by 35%, and stayed the optimizer of choice through 12 subsequent speed records set by 7 different researchers.
-It also improved the CIFAR-10 training speed record from 3.3 to 2.6 A100-seconds to reach 94% accuracy, and at 1.5B parameters reached GPT-2 XL-level HellaSwag performance in 10 hours versus 13.3 hours for an AdamW-trained baseline - a real, benchmarked speed win rather than a purely theoretical one.
+Muon is one: swapped in as a drop-in replacement for the hidden-layer weight matrices in the NanoGPT speedrunning competition, it improved the prior AdamW-based record for reaching 3.28 validation loss on FineWeb by a factor of 1.35x (the post also phrases this as a 35% training-speed improvement), and stayed the optimizer of choice through 12 subsequent speed records set by 7 different researchers.
+It also improved the CIFAR-10 training speed record from 3.3 to 2.6 A100-seconds to reach 94% accuracy, and at 1.5B parameters reached GPT-2 XL-level HellaSwag performance in 10 8xH100-hours versus 13.3 hours for an AdamW-trained baseline - a real, benchmarked speed win rather than a purely theoretical one.
 
 ## Core idea
 
@@ -39,7 +39,7 @@ Unlike most proposed Adam replacements, Muon ships with concrete, reproducible w
 
 ## Limitations
 
-The authors are explicit about what remains untested: how Muon behaves at scale beyond 1.5B parameters, how it performs in a distributed multi-GPU training setup, and whether it transfers to fine-tuning or reinforcement learning settings rather than the pretraining-from-scratch regime it was benchmarked on.
+The authors are explicit about what remains untested: whether Muon scales to much larger trainings (the post's example is 20B+ parameters on 1T+ tokens), how it performs in a distributed multi-GPU training setup, and whether it transfers to fine-tuning or reinforcement learning settings rather than the pretraining-from-scratch regime it was benchmarked on.
 
 ## Relations
 
@@ -51,4 +51,4 @@ The authors are explicit about what remains untested: how Muon behaves at scale 
 ## Up
 
 No cluster yet - a standalone curiosity ingest.
-If a second paper on optimizer internals or training-efficiency research is ingested, a topical cluster may form around this theme.
+[[Paper — Adam - A Method for Stochastic Optimization (2014)]] is already in the vault, but as canon background rather than active optimizer research; if a second non-canon optimizer paper is ingested, a topical cluster may form around this theme.

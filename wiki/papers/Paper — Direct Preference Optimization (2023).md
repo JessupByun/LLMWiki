@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-19
+status: mature
+updated: 2026-11-04
 summary: "DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Direct Preference Optimization (2023).pdf"]

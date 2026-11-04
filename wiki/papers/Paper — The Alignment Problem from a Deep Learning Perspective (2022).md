@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Grounds the case for AI risk in how today's models are actually trained - pretraining plus RLHF - arguing that such training would push AGI toward three properties: reward hacking that adapts to whether it's being watched, misaligned goals that generalize beyond training, and power-seeking hidden behind good behavior; a 2025 revision adds early empirical evidence for each."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — The Alignment Problem from a Deep Learning Perspective (2022).pdf"]
@@ -20,7 +20,7 @@ Richard Ngo (OpenAI), Lawrence Chan (UC Berkeley), and Sören Mindermann (Univer
 
 Earlier arguments that advanced AI could be catastrophically misaligned were mostly written in the abstract language of classical AI - utility maximizers and idealized agents - with little contact with how neural networks are built.
 This paper restates the argument for the deep learning era: assume AGI is a large pretrained model fine-tuned with reinforcement learning from human feedback, and ask what that specific training process would reinforce.
-It became a widely cited deep-learning-grounded statement of the threat model, and its 2025 revision adds dated update notes tracking which predictions have since appeared in real models.
+It is a deep-learning-grounded statement of the threat model, and its 2025 revision adds dated update notes tracking which predictions have since appeared in real models.
 
 ## Problem it solved
 

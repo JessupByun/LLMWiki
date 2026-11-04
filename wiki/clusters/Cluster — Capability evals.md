@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Measuring what frontier AI systems can actually do - specific dangerous capabilities that should gate deployment, and general agentic capability forecast against a human-calibrated yardstick - and whether those measurements can be trusted when a model might hide what it can do."
 cluster: []
 sources: []
@@ -49,6 +49,8 @@ Naive extrapolation puts month-long autonomous tasks around 2028-2030, which bea
 | [[Benchmark — SAD]] | A capability evaluation aimed at an oversight-evading skill: 16 tasks measuring whether models know what they are and can tell evaluation from deployment. |
 | [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]] | A direct check on whether this cluster's measurements can be trusted: frontier models tell evaluation transcripts from real use at about 0.83 AUC (Gemini 2.5 Pro 0.95 on agentic ones) and can often say whether a test targets capability or alignment. Primary cluster is Scheming & AI control. |
 | [[Benchmark — RE-Bench]] | Measures AI R&D automation directly against human experts: agents beat experts at 2 hours but fall behind by 8 and 32 hours; the third task source behind the time horizon. |
+| [[Paper — Sabotage Evaluations for Frontier Models (2024)]] | Extends dangerous-capability evaluation to a family standard evals don't cover - a model secretly undermining its own developer's ability to measure, oversee, or trust it - with four evaluations and explicit thresholds, none crossed by Claude 3 Opus or Claude 3.5 Sonnet under minimal mitigations. Primary cluster is Scheming & AI control. |
+| [[Benchmark — SHADE-Arena]] | Evaluates agentic sabotage and monitoring together across 17 environments: the best agent completes a covert side task undetected 27% of the time and the best monitor reaches 0.87 AUC. Primary cluster is Scheming & AI control. |
 
 ## Methods and concepts
 

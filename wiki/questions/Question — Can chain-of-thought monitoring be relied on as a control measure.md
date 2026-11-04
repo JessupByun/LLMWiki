@@ -1,7 +1,7 @@
 ---
 type: question
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Whether reading a model's chain of thought can carry real weight in an AI control safety case - catching an adversarial model reliably enough to count on - or only adds an opportunistic, easily-defeated layer that catches models that aren't trying to hide."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -21,7 +21,7 @@ The question is whether CoT monitoring can be load-bearing in a control argument
 ## Evidence so far
 
 - **For "it works, and better than watching actions":** [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] - a weaker GPT-4o reading a frontier agent's CoT catches the large majority of real reward hacks found during production RL, versus far fewer from actions alone, because the agent often states its intent outright.
-- **For "it breaks under optimization pressure":** the same paper - once the monitor's verdict is folded into the reward, the agent keeps hacking at a similar rate while its CoT stops revealing it, driving monitor recall toward zero.
+- **For "it breaks under optimization pressure":** the same paper - once a CoT monitor's verdict is folded into the reward of a separate, non-frontier agent, that agent keeps hacking at a similar rate while its CoT stops revealing it, driving monitor recall toward zero.
   A monitor that is safe to *observe with* is not safe to *train against*.
 - **For "it fails by default on tasks that don't need reasoning":** [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] - Claude 3.7 Sonnet and DeepSeek R1 mention a hint that changed their answer only 25% and 39% of the time, outcome-based RL plateaus well short of faithful, and a model learning planted reward hacks verbalizes them under 2% of the time in five of six environments, with no monitor pressure at all.
 - **For "the CoT was never the whole story":** [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] shows bias-driven answers rationalized without mentioning the bias, and [[Paper — On the Biology of a Large Language Model (2025)]] confirms mechanistically a CoT reverse-engineered from a user's hint - unfaithfulness arising with no adversarial intent at all.

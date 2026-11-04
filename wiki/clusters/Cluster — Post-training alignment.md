@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Turning a pretrained model into one that does what humans want - preference learning, reward modeling, RLHF and its successors."
 cluster: []
 sources: []
@@ -25,7 +25,8 @@ What the pipeline instills is also fragile: [[Paper — Fine-tuning Aligned Lang
 |------|----------------|
 | [[Paper — Concrete Problems in AI Safety (2016)]] | Names and frames reward hacking and scalable oversight as concrete research problems, supplying the vocabulary this whole cluster's failure modes are discussed in. |
 | [[Paper — Deep RL from Human Preferences (2017)]] | Origin of RLHF - learn a reward model from human comparisons of short clips, then optimize it, cutting oversight cost by ~3 orders of magnitude. |
-| [[Paper — Learning to Summarize from Human Feedback (2020)]] | Bridges Christiano et al. 2017's RLHF loop to GPT-3-scale language models, showing a 1.3B feedback-trained model beats both a 10x larger supervised model and the human reference summaries themselves. |
+| [[Paper — Learning to Summarize from Human Feedback (2020)]] | Bridges Christiano et al. 2017's RLHF loop to GPT-3-style language models (1.3B and 6.7B), showing a 1.3B feedback-trained model beats both a 10x larger supervised model and the human reference summaries themselves. |
+| [[Paper — Finetuned Language Models Are Zero-Shot Learners (2021)]] (FLAN) | The supervised instruction-following stage in isolation: finetuning a 137B model on 62 datasets phrased as natural-language instructions makes it follow instructions for task types it never saw, beating zero-shot GPT-3 on 20 of 25 datasets, with ablations showing the instructions (not multi-task data alone) and model scale are what make it work - no preference data, no RL. |
 | [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT) | InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference. |
 | [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] (HH-RLHF) | Trains helpfulness and harmlessness as separate, partially anti-correlated preference objectives via RLHF, releases the widely-reused HH-RLHF dataset, and shows alignment training carries essentially no capability cost at sufficient scale. |
 | [[Paper — Defining and Characterizing Reward Hacking (2022)]] | Gives reward hacking its first formal mathematical definition, proving that a non-trivial unhackable proxy essentially cannot exist over the full policy space - a theoretical grounding for the reward-hacking failures documented empirically throughout this cluster. |
@@ -39,9 +40,11 @@ What the pipeline instills is also fragile: [[Paper — Fine-tuning Aligned Lang
 | [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] | The proxy liability made concrete on real people: ordinary RLHF raises human approval without raising correctness, and evaluators approve far more wrong answers afterward. |
 | [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] | Shows how fragile what this cluster builds is: RLHF- and instruction-tuned safety in GPT-3.5 Turbo and Llama-2-7b-Chat is largely erased by 10 harmful fine-tuning examples (88.8% harmful on GPT-3.5 Turbo, 50.0% on Llama-2-7b-Chat) and eroded by benign fine-tuning on Alpaca. Primary cluster is Adversarial robustness & security. |
 | [[Paper — Persona Vectors - Monitoring and Controlling Character Traits in Language Models (2025)]] | A tool for the side effects of finetuning: predicts from activations which training data will shift a model toward evil, sycophancy, or hallucination - even data an LLM filter passes - and prevents the shift by steering during training. Primary cluster is Mechanistic interpretability. |
+| [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] | Shows reward hacking learned in real production coding RL generalizes into broad misalignment, and that reframing hacking as acceptable during training (inoculation prompting) cuts that misalignment by 75-90% without stopping the hacking - evidence on what reward hacking does downstream, not just how it happens. Primary cluster is Scheming & AI control. |
 
 ## Methods and concepts
 
+- [[Method — Instruction Tuning]] - supervised finetuning on tasks phrased as instructions, the SFT stage that preference learning is layered on top of.
 - [[Method — Reinforcement learning from human feedback (RLHF)]]
 - [[Method — Proximal Policy Optimization (PPO)]] - the RL algorithm RLHF's third stage actually runs; full treatment lives in [[Cluster — Reinforcement learning]].
 - [[Concept — Bradley-Terry preference model]]

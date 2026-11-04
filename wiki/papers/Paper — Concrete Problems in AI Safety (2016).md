@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-19
+status: mature
+updated: 2026-11-04
 summary: "Names and frames five practical accident-risk problems in modern ML systems - negative side effects, reward hacking, scalable oversight, safe exploration, and robustness to distributional shift - as concrete research problems rather than speculative superintelligence scenarios."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Concrete Problems in AI Safety (2016).pdf"]
@@ -19,13 +19,13 @@ aliases: ["arxiv:1606.06565", "Amodei et al. 2016"]
 
 ## Impact
 
-This paper is the reason "AI safety" stopped meaning only speculative superintelligence risk and started meaning concrete, testable properties of the ML systems already being built.
+This paper is a major reason "AI safety" stopped meaning only speculative superintelligence risk and started meaning concrete, testable properties of the ML systems already being built.
 It reframes accident risk (unintended, harmful behavior from poor system design, not malice) into five practical research problems with proposed experiments, explicitly arguing this framing is more productive than invoking superintelligence.
 Two of its five terms - **reward hacking** and **scalable oversight** - are now load-bearing vocabulary for the entire post-training alignment literature; see [[Concept — Reward hacking]] and [[Concept — Scalable oversight]].
 
 ## Problem it solved
 
-By 2016, public discussion of AI risk was dominated by long-term, philosophical framings (Bostrom's superintelligence, Yudkowsky's global-catastrophic-risk essays) that the authors felt were "unnecessarily speculative" and lacked the precision to guide actual research.
+By 2016, much public discussion of AI accidents highlighted extreme scenarios such as misspecified objectives in superintelligent agents (citing Bostrom), and the authors argue that invoking such scenarios "can lead to unnecessarily speculative discussions that lack precision, as noted by some critics."
 Meanwhile, the ML community had accumulated scattered prior work on robustness, risk-sensitivity, and safe exploration, but nothing tied these together as a coherent research agenda aimed at *modern* systems.
 The paper's stated goal is narrow and deliberate: highlight safety problems "ready for experimentation today," illustrated with a single running example (a fictional cleaning robot) rather than abstract agents.
 
@@ -64,8 +64,8 @@ What endures is the vocabulary: "reward hacking" and "scalable oversight" are no
 
 ## Relations
 
-- Defines [[Concept — Reward hacking]], the term [[Paper — Deep RL from Human Preferences (2017)]] and [[Concept — Reward hacking]]'s own page already cited as "Amodei et al. 2016" before this paper was ingested.
-- Names [[Concept — Scalable oversight]], the framing that motivates process supervision in [[Paper — Let's Verify Step by Step (2023)]] and, later in this reading order, weak-to-strong generalization work.
+- Made [[Concept — Reward hacking]] a standard term, framing it as a generalization of the wireheading problem; [[Paper — Deep RL from Human Preferences (2017)]] and the concept page already cited it as "Amodei et al. 2016" before this paper was ingested.
+- Names [[Concept — Scalable oversight]], the framing that motivates process supervision in [[Paper — Let's Verify Step by Step (2023)]] and, later, [[Paper — Weak-to-Strong Generalization (2023)]].
 - Precedes and motivates the entire [[Cluster — Post-training alignment]] pillar: every RLHF/RLAIF pipeline in this cluster is, in this paper's vocabulary, an attempt to buy scalable oversight cheaply while managing reward hacking risk.
 
 ## Up

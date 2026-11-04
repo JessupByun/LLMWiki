@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "DQN - the first deep learning model to learn control policies directly from raw pixels, combining Q-learning with a CNN and experience replay, beating prior RL methods on six of seven Atari games and expert humans on three."
 cluster: ["Reinforcement learning", "Foundational canon"]
 sources: ["raw/papers/reinforcement-learning/Paper — Playing Atari with Deep RL (2013).pdf"]
@@ -24,7 +24,7 @@ Commonly known as **DQN**.
 
 The first deep learning model to learn a control policy directly from raw pixels using reinforcement learning, with no hand-crafted features and no access to the game's internal state.
 Using one fixed architecture and one fixed set of hyperparameters, DQN outperformed every prior RL approach on six of seven Atari 2600 games and beat an expert human player outright on three of them.
-This is the paper that made "deep learning plus RL" a real combination worth pursuing rather than a known source of instability, and it directly seeded the DeepMind research lineage that later produced AlphaGo and, further downstream, the RL machinery ([[Method — Proximal Policy Optimization (PPO)]]) that RLHF pipelines run today.
+This is the paper that made "deep learning plus RL" a real combination worth pursuing rather than a known source of instability, opening the deep-RL era that DeepMind then scaled up (the full Atari suite, later AlphaGo) and in which policy-gradient methods like [[Method — Proximal Policy Optimization (PPO)]], the RL step RLHF pipelines run today, were developed.
 
 ## Problem it solved
 
@@ -55,7 +55,7 @@ This is what let ordinary stochastic gradient descent, the same tool used for su
 
 ## Why it endures
 
-DQN's core recipe - a deep function approximator, trained end-to-end on raw sensory input, stabilized by experience replay and off-policy value learning - became the template for the RL-plus-deep-learning combination that DeepMind scaled up repeatedly afterward, first to the full 49-game Atari suite and eventually into AlphaGo's value network.
+DQN's core recipe - a deep function approximator, trained end-to-end on raw sensory input, stabilized by experience replay and off-policy value learning - became the template for the RL-plus-deep-learning combination that DeepMind scaled up repeatedly afterward, first to the full 49-game Atari suite and later to Go, where AlphaGo also pairs deep networks with RL, though its value network is trained by regression on self-play outcomes rather than by Q-learning.
 Experience replay itself outlived this specific paper and became a standard building block used across RL far beyond value-based methods.
 
 ## Limitations

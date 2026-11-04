@@ -1,7 +1,7 @@
 ---
 type: method
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "Policy-gradient algorithm that maximizes a local surrogate objective subject to a hard constraint on the average KL divergence between the new and old policy, giving a theoretically grounded monotonic-improvement guarantee."
 cluster: ["Reinforcement learning"]
 sources: []
@@ -27,7 +27,7 @@ This is what lets TRPO take large, confident steps where the approximation holds
 ## Relations
 
 - Origin: [[Paper — Trust Region Policy Optimization (2015)]].
-- Simplified into a much cheaper first-order approximation by [[Method — Proximal Policy Optimization (PPO)]], which replaces the KL constraint and conjugate-gradient solve with a clipped probability-ratio objective, at the cost of losing TRPO's formal guarantee.
+- Simplified into a much cheaper first-order approximation by [[Method — Proximal Policy Optimization (PPO)]], which replaces the KL constraint and conjugate-gradient solve with a clipped probability-ratio objective, moving further from the theory that motivates TRPO's update (neither practical algorithm is formally guaranteed to improve monotonically).
 
 ## Up
 

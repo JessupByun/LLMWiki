@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-11-04
 summary: "Encodes token position by rotating the query/key vectors by an angle proportional to position, so the dot product between any two positions depends only on their relative distance."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — RoFormer - Enhanced Transformer with Rotary Position Embedding (2021).pdf"]
@@ -22,7 +22,7 @@ Submitted April 2021.
 
 The original Transformer adds a fixed or learned position vector to each token's embedding before attention, which encodes absolute position but doesn't cleanly give attention a notion of relative distance, and is incompatible with linear-attention variants that need queries and keys kept factored apart.
 This paper introduces Rotary Position Embedding (RoPE): instead of adding a position vector, rotate the query and key vectors by an angle proportional to their position before the dot product, so the attention score between two tokens depends only on their relative distance.
-Substituted into BERT's pretraining, the resulting RoFormer architecture converges faster and beats BERT on three of six GLUE tasks; on long Chinese documents beyond 512 characters its advantage over word-based baselines widens with sequence length, direct evidence that rotation-based relative encoding generalizes better to lengths not fixed at training time.
+Substituted into BERT's pretraining, the resulting RoFormer architecture converges faster and beats BERT on three of six GLUE tasks; on the long-document CAIL2019-SCM legal matching task it is comparable to WoBERT at a 512 cut-off, but beats it by 1.5 points of accuracy once the maximum input length is raised to 1024 - evidence that an encoding with no fixed-size position table can use longer inputs, not that it extrapolates beyond the lengths it was trained on.
 RoPE went on to become the positional encoding scheme used by most modern open-weight LLMs, replacing both sinusoidal absolute encodings and learned relative-position tables.
 
 ## Core idea
@@ -34,7 +34,8 @@ Because rotation preserves vector norms, this also keeps queries and keys factor
 
 ## Why it endures
 
-RoPE's length-flexibility and clean relative-distance behavior are exactly the properties later work exploits to extend a model's context window after pretraining, by interpolating or rescaling the rotation frequencies - which is why RoPE, not sinusoidal or learned absolute schemes, became the default in most subsequent open-weight LLM architectures.
+RoPE's clean relative-distance behavior and its lack of a fixed-size position table made it the default positional scheme in most subsequent open-weight LLM architectures, replacing sinusoidal and learned absolute encodings.
+It does not by itself make a model extrapolate past its trained context length, but because positions are just rotation angles, later context-extension work can interpolate or rescale the rotation frequencies with brief finetuning instead of learning a new position table.
 
 ## Limitations
 

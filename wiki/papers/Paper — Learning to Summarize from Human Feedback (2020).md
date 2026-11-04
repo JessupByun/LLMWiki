@@ -1,8 +1,8 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-19
-summary: "Applies the Deep RL from Human Preferences reward-model-plus-PPO recipe to abstractive summarization at GPT-3 scale, showing a 1.3B feedback-trained model beats the human reference summaries themselves and that optimizing a learned reward model beats optimizing ROUGE."
+status: mature
+updated: 2026-11-04
+summary: "Applies the Deep RL from Human Preferences reward-model-plus-PPO recipe to abstractive summarization with GPT-3-style 1.3B and 6.7B models, showing a 1.3B feedback-trained model beats the human reference summaries themselves and that optimizing a learned reward model beats optimizing ROUGE."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Learning to Summarize from Human Feedback (2020).pdf"]
 tags: [rlhf, alignment, reward-modeling, summarization, ppo]
@@ -20,7 +20,7 @@ aliases: ["arxiv:2009.01325", "Stiennon et al. 2020"]
 ## Impact
 
 This is the bridge between [[Paper — Deep RL from Human Preferences (2017)]]'s RLHF loop (proven on MuJoCo and Atari) and [[Paper — Training LMs to Follow Instructions (2022)]]'s RLHF loop at full instruction-following scale.
-It is the first paper to run the collect-comparisons → fit-reward-model → PPO pipeline on GPT-3-class language models doing a real NLP task, and it establishes a result that recurs throughout post-training alignment: a small model optimized against human preferences beats a much larger model optimized only for likelihood.
+It scales up Ziegler et al. 2019's language-model version of the collect-comparisons → fit-reward-model → PPO pipeline, with significantly larger GPT-3-style models and a reworked data-collection process (see Core idea), and it establishes a result that recurs throughout post-training alignment: a small model optimized against human preferences beats a much larger model optimized only for likelihood.
 Several authors (Ouyang, Wu, Radford, Amodei, Christiano) carry directly into [[Paper — Training LMs to Follow Instructions (2022)]], reusing this paper's methodology almost unchanged.
 
 ## Problem it solved
@@ -34,7 +34,7 @@ The paper's stated aim is to advance training objectives that "more closely capt
 
 Same three-stage loop as [[Paper — Deep RL from Human Preferences (2017)]], adapted to the batch setting and to text: (1) sample summaries from several policies for a given Reddit post, send pairs to human labelers who pick the better one; (2) train a reward model to predict the log-odds that a candidate summary is the human-preferred one, via the [[Concept — Bradley-Terry preference model]]; (3) treat the reward model's output as a reward and optimize a policy against it with [[Method — Proximal Policy Optimization (PPO)]], with a KL penalty holding the policy close to the supervised-finetuned reference model.
 
-Two changes distinguish this from the contemporaneous Ziegler et al. 2019 predecessor that first tried this at LM scale: moving to a fully **offline/batch** setting (alternate large batches of labeling with retraining, rather than a continuous online loop) and a much more hands-on labeler-quality process (detailed onboarding, a shared chat room, continuous labeler-researcher agreement monitoring), which together get labeler-researcher agreement up to 77%, close to researcher-researcher agreement of 73%.
+Two changes distinguish this from the earlier Ziegler et al. 2019 predecessor that first tried this at LM scale: moving to a fully **offline/batch** setting (alternate large batches of labeling with retraining, rather than a continuous online loop) and a much more hands-on labeler-quality process (detailed onboarding, a shared chat room, continuous labeler-researcher agreement monitoring), which together get labeler-researcher agreement up to 77%, slightly above researcher-researcher agreement of 73%.
 
 ## How it's built
 

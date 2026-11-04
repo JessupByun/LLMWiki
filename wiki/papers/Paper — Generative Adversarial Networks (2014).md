@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "GANs - trains a generator and a discriminator against each other in a minimax game until the generator's samples are indistinguishable from real data, with no explicit likelihood and no Markov chains needed."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Generative Adversarial Networks (2014).pdf"]

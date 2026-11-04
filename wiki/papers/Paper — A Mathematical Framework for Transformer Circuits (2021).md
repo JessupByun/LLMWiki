@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
-summary: "Rewrites toy transformers as sums of interpretable end-to-end paths from tokens to logits, and discovers the induction head - the first general in-context-learning circuit found inside an actual model."
+updated: 2026-11-04
+summary: "Rewrites toy transformers as sums of interpretable end-to-end paths from tokens to logits, and discovers the induction head - the first general in-context-learning circuit found inside small trained attention-only transformers."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2021/framework/index.html"]
 tags: [interpretability, mechanistic-interpretability, transformers, in-context-learning]
@@ -19,7 +19,7 @@ Elhage, Nanda, Olsson, Henighan, Joseph, Mann, Askell, Bai, Chen, Conerly, DasSa
 
 Opens Anthropic's Transformer Circuits Thread and, with it, mechanistic interpretability for transformer language models - the direct sequel to the earlier Distill Circuits thread's reverse-engineering program for vision models (InceptionV1).
 Its two lasting contributions are a vocabulary (the residual stream as a shared communication channel, and the QK/OV circuit decomposition of attention) that nearly all of Anthropic's later interpretability work is written in, and a single concrete discovery: the **induction head**, a specific attention-head circuit that performs a simple but general in-context-learning algorithm.
-A forthcoming sequel (referenced in this paper but not yet published at the time) goes on to measure how much of in-context learning in much larger, realistic models this same mechanism explains.
+Its sequel, [[Paper — In-context Learning and Induction Heads (2022)]], goes on to measure how much of in-context learning in much larger, realistic models this same mechanism explains.
 
 ## Problem it solved
 

@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-19
+status: mature
+updated: 2026-11-04
 summary: "PPO - a clipped policy-gradient objective that gets trust-region-level stability with only first-order optimization, and became the RL algorithm RLHF pipelines actually run."
 cluster: ["Reinforcement learning", "Foundational canon"]
 sources: ["raw/papers/reinforcement-learning/Paper — Proximal Policy Optimization (2017).pdf"]
@@ -44,7 +44,7 @@ When the advantage is negative, the same clip caps how much the objective can pu
 Taking the min means the clip only ever removes an *upside* the unclipped objective would have offered; it never adds an extra penalty, so `L^CLIP` is a pessimistic (lower) bound on the true surrogate.
 The result: large beneficial-looking updates get capped rather than trusted outright, without a KL constraint or second-order solve anywhere in the loop.
 
-An adaptive KL-penalty variant is also provided as a baseline, but the paper reports it performs worse than clipping (Table 1: 0.82 average normalized score for `ε=0.2` clipping vs 0.71-0.74 for the KL variants).
+An adaptive KL-penalty variant is also provided as a baseline, but the paper reports it performs worse than clipping (Table 1: 0.82 average normalized score for `ε=0.2` clipping vs 0.62-0.74 for the adaptive and fixed KL-penalty variants).
 
 ## How it's built
 
@@ -75,7 +75,7 @@ That last use case is what made it load-bearing for alignment specifically: swap
 - Improves on [[Method — Trust Region Policy Optimization (TRPO)]], introduced in [[Paper — Trust Region Policy Optimization (2015)]], by replacing its hard KL constraint and conjugate-gradient solve with a clipped first-order objective.
 - Method hub: [[Method — Proximal Policy Optimization (PPO)]].
 - The RL algorithm inside [[Method — Reinforcement learning from human feedback (RLHF)]]'s third stage, as used explicitly in [[Paper — Training LMs to Follow Instructions (2022)]].
-- [[Paper — Deep RL from Human Preferences (2017)]] already names PPO as A2C/TRPO's successor in its own "why it endures" discussion, despite predating this paper's wide adoption.
+- [[Paper — Deep RL from Human Preferences (2017)]] optimized its learned reward with A2C and TRPO; later RLHF pipelines swapped in PPO.
 
 ## Up
 

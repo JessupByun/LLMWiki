@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-11-04
 summary: "AlphaGo Zero - a single network learns Go purely from self-play against itself, with no human game data at all, and beats the original champion-defeating AlphaGo 100-0 after just 3 days of training on one machine."
 cluster: ["Reinforcement learning", "Foundational canon"]
 sources: ["raw/papers/reinforcement-learning/Paper — Mastering the Game of Go without Human Knowledge (2017).pdf"]
@@ -25,7 +25,6 @@ Commonly known as **AlphaGo Zero**.
 [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] (AlphaGo) needed a bootstrap of human expert games before it could beat a human champion.
 This paper removes that bootstrap entirely: AlphaGo Zero learns Go from nothing but the rules of the game, playing only against itself, and after three days of training on a single machine it defeats the exact version of AlphaGo that beat Lee Sedol, 100 games to 0.
 A larger version trained for 40 days then beat AlphaGo Master - the strongest prior AlphaGo, itself undefeated 60-0 against top human professionals online - by 89 games to 11.
-Closes [[Cluster — Reinforcement learning]]'s open thread asking for a pure self-play, no-human-data successor to AlphaGo.
 
 ## Problem it solved
 
@@ -57,7 +56,7 @@ Over training, AlphaGo Zero rediscovered most standard human joseki (corner sequ
 
 ## Why it endures
 
-This paper establishes the "single network, self-play, MCTS as the inner-loop policy-improvement step, zero human data" template that AlphaZero (Silver et al. 2018, not yet ingested) generalizes to chess and shogi, and it's the direct ancestor of every later system that treats tree search or other verification-at-training-time as a way to bootstrap a policy past what supervised imitation alone could reach.
+This paper establishes the "single network, self-play, MCTS as the inner-loop policy-improvement step, zero human data" template that AlphaZero (Silver et al. 2018, not yet ingested) generalizes to chess and shogi, and it became an influential template for later systems that use search at training time to bootstrap a policy past what supervised imitation alone could reach.
 
 ## Limitations
 

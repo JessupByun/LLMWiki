@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-11-04
 summary: "Trains an autoencoder to compress images into a small latent space, then runs the diffusion process there instead of on raw pixels, cutting training and sampling cost while barely losing sample quality."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — High-Resolution Image Synthesis with Latent Diffusion Models (2021).pdf"]
@@ -22,8 +22,8 @@ Submitted December 2021 (CVPR 2022).
 
 [[Paper — Denoising Diffusion Probabilistic Models (2020)]] (DDPM) established that diffusion produces excellent image samples, but training and sampling both run the full denoising network directly on raw pixels, which the paper's own analysis puts at 150-1000 V100-days to train and about 5 days to generate 50,000 samples on a single A100.
 This paper's fix: train an autoencoder once to compress images into a much smaller latent space that is perceptually equivalent to pixel space, then run the entire diffusion process there instead.
-The result, Latent Diffusion Models (LDMs), sets a new state of the art on unconditional CelebA-HQ (FID 5.11) and class-conditional ImageNet generation while using roughly a quarter of ADM's training compute and half its parameters, and reaches competitive text-to-image results on MS-COCO at a fraction of the parameter count of GLIDE or Make-A-Scene.
-Because the compression step and the generative step are decoupled and the autoencoder is reusable, LDM's architecture became the direct basis for Stable Diffusion, the first widely deployed open-weight text-to-image model.
+The result, Latent Diffusion Models (LDMs), sets a new state of the art on unconditional CelebA-HQ (FID 5.11) and beats the prior state-of-the-art diffusion model ADM on class-conditional ImageNet (FID 3.60 with classifier-free guidance) with significantly less compute and fewer parameters; on LSUN-Bedrooms it comes close to ADM with half its parameters and a quarter of its training resources; and it reaches competitive text-to-image results on MS-COCO at a fraction of the parameter count of GLIDE or Make-A-Scene.
+Because the compression step and the generative step are decoupled and the autoencoder is reusable, LDM's architecture became the direct basis for Stable Diffusion, the open-weight text-to-image model that made diffusion-based generation widely available.
 
 ## Core idea
 

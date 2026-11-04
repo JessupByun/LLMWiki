@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-11-04
 summary: "GPT-1 - pretrain a Transformer decoder as a plain left-to-right language model on unlabeled text, then fine-tune it with minimal added parameters on each downstream task, beating architectures purpose-built for 9 of 12 NLP benchmarks."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Improving Language Understanding by Generative Pre-Training (2018).pdf"]
@@ -24,7 +24,7 @@ Commonly known as **GPT-1** (or simply GPT, before later GPT models made the ver
 
 Before this paper, getting a neural network to do well on a new NLP task usually meant designing a new architecture for that task and training it from scratch on whatever labeled data existed, since labeled data is scarce relative to raw text.
 This paper showed that a single, task-agnostic Transformer, pretrained once as a language model on unlabeled text and then lightly fine-tuned per task, beats those bespoke architectures outright: new state-of-the-art results on 9 of 12 benchmarks studied, including +8.9% on the Stories Cloze Test, +5.7% on RACE question answering, and an overall GLUE score of 72.8 versus the previous best of 68.9.
-Establishes the pretrain-then-fine-tune recipe that GPT-2, GPT-3, and [[Paper — BERT (2018)]] all inherit, and is one of the two 2018 papers filling the gap in [[Cluster — Foundational canon]] between [[Paper — Attention Is All You Need (2017)]] and [[Paper — Language Models are Few-Shot Learners (2020)]].
+Establishes the pretrain-then-fine-tune recipe that GPT-2, GPT-3, and [[Paper — BERT (2018)]] all inherit.
 
 ## Core idea
 

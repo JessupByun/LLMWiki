@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Attacks on the ML training pipeline and the trained model's own memory, rather than on its inference-time behavior - membership inference, training-data extraction, data poisoning and backdoors, model stealing, and the differential-privacy defenses built against them."
 cluster: []
 sources: []
@@ -23,7 +23,7 @@ Two LLM-era papers follow: [[Paper — Extracting Training Data from Large Langu
 | Page | Why it's here |
 |------|----------------|
 | [[Paper — Membership Inference Attacks Against Machine Learning Models (2017)]] | Founding paper: turns a model's own imperfect generalization into a black-box attack that determines whether a specific record was in its training set, reaching 94% accuracy against real commercial ML-as-a-service platforms. |
-| [[Paper — Deep Learning with Differential Privacy (2016)]] | The principled defense: adapts differential privacy to deep, non-convex neural network training for the first time at a usable privacy budget, via per-example gradient clipping, calibrated noise, and a much tighter privacy-loss accounting method (the moments accountant). Dual-tagged canon: DP-SGD is now a standard, broadly-taught training technique well beyond privacy-security specialists. |
+| [[Paper — Deep Learning with Differential Privacy (2016)]] (DP-SGD) | The principled defense: adapts differential privacy to deep, non-convex neural network training for the first time at a usable privacy budget, via per-example gradient clipping, calibrated noise, and a much tighter privacy-loss accounting method (the moments accountant). Dual-tagged canon: DP-SGD is now a standard, broadly-taught training technique well beyond privacy-security specialists. |
 | [[Paper — BadNets - Identifying Vulnerabilities in the Machine Learning Model Supply Chain (2017)]] | Shows outsourced or downloaded pretrained models can be maliciously backdoored - normal on clean inputs, reliably misbehaving on a secret attacker-chosen trigger - and that the backdoor survives transfer learning into a task the original attacker never anticipated. |
 | [[Paper — Extracting Training Data from Large Language Models (2020)]] | Carries membership inference into the LLM era: generate from GPT-2, then use reference-model comparisons to pick out memorized text, recovering 604 verbatim training sequences despite little overfitting - and larger models leak more. |
 | [[Paper — Stealing Part of a Production Language Model (2024)]] | Opens the model-extraction thread on a real production system: a rank argument on the final layer recovers the hidden width of five OpenAI models and the full output matrix of two through ordinary API features. |

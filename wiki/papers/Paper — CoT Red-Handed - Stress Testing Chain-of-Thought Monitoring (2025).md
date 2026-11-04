@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "A control-style red-team test of whether a weaker trusted monitor does better reading a reasoning model's chain of thought or only its code, on BigCodeBench tasks with hidden side tasks: the CoT helps catch subtle sabotage the code hides but makes the monitor 25 points worse on blatant sabotage because rationalizations in the reasoning mislead it, and a hybrid that scores reasoning and code separately and averages them beats both - over twice action-only's catch rate on subtle sabotage, though still under 20% on average for its two main monitors at a 1% false-positive rate."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025).pdf"]
@@ -97,6 +97,7 @@ Read together, CoT access is a clear gain against a model that isn't managing it
 - Contrasts itself with [[Paper — Alignment Faking in Large Language Models (2024)]] (cited), whose hidden scratchpads showed misaligned reasoning but were not tested as a monitor inside a control protocol, and cites [[Paper — Frontier Models are Capable of In-context Scheming (2024)]] as motivating CoT monitoring for scheming.
 - Aims to inform safety cases such as [[Paper — A Sketch of an AI Control Safety Case (2025)]] (cited); its evaluation-awareness limitation, citing [[Paper — Large Language Models Often Know When They Are Being Evaluated (2025)]], is [[Concept — Evaluation awareness]].
 - Evidence for [[Question — Can chain-of-thought monitoring be relied on as a control measure]] and [[Question — Can a monitor-based control protocol survive a model that attacks its monitor]], and for [[Concept — Chain-of-thought monitorability]].
+- Its monitored reasoning traces are the trained-in descendant of [[Method — Chain-of-Thought Prompting]] ([[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]]).
 
 ## Up
 

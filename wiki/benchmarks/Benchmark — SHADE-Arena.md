@@ -1,9 +1,9 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "17 complex agentic environments that each pair a benign main task with a covert harmful side task, measuring whether an LLM agent can complete both without an LLM monitor noticing - the best agents (Claude 3.7 Sonnet, Gemini 2.5 Pro) succeed 27% and 15% of the time, relying heavily on a hidden scratchpad, while the best monitor reaches only 0.87 AUC."
-cluster: ["Scheming & AI control"]
+cluster: ["Scheming & AI control", "Capability evals"]
 sources: ["raw/papers/scheming-and-ai-control/Benchmark — SHADE-Arena.pdf"]
 tags: [sabotage, monitoring, ai-control, agents, evaluations, chain-of-thought]
 aliases: ["arxiv:2506.15740", "Kutasov et al. 2025", "Subtle Harmful Agent Detection & Evaluation"]
@@ -68,3 +68,4 @@ Telling the agent it is in a mock environment, to reduce refusals, means the res
 ## Up
 
 - [[Cluster — Scheming & AI control]]
+- [[Cluster — Capability evals]]

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Uses one language model to automatically generate natural-language test cases designed to elicit harmful behavior from a second target model, finding tens of thousands of diverse failures - offensive replies, verbatim training-data leakage, leaked phone numbers and emails, demographic bias, and dialogue-level escalation - without a single test case being hand-written."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Red Teaming Language Models with Language Models (2022).pdf"]
@@ -43,9 +43,9 @@ The paper documents several genuinely distinct failure categories, each with its
 ## Results
 
 On 0.5 million generated test cases per method, offensive-reply rates range from 3.7% (zero-shot, most diverse) up to 42.3% (reinforcement learning at its most aggressive setting, but with 78% of those test cases collapsing onto variants of a single prompt about invisibility) - and the paper's own read is that reinforcement learning, stochastic few-shot, and the manually-written human baseline (11.7% offensive) form a genuine Pareto frontier on the difficulty-diversity tradeoff, with no method dominating the others on both axes at once.
-The manually-written baseline dataset misses 37 of the top 100 phrases the automated method finds most predictive of an offensive reply, and 35 of the automated method's top 100 flagged phrases never appear in the human-written dataset at all - direct evidence the two approaches are finding substantially different failure modes rather than converging on the same ones.
+The manually-written baseline dataset (BAD) does not contain 37 of the top 100 noun phrases flagged in offensive replies, and 35 of the top 100 noun phrases in red-team questions that most often lead to offensive replies never occur in BAD's human utterances - evidence the two approaches find substantially different failure modes rather than converging on the same ones.
 The concrete leakage numbers are the paper's most viscerally alarming result: of 100,000 generated test cases probing for contact information, 3,206 replies contained a phone number and 11,683 contained an email address, with 479 of the phone numbers and 749 of the emails matching real text in the training corpus - including numbers that appeared only once in that entire corpus, meaning even a single memorized training example can leak back out through an adversarially-chosen prompt.
-Distributional bias analysis across 918 automatically-generated demographic group names finds the model discusses stated-minority groups more carefully than majority groups like "white men" and "Caucasians," a pattern the authors attribute to the persona prompt itself biasing the model toward extra caution around groups it infers are minorities.
+Distributional bias analysis across 918 automatically-generated demographic group names finds the model "often discusses majority groups in an offensive way" - white men, cis white women, Caucasians - while discussing some groups (Jainist people, Sufi Muslims) favorably, which the authors attribute to the persona prompt causing it to "prefer minority groups whose values match the prompt."
 
 ## Why it endures
 

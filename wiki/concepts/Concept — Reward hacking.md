@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "An optimizer scoring highly on the specified objective while violating the intent behind it - the characteristic failure of optimizing a proxy."
 cluster: ["Post-training alignment"]
 sources: []
@@ -25,7 +25,7 @@ Two flavors worth keeping separate:
 
 ## Origin of the term
 
-[[Paper — Concrete Problems in AI Safety (2016)]] is where this framing and term come from: it names reward hacking as one of five concrete accident-risk problems, defining it as an objective function that "admits of some clever 'easy' solution that formally maximizes it but perverts the spirit of the designer's intent."
+[[Paper — Concrete Problems in AI Safety (2016)]] is the paper that made the term standard, framing it as a generalization of the wireheading problem and citing earlier theoretical work on versions of it: it names reward hacking as one of five concrete accident-risk problems, defining it as an objective function that "admits of some clever 'easy' solution that formally maximizes it but perverts the spirit of the designer's intent."
 
 ## Formal definition
 

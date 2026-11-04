@@ -1,8 +1,8 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-19
-summary: "InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference, and setting the SFT-to-RM-to-PPO recipe every instruction-tuned model since has run."
+status: mature
+updated: 2026-11-04
+summary: "InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference, and setting the SFT-to-RM-to-PPO template later instruction-tuned assistants built on."
 cluster: ["Post-training alignment", "Foundational canon"]
 sources: ["raw/papers/post-training-alignment/Paper — Training LMs to Follow Instructions (2022).pdf"]
 tags: [rlhf, alignment, post-training, instruction-tuning, reward-modeling, ppo]
@@ -25,7 +25,7 @@ Commonly known as **InstructGPT**.
 InstructGPT is the paper that proved RLHF works at the scale of an actual frontier language model, not just Atari and simulated robots.
 The headline result: labelers preferred outputs from a **1.3B-parameter** InstructGPT model to outputs from the **175B-parameter** GPT-3, despite over 100x fewer parameters.
 At equal 175B size, InstructGPT's outputs were preferred 85 ± 3% of the time head-to-head.
-This is the direct ancestor of ChatGPT, and it is what turned "fine-tune GPT-3 on human preferences" from a promising idea into the standard recipe every subsequent instruction-tuned model runs: supervised fine-tuning, then a reward model, then PPO against that reward model.
+This is the direct ancestor of ChatGPT, and it is what turned "fine-tune GPT-3 on human preferences" from a promising idea into the template later instruction-tuned assistants built on: supervised fine-tuning, then a reward model, then PPO against that reward model.
 
 ## Problem it solved
 
@@ -68,7 +68,7 @@ Concretely: rather than a human ever writing "reward = +1 for helpful, -1 for un
 ## Why it endures
 
 This paper is the template.
-Every later instruction-tuned or "helpful assistant" release descends from the SFT → RM → PPO structure demonstrated here, and the specific engineering choices it popularized - a KL penalty against the reference policy (carried over from [[Paper — Learning to Summarize from Human Feedback (2020)]]), and mixing pretraining gradients back into RL fine-tuning to control the alignment tax (its own addition, PPO-ptx) - are now standard practice rather than novel contributions.
+Much of the later instruction-tuned "helpful assistant" lineage builds on the SFT → RM → PPO structure demonstrated here (later methods such as [[Paper — Direct Preference Optimization (2023)]] keep the preference data but drop the separate reward model and RL loop), and the specific engineering choices it popularized - a KL penalty against the reference policy (carried over from [[Paper — Learning to Summarize from Human Feedback (2020)]]), and mixing pretraining gradients back into RL fine-tuning to control the alignment tax (its own addition, PPO-ptx) - became widely reused rather than remaining one-off contributions.
 It is also the empirical result [[Paper — Language Models are Few-Shot Learners (2020)]] anticipated without demonstrating: GPT-3's own limitations section named "fine-tuning with reinforcement learning" as the needed next step, and this is that step, carried out.
 
 ## Whose preferences is this aligning to?

@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Benchmark test data leaking into a web-scraped training set, so reported scores may measure memorization rather than capability."
 cluster: ["Capability evals"]
 sources: []
@@ -52,6 +52,7 @@ This is a large part of the argument for held-out and adversarially-constructed 
 
 - Documented at length in [[Paper — Language Models are Few-Shot Learners (2020)]] §4.
 - [[Paper — Extracting Training Data from Large Language Models (2020)]] demonstrates the underlying mechanism: language models can reproduce training text verbatim even from a single document.
+- [[Benchmark — HCAST]] withholds most task families and keeps solutions private to limit contamination, and [[Paper — Measuring AI Ability to Complete Long Software Tasks (2025)]] checks its trend on uncontaminated internal repository issues.
 
 ## Up
 

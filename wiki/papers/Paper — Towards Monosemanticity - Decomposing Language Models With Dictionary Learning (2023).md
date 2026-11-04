@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
-summary: "Trains a sparse autoencoder on a one-layer transformer's MLP activations and extracts thousands of far-more-interpretable-than-neurons features, giving the first compelling proof that dictionary learning can recover real structure from superposition."
+updated: 2026-11-04
+summary: "Trains a sparse autoencoder on a one-layer transformer's MLP activations and extracts thousands of far-more-interpretable-than-neurons features, giving - alongside concurrent work - compelling evidence that dictionary learning can recover real structure from superposition."
 cluster: ["Mechanistic interpretability"]
 sources: ["https://transformer-circuits.pub/2023/monosemantic-features/index.html"]
 tags: [interpretability, mechanistic-interpretability, superposition, dictionary-learning, safety]
@@ -17,19 +17,19 @@ Bricken, Templeton, Batson, Chen, Jermyn, Conerly, Turner, Anil, Denison, Askell
 
 ## Impact
 
-The first compelling, causally-validated demonstration that [[Concept — Superposition]] can actually be reversed in a real trained model, not just a hand-designed toy one.
+One of the first compelling, causally-validated demonstrations that [[Concept — Superposition]] can actually be reversed in a real trained model, not just a hand-designed toy one, reached in parallel with independent work the paper itself cites (see Why it endures).
 Training a sparse autoencoder on the 512-neuron MLP layer of a tiny one-layer transformer recovers thousands of "features" - directions in activation space - that are dramatically more interpretable than the neurons themselves, causally steer generation when clamped, and recur across independently trained models.
-This is the direct empirical execution of "Approach 2: finding an overcomplete basis" from [[Paper — Toy Models of Superposition (2022)]], carried out after that paper's own authors concluded, via a clean negative result described below, that the alternative strategy - engineering models to simply not use superposition - cannot work even in principle.
+This is the direct empirical execution of "Approach 2: finding an overcomplete basis" from [[Paper — Toy Models of Superposition (2022)]], carried out after the authors set aside the alternative strategy - engineering models to simply not use superposition - when it did not work for them, illustrated by a simple counterexample described below.
 
 ## Problem it solved
 
 [[Paper — Toy Models of Superposition (2022)]] left three candidate strategies for "solving superposition" on the table, untested against a real model: build models without superposition, apply dictionary learning to recover an overcomplete feature basis after training, or some hybrid.
-This paper's first contribution is closing off the first option with a clean counterexample.
+This paper first explains why it set the first option aside, with a simple counterexample.
 Consider a single neuron trained on four mutually exclusive features (A/B/C/D), each predicting a distinct next token, with the neuron's output binary (fires or doesn't).
 If it fires only on A, ignoring B/C/D, the model achieves a certain cross-entropy loss.
 If instead it fires on *both* A and B, predicting a uniform mixture, the loss is strictly *lower* - even though the neuron is now polysemantic and there is no superposition at all (only one neuron, firing in only one binary state).
 Cross-entropy loss, it turns out, actively prefers polysemantic ambiguity over monosemantic confidence in cases like this, so maximal activation sparsity does not guarantee monosemantic neurons.
-This meant the only remaining path was to try dictionary learning on activations directly - which nobody had yet gotten to work convincingly on an actual language model rather than a synthetic toy.
+That left dictionary learning on activations as the path to pursue - not yet shown convincingly on an actual language model rather than a synthetic toy, apart from the parallel work the paper cites.
 
 ## Core idea
 
@@ -67,8 +67,8 @@ The paper also raises, without resolving, a puzzle its own results surface: why 
 
 ## Relations
 
-- Directly executes "Approach 2: finding an overcomplete basis," proposed but not attempted in [[Paper — Toy Models of Superposition (2022)]], after ruling out the architectural alternative with a clean counterexample.
-- Gives [[Concept — Superposition]] its first empirical, causally-validated reversal in a real (if tiny) trained model.
+- Directly executes "Approach 2: finding an overcomplete basis," proposed but not attempted in [[Paper — Toy Models of Superposition (2022)]], after setting aside the architectural alternative.
+- Gives [[Concept — Superposition]] one of its first empirical, causally-validated reversals in a real (if tiny) trained model.
 - Introduces [[Method — Sparse Autoencoder (SAE)]] as the field's standard tool for recovering interpretable features from superposition.
 - Its explicitly flagged scaling question is answered directly by its own sequel, [[Paper — Scaling Monosemanticity - Extracting Interpretable Features from Claude 3 Sonnet (2024)]].
 - Its SAE is scaled with a TopK architecture by [[Paper — Scaling and Evaluating Sparse Autoencoders (2024)]], and its SAE recipe trains the Pythia dictionaries whose features become circuit nodes in [[Paper — Sparse Feature Circuits - Discovering and Editing Interpretable Causal Graphs in Language Models (2024)]].

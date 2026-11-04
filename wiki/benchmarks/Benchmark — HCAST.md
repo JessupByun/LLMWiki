@@ -1,7 +1,7 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "METR's benchmark of 189 autonomous software tasks in ML engineering, cybersecurity, software engineering, and general reasoning, each calibrated by how long skilled humans take under the same conditions as AI agents (1 minute to 8+ hours), finding early-2025 frontier agents succeed 70-80% of the time on under-an-hour tasks but under 20% on tasks over four hours."
 cluster: ["Capability evals"]
 sources: ["raw/papers/capability-evals/Benchmark — HCAST.pdf"]
@@ -65,6 +65,7 @@ The agent results are a lower bound: the authors expect better prompting and sca
 - A later METR benchmark sharing several authors with [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]], scaled up from its 12 hand-graded tasks with automatic scoring and human timing.
 - Its tasks include cybersecurity and ML research engineering of the kind [[Method — Dangerous capability evaluation]] targets, though it measures general autonomy rather than any one threat.
 - Its manual check that agent successes aren't exploits of the scoring function is a guard against [[Concept — Reward hacking]] inside the benchmark itself.
+- Releases only 11 example task families and keeps most solutions off the public internet, explicitly to limit memorization and [[Concept — Data contamination]].
 
 ## Up
 

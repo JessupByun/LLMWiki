@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Inputs perturbed imperceptibly but deliberately to cause misclassification, which transfer across models and so constitute a real attack."
 cluster: ["Adversarial robustness & security"]
 sources: []
@@ -17,7 +17,7 @@ An input modified by a small, deliberately computed perturbation that causes a m
 
 The essential contrast is with random noise.
 Noise of much *larger* magnitude typically leaves classification intact; the adversarial perturbation is effective precisely because it is chosen with respect to the model's geometry, not because it is large.
-Named and first demonstrated in [[Paper — Intriguing Properties of Neural Networks (2013)]].
+Named in [[Paper — Intriguing Properties of Neural Networks (2013)]], which demonstrated them against deep networks concurrently with Biggio et al.'s (2013) evasion attacks on classical classifiers.
 
 ## Why they exist
 
@@ -27,7 +27,7 @@ That is false, and it is false everywhere, not in rare spots.
 
 Explanations have shifted over time, which is worth tracking rather than collapsing:
 
-- **Dense low-probability pockets** (the original account, and the only one sourced here).
+- **Dense low-probability pockets** (the original account).
   Adversarial inputs occupy regions of vanishingly small measure - so you never hit them by sampling - yet are "dense (much like the rational numbers)," so one sits near virtually every real input.
   The authors of the 2013 paper offer this as a "Possible explanation" and concede their accompanying spectral analysis "doesn't attempt to explain why these examples generalize across different hyperparameters or training sets."
 - **Excessive linearity.** [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] argues networks are too linear, so many small coordinated input changes sum to a large activation change; adversarial examples then occupy broad subspaces rather than pockets, which also explains transfer.
@@ -59,7 +59,7 @@ Robustness also turned out to trade against accuracy, and adversarial training -
 - Compare [[Concept — Reward hacking]]: both are an optimizer exploiting a region where a learned function misbehaves, differing in whether the exploitation is adversarial by intent.
 - [[Concept — Superposition]] offers a mechanistic, interpretability-grounded account of why the interference this concept depends on exists in the first place.
 - [[Concept — Jailbreaking (LLMs)]] is this concept relocated to token space and aimed at circumventing alignment training specifically, rather than at causing misclassification.
-- [[Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018)]] gives this concept's central defense, adversarial training, its first optimization-theoretic guarantee rather than an empirically-tuned mitigation, reframing attack and defense as two halves of a single min-max saddle-point problem.
+- [[Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018)]] gives this concept's central defense, adversarial training, an optimization-theoretic formulation rather than an empirically-tuned mitigation, reframing attack and defense as two halves of a single min-max saddle-point problem.
 - [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]] gives a certified defense: prediction by majority vote over Gaussian-noised copies, provably constant within an L2 radius.
 
 ## Up

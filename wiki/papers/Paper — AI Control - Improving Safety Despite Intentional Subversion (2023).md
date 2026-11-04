@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Introduces AI control - designing and evaluating safety protocols that hold up even if the powerful model inside them is actively trying to subvert them, rather than assuming it is aligned."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — AI Control - Improving Safety Despite Intentional Subversion (2023).pdf"]
@@ -65,7 +65,7 @@ Trusted editing Pareto-dominates untrusted monitoring on the safety/usefulness f
 ## Why it endures
 
 AI control is proposed as a complement to alignment, not a replacement: it buys safety at capability levels where the untrusted model is not yet dramatically smarter than the trusted model plus the available human budget combined, without requiring anyone to have first solved the problem of making the model's values good.
-The blue-team/red-team **control evaluation** methodology this paper introduces has since become a standard tool for safety cases (see Greenblatt et al. 2024, "Notes on control evaluations for safety cases," cited in this paper's own references), and its explicit citation of Carlsmith's "Scheming AIs" and Hubinger et al.'s "Model organisms of misalignment" research agenda directly foreshadows the next papers in this wiki's reading queue, which construct literal instances of the deceptive behavior this framework is built to catch.
+The blue-team/red-team **control evaluation** methodology this paper introduces is developed into safety-case methodology in follow-up work (Greenblatt et al. 2024, "Notes on control evaluations for safety cases," cited in this paper's own references; [[Paper — A Sketch of an AI Control Safety Case (2025)]]), and its explicit citation of Carlsmith's "Scheming AIs" and Hubinger et al.'s "Model organisms of misalignment" research agenda connects it to this cluster's model-organism papers, which construct literal instances of the deceptive behavior this framework is built to catch.
 
 ## Limitations
 

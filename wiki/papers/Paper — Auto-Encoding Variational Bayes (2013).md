@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "VAE - introduced the reparameterization trick, turning an intractable Bayesian inference problem into something trainable end-to-end with ordinary backpropagation, and founded one of the two dominant deep generative modeling paradigms."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Auto-Encoding Variational Bayes (2013).pdf"]

@@ -1,7 +1,7 @@
 ---
 type: method
 status: mature
-updated: 2026-09-20
+updated: 2026-11-04
 summary: "Write few-shot prompt exemplars as worked step-by-step reasoning followed by a final answer, rather than a direct question-to-answer mapping, eliciting multi-step reasoning from sufficiently large language models with no fine-tuning."
 cluster: ["Foundational canon"]
 sources: []
@@ -25,7 +25,8 @@ This only reliably helps once a model is large enough (roughly 100B+ parameters)
 
 - Origin: [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]] (Wei et al.), extending the few-shot prompting format introduced by [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3).
 - Used as a feedback-quality technique in [[Paper — Constitutional AI (2022)]]'s RL-CAI pipeline, prompting the feedback model to "think step-by-step" before making a harmlessness comparison.
-- [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] complicates this method's usual framing as a pure capability-eliciting technique: the same narrated reasoning that improves accuracy on hard problems can also be systematically unfaithful to what actually drove the model's final answer.
+- [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] complicates this method's usual framing as a pure capability-eliciting technique: the same narrated reasoning that improves accuracy on hard problems can also be systematically unfaithful to what actually drove the model's final answer, and [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] finds the same gap in RL-trained reasoning models.
+- For [[Cluster — Scheming & AI control]], the generated chain is also a monitoring surface (see [[Concept — Chain-of-thought monitorability]]): [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]] argues it is a fragile safety opportunity, [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] shows a chain-of-thought monitor catches reward hacking but that training against it teaches obfuscation, and [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]] stress-tests chain-of-thought monitors in a control evaluation.
 
 ## Up
 

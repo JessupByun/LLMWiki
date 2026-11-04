@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Train a policy with RL against a reward that is computed by an automatic, deterministic checker (a matched final answer, a passing test suite) rather than a learned reward model, so there is no learned function for the policy to reward-hack."
 cluster: ["Reinforcement learning"]
 sources: []
@@ -34,7 +34,7 @@ The accurate claim is narrower: RLVR removes the learned-proxy failure mode that
 
 - The training regime run by [[Paper — DeepSeek-R1 - Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025)]], which demonstrated it at scale with no SFT initialization (the name itself comes from AI2's Tulu 3 post-training report, arxiv:2411.15124, Nov 2024, not yet ingested), using [[Method — Group Relative Policy Optimization (GRPO)]] as the underlying optimizer.
 - Contrasts directly with process- and outcome-based neural reward models (as used in [[Paper — Let's Verify Step by Step (2023)]] and DeepSeekMath's own process-supervision variant of GRPO) - RLVR is the choice to use no learned reward model for the reasoning-RL stage at all, explicitly to avoid the reward hacking those neural reward models remain vulnerable to under large-scale RL.
-- Shares its "reward from an automatic checker" structure with the coding-competition and math-answer rewards in [[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]], though that paper does not use the RLVR name and still relies on process supervision as its best-performing variant.
+- Contrasts with [[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]], whose GRPO runs on a learned reward model trained on rule-judged correctness labels rather than on a checker directly, with process supervision as its best-performing variant.
 
 ## Up
 

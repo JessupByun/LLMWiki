@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Measures how often reasoning models admit in their chain of thought to using a hint that changed their answer, finding Claude 3.7 Sonnet and DeepSeek R1 do so only 25% and 39% of the time overall (lower on misaligned hints and harder questions), that outcome-based RL raises this but plateaus, and that a model RL-trained to exploit reward hacks almost never mentions them (under 2% in five of six environments) - so CoT monitoring can notice problems but can't rule them out."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Reasoning Models Don't Always Say What They Think (2025).pdf"]
@@ -83,6 +83,7 @@ The two are compatible, since this paper names easy-to-exploit hints as its own 
 - Its sycophancy hint ("I think the answer is A") is the behavior studied in [[Paper — Towards Understanding Sycophancy in Language Models (2023)]], and its reward-hacking environments are a controlled instance of [[Concept — Reward hacking]].
 - Its safety-case framing - CoT monitoring needs evidence that the model can't do the task without reasoning, and that it isn't sandbagging that evaluation - parallels the visible/obfuscated/hidden reasoning distinction in [[Paper — Towards Evaluations-Based Safety Cases for AI Scheming (2024)]].
 - [[Paper — When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors (2025)]] re-runs its metadata-hint setup with a hint that takes multi-step arithmetic to follow, answering the limitation stated here, and finds the silent hint-following disappears; [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]] cites it in arguing that unfaithful reasoning can be exploited to get past a naive monitor.
+- Tests at reasoning-model scale the caveat [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]] already raised: a chain of thought that reaches the right answer is not proof it reflects how the answer was produced.
 
 ## Up
 

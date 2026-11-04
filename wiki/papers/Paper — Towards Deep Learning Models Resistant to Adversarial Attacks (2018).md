@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Frames adversarial robustness as a min-max saddle-point optimization problem, shows that projected gradient descent (PGD) reliably solves the inner, non-concave maximization despite no theoretical guarantee that it should, and uses PGD-generated adversarial examples as training data to produce the first MNIST and CIFAR10 models robust to a genuinely broad range of attacks rather than just the one they were trained against."
 cluster: ["Adversarial robustness & security", "Foundational canon"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Towards Deep Learning Models Resistant to Adversarial Attacks (2018).pdf"]
@@ -20,14 +20,15 @@ MIT.
 ## Impact
 
 Before this paper, adversarial defenses were evaluated piecemeal - a method would be shown to resist one specific attack, then broken by the next slightly more clever one, with no way to know in advance which side would win the next round.
-This paper reframes the entire problem as a single, precise optimization statement - a min-max saddle point - which unifies attacks and defenses as two ends of the same equation and, for the first time, gives adversarial robustness a **guarantee** rather than a demonstration: a model with low enough saddle-point value is provably safe against every attack the threat model allows, not just the ones tested.
+This paper reframes the entire problem as a single, precise optimization statement - a min-max saddle point - which unifies attacks and defenses as two ends of the same equation and gives adversarial robustness a precise target: a saddle-point objective whose true value would bound every attack the threat model allows, not just the ones tested.
+That value cannot be computed exactly, and the authors say so ("it is not clear whether we can actually find a good solution in reasonable time"); their claim is the empirical one that PGD approximates it well enough to give robustness against all first-order adversaries, not a certificate.
 It backs this with the first MNIST and CIFAR10 models robust to a genuinely broad range of strong attacks (white-box, black-box, and multiple attack algorithms) rather than the single attack they happened to be trained against, and the training method it introduces - adversarial training against projected gradient descent, universally shorthanded **PGD adversarial training** - became the standard baseline essentially the entire adversarial-robustness field measures itself against.
 
 ## Problem it solved
 
 Prior defenses (defensive distillation, feature squeezing, various detection schemes) offered no way to know what class of attacks they actually protected against, only that they survived whichever specific attacks their authors happened to test.
 This left the field unable to make real progress: a new paper could always find a slightly different attack that broke the previous best defense, with no underlying theory to say when that arms race would end or which side had the structural advantage.
-The paper's response is to demand a **guarantee** instead of a demonstration - a precise attack model specifying exactly which perturbations an adversary is allowed to make, and a training objective whose value, if driven low enough, certifies safety against every attack inside that model at once.
+The paper's response is to demand a **guarantee** instead of a demonstration - a precise attack model specifying exactly which perturbations an adversary is allowed to make, and a training objective whose value, if it could be driven low enough and measured exactly, would bound every attack inside that model at once.
 
 ## Core idea
 
@@ -46,7 +47,7 @@ Two datasets anchor the experiments: MNIST, with a small convolutional network a
 
 The best MNIST model reaches 89.3% accuracy under the strongest white-box adversary tested (100 PGD steps, 20 restarts) and above 95% under every black-box transfer attack tried; the best CIFAR10 model reaches 45.8% under its strongest white-box adversary, far short of MNIST's robustness but a genuine result against attacks the field had not previously defended against simultaneously, and the paper is candid this result is "far from satisfactory."
 Model capacity turns out to be load-bearing, not incidental: a network needs meaningfully more capacity to draw a robust decision boundary (one that separates entire perturbation balls around each point, not just the points themselves) than to merely classify clean examples well, and small-capacity networks forced to train against a strong PGD adversary can fail to learn anything useful at all, collapsing to predicting a single fixed class rather than sacrificing any robustness budget on real discrimination.
-Training against the weaker FGSM attack instead of PGD does not produce genuine robustness at the same perturbation size - the network instead overfits to that specific weak attack's characteristic perturbations, a failure mode the paper calls **label leaking**, and shows every sign of security through obscurity rather than real robustness once a stronger adversary is applied.
+Training against the weaker FGSM attack instead of PGD does not produce genuine robustness at the same perturbation size - the network instead overfits to that specific weak attack's characteristic perturbations, the known **label leaking** failure mode the paper cites from Kurakin et al., and shows every sign of security through obscurity rather than real robustness once a stronger adversary is applied.
 Both stronger adversaries used during training and higher model capacity independently reduce how well adversarial examples transfer between independently-trained models, consistent with the paper's account of what's actually happening: capacity and strong-adversary training are pushing the decision boundary toward the specific, harder-to-share geometry a genuinely robust classifier needs.
 
 ## Why it endures
@@ -62,8 +63,8 @@ The core empirical claim - that PGD-found local maxima are reliably near-globall
 
 ## Relations
 
-- The direct security-relevant escalation of [[Paper — Intriguing Properties of Neural Networks (2013)]]'s founding observation: where that paper discovers adversarial examples exist and transfer, this paper is the first to give a training method with an actual optimization-theoretic guarantee against them, rather than an empirically-tuned mitigation.
-- [[Concept — Adversarial examples]]'s "why they exist" discussion of dense low-probability pockets and excessive linearity is the direct backdrop this paper's min-max reframing responds to - it sidesteps needing a settled answer to *why* adversarial examples exist by instead specifying a guarantee against *any* perturbation within a fixed, precisely-defined threat model.
+- The direct security-relevant escalation of [[Paper — Intriguing Properties of Neural Networks (2013)]]'s founding observation: where that paper shows adversarial examples exist and transfer, this paper gives training against them an optimization-theoretic formulation, rather than an empirically-tuned mitigation.
+- [[Concept — Adversarial examples]]'s "why they exist" discussion of dense low-probability pockets and excessive linearity is the direct backdrop this paper's min-max reframing responds to - it sidesteps needing a settled answer to *why* adversarial examples exist by instead specifying an objective that covers *any* perturbation within a fixed, precisely-defined threat model.
 - PGD adversarial training is the standard baseline [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] (GCG) explicitly invokes when arguing that the same computationally-expensive, capability-degrading, narrowly-scoped tradeoffs that have kept adversarial training from being deployed against vision models look likely to recur for language models.
 - Its saddle-point framing - a defender's outer minimization against an attacker's inner maximization, both aimed at the same precisely-specified objective - is a direct conceptual ancestor of the red-team/blue-team control-evaluation methodology in [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]], though that paper's adversary is a worst-case *model* rather than a bounded input perturbation.
 - [[Paper — Certified Adversarial Robustness via Randomized Smoothing (2019)]] is the provable counterpart: where this paper's robustness holds against the strongest attack found, randomized smoothing certifies it against any attack within an L2 radius.

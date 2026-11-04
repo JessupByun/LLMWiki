@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "A strong model finetuned on labels from a much weaker supervisor generalizing beyond that supervisor's own accuracy, by having its own latent capabilities elicited rather than taught."
 cluster: ["Scalable oversight"]
 sources: []
@@ -22,7 +22,7 @@ PGR of 1 means the strong model fully recovers its own latent capability from we
 ## Why it works (when it does)
 
 The motivating intuition is that a strong pretrained model shouldn't need to be *taught* many alignment-relevant tasks from scratch - if it can generate a million lines of complex code, it plausibly already has some internal representation of whether that code is safe, so weak supervision only needs to *elicit* that existing knowledge rather than install new capability.
-[[Paper — Weak-to-Strong Generalization (2023)]] finds this holds up only partially: naive finetuning on weak labels does reliably beat the weak supervisor, but recovers well under half the available performance gap by default, and is especially poor when applied to reward modeling - the exact setting real RLHF pipelines depend on.
+[[Paper — Weak-to-Strong Generalization (2023)]] finds this holds up only partially: naive finetuning on weak labels does reliably beat the weak supervisor, but recovers only part of the gap - about half on NLP tasks with a GPT-2-level supervisor and a GPT-4 student, less on chess as the gap widens, and rarely more than 20% on reward modeling, the exact setting real RLHF pipelines depend on.
 Simple interventions help substantially: an auxiliary confidence loss that lets the strong student confidently disagree with the weak label, bootstrapping supervision through a sequence of intermediate-sized models, and unsupervised finetuning on task-relevant data to increase how "salient" the target concept already is to the strong model.
 
 The main failure mode this fights against is the strong model simply **imitating the weak supervisor's mistakes** rather than eliciting its own better judgment - the paper's "human simulator" concern, borrowed from theoretical work on eliciting latent knowledge.

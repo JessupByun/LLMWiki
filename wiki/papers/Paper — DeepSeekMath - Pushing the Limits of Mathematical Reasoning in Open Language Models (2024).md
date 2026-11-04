@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-19
-summary: "Trains a 7B open model to 51.7% on the competition-level MATH benchmark - rivaling GPT-4 - via a 120B-token web-mined math corpus and Group Relative Policy Optimization (GRPO), a PPO variant that drops the value network entirely and estimates advantage from relative scores within a sampled group."
+updated: 2026-11-04
+summary: "Trains a 7B open model to 51.7% on the competition-level MATH benchmark - approaching GPT-4 - via a 120B-token web-mined math corpus and Group Relative Policy Optimization (GRPO), a PPO variant that drops the value network entirely and estimates advantage from relative scores within a sampled group."
 cluster: ["Reinforcement learning"]
 sources: ["raw/papers/reinforcement-learning/Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024).pdf"]
 tags: [rl, grpo, mathematical-reasoning, open-weights]
@@ -62,7 +62,7 @@ The paper is explicit that its "arXiv doesn't help" finding is narrow - untested
 - Introduces [[Method — Group Relative Policy Optimization (GRPO)]].
 - Directly reuses [[Method — Chain-of-Thought Prompting]] and [[Paper — Let's Verify Step by Step (2023)]]'s process-versus-outcome-supervision distinction, testing both under GRPO rather than only outcome supervision.
 - Positions itself against [[Paper — Direct Preference Optimization (2023)]] (DPO) within its own unified paradigm, showing DPO is a special case of the same general gradient-coefficient framework GRPO and PPO also instantiate.
-- Conceptually descends from STaR (Zelikman et al. 2022, not yet ingested in this wiki) - bootstrapping a model's reasoning by training on its own self-generated correct rationales - though DeepSeekMath frames this lineage through the RL literature (RFT, online RFT) rather than citing STaR directly.
+- Not cited by the paper, but conceptually close to STaR (Zelikman et al. 2022, not yet ingested) - bootstrapping a model's reasoning by training on its own self-generated correct rationales - which its RFT and online-RFT baselines resemble.
 
 ## Tension / update
 

@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-19
+status: mature
+updated: 2026-11-04
 summary: "NPLM - learns a distributed feature vector for each word jointly with a neural network over word sequences, letting a language model transfer probability mass across semantically similar sentences instead of only gluing together short n-gram fragments, beating state-of-the-art smoothed trigrams by 10-20% test perplexity."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — A Neural Probabilistic Language Model (2003).pdf"]
@@ -22,7 +22,7 @@ aliases: ["Bengio et al. 2003", "NPLM"]
 Statistical language models of the time were dominated by n-grams: tables of conditional probabilities built by counting which short word sequences actually appeared in a training corpus, with smoothing to handle unseen combinations.
 This approach has a fundamental ceiling - it treats every word as a discrete, unrelated symbol, so a trigram model that has never seen "the cat is walking in the bedroom" gains nothing from having seen "a dog was running in a room", even though the two sentences mean nearly the same thing.
 This paper's fix is to represent each word as a low-dimensional, continuous feature vector, learned jointly with a neural network that predicts the next word from the feature vectors of the preceding ones - so a sentence in training informs the model's prediction not just for that exact sentence, but for the combinatorial number of "neighboring" sentences made of semantically similar words.
-Tested against state-of-the-art smoothed and class-based n-gram models (including modified Kneser-Ney back-off) on the Brown corpus and a 15-million-word Associated Press corpus, the neural model won by 10-24% test perplexity, and unlike the n-gram baselines, it kept improving when given more context words rather than plateauing.
+Tested against state-of-the-art smoothed and class-based n-gram models (including modified Kneser-Ney back-off) on the Brown corpus and a roughly 14-million-word Associated Press News corpus, the neural model's test perplexity was about 24% lower than the best n-gram on Brown and about 8% lower on AP News (10-20% lower than smoothed trigrams, in the paper's own summary), and unlike the n-gram baselines, it kept improving when given more context words rather than plateauing.
 
 ## Core idea
 

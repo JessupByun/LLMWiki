@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-09-24
+updated: 2026-11-04
 summary: "Adds two steps to ordinary mini-batch SGD to make the training process differentially private: clip each individual training example's gradient to a fixed L2 norm before averaging, then add Gaussian noise calibrated to that clipping bound - paired with the moments accountant, a tighter method for tracking accumulated privacy loss across many training steps than generic composition theorems provide."
 cluster: ["ML security & privacy"]
 sources: []
@@ -13,7 +13,7 @@ aliases: ["DP-SGD"]
 
 ## Definition
 
-A differentially private variant of mini-batch stochastic gradient descent, introduced by [[Paper — Deep Learning with Differential Privacy (2016)]].
+A differentially private variant of mini-batch stochastic gradient descent, established for deep learning by [[Paper — Deep Learning with Differential Privacy (2016)]], which builds on earlier private SGD for convex problems.
 At each training step: **clip** every individual example's gradient (not just the batch average) to a fixed L2 norm bound C, which makes the *sensitivity* of the summed gradient to any single training example provably bounded regardless of how large that example's true gradient happened to be; then **add noise**, a Gaussian with standard deviation proportional to C, to the summed clipped gradients before averaging and taking the descent step - the actual source of the formal [[Concept — Differential privacy]] guarantee, following the standard recipe of calibrating additive noise to a function's worst-case sensitivity.
 
 ## Why it works
@@ -26,7 +26,7 @@ The **moments accountant** instead tracks the log-moment-generating function of 
 ## Relations
 
 - Introduced in [[Paper — Deep Learning with Differential Privacy (2016)]], operationalizing [[Concept — Differential privacy]] for deep, non-convex neural network training for the first time at a usable privacy budget.
-- Provides the principled defense against [[Concept — Membership inference]] and [[Method — Shadow model attack]]: a model trained under DP-SGD is secure against these attacks by construction.
+- Provides the principled defense against [[Concept — Membership inference]] and [[Method — Shadow model attack]]: a model trained under DP-SGD has its exposure to these attacks bounded by construction, with a bound that is only strong at small epsilon.
 
 ## Up
 

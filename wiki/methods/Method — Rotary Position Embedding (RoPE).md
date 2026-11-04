@@ -1,7 +1,7 @@
 ---
 type: method
 status: mature
-updated: 2026-09-18
+updated: 2026-11-04
 summary: "Rotate each query/key vector by an angle proportional to its token position, so the attention dot product between two tokens depends only on their relative distance."
 cluster: ["Foundational canon"]
 sources: []
@@ -19,8 +19,8 @@ The dot product of a query rotated by m*theta and a key rotated by n*theta depen
 ## Why it works
 
 Because rotation preserves vector length, applying it to queries and keys doesn't distort the magnitudes attention relies on, only the angle between vectors - and that angle is exactly what a dot-product attention score measures.
-This keeps queries and keys factored apart (useful for linear-attention variants) and generalizes cleanly to sequence lengths beyond what the model saw in training, since nothing about the rotation is tied to a fixed maximum length the way a learned absolute-position table is.
-That length-flexibility is why later context-extension techniques work by rescaling or interpolating RoPE's rotation frequencies rather than retraining a position table from scratch.
+This keeps queries and keys factored apart (useful for linear-attention variants), and nothing about the rotation is tied to a fixed maximum length the way a learned absolute-position table is, so any length can at least be encoded.
+That does not mean a model extrapolates well past the lengths it was trained on - in practice it degrades - but because positions are just rotation angles, later context-extension techniques can rescale or interpolate RoPE's frequencies with brief finetuning rather than learn a new position table from scratch.
 
 ## Relations
 

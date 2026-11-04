@@ -1,10 +1,10 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Demonstrates, in a fully understood toy model, that neural networks represent more features than they have neurons by packing them into almost-orthogonal directions - and that this superposition follows a phase change, organizes into specific geometric structures, and can support real computation."
 cluster: ["Mechanistic interpretability"]
-sources: ["https://transformer-circuits.pub/2022/toy_model/index.html"]
+sources: ["raw/papers/mechanistic-interpretability/Paper — Toy Models of Superposition (2022).pdf", "https://transformer-circuits.pub/2022/toy_model/index.html"]
 tags: [interpretability, mechanistic-interpretability, superposition, polysemanticity, safety]
 aliases: ["arxiv:2209.10652", "Elhage et al. 2022"]
 ---

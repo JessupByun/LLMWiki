@@ -1,8 +1,8 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-09-20
-summary: "An attention-head circuit that predicts the next token by finding the last occurrence of the current token in context and copying whatever followed it - the first general in-context-learning mechanism found inside an actual transformer."
+updated: 2026-11-04
+summary: "An attention-head circuit that predicts the next token by finding the last occurrence of the current token in context and copying whatever followed it - the first general in-context-learning mechanism reverse-engineered from the weights of trained transformers, first found in small attention-only models."
 cluster: ["Mechanistic interpretability"]
 sources: []
 tags: [interpretability, mechanistic-interpretability, in-context-learning, transformers]
@@ -37,8 +37,9 @@ Ablating induction heads at test time in small models destroys almost all measur
 - Discovered and named in [[Paper — A Mathematical Framework for Transformer Circuits (2021)]], which also gives the QK/OV-circuit vocabulary used to state the mechanism precisely.
 - Operates by reading and writing specific subspaces of [[Concept — Residual stream]].
 - A qualitatively more powerful successor to the naive token-copying behavior the same paper documents in one-layer transformers.
-- Given a purely behavioral definition and causal evidence for its role in [[Concept — In-context learning]] by [[Paper — In-context Learning and Induction Heads (2022)]], up to 13B-parameter models.
-- [[Paper — Many-shot Jailbreaking (2024)]] traces its power-law in-context jailbreak effect directly to this mechanism, reproducing the same power-law scaling analytically in a toy induction-head circuit - a live security consequence of the same mechanism that drives ordinary in-context learning.
+- Given a purely behavioral definition by [[Paper — In-context Learning and Induction Heads (2022)]], with causal evidence for its role in [[Concept — In-context learning]] in small attention-only models and correlational evidence up to 13B-parameter models.
+- [[Paper — Many-shot Jailbreaking (2024)]] hypothesizes that its power-law in-context jailbreak effect runs on this mechanism, showing that a toy induction-head model reproduces the same power-law shape.
+  Whether real models' many-shot jailbreaks actually use induction heads is left to future work (Sec 4.1), so this is a candidate security consequence of the mechanism, not a demonstrated one.
 - [[Paper — Interpretability in the Wild - a Circuit for Indirect Object Identification in GPT-2 small (2022)]] finds this same mechanism reused in an unexpected, narrower role - two supporting heads in its circuit implement induction-head-style prefix matching purely as a positional-signal detector, not for general in-context learning.
 
 ## Up

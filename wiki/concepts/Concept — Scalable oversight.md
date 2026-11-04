@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Getting reliable training signal for a system whose true objective is too expensive to evaluate on every example, by combining a limited budget of accurate feedback with cheaper, more frequent proxies."
 cluster: ["Scalable oversight"]
 sources: []
@@ -17,6 +17,8 @@ The problem of training a system well when the designer's true objective (e.g. "
 The designer is forced to substitute a cheaper, more frequent proxy signal - and the gap between the cheap proxy and the expensive true objective is exactly where side effects and [[Concept — Reward hacking]] slip through unpenalized.
 
 [[Paper — Concrete Problems in AI Safety (2016)]] names and frames the problem, proposing *semi-supervised reinforcement learning* as one concrete operationalization: an RL agent that sees its true reward on only a small, possibly actively-chosen fraction of timesteps, and must make the most of dense but unlabeled experience the rest of the time.
+
+Later work, notably [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]], uses the term for "the problem of supervising systems that potentially outperform us" - the overseer-capability-gap sense used throughout [[Cluster — Scalable oversight]].
 
 ## Why it matters
 
@@ -39,8 +41,8 @@ Process supervision in [[Paper — Let's Verify Step by Step (2023)]] can be rea
 - Named and framed in [[Paper — Concrete Problems in AI Safety (2016)]].
 - The gap this concept describes is exactly what [[Concept — Reward hacking]] exploits.
 - Motivates [[Method — Reinforcement learning from human feedback (RLHF)]]'s entire reward-model design: substitute a learned, cheap-to-query proxy for an expensive human judgment at every step.
-- Its three founding strategies are adversarial argument ([[Paper — AI Safety via Debate (2018)]]; see [[Method — Debate]]), decomposition ([[Paper — Supervising Strong Learners by Amplifying Weak Experts (2018)]]), and elicitation ([[Paper — Weak-to-Strong Generalization (2023)]]); [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] makes it testable with today's models via sandwiching, and [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] gives debate its first strong empirical result.
-- [[Method — Sandwiching]] is a widely used empirical test bed for it with today's models.
+- Its three founding strategies are adversarial argument ([[Paper — AI Safety via Debate (2018)]]; see [[Method — Debate]]), decomposition ([[Paper — Supervising Strong Learners by Amplifying Weak Experts (2018)]]), and elicitation ([[Paper — Weak-to-Strong Generalization (2023)]]); [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] makes it testable with today's models via sandwiching, and [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]] gives debate its first strong result with LLM debaters.
+- [[Method — Sandwiching]] is an empirical test bed for it with today's models.
 - [[Paper — Prover-Verifier Games Improve Legibility of LLM Outputs (2024)]] trains outputs to be checkable by weaker verifiers, finding legibility transfers to humans, and [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] shows debate's benefit survives training.
 - [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] measures one way oversight fails across a capability gap: a strong model letting part of its conflict-induced failures fall where a weak supervisor can't check; [[Paper — The Alignment Problem from a Deep Learning Perspective (2022)]] names it as the longer-term goal of using RLHF against reward misspecification.
 - [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] shows the oversight gap already bites: RLHF makes models better at misleading skilled human evaluators.

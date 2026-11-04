@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Automatically finds adversarial suffixes that reliably jailbreak aligned open-source language models and transfer, purely black-box and with varying success, to production systems including ChatGPT, Bard, and Claude."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023).pdf"]
@@ -35,9 +35,8 @@ Three design choices, individually unremarkable but jointly effective where prio
 **Target an affirmative response, not the harmful content itself.** Rather than optimizing the suffix to make the model output some specific harmful string verbatim, the objective is simply to maximize the probability the model's response *begins* with "Sure, here is (the user's request)."
 This sidesteps prescribing one "correct" harmful answer (there are many plausible ones) and, critically, generalizes across many different harmful queries at once, since the target template is the same regardless of what's being asked.
 
-**Greedy Coordinate Gradient (GCG).** Optimizing a discrete adversarial suffix is a combinatorial search over token sequences.
-GCG evaluates, for every editable token position, the gradient of the loss with respect to that position's one-hot encoding to cheaply identify a top-k shortlist of promising substitutions, then evaluates a randomly-sampled batch of these candidates *exactly* via real forward passes and keeps whichever single-token swap reduces the loss most.
-This is a small but important variant of the prior AutoPrompt method, which picks one position to optimize per step; GCG instead considers substitutions across *all* editable positions simultaneously at every step, which the paper finds substantially improves attack reliability for the same computational budget.
+**Greedy Coordinate Gradient (GCG).** The suffix is found with a gradient-guided coordinate search over token substitutions at all suffix positions at once (mechanism on [[Method — Greedy Coordinate Gradient (GCG)]]).
+The paper's comparison is against AutoPrompt, which differs mainly in optimizing one position per step, and GCG beats it most clearly on exact harmful strings and on LLaMA-2-7B-Chat.
 
 **Optimize one suffix against multiple prompts and multiple models at once.** To make an attack **universal** (works across many different harmful requests) and **transferable** (works against models never touched during optimization), the same suffix is optimized jointly against several harmful behaviors and, simultaneously, against multiple open-source models (Vicuna-7B, Vicuna-13B, and Guanaco) sharing a tokenizer, aggregating gradients and losses across all of them.
 New training prompts are folded in incrementally - only once the suffix already succeeds on the prompts already included - which the authors find produces more reliable universal suffixes than optimizing all prompts from a cold start.
@@ -58,7 +57,7 @@ Notably, running the optimizer for *more* steps sometimes *reduces* transfer suc
 ## Why it endures
 
 The paper explicitly reframes jailbreaking from an artisanal, human-driven red-teaming exercise into a scalable, automatable attack, and draws a direct, pessimistic analogy to computer vision: state-of-the-art defenses against adversarial examples there are rarely deployed in practice because they are computationally expensive, degrade clean-task performance, and only cover a narrowly-specified threat model - and the paper warns that "it remains to be seen" how the resulting "arms race" plays out for language models, noting historical precedent points toward ongoing escalation rather than a clean fix.
-GCG became the standard baseline attack and [[Benchmark — AdvBench]] a standard evaluation set for essentially all subsequent LLM red-teaming, jailbreak, and defense research.
+Within this wiki, GCG recurs as the reference attack that later work measures against: [[Benchmark — HarmBench]] runs it in three variants and adversarially trains against it, [[Benchmark — WMDP]] uses it to stress-test unlearning, and [[Benchmark — AdvBench]] served as the evaluation set until HarmBench replaced it.
 The paper's central open question - whether any amount of post-hoc RLHF-style alignment fine-tuning can fully close this gap, or whether the vulnerability is structural - is left explicitly unresolved, and is a direct throughline into [[Cluster — Scheming & AI control]], which studies safety under the assumption a model's trained-in alignment cannot be fully trusted.
 
 ## Limitations

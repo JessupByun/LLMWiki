@@ -1,8 +1,8 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-09-18
-summary: "TRPO - solves a KL-divergence-constrained optimization problem at each update, giving the first policy-gradient method with a theoretically grounded monotonic-improvement guarantee that scales to large neural-network policies."
+status: mature
+updated: 2026-11-04
+summary: "TRPO - maximizes a surrogate objective under a KL-divergence trust region at each update, a practical approximation of a policy-iteration scheme with a proven monotonic-improvement guarantee, and one that scales to large neural-network policies."
 cluster: ["Reinforcement learning", "Foundational canon"]
 sources: ["raw/papers/reinforcement-learning/Paper — Trust Region Policy Optimization (2015).pdf"]
 tags: [rl, policy-gradient, trust-region, optimization]
@@ -19,7 +19,8 @@ aliases: ["arxiv:1502.05477", "Schulman et al. 2015", "TRPO"]
 
 ## Impact
 
-Gave policy-gradient RL its first practical algorithm with a genuine theoretical guarantee: each update is provably not going to make the policy worse, and the algorithm still scales to large nonlinear policies like neural networks with tens of thousands of parameters - previously a major obstacle for model-free policy search.
+Derived a policy-iteration scheme with a monotonic-improvement guarantee for general stochastic policies, then approximated it as a KL-divergence trust region that works on large nonlinear policies like neural networks with tens of thousands of parameters - previously a major obstacle for model-free policy search.
+The practical algorithm is not itself proven to improve monotonically - the abstract says that despite its approximations it "tends to give monotonic improvement, with little tuning of hyperparameters".
 TRPO's locomotion and Atari results were, at the time, some of the first demonstrations of learning complex continuous-control gaits and pixel-based game-playing policies from scratch with a single general-purpose method and minimally shaped rewards.
 It became the reference baseline every subsequent policy-optimization method was measured against, and its own first-order simplification two years later, [[Paper — Proximal Policy Optimization (2017)]], is now the far more widely used descendant.
 

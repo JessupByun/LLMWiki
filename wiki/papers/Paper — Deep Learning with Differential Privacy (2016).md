@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
-summary: "Introduces differentially private stochastic gradient descent (DP-SGD) - clip each per-example gradient's L2 norm, average, and add calibrated Gaussian noise before each parameter update - and the moments accountant, a tighter privacy-loss accounting method that lets deep, non-convex neural networks be trained under a modest, meaningful differential-privacy budget for the first time, reaching 97% accuracy on MNIST and 73% on CIFAR-10 at (8, 10^-5)-differential privacy."
+updated: 2026-11-04
+summary: "Establishes differentially private stochastic gradient descent (DP-SGD) for deep learning - clip each per-example gradient's L2 norm, average, and add calibrated Gaussian noise before each parameter update - and the moments accountant, a tighter privacy-loss accounting method that lets deep, non-convex neural networks be trained under a modest, meaningful differential-privacy budget for the first time, reaching 97% accuracy on MNIST and 73% on CIFAR-10 at (8, 10^-5)-differential privacy."
 cluster: ["ML security & privacy", "Foundational canon"]
 sources: ["raw/papers/ml-security-and-privacy/Paper — Deep Learning with Differential Privacy (2016).pdf"]
 tags: [privacy, differential-privacy, dp-sgd, ml-security]
@@ -10,6 +10,8 @@ aliases: ["arxiv:1607.00133", "Abadi et al. 2016", "DP-SGD"]
 ---
 
 # Paper — Deep Learning with Differential Privacy (2016)
+
+Commonly known as **DP-SGD** (the training method it establishes).
 
 ## Metadata
 
@@ -31,6 +33,7 @@ Prior differentially private machine learning work therefore stayed confined to 
 ## Core idea
 
 Ordinary SGD already estimates a loss gradient from a random batch of examples and averages it; the paper's differentially private version, **DP-SGD**, adds exactly two steps to this before each parameter update.
+Private SGD itself predates the paper - it cites Song et al. and Bassily et al. as following the same approach for convex problems - and describes its own contribution as "several modifications and extensions, in particular in our privacy accounting."
 First, **clip**: bound the influence any single example can have by rescaling each individual example's gradient (computed per-example, not just per-batch) so its L2 norm never exceeds a threshold C - this is what makes the *sensitivity* of the averaged gradient to any one training example provably bounded.
 Second, **add noise**: add Gaussian noise, scaled to that same clipping bound, to the summed clipped gradients before averaging and taking the descent step - the actual privacy-preserving randomization, following the standard differential-privacy recipe of calibrating additive noise to a function's worst-case sensitivity.
 The harder problem is accounting for how much privacy is spent, cumulatively, across the full training run.
@@ -41,13 +44,13 @@ Converting the final accumulated moment bound back into an (epsilon, delta) guar
 
 Implemented in TensorFlow: a `PrivacyAccountant` component tracks cumulative spending via the moments accountant, and a `Sanitizer` component performs the per-example gradient clipping and noise addition, wrapped together in a `DPSGD_Optimizer` that plugs into ordinary TensorFlow training loops with only modest code changes.
 Per-example gradients (rather than only per-batch averages) are computed via a dedicated TensorFlow operator.
-The paper also introduces differentially private PCA as an optional input-dimensionality-reduction preprocessing step (projecting inputs onto principal directions computed from a noised covariance matrix), which both improves accuracy and cuts training time roughly tenfold on MNIST by shrinking the input from 784 to 60 dimensions.
+The paper also implements differentially private PCA (the algorithm of Dwork, Talwar, Thakurta & Zhang, which it cites) as an optional input-dimensionality-reduction preprocessing step (projecting inputs onto principal directions computed from a noised covariance matrix), which both improves accuracy and cuts training time roughly tenfold on MNIST by shrinking the input from 784 to 60 dimensions.
 Evaluated on MNIST (a simple feedforward network with an optional PCA layer) and CIFAR-10 (a convolutional network whose convolutional layers are pretrained on the public CIFAR-100 dataset, with only the fully-connected layers trained under differential privacy).
 
 ## Results
 
 On MNIST, the moments accountant achieves (2.55, 10^-5)-differential privacy for a training run the strong composition theorem could only certify at the much weaker (24.22, 10^-5) - a difference the paper highlights as evidence the moments accountant is doing real, not merely incremental, work.
-At that same modest privacy budget, the model reaches 90%, 95%, and 97% test accuracy for epsilon values of 0.5, 2, and 8 respectively (all at delta=10^-5), with the private-versus-non-private accuracy gap only about 1.3 percentage points at the largest budget tested.
+The MNIST model reaches 90%, 95%, and 97% test accuracy for epsilon values of 0.5, 2, and 8 respectively (all at delta=10^-5), with the private-versus-non-private accuracy gap only about 1.3 percentage points at the largest budget tested.
 On CIFAR-10, accuracy reaches 67%, 70%, and 73% for epsilon values of 2, 4, and 8 respectively (a different set of epsilon values than the MNIST experiment), with the private-versus-non-private gap now a much larger 7 percentage points - a gap the paper explicitly leaves open as future work rather than resolving.
 A counterintuitive finding: adding more hidden units to the network does not decrease accuracy despite the added noise, evidence that larger networks are more tolerant of the added noise, encouraging given that large networks are the practical norm.
 
@@ -64,7 +67,7 @@ The moments accountant's numerical integration is specific to the Gaussian noise
 
 ## Relations
 
-- Directly answers the threat [[Paper — Membership Inference Attacks Against Machine Learning Models (2017)]] demonstrates empirically: a model trained by this paper's method is secure against membership inference (and any other attack relying solely on the model's own behavior) by construction, rather than by the ad hoc, only-partially-effective mitigations that paper evaluates instead.
+- Directly answers the threat [[Paper — Membership Inference Attacks Against Machine Learning Models (2017)]] demonstrates empirically: a model trained by this paper's method has its exposure to membership inference (and any other attack relying solely on the model's own behavior) bounded by construction, with a bound whose strength depends on epsilon - weak at the paper's own headline epsilon of 8 - rather than by the ad hoc, only-partially-effective mitigations that paper evaluates instead.
 - Builds on the formal definition of (epsilon, delta)-differential privacy from Dwork et al. (not yet ingested), extending it from convex learning problems and simpler statistical queries to non-convex deep neural network training for the first time at a usable privacy budget.
 - Introduces [[Concept — Differential privacy]] to this wiki and its own [[Method — Differentially Private SGD (DP-SGD)]], both anchoring [[Cluster — ML security & privacy]].
 - [[Paper — Extracting Training Data from Large Language Models (2020)]] names DP-SGD as the principled defense against LLM training-data extraction while noting its utility cost and the difficulty of choosing a privacy unit for web data.

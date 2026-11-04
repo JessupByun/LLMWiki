@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-19
+updated: 2026-11-04
 summary: "Trains a family of openly-released foundation models (7B-65B) exclusively on public data, deliberately past the Chinchilla compute-optimal point, and shows the 13B model beats GPT-3 (175B) on most benchmarks - the open-weights release that catalyzed the ecosystem of fine-tunes and derivatives built on top of it."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — LLaMA - Open and Efficient Foundation Language Models (2023).pdf"]
@@ -26,7 +26,7 @@ This is the open-weights release that catalyzed the modern open-weights LLM ecos
 
 Chinchilla scaling laws optimize for training compute alone, recommending a compute-optimal split between model size and training tokens - for example, a 10B-parameter model trained on 200B tokens.
 But training compute is a one-time cost while inference compute is paid every time the model is served, so the model that is cheapest to train to a given performance level is not the model that is cheapest to run at scale.
-LLaMA instead trains smaller models for far longer than Chinchilla-optimal: its 7B model is trained on over 1T tokens - roughly 5x the Chinchilla-recommended token count for that size - and the paper reports that performance keeps improving even past 1T tokens, well beyond where Chinchilla's own compute-optimal frontier would call the model "done."
+LLaMA instead trains smaller models for far longer than Chinchilla-optimal: the paper's own example is that Chinchilla recommends training a 10B model on 200B tokens, yet LLaMA's 7B model keeps improving even after 1T tokens - five times that recommended budget, on a smaller model - well beyond where Chinchilla's own compute-optimal frontier would call the model "done."
 The trade is deliberate: spend more total training compute than is technically optimal, in exchange for a smaller model that is dramatically cheaper and easier to run at inference time, including on a single GPU for the smaller sizes.
 
 ## Why it endures

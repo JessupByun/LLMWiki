@@ -1,10 +1,10 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-11-04
 summary: "Argues, via six complementary lines of indirect evidence, that induction heads are the primary mechanism behind most in-context learning in transformer language models of any size, from tiny toy models up to 13B parameters."
 cluster: ["Mechanistic interpretability"]
-sources: ["https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html"]
+sources: ["raw/papers/mechanistic-interpretability/Paper — In-context Learning and Induction Heads (2022).pdf", "https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html"]
 tags: [interpretability, mechanistic-interpretability, in-context-learning, transformers, safety]
 aliases: ["arxiv:2209.11895", "Olsson et al. 2022"]
 ---

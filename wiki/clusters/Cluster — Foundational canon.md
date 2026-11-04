@@ -1,7 +1,7 @@
 ---
 type: cluster
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Landmark papers and ideas that are must-know background regardless of sub-specialty, independent of any tie to security."
 cluster: []
 sources: []
@@ -30,19 +30,20 @@ When both apply the topical cluster is primary and owns the raw file; the table 
 | [[Paper — Efficient Estimation of Word Representations (2013)]] (word2vec) | this one | word2vec - cheap log-linear architectures that learn word vectors supporting linear analogy arithmetic, the ancestor of every embedding layer since. |
 | [[Paper — Playing Atari with Deep RL (2013)]] (DQN) | [[Cluster — Reinforcement learning]] | DQN - first deep learning model to learn control policies from raw pixels, stabilized with experience replay. |
 | [[Paper — Auto-Encoding Variational Bayes (2013)]] (VAE) | this one | VAE - introduced the reparameterization trick, founding one of the two dominant deep generative modeling paradigms. |
-| [[Paper — Intriguing Properties of Neural Networks (2013)]] | [[Cluster — Adversarial robustness & security]] | Discovered adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets. |
+| [[Paper — Intriguing Properties of Neural Networks (2013)]] | [[Cluster — Adversarial robustness & security]] | Named adversarial examples - imperceptible perturbations that reliably fool networks - and showed the smoothness assumption behind kernel methods fails for deep nets. |
+| [[Paper — Risks from Learned Optimization in Advanced Machine Learning Systems (2019)]] | [[Cluster — Scheming & AI control]] | Coins mesa-optimization, inner/outer alignment, and deceptive alignment, and gives the goal-guarding argument for why a misaligned model would fake alignment in training - the vocabulary the scheming and AI control literature is written in. |
 | [[Paper — Generative Adversarial Networks (2014)]] (GANs) | this one | GANs - a generator and discriminator trained against each other in a minimax game until the generator's samples are indistinguishable from real data. |
 | [[Paper — Sequence to Sequence Learning with Neural Networks (2014)]] (seq2seq) | this one | seq2seq - two LSTMs mapping sequences through a single fixed-length vector, the first pure neural system to beat a phrase-based SMT baseline. |
 | [[Paper — Neural Machine Translation by Jointly Learning to Align and Translate (2014)]] (Bahdanau attention) | this one | Bahdanau attention - replaced the fixed-length context vector with a learned, per-step weighted lookup over the source sentence, the direct ancestor of Transformer self-attention. |
 | [[Paper — Adam - A Method for Stochastic Optimization (2014)]] | this one | Adam - adaptive per-parameter optimizer combining AdaGrad and RMSProp with bias correction, now the near-universal default for training neural networks. |
 | [[Paper — Dropout (2014)]] | this one | Dropout - randomly zeroing hidden units during training to block co-adaptation, one of the most widely used regularizers in deep learning for a decade. |
 | [[Paper — Batch Normalization (2015)]] | this one | Batch Normalization - normalizes each layer's inputs from mini-batch statistics, letting networks train with much higher learning rates. |
-| [[Paper — Trust Region Policy Optimization (2015)]] | [[Cluster — Reinforcement learning]] | TRPO - first policy-gradient method with a theoretically grounded monotonic-improvement guarantee that scales to large neural-network policies, via a KL-divergence-constrained update. |
+| [[Paper — Trust Region Policy Optimization (2015)]] | [[Cluster — Reinforcement learning]] | TRPO - maximizes a surrogate objective under a KL-divergence trust region, a practical approximation of a policy-iteration scheme with a proven monotonic-improvement guarantee that scales to large neural-network policies, and the direct ancestor of PPO. |
 | [[Paper — Neural Machine Translation of Rare Words with Subword Units (2015)]] (BPE) | this one | BPE - adapts byte pair encoding to word segmentation, becoming the near-universal tokenization scheme for large language models. |
-| [[Paper — Deep Residual Learning for Image Recognition (2015)]] (ResNet) | this one | ResNet - shortcut connections let each block learn a residual function, making 100+ layer networks trainable and winning ILSVRC 2015. |
+| [[Paper — Deep Residual Learning for Image Recognition (2015)]] (ResNet) | this one | ResNet - shortcut connections let each block learn a residual function, the first networks whose accuracy kept improving past 100 layers, winning ILSVRC 2015. |
 | [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] (AlphaGo) | [[Cluster — Reinforcement learning]] | AlphaGo - policy network narrows search breadth, value network reduces search depth, combined inside MCTS - first program to beat a human pro at Go without a handicap. |
 | [[Paper — Concrete Problems in AI Safety (2016)]] | [[Cluster — Post-training alignment]] | Names and frames reward hacking and scalable oversight as concrete research problems, supplying vocabulary the rest of the post-training alignment literature is written in. |
-| [[Paper — Deep Learning with Differential Privacy (2016)]] | [[Cluster — ML security & privacy]] | DP-SGD - clip each per-example gradient and add calibrated Gaussian noise, tracked with the moments accountant; now a standard, broadly-taught technique for training any deep model under a formal privacy guarantee, well beyond privacy-security specialists. |
+| [[Paper — Deep Learning with Differential Privacy (2016)]] (DP-SGD) | [[Cluster — ML security & privacy]] | DP-SGD - clip each per-example gradient and add calibrated Gaussian noise, tracked with the moments accountant; now a standard, broadly-taught technique for training any deep model under a formal privacy guarantee, well beyond privacy-security specialists. |
 | [[Paper — Explaining and Harnessing Adversarial Examples (2014)]] (FGSM) | [[Cluster — Adversarial robustness & security]] | Explains adversarial examples by networks' linearity and introduces the fast gradient sign method, a standard baseline attack. |
 | [[Paper — Layer Normalization (2016)]] | this one | Layer Normalization - normalizes across a layer's own hidden units per training case rather than across a mini-batch, becoming the normalization used inside every Transformer block. |
 | [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] (AlphaGo Zero) | [[Cluster — Reinforcement learning]] | AlphaGo Zero - a single network learns Go purely from self-play, no human game data at all, beating the original AlphaGo 100-0 after 3 days of training. |
@@ -58,20 +59,20 @@ When both apply the topical cluster is primary and owns the raw file; the table 
 | [[Paper — Scaling Laws for Neural Language Models (2020)]] | this one | Scaling Laws - language model loss follows smooth power laws in model size, data, and compute; the compute-optimal response to more compute is overwhelmingly a bigger model, not more data or steps. |
 | [[Paper — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (2020)]] | this one | RAG - fine-tunes a retriever and a seq2seq generator jointly, conditioning generation on documents retrieved from an updatable, inspectable non-parametric memory rather than only facts baked into the model's parameters. |
 | [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3) | this one | GPT-3 - showed a 175B-parameter LM can learn tasks from prompt examples alone, with no gradient updates, making the prompt the new interface. |
-| [[Paper — Learning to Summarize from Human Feedback (2020)]] | [[Cluster — Post-training alignment]] | Bridges Christiano et al. 2017's RLHF loop to GPT-3-scale language models, the direct methodological predecessor of InstructGPT. |
+| [[Paper — Learning to Summarize from Human Feedback (2020)]] | [[Cluster — Post-training alignment]] | Bridges Christiano et al. 2017's RLHF loop to GPT-3-style language models (1.3B and 6.7B), the direct methodological predecessor of InstructGPT. |
 | [[Paper — Denoising Diffusion Probabilistic Models (2020)]] (DDPM) | this one | DDPM - trains a network to reverse a fixed Gaussian noising process step by step, the direct technical ancestor of the diffusion models behind essentially all major image and video generation since. |
 | [[Paper — An Image is Worth 16x16 Words (2020)]] (ViT) | this one | ViT - a pure Transformer applied directly to image patches, matching or beating state-of-the-art CNNs once pretrained at sufficient scale. |
 | [[Paper — Learning Transferable Visual Models From Natural Language Supervision (2021)]] (CLIP) | this one | CLIP - jointly trains an image encoder and text encoder to predict image-caption pairings, letting any set of natural-language class names become a zero-shot classifier with no retraining. |
 | [[Paper — RoFormer - Enhanced Transformer with Rotary Position Embedding (2021)]] | this one | RoPE - rotates query/key vectors by an angle proportional to token position, making relative distance fall directly out of the attention dot product; the positional scheme most modern open-weight LLMs now use. |
 | [[Paper — LoRA (2021)]] | [[Cluster — Efficient fine-tuning]] | Freeze the pretrained weights and train only a low-rank decomposition of the weight update, cutting GPT-3's trainable parameters 10,000x with zero added inference latency. |
-| [[Paper — Finetuned Language Models Are Zero-Shot Learners (2021)]] (FLAN) | this one | FLAN - finetunes a 137B-parameter model on 60+ NLP datasets rewritten as instructions, beating zero-shot GPT-3 on 20 of 25 held-out task types never seen during finetuning. |
+| [[Paper — Finetuned Language Models Are Zero-Shot Learners (2021)]] (FLAN) | [[Cluster — Post-training alignment]] | FLAN - finetunes a 137B-parameter model on 60+ NLP datasets rewritten as instructions, beating zero-shot GPT-3 on 20 of 25 datasets from task types never seen during finetuning. |
 | [[Paper — High-Resolution Image Synthesis with Latent Diffusion Models (2021)]] | this one | LDM - trains an autoencoder to compress images into a small latent space, then runs diffusion there instead of on raw pixels; the direct architectural basis of Stable Diffusion. |
 | [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]] | this one | CoT - writing few-shot exemplars as worked reasoning rather than direct answers unlocks multi-step reasoning that is otherwise flat with model scale, once the model is large enough. |
 | [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT) | [[Cluster — Post-training alignment]] | InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference. |
 | [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] (HH-RLHF) | [[Cluster — Post-training alignment]] | Trains separate helpfulness and harmlessness objectives via RLHF, releases the widely-reused HH-RLHF dataset, and shows alignment training carries essentially no capability cost at sufficient scale. |
 | [[Paper — Training Compute-Optimal Large Language Models (2022)]] (Chinchilla) | this one | Chinchilla - model size and training tokens should scale equally with compute, not model size growing far faster than data as Kaplan et al. concluded; a 70B model on 4x more data than 280B Gopher beats it and every larger contemporary model. |
 | [[Paper — Emergent Abilities of Large Language Models (2022)]] | [[Cluster — Capability evals]] | Names emergent abilities - capabilities absent in smaller language models that appear sharply past a scale threshold - the field's vocabulary for what scaling laws don't predict. |
-| [[Paper — FlashAttention (2022)]] | this one | FlashAttention - restructures attention to minimize slow-memory reads/writes instead of FLOPs, computing the exact same output 2-4x faster with linear rather than quadratic memory. |
+| [[Paper — FlashAttention (2022)]] | this one | FlashAttention - restructures attention to minimize slow-memory reads/writes instead of FLOPs, computing exact attention up to 3x faster end to end with linear rather than quadratic memory. |
 | [[Paper — ReAct (2022)]] | this one | ReAct - interleaves reasoning "thoughts" with real actions against an external environment, letting reasoning guide what to look up next and observations correct the reasoning; the default shape of the LLM agent loop. |
 | [[Paper — Constitutional AI (2022)]] | [[Cluster — Post-training alignment]] | Trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF). |
 | [[Paper — LLaMA - Open and Efficient Foundation Language Models (2023)]] | this one | LLaMA - trains smaller models on far more tokens than Chinchilla-optimal for cheaper inference, matching or beating much larger closed models using only public data; the open-weights release that catalyzed the modern open-weights ecosystem. |
@@ -102,7 +103,7 @@ Read chronologically, the canon traces one line of development:
   - Internal activations get normalized to train faster.
   - A KL-constrained policy update gives policy-gradient RL its first monotonic-improvement guarantee at scale.
   - A compression algorithm adapted for word segmentation solves the open-vocabulary problem.
-  - Shortcut connections make networks over 100 layers deep trainable.
+  - Shortcut connections let accuracy keep improving as networks go past 100 layers deep.
 - **2016**
   - A learned policy network and value network combined with tree search beat a human professional at Go.
   - Normalization gets rederived per-example instead of per-batch, so it finally works cleanly on recurrent networks.
@@ -124,7 +125,7 @@ Read chronologically, the canon traces one line of development:
   - That scaling behavior turns out to follow precise, predictable power laws, and the compute-optimal response to more compute is overwhelmingly a bigger model rather than more data.
   - A pretrained generator gets paired with a queryable, swappable document index so it can ground its answers in retrieved text rather than only what it memorized.
   - Scale alone unlocks task generality.
-  - The reward-model-plus-RL loop for optimizing human preferences gets run at GPT-3 scale for the first time, on summarization, beating both a much larger supervised model and the human reference summaries it was trained to imitate.
+  - The reward-model-plus-RL loop for optimizing human preferences is scaled up on summarization with GPT-3-style models (1.3B and 6.7B), building on Ziegler et al. 2019, beating both a much larger supervised model and the human reference summaries it was trained to imitate.
   - A network trained to reverse a fixed noising process one small step at a time turns out to generate images better than GANs.
   - A pure Transformer applied to image patches, with no convolutional bias at all, matches state-of-the-art CNNs once pretrained at scale, extending the "scale beats hand-designed structure" lesson from language into vision.
 - **2021**
@@ -154,7 +155,6 @@ Read chronologically, the canon traces one line of development:
 - [[Concept — Convolutional neural networks (CNNs)]]
 - [[Concept — Transformer architecture]]
 - [[Concept — In-context learning]]
-- [[Concept — Data contamination]]
 - [[Method — Dropout]]
 - [[Method — Byte Pair Encoding (BPE)]]
 - [[Method — Layer Normalization]]

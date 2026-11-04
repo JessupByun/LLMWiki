@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "Bahdanau attention - replaced the single fixed-length context vector in encoder-decoder translation with a learned, per-step weighted lookup over every source word, the direct ancestor of the Query/Key/Value attention used in every modern Transformer."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Neural Machine Translation by Jointly Learning to Align and Translate (2014).pdf"]

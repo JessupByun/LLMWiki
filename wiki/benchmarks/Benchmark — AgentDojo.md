@@ -1,8 +1,8 @@
 ---
 type: benchmark
 status: mature
-updated: 2026-10-20
-summary: "A dynamic evaluation environment of 4 realistic agentic task suites, 97 legitimate user tasks, and 27 injected attacker goals, tracking benign utility, utility under attack, and targeted attack success as three separate metrics - and finding that the most capable agents are consistently the easiest to hijack, with no defense reaching zero attack success."
+updated: 2026-11-04
+summary: "A dynamic evaluation environment of 4 realistic agentic task suites, 97 legitimate user tasks, and 27 injected attacker goals, tracking benign utility, utility under attack, and targeted attack success as three separate metrics - and finding that more capable agents tend to be easier to hijack, with no defense reaching zero attack success."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Benchmark — AgentDojo.pdf"]
 tags: [prompt-injection, agents, benchmark, security, evals]
@@ -30,9 +30,10 @@ Nine frontier models are tested across both the undefended and defended settings
 
 ## Results
 
-State-of-the-art agents solve fewer than 66% of tasks with no attack present at all, and the paper's central, uncomfortable finding is an inverse scaling relationship: the models with the highest benign utility are consistently the easiest to hijack - GPT-4o has both the highest task-completion rate and the highest targeted attack success rate (47.7%) among closed models, while Claude 3.5 Sonnet offers the best overall balance of the two.
+State-of-the-art agents solve fewer than 66% of tasks with no attack present at all, and the paper's central, uncomfortable finding is an inverse scaling relationship: more capable models tend to be easier to attack, which the authors call "potentially unsurprising" because low-utility models often fail to carry out the attacker's goal even when the injection lands.
+Claude 3.5 Sonnet has the highest benign utility and the better utility-security tradeoff; GPT-4o, close behind on utility, has the highest targeted attack success rate (47.7%).
 Attack-phrasing choice matters far more than attacker knowledge of the target's name or identity: the generic "important message" framing reaches 57.7% success against GPT-4o versus 3.7-5.7% for blunter phrasings, while correctly guessing the model's own name only nudges success up about two points and guessing wrong cuts it by roughly half.
-No defense reaches zero residual attack success - the strongest, a tool filter that restricts which tools the agent can even see before touching untrusted data, cuts targeted attack success to under 7% while actually *raising* benign utility, but the paper is explicit this specific approach fails whenever the next needed tool can't be determined in advance, true for roughly 17% of the benchmark's own test cases.
+No defense reaches zero residual attack success - the strongest, a tool filter that restricts which tools the agent can even see before touching untrusted data, cuts targeted attack success to under 7% (6.84%) while actually *raising* benign utility (73.1% vs 69.0% undefended), but the paper is explicit about two ways it fails: when the needed tools cannot be planned in advance because one tool's output determines the next step, and when the tools the user task needs are themselves enough to carry out the attack, which is true for 17% of the benchmark's test cases.
 
 ## Why it endures
 

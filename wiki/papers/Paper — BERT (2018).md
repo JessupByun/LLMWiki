@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-11-04
 summary: "BERT - pretrains a bidirectional Transformer by predicting randomly masked tokens from both left and right context at once, advancing state of the art on 11 NLP tasks and founding the masked-language-model recipe behind every encoder-only representation model since."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — BERT (2018).pdf"]
@@ -24,7 +24,7 @@ Full title: **BERT: Pre-training of Deep Bidirectional Transformers for Language
 
 [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) had shown pretrain-then-fine-tune works, but its Transformer could only attend to the left context, which is a real handicap for tasks like question answering where the answer needs both sides of a sentence at once.
 BERT removes that constraint by pretraining a bidirectional Transformer to predict randomly masked-out words from context on both sides, and the result is a clean sweep: new state of the art on 11 NLP tasks, pushing the GLUE score to 80.5 (a 7.7-point jump), SQuAD v1.1 Test F1 to 93.2, and SQuAD v2.0 Test F1 to 83.1.
-The second of the two 2018 papers filling the gap in [[Cluster — Foundational canon]] between [[Paper — Attention Is All You Need (2017)]] and [[Paper — Language Models are Few-Shot Learners (2020)]], and still the direct ancestor of the encoder-only models used for embeddings, retrieval, and classification even after decoder-only generative models became dominant for open-ended generation.
+It remains the direct ancestor of the encoder-only models used for embeddings, retrieval, and classification even after decoder-only generative models became dominant for open-ended generation.
 
 ## Core idea
 

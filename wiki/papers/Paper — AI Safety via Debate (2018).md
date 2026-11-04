@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Proposes training two agents to debate a question in front of a human judge who only has to decide which agent said the most true, useful thing - and shows that with an idealized polynomial-time judge, optimal-play debate can decide any question in PSPACE, versus only NP for direct judging without debate."
 cluster: ["Scalable oversight", "Foundational canon"]
 sources: ["raw/papers/scalable-oversight/Paper — AI Safety via Debate (2018).pdf"]
@@ -53,7 +53,6 @@ A confusion-matrix analysis of judge errors and successful lies finds both conce
 ## Why it endures
 
 This paper and Christiano's contemporaneous **iterative amplification** proposal ([[Paper — Supervising Strong Learners by Amplifying Weak Experts (2018)]]) become the field's two founding answers to what later work calls [[Concept — Scalable oversight]], and the paper devotes an entire section to making their equivalence precise: amplification reaches the same PSPACE ceiling through recursive question decomposition (one agent trained on a human who can call the same agent recursively) rather than an adversarial two-player game, and the paper shows the two share not just a capability ceiling but the same shape of underlying assumption about humans - debate assumes lying is harder than arguing against a lie, amplification assumes lying is harder than questioning a lie, and the paper notes amplification's version of that limit specifically goes away once self-play is injected into its questioner module.
-Its core rhetorical move - a complexity-theoretic argument that supervision effort can stay bounded even as the capability of the system being supervised grows without limit, provided a judge only has to make small, local, checkable calls - is the same shape of argument later used to justify why [[Method — Trusted monitoring]]'s much-weaker-model-oversees-much-stronger-model protocols are worth taking seriously at all.
 
 ## Limitations
 
@@ -66,7 +65,7 @@ The paper frames all of this as a proposal supported by preliminary evidence, ex
 - Reuses [[Paper — Deep RL from Human Preferences (2017)]]'s exact solution to expensive human feedback - train a model of the judge rather than querying a human on every debate - carrying over the same online-correction logic that paper establishes.
 - Extends [[Concept — Scalable oversight]] alongside [[Paper — Weak-to-Strong Generalization (2023)]]: this paper tackles the overseer-capability gap through adversarial decomposition (two competing agents), while Weak-to-Strong Generalization tackles the same gap by asking whether a model's own latent capabilities can be elicited despite an imperfect supervisor.
 - [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] takes the same overseer-capability gap in a different direction: instead of debate's average-case bet that honesty wins the game, it asks the worst-case question of whether a protocol stays safe if the model being overseen is actively adversarial.
-- Borrows its self-play optimization technique directly from [[Paper — Mastering the Game of Go without Human Knowledge (2017)]], and builds its own analogy on top of AlphaZero to argue why a judge weaker than the debaters can still reach a correct verdict: an amateur can judge which of two strong Go players is better by watching them play, without being able to evaluate the moves directly.
+- Its MNIST experiment selects moves with the PUCT search variant from [[Paper — Mastering the Game of Go without Human Knowledge (2017)]], while its self-play training proposal and Go-judging analogy cite AlphaZero (Silver et al. 2017b, not yet ingested): an amateur can judge which of two strong Go players is better by watching them play, without being able to evaluate the moves directly.
 - Its central claim - that lying is harder than refuting a lie - gets encouraging empirical support with LLM debaters in [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]], where more persuasive debaters make judges more accurate.
 - [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] names debate as a natural fit for its sandwiching paradigm, since debate deliberately has a model argue for wrong answers.
 - [[Paper — Training Language Models to Win Debates with Self-Play Improves Judge Accuracy (2024)]] reports what it calls the first evidence that training debaters improves judge accuracy, though it finds refutation, which this paper emphasized, barely affects judgments yet.

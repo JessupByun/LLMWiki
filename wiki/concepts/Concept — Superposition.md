@@ -1,7 +1,7 @@
 ---
 type: concept
 status: in-progress
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "A network representing more features than it has dimensions by packing them into almost-orthogonal directions, tolerating interference when sparsity makes that cheap."
 cluster: ["Mechanistic interpretability"]
 sources: []
@@ -36,7 +36,7 @@ Superposition is presented as the central obstacle to a specific, ambitious safe
 Without superposition, enumerating features would just mean enumerating neurons.
 With it, the number of features a model can represent is effectively unbounded relative to its neuron count, and the mapping from neurons to concepts breaks down - motivating "solving superposition" as a named research goal.
 
-[[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] gives this goal its first real attempt: after showing that the alternative ("just train models without superposition") cannot work even in principle - a single neuron can still be polysemantic purely because cross-entropy loss prefers it, with no superposition involved at all - the paper trains a [[Method — Sparse Autoencoder (SAE)]] on a real trained model's activations and recovers thousands of features that are dramatically more interpretable than neurons, causally steerable, and reproducible across independently trained models.
+[[Paper — Towards Monosemanticity - Decomposing Language Models With Dictionary Learning (2023)]] gives this goal one of its first convincing attempts, alongside concurrent work: after setting aside the alternative ("just train models without superposition") with a simple counterexample - a single neuron can still be polysemantic purely because cross-entropy loss prefers it, with no superposition involved at all - the paper trains a [[Method — Sparse Autoencoder (SAE)]] on a real trained model's activations and recovers thousands of features that are dramatically more interpretable than neurons, causally steerable, and reproducible across independently trained models.
 
 ## Relations
 

@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "AlphaGo - combines a policy network (narrows search breadth) and a value network (reduces search depth) inside Monte Carlo Tree Search, the first program to defeat a human professional Go player without a handicap."
 cluster: ["Reinforcement learning", "Foundational canon"]
 sources: ["raw/papers/reinforcement-learning/Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016).pdf"]
@@ -56,7 +56,7 @@ The value network, by contrast, was more useful when derived from the stronger R
 
 ## Why it endures
 
-AlphaGo established the recipe - a policy network to narrow search breadth, a value network to reduce search depth, both learned and combined inside tree search - that became the direct ancestor of AlphaGo Zero's pure self-play approach and AlphaZero's generalization to chess and shogi, and more broadly the template for using deep learning to compress expensive planning into fast, learned approximations.
+AlphaGo established the recipe - a policy network to narrow search breadth, a value network to reduce search depth, both learned and combined inside tree search - that became the direct ancestor of the pure self-play approach of [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] (AlphaGo Zero) and AlphaZero's generalization to chess and shogi, and more broadly the template for using deep learning to compress expensive planning into fast, learned approximations.
 
 ## Limitations
 
@@ -67,7 +67,7 @@ AlphaGo established the recipe - a policy network to narrow search breadth, a va
 
 - Builds on Monte Carlo Tree Search (Coulom 2006; Kocsis & Szepesvari 2006, neither yet ingested) and the deep CNN architecture family established by [[Paper — ImageNet Classification with Deep CNNs (2012)]], applied here to a 19x19 board treated as an image.
 - The policy network's supervised-pretraining-then-RL-refinement pipeline prefigures the SFT-then-PPO recipe later used in [[Paper — Training LMs to Follow Instructions (2022)]] - both start from a supervised warm start and then let policy-gradient RL take over.
-- Directly extended by AlphaGo Zero (2017) and AlphaZero (2017/2018), neither yet ingested, which remove the human-data dependency and merge the policy and value networks into one.
+- Directly extended by [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] (AlphaGo Zero), and then by AlphaZero (Silver et al. 2018, not yet ingested), which remove the human-data dependency and merge the policy and value networks into one.
 - Joins [[Paper — Playing Atari with Deep RL (2013)]] and [[Paper — Proximal Policy Optimization (2017)]] in [[Cluster — Reinforcement learning]] as a third distinct way of combining learned functions with optimization: DQN uses pure value-based learning with no search, PPO uses pure policy-gradient learning with no search, and AlphaGo combines both a learned policy and a learned value function with explicit tree search.
 
 ## Up

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-18
+updated: 2026-11-04
 summary: "Adds a few worked-out intermediate reasoning steps to each few-shot prompt exemplar, which dramatically improves large language models' accuracy on arithmetic, commonsense, and symbolic reasoning tasks, but only once the model is large enough."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022).pdf"]
@@ -39,7 +39,7 @@ That principle, spend more inference-time computation on harder problems by gene
 ## Limitations
 
 The paper is explicit that a chain of thought which arrives at the correct final answer is not proof the model actually "reasoned" to get there: for free-response math problems this is unlikely to happen by chance, but for multiple-choice or binary tasks (most of the commonsense benchmarks here), the model can reach a correct answer through an incoherent or factually wrong reasoning path.
-Manual error analysis on incorrect chains of thought found roughly half were fixable with one missing step or a semantic misunderstanding, while the model's arithmetic mistakes could often be caught and corrected by simply routing its equations through an external calculator.
+Manual analysis of 50 incorrect chains of thought from LaMDA 137B on GSM8K found 46% had only minor mistakes (a calculator error, a symbol-mapping error, or one missing reasoning step), while the other 54% had major errors in semantic understanding or coherence; scaling to PaLM 540B fixed a large share of the one-step-missing and semantic-understanding errors.
 There is also no factuality guarantee on the reasoning text itself, and the model still frequently produced fluent, coherent-sounding chains of reasoning that were nonetheless logically wrong.
 
 ## Relations
@@ -48,6 +48,8 @@ There is also no factuality guarantee on the reasoning text itself, and the mode
 - Emergence tied to model scale, the same phenomenon [[Paper — Scaling Laws for Neural Language Models (2020)]] and [[Paper — Training Compute-Optimal Large Language Models (2022)]] (Chinchilla) study for other capabilities.
 - Used as a feedback-quality technique (prompting a model to "think step-by-step" before answering) in [[Paper — Constitutional AI (2022)]]'s RL-CAI pipeline.
 - See [[Method — Chain-of-Thought Prompting]] for the technique as reused across later reasoning-focused systems.
+- This paper's own caveat - a correct answer does not prove the stated reasoning is what produced it - is the starting point for the faithfulness and monitoring work in [[Cluster — Scheming & AI control]]: [[Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023)]] and [[Paper — Reasoning Models Don't Always Say What They Think (2025)]] test whether the chain reflects the real cause of the answer.
+- [[Paper — Chain of Thought Monitorability - A New and Fragile Opportunity for AI Safety (2025)]] argues that reading this kind of externalized reasoning is a safety opportunity, [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] shows a monitor reading the chain catches reward hacking but that optimizing against the monitor teaches obfuscation, and [[Paper — CoT Red-Handed - Stress Testing Chain-of-Thought Monitoring (2025)]] stress-tests chain-of-thought monitoring inside a control evaluation.
 
 ## Up
 

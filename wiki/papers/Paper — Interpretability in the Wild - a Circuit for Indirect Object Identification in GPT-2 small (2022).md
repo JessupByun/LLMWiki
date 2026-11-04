@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
-summary: "Reverse-engineers a 26-attention-head circuit that implements indirect object identification in GPT-2 small end to end, the most detailed reconstruction of a real natural-language behavior in an actual transformer to date, and introduces path patching plus three quantitative criteria (faithfulness, completeness, minimality) for judging whether a claimed circuit explanation is actually correct."
+updated: 2026-11-04
+summary: "Reverse-engineers a 26-attention-head circuit that implements indirect object identification in GPT-2 small end to end, by the authors' account the most detailed reconstruction of a real natural-language behavior in an actual transformer to date, and introduces path patching plus three quantitative criteria (faithfulness, completeness, minimality) for judging whether a claimed circuit explanation is actually correct."
 cluster: ["Mechanistic interpretability"]
 sources: ["raw/papers/mechanistic-interpretability/Paper — Interpretability in the Wild - a Circuit for Indirect Object Identification in GPT-2 small (2022).pdf"]
 tags: [mechanistic-interpretability, circuits, attention-heads, transformers]
@@ -19,7 +19,7 @@ Redwood Research, with Jacob Steinhardt also at UC Berkeley.
 
 ## Impact
 
-Every other circuit-level result in this wiki's mechanistic-interpretability cluster comes from a deliberately tiny toy transformer, studying a phenomenon simple enough to analyze in isolation.
+The circuit results that came before it in this wiki's mechanistic-interpretability cluster ([[Paper — A Mathematical Framework for Transformer Circuits (2021)]], [[Paper — In-context Learning and Induction Heads (2022)]]) come from deliberately tiny toy transformers, studying phenomena simple enough to analyze in isolation.
 This paper does the harder thing: it reverse-engineers a real natural-language behavior - indirect object identification, correctly completing "When Mary and John went to the store, John gave a drink to" with "Mary" - inside an actual, non-toy language model, GPT-2 small, and traces the full mechanism down to 26 individual attention heads across 7 functional classes.
 It is, by the authors' own claim, the most detailed end-to-end reverse-engineering of a natural behavior in a transformer language model to date, and it introduces both a new causal-intervention technique (path patching) and a set of quantitative criteria for actually checking whether a claimed circuit is correct, rather than merely plausible.
 

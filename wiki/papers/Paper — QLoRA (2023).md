@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-10-19
+status: mature
+updated: 2026-11-04
 summary: "QLoRA - backpropagate through a frozen 4-bit quantized base model into full-precision LoRA adapters, cutting 65B fine-tuning memory from 780GB to under 48GB with no performance loss."
 cluster: ["Efficient fine-tuning", "Foundational canon"]
 sources: ["raw/papers/Paper — QLoRA (2023).pdf"]
@@ -24,7 +24,7 @@ Best model family: **Guanaco**.
 
 QLoRA cut the memory needed to fine-tune a 65B-parameter model from **>780GB down to under 48GB**, without degrading performance relative to full 16-bit fine-tuning - moving frontier-open-weight fine-tuning from a multi-GPU-server exercise to something that fits on a single professional GPU, and a 33B version onto a single 24GB consumer GPU.
 The resulting Guanaco family, fine-tuned for as little as 24 hours on one GPU, reached **99.3%** of ChatGPT's performance level on the Vicuna benchmark - the best open-source result reported at the time.
-This is the paper that made "download a base model, fine-tune it on your own laptop or a single rented GPU" a real option rather than a research-lab privilege, and it's the direct technical ancestor of nearly every community-released instruction-tuned open model since.
+This is the paper that made "download a base model, fine-tune it on your own laptop or a single rented GPU" a real option rather than a research-lab privilege, and it became a standard technique behind many community-released instruction-tuned open models.
 
 ## Problem it solved
 
@@ -60,14 +60,15 @@ One empirical finding worth isolating: the *original* LoRA recipe of adapting on
 ## Results (highlights)
 
 - **NF4 beats FP4 and Int4 empirically**, not just in theory: mean perplexity across OPT/LLaMA/BLOOM/Pythia models is 27.41 for NF4+Double Quantization vs. 29.48 for a 4-bit float and 34.34 for 4-bit integers (Table 2).
-- **4-bit QLoRA fully recovers 16-bit performance** on GLUE and Super-NaturalInstructions across RoBERTa-large and T5 (80M-11B) - QLoRA with NF4+DQ matches both 16-bit full fine-tuning and 16-bit LoRA within noise (Table 3).
+- **4-bit QLoRA recovers 16-bit performance** on GLUE (RoBERTa-large) and Super-NaturalInstructions (T5, 80M-11B): through T5-3B, QLoRA with NF4+DQ matches both 16-bit full fine-tuning and 16-bit LoRA (Table 3).
+  At T5-11B, beyond the up-to-3B range the paper states for its full-fine-tuning comparison, every adapter variant trails full BF16 fine-tuning by about 1 RougeL (60.9 for NF4+DQ and 60.7 for 16-bit LoRA vs 62.0), so the shortfall there comes from the adapters, not from 4-bit quantization.
 - **Guanaco 65B reaches 99.3%** of ChatGPT's score on the Vicuna benchmark (GPT-4-judged), trained in 24 hours on a single professional GPU; **Guanaco 33B reaches 97.8%** in under 12 hours on one 24GB consumer GPU; **Guanaco 7B**, at just 5GB, outperforms the 26GB Alpaca-13B by roughly 20 percentage points.
 - **Data quality beats data quantity**: the 9k-example OASST1 dataset outperformed a 450k-example subsampled FLAN v2 collection on chatbot benchmarks, and strong MMLU performance does not imply strong Vicuna-style chatbot performance (or vice versa) - the two benchmarks measure genuinely different things, and dataset-task fit matters more than raw scale.
-- **GPT-4-as-judge has measurable biases the paper documents directly**: a strong ordering effect (whichever response GPT-4 sees first scores higher), and GPT-4 rates its own-style outputs about 20 percentage points higher than human raters do for the same comparisons (Elo 1348 vs. 1176) - a methodological finding with implications well beyond this paper.
+- **GPT-4-as-judge has measurable biases the paper documents directly**: a strong ordering effect (whichever response GPT-4 sees first scores higher), and GPT-4 assigns its own outputs a much higher rating than human raters do (Elo 1348 vs. 1176, which the paper says amounts to an additional 20% probability of winning) - a methodological finding with implications well beyond this paper.
 
 ## Why it endures
 
-QLoRA's mergeable-adapter-on-a-frozen-quantized-base recipe became, almost immediately, the default way open-source practitioners fine-tune large language models - it is the technique underneath the great majority of community LLaMA/Mistral/etc. fine-tunes released from 2023 onward.
+QLoRA's mergeable-adapter-on-a-frozen-quantized-base recipe became, almost immediately, the default way open-source practitioners fine-tune large language models - it is a technique underneath many community LLaMA/Mistral/etc. fine-tunes released from 2023 onward.
 Its broader-impacts framing was also directly prescient: the paper explicitly argues QLoRA is "an equalizing factor" closing the resource gap between large labs and small teams, and estimates that even an iPhone could fine-tune millions of tokens overnight while charging - a claim about on-device fine-tuning that looked speculative in mid-2023 and increasingly does not.
 
 ## Limitations

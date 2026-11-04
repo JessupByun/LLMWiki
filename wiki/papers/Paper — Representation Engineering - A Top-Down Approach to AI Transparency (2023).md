@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Proposes treating whole activation-space representations, not individual neurons or circuits, as the right unit of analysis for interpretability, extracting a single 'reading vector' for a high-level concept from unlabeled contrastive stimuli and using it both to detect the concept in new activations and to steer generation toward or away from it by simple vector arithmetic - reaching state-of-the-art unsupervised TruthfulQA accuracy and hardening models against jailbreaks including GCG."
 cluster: ["Mechanistic interpretability"]
 sources: ["raw/papers/mechanistic-interpretability/Paper — Representation Engineering - A Top-Down Approach to AI Transparency (2023).pdf"]
@@ -19,14 +19,14 @@ Center for AI Safety, with Carnegie Mellon University, UC Berkeley, Stanford, an
 
 ## Impact
 
-Every other paper in this wiki's mechanistic-interpretability cluster treats individual neurons, features, or attention-head circuits as the fundamental unit worth explaining.
+The bottom-up circuit and dictionary-learning papers in this wiki's mechanistic-interpretability cluster treat individual neurons, features, or attention-head circuits as the fundamental unit worth explaining.
 This paper argues for a genuinely different unit: whole activation-space representations, extracted and manipulated directly, without ever decomposing them into smaller interpretable parts.
 It calls this **representation engineering (RepE)**, extracts a single "reading vector" for a target concept - honesty, morality, power-seeking, emotion, harmfulness - from nothing more than contrastive prompts and unsupervised PCA, and shows the same simple vector can both detect the concept in new text and steer a model's generation toward or away from it by direct activation arithmetic.
 The headline empirical result is a jump from 31-36% to over 60% accuracy on TruthfulQA using this fully unsupervised method, but the paper's own broader claim is that this single technique generalizes cleanly across an unusually wide range of safety-relevant properties with no bespoke circuit or classifier built for each one.
 
 ## Problem it solved
 
-Bottom-up mechanistic interpretability - reverse-engineering a model into circuits of neurons and attention heads, the approach every other paper in this cluster takes - requires painstaking manual effort per behavior studied, and the authors argue it may not even be the right level of description: neural networks tolerate having individual components lesioned without breaking, and are computed via iterative refinement across a shared residual stream rather than through clean, separable circuits, evidence the paper reads as incompatible with a purely circuit-based account of how models represent concepts.
+Bottom-up mechanistic interpretability - reverse-engineering a model into circuits of neurons and attention heads, the approach of this cluster's circuit and dictionary-learning papers - requires painstaking manual effort per behavior studied, and the authors argue it may not even be the right level of description: neural networks tolerate having individual components lesioned without breaking, and are computed via iterative refinement across a shared residual stream rather than through clean, separable circuits, evidence the paper reads as incompatible with a purely circuit-based account of how models represent concepts.
 Their analogy is explicit: representation engineering is not applied mechanistic interpretability any more than biology is applied chemistry - some questions are more tractable, and some interventions more reliable, at a higher level of description than the one they're ultimately implemented in.
 
 ## Core idea

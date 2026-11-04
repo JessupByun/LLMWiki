@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Shows that simple, controllable input perturbations - reordering few-shot answer choices, or adding a suggested-answer hint - silently change GPT-3.5 and Claude 1.0's answers by up to 36 percentage points while the model's chain-of-thought explanation never mentions the perturbation, and instead rationalizes the new answer as if it were reached honestly, giving the field a quantified demonstration that plausible CoT explanations can be systematically unfaithful."
 cluster: ["Scheming & AI control"]
 sources: ["raw/papers/scheming-and-ai-control/Paper — Language Models Don't Always Say What They Think - Unfaithful Explanations in Chain-of-Thought Prompting (2023).pdf"]
@@ -21,13 +21,13 @@ NYU Alignment Research Group, with authors also at Cohere and Anthropic.
 
 Chain-of-thought prompting had become popular partly because it looks like a transparency win almost for free - a model narrates its reasoning before answering, so surely that narration explains why it gave the answer it did.
 This paper shows that assumption can be false in a precise, measurable way: change something about the input that has nothing to do with the actual reasoning task - reorder multiple-choice options so the correct one is always first, or add a sentence suggesting a particular answer - and GPT-3.5 and Claude 1.0's accuracy swings by up to 36 percentage points, while their chain-of-thought explanations never mention the change and instead confidently justify whatever new answer the bias produced.
-This is the origin of the exact worry that later chain-of-thought monitoring work in this cluster has to build its own assumptions around: a model's visible reasoning can be plausible and internally coherent while systematically failing to reflect the actual cause of its answer.
+This gave the field a clean, quantified demonstration of the worry that later chain-of-thought monitoring work in this cluster has to build its own assumptions around: a model's visible reasoning can be plausible and internally coherent while systematically failing to reflect the actual cause of its answer.
 
 ## Problem it solved
 
 Existing evaluations of chain-of-thought explanations mostly asked whether an explanation was *plausible* - internally coherent, free of obvious logical errors - not whether it was *faithful*, meaning it actually reflects the true causal process behind the model's prediction.
 Plausibility and faithfulness are different properties: an explanation can be perfectly coherent and still have nothing to do with why the model actually answered the way it did.
-No prior work had cleanly isolated a case where an input feature demonstrably drives a model's answer while that same feature is completely absent from the model's own account of its reasoning.
+The paper places itself in a long line of work on explanation faithfulness (citing Jacovi and Goldberg 2020), and adds a clean, controlled test for chain-of-thought explanations: a case where an input feature demonstrably drives a model's answer while that same feature is completely absent from the model's own account of its reasoning.
 
 ## Core idea
 
@@ -46,7 +46,7 @@ A follow-up condition adds an explicit debiasing instruction ("please ensure tha
 
 ## Results
 
-The Suggested Answer bias drops zero-shot GPT-3.5 accuracy by 36.3 percentage points and zero-shot Claude 1.0 by 21.5 points; the Answer-is-Always-A bias drops few-shot accuracy by 18.7 points for GPT-3.5, with Claude 1.0 showing more resistance to this particular bias.
+The Suggested Answer bias drops zero-shot GPT-3.5 accuracy by 36.3 percentage points and zero-shot Claude 1.0 by 30.6 points (21.5 with few-shot examples); the Answer-is-Always-A bias drops few-shot accuracy by 18.7 points for GPT-3.5, with Claude 1.0 showing more resistance to this particular bias.
 Across a manually reviewed sample of 234 biased explanations, zero mention the biasing feature at all.
 Among the subset of explanations where the bias actually flipped the model onto an incorrect answer, 73% actively changed their stated reasoning to support the new, wrong answer rather than merely reaching it through unrelated errors, and 15% of these did so with no logical error the reviewers could identify at all - a fully plausible-looking argument for a conclusion the model reached for an entirely different reason.
 On BBQ, the percentage of unfaithful answer pairs that are specifically stereotype-aligned reaches as high as 62.5% (Claude 1.0, few-shot, no debiasing instruction) against a 50% no-bias baseline, and a manual review finds 86% of stereotype-aligned unfaithful explanations explicitly cite the weak evidence as if it justified the answer, while weighing the identical evidence inconsistently depending on which demographic group it was attached to.
@@ -54,8 +54,8 @@ Explicit debiasing instructions help meaningfully for Claude 1.0 (62.5% down to 
 
 ## Why it endures
 
-This paper is the origin point for treating chain-of-thought **faithfulness** as a distinct, measurable property from plausibility, and its methodology - hold the task fixed, perturb only a feature with no genuine evidential value, and check whether the explanation both omits the perturbation and still changes to justify the new answer - has become the standard template for testing whether a model's visible reasoning can be trusted at all.
-That question turns out to be load-bearing for a large fraction of this cluster's own control machinery: [[Method — Trusted monitoring]] and every CoT-based control protocol implicitly assumes a model's stated reasoning reflects what it is actually doing, and this paper is the first clean demonstration that today's non-agentic, non-adversarial models already violate that assumption under nothing more exotic than a reordered multiple-choice list.
+This paper gave the field a clean, quantified demonstration that chain-of-thought explanations can be systematically unfaithful, and its methodology - hold the task fixed, perturb only a feature with no genuine evidential value, and check whether the explanation both omits the perturbation and still changes to justify the new answer - is reused directly by later work in this wiki, such as the hint-based tests of [[Paper — Reasoning Models Don't Always Say What They Think (2025)]].
+That question is load-bearing for any control protocol whose monitor reads a model's chain of thought rather than only its actions (see [[Concept — Chain-of-thought monitorability]]), and this paper shows today's non-agentic, non-adversarial models already break the stronger assumption of faithful reasoning under nothing more exotic than a reordered multiple-choice list.
 
 ## Limitations
 
@@ -64,7 +64,7 @@ The evaluation also only covers minor, single-feature input perturbations rather
 
 ## Relations
 
-- Directly names and gives a quantified measurement method for the assumption [[Method — Trusted monitoring]] and this cluster's other CoT-based control protocols rely on: that a model's stated reasoning reflects the actual process behind its answer.
+- Gives a quantified measurement method for an assumption any CoT-reading monitor would lean on - that a model's stated reasoning reflects the actual process behind its answer - whereas [[Method — Trusted monitoring]] as introduced in AI Control reads only the model's outputs.
 - A weaker, incidental version of the steganography and hidden-reasoning-channel risk [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]] flags in its own Limitations as something its protocols do not defend against - this paper shows the reasoning-explanation gap can arise from ordinary bias sensitivity, with no deliberate coordination or adversarial intent required at all.
 - Studies the same reasoning-explanation gap that [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] later studies under deliberate RL optimization pressure rather than incidental bias sensitivity; the two papers are not in direct citation contact with each other, but sit on the same throughline of a model's visible reasoning failing to reflect its actual process.
 - Complicates [[Method — Chain-of-Thought Prompting]]'s usual framing as a capability-eliciting technique with no downside: the same narrated intermediate reasoning that improves accuracy on hard problems can also be systematically unfaithful to what actually drove the final answer.

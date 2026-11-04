@@ -1,40 +1,39 @@
 ---
 type: concept
-status: in-progress
-updated: 2026-10-19
-summary: "Architecture applying learned filters convolutionally to exploit locality and translation-invariance; the first proof deep nets beat hand-engineered features."
+status: mature
+updated: 2026-11-04
+summary: "Architecture applying small learned filters across an input with shared weights, building in locality and translation-invariance; the architecture with which deep nets first decisively beat hand-engineered features at ImageNet scale."
 cluster: ["Foundational canon"]
 sources: []
 tags: [architecture, cnn, vision]
-aliases: []
+aliases: ["CNN", "ConvNet"]
 ---
 
 # Concept — Convolutional neural networks (CNNs)
 
 ## Definition
 
-A neural architecture that applies learned filters (kernels) convolutionally across an input, exploiting locality and translation-invariance in the data (originally images).
-Popularized at scale by [[Paper — ImageNet Classification with Deep CNNs (2012)]].
+A neural architecture that slides small learned filters (kernels) across an input, applying the same weights at every position, so each layer produces feature maps that respond to a local pattern wherever it occurs.
+The building blocks:
 
-## Core mechanism
+- **Convolutional layers:** each output unit sees only a small local neighborhood of the layer below, and every position shares the same filter weights.
+- **Pooling layers:** summarize neighboring outputs (e.g. by taking their maximum), downsampling the feature map and adding tolerance to small shifts.
+- **Depth:** stacking many such layers builds increasingly abstract features (edges, then textures, parts, and objects), with fully-connected layers typically on top for classification.
 
-- **Convolutional layers:** small learned filters slide across the input, producing feature maps.
-  Parameter sharing across spatial positions makes CNNs far cheaper than fully-connected layers of similar size.
-- **Pooling layers:** downsample feature maps (e.g. max-pooling) to build translation tolerance and reduce computation.
-- **Depth:** stacking many conv layers builds increasingly abstract features (edges → textures → parts → objects).
-- **Non-linearity:** ReLU (`max(0,x)`) rather than tanh/sigmoid, which trains substantially faster since it doesn't saturate.
+CNNs trained with backpropagation date back to LeCun et al.'s handwritten-digit networks around 1990 (not yet ingested); they were scaled up to high-resolution natural images in [[Paper — ImageNet Classification with Deep CNNs (2012)]] (AlexNet).
 
-## Why it matters
+## Why it works
 
-CNNs were the architecture that first demonstrated deep learning could dramatically outperform hand-engineered features (SIFT, Fisher Vectors) given enough data and compute.
-That recipe, more data plus more compute plus more depth, later generalized beyond vision to language ([[Concept — Transformer architecture]]) and beyond.
+Convolution hard-codes two assumptions that are mostly true of images: statistics are the same everywhere in the image (stationarity), and nearby pixels depend on each other far more than distant ones (locality).
+Building those assumptions in means a CNN has far fewer connections and parameters than a fully-connected network with layers of similar size, so it is easier to train while, as the AlexNet paper puts it, its best achievable performance is likely only slightly worse.
+That prior is exactly what made it feasible to train a large network on ImageNet in 2012, given efficient GPU convolution code, with training tricks like ReLU activations and [[Method — Dropout]] doing the rest.
+The same assumptions are also a ceiling: [[Paper — An Image is Worth 16x16 Words (2020)]] (ViT) shows that with enough pretraining data, a Transformer with almost no built-in locality matches or beats state-of-the-art CNNs.
 
 ## Relations
 
-- Origin-at-scale paper: [[Paper — ImageNet Classification with Deep CNNs (2012)]].
+- Scaled to ImageNet in [[Paper — ImageNet Classification with Deep CNNs (2012)]]; made trainable past 100 layers by [[Paper — Deep Residual Learning for Image Recognition (2015)]] with [[Paper — Batch Normalization (2015)]].
 - Regularization technique commonly paired with CNNs: [[Method — Dropout]].
-- Contrast with [[Concept — Transformer architecture]].
-  Attention-based models eventually displaced CNNs as the default for many vision tasks too, but the depth/data/compute recipe CNNs established still holds.
+- Contrast with [[Concept — Transformer architecture]], which replaced built-in locality with learned attention and eventually displaced CNNs as the default for many vision tasks too.
 
 ## Up
 

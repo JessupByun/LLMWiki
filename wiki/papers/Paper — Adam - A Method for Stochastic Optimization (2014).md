@@ -1,7 +1,7 @@
 ---
 type: paper
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "Adam - an adaptive first-order optimizer that tracks running estimates of the gradient's first and second moments with bias correction, combining AdaGrad's sparse-gradient handling with RMSProp's non-stationary-objective handling, and became the default optimizer for training neural networks."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Adam - A Method for Stochastic Optimization (2014).pdf"]

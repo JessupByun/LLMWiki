@@ -1,8 +1,8 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
-summary: "Shows that outsourced or downloaded pre-trained neural networks can be maliciously backdoored - performing normally on ordinary inputs but reliably misclassifying inputs containing a secret attacker-chosen trigger - with under 1% accuracy cost on clean data, and that the backdoor survives transfer learning to a new task, causing a 25-percentage-point average accuracy drop specifically on triggered inputs even after the network is retrained for a completely different classification target."
+updated: 2026-11-04
+summary: "Shows that outsourced or downloaded pre-trained neural networks can be maliciously backdoored - performing normally on ordinary inputs but reliably misclassifying inputs containing a secret attacker-chosen trigger - with under 1% accuracy cost on clean data, and that the backdoor survives transfer learning to a new task: after retraining for a completely different classification target, triggered inputs score about 9 points below an honest baseline, and about 25 points below once the backdoor neurons are amplified."
 cluster: ["ML security & privacy"]
 sources: ["raw/papers/ml-security-and-privacy/Paper — BadNets - Identifying Vulnerabilities in the Machine Learning Model Supply Chain (2017).pdf"]
 tags: [backdoor-attack, data-poisoning, ml-security, supply-chain]
@@ -21,7 +21,7 @@ New York University.
 
 Training a state-of-the-art deep network is expensive enough that outsourcing it - to a cloud training service, or simply downloading a pretrained model to fine-tune via transfer learning - is now routine.
 This paper shows that routine choice opens a new attack surface: a malicious trainer can return a **BadNet**, a network that performs indistinguishably from an honestly trained one on the user's own validation data, yet reliably produces an attacker-chosen output whenever a secret **backdoor trigger** appears in an input.
-Demonstrated first on MNIST digit classification, then on a realistic U.S. traffic-sign detector where a small sticker on a stop sign causes it to be classified as a speed-limit sign - and, most consequentially, shown to survive transfer learning: a backdoored U.S. sign detector downloaded from a public model repository and retrained by an unwitting victim to recognize *Swedish* signs still misclassifies triggered inputs 25 percentage points worse on average than clean ones, even though the victim never trained on a single U.S. sign or a single backdoored image themselves.
+Demonstrated first on MNIST digit classification, then on a realistic U.S. traffic-sign detector where a small sticker on a stop sign causes it to be classified as a speed-limit sign - and, most consequentially, shown to survive transfer learning: a backdoored U.S. sign detector downloaded from a public model repository and retrained by an unwitting victim to recognize *Swedish* signs still does measurably worse on triggered inputs - about 25% worse in the paper's headline figure, which matches its amplified variant - even though the victim never trained on a single U.S. sign or a single backdoored image themselves.
 
 ## Problem it solved
 
@@ -46,8 +46,8 @@ The transfer-learning case study trains a U.S. sign BadNet, simulates it being d
 
 On MNIST, the single-target BadNet's error rate on clean images is at most 0.17 percentage points worse (and sometimes better) than the honestly-trained baseline, while its error rate on backdoored images is at most 0.09%, meaning the attack succeeds on more than 99.9% of triggered inputs; the attack still works even when backdoored images make up only 10% of the poisoned training set.
 On the traffic-sign detector, all three BadNets (yellow square, bomb, flower triggers) misclassify over 90% of triggered stop signs as speed-limit signs while matching the honest baseline's accuracy on clean images, and the physical sticker attack succeeds on a real photograph at 95% confidence.
-The transfer-learning attack is the paper's most consequential result: the Swedish BadNet's accuracy on clean Swedish signs (74.9%) is actually 2.2 percentage points *higher* than an honestly-trained Swedish baseline, while its accuracy on backdoored Swedish signs drops to 61.6% - a 25-percentage-point average degradation specifically on triggered inputs that the victim never had any reason to suspect.
-Strengthening the backdoor by amplifying the activations of neurons the paper identifies as backdoor-specific (via the same last-convolutional-layer visualization used on MNIST) widens this gap further: at 20x amplification, clean accuracy on the Swedish network only dips to 68.3% (a 6.6-point cost) while backdoored-image accuracy falls to 45.1%, and by 30x amplification backdoored accuracy is down to 40.5% for a 9.6-point clean-accuracy cost.
+The transfer-learning attack is the paper's most consequential result: the Swedish BadNet's accuracy on clean Swedish signs (74.9%) is actually 2.2 percentage points *higher* than an honestly-trained Swedish baseline, while its accuracy on backdoored Swedish signs drops to 61.6% - 13.3 points below its own clean accuracy and 8.6 points below the honest baseline's 70.2% on the same triggered images, a degradation the victim has no reason to suspect.
+Strengthening the backdoor by amplifying the activations of neurons the paper identifies as backdoor-specific (via the same last-convolutional-layer visualization used on MNIST) widens this gap further: at 20x amplification, clean accuracy on the Swedish network only dips to 68.3% (a 6.6-point cost) while backdoored-image accuracy falls to 45.1%, about 25 points below the honest baseline, matching the paper's headline "25% worse" figure and its own "> 25% drop" for this setting, and by 30x amplification backdoored accuracy is down to 40.5% for a 9.6-point clean-accuracy cost.
 
 ## Why it endures
 

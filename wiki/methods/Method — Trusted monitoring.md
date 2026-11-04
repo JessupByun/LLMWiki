@@ -1,7 +1,7 @@
 ---
 type: method
 status: in-progress
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Use a weaker but known-safe model to rate how suspicious an untrusted model's output looks, and escalate the most suspicious fraction to expensive human-quality review."
 cluster: ["Scheming & AI control"]
 sources: []
@@ -21,10 +21,9 @@ Introduced in [[Paper — AI Control - Improving Safety Despite Intentional Subv
 
 - **Defer to trusted (dynamic routing)**: instead of only auditing high-suspicion outputs, silently substitute T's own weaker-but-safe output whenever U's suspicion score crosses a lower threshold.
   This turns a single audit budget into a tunable safety/usefulness frontier - more deferral means more safety at the cost of using T's worse answers more often.
-- **Untrusted monitoring**: replace T with a second copy of U itself as the suspicion-rater, since the untrusted model is typically far better at spotting subtle problems than the trusted one.
-  This only works if the blue team defends against the monitor colluding with the policy - both instances are the same model, so nothing stops them from coordinating unless the protocol removes the shared signal they'd coordinate on (via redacting problem/code features and paraphrasing, and by validating the monitor's honesty on synthetic examples of the very failure it's meant to catch).
+- **Untrusted monitoring**: replace T with a second copy of U as the suspicion-rater - covered, with its collusion defenses, on [[Method — Untrusted monitoring]].
 - **Trusted editing**: instead of auditing or deferring, have the trusted model directly edit the untrusted model's output to strip out anything suspicious, submitting the edited version for outputs in a moderate suspicion range.
-  In the founding paper, this Pareto-dominates the other variants.
+  In the founding paper, this Pareto-dominates untrusted monitoring.
 
 ## Why it works
 

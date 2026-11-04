@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Trains reasoning purely with rule-based RL on a pretrained base model, no SFT initialization at all, and shows long chain-of-thought behaviors (self-verification, backtracking) emerge on their own; the resulting model matches OpenAI o1 on math, code, and STEM benchmarks and is released open-weight."
 cluster: ["Reinforcement learning", "Foundational canon"]
 sources: ["raw/papers/reinforcement-learning/Paper — DeepSeek-R1 - Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (2025).pdf"]
@@ -13,14 +13,14 @@ aliases: ["arxiv:2501.12948", "DeepSeek-AI 2025"]
 
 ## Metadata
 
-arXiv:2501.12948, Jan 2025.
+arXiv:2501.12948 (v2, 4 Jan 2026; originally Jan 2025).
 DeepSeek-AI.
 
 ## Impact
 
 DeepSeek-R1-Zero shows that a pretrained base model can be trained straight into a strong reasoner using only rule-based RL (correctness of the final answer plus output formatting), with no supervised fine-tuning step at all, and that sophisticated reasoning behaviors - self-verification, reflection, backtracking to try a different approach - emerge on their own rather than being taught by demonstration.
 DeepSeek-R1 itself, which adds a light SFT "cold start" and a second RL stage on top of that recipe, reaches AIME 2024 and MATH-500 scores on par with OpenAI's o1, released fully open-weight under the MIT license - the first open model at that reasoning tier.
-The 800k reasoning trajectories it generates are then used to distill much smaller dense models (as small as 1.5B parameters) that beat far larger non-reasoning models, making frontier-style reasoning capability cheap to reproduce without running large-scale RL at all.
+Its roughly 800k SFT samples (about 600k reasoning traces rejection-sampled from its own RL checkpoint, plus about 200k non-reasoning examples) are then used to distill much smaller dense models (as small as 1.5B parameters) that beat far larger non-reasoning models, making frontier-style reasoning capability cheap to reproduce without running large-scale RL at all.
 
 ## Problem it solved
 
@@ -31,14 +31,14 @@ It was also unclear whether reasoning behavior could be induced from scratch by 
 ## Core idea
 
 Run [[Method — Group Relative Policy Optimization (GRPO)]] directly on a pretrained base model (DeepSeek-V3-Base) with no SFT step beforehand, using a reward that is entirely rule-based: does the final answer match the ground truth (checked automatically - a boxed number for math, test cases for code), and does the response wrap its reasoning in `<think>` tags.
-No learned reward model of any kind is used for this stage, which sidesteps reward hacking entirely since there is no learned function to hack.
+No learned reward model of any kind is used for this stage, which avoids the hacking of learned reward models that the authors report under large-scale RL - they call rule-based rewards "robust mechanisms for mitigating issues related to reward hacking", though a rule-based checker can still be gamed (see [[Method — RL from Verifiable Rewards (RLVR)]]).
 Because the only signal is whether the final answer is correct, the model is free to discover whatever intermediate reasoning process actually raises its reward, rather than being constrained to reproduce a human's reasoning style - and in practice, its average response length climbs steadily over training as it learns that generating more verification and backtracking steps improves accuracy on hard problems, culminating in a documented "aha moment" where the model spontaneously starts using self-reflective language ("Wait, wait. Wait. That's an aha moment I can flag here.") mid-solution, entirely unprompted.
 This RL-only model, DeepSeek-R1-Zero, reaches 77.9% pass@1 on AIME 2024 (up from an initial 15.6%), but its output is often hard to read and mixes languages mid-response, and its narrow rule-based reward doesn't transfer to open-ended tasks like writing.
 
 ## How it's built
 
 DeepSeek-R1 fixes those readability and generality gaps with a four-stage pipeline built around the same GRPO core: (1) fine-tune the base model on a small set of human-readable, first-person long chain-of-thought examples as a "cold start," giving RL a better initialization than the raw base model; (2) run the same reasoning-focused RL as R1-Zero, adding a language-consistency reward term to stop language mixing; (3) use that RL checkpoint to generate rejection-sampled reasoning trajectories, combine them with ~200k non-reasoning SFT examples (writing, factual QA, coding), and fine-tune on all ~800k samples together so the model retains general capability; (4) run a second RL stage that mixes the same rule-based reward for reasoning prompts with a learned helpfulness/harmlessness reward model for general prompts, aligning the final model with human preferences without eroding the reasoning gains from stage 2.
-Because DeepSeek-R1's 800k SFT trajectories are themselves generated by an RL-trained reasoner, they can be reused directly to fine-tune much smaller open base models (Qwen and Llama, 1.5B-70B) with ordinary SFT and no RL stage at all - a distillation pipeline that transfers the reasoning behavior far more cheaply than reproducing the RL training would.
+Because the bulk of DeepSeek-R1's ~800k SFT samples (the ~600k reasoning traces) is generated by an RL-trained reasoner, the set can be reused directly to fine-tune much smaller open base models (Qwen and Llama, 1.5B-70B) with ordinary SFT and no RL stage at all - a distillation pipeline that transfers the reasoning behavior far more cheaply than reproducing the RL training would.
 
 ## Results
 
@@ -48,7 +48,7 @@ The 1.5B distilled model alone surpasses GPT-4o and Claude-3.5-Sonnet on AIME an
 
 ## Why it endures
 
-This paper established [[Method — RL from Verifiable Rewards (RLVR)|RL from Verifiable Rewards]] - pure RL on a rule-checkable reward, no SFT initialization - as a viable and reproducible way to train reasoning models, avoiding the reward-hacking failure mode that dogged learned process/outcome reward models by simply not using one.
+This paper established [[Method — RL from Verifiable Rewards (RLVR)|RL from Verifiable Rewards]] - pure RL on a rule-checkable reward, no SFT initialization - as a viable and reproducible way to train reasoning models, avoiding the learned-reward-model hacking that dogged process/outcome reward models by simply not using one - though not reward hacking in general, since test-based checkers can still be gamed.
 It also demonstrated, empirically and cheaply, that once a large model discovers a reasoning capability via RL, that capability transfers to much smaller models through ordinary SFT distillation - making strong reasoning models accessible to anyone with distillation-scale compute rather than RL-training-scale compute, which is the model the community around Open-R1 and similar reproductions has since followed.
 
 ## Attempted approaches that failed
@@ -61,6 +61,8 @@ The paper documents two approaches explored before settling on the outcome-based
 
 DeepSeek-R1 still mixes languages when queried outside Chinese and English, has weaker structured-output and tool-use ability than contemporaneous non-reasoning models, and shows only marginal improvement over DeepSeek-V3 on software-engineering benchmarks since large-scale RL was not extensively applied to that domain due to slow evaluation loops.
 The paper's own safety report also finds DeepSeek-R1 without its external risk-control system is comparably or more jailbreakable than several frontier models, and performs poorly on HarmBench's intellectual-property category specifically (e.g. reproducing song lyrics on request).
+The authors also report reward hacking against the learned helpful reward model used in the final RL stage (Supplementary B.5, Fig. 6): reward keeps rising while CodeForces performance falls.
+For tasks without a reliable reward signal they therefore rely on human-annotated SFT data and run RL for only hundreds of steps, and they name scaling pure RL to such tasks an open challenge.
 
 ## Relations
 
@@ -75,6 +77,9 @@ The paper's own safety report also finds DeepSeek-R1 without its external risk-c
 [[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]] reports that its process-supervision variant of GRPO (a neural, step-level reward model) beats outcome supervision on math benchmarks.
 This paper, from the same lab and the same GRPO lineage, goes the opposite direction: it explicitly avoids any neural process or outcome reward model for the reasoning-RL stage, citing reward hacking under large-scale RL as the reason, and gets its results from rule-based verification alone.
 The reversal isn't a retraction - DeepSeekMath's process reward model was trained and evaluated at a much smaller scale than DeepSeek-R1's training run - but it marks a real change in this lineage's own view of when a learned reward model is worth the reward-hacking risk.
+
+Rule-based rewards are not hack-proof either: [[Paper — Natural Emergent Misalignment from Reward Hacking in Production RL (2025)]] and [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] both document policies gaming test-based verifiable rewards in coding RL.
+Dropping the learned reward model removes one failure mode, not reward hacking in general.
 
 ## Up
 

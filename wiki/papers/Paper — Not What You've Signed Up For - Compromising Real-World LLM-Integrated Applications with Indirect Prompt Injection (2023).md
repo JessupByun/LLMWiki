@@ -1,15 +1,15 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
-summary: "Names and taxonomizes indirect prompt injection - malicious instructions planted not in a user's own prompt but in third-party content an LLM-integrated application retrieves and processes - and demonstrates working attacks against real production systems including Bing Chat and GitHub Copilot, a threat model direct jailbreaking defenses never anticipated."
+updated: 2026-11-04
+summary: "Names and taxonomizes indirect prompt injection - malicious instructions planted not in a user's own prompt but in third-party content an LLM-integrated application retrieves and processes - and demonstrates working attacks against the production, GPT-4-powered Bing Chat sidebar plus a context-sensitive proof of concept against GitHub Copilot code completion, a threat model direct jailbreaking defenses never anticipated."
 cluster: ["Adversarial robustness & security"]
 sources: ["raw/papers/adversarial-robustness-and-security/Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023).pdf"]
 tags: [prompt-injection, security, agents, jailbreak]
 aliases: ["arxiv:2302.12173", "Greshake et al. 2023", "indirect prompt injection"]
 ---
 
-# Paper — Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)
+# Paper — Not What You've Signed Up For - Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection (2023)
 
 ## Metadata
 
@@ -21,7 +21,7 @@ Saarland University and sequire technology GmbH, with CISPA Helmholtz Center for
 
 Every jailbreak studied up to this paper assumes the attacker is the same person typing the prompt into the chat window.
 This paper shows that assumption stops holding the moment an LLM is wired into anything external - a search index, a webpage, an email inbox, a code repository - because an attacker can plant an instruction inside content they merely expect the application to retrieve and process later, with no interaction with the victim or the model at all.
-It calls this **indirect prompt injection**, builds the first systematic taxonomy of the threat from a computer-security perspective, and demonstrates working attacks against real, deployed production systems including Bing Chat (GPT-4-powered, via its "chat with current page" sidebar) and GitHub Copilot, disclosing responsibly to Microsoft and OpenAI before publication.
+It calls this **indirect prompt injection**, builds the first systematic taxonomy of the threat from a computer-security perspective, and demonstrates working attacks against a real, deployed production system - Bing Chat (GPT-4-powered, via its "chat with current page" sidebar) - plus a proof of concept against GitHub Copilot code completion that the authors call possible but very sensitive to context, disclosing responsibly to Microsoft and OpenAI before publication.
 
 ## Problem it solved
 
@@ -37,7 +37,7 @@ The paper organizes this around a threat-based taxonomy deliberately chosen over
 ## How it's built
 
 Delivery methods span passive injection (content simply planted somewhere a search-augmented app or retrieval plugin will fetch it, with SEO-style techniques able to promote a poisoned page), active injection (content pushed directly at a target, such as an email designed to be read by an email-assistant LLM), user-driven injection (a victim is socially engineered into pasting attacker-authored text themselves), and hidden injection (multi-stage payloads, text concealed inside images for multimodal models, or content encoded to slip past naive filters).
-Three real systems anchor the demonstrations: synthetic LangChain-based agent applications built on GPT-3 and GPT-4 with tool access (search, retrieve URL, read/send email, read address book, persistent memory) for fully reproducible, controlled attacks; the real, black-box, production Bing Chat sidebar, attacked by injecting content into local HTML pages the sidebar reads while summarizing "the current page"; and GitHub Copilot, attacked via poisoned files and package documentation placed in the code-completion context window.
+Three real systems anchor the demonstrations: synthetic LangChain-based agent applications built on GPT-3 and GPT-4 with tool access (search, retrieve URL, read/send email, read address book, persistent memory) for fully reproducible, controlled attacks; the real, black-box, production Bing Chat sidebar, attacked by injecting content into local HTML pages the sidebar reads while summarizing "the current page"; and GitHub Copilot, targeted via an injection placed in a comment in a package the user opens, which reaches the model only if the completion engine pulls that file into its context window.
 
 ## Results
 
@@ -47,18 +47,20 @@ What it documents instead is a set of concrete, working attack transcripts: an i
 ## Why it endures
 
 This is the paper that names indirect prompt injection as a distinct threat class before any dedicated benchmark or defense existed for it, and its threat-based taxonomy - organized around what an attacker gains rather than which specific technique they use - is built explicitly to generalize as both models and attack methods keep changing.
-It becomes the standard citation any later work on agentic prompt injection opens with, including [[Benchmark — AgentDojo]].
+Later agentic prompt-injection work in this wiki builds on it, including [[Benchmark — AgentDojo]], which cites its taxonomy before formalizing measurement.
 
 ## Limitations
 
 The paper's own evaluation is qualitative: attacks against Bing Chat are tested on local HTML files specifically to avoid performing actual injections against the live, real-world service, and no formal success-rate numbers are reported for any of the production-system demonstrations, only illustrative individual transcripts.
-This leaves open exactly how often these attacks succeed at scale, how robust they are to the platform-level defenses that followed, and whether the specific production-system behaviors documented here still hold as those systems have since been patched.
+The Copilot result is the weakest: the authors report the injection "was possible but very sensitive to context," that its efficacy was "significantly reduced" inside larger applications, and that "more research is needed to determine the feasibility of this new attack in a real-world setting."
+
+A caveat from the wiki rather than the authors: this leaves open exactly how often these attacks succeed at scale, how robust they are to the platform-level defenses that followed, and whether the specific production-system behaviors documented here still hold as those systems have since been patched.
 
 ## Relations
 
 - Establishes a threat model [[Concept — Jailbreaking (LLMs)]] doesn't cover: that page's manual/automated distinction still assumes the attacker controls the direct user-facing prompt, while indirect prompt injection arrives through a retrieval or tool-output channel the user never sees.
 - Distinct from [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] (GCG) in both mechanism and cost: GCG is a direct, gradient-optimized adversarial suffix requiring white-box access to a surrogate model, while this paper's injections are plain natural-language social engineering requiring no model access or technical sophistication at all, delivered through a completely different channel.
-- The threat-taxonomy source [[Benchmark — AgentDojo]] cites directly before building its own formal utility/security measurement framework specifically for the agentic, tool-using case this paper's real-system demonstrations (Bing Chat, GitHub Copilot) anticipate.
+- The threat-taxonomy source [[Benchmark — AgentDojo]] cites directly before building its own formal utility/security measurement framework specifically for the agentic, tool-using case this paper's real-system demonstrations (Bing Chat, and the Copilot proof of concept) anticipate.
 - [[Paper — Adaptive Attacks on Trusted Monitors Subvert AI Control Protocols (2025)]] turns prompt injection into an attack by the monitored model on its own monitor, defeating AI control protocols.
 - Cited by two contrasting defenses: [[Paper — The Instruction Hierarchy - Training LLMs to Prioritize Privileged Instructions (2024)]] trains models to treat tool output as lowest-privilege, and [[Paper — Defeating Prompt Injections by Design (2025)]] isolates the planning model from untrusted data entirely (see [[Concept — Prompt injection]]).
 

@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-10-20
+updated: 2026-11-04
 summary: "Proposes the 50%-task-completion time horizon - the length of task, measured by how long a skilled human takes, that an AI agent can complete with 50% success - as a single human-calibrated yardstick for general capability, and finds this horizon has been doubling roughly every seven months across 12 frontier models released between 2019 and 2025, with naive extrapolation implying AI systems capable of autonomously completing month-long tasks sometime around 2028-2030."
 cluster: ["Capability evals"]
 sources: ["raw/papers/capability-evals/Paper — Measuring AI Ability to Complete Long Software Tasks (2025).pdf"]
@@ -19,8 +19,9 @@ Model Evaluation & Threat Research (METR), an independent nonprofit that evaluat
 
 ## Impact
 
-The founding paper of [[Cluster — Capability evals]], and its measure of general capability: where [[Paper — Model Evaluation for Extreme Risks (2023)]] and [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] test for specific dangerous skills, and [[Benchmark — WMDP]] proxies hazardous knowledge, this paper measures how long a task an agent can complete at all.
-This paper proposes a single yardstick for that gap: the **50%-task-completion time horizon**, the length of a task - measured in how long a skilled human takes - that an AI agent can complete with 50% reliability.
+Benchmark percentages say little about what an AI agent can actually do in the world, and they are not comparable across benchmarks.
+This paper proposes a single human-calibrated yardstick instead: the **50%-task-completion time horizon**, the length of a task - measured in how long a skilled human takes - that an AI agent can complete with 50% reliability.
+Where [[Paper — Model Evaluation for Extreme Risks (2023)]] and [[Paper — Evaluating Frontier Models for Dangerous Capabilities (2024)]] test for specific dangerous skills, and [[Benchmark — WMDP]] proxies hazardous knowledge, this measures how long a task an agent can complete at all.
 Applied to 12 frontier models released between 2019 and 2025 on a combined suite of 170 tasks, it finds this horizon has been doubling roughly every seven months, letting a 3-second multiple-choice question and an 8-hour ML research engineering project sit on one continuous, real-world-anchored scale instead of being incomparable points on unrelated benchmarks.
 
 ## Problem it solved
@@ -55,10 +56,11 @@ The paper notes its messiness factors were themselves picked adversarially again
 One targeted ablation (scrambling file and folder names on a single HCAST task) actually *raised* o1's success rate while roughly doubling the human baseline time (24 to 53 minutes), a reminder that messiness can help or hurt either side unpredictably on any individual task.
 A qualitative read of failed transcripts finds the two dominant failure modes shift with capability: over a third of GPT-4-1106's failures are repeating an already-failed action (versus 2 of 32 for o1), while half of o1's failures are premature task abandonment - and newer models show concretely different behavior in transcripts, such as Claude 3.5 Sonnet abandoning a failing sequence of `sed` edits to rewrite a file from scratch, versus GPT-4 Turbo getting permanently stuck on a single misplaced backslash.
 Naively extrapolating the trend, a 1-month (167-working-hour) time horizon - roughly the length of task an onboarding human employee could be trusted with - falls in an 80% CI spanning mid-2028 to mid-2030, or as early as 2027 if the steeper 2024-2025 rate continues.
+The v4 text is inconsistent on this range: its introduction says mid-2028 to mid-2031, while the forecasting section (an 80% CI about 2 years wide, centered on mid-2029) and the conclusion say mid-2028 to mid-2030.
 
 ## Why it endures
 
-Because the metric's unit is human time rather than any specific benchmark's content, it doesn't saturate the way a percentage score does, and a doubling-time trend line extrapolates naturally into a forecast in a way a percentage plateau cannot - the paper's own headline "1-month AI by 2028-2030" extrapolation is already that demonstration in action, and has become a widely cited reference point in AI-timelines discussions independent of the underlying methodology.
+Because the metric's unit is human time rather than any specific benchmark's content, it doesn't saturate the way a percentage score does, and a doubling-time trend line extrapolates naturally into a forecast in a way a percentage plateau cannot - the paper's own headline "1-month AI by 2028-2030" extrapolation is already that demonstration in action.
 The authors are candid that the exponential fit is a description of the data they have, not a law: they explicitly reject fancier functional forms (double-exponential, saturating logistic) as more prone to overfitting than informative given only 12 frontier data points, while also noting a fit that eventually flattens can't be ruled out.
 They separately flag two specific, plausible accelerants to the trend rather than treating it as fixed - agentic post-training via outcome-based RL (already underway since 2024) and, at longer horizons, AI systems automating a meaningful share of AI research and development itself.
 
@@ -78,6 +80,7 @@ The forecast is also far more sensitive to the doubling-rate estimate itself tha
 - Most of its tasks come from [[Benchmark — HCAST]], whose human baselines supply the time ratings, and several of its authors earlier wrote [[Paper — Evaluating Language-Model Agents on Realistic Autonomous Tasks (2023)]].
 - Its under-elicitation caveat is the measurement problem that [[Paper — AI Sandbagging - Language Models can Strategically Underperform on Evaluations (2024)]] and [[Paper — Stress-Testing Capability Elicitation With Password-Locked Models (2024)]] study directly: a horizon is only as high as the scaffolding and elicitation behind it.
 - Seven of its tasks come from [[Benchmark — RE-Bench]], each rated at a fixed 8 hours.
+- Its external-validity check runs agents on five uncontaminated internal repository issues, a guard against [[Concept — Data contamination]] inflating the benchmark-based trend.
 
 ## Up
 

@@ -1,7 +1,7 @@
 ---
 type: method
-status: in-progress
-updated: 2026-09-18
+status: mature
+updated: 2026-11-04
 summary: "Iterative subword tokenization algorithm that merges the most frequent adjacent symbol pairs into new symbols, producing a fixed, compact vocabulary that can represent any word - including ones never seen in training."
 cluster: ["Foundational canon"]
 sources: []

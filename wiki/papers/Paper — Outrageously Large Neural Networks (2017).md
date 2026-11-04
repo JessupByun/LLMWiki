@@ -1,7 +1,7 @@
 ---
 type: paper
 status: mature
-updated: 2026-09-20
+updated: 2026-11-04
 summary: "MoE - a trainable gating network sparsely activates a handful of thousands of expert sub-networks per example, decoupling model capacity from computation cost and hitting 137 billion parameters at only a minor efficiency loss."
 cluster: ["Foundational canon"]
 sources: ["raw/papers/foundational-canon/Paper — Outrageously Large Neural Networks (2017).pdf"]
@@ -24,8 +24,7 @@ Commonly known as **MoE** (Mixture of Experts).
 
 Model capacity had been limited by the rule that every parameter costs compute on every example.
 This paper is the first to demonstrate a large win from breaking that rule: a layer of up to 131,072 expert sub-networks, of which only a handful are evaluated per example, reaches 137 billion parameters while adding only minor computational overhead.
-On language modeling it drops test perplexity 39% below a compute-matched baseline, and on WMT'14 En-Fr and En-De translation it beats Google's own GNMT production system on BLEU while using a fraction of the effective compute.
-Fills the gap in [[Cluster — Foundational canon]]'s reading order right before [[Paper — Attention Is All You Need (2017)]] - the two 2017 papers arrive within months of each other, one showing sparsity can decouple capacity from compute, the other replacing recurrence with attention.
+On language modeling over a 100-billion-word corpus, the best MoE model (65,536 experts, 68 billion parameters) reaches test perplexity 39% below a computationally matched baseline - the 137-billion-parameter version with 131,072 experts degrades slightly (29.2 vs 28.9 perplexity), possibly from too much sparsity - and on WMT'14 En-Fr and En-De translation it beats Google's own GNMT production system on BLEU while using a fraction of the effective compute.
 
 ## Core idea
 

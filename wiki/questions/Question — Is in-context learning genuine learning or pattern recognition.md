@@ -1,9 +1,9 @@
 ---
 type: question
 status: in-progress
-updated: 2026-10-19
+updated: 2026-11-04
 summary: "Whether a model doing well in-context is learning a new skill at inference time, or locating and running an already-learned behavior triggered by the prompt."
-cluster: ["Mechanistic interpretability", "Foundational canon"]
+cluster: ["Mechanistic interpretability"]
 sources: []
 tags: [in-context-learning, interpretability, mesa-optimization]
 aliases: []
@@ -31,4 +31,3 @@ It remains unresolved whether harder few-shot tasks (arithmetic, novel synthetic
 ## Up
 
 - [[Cluster — Mechanistic interpretability]]
-- [[Cluster — Foundational canon]]
