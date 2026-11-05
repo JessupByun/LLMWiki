@@ -4,12 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "Origin of RLHF - learn a reward model from human comparisons of short clips, then optimize it, cutting oversight cost by ~3 orders of magnitude."
 cluster: ["Post-training alignment", "Foundational canon"]
-sources: ["raw/papers/post-training-alignment/Paper — Deep RL from Human Preferences (2017).pdf"]
+sources: ["raw/papers/post-training-alignment/Paper — Deep Reinforcement Learning from Human Preferences (2017).pdf"]
 tags: [rlhf, alignment, reward-modeling, rl, preferences, scalable-oversight]
-aliases: ["arxiv:1706.03741", "Christiano et al. 2017", "RLHF origin paper"]
+aliases: ["arxiv:1706.03741", "Christiano et al. 2017", "RLHF origin paper", "Deep RL from Human Preferences"]
 ---
 
-# Paper — Deep RL from Human Preferences (2017)
+# Paper — Deep Reinforcement Learning from Human Preferences (2017)
 
 ## Metadata
 
@@ -81,7 +81,7 @@ Updated reward parameters flow back to the policy continuously.
 ## Why it endures
 
 The architectural pattern - *learn a proxy for human judgment, then optimize the proxy* - is the template the entire LLM post-training stack inherited.
-Swap trajectory clips for pairs of model responses and A2C/TRPO for [[Method — Proximal Policy Optimization (PPO)|PPO]], and this is recognizably the RLHF stage of [[Paper — Training LMs to Follow Instructions (2022)|InstructGPT]] and everything after it.
+Swap trajectory clips for pairs of model responses and A2C/TRPO for [[Method — Proximal Policy Optimization (PPO)|PPO]], and this is recognizably the RLHF stage of [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)|InstructGPT]] and everything after it.
 The Bradley-Terry preference likelihood introduced here is also the exact object DPO later shows can be optimized without running RL at all.
 
 ## Limitations
@@ -108,8 +108,8 @@ See [[Concept — Reward hacking]].
 - Method hub: [[Method — Reinforcement learning from human feedback (RLHF)]].
 - Preference likelihood: [[Concept — Bradley-Terry preference model]], the piece later post-training work reuses most directly.
 - Failure mode it documents: [[Concept — Reward hacking]].
-- Contemporary with [[Paper — Attention Is All You Need (2017)]] and [[Paper — Proximal Policy Optimization (2017)]] - three 2017 papers that, combined, supply the architecture, the RL optimizer, and the alignment procedure the entire modern post-training stack runs on.
-- Extended to LLM scale, with this exact three-stage structure, in [[Paper — Training LMs to Follow Instructions (2022)]].
+- Contemporary with [[Paper — Attention Is All You Need (2017)]] and [[Paper — Proximal Policy Optimization Algorithms (2017)]] - three 2017 papers that, combined, supply the architecture, the RL optimizer, and the alignment procedure the entire modern post-training stack runs on.
+- Extended to LLM scale, with this exact three-stage structure, in [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]].
 
 ## Up
 

@@ -65,10 +65,10 @@ AlphaGo established the recipe - a policy network to narrow search breadth, a va
 
 ## Relations
 
-- Builds on Monte Carlo Tree Search (Coulom 2006; Kocsis & Szepesvari 2006, neither yet ingested) and the deep CNN architecture family established by [[Paper — ImageNet Classification with Deep CNNs (2012)]], applied here to a 19x19 board treated as an image.
-- The policy network's supervised-pretraining-then-RL-refinement pipeline prefigures the SFT-then-PPO recipe later used in [[Paper — Training LMs to Follow Instructions (2022)]] - both start from a supervised warm start and then let policy-gradient RL take over.
+- Builds on Monte Carlo Tree Search (Coulom 2006; Kocsis & Szepesvari 2006, neither yet ingested) and the deep CNN architecture family established by [[Paper — ImageNet Classification with Deep Convolutional Neural Networks (2012)]], applied here to a 19x19 board treated as an image.
+- The policy network's supervised-pretraining-then-RL-refinement pipeline prefigures the SFT-then-PPO recipe later used in [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] - both start from a supervised warm start and then let policy-gradient RL take over.
 - Directly extended by [[Paper — Mastering the Game of Go without Human Knowledge (2017)]] (AlphaGo Zero), and then by AlphaZero (Silver et al. 2018, not yet ingested), which remove the human-data dependency and merge the policy and value networks into one.
-- Joins [[Paper — Playing Atari with Deep RL (2013)]] and [[Paper — Proximal Policy Optimization (2017)]] in [[Cluster — Reinforcement learning]] as a third distinct way of combining learned functions with optimization: DQN uses pure value-based learning with no search, PPO uses pure policy-gradient learning with no search, and AlphaGo combines both a learned policy and a learned value function with explicit tree search.
+- Joins [[Paper — Playing Atari with Deep Reinforcement Learning (2013)]] and [[Paper — Proximal Policy Optimization Algorithms (2017)]] in [[Cluster — Reinforcement learning]] as a third distinct way of combining learned functions with optimization: DQN uses pure value-based learning with no search, PPO uses pure policy-gradient learning with no search, and AlphaGo combines both a learned policy and a learned value function with explicit tree search.
 
 ## Up
 

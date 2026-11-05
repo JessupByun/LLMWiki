@@ -69,7 +69,7 @@ For tasks without a reliable reward signal they therefore rely on human-annotate
 - Directly scales up [[Method — Group Relative Policy Optimization (GRPO)]], introduced in [[Paper — DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models (2024)]] for math-specific fine-tuning, into a general RL-only training regime spanning math, code, STEM, and logic.
 - Scales [[Method — RL from Verifiable Rewards (RLVR)]] - a name introduced shortly before by AI2's Tulu 3 report - into its best-known demonstration, with no SFT initialization at all.
 - Explicitly rejects the process-reward-model approach of [[Paper — Let's Verify Step by Step (2023)]] in favor of rule-based verifiers, citing reward hacking as the reason a learned reward model was avoided for the reasoning-RL stage.
-- Inverts the SFT-then-RL ordering that [[Paper — Training LMs to Follow Instructions (2022)]] established as the standard post-training pipeline: R1-Zero runs RL with no SFT step at all, and DeepSeek-R1's own SFT stages are themselves built from RL-generated data rather than preceding RL.
+- Inverts the SFT-then-RL ordering that [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] established as the standard post-training pipeline: R1-Zero runs RL with no SFT step at all, and DeepSeek-R1's own SFT stages are themselves built from RL-generated data rather than preceding RL.
 - Distills its reasoning behavior into open base models from the same open-weights lineage [[Paper — LLaMA - Open and Efficient Foundation Language Models (2023)]] helped establish.
 
 ## Tension / update

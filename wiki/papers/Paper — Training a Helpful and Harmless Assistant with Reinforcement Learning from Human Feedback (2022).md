@@ -4,12 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "Applies preference modeling and RLHF to train a helpful and harmless dialogue assistant, releases the HH-RLHF preference dataset, and shows that at sufficient scale, alignment training carries essentially no capability cost - the opposite of the 'alignment tax' seen in smaller models."
 cluster: ["Post-training alignment", "Foundational canon"]
-sources: ["raw/papers/post-training-alignment/Paper — Training a Helpful and Harmless Assistant with RLHF (2022).pdf"]
+sources: ["raw/papers/post-training-alignment/Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022).pdf"]
 tags: [rlhf, alignment, helpfulness, harmlessness, red-teaming, preference-modeling]
-aliases: ["arxiv:2204.05862", "Bai et al. 2022", "HH-RLHF"]
+aliases: ["arxiv:2204.05862", "Bai et al. 2022", "HH-RLHF", "Training a Helpful and Harmless Assistant with RLHF"]
 ---
 
-# Paper — Training a Helpful and Harmless Assistant with RLHF (2022)
+# Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022)
 
 Commonly known as **HH-RLHF**.
 
@@ -26,7 +26,7 @@ It is also the first paper in this wiki to treat helpfulness and harmlessness as
 
 ## Problem it solved
 
-By early 2022, RLHF (via [[Paper — Deep RL from Human Preferences (2017)]] and applied at LLM scale in [[Paper — Learning to Summarize from Human Feedback (2020)]] and [[Paper — Training LMs to Follow Instructions (2022)]]) was proven to work for narrow tasks like summarization and single-turn instruction-following.
+By early 2022, RLHF (via [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] and applied at LLM scale in [[Paper — Learning to Summarize from Human Feedback (2020)]] and [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]]) was proven to work for narrow tasks like summarization and single-turn instruction-following.
 Open questions going into this paper: does RLHF work for open-ended, multi-turn dialogue; can a single training process produce a model that is simultaneously helpful *and* actively resistant to adversarial misuse; and does alignment training trade off against raw capability, or can the two be pursued jointly at scale?
 
 ## Core idea
@@ -35,7 +35,7 @@ Collect two **separate** human preference datasets rather than one: a **helpfuln
 Train preference models (PMs) on a mixture of both, then run standard RLHF ([[Method — Proximal Policy Optimization (PPO)]] against the PM score, following the [[Paper — Learning to Summarize from Human Feedback (2020)]] recipe) to produce the final assistant.
 
 A second core contribution is **iterated online RLHF**: rather than training once on a static dataset, retrain fresh preference models and RLHF policies on a roughly weekly cadence, redeploy the updated policy to crowdworkers to collect new comparisons on the model's *current* upper tail of behavior, and repeat.
-This directly operationalizes the "keep labeling as the policy changes" mitigation for reward hacking that [[Paper — Deep RL from Human Preferences (2017)]] first proposed, at LLM scale.
+This directly operationalizes the "keep labeling as the policy changes" mitigation for reward hacking that [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] first proposed, at LLM scale.
 
 ## How it's built
 
@@ -63,14 +63,14 @@ The alignment-bonus-at-scale result is one of the cleanest empirical rebuttals i
 ## Limitations
 
 - The paper explicitly documents its own red-teaming data collection flaw: because harmlessness comparisons only ever move a conversation toward *more* harmful responses, the resulting reward model never learns what a genuinely good response to a harmful request looks like, only that refusal beats compliance.
-- Labeler-Anthropic agreement (~63%) was notably lower than comparable work such as [[Paper — Learning to Summarize from Human Feedback (2020)]] and [[Paper — Training LMs to Follow Instructions (2022)]], which the authors attribute partly to the more open-ended nature of the dialogue task.
+- Labeler-Anthropic agreement (~63%) was notably lower than comparable work such as [[Paper — Learning to Summarize from Human Feedback (2020)]] and [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]], which the authors attribute partly to the more open-ended nature of the dialogue task.
 - Gender-bias measurements show RLHF models are *more* biased by one metric than plain language models, though the paper attributes much of this to RLHF's lower-entropy output distribution rather than necessarily to a deeper increase in bias; the authors are careful to flag this as unresolved rather than explain it away.
 - The paper's own qualitative examples (e.g. subtle factual inaccuracies a reader would need reference material to catch) directly illustrate the same "errors too subtle for human feedback to penalize" limitation discussed on [[Method — Reinforcement learning from human feedback (RLHF)]].
 
 ## Relations
 
 - Runs the [[Method — Reinforcement learning from human feedback (RLHF)]] loop at dialogue scale, following the exact PPO-plus-PM-score recipe from [[Paper — Learning to Summarize from Human Feedback (2020)]].
-- Directly compares its design choices against [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT) in its own related-work section: this paper trains purely through RL with no supervised fine-tuning stage, and additionally trains for harmlessness, which InstructGPT does not.
+- Directly compares its design choices against [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] (InstructGPT) in its own related-work section: this paper trains purely through RL with no supervised fine-tuning stage, and additionally trains for harmlessness, which InstructGPT does not.
 - Cites [[Paper — Concrete Problems in AI Safety (2016)]] directly for general AI safety framing, and frames its own RL robustness failures as an instance of [[Concept — Reward hacking]], citing Pan et al. 2022 (queued, "The Effects of Reward Misspecification") as the closest prior empirical study.
 - Mixes in [[Paper — Learning to Summarize from Human Feedback (2020)]]'s dataset directly as a specialized-skill compatibility test.
 - **Tension / update** with [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]]: this paper's red-teaming-informed RLHF pipeline treats training on adversarially-elicited failures as safety-improving, while Sleeper Agents finds a case (a deliberately backdoored model) where the same kind of training instead taught the model to hide the failure more precisely rather than removing it - see [[Question — Does training on red-teamed failures remove them or just teach the model to hide them better]].

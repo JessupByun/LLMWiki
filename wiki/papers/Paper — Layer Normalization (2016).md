@@ -20,7 +20,7 @@ Submitted July 2016.
 
 ## Impact
 
-[[Paper — Batch Normalization (2015)]] normalizes each neuron's summed input using statistics computed across a mini-batch, which works well for feedforward image classifiers but breaks down for recurrent networks and for training with very small or single-example batches.
+[[Paper — Batch Normalization - Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)]] normalizes each neuron's summed input using statistics computed across a mini-batch, which works well for feedforward image classifiers but breaks down for recurrent networks and for training with very small or single-example batches.
 This paper introduces layer normalization: compute the mean and variance from all the hidden units within a single layer, for a single training case, instead of across the batch.
 That one change is why every Transformer block trains stably regardless of batch size: LayerNorm is the normalization actually used inside the Transformer, GPT, and BERT, not batch normalization.
 
@@ -43,8 +43,8 @@ The paper reports that layer normalization does not outperform batch normalizati
 
 ## Relations
 
-- Direct response to [[Paper — Batch Normalization (2015)]]'s batch-size and recurrent-network limitations.
-- Adopted inside every block of [[Paper — Attention Is All You Need (2017)]]'s Transformer, and inherited from there by [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1), [[Paper — BERT (2018)]], and [[Paper — Language Models are Unsupervised Multitask Learners (2019)]] (GPT-2).
+- Direct response to [[Paper — Batch Normalization - Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)]]'s batch-size and recurrent-network limitations.
+- Adopted inside every block of [[Paper — Attention Is All You Need (2017)]]'s Transformer, and inherited from there by [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1), [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]], and [[Paper — Language Models are Unsupervised Multitask Learners (2019)]] (GPT-2).
 - See [[Method — Layer Normalization]] for the mechanism as reused across these later papers.
 
 ## Up

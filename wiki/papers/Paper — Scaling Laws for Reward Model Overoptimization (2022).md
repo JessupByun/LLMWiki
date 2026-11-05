@@ -17,7 +17,7 @@ arXiv:2210.10760, Gao, Schulman & Hilton, OpenAI, October 2022.
 
 ## Impact
 
-Every prior demonstration of [[Concept — Reward hacking]] in this wiki was qualitative: an anecdote (the Pong agent's infinite volleys in [[Paper — Deep RL from Human Preferences (2017)]]) or a single observed curve ([[Paper — Learning to Summarize from Human Feedback (2020)]]'s over-optimization plot).
+Every prior demonstration of [[Concept — Reward hacking]] in this wiki was qualitative: an anecdote (the Pong agent's infinite volleys in [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]]) or a single observed curve ([[Paper — Learning to Summarize from Human Feedback (2020)]]'s over-optimization plot).
 This paper is the first to measure the effect precisely enough to fit a scaling law to it, because it sidesteps the expense of human labels entirely.
 The result turns "optimizing a reward model too hard eventually backfires" from a folk observation into a predictive equation: given a reward model's size, you can forecast how far you can push optimization before ground-truth quality peaks and starts falling.
 
@@ -29,7 +29,7 @@ Getting that from real human labels at the volume needed to fit a scaling law is
 ## Core idea
 
 Replace humans with a **"gold-standard" reward model** that stands in for ground truth.
-A large (6B-parameter) RM from [[Paper — Training LMs to Follow Instructions (2022)]]'s InstructGPT pipeline plays the role of the human labeler: it deterministically labels synthetic comparison data, which is then used to train much smaller **proxy** reward models (3M to 3B parameters).
+A large (6B-parameter) RM from [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]]'s InstructGPT pipeline plays the role of the human labeler: it deterministically labels synthetic comparison data, which is then used to train much smaller **proxy** reward models (3M to 3B parameters).
 The policy is optimized against the proxy exactly as in real RLHF, but now the "gold" score is also cheaply computable for every checkpoint, since it's just another model's output rather than a human judgment.
 
 This produces the paper's central plot: as the policy moves further from its starting point (measured as `d`, the square root of the KL divergence from the initial policy), the gold score rises with the proxy score at first, peaks, and then falls - the Goodhart curve, made precisely visible for the first time.
@@ -54,7 +54,7 @@ KL distance from the initial policy is the x-axis for both, since it is measurab
 
 ## Why it endures
 
-The paper's discussion section explicitly formalizes why **iterated, online RLHF** (the practice [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] uses, and which [[Concept — Reward hacking]] already names as the standard mitigation) actually helps: retraining the reward model every `k` steps and optimizing distance `d/k` per round yields a final gold score of `R_RL(d) = d(α_RL − β_RL·log(d) + β_RL·log(k))` - strictly better than one long uninterrupted run of the same total distance `d`, by a term that grows with `log(k)`.
+The paper's discussion section explicitly formalizes why **iterated, online RLHF** (the practice [[Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022)]] uses, and which [[Concept — Reward hacking]] already names as the standard mitigation) actually helps: retraining the reward model every `k` steps and optimizing distance `d/k` per round yields a final gold score of `R_RL(d) = d(α_RL − β_RL·log(d) + β_RL·log(k))` - strictly better than one long uninterrupted run of the same total distance `d`, by a term that grows with `log(k)`.
 This is the first quantitative argument for a practice that, until now, this wiki's papers only justified by intuition ("humans need to be intertwined with RL learning").
 
 The paper also organizes its own results using Manheim & Garrabrant's four-way Goodhart taxonomy (Regressional, Extremal, Causal, Adversarial), reading the gap between the proxy score's slope and the gold score's linear `α` term as regressional Goodhart (the RM has noisy but unbiased errors), and the `β` term as mostly extremal Goodhart (the policy drifts out of the RM's training distribution, where its errors are no longer just noise).
@@ -69,8 +69,8 @@ That caveat is a direct forward-pointer to [[Cluster — Scheming & AI control]]
 
 ## Relations
 
-- Makes precise, at scale, the phenomenon [[Paper — Deep RL from Human Preferences (2017)]] first documented anecdotally and [[Paper — Learning to Summarize from Human Feedback (2020)]] first plotted at LLM scale.
-- Gives a quantitative argument for the online-feedback mitigation that [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] practices and [[Concept — Reward hacking]] names as the standard fix.
+- Makes precise, at scale, the phenomenon [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] first documented anecdotally and [[Paper — Learning to Summarize from Human Feedback (2020)]] first plotted at LLM scale.
+- Gives a quantitative argument for the online-feedback mitigation that [[Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022)]] practices and [[Concept — Reward hacking]] names as the standard fix.
 - Complements [[Paper — Defining and Characterizing Reward Hacking (2022)]]'s formal, qualitative definition of hackability with an empirical, quantitative measurement of how bad hacking gets and how it scales - the two papers arrived the same month from different angles (definitional theory vs. measurement).
 - Explicitly excludes adversarial Goodhart (a policy that actively games the RM) as out of scope for present-day models, anticipating the model-organisms-of-misalignment and AI control research this wiki queues next.
 

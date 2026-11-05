@@ -4,14 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "Dropout - randomly drop each hidden unit during training (keeping it with probability p), forcing units to stop co-adapting, which significantly reduces overfitting and gives state-of-the-art results on many vision, speech, text, and genetics benchmarks with no architecture change."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/foundational-canon/Paper — Dropout (2014).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — Dropout - A Simple Way to Prevent Neural Networks from Overfitting (2014).pdf"]
 tags: [regularization, training, foundational]
-aliases: ["Srivastava et al. 2014"]
+aliases: ["Srivastava et al. 2014", "Dropout"]
 ---
 
-# Paper — Dropout (2014)
-
-Full title: **Dropout: A Simple Way to Prevent Neural Networks from Overfitting**.
+# Paper — Dropout - A Simple Way to Prevent Neural Networks from Overfitting (2014)
 
 ## Metadata
 
@@ -48,9 +46,9 @@ On a small alternative-splicing genetics data set, dropout's equally-weighted mo
 
 ## Relations
 
-- Demonstrated at scale two years earlier in [[Paper — ImageNet Classification with Deep CNNs (2012)]], which used the 2012 technical note's version on its first two fully-connected layers to stop substantial overfitting.
+- Demonstrated at scale two years earlier in [[Paper — ImageNet Classification with Deep Convolutional Neural Networks (2012)]], which used the 2012 technical note's version on its first two fully-connected layers to stop substantial overfitting.
 - Method hub: [[Method — Dropout]].
-- The regularization problem this paper addresses (overfitting in large networks with limited labeled data) is the same problem [[Paper — Batch Normalization (2015)]] later shows its own normalization technique also incidentally helps with, reducing (but not eliminating) the need for dropout in some architectures.
+- The regularization problem this paper addresses (overfitting in large networks with limited labeled data) is the same problem [[Paper — Batch Normalization - Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)]] later shows its own normalization technique also incidentally helps with, reducing (but not eliminating) the need for dropout in some architectures.
 
 ## Up
 

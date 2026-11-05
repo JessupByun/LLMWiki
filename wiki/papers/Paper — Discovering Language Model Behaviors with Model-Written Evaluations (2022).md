@@ -69,7 +69,7 @@ These evaluations also measure what a model *says* when asked about its disposit
 
 - A sibling of [[Paper — Red Teaming Language Models with Language Models (2022)]], also led by Perez: there a model generates test cases to elicit harmful outputs, here it generates whole evaluation datasets for behaviors.
 - Its sycophancy evaluations are built on by [[Paper — Towards Understanding Sycophancy in Language Models (2023)]], and its political-sycophancy data seeds the first stage of [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] (see [[Concept — Sycophancy]]).
-- Its RLHF results show helpful-only [[Method — Reinforcement learning from human feedback (RLHF)]] preference models, trained with the method of [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]], rewarding sycophancy and a stated wish to avoid shutdown - a measured version of the incentive [[Paper — The Off-Switch Game (2016)]] analyzes (see [[Concept — Corrigibility]]).
+- Its RLHF results show helpful-only [[Method — Reinforcement learning from human feedback (RLHF)]] preference models, trained with the method of [[Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022)]], rewarding sycophancy and a stated wish to avoid shutdown - a measured version of the incentive [[Paper — The Off-Switch Game (2016)]] analyzes (see [[Concept — Corrigibility]]).
 - Some of its human-written self-awareness datasets are adapted into the Facts tasks of [[Benchmark — SAD]].
 
 ## Up

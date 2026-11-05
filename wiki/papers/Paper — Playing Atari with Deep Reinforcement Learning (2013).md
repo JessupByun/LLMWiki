@@ -4,14 +4,13 @@ status: mature
 updated: 2026-11-04
 summary: "DQN - the first deep learning model to learn control policies directly from raw pixels, combining Q-learning with a CNN and experience replay, beating prior RL methods on six of seven Atari games and expert humans on three."
 cluster: ["Reinforcement learning", "Foundational canon"]
-sources: ["raw/papers/reinforcement-learning/Paper — Playing Atari with Deep RL (2013).pdf"]
+sources: ["raw/papers/reinforcement-learning/Paper — Playing Atari with Deep Reinforcement Learning (2013).pdf"]
 tags: [rl, deep-rl, q-learning, atari]
-aliases: ["arxiv:1312.5602", "Mnih et al. 2013", "DQN", "Deep Q-Network"]
+aliases: ["arxiv:1312.5602", "Mnih et al. 2013", "DQN", "Deep Q-Network", "Playing Atari with Deep RL"]
 ---
 
-# Paper — Playing Atari with Deep RL (2013)
+# Paper — Playing Atari with Deep Reinforcement Learning (2013)
 
-Full title: **Playing Atari with Deep Reinforcement Learning**.
 Commonly known as **DQN**.
 
 ## Metadata
@@ -66,10 +65,10 @@ Experience replay itself outlived this specific paper and became a standard buil
 
 ## Relations
 
-- The convolutional backbone is the same broad architecture family introduced by [[Paper — ImageNet Classification with Deep CNNs (2012)]], applied here to control rather than classification.
+- The convolutional backbone is the same broad architecture family introduced by [[Paper — ImageNet Classification with Deep Convolutional Neural Networks (2012)]], applied here to control rather than classification.
 - Builds on Watkins & Dayan's Q-learning and Tesauro's TD-Gammon (both not yet ingested) as the RL foundations this paper extends into the deep learning setting.
-- Sits alongside [[Paper — Proximal Policy Optimization (2017)]] in [[Cluster — Reinforcement learning]] as the value-based counterpart to PPO's policy-gradient approach - both solve "how do you optimize a policy against a scalar reward," using different families of algorithm.
-- Part of the same DeepMind RL lineage that produced [[Paper — Deep RL from Human Preferences (2017)]], which trades DQN's hand-specified game score for a reward model learned from human comparisons.
+- Sits alongside [[Paper — Proximal Policy Optimization Algorithms (2017)]] in [[Cluster — Reinforcement learning]] as the value-based counterpart to PPO's policy-gradient approach - both solve "how do you optimize a policy against a scalar reward," using different families of algorithm.
+- Part of the same DeepMind RL lineage that produced [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]], which trades DQN's hand-specified game score for a reward model learned from human comparisons.
 
 ## Up
 

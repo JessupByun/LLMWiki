@@ -22,7 +22,7 @@ Commonly known as **GPT-2**.
 
 ## Impact
 
-[[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) and [[Paper — BERT (2018)]] had shown pretraining plus fine-tuning beats task-specific architectures - but both still needed a labeled dataset and a fine-tuning pass per task.
+[[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) and [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]] had shown pretraining plus fine-tuning beats task-specific architectures - but both still needed a labeled dataset and a fine-tuning pass per task.
 This paper shows that once a language model and its training corpus are large enough, it starts doing many of those tasks anyway, with no fine-tuning step and no task-specific parameters at all: GPT-2, the largest of four models trained here (1.5B parameters), sets a new zero-shot state of the art on 7 of 8 tested language modeling benchmarks, and on the CoQA reading comprehension dataset matches or beats 3 of 4 supervised baseline systems without ever training on its 127,000+ labeled question-answer pairs.
 It is the direct empirical ancestor of [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3), which turns this paper's zero-shot finding into a headline result at 100x the scale.
 
@@ -44,7 +44,7 @@ This paper is the missing link between GPT-1's still-supervised fine-tuning para
 
 ## Relations
 
-- Architecturally builds directly on [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1); the paper's own smallest model is explicitly sized to match GPT-1, and its second-smallest to match [[Paper — BERT (2018)]]'s largest model, as a deliberate scale comparison.
+- Architecturally builds directly on [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1); the paper's own smallest model is explicitly sized to match GPT-1, and its second-smallest to match [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]]'s largest model, as a deliberate scale comparison.
 - Built on the Transformer architecture from [[Paper — Attention Is All You Need (2017)]].
 - Tokenizes with [[Method — Byte Pair Encoding (BPE)]], introduced in [[Paper — Neural Machine Translation of Rare Words with Subword Units (2015)]].
 - Directly extended by [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3), which keeps this paper's zero-shot, prompting-based framing but scales the model and corpus roughly 100x and formalizes the few-shot in-context-learning story this paper only glimpses.

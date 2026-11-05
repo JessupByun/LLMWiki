@@ -19,8 +19,8 @@ A common default is *p* = 0.5 for hidden units, with input units kept at a highe
 At test time every unit is kept, and each unit's outgoing weights are multiplied by its retention probability *p*, so its expected training-time output equals its actual test-time output.
 Most modern frameworks implement the equivalent "inverted" form, rescaling the kept activations by `1/p` during training so that nothing needs to change at test time.
 
-Formally introduced and analyzed in [[Paper — Dropout (2014)]] (Srivastava et al.), building on an earlier, shorter 2012 note by an overlapping set of authors.
-Used at scale two years earlier in [[Paper — ImageNet Classification with Deep CNNs (2012)]], on its first two fully-connected layers.
+Formally introduced and analyzed in [[Paper — Dropout - A Simple Way to Prevent Neural Networks from Overfitting (2014)]] (Srivastava et al.), building on an earlier, shorter 2012 note by an overlapping set of authors.
+Used at scale two years earlier in [[Paper — ImageNet Classification with Deep Convolutional Neural Networks (2012)]], on its first two fully-connected layers.
 
 ## Why it works
 
@@ -31,10 +31,10 @@ The cost is slower training, since every update trains a different random archit
 
 ## Relations
 
-- Origin: [[Paper — Dropout (2014)]].
-- Used in [[Paper — ImageNet Classification with Deep CNNs (2012)]] in the context of [[Concept — Convolutional neural networks (CNNs)]], but architecture-agnostic.
+- Origin: [[Paper — Dropout - A Simple Way to Prevent Neural Networks from Overfitting (2014)]].
+- Used in [[Paper — ImageNet Classification with Deep Convolutional Neural Networks (2012)]] in the context of [[Concept — Convolutional neural networks (CNNs)]], but architecture-agnostic.
 - Applied to every sublayer output and the embedding sums in [[Paper — Attention Is All You Need (2017)]]'s Transformer.
-- [[Paper — Batch Normalization (2015)]] reports that its normalization also regularizes, reducing the need for dropout in some networks.
+- [[Paper — Batch Normalization - Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)]] reports that its normalization also regularizes, reducing the need for dropout in some networks.
 
 ## Up
 

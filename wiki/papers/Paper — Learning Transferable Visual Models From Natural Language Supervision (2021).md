@@ -31,7 +31,7 @@ The resulting model, CLIP, matches the original supervised ResNet-50's accuracy 
 
 Instead of training the image encoder to predict a discrete label, train it and a text encoder jointly to solve one task: given a batch of N images and N captions, pick out which of the N×N possible pairings are the true ones.
 Concretely, embed every image and every caption in the batch into a shared vector space, then maximize the cosine similarity of each image with its own true caption while minimizing similarity with every other caption in the batch - a symmetric contrastive loss computed once over images and once over captions.
-The image encoder is either a modified ResNet or a [[Paper — An Image is Worth 16x16 Words (2020)]] (ViT) Vision Transformer; the text encoder is a Transformer operating on [[Method — Byte Pair Encoding (BPE)|BPE]]-tokenized text.
+The image encoder is either a modified ResNet or a [[Paper — An Image is Worth 16x16 Words - Transformers for Image Recognition at Scale (2020)]] (ViT) Vision Transformer; the text encoder is a Transformer operating on [[Method — Byte Pair Encoding (BPE)|BPE]]-tokenized text.
 Because the text encoder learns to map any natural-language description into that same embedding space, it doubles as what the paper calls a hypernetwork: feed it a dataset's class names, and it generates a zero-shot linear classifier for that dataset on the spot, with no gradient updates and no task-specific training data at all.
 
 ## Why it endures
@@ -53,7 +53,7 @@ The paper separately evaluates CLIP on CCTV-style surveillance imagery and zero-
 
 ## Relations
 
-- Uses [[Paper — An Image is Worth 16x16 Words (2020)]] (ViT) as one of its two image encoder architectures, alongside a modified ResNet.
+- Uses [[Paper — An Image is Worth 16x16 Words - Transformers for Image Recognition at Scale (2020)]] (ViT) as one of its two image encoder architectures, alongside a modified ResNet.
 - Tokenizes text with [[Method — Byte Pair Encoding (BPE)]], introduced in [[Paper — Neural Machine Translation of Rare Words with Subword Units (2015)]].
 - Its scaling-with-compute finding for zero-shot performance parallels [[Paper — Scaling Laws for Neural Language Models (2020)]] and the GPT line's scaling behavior.
 - Its embedding space is directly reused as a conditioning and guidance signal by later text-to-image systems, including [[Paper — High-Resolution Image Synthesis with Latent Diffusion Models (2021)]].

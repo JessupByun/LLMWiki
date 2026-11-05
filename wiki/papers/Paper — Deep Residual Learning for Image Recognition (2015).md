@@ -44,8 +44,8 @@ The residual stream that mechanistic interpretability reads features from is thi
 
 ## Relations
 
-- Uses [[Paper — Batch Normalization (2015)]] after every convolution.
-- Follows [[Paper — ImageNet Classification with Deep CNNs (2012)]] as the next major architectural leap in image classification; see [[Concept — Convolutional neural networks (CNNs)]].
+- Uses [[Paper — Batch Normalization - Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)]] after every convolution.
+- Follows [[Paper — ImageNet Classification with Deep Convolutional Neural Networks (2012)]] as the next major architectural leap in image classification; see [[Concept — Convolutional neural networks (CNNs)]].
 - Residual connections reappear structurally in [[Paper — Attention Is All You Need (2017)]] and as the backbone of [[Paper — Mastering the Game of Go without Human Knowledge (2017)]].
 
 ## Up

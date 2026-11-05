@@ -14,7 +14,7 @@ aliases: ["PPO"]
 ## Definition
 
 A policy-gradient algorithm that alternates between collecting a batch of trajectory data with the current policy and running several epochs of minibatch stochastic gradient ascent on that same batch, using an objective that clips how much credit a single update can take for moving the policy's action probabilities.
-Introduced in [[Paper — Proximal Policy Optimization (2017)]].
+Introduced in [[Paper — Proximal Policy Optimization Algorithms (2017)]].
 
 The clip acts on the ratio `r_t(θ) = π_θ(a_t|s_t) / π_θ_old(a_t|s_t)`: once `r_t` moves outside `[1-ε, 1+ε]` in the direction the advantage estimate already favors, the objective stops rewarding further movement in that update.
 This is what makes reusing the same batch of data for multiple gradient steps safe - naive policy gradient objectives reused this way tend to produce destructively large updates.
@@ -29,8 +29,8 @@ That default-choice status is why it matters for alignment specifically: any pro
 
 ## Relations
 
-- Origin: [[Paper — Proximal Policy Optimization (2017)]].
-- The RL algorithm used in step 3 of [[Method — Reinforcement learning from human feedback (RLHF)]], concretely demonstrated at LLM scale in [[Paper — Training LMs to Follow Instructions (2022)]].
+- Origin: [[Paper — Proximal Policy Optimization Algorithms (2017)]].
+- The RL algorithm used in step 3 of [[Method — Reinforcement learning from human feedback (RLHF)]], concretely demonstrated at LLM scale in [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]].
 - Improves on [[Method — Trust Region Policy Optimization (TRPO)]], introduced in [[Paper — Trust Region Policy Optimization (2015)]].
 
 ## Up

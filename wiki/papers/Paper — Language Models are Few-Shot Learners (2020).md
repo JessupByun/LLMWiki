@@ -50,7 +50,7 @@ Architecturally the paper changes almost nothing from GPT-2; the entire independ
 
 Two reasons, both structural.
 It reframed capability as something you *elicit* rather than train, which is why prompting, instruction-tuning, and prompt injection are all now first-class topics.
-And it is the model class that post-training was subsequently invented to control - the authors themselves name the fix, pointing to "learning the objective function from humans [ZSW+19a], fine-tuning with reinforcement learning" as a needed future direction (p34), which is the line running straight from [[Paper — Deep RL from Human Preferences (2017)]] into InstructGPT.
+And it is the model class that post-training was subsequently invented to control - the authors themselves name the fix, pointing to "learning the objective function from humans [ZSW+19a], fine-tuning with reinforcement learning" as a needed future direction (p34), which is the line running straight from [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] into InstructGPT.
 
 ## Limitations
 
@@ -88,7 +88,7 @@ The forecast has aged well: "we suspect AI researchers will eventually develop l
 
 - Scales up the architecture in [[Concept — Transformer architecture]] - a decoder-only variant, 96 layers deep.
 - The capability this paper introduces has its own hub: [[Concept — In-context learning]].
-- The alignment procedure this model class needed is [[Method — Reinforcement learning from human feedback (RLHF)]], seeded by [[Paper — Deep RL from Human Preferences (2017)]] and named by these authors as future work (p34).
+- The alignment procedure this model class needed is [[Method — Reinforcement learning from human feedback (RLHF)]], seeded by [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] and named by these authors as future work (p34).
 - Its contamination audit is the reference case for [[Concept — Data contamination]].
 - Its few-shot results supply many of the emergent abilities catalogued by [[Paper — Emergent Abilities of Large Language Models (2022)]], and its arithmetic tasks are among those re-run on the GPT-3/InstructGPT family and re-scored by [[Paper — Are Emergent Abilities of Large Language Models a Mirage (2023)]] to argue emergence is a metric artifact.
 

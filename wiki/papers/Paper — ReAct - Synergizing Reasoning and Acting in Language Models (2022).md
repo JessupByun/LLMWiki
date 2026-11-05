@@ -4,14 +4,12 @@ status: mature
 updated: 2026-09-18
 summary: "Prompts a language model to interleave free-form reasoning steps with actions against an external environment (like a Wikipedia search API), letting reasoning guide what to look up next and retrieved observations correct the reasoning."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/foundational-canon/Paper — ReAct (2022).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — ReAct - Synergizing Reasoning and Acting in Language Models (2022).pdf"]
 tags: [prompting, reasoning, agents]
 aliases: ["arxiv:2210.03629", "Yao et al. 2022", "ReAct"]
 ---
 
-# Paper — ReAct (2022)
-
-Full title: **ReAct: Synergizing Reasoning and Acting in Language Models**.
+# Paper — ReAct - Synergizing Reasoning and Acting in Language Models (2022)
 
 ## Metadata
 

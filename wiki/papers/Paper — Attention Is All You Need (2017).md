@@ -48,7 +48,7 @@ The rest of the block is what makes the stack trainable at depth:
 ## Why it endures
 
 The paper was framed around machine translation, but the architecture generalized completely.
-Encoder-only variants became [[Paper — BERT (2018)]], decoder-only variants became the GPT lineage from [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] onward, and the same block was later applied to image patches in [[Paper — An Image is Worth 16x16 Words (2020)]].
+Encoder-only variants became [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]], decoder-only variants became the GPT lineage from [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] onward, and the same block was later applied to image patches in [[Paper — An Image is Worth 16x16 Words - Transformers for Image Recognition at Scale (2020)]].
 Its parallelism over sequence positions is what let training scale to the model and data sizes that [[Paper — Scaling Laws for Neural Language Models (2020)]] later measured.
 The paper also flags, almost in passing, that attention "could yield more interpretable models" because individual heads visibly specialize - the starting point that mechanistic interpretability later turned into a research program.
 

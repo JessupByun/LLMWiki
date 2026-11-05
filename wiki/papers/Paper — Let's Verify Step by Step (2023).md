@@ -27,7 +27,7 @@ The paper also releases PRM800K, 800,000 step-level human correctness labels acr
 
 ## Problem it solved
 
-Outcome-supervised reward models (ORMs), the standard approach used in prior work including [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT)'s RLHF pipeline, only ever see a solution's final label: correct or incorrect.
+Outcome-supervised reward models (ORMs), the standard approach used in prior work including [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] (InstructGPT)'s RLHF pipeline, only ever see a solution's final label: correct or incorrect.
 This creates two distinct problems.
 First, a purely outcome-based signal makes credit assignment genuinely hard: the reward model must generalize from "this whole multi-step solution was wrong" to "which specific step was the mistake," with no direct supervision on the latter.
 Second, automatic outcome grading is fooled by false positives: solutions that reach the correct final answer through invalid reasoning still get graded correct, quietly teaching the reward model to reward bad reasoning that happens to land on the right number.
@@ -75,7 +75,7 @@ The paper also flags an unresolved test-set contamination risk from MATH problem
 - Directly revisits the outcome-vs-process comparison from Uesato et al. 2022 (not yet ingested) at greater scale, on a harder benchmark, with substantially more human feedback, and finds the earlier near-tie does not hold.
 - Builds on the reward-model-plus-search methodology of Cobbe et al. 2021's outcome-supervised verifiers (not yet ingested), the direct predecessor of this paper's ORM baseline.
 - Uses a generator fine-tuned to produce [[Method — Chain-of-Thought Prompting|chain-of-thought]]-style step-by-step solutions, from [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]].
-- Its reward-model-plus-RL lineage traces back to [[Paper — Deep RL from Human Preferences (2017)]] and runs through [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT), though this paper deliberately keeps the generator itself out of scope, focusing only on reward model training.
+- Its reward-model-plus-RL lineage traces back to [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] and runs through [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] (InstructGPT), though this paper deliberately keeps the generator itself out of scope, focusing only on reward model training.
 - Directly relevant to [[Concept — Reward hacking]]: process supervision is framed as a structural mitigation for reward models being gamed via an easily-measured but imperfect proxy (the final answer alone).
 - See [[Method — Process Reward Model (PRM)]] for the mechanism as a candidate building block for later reinforcement-learning-on-reasoning systems.
 

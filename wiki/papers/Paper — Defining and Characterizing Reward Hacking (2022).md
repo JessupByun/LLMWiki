@@ -19,7 +19,7 @@ aliases: ["arxiv:2209.13085", "Skalse et al. 2022"]
 
 ## Impact
 
-Every paper in this wiki that discusses [[Concept — Reward hacking]] up to this point - [[Paper — Concrete Problems in AI Safety (2016)]], [[Paper — Deep RL from Human Preferences (2017)]], [[Paper — Learning to Summarize from Human Feedback (2020)]], [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] - uses the term descriptively: a documented empirical failure mode, illustrated with concrete examples but never mathematically pinned down.
+Every paper in this wiki that discusses [[Concept — Reward hacking]] up to this point - [[Paper — Concrete Problems in AI Safety (2016)]], [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]], [[Paper — Learning to Summarize from Human Feedback (2020)]], [[Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022)]] - uses the term descriptively: a documented empirical failure mode, illustrated with concrete examples but never mathematically pinned down.
 This paper supplies the missing formal definition, and its central theoretical result is bracing: for the full space of stochastic policies, a proxy reward and a true reward can only be **unhackable** (safe to optimize) if one of them is trivial (constant).
 In other words, almost any non-trivial proxy is, in principle, hackable - a formal underpinning for the empirical pattern the wiki's RLHF papers keep rediscovering.
 
@@ -41,7 +41,7 @@ The picture changes for **finite policy sets** (Theorem 2): here, non-trivial un
 
 ## Why it endures
 
-The paper doesn't propose a fix; its contribution is diagnostic, and that diagnosis has held up as a durable frame: **a proxy reward function must satisfy a demanding mathematical standard to be safe to optimize hard**, which is a formal argument for treating learned reward models as *auxiliaries to policy learning rather than specifications to be optimized to convergence* - directly consistent with the "online feedback" and "KL-penalty-against-a-reference-policy" mitigations that recur across [[Paper — Deep RL from Human Preferences (2017)]], [[Paper — Learning to Summarize from Human Feedback (2020)]], and [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]] - all of which, in this paper's vocabulary, are ways of limiting *how much* optimization pressure a hackable proxy is subjected to, since limiting the effective policy set (via a KL constraint, early stopping, or online correction) is exactly the lever this paper's theorems say determines whether hacking is even possible.
+The paper doesn't propose a fix; its contribution is diagnostic, and that diagnosis has held up as a durable frame: **a proxy reward function must satisfy a demanding mathematical standard to be safe to optimize hard**, which is a formal argument for treating learned reward models as *auxiliaries to policy learning rather than specifications to be optimized to convergence* - directly consistent with the "online feedback" and "KL-penalty-against-a-reference-policy" mitigations that recur across [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]], [[Paper — Learning to Summarize from Human Feedback (2020)]], and [[Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022)]] - all of which, in this paper's vocabulary, are ways of limiting *how much* optimization pressure a hackable proxy is subjected to, since limiting the effective policy set (via a KL constraint, early stopping, or online correction) is exactly the lever this paper's theorems say determines whether hacking is even possible.
 
 ## Limitations
 
@@ -54,7 +54,7 @@ The paper doesn't propose a fix; its contribution is diagnostic, and that diagno
 ## Relations
 
 - Supplies the first formal definition for [[Concept — Reward hacking]], which was named and informally framed in [[Paper — Concrete Problems in AI Safety (2016)]].
-- Directly informed by the empirical reward hacking documented in [[Paper — Deep RL from Human Preferences (2017)]] and the robustness failures analyzed in [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]], both cited in its related work.
+- Directly informed by the empirical reward hacking documented in [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] and the robustness failures analyzed in [[Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022)]], both cited in its related work.
 - Its "restrict the policy set to make a proxy safe" conclusion is the theoretical counterpart to the practical mitigations (online feedback, KL penalties against a reference policy) used throughout [[Method — Reinforcement learning from human feedback (RLHF)]].
 - Closely related to but distinct from [[Concept — Scalable oversight]]: unhackability asks whether a *given* proxy is safe to optimize at all, while scalable oversight asks how to obtain a *better* proxy cheaply in the first place.
 

@@ -22,7 +22,7 @@ A three-stage procedure for training a policy toward an objective nobody can wri
 3. **Optimize the policy** with RL against the reward model's output rather than against any environment reward.
    In practice this step is run with [[Method — Proximal Policy Optimization (PPO)]].
 
-Introduced for deep RL in [[Paper — Deep RL from Human Preferences (2017)]]; demonstrated at LLM scale, with this exact three-stage structure, in [[Paper — Training LMs to Follow Instructions (2022)]], which is now the default post-training recipe for language models.
+Introduced for deep RL in [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]]; demonstrated at LLM scale, with this exact three-stage structure, in [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]], which is now the default post-training recipe for language models.
 
 ## Why it works
 
@@ -43,18 +43,18 @@ An RL policy is an aggressive optimizer and will find inputs where the reward mo
 The standard mitigation, established in the original paper, is to keep collecting feedback **online** as the policy changes, so the reward model gets corrected precisely in the regions the policy has newly learned to exploit.
 Training the reward model once on a fixed dataset and then optimizing hard against it reliably fails.
 
-**Tension / update.** [[Paper — Training LMs to Follow Instructions (2022)]], running this exact pipeline at LLM scale, does not lean primarily on online feedback - most of its comparison data comes from the supervised policy rather than a continuously retrained loop.
+**Tension / update.** [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]], running this exact pipeline at LLM scale, does not lean primarily on online feedback - most of its comparison data comes from the supervised policy rather than a continuously retrained loop.
 Its main defense against reward-model over-optimization is instead a per-token KL penalty holding the policy close to the supervised fine-tuned reference model, done through [[Method — Proximal Policy Optimization (PPO)]]'s RL objective.
 Whether KL regularization against a fixed reference is a genuine substitute for online correction, or just a different way of delaying the same failure, is an open question worth tracking as more RLHF pipelines report their own choices here.
 [[Paper — Scaling Laws for Reward Model Overoptimization (2022)]] bears on this directly: a KL penalty during RL doesn't change the underlying proxy-vs-gold-score frontier at all, it only makes training converge to a lower KL earlier - functionally identical to early stopping, not a distinct correction mechanism.
 
 ## Relations
 
-- Origin: [[Paper — Deep RL from Human Preferences (2017)]].
+- Origin: [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]].
 - RL step: [[Method — Proximal Policy Optimization (PPO)]].
 - Preference likelihood it depends on: [[Concept — Bradley-Terry preference model]].
 - Its characteristic failure: [[Concept — Reward hacking]].
-- Applied to the model class introduced in [[Paper — Language Models are Few-Shot Learners (2020)]], whose authors named this as the needed next step; carried out at scale in [[Paper — Training LMs to Follow Instructions (2022)]].
+- Applied to the model class introduced in [[Paper — Language Models are Few-Shot Learners (2020)]], whose authors named this as the needed next step; carried out at scale in [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]].
 - [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] finds standard RLHF raises human approval without raising correctness, making time-pressed evaluators approve more wrong answers.
 - [[Paper — Jailbroken - How Does LLM Safety Training Fail (2023)]] argues InstructGPT's RLHF objective (KL to the base model plus a pretraining loss) builds in a safety-versus-pretraining trade-off that jailbreaks exploit.
 - [[Paper — Deliberative Alignment - Reasoning Enables Safer Language Models (2024)]] replaces labels-only safety training with training on the model's own reasoning over a written spec.

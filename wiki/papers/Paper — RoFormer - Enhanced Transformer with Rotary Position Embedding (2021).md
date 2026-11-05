@@ -43,7 +43,7 @@ The paper's own honest gap: it proves RoPE has the mathematically desirable prop
 
 ## Relations
 
-- Directly responds to the additive absolute encoding of [[Paper — Attention Is All You Need (2017)]] and the learned absolute encoding of [[Paper — BERT (2018)]].
+- Directly responds to the additive absolute encoding of [[Paper — Attention Is All You Need (2017)]] and the learned absolute encoding of [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]].
 - Inherits its frequency schedule from the sinusoidal encoding in [[Paper — Attention Is All You Need (2017)]].
 - See [[Method — Rotary Position Embedding (RoPE)]] for the mechanism as reused across later LLMs.
 

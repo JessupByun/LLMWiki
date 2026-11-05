@@ -4,12 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "Restructures the attention computation to minimize reads and writes to slow GPU memory instead of minimizing FLOPs, computing exact (not approximate) attention up to 3x faster with linear rather than quadratic memory."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/foundational-canon/Paper — FlashAttention (2022).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness (2022).pdf"]
 tags: [transformer, systems, efficiency]
 aliases: ["arxiv:2205.14135", "Dao et al. 2022", "FlashAttention"]
 ---
 
-# Paper — FlashAttention (2022)
+# Paper — FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness (2022)
 
 ## Metadata
 

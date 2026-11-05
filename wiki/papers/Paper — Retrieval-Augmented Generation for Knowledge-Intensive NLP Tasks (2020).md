@@ -21,7 +21,7 @@ Submitted May 2020.
 ## Impact
 
 A pretrained language model stores facts implicitly in its parameters, which makes those facts hard to revise, hard to inspect, and prone to "hallucination" when the model states something confidently wrong.
-This paper pairs a pretrained seq2seq generator (BART-large, 400M parameters) with a neural retriever (Dense Passage Retriever, a [[Paper — BERT (2018)]]-based bi-encoder) over an explicit, non-parametric memory: a dense vector index of Wikipedia that the model queries at generation time and conditions its output on.
+This paper pairs a pretrained seq2seq generator (BART-large, 400M parameters) with a neural retriever (Dense Passage Retriever, a [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]]-based bi-encoder) over an explicit, non-parametric memory: a dense vector index of Wikipedia that the model queries at generation time and conditions its output on.
 Both the retriever and generator are fine-tuned jointly with no supervision on which document should be retrieved, and the whole system sets a new state of the art on three open-domain question-answering benchmarks, beating both pure extractive-QA pipelines and pure parametric closed-book models like T5, while generating text that human evaluators judge more specific and factual than a parametric-only baseline.
 
 ## Core idea
@@ -42,7 +42,7 @@ The paper's own analysis found that in some settings (long-form generation like 
 
 ## Relations
 
-- Retriever is Dense Passage Retriever, built on a [[Paper — BERT (2018)]]-style bi-encoder.
+- Retriever is Dense Passage Retriever, built on a [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]]-style bi-encoder.
 - Generator is BART, a pretrained encoder-decoder in the same family as [[Paper — Attention Is All You Need (2017)]]'s Transformer.
 - See [[Method — Retrieval-Augmented Generation (RAG)]] for the mechanism as reused across later knowledge-grounded LLM systems.
 

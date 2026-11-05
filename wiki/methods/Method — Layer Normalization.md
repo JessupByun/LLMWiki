@@ -24,11 +24,11 @@ This is the specific property that made it the normalization of choice inside th
 
 ## Relations
 
-- Origin: [[Paper — Layer Normalization (2016)]] (Ba, Kiros & Hinton), introduced as an alternative to [[Paper — Batch Normalization (2015)]] for recurrent networks and small batches.
+- Origin: [[Paper — Layer Normalization (2016)]] (Ba, Kiros & Hinton), introduced as an alternative to [[Paper — Batch Normalization - Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)]] for recurrent networks and small batches.
 - Used inside every block of [[Paper — Attention Is All You Need (2017)]]'s Transformer.
-- Inherited from there by [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) and [[Paper — BERT (2018)]].
+- Inherited from there by [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) and [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]].
 - [[Paper — Language Models are Unsupervised Multitask Learners (2019)]] (GPT-2) moves it to the start of each sub-block (pre-norm) rather than after, and adds an extra layer norm after the final attention block.
-- [[Paper — LoRA (2021)]] leaves LayerNorm weights frozen and untouched, alongside the MLP layers, when applying low-rank adapters.
+- [[Paper — LoRA - Low-Rank Adaptation of Large Language Models (2021)]] leaves LayerNorm weights frozen and untouched, alongside the MLP layers, when applying low-rank adapters.
 
 ## Up
 

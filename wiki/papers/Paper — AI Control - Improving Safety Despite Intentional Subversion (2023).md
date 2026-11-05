@@ -77,7 +77,7 @@ Usefulness is measured assuming that once a model is confirmed to be scheming, i
 ## Relations
 
 - Extends [[Concept — Scalable oversight]] from an average-case question (is the supervision signal good enough?) to a worst-case one (does the protocol survive if the model being supervised is actively adversarial?).
-- Directly picks up [[Paper — Weak-to-Strong Generalization (2023)]]'s explicit "no deceptive alignment in base models" assumption - this paper is what happens once that assumption is dropped.
+- Directly picks up [[Paper — Weak-to-Strong Generalization - Eliciting Strong Capabilities With Weak Supervision (2023)]]'s explicit "no deceptive alignment in base models" assumption - this paper is what happens once that assumption is dropped.
 - Shares its red-team/adversarial framing with [[Concept — Jailbreaking (LLMs)]] and [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]], but inverts the threat model: those attack a model from outside to elicit bad outputs, while this paper treats the model itself as a potential insider adversary trying to subvert the oversight wrapped around it.
 - Introduces [[Concept — AI control]] and [[Method — Trusted monitoring]].
 - [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] supplies the concrete adversarial artifact this paper's protocols would need to be tested against: a real model trained to behave differently once it detects deployment.

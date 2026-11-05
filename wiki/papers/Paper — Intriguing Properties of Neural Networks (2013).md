@@ -116,7 +116,7 @@ Its "dense low-probability pockets" explanation is superseded by [[Paper — Exp
 ## Relations
 
 - Concept hub: [[Concept — Adversarial examples]].
-- Attacks the architecture documented in [[Concept — Convolutional neural networks (CNNs)]], and AlexNet specifically - the model from [[Paper — ImageNet Classification with Deep CNNs (2012)]] is one of its three targets.
+- Attacks the architecture documented in [[Concept — Convolutional neural networks (CNNs)]], and AlexNet specifically - the model from [[Paper — ImageNet Classification with Deep Convolutional Neural Networks (2012)]] is one of its three targets.
   Sutskever is an author on both.
 - Finding 1 is an early precursor to the interpretability question of whether neurons are the right unit of analysis, which later becomes the [[Concept — Superposition]] literature.
 - [[Paper — Explaining and Harnessing Adversarial Examples (2014)]], co-authored by Szegedy and Goodfellow, replaces its L-BFGS attack with the one-step fast gradient sign method.

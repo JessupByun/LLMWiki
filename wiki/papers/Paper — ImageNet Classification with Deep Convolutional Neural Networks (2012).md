@@ -4,14 +4,13 @@ status: mature
 updated: 2026-11-04
 summary: "AlexNet - the ILSVRC-2012 landslide that convinced the field deep networks plus data plus compute beat hand-engineered features."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/foundational-canon/Paper — ImageNet Classification with Deep CNNs (2012).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — ImageNet Classification with Deep Convolutional Neural Networks (2012).pdf"]
 tags: [architecture, cnn, vision, dropout]
-aliases: ["AlexNet", "Krizhevsky et al. 2012"]
+aliases: ["AlexNet", "Krizhevsky et al. 2012", "ImageNet Classification with Deep CNNs"]
 ---
 
-# Paper — ImageNet Classification with Deep CNNs (2012)
+# Paper — ImageNet Classification with Deep Convolutional Neural Networks (2012)
 
-Full title: **ImageNet Classification with Deep Convolutional Neural Networks**.
 Commonly known as **AlexNet**.
 
 ## Metadata
@@ -50,7 +49,7 @@ Throw more data and compute at a deep network, engineer the training to actually
 ## Relations
 
 - See [[Concept — Convolutional neural networks (CNNs)]] for the reusable architectural mechanism.
-- Uses [[Method — Dropout]], formalized in full two years later in [[Paper — Dropout (2014)]].
+- Uses [[Method — Dropout]], formalized in full two years later in [[Paper — Dropout - A Simple Way to Prevent Neural Networks from Overfitting (2014)]].
 - Its depth limits are what [[Paper — Deep Residual Learning for Image Recognition (2015)]] later breaks through, going from 8 layers to 152.
 
 ## Up

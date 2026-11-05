@@ -4,12 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "MoE - a trainable gating network sparsely activates a handful of thousands of expert sub-networks per example, decoupling model capacity from computation cost and hitting 137 billion parameters at only a minor efficiency loss."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/foundational-canon/Paper — Outrageously Large Neural Networks (2017).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — Outrageously Large Neural Networks - The Sparsely-Gated Mixture-of-Experts Layer (2017).pdf"]
 tags: [conditional-computation, mixture-of-experts, sparsity, scaling]
-aliases: ["arxiv:1701.06538", "Shazeer et al. 2017", "MoE", "Mixture of Experts", "Sparsely-Gated Mixture-of-Experts"]
+aliases: ["arxiv:1701.06538", "Shazeer et al. 2017", "MoE", "Mixture of Experts", "Sparsely-Gated Mixture-of-Experts", "Outrageously Large Neural Networks"]
 ---
 
-# Paper — Outrageously Large Neural Networks (2017)
+# Paper — Outrageously Large Neural Networks - The Sparsely-Gated Mixture-of-Experts Layer (2017)
 
 Commonly known as **MoE** (Mixture of Experts).
 

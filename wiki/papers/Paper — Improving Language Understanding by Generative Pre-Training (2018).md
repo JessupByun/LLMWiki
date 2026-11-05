@@ -24,7 +24,7 @@ Commonly known as **GPT-1** (or simply GPT, before later GPT models made the ver
 
 Before this paper, getting a neural network to do well on a new NLP task usually meant designing a new architecture for that task and training it from scratch on whatever labeled data existed, since labeled data is scarce relative to raw text.
 This paper showed that a single, task-agnostic Transformer, pretrained once as a language model on unlabeled text and then lightly fine-tuned per task, beats those bespoke architectures outright: new state-of-the-art results on 9 of 12 benchmarks studied, including +8.9% on the Stories Cloze Test, +5.7% on RACE question answering, and an overall GLUE score of 72.8 versus the previous best of 68.9.
-Establishes the pretrain-then-fine-tune recipe that GPT-2, GPT-3, and [[Paper — BERT (2018)]] all inherit.
+Establishes the pretrain-then-fine-tune recipe that GPT-2, GPT-3, and [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]] all inherit.
 
 ## Core idea
 
@@ -44,7 +44,7 @@ The paper's zero-shot analysis - heuristics that read task answers directly out 
 
 - Built directly on the Transformer architecture from [[Paper — Attention Is All You Need (2017)]], using its decoder half with masked self-attention.
 - Trained with [[Paper — Adam - A Method for Stochastic Optimization (2014)]].
-- [[Paper — BERT (2018)]], published four months later, directly targets this paper's main limitation - its use of a strictly left-to-right (unidirectional) Transformer - by making the pretraining objective bidirectional instead.
+- [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]], published four months later, directly targets this paper's main limitation - its use of a strictly left-to-right (unidirectional) Transformer - by making the pretraining objective bidirectional instead.
 - Directly extended by [[Paper — Language Models are Unsupervised Multitask Learners (2019)]] (GPT-2) and ultimately [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3), which keeps this paper's architecture and pretraining objective but drops per-task fine-tuning entirely.
 
 ## Up

@@ -23,7 +23,7 @@ It also gives generation a form of provenance: the retrieved passages that drove
 
 ## Relations
 
-- Origin: [[Paper — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (2020)]] (Lewis et al.), combining a [[Paper — BERT (2018)]]-style dense retriever with a BART generator built on [[Paper — Attention Is All You Need (2017)]]'s Transformer.
+- Origin: [[Paper — Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks (2020)]] (Lewis et al.), combining a [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]]-style dense retriever with a BART generator built on [[Paper — Attention Is All You Need (2017)]]'s Transformer.
 
 ## Up
 

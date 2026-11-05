@@ -23,7 +23,7 @@ Collin Burns (UC Berkeley) and Haotian Ye (Peking University) as equal contribut
 Training a model to say true things requires someone to know what's true: imitation learning copies human mistakes, and rewarding outputs that *look* true teaches the model to produce falsehoods evaluators can't catch.
 This paper proposes skipping the model's outputs entirely and reading what it "believes" directly from its activations, without any labels.
 That reframing - separating what a model knows from what it says - is an early empirical attack on the previously posed problem of eliciting latent knowledge (ELK), and a reason to think a lie detector might work even when a model's outputs are deliberately misleading.
-Collin Burns went on to lead [[Paper — Weak-to-Strong Generalization (2023)]], which cites this work as one of the field's methods for discovering latent knowledge.
+Collin Burns went on to lead [[Paper — Weak-to-Strong Generalization - Eliciting Strong Capabilities With Weak Supervision (2023)]], which cites this work as one of the field's methods for discovering latent knowledge.
 
 ## Problem it solved
 
@@ -67,7 +67,7 @@ Its results cover yes-no and binary-classification questions with clear-cut answ
 ## Relations
 
 - The empirical starting point for the latent-knowledge probing that [[Paper — Representation Engineering - A Top-Down Approach to AI Transparency (2023)]] extends and benchmarks against, and a top-down complement to the bottom-up feature work of [[Method — Sparse Autoencoder (SAE)]].
-- Cited by [[Paper — Weak-to-Strong Generalization (2023)]] (same first author) as a method for discovering latent knowledge; both are attempts to get past the limits of human supervision, here by reading activations rather than eliciting capability through weak labels.
+- Cited by [[Paper — Weak-to-Strong Generalization - Eliciting Strong Capabilities With Weak Supervision (2023)]] (same first author) as a method for discovering latent knowledge; both are attempts to get past the limits of human supervision, here by reading activations rather than eliciting capability through weak labels.
 - Motivated by the same training-objective failure that [[Concept — Reward hacking]] describes - models rewarded for outputs evaluators can't check learning to produce convincing falsehoods - and by [[Concept — Scalable oversight]]'s supervision gap.
 - A candidate tool for [[Concept — Deceptive instrumental alignment]]: a model whose outputs mislead may still represent the truth internally, though the paper itself never tests this on a deceptive model.
 - [[Paper — Model Evaluation for Extreme Risks (2023)]] names detecting when a model's outputs misreport its knowledge, citing this paper, as one mechanistic route to catching deceptive behavior that behavioral evaluations miss.

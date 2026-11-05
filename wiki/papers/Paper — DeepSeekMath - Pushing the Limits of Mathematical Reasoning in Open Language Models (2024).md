@@ -58,10 +58,10 @@ The paper is explicit that its "arXiv doesn't help" finding is narrow - untested
 
 ## Relations
 
-- A variant of [[Method — Proximal Policy Optimization (PPO)]], introduced in [[Paper — Proximal Policy Optimization (2017)]]; keeps PPO's clipped objective but replaces its value-network-based advantage estimate with group-relative reward normalization.
+- A variant of [[Method — Proximal Policy Optimization (PPO)]], introduced in [[Paper — Proximal Policy Optimization Algorithms (2017)]]; keeps PPO's clipped objective but replaces its value-network-based advantage estimate with group-relative reward normalization.
 - Introduces [[Method — Group Relative Policy Optimization (GRPO)]].
 - Directly reuses [[Method — Chain-of-Thought Prompting]] and [[Paper — Let's Verify Step by Step (2023)]]'s process-versus-outcome-supervision distinction, testing both under GRPO rather than only outcome supervision.
-- Positions itself against [[Paper — Direct Preference Optimization (2023)]] (DPO) within its own unified paradigm, showing DPO is a special case of the same general gradient-coefficient framework GRPO and PPO also instantiate.
+- Positions itself against [[Paper — Direct Preference Optimization - Your Language Model is Secretly a Reward Model (2023)]] (DPO) within its own unified paradigm, showing DPO is a special case of the same general gradient-coefficient framework GRPO and PPO also instantiate.
 - Not cited by the paper, but conceptually close to STaR (Zelikman et al. 2022, not yet ingested) - bootstrapping a model's reasoning by training on its own self-generated correct rationales - which its RFT and online-RFT baselines resemble.
 
 ## Tension / update

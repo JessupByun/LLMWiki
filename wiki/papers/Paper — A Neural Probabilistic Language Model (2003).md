@@ -33,7 +33,7 @@ This is the fundamental way it escapes the curse of dimensionality that discrete
 
 ## Why it endures
 
-This is the direct blueprint for treating a word as a point in a learned continuous vector space rather than an opaque symbol - the same idea [[Paper — Efficient Estimation of Word Representations (2013)]] later strips down and scales to billions of words as a standalone embedding method, and the same idea underlying the input embedding layer of every neural language model since, including every Transformer-based model on this wiki.
+This is the direct blueprint for treating a word as a point in a learned continuous vector space rather than an opaque symbol - the same idea [[Paper — Efficient Estimation of Word Representations in Vector Space (2013)]] later strips down and scales to billions of words as a standalone embedding method, and the same idea underlying the input embedding layer of every neural language model since, including every Transformer-based model on this wiki.
 
 ## Limitations
 
@@ -41,7 +41,7 @@ The authors note the model's per-step computational cost is dominated by the out
 
 ## Relations
 
-- Direct ancestor of [[Paper — Efficient Estimation of Word Representations (2013)]] (word2vec), which simplifies this paper's architecture (dropping the hidden layer) to scale word-vector learning to vocabularies and corpora orders of magnitude larger.
+- Direct ancestor of [[Paper — Efficient Estimation of Word Representations in Vector Space (2013)]] (word2vec), which simplifies this paper's architecture (dropping the hidden layer) to scale word-vector learning to vocabularies and corpora orders of magnitude larger.
 - Establishes the "distributed word representation plus neural network over context" recipe that every embedding-layer-based language model since, including [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] (GPT-1) and its successors, builds on.
 - Compared directly against interpolated and class-based n-gram baselines (Kneser-Ney, Brown et al. clustering), the dominant statistical language modeling approach this paper displaces.
 

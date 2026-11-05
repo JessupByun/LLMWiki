@@ -24,7 +24,7 @@ Interleaving the two closes that loop both ways: reasoning steers which actions 
 
 ## Relations
 
-- Origin: [[Paper — ReAct (2022)]] (Yao et al.), extending [[Method — Chain-of-Thought Prompting]] from [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]] with real actions against an environment.
+- Origin: [[Paper — ReAct - Synergizing Reasoning and Acting in Language Models (2022)]] (Yao et al.), extending [[Method — Chain-of-Thought Prompting]] from [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]] with real actions against an environment.
 - Shares its retrieval-grounding motivation with [[Method — Retrieval-Augmented Generation (RAG)]], though ReAct explicitly reasons over what to retrieve rather than automatically marginalizing over retrieved passages.
 
 ## Up

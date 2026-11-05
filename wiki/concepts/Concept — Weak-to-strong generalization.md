@@ -22,14 +22,14 @@ PGR of 1 means the strong model fully recovers its own latent capability from we
 ## Why it works (when it does)
 
 The motivating intuition is that a strong pretrained model shouldn't need to be *taught* many alignment-relevant tasks from scratch - if it can generate a million lines of complex code, it plausibly already has some internal representation of whether that code is safe, so weak supervision only needs to *elicit* that existing knowledge rather than install new capability.
-[[Paper — Weak-to-Strong Generalization (2023)]] finds this holds up only partially: naive finetuning on weak labels does reliably beat the weak supervisor, but recovers only part of the gap - about half on NLP tasks with a GPT-2-level supervisor and a GPT-4 student, less on chess as the gap widens, and rarely more than 20% on reward modeling, the exact setting real RLHF pipelines depend on.
+[[Paper — Weak-to-Strong Generalization - Eliciting Strong Capabilities With Weak Supervision (2023)]] finds this holds up only partially: naive finetuning on weak labels does reliably beat the weak supervisor, but recovers only part of the gap - about half on NLP tasks with a GPT-2-level supervisor and a GPT-4 student, less on chess as the gap widens, and rarely more than 20% on reward modeling, the exact setting real RLHF pipelines depend on.
 Simple interventions help substantially: an auxiliary confidence loss that lets the strong student confidently disagree with the weak label, bootstrapping supervision through a sequence of intermediate-sized models, and unsupervised finetuning on task-relevant data to increase how "salient" the target concept already is to the strong model.
 
 The main failure mode this fights against is the strong model simply **imitating the weak supervisor's mistakes** rather than eliciting its own better judgment - the paper's "human simulator" concern, borrowed from theoretical work on eliciting latent knowledge.
 
 ## Relations
 
-- Introduced and measured (via PGR) in [[Paper — Weak-to-Strong Generalization (2023)]].
+- Introduced and measured (via PGR) in [[Paper — Weak-to-Strong Generalization - Eliciting Strong Capabilities With Weak Supervision (2023)]].
 - Complementary to [[Concept — Scalable oversight]]: scalable oversight tries to improve the supervision signal itself, weak-to-strong generalization tries to get a model to outperform whatever supervision it's given.
 - The failure mode it fights - imitating a flawed supervisor's specific errors - closely parallels [[Concept — Reward hacking]], a strong optimizer exploiting the gap between a proxy signal and the true objective.
 - Explicitly assumes no deceptive alignment in the base model being supervised, a premise [[Method — Model organisms of misalignment]] and [[Cluster — Scheming & AI control]] investigate directly - see especially [[Paper — Sleeper Agents - Training Deceptive LLMs that Persist Through Safety Training (2024)]] and [[Paper — AI Control - Improving Safety Despite Intentional Subversion (2023)]].

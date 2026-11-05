@@ -53,7 +53,7 @@ The cleaning-robot example recurs across all five: knocking over a vase (side ef
 
 The taxonomy outlived every specific proposed mitigation in the paper (most of which - impact regularizers, semi-supervised RL, risk-sensitive criteria - were pre-LLM RL ideas that never became standard practice).
 What endures is the vocabulary: "reward hacking" and "scalable oversight" are now used across the field essentially as this paper defined them, and later empirical work builds directly on the framing rather than the specific 2016 proposals.
-[[Paper — Deep RL from Human Preferences (2017)]] produces the canonical documented instance of reward hacking the following year; [[Paper — Let's Verify Step by Step (2023)]]'s process-vs-outcome-supervision result is a scalable-oversight-flavored question in the paper's original sense (how to get reliable signal without exhaustive per-step human checking).
+[[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] produces the canonical documented instance of reward hacking the following year; [[Paper — Let's Verify Step by Step (2023)]]'s process-vs-outcome-supervision result is a scalable-oversight-flavored question in the paper's original sense (how to get reliable signal without exhaustive per-step human checking).
 
 ## Limitations
 
@@ -64,8 +64,8 @@ What endures is the vocabulary: "reward hacking" and "scalable oversight" are no
 
 ## Relations
 
-- Made [[Concept — Reward hacking]] a standard term, framing it as a generalization of the wireheading problem; [[Paper — Deep RL from Human Preferences (2017)]] and the concept page already cited it as "Amodei et al. 2016" before this paper was ingested.
-- Names [[Concept — Scalable oversight]], the framing that motivates process supervision in [[Paper — Let's Verify Step by Step (2023)]] and, later, [[Paper — Weak-to-Strong Generalization (2023)]].
+- Made [[Concept — Reward hacking]] a standard term, framing it as a generalization of the wireheading problem; [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] and the concept page already cited it as "Amodei et al. 2016" before this paper was ingested.
+- Names [[Concept — Scalable oversight]], the framing that motivates process supervision in [[Paper — Let's Verify Step by Step (2023)]] and, later, [[Paper — Weak-to-Strong Generalization - Eliciting Strong Capabilities With Weak Supervision (2023)]].
 - Precedes and motivates the entire [[Cluster — Post-training alignment]] pillar: every RLHF/RLAIF pipeline in this cluster is, in this paper's vocabulary, an attempt to buy scalable oversight cheaply while managing reward hacking risk.
 
 ## Up

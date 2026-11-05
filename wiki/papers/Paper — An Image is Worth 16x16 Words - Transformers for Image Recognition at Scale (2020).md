@@ -4,12 +4,12 @@ status: mature
 updated: 2026-09-20
 summary: "Splits an image into fixed-size patches, treats them as tokens, and feeds them to an unmodified Transformer encoder, matching or beating state-of-the-art CNNs when pretrained on enough data."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/foundational-canon/Paper — An Image is Worth 16x16 Words (2020).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — An Image is Worth 16x16 Words - Transformers for Image Recognition at Scale (2020).pdf"]
 tags: [transformer, computer-vision, pretraining]
-aliases: ["arxiv:2010.11929", "Dosovitskiy et al. 2020", "ViT", "Vision Transformer"]
+aliases: ["arxiv:2010.11929", "Dosovitskiy et al. 2020", "ViT", "Vision Transformer", "An Image is Worth 16x16 Words"]
 ---
 
-# Paper — An Image is Worth 16x16 Words (2020)
+# Paper — An Image is Worth 16x16 Words - Transformers for Image Recognition at Scale (2020)
 
 Commonly known as **ViT** (Vision Transformer).
 
@@ -42,7 +42,7 @@ Its central empirical claim, that enough data and compute let a maximally generi
 ## Relations
 
 - Applies the encoder half of [[Paper — Attention Is All You Need (2017)]]'s Transformer directly to images, with no architectural modification beyond patch embedding.
-- Borrows the `[class]`-token classification-head design from [[Paper — BERT (2018)]].
+- Borrows the `[class]`-token classification-head design from [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]].
 - Its data-scale-trumps-inductive-bias finding parallels [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3)'s scaling story in language.
 - Uses [[Method — Layer Normalization]] before every attention and MLP block, following the Transformer's standard recipe.
 - Direct architectural ancestor of later vision-language models that need a shared image/text token space, such as [[Paper — Learning Transferable Visual Models From Natural Language Supervision (2021)]] (CLIP).

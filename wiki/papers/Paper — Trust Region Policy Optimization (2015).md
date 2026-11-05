@@ -22,7 +22,7 @@ aliases: ["arxiv:1502.05477", "Schulman et al. 2015", "TRPO"]
 Derived a policy-iteration scheme with a monotonic-improvement guarantee for general stochastic policies, then approximated it as a KL-divergence trust region that works on large nonlinear policies like neural networks with tens of thousands of parameters - previously a major obstacle for model-free policy search.
 The practical algorithm is not itself proven to improve monotonically - the abstract says that despite its approximations it "tends to give monotonic improvement, with little tuning of hyperparameters".
 TRPO's locomotion and Atari results were, at the time, some of the first demonstrations of learning complex continuous-control gaits and pixel-based game-playing policies from scratch with a single general-purpose method and minimally shaped rewards.
-It became the reference baseline every subsequent policy-optimization method was measured against, and its own first-order simplification two years later, [[Paper — Proximal Policy Optimization (2017)]], is now the far more widely used descendant.
+It became the reference baseline every subsequent policy-optimization method was measured against, and its own first-order simplification two years later, [[Paper — Proximal Policy Optimization Algorithms (2017)]], is now the far more widely used descendant.
 
 ## Problem it solved
 
@@ -67,9 +67,9 @@ The vine sampling variant, which gives lower-variance advantage estimates, requi
 ## Relations
 
 - Builds on Kakade and Langford's conservative policy iteration bound and the classic natural policy gradient (Kakade 2002), neither ingested here.
-- Benchmarked against Atari, the domain [[Paper — Playing Atari with Deep RL (2013)]] (DQN) established as a standard deep-RL testbed.
+- Benchmarked against Atari, the domain [[Paper — Playing Atari with Deep Reinforcement Learning (2013)]] (DQN) established as a standard deep-RL testbed.
 - Method hub: [[Method — Trust Region Policy Optimization (TRPO)]].
-- Simplified into a first-order, clipped-objective approximation by [[Paper — Proximal Policy Optimization (2017)]], which achieves similar update stability without the conjugate-gradient solve.
+- Simplified into a first-order, clipped-objective approximation by [[Paper — Proximal Policy Optimization Algorithms (2017)]], which achieves similar update stability without the conjugate-gradient solve.
 
 ## Up
 

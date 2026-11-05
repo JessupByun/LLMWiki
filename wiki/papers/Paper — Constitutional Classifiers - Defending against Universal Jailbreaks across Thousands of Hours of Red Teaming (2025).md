@@ -36,7 +36,7 @@ Write the rules down, then train guards on them.
 A **constitution** lists, in plain language, categories of harmful content (for instance, acquiring restricted chemical precursors) and harmless content (for instance, common household chemicals and school chemistry).
 A helpful-only model generates many queries and answers spanning both lists, augmented by translation, paraphrasing, system-prompt variations, and known jailbreak styles, plus attacks from automated red teaming.
 Two fine-tuned classifiers are trained on this data: an **input classifier** that blocks harmful or obfuscating requests, and a **streaming output classifier** that scores the response token by token and halts generation the moment it predicts the full answer will be harmful.
-Because the rules are text, updating the defense for a new threat means editing the constitution and regenerating data - echoing the constitution idea of [[Paper — Constitutional AI (2022)]], which used one to train the model itself.
+Because the rules are text, updating the defense for a new threat means editing the constitution and regenerating data - echoing the constitution idea of [[Paper — Constitutional AI - Harmlessness from AI Feedback (2022)]], which used one to train the model itself.
 The layers work in a "Swiss cheese" model: no single guard need be perfect.
 
 ## How it's built
@@ -73,7 +73,7 @@ By design, the defense targets universal jailbreaks in specific domains; jailbre
 ## Relations
 
 - Defends against the jailbreak techniques of [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] and [[Paper — Many-shot Jailbreaking (2024)]] (see [[Concept — Jailbreaking (LLMs)]]), which its streaming output classifier is designed to mitigate.
-- Echoes the constitution idea of [[Paper — Constitutional AI (2022)]] (though without citing it), applied to training guard classifiers rather than the model itself, and reuses the automated red teaming of [[Paper — Red Teaming Language Models with Language Models (2022)]] to generate training attacks.
+- Echoes the constitution idea of [[Paper — Constitutional AI - Harmlessness from AI Feedback (2022)]] (though without citing it), applied to training guard classifiers rather than the model itself, and reuses the automated red teaming of [[Paper — Red Teaming Language Models with Language Models (2022)]] to generate training attacks.
 - A deployed instance of the monitoring layers studied in [[Method — Trusted monitoring]], aimed at misuse rather than a scheming model.
 - Its CBRN focus targets the same misuse risk as [[Benchmark — WMDP]] and the dangerous-capability concerns of [[Method — Dangerous capability evaluation]].
 - [[Paper — Improving Alignment and Robustness with Circuit Breakers (2024)]] is a model-internal alternative to its external classifiers, disrupting harmful representations inside the model.

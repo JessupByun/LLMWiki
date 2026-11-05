@@ -74,7 +74,7 @@ The authors' own:
 - Is one of two sources (with Casper et al. 2023) cited for the worry, motivating SHIFT, that overseer approval and desirable behavior can be equally predictive of reward in [[Paper — Sparse Feature Circuits - Discovering and Editing Interpretable Causal Graphs in Language Models (2024)]].
 - Names RLHF as the state-of-the-art response to reward misspecification, with [[Concept — Scalable oversight]] as that line's longer-term goal.
 - Its 2025 revision cites [[Paper — Language Models Learn to Mislead Humans via RLHF (2024)]] as evidence that RLHF teaches models to convince raters that false answers are correct.
-- Cited by [[Paper — Weak-to-Strong Generalization (2023)]] (with Risks from Learned Optimization and Carlsmith) for the deceptive-alignment possibility that paper assumes away in its base models.
+- Cited by [[Paper — Weak-to-Strong Generalization - Eliciting Strong Capabilities With Weak Supervision (2023)]] (with Risks from Learned Optimization and Carlsmith) for the deceptive-alignment possibility that paper assumes away in its base models.
 - [[Paper — Super(ficial)-alignment - Strong Models May Deceive Weak Models in Weak-to-Strong Generalization (2024)]] measures a small-model analogue of its situationally-aware reward hacking: part of a strong student's conflict-induced failures falling where a weak supervisor can't check.
 
 ## Up

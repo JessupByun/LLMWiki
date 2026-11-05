@@ -4,12 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "PPO - a clipped policy-gradient objective that gets trust-region-level stability with only first-order optimization, and became the RL algorithm RLHF pipelines actually run."
 cluster: ["Reinforcement learning", "Foundational canon"]
-sources: ["raw/papers/reinforcement-learning/Paper — Proximal Policy Optimization (2017).pdf"]
+sources: ["raw/papers/reinforcement-learning/Paper — Proximal Policy Optimization Algorithms (2017).pdf"]
 tags: [rl, policy-gradient, ppo, optimization]
-aliases: ["arxiv:1707.06347", "Schulman et al. 2017", "PPO"]
+aliases: ["arxiv:1707.06347", "Schulman et al. 2017", "PPO", "Proximal Policy Optimization"]
 ---
 
-# Paper — Proximal Policy Optimization (2017)
+# Paper — Proximal Policy Optimization Algorithms (2017)
 
 ## Metadata
 
@@ -19,7 +19,7 @@ aliases: ["arxiv:1707.06347", "Schulman et al. 2017", "PPO"]
 ## Impact
 
 PPO became the default policy-gradient algorithm for the next several years of deep RL, and it is specifically the algorithm that turns "fit a reward model to human preferences" into an actual trained policy in modern RLHF pipelines.
-[[Paper — Training LMs to Follow Instructions (2022)]] runs PPO, by name, as the third stage of the InstructGPT recipe.
+[[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] runs PPO, by name, as the third stage of the InstructGPT recipe.
 Its appeal is not raw performance so much as being simple enough that everyone actually used it: a few lines of code change to a vanilla policy-gradient implementation, compatible with shared policy/value architectures and techniques like dropout that its main competitor could not handle.
 
 ## Problem it solved
@@ -62,7 +62,7 @@ An adaptive KL-penalty variant is also provided as a baseline, but the paper rep
 ## Why it endures
 
 PPO's staying power is less about beating every RL algorithm invented after it and more about being the thing people could actually deploy reliably at scale - OpenAI Five's Dota 2 system and countless robotics results ran on it, and it became the unmarked default RL step wherever a learned reward needs to be optimized.
-That last use case is what made it load-bearing for alignment specifically: swap trajectory-clip comparisons for pairs of LLM responses, and Christiano et al.'s [[Paper — Deep RL from Human Preferences (2017)]] loop plus PPO is recognizably the RLHF stage of every instruction-tuned model since.
+That last use case is what made it load-bearing for alignment specifically: swap trajectory-clip comparisons for pairs of LLM responses, and Christiano et al.'s [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] loop plus PPO is recognizably the RLHF stage of every instruction-tuned model since.
 
 ## Limitations
 
@@ -74,8 +74,8 @@ That last use case is what made it load-bearing for alignment specifically: swap
 
 - Improves on [[Method — Trust Region Policy Optimization (TRPO)]], introduced in [[Paper — Trust Region Policy Optimization (2015)]], by replacing its hard KL constraint and conjugate-gradient solve with a clipped first-order objective.
 - Method hub: [[Method — Proximal Policy Optimization (PPO)]].
-- The RL algorithm inside [[Method — Reinforcement learning from human feedback (RLHF)]]'s third stage, as used explicitly in [[Paper — Training LMs to Follow Instructions (2022)]].
-- [[Paper — Deep RL from Human Preferences (2017)]] optimized its learned reward with A2C and TRPO; later RLHF pipelines swapped in PPO.
+- The RL algorithm inside [[Method — Reinforcement learning from human feedback (RLHF)]]'s third stage, as used explicitly in [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]].
+- [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] optimized its learned reward with A2C and TRPO; later RLHF pipelines swapped in PPO.
 
 ## Up
 

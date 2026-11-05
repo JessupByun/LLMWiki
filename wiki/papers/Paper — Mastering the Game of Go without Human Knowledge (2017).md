@@ -42,7 +42,7 @@ Because the network alone (not a rollout policy) evaluates every leaf position, 
 ## How it's built
 
 The sole input is the raw board history: 19x19x17 binary feature planes (8 for the current player's stones over the last 8 positions, 8 for the opponent's, 1 constant plane for whose turn it is) - no handcrafted features of any kind.
-This feeds a residual tower of 20 or 40 blocks, directly reusing [[Paper — Deep Residual Learning for Image Recognition (2015)]]'s shortcut-connection design and [[Paper — Batch Normalization (2015)]]'s normalization inside every block, which then splits into a policy head and a value head.
+This feeds a residual tower of 20 or 40 blocks, directly reusing [[Paper — Deep Residual Learning for Image Recognition (2015)]]'s shortcut-connection design and [[Paper — Batch Normalization - Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)]]'s normalization inside every block, which then splits into a policy head and a value head.
 The training loss sums a cross-entropy term (matching the network's move probabilities to the MCTS search probabilities), a mean-squared-error term (matching the network's value prediction to the actual self-play game outcome), and an L2 regularization term.
 Three components run continually and asynchronously: the network is optimized on a rolling window of the most recent self-play games; every new checkpoint is evaluated against the current best network and must win by a >55% margin (to rule out noise) before it's promoted; and the current best network generates the next batch of self-play games used for training.
 
@@ -66,7 +66,7 @@ The approach is also demonstrated on exactly one domain - a two-player, zero-sum
 ## Relations
 
 - Directly extends and replaces the training pipeline of [[Paper — Mastering the Game of Go with Deep Neural Networks and Tree Search (2016)]] (AlphaGo): removes the human-data supervised-learning bootstrap, merges the separate policy and value networks into one, and drops Monte Carlo rollouts entirely.
-- Builds on [[Paper — Deep Residual Learning for Image Recognition (2015)]] (residual blocks) and [[Paper — Batch Normalization (2015)]] (used throughout the residual tower).
+- Builds on [[Paper — Deep Residual Learning for Image Recognition (2015)]] (residual blocks) and [[Paper — Batch Normalization - Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)]] (used throughout the residual tower).
 - Extends the Monte Carlo Tree Search lineage AlphaGo (2016) also builds on, but reframes MCTS itself as the policy-improvement step inside training rather than only a deployment-time search procedure.
 - Directly generalized by AlphaZero (Silver et al. 2018, not yet ingested), which applies the same self-play-plus-MCTS recipe to chess and shogi.
 

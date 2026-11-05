@@ -67,7 +67,7 @@ The method assumes that a human coordinating copies of the agent outperforms a s
 
 - The companion proposal to [[Paper — AI Safety via Debate (2018)]]: both use a recursive structure where AI systems help a human handle subquestions, but here each subquestion goes to an independent copy of the agent, whereas in debate it goes to an adversary trained to defend a particular answer; the debate paper shows both reach the same PSPACE ceiling under idealized assumptions.
 - Its training loop mirrors Expert Iteration and [[Paper — Mastering the Game of Go without Human Knowledge (2017)]]'s self-play, minus the external reward.
-- Motivated by the proxy-optimization failures named in [[Paper — Concrete Problems in AI Safety (2016)]] and [[Concept — Reward hacking]], and builds on the learned-reward approach of [[Paper — Deep RL from Human Preferences (2017)]] for tasks where human judgment still works.
+- Motivated by the proxy-optimization failures named in [[Paper — Concrete Problems in AI Safety (2016)]] and [[Concept — Reward hacking]], and builds on the learned-reward approach of [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] for tasks where human judgment still works.
 - Its human-predictor H′ - a model of the human trained to stand in for expensive human queries - is the same move debate makes with its learned judge.
 - Later empirical scalable-oversight work, including [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]], lists amplification among the techniques its sandwiching paradigm is designed to test.
 

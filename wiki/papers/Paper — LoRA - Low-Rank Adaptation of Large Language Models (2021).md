@@ -4,14 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "LoRA - freeze the pretrained weights and train only a low-rank decomposition of the weight update, cutting GPT-3's trainable parameters 10,000x with zero added inference latency."
 cluster: ["Efficient fine-tuning", "Foundational canon"]
-sources: ["raw/papers/Paper — LoRA (2021).pdf"]
+sources: ["raw/papers/Paper — LoRA - Low-Rank Adaptation of Large Language Models (2021).pdf"]
 tags: [peft, fine-tuning, efficiency, low-rank]
 aliases: ["arxiv:2106.09685", "Hu et al. 2021", "LoRA", "Low-Rank Adaptation"]
 ---
 
-# Paper — LoRA (2021)
-
-Full title: **Low-Rank Adaptation of Large Language Models**.
+# Paper — LoRA - Low-Rank Adaptation of Large Language Models (2021)
 
 ## Metadata
 
@@ -63,7 +61,7 @@ Switching to a different task is just as cheap in the other direction - subtract
 ## Why it endures
 
 LoRA's mergeability is the detail that made it durable rather than merely clever: because the adapted weights are bit-for-bit identical in shape and cost to a fully fine-tuned model after merging, there was never a latency or architecture tradeoff to justify to a production team, which is not true of any adapter or prompt-tuning alternative that came before it.
-That property is exactly what let a whole downstream ecosystem of swappable, shareable fine-tunes exist - a single frozen base model serving many small deltas - and it's the foundation [[Paper — QLoRA (2023)]] builds on directly by adding 4-bit quantization of the frozen base underneath the same low-rank update.
+That property is exactly what let a whole downstream ecosystem of swappable, shareable fine-tunes exist - a single frozen base model serving many small deltas - and it's the foundation [[Paper — QLoRA - Efficient Finetuning of Quantized LLMs (2023)]] builds on directly by adding 4-bit quantization of the frozen base underneath the same low-rank update.
 
 ## Limitations
 
@@ -77,7 +75,7 @@ That property is exactly what let a whole downstream ecosystem of swappable, sha
 - Motivated by intrinsic-dimensionality findings (Aghajanyan et al. 2020, not yet ingested) that pretrained language models learn on a surprisingly low-dimensional manifold.
 - Benchmarked directly against adapter layers (Houlsby et al. 2019) and prefix-tuning (Li & Liang 2021), neither yet ingested, as the two prior parameter-efficient approaches it displaces.
 - Demonstrated at scale on [[Paper — Language Models are Few-Shot Learners (2020)]]'s GPT-3 architecture, built on [[Concept — Transformer architecture]].
-- Directly extended by [[Paper — QLoRA (2023)]], which adds quantization of the frozen base weights underneath the same low-rank update mechanism.
+- Directly extended by [[Paper — QLoRA - Efficient Finetuning of Quantized LLMs (2023)]], which adds quantization of the frozen base weights underneath the same low-rank update mechanism.
 - [[Paper — Fine-tuning Aligned Language Models Compromises Safety, Even When Users Do Not Intend To (2023)]] finds LoRA fine-tuning strips Llama-2-7b-Chat's safety about as well as full fine-tuning (80.6% vs 80.0% harmfulness rate with 100 harmful examples), and [[Paper — Tamper-Resistant Safeguards for Open-Weight LLMs (2024)]] finds LoRA attacks are among the hardest for its safeguards to withstand.
 
 ## Up

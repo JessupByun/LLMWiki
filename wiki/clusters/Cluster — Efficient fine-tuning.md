@@ -24,13 +24,13 @@ Not one of the north-star's named pillars, so per the standing rule this cluster
 
 | Page | Why it's here |
 |------|----------------|
-| [[Paper — LoRA (2021)]] | Freeze the pretrained weights and train only a low-rank decomposition of the weight update, cutting GPT-3's trainable parameters 10,000x with zero added inference latency. |
-| [[Paper — QLoRA (2023)]] | Backpropagate through a frozen 4-bit quantized base model into full-precision LoRA adapters, cutting 65B fine-tuning memory from 780GB to under 48GB with no performance loss. |
+| [[Paper — LoRA - Low-Rank Adaptation of Large Language Models (2021)]] | Freeze the pretrained weights and train only a low-rank decomposition of the weight update, cutting GPT-3's trainable parameters 10,000x with zero added inference latency. |
+| [[Paper — QLoRA - Efficient Finetuning of Quantized LLMs (2023)]] | Backpropagate through a frozen 4-bit quantized base model into full-precision LoRA adapters, cutting 65B fine-tuning memory from 780GB to under 48GB with no performance loss. |
 
 ## Methods and concepts
 
-- Low-rank adaptation (the `W0 + BA` reparameterization) - not yet split into its own Method page; currently documented on [[Paper — LoRA (2021)]] directly.
-- 4-bit NormalFloat quantization - currently documented on [[Paper — QLoRA (2023)]] directly.
+- Low-rank adaptation (the `W0 + BA` reparameterization) - not yet split into its own Method page; currently documented on [[Paper — LoRA - Low-Rank Adaptation of Large Language Models (2021)]] directly.
+- 4-bit NormalFloat quantization - currently documented on [[Paper — QLoRA - Efficient Finetuning of Quantized LLMs (2023)]] directly.
 
 ## Open threads
 

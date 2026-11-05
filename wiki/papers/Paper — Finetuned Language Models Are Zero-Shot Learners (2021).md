@@ -59,7 +59,7 @@ See [[Method — Instruction Tuning]] for the reusable mechanism.
 ## Why it endures
 
 Instruction tuning survives as a named, separately cited stage because the ablations isolate it: it is the instructions, not multi-task data alone, that buy zero-shot generalization, and the benefit only appears at scale.
-The RL-based route to the same goal, [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT), also begins with a supervised finetuning stage before adding preference learning, and FLAN's own related-work section cites it as the comparable effort at a similar model scale.
+The RL-based route to the same goal, [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] (InstructGPT), also begins with a supervised finetuning stage before adding preference learning, and FLAN's own related-work section cites it as the comparable effort at a similar model scale.
 
 ## Limitations
 
@@ -72,7 +72,7 @@ The RL-based route to the same goal, [[Paper — Training LMs to Follow Instruct
 
 - Opens [[Method — Instruction Tuning]].
 - Builds on the few-shot prompting setup of [[Paper — Language Models are Few-Shot Learners (2020)]] (GPT-3), the main baseline it compares against.
-- Contrasted with the RLHF route in [[Paper — Training LMs to Follow Instructions (2022)]] (InstructGPT): FLAN uses only supervised multi-task finetuning on existing labeled datasets, with no preference comparisons and no RL.
+- Contrasted with the RLHF route in [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] (InstructGPT): FLAN uses only supervised multi-task finetuning on existing labeled datasets, with no preference comparisons and no RL.
 - Concurrent with T0 (Sanh et al. 2021, not yet ingested), which the paper cites as a similar setup at 11B parameters.
 
 ## Up

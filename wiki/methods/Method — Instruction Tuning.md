@@ -29,7 +29,7 @@ Removing the instructions and finetuning on bare input-output pairs (or a bare t
 
 - Introduced in [[Paper — Finetuned Language Models Are Zero-Shot Learners (2021)]].
 - Complementary to, not a replacement for, few-shot prompting and prompt tuning: FLAN's own ablations show few-shot exemplars and prompt tuning both still improve further on top of an instruction-tuned checkpoint.
-- Distinct from the RLHF-based sense of "instruction-tuned model" used loosely elsewhere in this wiki (e.g. [[Paper — Training LMs to Follow Instructions (2022)]]): this method uses only supervised multi-task finetuning on existing labeled datasets, no preference data and no RL.
+- Distinct from the RLHF-based sense of "instruction-tuned model" used loosely elsewhere in this wiki (e.g. [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]]): this method uses only supervised multi-task finetuning on existing labeled datasets, no preference data and no RL.
 
 ## Up
 

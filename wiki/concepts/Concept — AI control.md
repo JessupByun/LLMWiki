@@ -26,7 +26,7 @@ The core protocols in the founding paper - trusted monitoring, untrusted monitor
 
 ## Relations
 
-- Complements rather than replaces alignment work; assumes what [[Paper — Weak-to-Strong Generalization (2023)]] explicitly assumed away - that the model might not share the developer's objective.
+- Complements rather than replaces alignment work; assumes what [[Paper — Weak-to-Strong Generalization - Eliciting Strong Capabilities With Weak Supervision (2023)]] explicitly assumed away - that the model might not share the developer's objective.
 - Generalizes [[Concept — Scalable oversight]] from "the supervision signal is imperfect" to "the thing being supervised may be adversarial."
 - Distinct from [[Concept — Jailbreaking (LLMs)]] and [[Concept — Adversarial examples]]: those are attacks *on* a model from an external party; control assumes the model itself is the adversary trying to subvert its own oversight.
 - Directly motivated by, and motivates further work on, [[Method — Model organisms of misalignment]] - deliberately constructed instances of the deceptive behavior control protocols are meant to catch.

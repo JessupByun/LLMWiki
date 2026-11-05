@@ -4,14 +4,13 @@ status: mature
 updated: 2026-11-04
 summary: "QLoRA - backpropagate through a frozen 4-bit quantized base model into full-precision LoRA adapters, cutting 65B fine-tuning memory from 780GB to under 48GB with no performance loss."
 cluster: ["Efficient fine-tuning", "Foundational canon"]
-sources: ["raw/papers/Paper — QLoRA (2023).pdf"]
+sources: ["raw/papers/Paper — QLoRA - Efficient Finetuning of Quantized LLMs (2023).pdf"]
 tags: [peft, fine-tuning, quantization, efficiency, low-rank]
 aliases: ["arxiv:2305.14314", "Dettmers et al. 2023", "QLoRA", "Guanaco"]
 ---
 
-# Paper — QLoRA (2023)
+# Paper — QLoRA - Efficient Finetuning of Quantized LLMs (2023)
 
-Full title: **QLoRA: Efficient Finetuning of Quantized LLMs**.
 Best model family: **Guanaco**.
 
 ## Metadata
@@ -34,7 +33,7 @@ The unsolved problem QLoRA targets: can a model be quantized aggressively (down 
 
 ## Core idea: backprop through frozen 4-bit weights into 16-bit adapters
 
-QLoRA quantizes the pretrained base model to 4-bit and freezes it entirely, then adds trainable [[Paper — LoRA (2021)|LoRA]] adapters that stay in full 16-bit precision.
+QLoRA quantizes the pretrained base model to 4-bit and freezes it entirely, then adds trainable [[Paper — LoRA - Low-Rank Adaptation of Large Language Models (2021)|LoRA]] adapters that stay in full 16-bit precision.
 During the forward and backward pass, each 4-bit weight tensor is dequantized on the fly to 16-bit BFloat16 to perform the actual matrix multiplication - but gradients are only ever computed and stored for the small LoRA adapter parameters, never for the frozen 4-bit base.
 This single design choice is what makes the 780GB-to-48GB reduction possible: the overwhelming majority of the model's parameters need no gradient, no optimizer state, and no full-precision copy at all.
 
@@ -82,8 +81,8 @@ Its broader-impacts framing was also directly prescient: the paper explicitly ar
 
 ## Relations
 
-- Direct extension of [[Paper — LoRA (2021)]] - adds 4-bit quantization of the frozen base underneath the identical low-rank adapter mechanism, and found the original paper's default of adapting only `Wq`/`Wv` insufficient once the base is quantized.
-- Uses plain supervised fine-tuning rather than [[Method — Reinforcement learning from human feedback (RLHF)]] or RLAIF, a deliberate scope choice the authors flag as worth revisiting; contrast with [[Paper — Training LMs to Follow Instructions (2022)]] and [[Paper — Constitutional AI (2022)]], which both use RL to align on similar instruction-following goals.
+- Direct extension of [[Paper — LoRA - Low-Rank Adaptation of Large Language Models (2021)]] - adds 4-bit quantization of the frozen base underneath the identical low-rank adapter mechanism, and found the original paper's default of adapting only `Wq`/`Wv` insufficient once the base is quantized.
+- Uses plain supervised fine-tuning rather than [[Method — Reinforcement learning from human feedback (RLHF)]] or RLAIF, a deliberate scope choice the authors flag as worth revisiting; contrast with [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] and [[Paper — Constitutional AI - Harmlessness from AI Feedback (2022)]], which both use RL to align on similar instruction-following goals.
 - The documented "secret keeping" jailbreak (a trivial prompt-injection defeats an explicit system instruction) is a concrete instance of the same failure family [[Concept — Adversarial examples]] and [[Cluster — Adversarial robustness & security]] track - worth a look if that cluster later covers prompt injection directly.
 
 ## Up

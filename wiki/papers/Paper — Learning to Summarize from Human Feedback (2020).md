@@ -19,9 +19,9 @@ aliases: ["arxiv:2009.01325", "Stiennon et al. 2020"]
 
 ## Impact
 
-This is the bridge between [[Paper — Deep RL from Human Preferences (2017)]]'s RLHF loop (proven on MuJoCo and Atari) and [[Paper — Training LMs to Follow Instructions (2022)]]'s RLHF loop at full instruction-following scale.
+This is the bridge between [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]]'s RLHF loop (proven on MuJoCo and Atari) and [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]]'s RLHF loop at full instruction-following scale.
 It scales up Ziegler et al. 2019's language-model version of the collect-comparisons → fit-reward-model → PPO pipeline, with significantly larger GPT-3-style models and a reworked data-collection process (see Core idea), and it establishes a result that recurs throughout post-training alignment: a small model optimized against human preferences beats a much larger model optimized only for likelihood.
-Several authors (Ouyang, Wu, Radford, Amodei, Christiano) carry directly into [[Paper — Training LMs to Follow Instructions (2022)]], reusing this paper's methodology almost unchanged.
+Several authors (Ouyang, Wu, Radford, Amodei, Christiano) carry directly into [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]], reusing this paper's methodology almost unchanged.
 
 ## Problem it solved
 
@@ -32,7 +32,7 @@ The paper's stated aim is to advance training objectives that "more closely capt
 
 ## Core idea
 
-Same three-stage loop as [[Paper — Deep RL from Human Preferences (2017)]], adapted to the batch setting and to text: (1) sample summaries from several policies for a given Reddit post, send pairs to human labelers who pick the better one; (2) train a reward model to predict the log-odds that a candidate summary is the human-preferred one, via the [[Concept — Bradley-Terry preference model]]; (3) treat the reward model's output as a reward and optimize a policy against it with [[Method — Proximal Policy Optimization (PPO)]], with a KL penalty holding the policy close to the supervised-finetuned reference model.
+Same three-stage loop as [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]], adapted to the batch setting and to text: (1) sample summaries from several policies for a given Reddit post, send pairs to human labelers who pick the better one; (2) train a reward model to predict the log-odds that a candidate summary is the human-preferred one, via the [[Concept — Bradley-Terry preference model]]; (3) treat the reward model's output as a reward and optimize a policy against it with [[Method — Proximal Policy Optimization (PPO)]], with a KL penalty holding the policy close to the supervised-finetuned reference model.
 
 Two changes distinguish this from the earlier Ziegler et al. 2019 predecessor that first tried this at LM scale: moving to a fully **offline/batch** setting (alternate large batches of labeling with retraining, rather than a continuous online loop) and a much more hands-on labeler-quality process (detailed onboarding, a shared chat room, continuous labeler-researcher agreement monitoring), which together get labeler-researcher agreement up to 77%, slightly above researcher-researcher agreement of 73%.
 
@@ -55,7 +55,7 @@ Two changes distinguish this from the earlier Ziegler et al. 2019 predecessor th
 
 ## Why it endures
 
-This paper's exact three-stage recipe - collect comparisons, fit a Bradley-Terry reward model, optimize with PPO under a KL penalty against the SFT policy - is, almost unchanged, the RLHF stage of [[Paper — Training LMs to Follow Instructions (2022)]] two years later.
+This paper's exact three-stage recipe - collect comparisons, fit a Bradley-Terry reward model, optimize with PPO under a KL penalty against the SFT policy - is, almost unchanged, the RLHF stage of [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] two years later.
 The separate-value-network ablation and the over-optimization curve are both cited directly in later RLHF scaling work (e.g. [[Paper — Scaling Laws for Reward Model Overoptimization (2022)]]).
 
 ## Limitations
@@ -67,9 +67,9 @@ The separate-value-network ablation and the over-optimization curve are both cit
 
 ## Relations
 
-- Runs the exact loop introduced in [[Paper — Deep RL from Human Preferences (2017)]], adapted from short video clips to text summaries.
+- Runs the exact loop introduced in [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]], adapted from short video clips to text summaries.
 - Reward model built on [[Concept — Bradley-Terry preference model]]; policy optimized with [[Method — Proximal Policy Optimization (PPO)]].
-- Direct methodological predecessor of [[Paper — Training LMs to Follow Instructions (2022)]], which several of the same authors carry forward, scaling this exact recipe from summarization to general instruction-following.
+- Direct methodological predecessor of [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]], which several of the same authors carry forward, scaling this exact recipe from summarization to general instruction-following.
 - Its over-optimization curve is an empirical case of [[Concept — Reward hacking]] and motivates the open [[Concept — Scalable oversight]] question this wiki keeps returning to across post-training alignment papers.
 
 ## Up

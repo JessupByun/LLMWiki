@@ -36,7 +36,7 @@ The residual structure also gives the model a shared "residual stream" that ever
 
 - Origin paper: [[Paper — Attention Is All You Need (2017)]].
 - Built from [[Method — Layer Normalization]] and the residual connections of [[Paper — Deep Residual Learning for Image Recognition (2015)]].
-- Encoder-only variant: [[Paper — BERT (2018)]]; decoder-only variant: [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] onward; applied to image patches in [[Paper — An Image is Worth 16x16 Words (2020)]].
+- Encoder-only variant: [[Paper — BERT - Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)]]; decoder-only variant: [[Paper — Improving Language Understanding by Generative Pre-Training (2018)]] onward; applied to image patches in [[Paper — An Image is Worth 16x16 Words - Transformers for Image Recognition at Scale (2020)]].
 - Its decoder-only form supports [[Concept — In-context learning]].
 - Contrast with [[Concept — Convolutional neural networks (CNNs)]], the architecture whose depth/data/compute recipe this one inherited and extended to sequences.
 

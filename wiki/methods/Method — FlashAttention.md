@@ -24,7 +24,7 @@ Tiling keeps all the data a block needs in fast on-chip memory for the whole tim
 
 ## Relations
 
-- Origin: [[Paper — FlashAttention (2022)]] (Dao et al.), applied to the scaled dot-product attention of [[Paper — Attention Is All You Need (2017)]].
+- Origin: [[Paper — FlashAttention - Fast and Memory-Efficient Exact Attention with IO-Awareness (2022)]] (Dao et al.), applied to the scaled dot-product attention of [[Paper — Attention Is All You Need (2017)]].
 - Implemented as an optional fused kernel in [[Repo — karpathy-nanoGPT]]'s causal self-attention.
 
 ## Up

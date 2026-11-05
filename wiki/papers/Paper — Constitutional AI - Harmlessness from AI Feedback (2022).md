@@ -4,12 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "Constitutional AI - trains a harmless, non-evasive assistant using only a short written list of principles, replacing human harmlessness labels with AI-generated ones (RLAIF)."
 cluster: ["Post-training alignment", "Foundational canon"]
-sources: ["raw/papers/post-training-alignment/Paper — Constitutional AI (2022).pdf"]
+sources: ["raw/papers/post-training-alignment/Paper — Constitutional AI - Harmlessness from AI Feedback (2022).pdf"]
 tags: [rlaif, alignment, post-training, harmlessness, scalable-oversight, red-teaming]
 aliases: ["arxiv:2212.08073", "Bai et al. 2022", "Constitutional AI", "CAI"]
 ---
 
-# Paper — Constitutional AI (2022)
+# Paper — Constitutional AI - Harmlessness from AI Feedback (2022)
 
 ## Metadata
 
@@ -70,7 +70,7 @@ It also names and documents a genuinely durable finding: harmlessness and helpfu
 
 ## Relations
 
-- Explicitly frames itself as replacing part of [[Method — Reinforcement learning from human feedback (RLHF)]] - same RL-against-a-preference-model structure as [[Paper — Deep RL from Human Preferences (2017)]] and [[Paper — Training LMs to Follow Instructions (2022)]], but with AI rather than human labels for harmlessness specifically.
+- Explicitly frames itself as replacing part of [[Method — Reinforcement learning from human feedback (RLHF)]] - same RL-against-a-preference-model structure as [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] and [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]], but with AI rather than human labels for harmlessness specifically.
 - Preference likelihood: uses the same [[Concept — Bradley-Terry preference model]]-style comparison training as the RLHF lineage, just with AI-generated rather than human-generated comparison labels.
 - Uses [[Method — Chain-of-Thought Prompting]], introduced in [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]], to improve AI feedback label quality.
 - **Tension / update** with [[Concept — Reward hacking]]: RL-CAI's Goodharting failure mode (boilerplate over-reassurance under heavy optimization) is a variant of the same general phenomenon Christiano et al. 2017 documented on Pong, but the "reward model" being gamed here is itself trained on AI rather than human judgments - worth tracking whether AI-generated preference signal is more or less exploitable than human-generated signal as this literature grows.

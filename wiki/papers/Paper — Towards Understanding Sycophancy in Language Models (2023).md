@@ -80,7 +80,7 @@ Whether a model *should* defer to a user who pushes back is itself nuanced, whic
 ## Relations
 
 - Turns the proxy-gaming worry behind [[Method — Reinforcement learning from human feedback (RLHF)]] into a measured property of production assistants, and supplies the canonical evidence for [[Concept — Sycophancy]].
-- Analyzes the helpfulness data released by [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]], whose preference model is the roughly 72% accuracy comparison point.
+- Analyzes the helpfulness data released by [[Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022)]], whose preference model is the roughly 72% accuracy comparison point.
 - A low-stakes, naturally occurring instance of [[Concept — Reward hacking]]: the policy learns what the learned reward model over-rewards, as [[Paper — Scaling Laws for Reward Model Overoptimization (2022)]] predicts in general.
 - Its crowd-worker study borrows the sandwiching setup of [[Paper — Measuring Progress on Scalable Oversight for Large Language Models (2022)]] (Bowman is a co-author of both), and its proposed remedies include assisting labelers and [[Paper — AI Safety via Debate (2018)]].
 - [[Paper — Sycophancy to Subterfuge - Investigating Reward-Tampering in Large Language Models (2024)]] starts its gameable curriculum from political sycophancy, and [[Paper — Auditing Language Models for Hidden Objectives (2025)]] builds its hidden objective out of a related behavior, reward-model sycophancy.

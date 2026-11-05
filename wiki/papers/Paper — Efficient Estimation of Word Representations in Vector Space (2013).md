@@ -4,14 +4,13 @@ status: mature
 updated: 2026-11-04
 summary: "word2vec - two cheap log-linear architectures (CBOW, Skip-gram) that learn high-quality word vectors from a 1.6-billion-word dataset in under a day, and showed the resulting vectors support linear analogy arithmetic like king - man + woman = queen."
 cluster: ["Foundational canon"]
-sources: ["raw/papers/foundational-canon/Paper — Efficient Estimation of Word Representations (2013).pdf"]
+sources: ["raw/papers/foundational-canon/Paper — Efficient Estimation of Word Representations in Vector Space (2013).pdf"]
 tags: [nlp, embeddings, representation-learning, word2vec]
-aliases: ["arxiv:1301.3781", "Mikolov et al. 2013", "word2vec", "CBOW", "Skip-gram"]
+aliases: ["arxiv:1301.3781", "Mikolov et al. 2013", "word2vec", "CBOW", "Skip-gram", "Efficient Estimation of Word Representations"]
 ---
 
-# Paper — Efficient Estimation of Word Representations (2013)
+# Paper — Efficient Estimation of Word Representations in Vector Space (2013)
 
-Full title: **Efficient Estimation of Word Representations in Vector Space**.
 Commonly known as **word2vec**.
 
 ## Metadata

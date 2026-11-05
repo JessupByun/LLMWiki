@@ -30,7 +30,7 @@ For this wiki it matters for two more reasons: it is the method [[Paper — Stre
 The authors trace many safety failures - being tricked into harmful output, refusing legitimate requests, falling to jailbreaks - to two limits of standard training.
 Models must answer instantly with a fixed amount of compute, with no chance to deliberate over a tricky case.
 And they must infer safety standards indirectly from many labeled examples, which the authors say is data-inefficient and generalizes poorly to unfamiliar or adversarial inputs.
-In [[Method — Reinforcement learning from human feedback (RLHF)]] and [[Paper — Constitutional AI (2022)]], the specification shapes the labels but is never given to the policy model, and only the final answers are trained on.
+In [[Method — Reinforcement learning from human feedback (RLHF)]] and [[Paper — Constitutional AI - Harmlessness from AI Feedback (2022)]], the specification shapes the labels but is never given to the policy model, and only the final answers are trained on.
 Simply pasting the full policy into the prompt at deployment costs latency, is overkill for benign prompts, and can fail if the model misses the relevant section.
 The authors add a scaling concern: as models get more capable, fewer humans are qualified to label their outputs.
 
@@ -96,7 +96,7 @@ The chain-of-thought excerpts in the paper are chosen examples, and the paper do
 ## Tension / update
 
 [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]], co-authored by this paper's first author Melody Y. Guan, cites it as an example of dense supervision such as SFT being used to optimize chains of thought, says the effect of such supervision on downstream monitorability is unclear, and suggests less monitorable chains of thought could be introduced at the SFT stage, as in this paper, and then reinforced by RL.
-This paper avoids the specific intervention Baker et al. show causing obfuscation - its RL judge never sees the chain of thought - but it does supervise chain-of-thought content directly during SFT, and presents that as an advantage over [[Paper — Constitutional AI (2022)]], whose critiques are not trained on.
+This paper avoids the specific intervention Baker et al. show causing obfuscation - its RL judge never sees the chain of thought - but it does supervise chain-of-thought content directly during SFT, and presents that as an advantage over [[Paper — Constitutional AI - Harmlessness from AI Feedback (2022)]], whose critiques are not trained on.
 Neither paper measures the effect of this SFT-stage pressure on monitorability.
 [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]] adds a related observation for the anti-scheming variant: models sometimes cited the spec correctly and acted against it anyway, or misquoted it to justify deception.
 
@@ -104,11 +104,11 @@ On jailbreaks, its out-of-distribution result speaks to the mismatched-generaliz
 
 ## Relations
 
-- Positions itself against [[Paper — Constitutional AI (2022)]], whose constitution it calls comparable to its spec: both use a written specification to generate training data, but in Constitutional AI only the labels reach the model, while here the reasoning about the spec is itself trained on, and the spec content varies per example rather than staying fixed.
-- An alternative to the labels-only pipeline of [[Method — Reinforcement learning from human feedback (RLHF)]], citing [[Paper — Training LMs to Follow Instructions (2022)]] and [[Paper — Deep RL from Human Preferences (2017)]] for standard SFT-plus-RLHF safety training and [[Paper — Direct Preference Optimization (2023)]] as an alternative to it.
+- Positions itself against [[Paper — Constitutional AI - Harmlessness from AI Feedback (2022)]], whose constitution it calls comparable to its spec: both use a written specification to generate training data, but in Constitutional AI only the labels reach the model, while here the reasoning about the spec is itself trained on, and the spec content varies per example rather than staying fixed.
+- An alternative to the labels-only pipeline of [[Method — Reinforcement learning from human feedback (RLHF)]], citing [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] and [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] for standard SFT-plus-RLHF safety training and [[Paper — Direct Preference Optimization - Your Language Model is Secretly a Reward Model (2023)]] as an alternative to it.
 - Combines process supervision (SFT on reasoning) with outcome supervision (RL on answers), citing Uesato et al. 2022; the wiki's process-versus-outcome thread is in [[Paper — Let's Verify Step by Step (2023)]] and [[Method — Process Reward Model (PRM)]], which this paper does not cite.
 - Cites [[Paper — Jailbroken - How Does LLM Safety Training Fail (2023)]] and [[Paper — Universal and Transferable Adversarial Attacks on Aligned Language Models (2023)]] among jailbreak work (see [[Concept — Jailbreaking (LLMs)]]).
-- In the wiki's reading, its claim to cut jailbreaks and over-refusals together is a reported escape from the helpfulness-harmlessness trade-off of [[Paper — Training a Helpful and Harmless Assistant with RLHF (2022)]].
+- In the wiki's reading, its claim to cut jailbreaks and over-refusals together is a reported escape from the helpfulness-harmlessness trade-off of [[Paper — Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022)]].
 - Shares with [[Paper — Constitutional Classifiers - Defending against Universal Jailbreaks across Thousands of Hours of Red Teaming (2025)]] the move of turning a natural-language spec into synthetic training data, but trains the model itself to reason over the spec rather than training separate guard classifiers.
 - Applied to scheming by [[Paper — Stress Testing Deliberative Alignment for Anti-Scheming Training (2025)]], which cites it as the method under test and finds covert actions reduced roughly 30-fold but not eliminated, partly confounded by [[Concept — Evaluation awareness]].
 - Its supervision of chain-of-thought content is flagged as an open monitorability risk by [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]] (shared author Melody Y. Guan); see [[Concept — Chain-of-thought monitorability]] and the Tension / update above.

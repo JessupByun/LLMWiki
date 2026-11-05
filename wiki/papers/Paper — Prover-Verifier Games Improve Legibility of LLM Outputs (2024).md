@@ -69,7 +69,7 @@ The authors' own:
 ## Relations
 
 - A capability gap in place of an information gap: it contrasts its setup with debate experiments on QuALITY such as [[Paper — Debating with More Persuasive LLMs Leads to More Truthful Answers (2024)]], where judges lack the text rather than the skill, and resembles single-sided consultancy since the verifier sees one solution at a time.
-- Like [[Paper — Weak-to-Strong Generalization (2023)]], uses smaller models as stand-ins for human overseers of a stronger model (see [[Concept — Scalable oversight]]).
+- Like [[Paper — Weak-to-Strong Generalization - Eliciting Strong Capabilities With Weak Supervision (2023)]], uses smaller models as stand-ins for human overseers of a stronger model (see [[Concept — Scalable oversight]]).
 - Its legibility tax is an instance of [[Concept — Alignment tax]], in the opposite direction from the negative tax of process supervision in [[Paper — Let's Verify Step by Step (2023)]].
 - Its finding that correctness-only optimization degrades legibility is a gentler cousin of the obfuscation in [[Paper — Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation (2025)]], and a lever for [[Concept — Chain-of-thought monitorability]].
 - [[Paper — Debate Helps Supervise Unreliable Experts (2023)]], which it cites, likewise classes prover-verifier games as closer to consultancy than to debate.

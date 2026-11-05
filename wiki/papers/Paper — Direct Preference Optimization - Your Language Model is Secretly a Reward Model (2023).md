@@ -4,12 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "DPO - a closed-form reparameterization that turns the RLHF objective into a single classification loss on the policy itself, matching or beating PPO-based RLHF with no reward model and no RL loop."
 cluster: ["Post-training alignment", "Foundational canon"]
-sources: ["raw/papers/post-training-alignment/Paper — Direct Preference Optimization (2023).pdf"]
+sources: ["raw/papers/post-training-alignment/Paper — Direct Preference Optimization - Your Language Model is Secretly a Reward Model (2023).pdf"]
 tags: [dpo, alignment, post-training, reward-modeling, preferences]
-aliases: ["arxiv:2305.18290", "Rafailov et al. 2023", "DPO"]
+aliases: ["arxiv:2305.18290", "Rafailov et al. 2023", "DPO", "Direct Preference Optimization"]
 ---
 
-# Paper — Direct Preference Optimization (2023)
+# Paper — Direct Preference Optimization - Your Language Model is Secretly a Reward Model (2023)
 
 ## Metadata
 
@@ -26,7 +26,7 @@ It matches or beats PPO-based RLHF on sentiment control, summarization, and dial
 
 ## Problem it solved
 
-Standard RLHF, as run in [[Paper — Training LMs to Follow Instructions (2022)]] and its predecessors, is "a complex and often unstable procedure": fit a reward model to human comparisons, then fine-tune the policy against that reward model with PPO while a KL penalty keeps it near a reference model.
+Standard RLHF, as run in [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] and its predecessors, is "a complex and often unstable procedure": fit a reward model to human comparisons, then fine-tune the policy against that reward model with PPO while a KL penalty keeps it near a reference model.
 This requires training and holding multiple models in memory (policy, reward model, and often a separate value function), and repeatedly sampling from the policy during RL training, which is expensive and can be unstable - RL fine-tuning of large language models "remains a major practical challenge."
 DPO's target was to keep the same underlying objective RLHF optimizes (reward maximization under a KL constraint to a reference policy) while removing the reward model and the RL loop entirely.
 
@@ -75,7 +75,7 @@ It also directly resolves a question [[Concept — Bradley-Terry preference mode
 
 ## Relations
 
-- Directly targets the pipeline established by [[Paper — Deep RL from Human Preferences (2017)]] and run at LLM scale in [[Paper — Training LMs to Follow Instructions (2022)]], replacing its reward-model-plus-[[Method — Proximal Policy Optimization (PPO)]] stages with a single closed-form loss.
+- Directly targets the pipeline established by [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] and run at LLM scale in [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]], replacing its reward-model-plus-[[Method — Proximal Policy Optimization (PPO)]] stages with a single closed-form loss.
 - Reparameterizes and directly builds on [[Concept — Bradley-Terry preference model]] - resolves the forward-pointer that page had flagged pending this paper's ingest.
 - Method hub: [[Method — Reinforcement learning from human feedback (RLHF)]], of which DPO is best understood as an RL-free alternative rather than a member.
 

@@ -4,12 +4,12 @@ status: mature
 updated: 2026-11-04
 summary: "InstructGPT - RLHF applied to GPT-3 at scale, showing a 1.3B fine-tuned model beats 175B raw GPT-3 on human preference, and setting the SFT-to-RM-to-PPO template later instruction-tuned assistants built on."
 cluster: ["Post-training alignment", "Foundational canon"]
-sources: ["raw/papers/post-training-alignment/Paper — Training LMs to Follow Instructions (2022).pdf"]
+sources: ["raw/papers/post-training-alignment/Paper — Training Language Models to Follow Instructions with Human Feedback (2022).pdf"]
 tags: [rlhf, alignment, post-training, instruction-tuning, reward-modeling, ppo]
-aliases: ["arxiv:2203.02155", "Ouyang et al. 2022", "InstructGPT"]
+aliases: ["arxiv:2203.02155", "Ouyang et al. 2022", "InstructGPT", "Training LMs to Follow Instructions"]
 ---
 
-# Paper — Training LMs to Follow Instructions (2022)
+# Paper — Training Language Models to Follow Instructions with Human Feedback (2022)
 
 Commonly known as **InstructGPT**.
 
@@ -35,7 +35,7 @@ Making a model bigger, on its own, does not fix this: GPT-3 already had the capa
 
 ## Core idea: RLHF, extended from Christiano et al. to language models
 
-The method is the three-step loop from [[Paper — Deep RL from Human Preferences (2017)]], applied to text generation instead of trajectory clips (Figure 2 in the paper):
+The method is the three-step loop from [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]], applied to text generation instead of trajectory clips (Figure 2 in the paper):
 
 1. **Supervised fine-tuning (SFT).** Human labelers write demonstrations of the desired output for a given prompt; GPT-3 is fine-tuned on these directly.
 2. **Reward modeling (RM).** Labelers rank 4-9 model outputs per prompt from best to worst.
@@ -68,7 +68,7 @@ Concretely: rather than a human ever writing "reward = +1 for helpful, -1 for un
 ## Why it endures
 
 This paper is the template.
-Much of the later instruction-tuned "helpful assistant" lineage builds on the SFT → RM → PPO structure demonstrated here (later methods such as [[Paper — Direct Preference Optimization (2023)]] keep the preference data but drop the separate reward model and RL loop), and the specific engineering choices it popularized - a KL penalty against the reference policy (carried over from [[Paper — Learning to Summarize from Human Feedback (2020)]]), and mixing pretraining gradients back into RL fine-tuning to control the alignment tax (its own addition, PPO-ptx) - became widely reused rather than remaining one-off contributions.
+Much of the later instruction-tuned "helpful assistant" lineage builds on the SFT → RM → PPO structure demonstrated here (later methods such as [[Paper — Direct Preference Optimization - Your Language Model is Secretly a Reward Model (2023)]] keep the preference data but drop the separate reward model and RL loop), and the specific engineering choices it popularized - a KL penalty against the reference policy (carried over from [[Paper — Learning to Summarize from Human Feedback (2020)]]), and mixing pretraining gradients back into RL fine-tuning to control the alignment tax (its own addition, PPO-ptx) - became widely reused rather than remaining one-off contributions.
 It is also the empirical result [[Paper — Language Models are Few-Shot Learners (2020)]] anticipated without demonstrating: GPT-3's own limitations section named "fine-tuning with reinforcement learning" as the needed next step, and this is that step, carried out.
 
 ## Whose preferences is this aligning to?
@@ -85,8 +85,8 @@ The paper explicitly declines to claim any of these groups is the "right" source
 
 ## Relations
 
-- Direct extension of [[Paper — Deep RL from Human Preferences (2017)]] from robotics/Atari clip comparisons to LLM response comparisons; both share the underlying [[Method — Reinforcement learning from human feedback (RLHF)]] loop.
-- RL step: [[Method — Proximal Policy Optimization (PPO)]], introduced in [[Paper — Proximal Policy Optimization (2017)]].
+- Direct extension of [[Paper — Deep Reinforcement Learning from Human Preferences (2017)]] from robotics/Atari clip comparisons to LLM response comparisons; both share the underlying [[Method — Reinforcement learning from human feedback (RLHF)]] loop.
+- RL step: [[Method — Proximal Policy Optimization (PPO)]], introduced in [[Paper — Proximal Policy Optimization Algorithms (2017)]].
 - Reward-model likelihood: [[Concept — Bradley-Terry preference model]].
 - Applies RLHF to the architecture and model class from [[Paper — Language Models are Few-Shot Learners (2020)]], whose own limitations section named this exact fix as future work.
 - **Tension / update** with [[Concept — Reward hacking]]: the 2017 paper's fix for reward-model over-optimization was to keep collecting human feedback *online* as the policy changes.

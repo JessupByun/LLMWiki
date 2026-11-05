@@ -26,7 +26,7 @@ It is also more directly interpretable and alignment-relevant than outcome super
 ## Relations
 
 - First compared head-to-head against outcome supervision by Uesato et al. 2022 ("Solving math word problems with process- and outcome-based feedback", arxiv:2211.14275, not yet ingested); established at scale by [[Paper — Let's Verify Step by Step (2023)]] (Lightman et al.), which also releases PRM800K, a public dataset of 800K step-level human correctness labels.
-- Directly contrasted with outcome-supervised reward models (ORMs), the standard reward-modeling approach used in [[Method — Reinforcement learning from human feedback (RLHF)]] pipelines such as [[Paper — Training LMs to Follow Instructions (2022)]].
+- Directly contrasted with outcome-supervised reward models (ORMs), the standard reward-modeling approach used in [[Method — Reinforcement learning from human feedback (RLHF)]] pipelines such as [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]].
 - Scores solutions generated with [[Method — Chain-of-Thought Prompting]], from [[Paper — Chain-of-Thought Prompting Elicits Reasoning in Large Language Models (2022)]].
 - Directly relevant to [[Concept — Reward hacking]]: a structural mitigation for reward models being gamed via an easily-measured but imperfect proxy.
 

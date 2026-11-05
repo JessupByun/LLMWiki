@@ -84,7 +84,7 @@ This paper anticipated part of that argument in its own discussion of metrics an
 - Builds on, and qualifies, the smooth loss curves of [[Paper — Scaling Laws for Neural Language Models (2020)]] and [[Paper — Training Compute-Optimal Large Language Models (2022)]].
 - Many of its examples come from GPT-3's few-shot prompting in [[Paper — Language Models are Few-Shot Learners (2020)]]; see [[Concept — In-context learning]].
 - Cites [[Paper — Extracting Training Data from Large Language Models (2020)]] as evidence that memorization risk grows with scale.
-- Notes that [[Paper — Training LMs to Follow Instructions (2022)]] made a 1.3B model preferred over much larger ones, an example of a technique lowering the scale an ability needs.
+- Notes that [[Paper — Training Language Models to Follow Instructions with Human Feedback (2022)]] made a 1.3B model preferred over much larger ones, an example of a technique lowering the scale an ability needs.
 - Its worry about unpredictable capabilities motivates [[Method — Dangerous capability evaluation]] as developed in [[Paper — Model Evaluation for Extreme Risks (2023)]].
 
 ## Up

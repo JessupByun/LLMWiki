@@ -46,7 +46,7 @@ The paper is explicit that its learning procedure is not intended as a plausible
 
 - Backpropagation as described here computes gradients through arbitrarily many layers in a single forward/backward pass, but the paper's own recurrent-network extension (mapping an iterative net onto an equivalent layered net) sets up exactly the vanishing/exploding gradient problem that [[Paper — Long Short-Term Memory (1997)]] later solves for long time lags.
 - Every optimizer on this wiki, including [[Paper — Adam - A Method for Stochastic Optimization (2014)]], operates on the gradients this paper's procedure computes - backpropagation supplies the gradient, the optimizer decides how to step with it.
-- The vanishing-gradient-through-depth problem this procedure suffers from in very deep feedforward networks is what [[Paper — Batch Normalization (2015)]] and [[Paper — Deep Residual Learning for Image Recognition (2015)]] later address directly.
+- The vanishing-gradient-through-depth problem this procedure suffers from in very deep feedforward networks is what [[Paper — Batch Normalization - Accelerating Deep Network Training by Reducing Internal Covariate Shift (2015)]] and [[Paper — Deep Residual Learning for Image Recognition (2015)]] later address directly.
 
 ## Up
 
